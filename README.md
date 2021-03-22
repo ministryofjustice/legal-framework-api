@@ -1,15 +1,24 @@
-# Ministry of Justice Template Repository
+# README
 
-Use this template to [create a repository] with the default initial files for a Ministry of Justice Github repository, including:
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-* The correct LICENSE
-* Github actions
-* .gitignore file
+Things you may want to cover:
 
-Once you have created your repository, please:
+* Ruby version
 
-* Edit the copy of this README.md file to document your project
-* Grant permissions to the appropriate MoJ teams
-* Setup branch protection
+* System dependencies
 
-[create a repository]: https://github.com/ministryofjustice/template-repository/generate
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
