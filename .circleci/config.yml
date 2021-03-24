@@ -21,11 +21,11 @@ jobs:
             $(aws ecr get-login --no-include-email)
             docker build \
             --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z) \
-            --build-arg BUILD_TAG="app-${CIRCLE_SHA1}" \
+            --build-arg BUILD_TAG="app-circle-sha1" \
             --build-arg APP_BRANCH=${CIRCLE_BRANCH} \
             -t app .
-            docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
-            docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+            docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:app-circle-sha1"
+            docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:app-circle-sha1"
       - run:
           name: Authenticate with cluster
           command: |
@@ -43,5 +43,5 @@ jobs:
               --namespace=${K8S_NAMESPACE} \
               --values ./deploy/helm/values-uat.yaml \
               --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
-              --set image.tag="${CIRCLE_SHA1}"
+              --set image.tag="app-circle-sha1"
             kubectl --namespace=${K8S_NAMESPACE} get pods
