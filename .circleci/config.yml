@@ -1,7 +1,7 @@
 version: 2.1
 
 workflows:
-  test-env-vars:
+  Build and deploy:
     jobs:
       - build:
           context: legal-framework-api-uat
@@ -38,7 +38,10 @@ jobs:
           name: Install Legal Framework API UAT
           command: |
             echo "Installing LFAPI helm chart"
-            if [ "${CIRCLE_BRANCH}" == "main" ]; then
-              helm upgrade demo helm_deploy --install --namespace=${K8S_NAMESPACE}
-            fi
+            helm upgrade legal-framework-api ./deploy/helm/. \
+              --install --wait \
+              --namespace=${K8S_NAMESPACE} \
+              --values ./deploy/helm/values-uat.yaml \
+              --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
+              --set image.tag="${CIRCLE_SHA1}"
             kubectl --namespace=${K8S_NAMESPACE} get pods
