@@ -34,9 +34,9 @@ jobs:
             kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
             kubectl config use-context ${K8S_CLUSTER_NAME}
       - run:
-          name: Install demo helm chart
+          name: Install Legal Framework API UAT
           command: |
-            echo "Installing demoo helm chart"
+            echo "Installing LFAPI helm chart"
             if [ "${CIRCLE_BRANCH}" == "main" ]; then
               helm upgrade demo helm_deploy --install --namespace=${K8S_NAMESPACE}
             fi
