@@ -49,20 +49,10 @@ env:
       secretKeyRef:
         name: {{ template "app.fullname" . }}
         key: secretKeyBase
-  - name: SENTRY_DSN
-    valueFrom:
-      secretKeyRef:
-        name: {{ template "app.fullname" . }}
-        key: sentryDsn
   - name: RAILS_ENV
     value: production
   - name: RAILS_LOG_TO_STDOUT
     value: 'true'
-  - name: USE_TEST_THRESHOLD_DATA
-    valueFrom:
-      secretKeyRef:
-        name: {{ template "app.fullname" . }}
-        key: useTestThresholdData
   - name: HOST
     valueFrom:
       secretKeyRef:
