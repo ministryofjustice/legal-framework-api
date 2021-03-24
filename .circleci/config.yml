@@ -16,6 +16,11 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: Decrypt secrets file
+          command: |
+            echo "${GIT_CRYPT_KEY}" | base64 -d > git-crypt.key
+            git-crypt unlock git-crypt.key
+      - run:
           name: Build application Docker image and push to ECR
           command: |
             $(aws ecr get-login --no-include-email)
@@ -38,7 +43,7 @@ jobs:
           name: Install Legal Framework API UAT
           command: |
             echo "Installing LFAPI helm chart"
-            helm upgrade legal-framework-api ./deploy/helm/. \
+            helm upgrade legal-framework-api-uat ./deploy/helm/. \
               --install --wait \
               --namespace=${K8S_NAMESPACE} \
               --values ./deploy/helm/values-uat.yaml \
