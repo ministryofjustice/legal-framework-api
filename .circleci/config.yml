@@ -43,7 +43,7 @@ jobs:
           name: Install Legal Framework API UAT
           command: |
             echo "Installing LFAPI helm chart"
-            helm upgrade legal-framework-api ./deploy/helm/. \
+            helm upgrade legal-framework-api-uat ./deploy/helm/. \
               --install --wait \
               --namespace=${K8S_NAMESPACE} \
               --values ./deploy/helm/values-uat.yaml \
