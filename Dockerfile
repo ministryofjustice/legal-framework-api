@@ -7,10 +7,12 @@ RUN set -ex
 
 RUN apk --no-cache add --virtual build-dependencies \
                     build-base \
+                    tzdata \
                     postgresql-dev \
 && apk --no-cache add \
                   postgresql-client \
                   nodejs \
+                  shared-mime-info \
                   yarn
 
 RUN mkdir /myapp
@@ -32,7 +34,7 @@ COPY . /myapp
 
 RUN yarn --prod
 
-RUN bundle exec rake assets:precompile SECRET_KEY_BASE=a-real-secret-key-is-not-needed-here
+#RUN bundle exec rake assets:precompile SECRET_KEY_BASE=a-real-secret-key-is-not-needed-here
 
 RUN apk del build-dependencies
 
@@ -53,4 +55,4 @@ ENV RAILS_SERVE_STATIC_FILES true
 
 USER 1001
 
-CMD "./docker/run"
+CMD "./docker_scripts/run"
