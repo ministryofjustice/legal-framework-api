@@ -32,7 +32,7 @@ COPY . /myapp
 
 RUN yarn --prod
 
-#RUN bundle exec rake assets:precompile SECRET_KEY_BASE=a-real-secret-key-is-not-needed-here
+RUN bundle exec rake assets:precompile SECRET_KEY_BASE=a-real-secret-key-is-not-needed-here
 
 RUN apk del build-dependencies
 

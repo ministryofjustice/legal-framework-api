@@ -43,8 +43,6 @@ jobs:
           name: Install Legal Framework API UAT
           command: |
             echo "Installing LFAPI helm chart"
-            echo "what is sha1"
-            echo ${CIRCLE_SHA1}
             helm upgrade legal-framework-api-uat ./deploy/helm/. \
               --install --wait \
               --namespace=${K8S_NAMESPACE} \
