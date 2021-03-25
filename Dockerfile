@@ -53,4 +53,4 @@ ENV RAILS_SERVE_STATIC_FILES true
 
 USER 1001
 
-CMD ["docker/run"]
+CMD "./docker/run"
