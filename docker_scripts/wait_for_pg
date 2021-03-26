@@ -20,10 +20,10 @@ wait_for() {
   log "wait '$POSTGRES_HOST':'$POSTGRES_PORT' up to '$timeout'"
   for i in `seq $timeout` ; do
     if probe; then
-      log "SUCCESS wait finish '$POSTGRES_HOST:$POSTGRES_PORT' attempt [$i]"
+      log "wait finish '$POSTGRES_HOST:$POSTGRES_PORT'"
       exit 0
     fi
-    log "HELLOOOOO wait attempt '${POSTGRES_HOST}:${POSTGRES_PORT}' user-- '${POSTGRES_USER}' pw-- '${POSTGRES_PASSWORD}' [$i]"
+    log "wait attempt '${POSTGRES_HOST}:${POSTGRES_PORT}' [$i]"
     sleep 1
   done
   log "[ERROR] wait timeout of '$timeout' on '$POSTGRES_HOST:$POSTGRES_PORT'"
