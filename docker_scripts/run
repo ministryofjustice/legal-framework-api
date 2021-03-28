@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+./docker_scripts/wait_for_pg
+./docker_scripts/setup_db
+
+bundle exec puma -C config/puma.rb
