@@ -6,3 +6,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Dir[Rails.root.join('db/seed_files/*.rb')].sort.each do |seed_file|
+  load seed_file
+end
+
+MatterTypePopulator.call
+ProceedingTypePopulator.call
+MeritsTaskPopulator.call
