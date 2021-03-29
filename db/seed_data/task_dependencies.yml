@@ -1,0 +1,6 @@
+---
+#
+# children_proceeding is dependent on one other task: children_application
+#
+children_proceeding:
+  - children_application

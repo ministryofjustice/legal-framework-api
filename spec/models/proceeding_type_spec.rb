@@ -1,16 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProceedingType do
-  before do
-    Dir[Rails.root.join('db/seed_files/*.rb')].sort.each do |seed_file|
-      require seed_file
-    end
-
-    MatterTypePopulator.call
-    ProceedingTypePopulator.call
-    MeritsTaskPopulator.call
-    ProceedingTypeMeritsTaskPopulator.call
-  end
+  before { seed_live_data }
 
   describe '#matter_type' do
     it 'returns the correct matter type record' do
