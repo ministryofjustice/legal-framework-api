@@ -1,5 +1,4 @@
 class MeritsTaskPopulator
-
   APPLICATION_MERITS_TASKS = %w[
     latest_incident_details
     opponent_details
@@ -9,7 +8,7 @@ class MeritsTaskPopulator
 
   PROCEEDING_TYPE_MERITS_TASKS = %w[
     chances_of_success
-    children_proceeing
+    children_proceeding
     attempts_to_settle
   ].freeze
 
@@ -19,11 +18,11 @@ class MeritsTaskPopulator
 
   def call
     APPLICATION_MERITS_TASKS.each do |mt|
-      populate(mt, ApplicationMeritsTask)
+      populate(mt, ApplicationTask)
     end
 
     PROCEEDING_TYPE_MERITS_TASKS.each do |mt|
-      populate(mt, ProceedingTypeMeritsTask)
+      populate(mt, ProceedingTask)
     end
   end
 
@@ -33,5 +32,4 @@ class MeritsTaskPopulator
     record = klass.find_by(name: merits_task) || klass.new
     record.update!(name: merits_task)
   end
-
 end

@@ -63,6 +63,7 @@ GEM
     apipie-rails (0.5.18)
       rails (>= 4.1)
     ast (2.4.2)
+    awesome_print (1.9.2)
     bootsnap (1.7.3)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -227,6 +228,7 @@ PLATFORMS
 
 DEPENDENCIES
   apipie-rails (>= 0.5.18)
+  awesome_print
   bootsnap (>= 1.4.4)
   byebug
   guard-rubocop
