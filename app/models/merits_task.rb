@@ -1,3 +1,2 @@
 class MeritsTask < ApplicationRecord
-
 end

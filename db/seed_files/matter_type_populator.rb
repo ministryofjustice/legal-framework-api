@@ -1,15 +1,12 @@
 class MatterTypePopulator
-  SEED_DATA = [
-    ['Domestic abuse', true, true, true],
-    ['Children - section 8', false, false, false]
-  ]
+  DATA_FILE = Rails.root.join('db/seed_data/matter_types.yml').freeze
 
   def self.call
     new.call
   end
 
   def call
-    SEED_DATA.each { |seed_row| populate(seed_row) }
+    seed_data.each { |seed_row| populate(seed_row) }.freeze
   end
 
   private
@@ -23,7 +20,9 @@ class MatterTypePopulator
       upper_disposable_income_waiver: disposable_income,
       upper_capital_waiver: capital
     )
+  end
 
+  def seed_data
+    @seed_data ||= YAML.load_file(DATA_FILE)
   end
 end
-

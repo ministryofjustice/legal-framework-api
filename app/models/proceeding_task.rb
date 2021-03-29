@@ -1,0 +1,2 @@
+class ProceedingTask < MeritsTask
+end

@@ -1,0 +1,2 @@
+class ApplicationTask < MeritsTask
+end

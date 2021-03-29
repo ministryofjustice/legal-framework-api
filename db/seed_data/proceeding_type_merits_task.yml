@@ -1,0 +1,69 @@
+---
+:DA001:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA002:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA003:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA004:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA005:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA006:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA007:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:DA020:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+:SE003:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+  - children_application
+  - children_proceeding
+:SE004:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+  - children_application
+  - children_proceeding
+:SE013:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+  - children_application
+  - children_proceeding
+:SE014:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+  - children_application
+  - children_proceeding
