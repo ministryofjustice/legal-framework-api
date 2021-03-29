@@ -10,43 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_329_110_536) do
+ActiveRecord::Schema.define(version: 2021_03_29_150054) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'pgcrypto'
-  enable_extension 'plpgsql'
+  enable_extension "pgcrypto"
+  enable_extension "plpgsql"
 
-  create_table 'matter_types', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.string 'name', null: false
-    t.boolean 'upper_gross_income_waiver', default: false, null: false
-    t.boolean 'upper_disposable_income_waiver', default: false, null: false
-    t.boolean 'upper_capital_waiver', default: false, null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['name'], name: 'index_matter_types_on_name', unique: true
+  create_table "matter_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "upper_gross_income_waiver", default: false, null: false
+    t.boolean "upper_disposable_income_waiver", default: false, null: false
+    t.boolean "upper_capital_waiver", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_matter_types_on_name", unique: true
   end
 
-  create_table 'merits_tasks', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.string 'name', null: false
-    t.string 'type', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "merits_tasks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
+    t.string "type", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'proceeding_type_merits_tasks', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.uuid 'proceeding_type_id', null: false
-    t.uuid 'merits_task_id', null: false
-    t.integer 'sequence', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['proceeding_type_id'], name: 'index_proceeding_type_merits_tasks_on_proceeding_type_id'
+  create_table "proceeding_type_merits_tasks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "proceeding_type_id", null: false
+    t.uuid "merits_task_id", null: false
+    t.integer "sequence", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proceeding_type_id"], name: "index_proceeding_type_merits_tasks_on_proceeding_type_id"
   end
 
-  create_table 'proceeding_types', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.string 'ccms_code', null: false
-    t.string 'meaning', null: false
-    t.string 'description', null: false
-    t.uuid 'matter_type_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "proceeding_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "ccms_code", null: false
+    t.string "meaning", null: false
+    t.string "description", null: false
+    t.uuid "matter_type_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
+  create_table "task_dependencies", force: :cascade do |t|
+    t.uuid "merits_task_id"
+    t.uuid "dependency_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end

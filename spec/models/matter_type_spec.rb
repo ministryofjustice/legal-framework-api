@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MatterType do
   describe 'finders' do
     before do
-      require Rails.root.join('db/seed_files/matter_type_populator')
+      require Rails.root.join('db/populators/matter_type_populator')
       MatterTypePopulator.call
     end
     describe '.domestic_abuse' do
