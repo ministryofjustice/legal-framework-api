@@ -1,4 +1,10 @@
 ---
+# List of proceeding types
+# - ccms_code
+# - meaning
+# - description
+# - method to call to get the matter_type id
+#
 - - DA006
   - Extend, variation or discharge - Part IV
   - to be represented on an application to extend, vary or discharge an order under
