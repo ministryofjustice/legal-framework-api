@@ -64,3 +64,15 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+def seed_live_data
+  Dir[Rails.root.join('db/populators/*.rb')].sort.each do |seed_file|
+    require seed_file
+  end
+
+  MatterTypePopulator.call
+  ProceedingTypePopulator.call
+  MeritsTaskPopulator.call
+  ProceedingTypeMeritsTaskPopulator.call
+  TaskDependencyPopulator.call
+end

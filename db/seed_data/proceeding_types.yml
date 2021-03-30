@@ -1,0 +1,63 @@
+---
+# List of proceeding types
+# - ccms_code
+# - meaning
+# - description
+# - method to call to get the matter_type id
+#
+- - DA006
+  - Extend, variation or discharge - Part IV
+  - to be represented on an application to extend, vary or discharge an order under
+    Part IV Family Law Act 1996
+  - domestic_abuse_id
+- - DA007
+  - Forced marriage protection order
+  - to be represented on an application for a forced marriage protection order
+  - domestic_abuse_id
+- - DA003
+  - Harassment - injunction
+  - to be represented in an action for an injunction under section 3 Protection from
+    Harassment Act 1997.
+  - domestic_abuse_id
+- - DA001
+  - Inherent jurisdiction high court injunction
+  - to be represented on an application for an injunction, order or declaration under
+    the inherent jurisdiction of the court.
+  - domestic_abuse_id
+- - DA004
+  - Non-molestation order
+  - to be represented on an application for a non-molestation order.
+  - domestic_abuse_id
+- - DA005
+  - Occupation order
+  - to be represented on an application for an occupation order.
+  - domestic_abuse_id
+- - DA002
+  - Variation or discharge under section 5 protection from harassment act 1997
+  - to be represented on an application to vary or discharge an order under section
+    5 Protection from Harassment Act 1997 where the parties are associated persons
+    (as defined by Part IV Family Law Act 1996).
+  - domestic_abuse_id
+- - DA020
+  - FGM Protection Order
+  - To be represented on an application for a Female Genital Mutilation Protection
+    Order under the Female Genital Mutilation Act.
+  - domestic_abuse_id
+- - SE003
+  - Prohibited steps order
+  - to be represented on an application for a prohibited steps order.
+  - section8_id
+- - SE004
+  - Specific Issue Order
+  - to be represented on an application for a specific issue order.
+  - section8_id
+- - SE013
+  - Child arrangements order (contact)
+  - to be represented on an application for a child arrangements order-who the child(ren)
+    spend time with.
+  - section8_id
+- - SE014
+  - Child arrangements order (residence)
+  - to be represented on an application for a child arrangements order –where the
+    child(ren) will live
+  - section8_id

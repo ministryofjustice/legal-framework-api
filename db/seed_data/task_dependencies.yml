@@ -1,0 +1,10 @@
+---
+#
+# Lists all merits tasks which are dependent upon other tasks being completed first
+#
+# name_of_merits_task:
+# - name of first task which must be completed prior to this task
+# - name of second taks which must be completed prior to this task
+#
+children_proceeding:
+  - children_application
