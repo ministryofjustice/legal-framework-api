@@ -178,26 +178,26 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
-    merge_pr:
-      jobs:
-        - lint_checks:
-            filters:
-              branches:
-                only: main
-        - unit_tests:
-            filters:
-              branches:
-                only: main
-        - build_and_push:
-            requires:
-              - lint_checks
-              - unit_tests
-        - deploy_main_uat:
-            requires:
-              - build_and_push
-        - delete_uat_branch:
-            requires:
-              - deploy_main_uat
-        - deploy_staging:
-            requires:
-              - build_and_push
+  merge_pr:
+    jobs:
+      - lint_checks:
+          filters:
+            branches:
+              only: main
+      - unit_tests:
+          filters:
+            branches:
+              only: main
+      - build_and_push:
+          requires:
+            - lint_checks
+            - unit_tests
+      - deploy_main_uat:
+          requires:
+            - build_and_push
+      - delete_uat_branch:
+          requires:
+            - deploy_main_uat
+      - deploy_staging:
+          requires:
+            - build_and_push
