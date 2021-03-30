@@ -40,13 +40,8 @@ jobs:
             kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
             kubectl config use-context ${K8S_CLUSTER_NAME}
       - run:
-          name: Install Legal Framework API UAT
+          name: Helm deployment to UAT
           command: |
             echo "Installing LFAPI helm chart"
-            helm upgrade legal-framework-api-uat ./deploy/helm/. \
-              --install --wait \
-              --namespace=${K8S_NAMESPACE} \
-              --values ./deploy/helm/values-uat.yaml \
-              --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
-              --set image.tag="${CIRCLE_SHA1}"
+            ./bin/uat_deploy
             kubectl --namespace=${K8S_NAMESPACE} get pods
