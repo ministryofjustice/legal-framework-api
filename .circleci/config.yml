@@ -9,7 +9,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: ${ECR_ENDPOINT}/cloud-platform/tools:circleci-internal
+      - image: ministryofjustice/cloud-platform-tools:1.23
         environment:
           IMAGE_URI: ${ECR_ENDPOINT}/legal-framework-api
     steps:
