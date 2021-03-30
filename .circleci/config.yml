@@ -99,32 +99,6 @@ references:
       command: |
         bundle exec rake db:create db:schema:load
         bundle exec rake db:migrate
-  setup_aws_login: &setup_aws_login
-    run:
-      name: Setup aws login
-      command: |
-        sudo apt-get update
-        sudo apt-get install -y python3-pip
-        sudo pip3 install awscli
-        $(aws ecr get-login --region eu-west-2 --no-include-email)
-  setup_kubectl: &setup_kubectl
-    run:
-      name: Kubectl deployment setup UAT for LFA
-      command: |
-        $(aws ecr get-login --region eu-west-2 --no-include-email)
-        setup-kube-auth
-  update_packages: &update_packages # this is required to install git-crypt -- next step
-    run:
-      name: Update packages
-      command: sudo apt-get update
-  install_git_crypt: &install_git_crypt
-    run:
-      name: Install git-crypt
-      command: sudo apt-get install -y git-crypt
-#  install_js_packages: &install_js_packages
-#    run:
-#      name: Install npm packages
-#      command: npm install
 
 jobs:
   lint_checks:
@@ -146,7 +120,6 @@ jobs:
       - *install_gems
       - *save_gems_cache
       - *setup_database
-#      - *install_js_packages I am not sure if this is required testing without it for now
       - run:
           name: Run ruby tests
           command: bin/rails spec
@@ -173,30 +146,6 @@ jobs:
             echo "k8s authenticated"
             echo "Installing LFAPI helm chart"
             ./bin/uat_deploy
-  build:
-    docker:
-      - image: ministryofjustice/cloud-platform-tools:1.23
-        environment:
-          IMAGE_URI: ${ECR_ENDPOINT}/legal-framework-api
-    steps:
-      - checkout
-      - setup_remote_docker
-      - *decrypt_secrets
-      - *build_docker_image
-      - *push_to_ecr
-      - run:
-          name: Authenticate with cluster
-          command: |
-            echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
-            kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-            kubectl config set-credentials circleci --token=${K8S_TOKEN}
-            kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
-            kubectl config use-context ${K8S_CLUSTER_NAME}
-      - run:
-          name: Helm deployment to UAT
-          command: |
-            echo "Installing LFAPI helm chart"
-            ./bin/uat_deploy
 
 workflows:
   Build and deploy:
@@ -218,5 +167,3 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
-#      - build:
-#          context: legal-framework-api-uat
