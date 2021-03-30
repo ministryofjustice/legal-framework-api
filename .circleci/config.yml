@@ -36,6 +36,35 @@ executors:
           - POSTGRES_USER=user
           - POSTGRES_DB=legal_framework_api_test
 
+references:
+  build_docker_image: &build_docker_image
+    run:
+      name: Build application Docker image
+        command: |
+          $(aws ecr get-login --no-include-email)
+          docker build \
+          --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z) \
+          --build-arg BUILD_TAG="app-${CIRCLE_SHA1}" \
+          --build-arg APP_BRANCH=${CIRCLE_BRANCH} \
+          -t app .
+  push_to_ecr: &push_to_ecr
+    run:
+      name: Push image to ecr repo
+      command: |
+        docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+        docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+
+        if [ "${CIRCLE_BRANCH}" == "main" ]; then
+          docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
+          docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
+        fi
+  decrypt_secrets: &decrypt_secrets
+    run:
+      name: Decrypt secrets file
+      command: |
+        echo "${GIT_CRYPT_KEY}" | base64 -d > git-crypt.key
+        git-crypt unlock git-crypt.key
+
 workflows:
   Build and deploy:
     jobs:
@@ -51,22 +80,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Decrypt secrets file
-          command: |
-            echo "${GIT_CRYPT_KEY}" | base64 -d > git-crypt.key
-            git-crypt unlock git-crypt.key
-      - run:
-          name: Build application Docker image and push to ECR
-          command: |
-            $(aws ecr get-login --no-include-email)
-            docker build \
-            --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z) \
-            --build-arg BUILD_TAG="app-${CIRCLE_SHA1}" \
-            --build-arg APP_BRANCH=${CIRCLE_BRANCH} \
-            -t app .
-            docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
-            docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+      - *decrypt_secrets
+      - *build_docker_image
+      - *push_to_ecr
       - run:
           name: Authenticate with cluster
           command: |
