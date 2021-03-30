@@ -80,6 +80,20 @@ references:
       key: legal-framework-api-{{ checksum "Gemfile.lock" }}
       paths:
         - vendor/bundle
+  install_packages_for_testing: &install_packages_for_testing
+    run:
+      name: Install System packages needed for testing
+      command: sudo apt-get install -y postgresql-client
+  setup_database: &setup_database
+    run:
+      name: Database Setup
+      command: |
+        bundle exec rake db:create db:schema:load
+        bundle exec rake db:migrate
+#  install_js_packages: &install_js_packages
+#    run:
+#      name: Install npm packages
+#      command: npm install
 
 jobs:
   lint_checks:
@@ -92,6 +106,19 @@ jobs:
       - run:
           name: Run Rubocop
           command:  bin/rails rubocop
+  unit_tests:
+    executor: test-executor
+    steps:
+      - checkout
+      - *install_packages_for_testing
+      - *restore_gems_cache
+      - *install_gems
+      - *save_gems_cache
+      - *setup_database
+#      - *install_js_packages I am not sure if this is required testing without it for now
+      - run:
+          name: Run ruby tests
+          command: bin/rails spec
   build:
     docker:
       - image: ministryofjustice/cloud-platform-tools:1.23
@@ -121,6 +148,10 @@ workflows:
   Build and deploy:
     jobs:
       - lint_checks:
+          filters:
+            branches:
+              ignore: master
+      - unit_tests:
           filters:
             branches:
               ignore: master
