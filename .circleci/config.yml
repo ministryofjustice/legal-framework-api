@@ -157,6 +157,26 @@ jobs:
           name: Delete UAT release
           command: |
             ./bin/delete_uat_release.sh
+  deploy_staging:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+#      - *setup_kubectl
+#      - run:
+#          name: Set kubectl context
+#          command: kubectl config use-context staging
+      - *decrypt_secrets
+      - deploy:
+          name: Helm deployment to staging
+          command: |
+            helm upgrade legal-framework-api ./deploy/helm/. \
+                          --install --wait \
+                          --namespace=${K8S_NAMESPACE} \
+                          --values ./deploy/helm/values-staging.yaml \
+                          --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
+                          --set image.tag="${CIRCLE_SHA1}"
 
 workflows:
   Build and deploy:
