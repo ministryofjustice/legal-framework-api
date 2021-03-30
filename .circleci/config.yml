@@ -1,5 +1,41 @@
 version: 2.1
 
+orbs:
+  slack: circleci/slack@3.4.2
+executors:
+  basic-executor:
+    docker:
+      - image: cimg/base:2020.01
+  cloud-platform-executor:
+    docker:
+      - image: ministryofjustice/cloud-platform-tools:1.23
+        environment:
+          GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
+  linting-executor:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+        environment:
+          - RAILS_ENV=test
+          - TZ: "Europe/London"
+  notification-executor:
+    docker:
+      - image: 'cibuilds/base:latest'
+        environment:
+          TERM: dumb
+    resource_class: small
+  test-executor:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+        environment:
+          - RAILS_ENV=test
+          - PGHOST=localhost
+          - PGUSER=user
+          - TZ: "Europe/London"
+      - image: postgres:10.5
+        environment:
+          - POSTGRES_USER=user
+          - POSTGRES_DB=legal_framework_api_test
+
 workflows:
   Build and deploy:
     jobs:
