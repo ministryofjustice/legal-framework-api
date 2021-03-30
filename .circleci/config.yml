@@ -132,7 +132,7 @@ jobs:
       - *decrypt_secrets
       - *build_docker_image
       - *push_to_ecr
-  deploy_uat:
+  deploy_uat: &deploy_uat
     executor: cloud-platform-executor
     steps:
       - checkout
@@ -146,6 +146,17 @@ jobs:
             echo "k8s authenticated"
             echo "Installing LFAPI helm chart"
             ./bin/uat_deploy
+  deploy_master_uat:
+    <<: *deploy_uat
+  delete_uat_branch:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Delete UAT release
+          command: |
+            ./bin/delete_uat_release.sh
 
 workflows:
   Build and deploy:
@@ -167,3 +178,30 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
+    merge_pr:
+      jobs:
+        - lint_checks:
+            filters:
+              branches:
+                only: master
+        - unit_tests:
+            filters:
+              branches:
+                only: master
+        - build_and_push:
+            requires:
+              - lint_checks
+              - unit_tests
+        - deploy_master_uat:
+            requires:
+              - build_and_push
+        - delete_uat_branch:
+            requires:
+              - deploy_master_uat
+        - deploy_staging:
+            requires:
+              - build_and_push
+        - hold_production_notification:
+            requires:
+              - delete_uat_branch
+              - deploy_staging
