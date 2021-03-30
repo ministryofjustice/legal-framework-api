@@ -65,7 +65,6 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-
 def seed_live_data
   Dir[Rails.root.join('db/populators/*.rb')].sort.each do |seed_file|
     require seed_file
