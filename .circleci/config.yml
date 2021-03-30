@@ -64,14 +64,34 @@ references:
       command: |
         echo "${GIT_CRYPT_KEY}" | base64 -d > git-crypt.key
         git-crypt unlock git-crypt.key
-
-workflows:
-  Build and deploy:
-    jobs:
-      - build:
-          context: legal-framework-api-uat
+  restore_gems_cache: &restore_gems_cache
+    restore_cache:
+      keys:
+        - legal-framework-api-{{ checksum "Gemfile.lock" }}
+        - legal-framework-api
+  install_gems: &install_gems
+    run:
+      name: Install ruby gems
+      command: |
+        gem install bundler -v 2.0.2
+        bundle install --without development --path=vendor/bundle --jobs=4 && bundle clean
+  save_gems_cache: &save_gems_cache
+    save_cache:
+      key: legal-framework-api-{{ checksum "Gemfile.lock" }}
+      paths:
+        - vendor/bundle
 
 jobs:
+  lint_checks:
+    executor: linting-executor
+    steps:
+      - checkout
+      - *restore_gems_cache
+      - *install_gems
+      - *save_gems_cache
+      - run:
+          name: Run Rubocop
+          command:  bin/rails rubocop
   build:
     docker:
       - image: ministryofjustice/cloud-platform-tools:1.23
@@ -96,3 +116,13 @@ jobs:
           command: |
             echo "Installing LFAPI helm chart"
             ./bin/uat_deploy
+
+workflows:
+  Build and deploy:
+    jobs:
+      - lint_checks:
+          filters:
+            branches:
+              ignore: master
+      - build:
+          context: legal-framework-api-uat
