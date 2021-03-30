@@ -44,4 +44,3 @@ jobs:
           command: |
             echo "Installing LFAPI helm chart"
             ./bin/uat_deploy
-            kubectl --namespace=${K8S_NAMESPACE} get pods
