@@ -1,12 +1,97 @@
 version: 2.1
 
-workflows:
-  Build and deploy:
-    jobs:
-      - build:
-          context: legal-framework-api-uat
+orbs:
+  slack: circleci/slack@3.4.2
+executors:
+  basic-executor:
+    docker:
+      - image: cimg/base:2020.01
+  cloud-platform-executor:
+    docker:
+      - image: ministryofjustice/cloud-platform-tools:1.23
+        environment:
+          GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
+  linting-executor:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+        environment:
+          - RAILS_ENV=test
+          - TZ: "Europe/London"
+  notification-executor:
+    docker:
+      - image: 'cibuilds/base:latest'
+        environment:
+          TERM: dumb
+    resource_class: small
+  test-executor:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+        environment:
+          - RAILS_ENV=test
+          - PGHOST=localhost
+          - PGUSER=user
+          - TZ: "Europe/London"
+      - image: postgres:10.5
+        environment:
+          - POSTGRES_USER=user
+          - POSTGRES_DB=legal_framework_api_test
+
+references:
+  build_docker_image: &build_docker_image
+    run:
+      name: Build docker image
+      command: |
+        $(aws ecr get-login --no-include-email)
+        docker build \
+        --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z) \
+        --build-arg BUILD_TAG="app-${CIRCLE_SHA1}" \
+        --build-arg APP_BRANCH=${CIRCLE_BRANCH} \
+        -t app .
+  push_to_ecr: &push_to_ecr
+    run:
+      name: Push image to ecr repo
+      command: |
+        docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+        docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+
+        if [ "${CIRCLE_BRANCH}" == "main" ]; then
+          docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
+          docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
+        fi
+  decrypt_secrets: &decrypt_secrets
+    run:
+      name: Decrypt secrets file
+      command: |
+        echo "${GIT_CRYPT_KEY}" | base64 -d > git-crypt.key
+        git-crypt unlock git-crypt.key
+  restore_gems_cache: &restore_gems_cache
+    restore_cache:
+      keys:
+        - legal-framework-api-{{ checksum "Gemfile.lock" }}
+        - legal-framework-api
+  install_gems: &install_gems
+    run:
+      name: Install ruby gems
+      command: |
+        gem install bundler -v 2.0.2
+        bundle install --without development --path=vendor/bundle --jobs=4 && bundle clean
+  save_gems_cache: &save_gems_cache
+    save_cache:
+      key: legal-framework-api-{{ checksum "Gemfile.lock" }}
+      paths:
+        - vendor/bundle
 
 jobs:
+  lint_checks:
+    executor: linting-executor
+    steps:
+      - checkout
+      - *restore_gems_cache
+      - *install_gems
+      - *save_gems_cache
+      - run:
+          name: Run Rubocop
+          command:  bin/rails rubocop
   build:
     docker:
       - image: ministryofjustice/cloud-platform-tools:1.23
@@ -15,22 +100,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Decrypt secrets file
-          command: |
-            echo "${GIT_CRYPT_KEY}" | base64 -d > git-crypt.key
-            git-crypt unlock git-crypt.key
-      - run:
-          name: Build application Docker image and push to ECR
-          command: |
-            $(aws ecr get-login --no-include-email)
-            docker build \
-            --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z) \
-            --build-arg BUILD_TAG="app-${CIRCLE_SHA1}" \
-            --build-arg APP_BRANCH=${CIRCLE_BRANCH} \
-            -t app .
-            docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
-            docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
+      - *decrypt_secrets
+      - *build_docker_image
+      - *push_to_ecr
       - run:
           name: Authenticate with cluster
           command: |
@@ -44,4 +116,13 @@ jobs:
           command: |
             echo "Installing LFAPI helm chart"
             ./bin/uat_deploy
-            kubectl --namespace=${K8S_NAMESPACE} get pods
+
+workflows:
+  Build and deploy:
+    jobs:
+      - lint_checks:
+          filters:
+            branches:
+              ignore: master
+      - build:
+          context: legal-framework-api-uat
