@@ -1,5 +1,4 @@
 class UuidValidator < Apipie::Validator::BaseValidator
-
   def self.build(param_description, argument, _options, _block)
     new(param_description) if argument == :uuid
   end

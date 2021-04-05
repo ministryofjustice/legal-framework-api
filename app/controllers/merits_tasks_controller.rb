@@ -4,7 +4,7 @@ class MeritsTasksController < ApplicationController
   resource_description do
     description <<-END_OF_TEXT
     == Description
-      This endpoint accepts an array of proceeding types identified by 
+      This endpoint accepts an array of proceeding types identified by#{' '}
       ccms_code, and returns a list of merits task for the application, and for
       each proceeding type
 
@@ -27,12 +27,12 @@ class MeritsTasksController < ApplicationController
     end
   end
 
-  returns code: :unprocessable_entity do
+  returns code: :bad_request do
     property :request_id, :uuid, desc: 'The request_id specified in the request'
     property :success, ['false'], desc: 'Success flag shows false'
     property :error_class, String, desc: 'Name of the error class that caused the exception'
     property :message, String, desc: 'Error message'
-    property :backtrace, String, desc: 'Backtrace of exception'
+    property :backtrace, array_of: String, desc: 'Backtrace of exception'
   end
 
   def create
@@ -52,5 +52,4 @@ class MeritsTasksController < ApplicationController
   def ccms_codes
     params[:proceeding_types]
   end
-
 end

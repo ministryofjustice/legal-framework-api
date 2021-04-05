@@ -17,7 +17,7 @@ RSpec.describe MeritsTaskService do
     end
 
     context 'domestic abuse and section 8 proceeding type' do
-      let(:ccms_codes) { %w[DA005 SE003 SE013]}
+      let(:ccms_codes) { %w[DA005 SE003 SE013] }
       it 'returns response with dependencies' do
         expect(subject).to eq expected_da005_se004_se013_response
       end
@@ -43,7 +43,7 @@ RSpec.describe MeritsTaskService do
         expect(response[:request_id]).to eq request_id
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq 'MeritsTaskService::MeritsTaskServiceError'
-        expect(response[:message]).to eq "Must specify at least one proceeding type"
+        expect(response[:message]).to eq 'Must specify at least one proceeding type'
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
@@ -55,9 +55,9 @@ RSpec.describe MeritsTaskService do
       success: true,
       application: {
         tasks: {
-        'latest_incident_details' => [],
-        'opponent_details' => [],
-        'statement_of_case' => []
+          'latest_incident_details' => [],
+          'opponent_details' => [],
+          'statement_of_case' => []
         }
       },
       proceeding_types: [
@@ -99,5 +99,4 @@ RSpec.describe MeritsTaskService do
       ]
     }
   end
-
 end

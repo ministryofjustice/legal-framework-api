@@ -1,5 +1,4 @@
 class MeritsTaskService
-
   class MeritsTaskServiceError < StandardError; end
 
   def self.call(request_id, ccms_codes)
@@ -8,24 +7,23 @@ class MeritsTaskService
 
   def initialize(request_id, ccms_codes)
     @request_id = request_id
-    @ccms_codes  = ccms_codes
+    @ccms_codes = ccms_codes
     @response = create_skeleton_response
   end
 
-
   def call
     raise MeritsTaskServiceError, 'Must specify at least one proceeding type' if @ccms_codes.empty?
+
     @ccms_codes.each { |ccms_code| add_tasks_to_response(ccms_code) }
     @response
-  rescue => err
+  rescue StandardError => err
     @response = error_response_for(err)
   end
-
 
   private
 
   def create_skeleton_response
-    response = {
+    {
       request_id: @request_id,
       success: true,
       application: {
@@ -33,7 +31,6 @@ class MeritsTaskService
       },
       proceeding_types: []
     }
-    response
   end
 
   def add_tasks_to_response(ccms_code)
