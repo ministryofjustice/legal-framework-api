@@ -1,7 +1,6 @@
 #!/bin/sh
 
 deploy() {
-  echo "This is the bin/uat-deploy file"
   IMG_REPO="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr"
   RELEASE_NAME=$(echo $CIRCLE_BRANCH | sed 's:^\w*\/::' | tr -s ' _/[]().' '-' | cut -c1-30 | sed 's/-$//')
   RELEASE_HOST="$RELEASE_NAME-legal-framework-uat.apps.live-1.cloud-platform.service.justice.gov.uk"
