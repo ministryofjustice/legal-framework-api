@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Api documentation
 gem 'apipie-rails', '>= 0.5.18'
 
+gem 'webpacker', '~> 5', '>= 5.2.1'
+
 group :development, :test do
   gem 'awesome_print'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
