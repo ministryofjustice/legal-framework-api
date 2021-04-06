@@ -58,15 +58,30 @@ references:
           docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
           docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
         fi
-  authenticate_k8s: &authenticate_k8s
+  authenticate_k8s_uat: &authenticate_k8s_uat
     run:
       name: Authenticate with cluster
       command: |
         echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
         kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-        kubectl config set-credentials circleci --token=${K8S_TOKEN}
-        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
+        kubectl config set-credentials circleci --token=${K8S_UAT_TOKEN}
+        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_UAT_NAMESPACE}
         kubectl config use-context ${K8S_CLUSTER_NAME}
+  authenticate_k8s_staging: &authenticate_k8s_staging
+    run:
+      name: Authenticate with cluster
+      command: |
+        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
+        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
+        kubectl config set-credentials circleci --token=${K8S_STAGING_TOKEN}
+        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_STAGING_NAMESPACE}
+        kubectl config use-context ${K8S_CLUSTER_NAME}
+  setup_kubectl: &setup_kubectl
+    run:
+      name: Kubectl deployment setup UAT
+      command: |
+        $(aws ecr get-login --region eu-west-2 --no-include-email)
+        setup-kube-auth
   decrypt_secrets: &decrypt_secrets
     run:
       name: Decrypt secrets file
@@ -139,7 +154,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *decrypt_secrets
-      - *authenticate_k8s
+      - *authenticate_k8s_uat
       - deploy:
           name: Helm deployment to UAT
           command: |
@@ -153,7 +168,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - *authenticate_k8s
+      - *authenticate_k8s_uat
       - run:
           name: Delete UAT release
           command: |
@@ -169,12 +184,13 @@ jobs:
 #          name: Set kubectl context
 #          command: kubectl config use-context staging
       - *decrypt_secrets
+      - *authenticate_k8s_staging
       - deploy:
           name: Helm deployment to staging
           command: |
             helm upgrade legal-framework-api ./deploy/helm/. \
                           --install --wait \
-                          --namespace=${K8S_NAMESPACE} \
+                          --namespace=${K8S_STAGING_NAMESPACE} \
                           --values ./deploy/helm/values-staging.yaml \
                           --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                           --set image.tag="${CIRCLE_SHA1}"
@@ -191,6 +207,10 @@ workflows:
             branches:
               ignore: main
       - build_and_push:
+          filters:
+            branches:
+              ignore: main
+      - deploy_staging:
           filters:
             branches:
               ignore: main
@@ -219,6 +239,7 @@ workflows:
       - delete_uat_branch:
           requires:
             - deploy_main_uat
+            - deploy_staging
       - deploy_staging:
           requires:
             - build_and_push
