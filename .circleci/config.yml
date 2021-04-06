@@ -126,7 +126,8 @@ jobs:
           IMAGE_URI: ${ECR_ENDPOINT}/legal-framework-api
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+        version: 19.03.13
       - *decrypt_secrets
       - *build_docker_image
       - *push_to_ecr
