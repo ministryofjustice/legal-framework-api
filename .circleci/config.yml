@@ -225,13 +225,6 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
-      - deploy_staging:
-          requires:
-            - deploy_uat
-            - build_and_push
-      - deploy_production:
-          requires:
-            - deploy_staging
 
   merge_pr:
     jobs:
