@@ -153,6 +153,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - *authenticate_k8s
       - run:
           name: Delete UAT release
           command: |
