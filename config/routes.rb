@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     apipie
     resources :merits_tasks, only: %i[create]
   end
-  
+
   get 'ping', to: 'status#ping', format: :json
 end
