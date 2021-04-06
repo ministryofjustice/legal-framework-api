@@ -76,12 +76,12 @@ references:
         kubectl config set-credentials circleci --token=${K8S_STAGING_TOKEN}
         kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_STAGING_NAMESPACE}
         kubectl config use-context ${K8S_CLUSTER_NAME}
-  setup_kubectl: &setup_kubectl
-    run:
-      name: Kubectl deployment setup UAT
-      command: |
-        $(aws ecr get-login --region eu-west-2 --no-include-email)
-        setup-kube-auth
+#  setup_kubectl: &setup_kubectl
+#    run:
+#      name: Kubectl deployment setup UAT
+#      command: |
+#        $(aws ecr get-login --region eu-west-2 --no-include-email)
+#        setup-kube-auth
   decrypt_secrets: &decrypt_secrets
     run:
       name: Decrypt secrets file
@@ -179,10 +179,6 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
-#      - *setup_kubectl
-#      - run:
-#          name: Set kubectl context
-#          command: kubectl config use-context staging
       - *decrypt_secrets
       - *authenticate_k8s_staging
       - deploy:
@@ -211,14 +207,21 @@ workflows:
             branches:
               ignore: main
       - deploy_staging:
-          filters:
-            branches:
-              ignore: main
-      - deploy_uat:
           requires:
             - lint_checks
             - unit_tests
             - build_and_push
+#      - deploy_staging:
+#          requires:
+#            - build_and_push
+#          filters:
+#            branches:
+#              ignore: main
+#      - deploy_uat:
+#          requires:
+#            - lint_checks
+#            - unit_tests
+#            - build_and_push
   merge_pr:
     jobs:
       - lint_checks:
