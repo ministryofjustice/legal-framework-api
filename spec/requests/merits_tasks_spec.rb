@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe MeritsTasksController, type: :request do
   describe 'POST /merits_tasks' do
     let(:request_id) { SecureRandom.uuid }
+    let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
       {
         request_id: request_id,
@@ -12,7 +13,7 @@ RSpec.describe MeritsTasksController, type: :request do
       }
     end
 
-    subject { post merits_tasks_path, params: params }
+    subject { post merits_tasks_path, params: params.to_json, headers: headers }
 
     context 'successful request' do
       before { seed_live_data }
@@ -34,6 +35,7 @@ RSpec.describe MeritsTasksController, type: :request do
         history = RequestHistory.find_by(request_id: request_id)
         expect(history.request_method).to eq 'POST'
         expect(history.endpoint).to eq '/merits_tasks'
+
         expect(history.request_payload).to eq params.to_json
         expect(history.response_status).to eq 200
         expect(history.response_payload).to eq expected_successful_response.to_json

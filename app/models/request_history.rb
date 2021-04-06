@@ -4,7 +4,7 @@ class RequestHistory < ApplicationRecord
             request_id: request_id,
             endpoint: http_request.fullpath,
             remote_ip: http_request.remote_ip,
-            request_payload: request_payload(http_request))
+            request_payload: http_request.raw_post)
   end
 
   def record_response(status, response)
