@@ -8,7 +8,7 @@ executors:
       - image: cimg/base:2020.01
   cloud-platform-executor:
     docker:
-      - image: ministryofjustice/cloud-platform-tools:1.23
+      - image: ministryofjustice/cloud-platform-tools:1.24
         environment:
           GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
   linting-executor:
@@ -17,12 +17,6 @@ executors:
         environment:
           - RAILS_ENV=test
           - TZ: "Europe/London"
-  notification-executor:
-    docker:
-      - image: 'cibuilds/base:latest'
-        environment:
-          TERM: dumb
-    resource_class: small
   test-executor:
     docker:
       - image: circleci/ruby:2.7.2-node-browsers
@@ -58,14 +52,32 @@ references:
           docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
           docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
         fi
-  authenticate_k8s: &authenticate_k8s
+  authenticate_k8s_uat: &authenticate_k8s_uat
     run:
-      name: Authenticate with cluster
+      name: UAT - Authenticate with cluster
       command: |
         echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
         kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-        kubectl config set-credentials circleci --token=${K8S_TOKEN}
-        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
+        kubectl config set-credentials circleci --token=${K8S_UAT_TOKEN}
+        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_UAT_NAMESPACE}
+        kubectl config use-context ${K8S_CLUSTER_NAME}
+  authenticate_k8s_staging: &authenticate_k8s_staging
+    run:
+      name: Staging - Authenticate with cluster
+      command: |
+        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
+        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
+        kubectl config set-credentials circleci --token=${K8S_STAGING_TOKEN}
+        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_STAGING_NAMESPACE}
+        kubectl config use-context ${K8S_CLUSTER_NAME}
+  authenticate_k8s_production: &authenticate_k8s_production
+    run:
+      name: Production - Authenticate with cluster
+      command: |
+        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
+        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
+        kubectl config set-credentials circleci --token=${K8S_PRODUCTION_TOKEN}
+        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_PRODUCTION_NAMESPACE}
         kubectl config use-context ${K8S_CLUSTER_NAME}
   decrypt_secrets: &decrypt_secrets
     run:
@@ -139,7 +151,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *decrypt_secrets
-      - *authenticate_k8s
+      - *authenticate_k8s_uat
       - deploy:
           name: Helm deployment to UAT
           command: |
@@ -153,7 +165,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - *authenticate_k8s
+      - *authenticate_k8s_uat
       - run:
           name: Delete UAT release
           command: |
@@ -164,23 +176,37 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
-#      - *setup_kubectl
-#      - run:
-#          name: Set kubectl context
-#          command: kubectl config use-context staging
       - *decrypt_secrets
+      - *authenticate_k8s_staging
       - deploy:
           name: Helm deployment to staging
           command: |
             helm upgrade legal-framework-api ./deploy/helm/. \
                           --install --wait \
-                          --namespace=${K8S_NAMESPACE} \
+                          --namespace=${K8S_STAGING_NAMESPACE} \
                           --values ./deploy/helm/values-staging.yaml \
                           --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                           --set image.tag="${CIRCLE_SHA1}"
+  deploy_production:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - *decrypt_secrets
+      - *authenticate_k8s_production
+      - deploy:
+          name: Helm deployment to production
+          command: |
+            helm upgrade legal-framework-api ./deploy/helm/. \
+                        --install --wait \
+                        --namespace=${K8S_PRODUCTION_NAMESPACE} \
+                        --values ./deploy/helm/values-production.yaml \
+                        --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
+                        --set image.tag="${CIRCLE_SHA1}"
 
 workflows:
-  Build and deploy:
+  new_pull_request:
     jobs:
       - lint_checks:
           filters:
@@ -199,6 +225,7 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
+
   merge_pr:
     jobs:
       - lint_checks:
@@ -222,3 +249,11 @@ workflows:
       - deploy_staging:
           requires:
             - build_and_push
+      - hold_production:
+          type: approval
+          requires:
+            - delete_uat_branch
+            - deploy_staging
+      - deploy_production:
+          requires:
+            - hold_production
