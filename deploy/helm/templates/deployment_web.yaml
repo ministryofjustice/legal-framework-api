@@ -30,12 +30,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /hello_world
+              path: /ping.json
               port: http
             initialDelaySeconds: 30
           readinessProbe:
             httpGet:
-              path: /hello_world
+              path: /ping.json
               port: http
             initialDelaySeconds: 30
           resources:

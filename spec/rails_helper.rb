@@ -76,3 +76,7 @@ def seed_live_data
   ProceedingTypeMeritsTaskPopulator.call
   TaskDependencyPopulator.call
 end
+
+def parsed_response
+  JSON.parse(response.body, symbolize_names: true)
+end
