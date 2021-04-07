@@ -12,7 +12,7 @@ then
 
   echo "Attempting to delete UAT release $UAT_RELEASE"
 
-  UAT_RELEASES=$(helm list --namespace=${KUBE_ENV_UAT_NAMESPACE} --all)
+  UAT_RELEASES=$(helm list --namespace=${K8S_NAMESPACE} --all)
 
   echo "Current UAT releases:"
   echo "$UAT_RELEASES"

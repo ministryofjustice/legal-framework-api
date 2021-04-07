@@ -29,6 +29,12 @@ executors:
         environment:
           - POSTGRES_USER=user
           - POSTGRES_DB=legal_framework_api_test
+  notification-executor:
+    docker:
+      - image: 'cibuilds/base:latest'
+        environment:
+          TERM: dumb
+    resource_class: small
 
 references:
   build_docker_image: &build_docker_image
@@ -52,41 +58,14 @@ references:
           docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
           docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
         fi
-  authenticate_k8s_all: &authenticate_k8s_all
+  authenticate_k8s: &authenticate_k8s
     run:
-      name: ALL - Authenticate with cluster
+      name: Authenticate with cluster
       command: |
         echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
         kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
         kubectl config set-credentials circleci --token=${K8S_TOKEN}
         kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
-        kubectl config use-context ${K8S_CLUSTER_NAME}
-  authenticate_k8s_uat: &authenticate_k8s_uat
-    run:
-      name: UAT - Authenticate with cluster
-      command: |
-        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
-        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-        kubectl config set-credentials circleci --token=${K8S_UAT_TOKEN}
-        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_UAT_NAMESPACE}
-        kubectl config use-context ${K8S_CLUSTER_NAME}
-  authenticate_k8s_staging: &authenticate_k8s_staging
-    run:
-      name: Staging - Authenticate with cluster
-      command: |
-        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
-        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-        kubectl config set-credentials circleci --token=${K8S_STAGING_TOKEN}
-        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_STAGING_NAMESPACE}
-        kubectl config use-context ${K8S_CLUSTER_NAME}
-  authenticate_k8s_production: &authenticate_k8s_production
-    run:
-      name: Production - Authenticate with cluster
-      command: |
-        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
-        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-        kubectl config set-credentials circleci --token=${K8S_PRODUCTION_TOKEN}
-        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_PRODUCTION_NAMESPACE}
         kubectl config use-context ${K8S_CLUSTER_NAME}
   decrypt_secrets: &decrypt_secrets
     run:
@@ -120,6 +99,29 @@ references:
       command: |
         bundle exec rake db:create db:schema:load
         bundle exec rake db:migrate
+
+commands:
+  hold-notification:
+    description: Notify Slack about an awaiting approval job
+    parameters:
+      message:
+        default: "$CIRCLE_USERNAME has a pending approval for $CIRCLE_BRANCH"
+        description: A workflow in CircleCI is awaiting approval.
+        type: string
+      url:
+        default: 'https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}'
+        description: The URL to link back to.
+        type: string
+      webhook:
+        default: '${SLACK_WEBHOOK}'
+        description: >-
+          Enter either your Webhook value or use the CircleCI UI to add your token
+          under the 'SLACK_WEBHOOK' env var
+        type: string
+    steps:
+      - slack/approval:
+          message: << parameters.message >>
+          webhook: << parameters.webhook >>
 
 jobs:
   lint_checks:
@@ -160,7 +162,7 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *decrypt_secrets
-      - *authenticate_k8s_all
+      - *authenticate_k8s
       - deploy:
           name: Helm deployment to UAT
           command: |
@@ -174,7 +176,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - *authenticate_k8s_all
+      - *authenticate_k8s
       - run:
           name: Delete UAT release
           command: |
@@ -186,16 +188,21 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *decrypt_secrets
-      - *authenticate_k8s_staging
+      - *authenticate_k8s
       - deploy:
           name: Helm deployment to staging
           command: |
             helm upgrade legal-framework-api ./deploy/helm/. \
                           --install --wait \
-                          --namespace=${K8S_STAGING_NAMESPACE} \
+                          --namespace=${K8S_NAMESPACE} \
                           --values ./deploy/helm/values-staging.yaml \
                           --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                           --set image.tag="${CIRCLE_SHA1}"
+  hold_production_notification:
+    executor: notification-executor
+    steps:
+      - hold-notification:
+          message: "$CIRCLE_USERNAME has a pending CFE production approval for $CIRCLE_BRANCH"
   deploy_production:
     executor: cloud-platform-executor
     steps:
@@ -203,13 +210,13 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *decrypt_secrets
-      - *authenticate_k8s_production
+      - *authenticate_k8s
       - deploy:
           name: Helm deployment to production
           command: |
             helm upgrade legal-framework-api ./deploy/helm/. \
                         --install --wait \
-                        --namespace=${K8S_PRODUCTION_NAMESPACE} \
+                        --namespace=${K8S_NAMESPACE} \
                         --values ./deploy/helm/values-production.yaml \
                         --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                         --set image.tag="${CIRCLE_SHA1}"
@@ -236,6 +243,23 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
+      - deploy_staging:
+          context: legal-framework-api-staging
+          requires:
+            - build_and_push
+            - deploy_uat
+      - hold_production_notification:
+          requires:
+            - deploy_staging
+      - hold_production:
+          context: legal-framework-api-production
+          type: approval
+          requires:
+            - deploy_staging
+      - deploy_production:
+          context: legal-framework-api-production
+          requires:
+            - hold_production
 
   merge_pr:
     jobs:
@@ -252,19 +276,27 @@ workflows:
             - lint_checks
             - unit_tests
       - deploy_main_uat:
+          context: legal-framework-api-uat
           requires:
             - build_and_push
       - delete_uat_branch:
+          context: legal-framework-api-uat
           requires:
             - deploy_main_uat
       - deploy_staging:
+          context: legal-framework-api-staging
           requires:
             - build_and_push
+      - hold_production_notification:
+          requires:
+            - delete_uat_branch
+            - deploy_staging
       - hold_production:
           type: approval
           requires:
             - delete_uat_branch
             - deploy_staging
       - deploy_production:
+          context: legal-framework-api-production
           requires:
             - hold_production
