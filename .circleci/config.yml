@@ -202,7 +202,7 @@ jobs:
     executor: notification-executor
     steps:
       - hold-notification:
-          message: "$CIRCLE_USERNAME has a pending CFE production approval for $CIRCLE_BRANCH"
+          message: "$CIRCLE_USERNAME has a pending Legal Framework API production approval for $CIRCLE_BRANCH"
   deploy_production:
     executor: cloud-platform-executor
     steps:
@@ -243,23 +243,6 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
-      - deploy_staging:
-          context: legal-framework-api-staging
-          requires:
-            - build_and_push
-            - deploy_uat
-      - hold_production_notification:
-          requires:
-            - deploy_staging
-      - hold_production:
-          context: legal-framework-api-production
-          type: approval
-          requires:
-            - deploy_staging
-      - deploy_production:
-          context: legal-framework-api-production
-          requires:
-            - hold_production
 
   merge_pr:
     jobs:
