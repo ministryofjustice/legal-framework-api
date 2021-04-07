@@ -35,12 +35,20 @@ class MeritsTaskService
 
   def add_tasks_to_response(ccms_code)
     proceeding_type = ProceedingType.find_by!(ccms_code: ccms_code)
+    add_application_level_tasks_to_response(proceeding_type)
+    add_proceeding_level_tasks_to_response(proceeding_type, ccms_code)
+  end
+
+  def add_application_level_tasks_to_response(proceeding_type)
     proceeding_type.application_tasks.each do |task|
       @response[:application][:tasks][task.name] = task.dependency_names
     end
-    pt_hash = { ccms_code: ccms_code }
+  end
+
+  def add_proceeding_level_tasks_to_response(proceeding_type, ccms_code)
+    pt_hash = { ccms_code: ccms_code, tasks: {} }
     proceeding_type.proceeding_tasks.each do |task|
-      pt_hash[task.name] = task.dependency_names
+      pt_hash[:tasks][task.name] = task.dependency_names
     end
     @response[:proceeding_types] << pt_hash
   end

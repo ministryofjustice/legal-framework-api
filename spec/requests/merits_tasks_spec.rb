@@ -56,17 +56,23 @@ RSpec.describe MeritsTasksController, type: :request do
           proceeding_types: [
             {
               ccms_code: 'DA005',
-              'chances_of_success' => []
+              tasks: {
+                'chances_of_success' => []
+              }
             },
             {
               ccms_code: 'SE004',
-              'chances_of_success' => [],
-              'children_proceeding' => ['children_application']
+              tasks: {
+                'chances_of_success' => [],
+                'children_proceeding' => ['children_application']
+              }
             },
             {
               ccms_code: 'SE013',
-              'chances_of_success' => [],
-              'children_proceeding' => ['children_application']
+              tasks: {
+                'chances_of_success' => [],
+                'children_proceeding' => ['children_application']
+              }
             }
           ]
         }

@@ -25,6 +25,12 @@ class MeritsTasksController < ApplicationController
         property :task_and_dependency, Hash, desc: 'Hash of key value pairs where the key is the task name, and the value is an array of dependencies'
       end
     end
+    property :proceeding_types, Array, desc: 'Merits tasks required at the individual proceeding type level' do
+      property :ccms_code, String, desc: 'The CCMS_code of the proceeding type'
+      property :tasks, Hash, desc: 'List of tasks and dependencies for this proceeding type' do
+        property :task_and_dependency, Hash, desc: 'Hash of key value pairs where the key is the task name, and the value is an array of dependencies'
+      end
+    end
   end
 
   returns code: :bad_request do
