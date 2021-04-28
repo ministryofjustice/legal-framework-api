@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Api documentation
 gem 'apipie-rails', '>= 0.5.18'
 
-gem 'webpacker', '~> 5', '>= 5.2.1'
+gem 'webpacker', '~> 5'
 
 group :development, :test do
   gem 'awesome_print'
