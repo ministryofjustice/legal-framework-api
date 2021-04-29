@@ -94,14 +94,16 @@ RSpec.describe MeritsTaskService do
           ccms_code: 'SE003',
           tasks: {
             'chances_of_success' => [],
-            'children_proceeding' => ['children_application']
+            'children_proceeding' => ['children_application'],
+            'attempts_to_settle' => []
           }
         },
         {
           ccms_code: 'SE013',
           tasks: {
             'chances_of_success' => [],
-            'children_proceeding' => ['children_application']
+            'children_proceeding' => ['children_application'],
+            'attempts_to_settle' => []
           }
         }
       ]
