@@ -51,6 +51,9 @@
               ],
               "children_proceeding": [
                 "children_application"
+              ],
+              "attempts_to_settle": [
+
               ]
             }
           },
@@ -62,6 +65,9 @@
               ],
               "children_proceeding": [
                 "children_application"
+              ],
+              "attempts_to_settle": [
+
               ]
             }
           }
@@ -122,6 +128,9 @@
               ],
               "children_proceeding": [
                 "children_application"
+              ],
+              "attempts_to_settle": [
+
               ]
             }
           },
@@ -133,6 +142,9 @@
               ],
               "children_proceeding": [
                 "children_application"
+              ],
+              "attempts_to_settle": [
+
               ]
             }
           }
