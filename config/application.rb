@@ -38,5 +38,9 @@ module LegalFrameworkApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.x.status.build_date = ENV['BUILD_DATE'] || 'Not Available'
+    config.x.status.build_tag = ENV['BUILD_TAG'] || 'Not Available'
+    config.x.status.app_branch = ENV['APP_BRANCH'] || 'Not Available'
   end
 end
