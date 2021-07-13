@@ -92,7 +92,9 @@ references:
   install_packages_for_testing: &install_packages_for_testing
     run:
       name: Install System packages needed for testing
-      command: sudo apt-get install -y postgresql-client
+      command: |
+        sudo apt-get update
+        sudo apt-get install -y postgresql-client
   setup_database: &setup_database
     run:
       name: Database Setup
