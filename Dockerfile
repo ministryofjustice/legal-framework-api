@@ -24,11 +24,7 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 
 RUN gem install nokogiri -v '1.11.2' --source 'https://rubygems.org/'
 
-RUN gem install bundler -v 2.2.11 && bundle config --global without test:development && bundle install
-#RUN gem install bundler -v 2.2.11 \
-#&& bundle config --global without test:development \
-#&& bundle config build.nokogiri --use-system-libraries \
-#&& bundle install
+RUN gem install bundler -v 2.2.24 && bundle config --global without test:development && bundle install
 
 COPY . /myapp
 
