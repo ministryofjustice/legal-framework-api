@@ -82,8 +82,10 @@ references:
     run:
       name: Install ruby gems
       command: |
-        gem install bundler -v 2.0.2
-        bundle install --without development --path=vendor/bundle --jobs=4 && bundle clean
+        gem install bundler -v 2.2.24
+        bundle config set --local path 'vendor/bundle'
+        bundle config set --local without 'development'
+        bundle install --jobs=4 && bundle clean
   save_gems_cache: &save_gems_cache
     save_cache:
       key: legal-framework-api-{{ checksum "Gemfile.lock" }}
