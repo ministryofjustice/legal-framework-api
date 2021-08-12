@@ -5,21 +5,21 @@ orbs:
 executors:
   basic-executor:
     docker:
-      - image: cimg/base:2020.01
+      - image: cimg/base:2021.04
   cloud-platform-executor:
     docker:
-      - image: ministryofjustice/cloud-platform-tools:1.24
+      - image: ministryofjustice/cloud-platform-tools:1.42
         environment:
           GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
   linting-executor:
     docker:
-      - image: circleci/ruby:2.7.2-node-browsers
+      - image: circleci/ruby:3.0.2-node-browsers
         environment:
           - RAILS_ENV=test
           - TZ: "Europe/London"
   test-executor:
     docker:
-      - image: circleci/ruby:2.7.2-node-browsers
+      - image: circleci/ruby:3.0.2-node-browsers
         environment:
           - RAILS_ENV=test
           - PGHOST=localhost
@@ -82,8 +82,10 @@ references:
     run:
       name: Install ruby gems
       command: |
-        gem install bundler -v 2.0.2
-        bundle install --without development --path=vendor/bundle --jobs=4 && bundle clean
+        gem install bundler -v 2.2.24
+        bundle config set --local path 'vendor/bundle'
+        bundle config set --local without 'development'
+        bundle install --jobs=4 && bundle clean
   save_gems_cache: &save_gems_cache
     save_cache:
       key: legal-framework-api-{{ checksum "Gemfile.lock" }}
