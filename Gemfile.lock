@@ -205,7 +205,7 @@ GEM
     ruby-progressbar (1.11.0)
     semantic_range (3.0.0)
     shellany (0.0.1)
-    spring (2.1.1)
+    spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
