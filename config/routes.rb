@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     apipie
     resources :merits_tasks, only: %i[create]
+    namespace :proceeding_types do
+      resources :threshold_waivers, only: %i[create]
+    end
   end
 
   get 'ping', to: 'status#ping', format: :json
