@@ -49,21 +49,24 @@ RSpec.describe 'ProceedingTypes/ThresholdWaiversController', type: :request do
           proceeding_types: [
             {
               code: 'DA005',
-              upper_gross_income_waiver: 'true',
-              upper_disposable_income_waiver: 'true',
-              upper_capital_waiver: 'true'
+              gross_income_upper: true,
+              disposable_income_upper: true,
+              capital_upper: true,
+              matter_type: 'Domestic abuse'
             },
             {
               code: 'SE004',
-              upper_gross_income_waiver: 'false',
-              upper_disposable_income_waiver: 'false',
-              upper_capital_waiver: 'false'
+              gross_income_upper: false,
+              disposable_income_upper: false,
+              capital_upper: false,
+              matter_type: 'Children - section 8'
             },
             {
               code: 'SE013',
-              upper_gross_income_waiver: 'false',
-              upper_disposable_income_waiver: 'false',
-              upper_capital_waiver: 'false'
+              gross_income_upper: false,
+              disposable_income_upper: false,
+              capital_upper: false,
+              matter_type: 'Children - section 8'
             }
           ]
         }

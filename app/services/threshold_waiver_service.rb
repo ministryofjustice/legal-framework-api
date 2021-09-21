@@ -14,7 +14,7 @@ class ThresholdWaiverService
   def call
     raise ThresholdWaiverServiceError, 'Must specify at least one proceeding type' if @ccms_codes.empty?
 
-    @ccms_codes.each { |ccms_code| add_threshold_waivers_to_response(ccms_code) }
+    @ccms_codes.each { |ccms_code| add_proceeding_types_to_response(ccms_code) }
     @response
   rescue StandardError => err
     @response = error_response_for(err)
@@ -30,18 +30,19 @@ class ThresholdWaiverService
     }
   end
 
-  def add_threshold_waivers_to_response(ccms_code)
-    proceeding_type = ProceedingType.includes(:matter_type).find_by!(ccms_code: ccms_code)
+  def add_proceeding_types_to_response(ccms_code)
+    proceeding_type = ProceedingType.find_by!(ccms_code: ccms_code)
 
-    add_proceeding_threshold_waivers_to_response(proceeding_type)
+    add_threshold_waivers(proceeding_type)
   end
 
-  def add_proceeding_threshold_waivers_to_response(proceeding_type)
+  def add_threshold_waivers(proceeding_type)
     tw_hash = {
       code: proceeding_type.ccms_code,
-      upper_gross_income_waiver: proceeding_type.matter_type.upper_gross_income_waiver.to_s,
-      upper_disposable_income_waiver: proceeding_type.matter_type.upper_disposable_income_waiver.to_s,
-      upper_capital_waiver: proceeding_type.matter_type.upper_capital_waiver.to_s
+      gross_income_upper: proceeding_type.matter_type.upper_gross_income_waiver,
+      disposable_income_upper: proceeding_type.matter_type.upper_disposable_income_waiver,
+      capital_upper: proceeding_type.matter_type.upper_capital_waiver,
+      matter_type: proceeding_type.matter_type.name
     }
 
     @response[:proceeding_types] << tw_hash

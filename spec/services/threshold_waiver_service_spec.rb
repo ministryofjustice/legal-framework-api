@@ -56,9 +56,10 @@ RSpec.describe ThresholdWaiverService do
       proceeding_types: [
         {
           code: 'DA005',
-          upper_capital_waiver: 'true',
-          upper_disposable_income_waiver: 'true',
-          upper_gross_income_waiver: 'true'
+          capital_upper: true,
+          disposable_income_upper: true,
+          gross_income_upper: true,
+          matter_type: 'Domestic abuse'
         }
       ]
     }
@@ -71,21 +72,24 @@ RSpec.describe ThresholdWaiverService do
       proceeding_types: [
         {
           code: 'DA005',
-          upper_capital_waiver: 'true',
-          upper_disposable_income_waiver: 'true',
-          upper_gross_income_waiver: 'true'
+          capital_upper: true,
+          disposable_income_upper: true,
+          gross_income_upper: true,
+          matter_type: 'Domestic abuse'
         },
         {
           code: 'SE003',
-          upper_capital_waiver: 'false',
-          upper_disposable_income_waiver: 'false',
-          upper_gross_income_waiver: 'false'
+          capital_upper: false,
+          disposable_income_upper: false,
+          gross_income_upper: false,
+          matter_type: 'Children - section 8'
         },
         {
           code: 'SE013',
-          upper_capital_waiver: 'false',
-          upper_disposable_income_waiver: 'false',
-          upper_gross_income_waiver: 'false'
+          capital_upper: false,
+          disposable_income_upper: false,
+          gross_income_upper: false,
+          matter_type: 'Children - section 8'
         }
       ]
     }
