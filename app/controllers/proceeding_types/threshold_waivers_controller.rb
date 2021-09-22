@@ -22,9 +22,10 @@ module ProceedingTypes
       property :success, ['true'], desc: 'Success flag shows true'
       property :proceeding_types, Array, desc: 'Proceeding typs and their associated whether their threshold information' do
         property :ccms_code, String, desc: 'The CCMS_code of the proceeding type'
-        property :capital_upper_threshold_waived, String
-        property :disposable_income_upper_threshold_waived, String
-        property :gross_income_upper_threshold_waived, String
+        property :gross_income_upper, String
+        property :disposable_income_upper, String
+        property :capital_upper, String
+        property :matter_type, String
       end
     end
 

@@ -38,7 +38,7 @@ class ThresholdWaiverService
 
   def add_threshold_waivers(proceeding_type)
     tw_hash = {
-      code: proceeding_type.ccms_code,
+      ccms_code: proceeding_type.ccms_code,
       gross_income_upper: proceeding_type.matter_type.upper_gross_income_waiver,
       disposable_income_upper: proceeding_type.matter_type.upper_disposable_income_waiver,
       capital_upper: proceeding_type.matter_type.upper_capital_waiver,

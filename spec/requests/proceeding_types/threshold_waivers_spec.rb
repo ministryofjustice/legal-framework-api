@@ -48,21 +48,21 @@ RSpec.describe 'ProceedingTypes/ThresholdWaiversController', type: :request do
           success: true,
           proceeding_types: [
             {
-              code: 'DA005',
+              ccms_code: 'DA005',
               gross_income_upper: true,
               disposable_income_upper: true,
               capital_upper: true,
               matter_type: 'Domestic abuse'
             },
             {
-              code: 'SE004',
+              ccms_code: 'SE004',
               gross_income_upper: false,
               disposable_income_upper: false,
               capital_upper: false,
               matter_type: 'Children - section 8'
             },
             {
-              code: 'SE013',
+              ccms_code: 'SE013',
               gross_income_upper: false,
               disposable_income_upper: false,
               capital_upper: false,
