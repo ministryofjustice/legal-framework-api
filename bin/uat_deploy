@@ -10,6 +10,8 @@ deploy() {
 
   echo "this is a test"
   echo "this is the identifier -- $IDENTIFIER"
+  echo $IDENTIFIER
+  echo "444"
 
   helm upgrade $RELEASE_NAME ./deploy/helm/. \
                 --install --wait \
@@ -19,7 +21,7 @@ deploy() {
                 --set image.repository="$IMG_REPO" \
                 --set image.tag="$CIRCLE_SHA1" \
                 --set ingress.hosts="{$RELEASE_HOST}" \
-                --set ingress.annotations.external-dns.alpha.kubernetes.io/set-identifier=${IDENTIFIER}
+                --set ingress.annotations.external-dns.alpha.kubernetes.io/set-identifier="{$IDENTIFIER}"
 }
 
 deploy
