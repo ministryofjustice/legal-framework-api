@@ -17,7 +17,7 @@ deploy() {
                 --set image.repository="$IMG_REPO" \
                 --set image.tag="$CIRCLE_SHA1" \
                 --set ingress.hosts="{$RELEASE_HOST}" \
-                --set ingress.annotations."external-dns\.alpha\.kubernetes\.io/set-identifier"='something-something-uat-ingress'
+                --set ingress.annotations."external-dns\.alpha\.kubernetes\.io/set-identifier"='final-something-something-uat-ingress-blue'
 #                --set ingress.annotations.key="external-dns\.alpha\.kubernetes\.io/set-identifier" \
 #                --set ingress.annotations.value="again-this-is-just-a-test"
 }

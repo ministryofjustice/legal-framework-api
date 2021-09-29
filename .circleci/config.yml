@@ -236,11 +236,11 @@ workflows:
           filters:
             branches:
               ignore: main
-      - build_and_push:
-          context: legal-framework-api-uat
-          filters:
-            branches:
-              ignore: main
+#      - build_and_push:
+#          context: legal-framework-api-uat
+#          filters:
+#            branches:
+#              ignore: main
       - deploy_uat:
           context: legal-framework-api-uat
           requires:
