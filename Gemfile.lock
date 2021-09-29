@@ -234,7 +234,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  apipie-rails (>= 0.5.18)
+  apipie-rails (>= 0.5.19)
   awesome_print
   bootsnap (>= 1.4.4)
   byebug
@@ -243,14 +243,14 @@ DEPENDENCIES
   pg (~> 1.1)
   pry-byebug
   puma (~> 5.5)
-  rails (~> 6.1.4)
-  rspec-rails (~> 5.0)
+  rails (~> 6.1.4, >= 6.1.4.1)
+  rspec-rails (~> 5.0, >= 5.0.2)
   rubocop
   rubocop-performance
   rubocop-rails
   spring
   tzinfo-data
-  webpacker (~> 5)
+  webpacker (~> 5, >= 5.4.3)
 
 RUBY VERSION
    ruby 3.0.2p107
