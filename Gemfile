@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -28,9 +28,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'rack-cors'
 
 # Api documentation
-gem 'apipie-rails', '>= 0.5.18'
+gem 'apipie-rails', '>= 0.5.19'
 
-gem 'webpacker', '~> 5'
+gem 'webpacker', '~> 5', '>= 5.4.3'
 
 group :development, :test do
   gem 'awesome_print'
@@ -51,7 +51,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 5.0'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
