@@ -10,7 +10,6 @@ metadata:
     heritage: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}
   annotations:
-    external-dns.alpha.kubernetes.io/set-identifier:
 {{ toYaml . | indent 4 }}
 {{- end }}
 spec:
