@@ -14,6 +14,6 @@ class ProceedingType < ApplicationRecord
            through: :proceeding_type_merits_tasks,
            source: :merits_task,
            class_name: 'ProceedingTask'
-  
+
   has_many :default_cost_limitations, dependent: :destroy
 end
