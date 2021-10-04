@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_074336) do
+ActiveRecord::Schema.define(version: 2021_10_04_072755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 2021_09_30_074336) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "proceedings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "proceeding_type_id", null: false
+    t.uuid "legal_aid_application_id", null: false
+    t.integer "proceeding_case_id"
+    t.date "used_delegated_functions_on", null: false
+    t.date "used_delegated_functions_reported_on", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proceeding_type_id"], name: "index_proceedings_on_proceeding_type_id"
+  end
+
   create_table "request_histories", force: :cascade do |t|
     t.string "request_method"
     t.string "request_id"
@@ -81,4 +92,5 @@ ActiveRecord::Schema.define(version: 2021_09_30_074336) do
   end
 
   add_foreign_key "default_cost_limitations", "proceeding_types"
+  add_foreign_key "proceedings", "proceeding_types"
 end

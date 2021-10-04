@@ -17,6 +17,8 @@ class ProceedingType < ApplicationRecord
 
   has_many :default_cost_limitations, dependent: :destroy
 
+  has_many :proceedings, dependent: :nullify
+
   def default_cost_limitation_delegated_functions
     default_cost_limitations.delegated_functions.for_date(Date.current).value
   end
