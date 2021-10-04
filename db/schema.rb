@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_101611) do
+ActiveRecord::Schema.define(version: 2021_09_30_074336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "default_cost_limitations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "proceeding_type_id", null: false
+    t.date "start_date", null: false
+    t.string "cost_type", null: false
+    t.decimal "value", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proceeding_type_id"], name: "index_default_cost_limitations_on_proceeding_type_id"
+  end
 
   create_table "matter_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
@@ -70,4 +80,5 @@ ActiveRecord::Schema.define(version: 2021_04_05_101611) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "default_cost_limitations", "proceeding_types"
 end

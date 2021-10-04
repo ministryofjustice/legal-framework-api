@@ -14,4 +14,14 @@ class ProceedingType < ApplicationRecord
            through: :proceeding_type_merits_tasks,
            source: :merits_task,
            class_name: 'ProceedingTask'
+
+  has_many :default_cost_limitations, dependent: :destroy
+
+  def default_cost_limitation_delegated_functions
+    default_cost_limitations.delegated_functions.for_date(Date.current).value
+  end
+
+  def default_cost_limitation_substantive
+    default_cost_limitations.substantive.for_date(Date.current).value
+  end
 end
