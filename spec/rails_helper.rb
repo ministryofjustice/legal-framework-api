@@ -73,6 +73,7 @@ def seed_live_data
 
   MatterTypePopulator.call
   ProceedingTypePopulator.call
+  ProceedingType.refresh_text_searchable
   MeritsTaskPopulator.call
   ProceedingTypeMeritsTaskPopulator.call
   TaskDependencyPopulator.call
