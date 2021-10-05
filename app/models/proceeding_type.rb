@@ -24,4 +24,25 @@ class ProceedingType < ApplicationRecord
   def default_cost_limitation_substantive
     default_cost_limitations.substantive.for_date(Date.current).value
   end
+
+  UPDATE_QUERY = <<~UPDATESQL.freeze
+    UPDATE proceeding_types
+    SET textsearchable =
+      setweight(to_tsvector(coalesce(meaning,'')), 'A')    ||
+      setweight(to_tsvector(coalesce(description, '')), 'D')  ||
+      setweight(to_tsvector(coalesce(additional_search_terms,'')), 'D') ||
+      setweight(to_tsvector(coalesce(mt.category_of_law, '')), 'B') ||
+      setweight(to_tsvector(coalesce(mt.name, '')), 'C') ||
+      setweight(to_tsvector(coalesce(ccms_code, '')), 'D')
+    FROM matter_types mt WHERE mt.id = proceeding_types.matter_type_id;
+  UPDATESQL
+
+  def self.populate
+    ProceedingTypePopulator.call
+    refresh_text_searchable
+  end
+
+  def self.refresh_text_searchable
+    connection.execute(UPDATE_QUERY)
+  end
 end
