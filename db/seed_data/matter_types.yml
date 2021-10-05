@@ -2,14 +2,23 @@
 # this file lists the matter types, and for each matter type, whether or not the thresholds are overridden:, e.g.
 #
 # - - Domestic abuse      - name of the matter type
+#  - matter_code          - This code is required for the CCMS Submission and will be needed by Apply
+#  - category_of_law      - This is required proceeding_type searches
+#  - category_of_law_code - This code is required for the CCMS Submission and will be needed by Apply
 #  - true                 - upper_gross_income threshold is waived
 #  - true                 - upper_disposable_income threshold is waived
 #  - true                 - upper_capital threshold is waived
-- - Domestic abuse
+- - Domestic abuse # TODO: Capitalise `Abuse` that is how it is used in Apply
+  - MINJN
+  - Family
+  - MAT
   - true
   - true
   - true
-- - Children - section 8
+- - Children - section 8 # TODO: Change to `Section 8 orders` as it appears in Apply?
+  - KSEC8
+  - Family
+  - MAT
   - false
   - false
   - false
