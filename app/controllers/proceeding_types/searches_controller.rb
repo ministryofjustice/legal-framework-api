@@ -26,14 +26,14 @@ module ProceedingTypes
       Optionally you can send an excluded_terms value, this should be a comma separated string or codes to exclude, e.g.
         {
           "search_term": "Family",
-          "excluded_terms": "DA001,DA0002"
+          "excluded_terms": "DA001,DA002"
         }
       This will return proceeding terms that match Family but exclude any proceeding types with matching codes
       END_OF_TEXT
     end
 
     api :POST, 'proceeding_types/search', 'Create a request to retrieve a list of proceeding types that match the search type'
-    param :search_term, String, required: true, desc: 'Search for proceeding types matching the `search_text`'
+    param :search_term, String, required: true, desc: 'Search for proceeding types matching the `search_term`'
 
     returns code: :ok, desc: 'Successful response' do
       property :success, ['true'], desc: 'Success flag shows true'

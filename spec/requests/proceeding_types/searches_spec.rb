@@ -66,7 +66,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         }
       end
 
-      it 'returns an successful response' do
+      it 'returns an unsuccessful response' do
         expect(response).to have_http_status(400)
         expect(response.media_type).to eql('application/json')
         expect(JSON.parse(response.body)).to match_json_expression(expected_result)
