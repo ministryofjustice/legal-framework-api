@@ -2,7 +2,7 @@
 #
 # It uses Postresql's Full Text Search (see https://www.postgresql.org/docs/9.5/textsearch-intro.html)
 #
-# Results are currently retuned by ranked by relevance, i.e. search terms which appear in
+# Results are currently returned and ranked by relevance, i.e. search terms which appear in
 # the additional_search_terms field are ranked higher than those in meaning which in turn are
 # ranked higher that those in description.  This is controlled by the ProceedingType.refresh_textsearchable
 # method.
