@@ -87,7 +87,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
       context 'multiple term searches' do
         let(:search_term) { 'protection order' }
 
-        it 'only returns results matching both terms' do
+        it 'returns results matching either term' do
           result_set = subject
           expect(result_set.map(&:meaning)).to match_array(['FGM Protection Order',
                                                             'Forced marriage protection order',
