@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_074336) do
+ActiveRecord::Schema.define(version: 2021_10_05_102214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 2021_09_30_074336) do
     t.boolean "upper_capital_waiver", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category_of_law"
+    t.string "code"
+    t.string "category_of_law_code"
     t.index ["name"], name: "index_matter_types_on_name", unique: true
   end
 
@@ -59,6 +62,9 @@ ActiveRecord::Schema.define(version: 2021_09_30_074336) do
     t.uuid "matter_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "additional_search_terms"
+    t.tsvector "textsearchable"
+    t.index ["textsearchable"], name: "textsearch_idx", using: :gin
   end
 
   create_table "request_histories", force: :cascade do |t|

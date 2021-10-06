@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :merits_tasks, only: %i[create]
     namespace :proceeding_types do
       resources :threshold_waivers, only: %i[create]
+      resources :searches, only: %i[create]
     end
   end
 
