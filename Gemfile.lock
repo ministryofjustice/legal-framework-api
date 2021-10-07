@@ -74,13 +74,6 @@ GEM
     diff-lcs (1.4.4)
     docile (1.4.0)
     erubi (1.10.0)
-    factory_bot (6.2.0)
-      activesupport (>= 5.0.0)
-    factory_bot_rails (6.2.0)
-      factory_bot (~> 6.2.0)
-      railties (>= 5.0.0)
-    faker (2.19.0)
-      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     formatador (0.3.0)
     globalid (0.5.2)
@@ -258,8 +251,6 @@ DEPENDENCIES
   awesome_print
   bootsnap (>= 1.4.4)
   byebug
-  factory_bot_rails (>= 5.2.0)
-  faker (>= 1.9.1)
   guard-rubocop
   highline
   json_expressions
