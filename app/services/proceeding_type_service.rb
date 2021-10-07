@@ -70,6 +70,7 @@ class ProceedingTypeService
 
   def create_skeleton_response # rubocop:disable Metrics/MethodLength
     {
+      # do we need a request_id to track these requests
       success: true,
       ccms_code: '',
       meaning: '',
