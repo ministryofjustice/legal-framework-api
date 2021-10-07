@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_102214) do
+ActiveRecord::Schema.define(version: 2021_10_07_132027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -55,6 +55,20 @@ ActiveRecord::Schema.define(version: 2021_10_05_102214) do
     t.index ["proceeding_type_id"], name: "index_proceeding_type_merits_tasks_on_proceeding_type_id"
   end
 
+  create_table "proceeding_type_scope_limitations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "proceeding_type_id"
+    t.uuid "scope_limitation_id"
+    t.boolean "substantive_default"
+    t.boolean "delegated_functions_default"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proceeding_type_id", "delegated_functions_default"], name: "index_proceedings_scopes_unique_delegated_default", unique: true, where: "(delegated_functions_default = true)"
+    t.index ["proceeding_type_id", "scope_limitation_id"], name: "index_proceedings_scopes_unique_on_ids", unique: true
+    t.index ["proceeding_type_id", "substantive_default"], name: "index_proceedings_scopes_unique_substantive_default", unique: true, where: "(substantive_default = true)"
+    t.index ["proceeding_type_id"], name: "index_proceeding_type_scope_limitations_on_proceeding_type_id"
+    t.index ["scope_limitation_id"], name: "index_proceeding_type_scope_limitations_on_scope_limitation_id"
+  end
+
   create_table "proceeding_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "ccms_code", null: false
     t.string "meaning", null: false
@@ -64,6 +78,8 @@ ActiveRecord::Schema.define(version: 2021_10_05_102214) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "additional_search_terms"
     t.tsvector "textsearchable"
+    t.string "ccms_category_law_code"
+    t.string "ccms_matter_code"
     t.index ["textsearchable"], name: "textsearch_idx", using: :gin
   end
 
@@ -79,6 +95,17 @@ ActiveRecord::Schema.define(version: 2021_10_05_102214) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "scope_limitations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "code", null: false
+    t.string "meaning", null: false
+    t.string "description", null: false
+    t.boolean "substantive", default: false, null: false
+    t.boolean "delegated_functions", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_scope_limitations_on_code"
+  end
+
   create_table "task_dependencies", force: :cascade do |t|
     t.uuid "merits_task_id"
     t.uuid "dependency_id"
@@ -87,4 +114,6 @@ ActiveRecord::Schema.define(version: 2021_10_05_102214) do
   end
 
   add_foreign_key "default_cost_limitations", "proceeding_types"
+  add_foreign_key "proceeding_type_scope_limitations", "proceeding_types"
+  add_foreign_key "proceeding_type_scope_limitations", "scope_limitations"
 end
