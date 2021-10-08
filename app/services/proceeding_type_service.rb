@@ -7,7 +7,7 @@ class ProceedingTypeService
 
   def initialize(ccms_code)
     @ccms_code = ccms_code
-    @response = create_skeleton_response
+    @response = skeleton_response
   end
 
   def call
@@ -28,14 +28,15 @@ class ProceedingTypeService
     add_scope_limitations_to_response(pt)
   end
 
-  def add_proceeding_type_to_response(proceeding_type) # rubocop:disable Metrics/AbcSize
+  def add_proceeding_type_to_response(proceeding_type)
+    matter_type = proceeding_type.matter_type
     @response[:ccms_code] = proceeding_type.ccms_code
     @response[:meaning] = proceeding_type.meaning
     @response[:ccms_category_law_code] = proceeding_type.ccms_category_law_code
     @response[:ccms_matter_code] = proceeding_type.ccms_matter_code
     @response[:description] = proceeding_type.description
-    @response[:ccms_category_law] = proceeding_type.matter_type.category_of_law
-    @response[:ccms_matter] = proceeding_type.matter_type.name
+    @response[:ccms_category_law] = matter_type.category_of_law
+    @response[:ccms_matter] = matter_type.name
   end
 
   def add_cost_limitations_to_response(proceeding_type)
@@ -68,7 +69,7 @@ class ProceedingTypeService
     proceeding_type.proceeding_type_scope_limitations.default_substantive_scope_limitation
   end
 
-  def create_skeleton_response # rubocop:disable Metrics/MethodLength
+  def skeleton_response # rubocop:disable Metrics/MethodLength
     {
       # do we need a request_id to track these requests
       success: true,
