@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   Rails.application.routes.draw do
     apipie
-    resources :merits_tasks, param: :ccms_code, only: %i[create]
-    resources :proceeding_types, param: :ccms_code, only: %i[show]
+    resources :merits_tasks, only: %i[create]
     namespace :proceeding_types do
       resources :threshold_waivers, only: %i[create]
       resources :searches, only: %i[create]
