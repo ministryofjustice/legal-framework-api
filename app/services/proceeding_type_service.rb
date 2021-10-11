@@ -32,8 +32,8 @@ class ProceedingTypeService
     matter_type = proceeding_type.matter_type
     @response[:ccms_code] = proceeding_type.ccms_code
     @response[:meaning] = proceeding_type.meaning
-    @response[:ccms_category_law_code] = proceeding_type.ccms_category_law_code
-    @response[:ccms_matter_code] = proceeding_type.ccms_matter_code
+    @response[:ccms_category_law_code] = matter_type.category_of_law_code
+    @response[:ccms_matter_code] = matter_type.code
     @response[:description] = proceeding_type.description
     @response[:ccms_category_law] = matter_type.category_of_law
     @response[:ccms_matter] = matter_type.name
