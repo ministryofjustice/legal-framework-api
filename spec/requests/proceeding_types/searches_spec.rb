@@ -2,8 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'ProceedingTypes/SearchController', type: :request do
   before { seed_live_data }
+  let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
+
+  describe 'GET proceeding_types/all' do
+    subject { get proceeding_types_all_path, headers: headers }
+    before { subject }
+
+    it 'returns a successful response with all proceedingtypes' do
+      expect(response).to have_http_status(200)
+      expect(response.media_type).to eql('application/json')
+      expect(JSON.parse(response.body).count).to eq 12
+    end
+  end
+
   describe 'POST proceeding_types/search' do
-    let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
       {
         search_term: search_term

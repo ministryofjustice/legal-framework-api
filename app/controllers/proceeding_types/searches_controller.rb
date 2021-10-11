@@ -33,7 +33,7 @@ module ProceedingTypes
     end
 
     api :POST, 'proceeding_types/search', 'Create a request to retrieve a list of proceeding types that match the search type'
-    param :search_term, String, required: true, desc: 'Search for proceeding types matching the `search_term`'
+    param :search_term, String, required: false, desc: 'Search for proceeding types matching the `search_term`'
 
     returns code: :ok, desc: 'Successful response' do
       property :success, ['true'], desc: 'Success flag shows true'
@@ -44,6 +44,11 @@ module ProceedingTypes
       property :success, ['false'], desc: 'Success flag shows false'
       property :error_class, String, desc: 'Name of the error class that caused the exception'
       property :message, String, desc: 'Error message'
+    end
+
+    def index
+      result = ProceedingType.all.map { |pt| JSON.parse(pt.api_json) }
+      render json: result.to_json, status: :ok
     end
 
     def create
