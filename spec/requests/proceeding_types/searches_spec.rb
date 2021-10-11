@@ -99,7 +99,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         let(:params) do
           {
             search_term: 'injunction',
-            excluded_terms: 'DA001'
+            excluded_codes: 'DA001'
           }
         end
 
@@ -111,13 +111,13 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       end
     end
 
-    context 'when sending excluded_terms' do
+    context 'when sending excluded_codes' do
       describe 'that should return a single match' do
         before { subject }
         let(:params) do
           {
             search_term: search_term,
-            excluded_terms: 'DA005'
+            excluded_codes: 'DA005'
           }
         end
         let(:expected_result) do

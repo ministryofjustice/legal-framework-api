@@ -23,10 +23,10 @@ module ProceedingTypes
           ]
         }
 
-      Optionally you can send an excluded_terms value, this should be a comma separated string or codes to exclude, e.g.
+      Optionally you can send an excluded_codes value, this should be a comma separated string or codes to exclude, e.g.
         {
           "search_term": "Family",
-          "excluded_terms": "DA001,DA002"
+          "excluded_codes": "DA001,DA002"
         }
       This will return proceeding terms that match Family but exclude any proceeding types with matching codes
       END_OF_TEXT
@@ -73,7 +73,7 @@ module ProceedingTypes
 
     def build_results
       find = search_param
-      exclude = params['excluded_terms'] ||= []
+      exclude = params['excluded_codes'] ||= []
       @build_results ||= ProceedingTypeFullTextSearch.call(find, exclude)
     end
 
