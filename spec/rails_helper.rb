@@ -77,8 +77,6 @@ def seed_live_data
   MeritsTaskPopulator.call
   ProceedingTypeMeritsTaskPopulator.call
   TaskDependencyPopulator.call
-  ScopeLimitationsPopulator.call
-  ProceedingTypeScopeLimitationsPopulator.call
 end
 
 def parsed_response

@@ -11,13 +11,6 @@ RSpec.describe ProceedingType do
     end
   end
 
-  describe '.populate' do
-    it 'calls the proceeding_type_populator service' do
-      expect(ProceedingTypePopulator).to receive(:call).with(no_args)
-      described_class.populate
-    end
-  end
-
   describe 'merits_tasks' do
     it 'returns ordered list of all merits tasks' do
       rec = ProceedingType.find_by(ccms_code: 'DA003')
