@@ -52,18 +52,22 @@ module ProceedingTypes
     end
 
     def create
-      render status: status, json: { success: status.eql?(200) }.merge(results).to_json
+      render status: status, json: { success: success }.merge(results).to_json
     end
 
     private
 
+    def success
+      @success ||= status.eql?(200) && results.symbolize_keys[:data].count.positive?
+    end
+
     def status
-      @status ||= results.symbolize_keys[:data].blank? ? 400 : 200
+      @status ||= results.symbolize_keys[:error].present? ? 400 : 200
     end
 
     def results
       if build_results.empty?
-        { error: 'no matches found' }
+        { data: [] }
       else
         { data: build_results }
       end

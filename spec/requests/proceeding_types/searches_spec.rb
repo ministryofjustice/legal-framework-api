@@ -54,12 +54,12 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       let(:expected_result) do
         {
           success: false,
-          error: 'no matches found'
+          data: []
         }
       end
 
       it 'returns an unsuccessful response' do
-        expect(response).to have_http_status(400)
+        expect(response).to have_http_status(200)
         expect(response.media_type).to eql('application/json')
         expect(JSON.parse(response.body)).to match_json_expression(expected_result)
       end
@@ -111,8 +111,8 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       end
     end
 
-    context 'when sending excluded_codes' do
-      describe 'that should return a single match' do
+    context 'when excluded_codes matches' do
+      describe 'the single match' do
         before { subject }
         let(:params) do
           {
@@ -123,12 +123,12 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         let(:expected_result) do
           {
             success: false,
-            error: 'no matches found'
+            data: []
           }
         end
 
         it 'returns an unsuccessful response' do
-          expect(response).to have_http_status(400)
+          expect(response).to have_http_status(200)
           expect(response.media_type).to eql('application/json')
           expect(JSON.parse(response.body)).to match_json_expression(expected_result)
         end
