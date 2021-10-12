@@ -16,6 +16,8 @@ class ProceedingType < ApplicationRecord
            class_name: 'ProceedingTask'
 
   has_many :default_cost_limitations, dependent: :destroy
+  has_many :proceeding_type_scope_limitations, dependent: :destroy
+  has_many :eligible_scope_limitations, through: :proceeding_type_scope_limitations, source: :scope_limitation
 
   def default_cost_limitation_delegated_functions
     default_cost_limitations.delegated_functions.for_date(Date.current).value

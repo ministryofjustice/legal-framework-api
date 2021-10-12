@@ -17,3 +17,5 @@ ProceedingTypePopulator.call
 MeritsTaskPopulator.call
 ProceedingTypeMeritsTaskPopulator.call
 TaskDependencyPopulator.call
+ScopeLimitationsPopulator.call
+ProceedingTypeScopeLimitationsPopulator.call
