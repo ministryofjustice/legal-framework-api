@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ProceedingTypeFullTextSearch do
   context 'whole service' do
     before { seed_live_data }
-    let(:excluded_terms) { [] }
+    let(:excluded_codes) { [] }
 
     describe '.call' do
       subject { described_class.call(search_term) }
@@ -68,9 +68,9 @@ RSpec.describe ProceedingTypeFullTextSearch do
         end
 
         context 'when you send one of the codes as an excluded_term' do
-          subject { described_class.call(search_term, excluded_terms) }
+          subject { described_class.call(search_term, excluded_codes) }
 
-          let(:excluded_terms) { 'DA001' }
+          let(:excluded_codes) { 'DA001' }
 
           it 'returns two results' do
             result_set = subject

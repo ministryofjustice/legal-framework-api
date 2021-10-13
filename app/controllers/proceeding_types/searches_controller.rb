@@ -23,17 +23,17 @@ module ProceedingTypes
           ]
         }
 
-      Optionally you can send an excluded_terms value, this should be a comma separated string or codes to exclude, e.g.
+      Optionally you can send an excluded_codes value, this should be a comma separated string or codes to exclude, e.g.
         {
           "search_term": "Family",
-          "excluded_terms": "DA001,DA002"
+          "excluded_codes": "DA001,DA002"
         }
       This will return proceeding terms that match Family but exclude any proceeding types with matching codes
       END_OF_TEXT
     end
 
     api :POST, 'proceeding_types/search', 'Create a request to retrieve a list of proceeding types that match the search type'
-    param :search_term, String, required: true, desc: 'Search for proceeding types matching the `search_term`'
+    param :search_term, String, required: false, desc: 'Search for proceeding types matching the `search_term`'
 
     returns code: :ok, desc: 'Successful response' do
       property :success, ['true'], desc: 'Success flag shows true'
@@ -46,19 +46,28 @@ module ProceedingTypes
       property :message, String, desc: 'Error message'
     end
 
+    def index
+      result = ProceedingType.all.map { |pt| JSON.parse(pt.api_json) }
+      render json: result.to_json, status: :ok
+    end
+
     def create
-      render status: status, json: { success: status.eql?(200) }.merge(results).to_json
+      render status: status, json: { success: success }.merge(results).to_json
     end
 
     private
 
+    def success
+      @success ||= status.eql?(200) && results.symbolize_keys[:data].count.positive?
+    end
+
     def status
-      @status ||= results.symbolize_keys[:data].blank? ? 400 : 200
+      @status ||= results.symbolize_keys[:error].present? ? 400 : 200
     end
 
     def results
       if build_results.empty?
-        { error: 'no matches found' }
+        { data: [] }
       else
         { data: build_results }
       end
@@ -68,7 +77,7 @@ module ProceedingTypes
 
     def build_results
       find = search_param
-      exclude = params['excluded_terms'] ||= []
+      exclude = params['excluded_codes'] ||= []
       @build_results ||= ProceedingTypeFullTextSearch.call(find, exclude)
     end
 

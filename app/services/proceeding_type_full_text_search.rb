@@ -10,12 +10,12 @@
 class ProceedingTypeFullTextSearch
   Result = Struct.new(:meaning, :ccms_code, :description, :ccms_category_law, :ccms_matter)
 
-  def self.call(search_terms, excluded_terms = [])
-    new(search_terms, excluded_terms).call
+  def self.call(search_terms, excluded_codes = [])
+    new(search_terms, excluded_codes).call
   end
 
-  def initialize(search_terms, excluded_terms = [])
-    @excluded_terms = excluded_terms
+  def initialize(search_terms, excluded_codes = [])
+    @excluded_codes = excluded_codes
     @ts_query = ts_query_transform(search_terms)
   end
 
@@ -26,7 +26,7 @@ class ProceedingTypeFullTextSearch
   private
 
   def already_selected_codes
-    @already_selected_codes ||= @excluded_terms.split(',')
+    @already_selected_codes ||= @excluded_codes.split(',')
   end
 
   def matching_results

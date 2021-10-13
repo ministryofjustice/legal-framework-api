@@ -2,8 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'ProceedingTypes/SearchController', type: :request do
   before { seed_live_data }
+  let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
+
+  describe 'GET proceeding_types/all' do
+    subject { get proceeding_types_all_path, headers: headers }
+    before { subject }
+
+    it 'returns a successful response with all proceedingtypes' do
+      expect(response).to have_http_status(200)
+      expect(response.media_type).to eql('application/json')
+      expect(JSON.parse(response.body).count).to eq 12
+    end
+  end
+
   describe 'POST proceeding_types/search' do
-    let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
       {
         search_term: search_term
@@ -42,12 +54,12 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       let(:expected_result) do
         {
           success: false,
-          error: 'no matches found'
+          data: []
         }
       end
 
       it 'returns an unsuccessful response' do
-        expect(response).to have_http_status(400)
+        expect(response).to have_http_status(200)
         expect(response.media_type).to eql('application/json')
         expect(JSON.parse(response.body)).to match_json_expression(expected_result)
       end
@@ -87,7 +99,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         let(:params) do
           {
             search_term: 'injunction',
-            excluded_terms: 'DA001'
+            excluded_codes: 'DA001'
           }
         end
 
@@ -99,24 +111,24 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       end
     end
 
-    context 'when sending excluded_terms' do
-      describe 'that should return a single match' do
+    context 'when excluded_codes matches' do
+      describe 'the single match' do
         before { subject }
         let(:params) do
           {
             search_term: search_term,
-            excluded_terms: 'DA005'
+            excluded_codes: 'DA005'
           }
         end
         let(:expected_result) do
           {
             success: false,
-            error: 'no matches found'
+            data: []
           }
         end
 
         it 'returns an unsuccessful response' do
-          expect(response).to have_http_status(400)
+          expect(response).to have_http_status(200)
           expect(response.media_type).to eql('application/json')
           expect(JSON.parse(response.body)).to match_json_expression(expected_result)
         end

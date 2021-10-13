@@ -39,6 +39,17 @@ class ProceedingType < ApplicationRecord
     FROM matter_types mt WHERE mt.id = proceeding_types.matter_type_id;
   UPDATESQL
 
+  def api_json
+    {
+      ccms_code: ccms_code,
+      meaning: meaning,
+      description: description,
+      ccms_category_law: matter_type.category_of_law,
+      ccms_matter_code: matter_type.code,
+      ccms_matter: matter_type.name
+    }.to_json
+  end
+
   def self.populate
     ProceedingTypePopulator.call
     refresh_text_searchable
