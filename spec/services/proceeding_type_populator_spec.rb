@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ProceedingTypePopulator do
   before do
     MatterTypePopulator.call
-    ProceedingType.delete_all
+    ProceedingType.destroy_all
   end
 
   describe '#call' do
