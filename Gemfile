@@ -30,6 +30,8 @@ gem 'rack-cors'
 # Api documentation
 gem 'apipie-rails', '>= 0.5.19'
 
+gem 'data_migrate'
+
 gem 'webpacker', '~> 5', '>= 5.4.3'
 
 group :development, :test do

@@ -103,6 +103,7 @@ references:
       command: |
         bundle exec rake db:create db:schema:load
         bundle exec rake db:migrate
+        bundle exec rake data:migrate
 
 commands:
   hold-notification:

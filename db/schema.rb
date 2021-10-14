@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(version: 2021_10_06_152408) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
+
   create_table "default_cost_limitations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "proceeding_type_id", null: false
     t.date "start_date", null: false
