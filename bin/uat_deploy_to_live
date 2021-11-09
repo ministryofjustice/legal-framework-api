@@ -3,7 +3,7 @@
 deploy() {
   IMG_REPO="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr"
   RELEASE_NAME=$(echo $CIRCLE_BRANCH | sed 's:^\w*\/::' | tr -s ' _/[]().' '-' | cut -c1-30 | sed 's/-$//')
-  RELEASE_HOST="$RELEASE_NAME-legal-framework-uat.apps.live.cloud-platform.service.justice.gov.uk"
+  RELEASE_HOST="$RELEASE_NAME-legal-framework-uat.apps.live-1.cloud-platform.service.justice.gov.uk"
   IDENTIFIER="$RELEASE_NAME-legal-framework-api-legal-framework-api-uat-green"
 
   echo "Deploying CIRCLE_SHA1: $CIRCLE_SHA1 under release name: '$RELEASE_NAME'..."
