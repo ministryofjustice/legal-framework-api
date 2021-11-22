@@ -184,7 +184,7 @@ jobs:
       - *decrypt_secrets
       - *build_docker_image
       - *push_to_ecr
-  deploy_uat_live: &deploy_uat_live
+  deploy_uat: &deploy_uat
     executor: cloud-platform-executor
     steps:
       - checkout
@@ -193,21 +193,21 @@ jobs:
       - *decrypt_secrets
       - *authenticate_k8s_live
       - deploy:
-          name: Helm deployment to UAT on Live Cluster
+          name: Helm deployment to UAT
           command: |
             echo "k8s authenticated"
             echo "Installing LFAPI helm chart"
-            ./bin/uat_deploy_to_live
-  deploy_main_uat_live:
-    <<: *deploy_uat_live
-  delete_uat_branch_live:
+            ./bin/uat_deploy
+  deploy_main_uat:
+    <<: *deploy_uat
+  delete_uat_branch:
     executor: cloud-platform-executor
     steps:
       - checkout
       - setup_remote_docker
       - *authenticate_k8s_live
       - run:
-          name: Delete UAT release on Live cluster
+          name: Delete UAT release
           command: |
             ./bin/delete_uat_release.sh
   deploy_staging:
@@ -266,7 +266,7 @@ workflows:
           filters:
             branches:
               ignore: main
-      - deploy_uat_live:
+      - deploy_uat:
           context: legal-framework-api-uat
           requires:
             - lint_checks
@@ -287,26 +287,26 @@ workflows:
           requires:
             - lint_checks
             - unit_tests
-      - deploy_main_uat_live:
+      - deploy_main_uat:
           context: legal-framework-api-uat
           requires:
             - build_and_push
-      - delete_uat_branch_live:
+      - delete_uat_branch:
           context: legal-framework-api-uat
           requires:
-            - deploy_main_uat_live
+            - deploy_main_uat
       - deploy_staging:
           context: legal-framework-api-staging
           requires:
             - build_and_push
       - hold_production_notification:
           requires:
-            - delete_uat_branch_live
+            - delete_uat_branch
             - deploy_staging
       - hold_production:
           type: approval
           requires:
-            - delete_uat_branch_live
+            - delete_uat_branch
             - deploy_staging
       - deploy_production:
           context: legal-framework-api-production

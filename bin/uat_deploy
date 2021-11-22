@@ -11,7 +11,7 @@ deploy() {
   helm upgrade $RELEASE_NAME ./deploy/helm/. \
                 --install --wait \
                 --namespace=${K8S_NAMESPACE} \
-                --values ./deploy/helm/values-live-uat.yaml \
+                --values ./deploy/helm/values-uat.yaml \
                 --set deploy.host="$RELEASE_HOST" \
                 --set image.repository="$IMG_REPO" \
                 --set image.tag="$CIRCLE_SHA1" \
