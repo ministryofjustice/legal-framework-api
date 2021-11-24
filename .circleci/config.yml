@@ -191,29 +191,13 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - *decrypt_secrets
-      - *authenticate_k8s
+      - *authenticate_k8s_live
       - deploy:
           name: Helm deployment to UAT
           command: |
             echo "k8s authenticated"
             echo "Installing LFAPI helm chart"
             ./bin/uat_deploy
-  deploy_uat_live: &deploy_uat_live
-    executor: cloud-platform-executor
-    steps:
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - *decrypt_secrets
-      - *authenticate_k8s_live
-      - deploy:
-          name: Helm deployment to UAT on Live Cluster
-          command: |
-            echo "k8s authenticated"
-            echo "Installing LFAPI helm chart"
-            ./bin/uat_deploy_to_live
-  deploy_main_uat_live:
-    <<: *deploy_uat_live
   deploy_main_uat:
     <<: *deploy_uat
   delete_uat_branch:
@@ -221,19 +205,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - *authenticate_k8s
-      - run:
-          name: Delete UAT release
-          command: |
-            ./bin/delete_uat_release.sh
-  delete_uat_branch_live:
-    executor: cloud-platform-executor
-    steps:
-      - checkout
-      - setup_remote_docker
       - *authenticate_k8s_live
       - run:
-          name: Delete UAT release on Live cluster
+          name: Delete UAT release
           command: |
             ./bin/delete_uat_release.sh
   deploy_staging:
@@ -298,12 +272,6 @@ workflows:
             - lint_checks
             - unit_tests
             - build_and_push
-      - deploy_uat_live:
-          context: legal-framework-api-uat
-          requires:
-            - lint_checks
-            - unit_tests
-            - build_and_push
 
   merge_pr:
     jobs:
@@ -323,18 +291,10 @@ workflows:
           context: legal-framework-api-uat
           requires:
             - build_and_push
-      - deploy_main_uat_live:
-          context: legal-framework-api-uat
-          requires:
-            - build_and_push
       - delete_uat_branch:
           context: legal-framework-api-uat
           requires:
             - deploy_main_uat
-      - delete_uat_branch_live:
-          context: legal-framework-api-uat
-          requires:
-            - deploy_main_uat_live
       - deploy_staging:
           context: legal-framework-api-staging
           requires:
