@@ -1,7 +1,5 @@
 class AddNameToProceedingTypes < ActiveRecord::Migration[6.1]
-  # rubocop:disable Rails/NotNullColumn
   def change
-    add_column :proceeding_types, :name, :string, null: false
+    add_column :proceeding_types, :name, :string, null: false, default: 'default_name'
   end
-  # rubocop:enable Rails/NotNullColumn
 end
