@@ -12,18 +12,21 @@ class ProceedingTypePopulator
 
   private
 
+  # rubocop:disable Metrics/MethodLength
   def populate(seed_row)
-    ccms_code, meaning, description, matter_type_id_method, additional_search_terms = seed_row
+    ccms_code, meaning, name, description, matter_type_id_method, additional_search_terms = seed_row
     matter_type_id = __send__(matter_type_id_method)
     record = ProceedingType.find_by(ccms_code: ccms_code) || ProceedingType.new
     record.update!(
       ccms_code: ccms_code,
       meaning: meaning,
+      name: name,
       description: description,
       additional_search_terms: additional_search_terms,
       matter_type_id: matter_type_id
     )
   end
+  # rubocop:enable Metrics/MethodLength
 
   def domestic_abuse_id
     @domestic_abuse_id ||= MatterType.domestic_abuse.id

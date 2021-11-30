@@ -40,6 +40,7 @@ RSpec.describe ProceedingTypeService do
     {
       success: true,
       ccms_code: 'DA003',
+      name: 'harassment_injunction',
       meaning: 'Harassment - injunction',
       ccms_category_law_code: 'MAT',
       ccms_matter_code: 'MINJN',

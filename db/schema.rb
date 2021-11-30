@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_152408) do
+ActiveRecord::Schema.define(version: 2021_11_30_102438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_10_06_152408) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "additional_search_terms"
     t.tsvector "textsearchable"
+    t.string "name", null: false
     t.index ["textsearchable"], name: "textsearch_idx", using: :gin
   end
 

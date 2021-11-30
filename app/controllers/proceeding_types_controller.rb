@@ -20,6 +20,7 @@ class ProceedingTypesController < ApplicationController
     property :meaning, String, desc: 'The Proceeding Type meaning'
     property :ccms_category_law_code, String, desc: 'The Proceeding Type CCMS category of law code'
     property :ccms_matter_code, String, desc: 'The Proceeding Type CCMS matter code'
+    property :name, String, desc: 'The Proceeding Type name'
     property :description, String, desc: 'The Proceeding Type description'
     property :ccms_category_law, String, desc: 'The Proceeding Type CCMS category of law'
     property :ccms_matter, String, desc: 'The Proceeding Type CCMS matter type'

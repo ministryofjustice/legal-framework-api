@@ -3,8 +3,6 @@ class AddSearchableFieldsToProceedingTypes < ActiveRecord::Migration[6.1]
     add_column :proceeding_types, :additional_search_terms, :string
     execute 'ALTER TABLE proceeding_types ADD COLUMN textsearchable tsvector'
     execute 'CREATE INDEX textsearch_idx ON proceeding_types USING GIN (textsearchable)'
-    MatterTypePopulator.call
-    ProceedingType.populate
   end
 
   def down
