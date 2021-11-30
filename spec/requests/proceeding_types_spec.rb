@@ -30,6 +30,7 @@ RSpec.describe ProceedingTypesController, type: :request do
         meaning: 'Prohibited steps order',
         ccms_category_law_code: 'MAT',
         ccms_matter_code: 'KSEC8',
+        name: 'prohibited_steps_order_s8',
         description: 'to be represented on an application for a prohibited steps order.',
         ccms_category_law: 'Family',
         ccms_matter: 'Children - section 8',

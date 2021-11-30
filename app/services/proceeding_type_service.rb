@@ -23,20 +23,25 @@ class ProceedingTypeService
 
   def populate_response(ccms_code)
     pt = ProceedingType.find_by!(ccms_code: ccms_code)
+    add_matter_type_to_response(pt)
     add_proceeding_type_to_response(pt)
     add_cost_limitations_to_response(pt)
     add_scope_limitations_to_response(pt)
   end
 
-  def add_proceeding_type_to_response(proceeding_type)
+  def add_matter_type_to_response(proceeding_type)
     matter_type = proceeding_type.matter_type
-    @response[:ccms_code] = proceeding_type.ccms_code
-    @response[:meaning] = proceeding_type.meaning
     @response[:ccms_category_law_code] = matter_type.category_of_law_code
     @response[:ccms_matter_code] = matter_type.code
-    @response[:description] = proceeding_type.description
     @response[:ccms_category_law] = matter_type.category_of_law
     @response[:ccms_matter] = matter_type.name
+  end
+
+  def add_proceeding_type_to_response(proceeding_type)
+    @response[:ccms_code] = proceeding_type.ccms_code
+    @response[:meaning] = proceeding_type.meaning
+    @response[:name] = proceeding_type.name
+    @response[:description] = proceeding_type.description
   end
 
   def add_cost_limitations_to_response(proceeding_type)
@@ -77,6 +82,7 @@ class ProceedingTypeService
       meaning: '',
       ccms_category_law_code: '',
       ccms_matter_code: '',
+      name: '',
       description: '',
       ccms_category_law: '',
       ccms_matter: '',
