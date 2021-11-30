@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_102438) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "additional_search_terms"
     t.tsvector "textsearchable"
-    t.string "name", null: false
+    t.string "name", default: "default_name", null: false
     t.index ["textsearchable"], name: "textsearch_idx", using: :gin
   end
 
