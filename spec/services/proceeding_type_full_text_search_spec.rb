@@ -62,9 +62,10 @@ RSpec.describe ProceedingTypeFullTextSearch do
           expect(result_set.size).to eq 3
         end
 
-        it 'returns the one with the search term in meaning first' do
+        it 'returns the ones in which the search term appears first; and additional terms matches are last' do
           result_set = subject
-          expect(result_set.map(&:meaning)).to eq ['Harassment - injunction', 'Inherent jurisdiction high court injunction', 'Non-molestation order']
+          expect(result_set.map(&:meaning)).to match_array ['Harassment - injunction', 'Inherent jurisdiction high court injunction', 'Non-molestation order']
+          expect(result_set.map(&:meaning)[2]).to eq 'Non-molestation order'
         end
 
         context 'when you send one of the codes as an excluded_term' do
