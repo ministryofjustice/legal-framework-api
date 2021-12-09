@@ -187,7 +187,7 @@ jobs:
           name: Delete UAT release
           command: |
             ./bin/delete_uat_release.sh
-  deploy_staging:
+  deploy_staging_legacy:
     executor: cloud-platform-executor
     steps:
       - checkout
@@ -201,7 +201,7 @@ jobs:
             helm upgrade legal-framework-api ./deploy/helm/. \
                           --install --wait \
                           --namespace=${K8S_NAMESPACE} \
-                          --values ./deploy/helm/values-staging.yaml \
+                          --values ./deploy/helm/values-staging-legacy.yaml \
                           --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                           --set image.tag="${CIRCLE_SHA1}"
   deploy_production:
@@ -282,7 +282,7 @@ workflows:
           requires:
             - deploy_main_uat
           <<: *generic-slack-fail-post-step
-      - deploy_staging:
+      - deploy_staging_legacy:
           context: legal-framework-api-staging
           requires:
             - build_and_push
@@ -327,12 +327,12 @@ workflows:
               ]
             }
           requires:
-            - deploy_staging
+            - deploy_staging_legacy
       - hold_production:
           type: approval
           requires:
             - delete_uat_branch
-            - deploy_staging
+            - deploy_staging_legacy
             - slack/on-hold
       - deploy_production:
           context: legal-framework-api-production
