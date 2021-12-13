@@ -187,7 +187,7 @@ jobs:
           name: Delete UAT release
           command: |
             ./bin/delete_uat_release.sh
-  deploy_staging:
+  deploy_staging_legacy:
     executor: cloud-platform-executor
     steps:
       - checkout
@@ -195,6 +195,23 @@ jobs:
           docker_layer_caching: true
       - *decrypt_secrets
       - *authenticate_k8s
+      - deploy:
+          name: Helm deployment to staging
+          command: |
+            helm upgrade legal-framework-api ./deploy/helm/. \
+                          --install --wait \
+                          --namespace=${K8S_NAMESPACE} \
+                          --values ./deploy/helm/values-staging-legacy.yaml \
+                          --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
+                          --set image.tag="${CIRCLE_SHA1}"
+  deploy_staging:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - *decrypt_secrets
+      - *authenticate_k8s_live
       - deploy:
           name: Helm deployment to staging
           command: |
@@ -282,6 +299,11 @@ workflows:
           requires:
             - deploy_main_uat
           <<: *generic-slack-fail-post-step
+      - deploy_staging_legacy:
+          context: legal-framework-api-staging
+          requires:
+            - build_and_push
+          <<: *generic-slack-fail-post-step
       - deploy_staging:
           context: legal-framework-api-staging
           requires:
@@ -327,11 +349,13 @@ workflows:
               ]
             }
           requires:
+            - deploy_staging_legacy
             - deploy_staging
       - hold_production:
           type: approval
           requires:
             - delete_uat_branch
+            - deploy_staging_legacy
             - deploy_staging
             - slack/on-hold
       - deploy_production:
