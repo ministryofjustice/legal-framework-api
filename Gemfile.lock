@@ -261,7 +261,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.5)
   rack-cors
-  rails (~> 6.1.4)
+  rails (~> 6.1.4, < 7)
   rspec-rails (~> 5.0, >= 5.0.2)
   rspec_junit_formatter
   rubocop
