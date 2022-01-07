@@ -219,7 +219,7 @@ jobs:
                           --values ./deploy/helm/values-staging.yaml \
                           --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                           --set image.tag="${CIRCLE_SHA1}"
-  deploy_production:
+  deploy_production_legacy:
     executor: cloud-platform-executor
     steps:
       - checkout
@@ -227,6 +227,23 @@ jobs:
           docker_layer_caching: true
       - *decrypt_secrets
       - *authenticate_k8s
+      - deploy:
+          name: Helm deployment to production
+          command: |
+            helm upgrade legal-framework-api ./deploy/helm/. \
+                        --install --wait \
+                        --namespace=${K8S_NAMESPACE} \
+                        --values ./deploy/helm/values-production.yaml \
+                        --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
+                        --set image.tag="${CIRCLE_SHA1}"
+  deploy_production:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - *decrypt_secrets
+      - *authenticate_k8s_live
       - deploy:
           name: Helm deployment to production
           command: |
@@ -356,6 +373,11 @@ workflows:
             - deploy_staging_legacy
             - deploy_staging
             - slack/on-hold
+      - deploy_production_legacy:
+          context: legal-framework-api-production
+          requires:
+            - hold_production
+          <<: *generic-slack-fail-post-step
       - deploy_production:
           context: legal-framework-api-production
           requires:
