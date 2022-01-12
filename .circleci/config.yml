@@ -58,15 +58,6 @@ references:
           docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
           docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:latest"
         fi
-  authenticate_k8s: &authenticate_k8s
-    run:
-      name: Authenticate with cluster
-      command: |
-        echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
-        kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-        kubectl config set-credentials circleci --token=${K8S_TOKEN}
-        kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=circleci --namespace=${K8S_NAMESPACE}
-        kubectl config use-context ${K8S_CLUSTER_NAME}
   authenticate_k8s_live: &authenticate_k8s_live
     run:
       name: Authenticate with cluster
@@ -202,23 +193,6 @@ jobs:
                           --values ./deploy/helm/values-staging.yaml \
                           --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                           --set image.tag="${CIRCLE_SHA1}"
-  deploy_production_legacy:
-    executor: cloud-platform-executor
-    steps:
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - *decrypt_secrets
-      - *authenticate_k8s
-      - deploy:
-          name: Helm deployment to production
-          command: |
-            helm upgrade legal-framework-api ./deploy/helm/. \
-                        --install --wait \
-                        --namespace=${K8S_NAMESPACE} \
-                        --values ./deploy/helm/values-production.yaml \
-                        --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
-                        --set image.tag="${CIRCLE_SHA1}"
   deploy_production:
     executor: cloud-platform-executor
     steps:
@@ -349,11 +323,6 @@ workflows:
             - delete_uat_branch
             - deploy_staging
             - slack/on-hold
-      - deploy_production_legacy:
-          context: legal-framework-api-production
-          requires:
-            - hold_production
-          <<: *generic-slack-fail-post-step
       - deploy_production:
           context: legal-framework-api-production
           requires:
