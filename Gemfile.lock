@@ -72,6 +72,7 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     diff-lcs (1.5.0)
+    digest (3.1.0)
     docile (1.4.0)
     erubi (1.10.0)
     ffi (1.15.5)
@@ -93,6 +94,7 @@ GEM
     highline (2.0.3)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    io-wait (0.2.1)
     json_expressions (0.9.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -110,6 +112,21 @@ GEM
     minitest (5.15.0)
     msgpack (1.4.2)
     nenv (0.3.0)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
+    net-protocol (0.1.2)
+      io-wait
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
     nio4r (2.5.8)
     nokogiri (1.13.0)
       mini_portile2 (~> 2.7.0)
@@ -228,7 +245,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    strscan (3.0.1)
     thor (1.2.1)
+    timeout (0.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2021.5)
@@ -257,6 +276,9 @@ DEPENDENCIES
   highline
   json_expressions
   listen (~> 3.7)
+  net-imap
+  net-pop
+  net-smtp
   pg (~> 1.1)
   pry-byebug
   puma (~> 5.5)
@@ -274,7 +296,7 @@ DEPENDENCIES
   webpacker (~> 5, >= 5.4.3)
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.1.0p0
 
 BUNDLED WITH
    2.2.24
