@@ -32,7 +32,7 @@ class ProceedingTypeFullTextSearch
   def matching_results
     result_set = ProceedingType.connection.exec_query(query_string,
                                                       '-- PROCEEDING TYPE FULL TEXT SEARCH ---',
-                                                      [[nil, @ts_query]],
+                                                      [@ts_query],
                                                       prepare: true)
     result_set.map { |row| instantiate_result(row) }
   end
