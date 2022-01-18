@@ -94,7 +94,7 @@ RSpec.describe MeritsTasksController, type: :request do
         expect(parsed_response[:request_id]).to eq request_id
         expect(parsed_response[:success]).to be false
         expect(parsed_response[:error_class]).to eq 'ActiveRecord::RecordNotFound'
-        expect(parsed_response[:message]).to eq "Couldn't find ProceedingType"
+        expect(parsed_response[:message]).to match(/Couldn't find ProceedingType/)
         expect(parsed_response[:backtrace]).to be_instance_of(Array)
       end
 
@@ -109,7 +109,7 @@ RSpec.describe MeritsTasksController, type: :request do
         expect(stored_response[:request_id]).to eq request_id
         expect(stored_response[:success]).to be false
         expect(stored_response[:error_class]).to eq 'ActiveRecord::RecordNotFound'
-        expect(stored_response[:message]).to eq "Couldn't find ProceedingType"
+        expect(stored_response[:message]).to match(/Couldn't find ProceedingType/)
         expect(stored_response[:backtrace]).to be_instance_of(Array)
       end
     end
