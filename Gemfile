@@ -39,9 +39,8 @@ group :development, :test do
   gem 'json_expressions'
   gem 'pry-byebug'
   gem 'rspec_junit_formatter'
-  gem 'rubocop', require: false
+  gem 'rubocop-govuk', require: false
   gem 'rubocop-performance'
-  gem 'rubocop-rails', require: false
 end
 
 group :development do
