@@ -13,13 +13,13 @@ class ScopeLimitationsPopulator
 
   def populate(seed_row)
     code, meaning, description, substantive, delegated_functions = seed_row
-    record = ScopeLimitation.find_by(code: code) || ScopeLimitation.new
+    record = ScopeLimitation.find_by(code:) || ScopeLimitation.new
     record.update!(
-      code: code,
-      meaning: meaning,
-      description: description,
-      substantive: substantive,
-      delegated_functions: delegated_functions
+      code:,
+      meaning:,
+      description:,
+      substantive:,
+      delegated_functions:
     )
   end
 

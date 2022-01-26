@@ -22,7 +22,7 @@ class ProceedingTypeService
   private
 
   def populate_response(ccms_code)
-    pt = ProceedingType.find_by!(ccms_code: ccms_code)
+    pt = ProceedingType.find_by!(ccms_code:)
     add_matter_type_to_response(pt)
     add_proceeding_type_to_response(pt)
     add_cost_limitations_to_response(pt)

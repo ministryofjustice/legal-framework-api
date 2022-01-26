@@ -29,6 +29,6 @@ class TaskDependencyPopulator
   def populate(task_name, dependency_name)
     task = MeritsTask.find_by!(name: task_name)
     dependency = MeritsTask.find_by!(name: dependency_name)
-    TaskDependency.create!(merits_task: task, dependency: dependency)
+    TaskDependency.create!(merits_task: task, dependency:)
   end
 end

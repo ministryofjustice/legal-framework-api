@@ -8,8 +8,8 @@ RSpec.describe MeritsTasksController, type: :request do
     let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
       {
-        request_id: request_id,
-        proceeding_types: proceeding_types
+        request_id:,
+        proceeding_types:
       }
     end
 
@@ -32,7 +32,7 @@ RSpec.describe MeritsTasksController, type: :request do
 
       it 'creates a request_history record' do
         expect { subject }.to change { RequestHistory.count }.by(1)
-        history = RequestHistory.find_by(request_id: request_id)
+        history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq 'POST'
         expect(history.endpoint).to eq '/merits_tasks'
 
@@ -100,7 +100,7 @@ RSpec.describe MeritsTasksController, type: :request do
 
       it 'records the result in the request history table' do
         expect { subject }.to change { RequestHistory.count }.by(1)
-        history = RequestHistory.find_by(request_id: request_id)
+        history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq 'POST'
         expect(history.endpoint).to eq '/merits_tasks'
         expect(history.request_payload).to eq params.to_json
