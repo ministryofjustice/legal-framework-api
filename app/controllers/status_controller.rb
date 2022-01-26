@@ -4,7 +4,7 @@ class StatusController < ApplicationController
       database: database_alive?
     }
     status = :bad_gateway unless checks.values.all?
-    render status: status, json: { checks: checks }
+    render status: status, json: { checks: }
   end
 
   def ping

@@ -16,14 +16,14 @@ class ProceedingTypePopulator
   def populate(seed_row)
     ccms_code, meaning, name, description, matter_type_id_method, additional_search_terms = seed_row
     matter_type_id = __send__(matter_type_id_method)
-    record = ProceedingType.find_by(ccms_code: ccms_code) || ProceedingType.new
+    record = ProceedingType.find_by(ccms_code:) || ProceedingType.new
     record.update!(
-      ccms_code: ccms_code,
-      meaning: meaning,
-      name: name,
-      description: description,
-      additional_search_terms: additional_search_terms,
-      matter_type_id: matter_type_id
+      ccms_code:,
+      meaning:,
+      name:,
+      description:,
+      additional_search_terms:,
+      matter_type_id:
     )
   end
   # rubocop:enable Metrics/MethodLength
@@ -46,15 +46,15 @@ class ProceedingTypePopulator
   end
 
   def add_cost_limitations(proceeding_type)
-    find_or_create_dcl(proceeding_type: proceeding_type, cost_type: 'substantive', start_date: Date.parse('1970-01-01'), value: 25_000.0)
-    find_or_create_dcl(proceeding_type: proceeding_type, cost_type: 'delegated_functions', start_date: Date.parse('1970-01-01'), value: 1_350.0)
-    find_or_create_dcl(proceeding_type: proceeding_type, cost_type: 'delegated_functions', start_date: Date.parse('2021-09-13'), value: 2_250.0)
+    find_or_create_dcl(proceeding_type:, cost_type: 'substantive', start_date: Date.parse('1970-01-01'), value: 25_000.0)
+    find_or_create_dcl(proceeding_type:, cost_type: 'delegated_functions', start_date: Date.parse('1970-01-01'), value: 1_350.0)
+    find_or_create_dcl(proceeding_type:, cost_type: 'delegated_functions', start_date: Date.parse('2021-09-13'), value: 2_250.0)
   end
 
   def find_or_create_dcl(proceeding_type:, cost_type:, start_date:, value:)
-    dcl = DefaultCostLimitation.find_by(proceeding_type: proceeding_type, cost_type: cost_type, start_date: start_date, value: value)
+    dcl = DefaultCostLimitation.find_by(proceeding_type:, cost_type:, start_date:, value:)
     return if dcl.present?
 
-    DefaultCostLimitation.create!(proceeding_type: proceeding_type, cost_type: cost_type, start_date: start_date, value: value)
+    DefaultCostLimitation.create!(proceeding_type:, cost_type:, start_date:, value:)
   end
 end

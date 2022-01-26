@@ -52,7 +52,7 @@ module ProceedingTypes
     end
 
     def create
-      render status: status, json: { success: success }.merge(results).to_json
+      render status: status, json: { success: }.merge(results).to_json
     end
 
     private

@@ -31,7 +31,7 @@ class ThresholdWaiverService
   end
 
   def add_proceeding_types_to_response(ccms_code)
-    proceeding_type = ProceedingType.find_by!(ccms_code: ccms_code)
+    proceeding_type = ProceedingType.find_by!(ccms_code:)
 
     add_threshold_waivers(proceeding_type)
   end
