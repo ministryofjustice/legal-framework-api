@@ -52,7 +52,7 @@ end
 
 group :test do
   gem 'highline'
-  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
+  gem 'rspec-rails', '~> 5.1'
   gem 'simplecov', require: false
   gem 'simplecov-rcov'
 end
