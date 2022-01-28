@@ -6,14 +6,14 @@ RSpec.describe MeritsTask do
   describe '#dependencies' do
     context 'task with no dependencies' do
       it 'returns and empty collection' do
-        task = MeritsTask.find_by!(name: 'opponent_details')
+        task = described_class.find_by!(name: 'opponent_details')
         expect(task.dependencies).to be_empty
       end
     end
 
     context 'task with dependencies' do
       it 'returns a collection of dependencies' do
-        task = MeritsTask.find_by!(name: 'children_proceeding')
+        task = described_class.find_by!(name: 'children_proceeding')
         expect(task.dependencies.map(&:name)).to eq(%w[children_application])
       end
     end
