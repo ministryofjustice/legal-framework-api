@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ProceedingTypeService do
-  before { seed_live_data }
-
   subject { described_class.call(ccms_code) }
+
+  before { seed_live_data }
 
   context 'successful_response' do
     let(:ccms_code) { ['DA003'] }

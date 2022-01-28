@@ -20,7 +20,7 @@ private
       category_of_law_code:,
       upper_gross_income_waiver: gross_income,
       upper_disposable_income_waiver: disposable_income,
-      upper_capital_waiver: capital
+      upper_capital_waiver: capital,
     )
   end
 

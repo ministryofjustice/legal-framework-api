@@ -22,7 +22,7 @@ private
       name:,
       description:,
       additional_search_terms:,
-      matter_type_id:
+      matter_type_id:,
     )
   end
 

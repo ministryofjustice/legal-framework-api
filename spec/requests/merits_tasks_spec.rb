@@ -4,6 +4,8 @@ require 'rails_helper'
 
 RSpec.describe MeritsTasksController, type: :request do
   describe 'POST /merits_tasks' do
+    subject { post merits_tasks_path, params: params.to_json, headers: headers }
+
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
@@ -12,8 +14,6 @@ RSpec.describe MeritsTasksController, type: :request do
         proceeding_types:
       }
     end
-
-    subject { post merits_tasks_path, params: params.to_json, headers: headers }
 
     context 'successful request' do
       before { seed_live_data }
@@ -31,7 +31,7 @@ RSpec.describe MeritsTasksController, type: :request do
       end
 
       it 'creates a request_history record' do
-        expect { subject }.to change { RequestHistory.count }.by(1)
+        expect { subject }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq 'POST'
         expect(history.endpoint).to eq '/merits_tasks'
@@ -75,7 +75,7 @@ RSpec.describe MeritsTasksController, type: :request do
                 'children_proceeding' => ['children_application'],
                 'attempts_to_settle' => []
               }
-            }
+            },
           ]
         }
       end
@@ -99,7 +99,7 @@ RSpec.describe MeritsTasksController, type: :request do
       end
 
       it 'records the result in the request history table' do
-        expect { subject }.to change { RequestHistory.count }.by(1)
+        expect { subject }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq 'POST'
         expect(history.endpoint).to eq '/merits_tasks'

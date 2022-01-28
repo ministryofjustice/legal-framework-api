@@ -22,26 +22,6 @@ RSpec/ContextWording:
     - 'spec/services/proceeding_type_service_spec.rb'
     - 'spec/services/threshold_waiver_service_spec.rb'
 
-# Offense count: 11
-# Cop supports --auto-correct.
-# Configuration parameters: SkipBlocks, EnforcedStyle.
-# SupportedStyles: described_class, explicit
-RSpec/DescribedClass:
-  Exclude:
-    - 'spec/models/default_cost_limitation_spec.rb'
-    - 'spec/models/merits_task_spec.rb'
-    - 'spec/models/proceeding_type_spec.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: method_call, block
-RSpec/ExpectChange:
-  Exclude:
-    - 'spec/requests/merits_tasks_spec.rb'
-    - 'spec/requests/proceeding_types/threshold_waivers_spec.rb'
-    - 'spec/services/proceeding_type_populator_spec.rb'
-
 # Offense count: 2
 # Configuration parameters: Include, CustomTransform, IgnoreMethods, SpecSuffixOnly.
 # Include: **/*_spec*rb*, **/spec/**/*
@@ -49,19 +29,6 @@ RSpec/FilePath:
   Exclude:
     - 'spec/requests/merits_tasks_spec.rb'
     - 'spec/requests/proceeding_types_spec.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-RSpec/LeadingSubject:
-  Exclude:
-    - 'spec/requests/merits_tasks_spec.rb'
-    - 'spec/requests/proceeding_types/searches_spec.rb'
-    - 'spec/requests/proceeding_types/threshold_waivers_spec.rb'
-    - 'spec/requests/proceeding_types_spec.rb'
-    - 'spec/services/merits_task_service_spec.rb'
-    - 'spec/services/proceeding_type_full_text_search_spec.rb'
-    - 'spec/services/proceeding_type_service_spec.rb'
-    - 'spec/services/threshold_waiver_service_spec.rb'
 
 # Offense count: 49
 # Configuration parameters: IgnoreSharedExamples.
@@ -75,14 +42,6 @@ RSpec/NamedSubject:
     - 'spec/services/proceeding_type_full_text_search_spec.rb'
     - 'spec/services/proceeding_type_service_spec.rb'
     - 'spec/services/threshold_waiver_service_spec.rb'
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: numeric, symbolic
-RSpec/Rails/HttpStatus:
-  Exclude:
-    - 'spec/requests/proceeding_types/searches_spec.rb'
 
 # Offense count: 2
 RSpec/RepeatedExampleGroupBody:
@@ -114,29 +73,6 @@ Style/HashSyntax:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
   Enabled: false
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'app/services/matter_type_populator.rb'
-    - 'app/services/proceeding_type_populator.rb'
-    - 'config/spring.rb'
-    - 'db/populators/scope_limitations_populator.rb'
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArrayLiteral:
-  Exclude:
-    - 'spec/requests/merits_tasks_spec.rb'
-    - 'spec/requests/proceeding_types/searches_spec.rb'
-    - 'spec/requests/proceeding_types/threshold_waivers_spec.rb'
-    - 'spec/services/merits_task_service_spec.rb'
-    - 'spec/services/threshold_waiver_service_spec.rb'
 
 # Offense count: 72
 # Cop supports --auto-correct.

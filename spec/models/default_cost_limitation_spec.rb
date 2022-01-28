@@ -6,7 +6,7 @@ RSpec.describe DefaultCostLimitation do
   describe '#cost_type' do
     it 'does not allow invalid cost types' do
       expect {
-        DefaultCostLimitation.create!(proceeding_type: ProceedingType.first, cost_type: 'xxxx', start_date: 1.month.ago, value: 55)
+        described_class.create!(proceeding_type: ProceedingType.first, cost_type: 'xxxx', start_date: 1.month.ago, value: 55)
       }.to raise_error ArgumentError, "'xxxx' is not a valid cost_type"
     end
   end
@@ -16,7 +16,7 @@ RSpec.describe DefaultCostLimitation do
       let(:date) { Date.parse('2021-09-12') }
 
       it 'returns the old value' do
-        dcl = DefaultCostLimitation.delegated_functions.for_date(date)
+        dcl = described_class.delegated_functions.for_date(date)
         expect(dcl.value).to eq 1350
       end
     end
@@ -25,7 +25,7 @@ RSpec.describe DefaultCostLimitation do
       let(:date) { Date.parse('2021-09-13') }
 
       it 'returns the old value' do
-        dcl = DefaultCostLimitation.delegated_functions.for_date(date)
+        dcl = described_class.delegated_functions.for_date(date)
         expect(dcl.value).to eq 2250
       end
     end
@@ -34,7 +34,7 @@ RSpec.describe DefaultCostLimitation do
       let(:date) { Date.parse('2021-09-19') }
 
       it 'returns the old value' do
-        dcl = DefaultCostLimitation.delegated_functions.for_date(date)
+        dcl = described_class.delegated_functions.for_date(date)
         expect(dcl.value).to eq 2250
       end
     end
