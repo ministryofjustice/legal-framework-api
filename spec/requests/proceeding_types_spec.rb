@@ -37,27 +37,27 @@ RSpec.describe ProceedingTypesController, type: :request do
         cost_limitations: {
           substantive: {
             start_date: '1970-01-01',
-            value: '25000.0'
+            value: '25000.0',
           },
           delegated_functions: {
             start_date: '2021-09-13',
-            value: '2250.0'
-          }
+            value: '2250.0',
+          },
         },
         default_scope_limitations: {
           substantive: {
             code: 'FM059',
             meaning: 'FHH Children',
             description: 'Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement.'\
-                         ' To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.'
+                         ' To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.',
           },
           delegated_functions: {
             code: 'CV117',
             meaning: 'Interim order inc. return date',
             description: 'Limited to all steps necessary to apply for an interim order;'\
-                         ' where application is made without notice to include representation on the return date.'
-          }
-        }
+                         ' where application is made without notice to include representation on the return date.',
+          },
+        },
       }
     end
 

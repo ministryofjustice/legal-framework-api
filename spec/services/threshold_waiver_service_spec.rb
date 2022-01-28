@@ -63,9 +63,9 @@ RSpec.describe ThresholdWaiverService do
           capital_upper: true,
           disposable_income_upper: true,
           gross_income_upper: true,
-          matter_type: 'Domestic abuse'
+          matter_type: 'Domestic abuse',
         },
-      ]
+      ],
     }
   end
 
@@ -79,23 +79,23 @@ RSpec.describe ThresholdWaiverService do
           capital_upper: true,
           disposable_income_upper: true,
           gross_income_upper: true,
-          matter_type: 'Domestic abuse'
+          matter_type: 'Domestic abuse',
         },
         {
           ccms_code: 'SE003',
           capital_upper: false,
           disposable_income_upper: false,
           gross_income_upper: false,
-          matter_type: 'Children - section 8'
+          matter_type: 'Children - section 8',
         },
         {
           ccms_code: 'SE013',
           capital_upper: false,
           disposable_income_upper: false,
           gross_income_upper: false,
-          matter_type: 'Children - section 8'
+          matter_type: 'Children - section 8',
         },
-      ]
+      ],
     }
   end
 end

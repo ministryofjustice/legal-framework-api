@@ -61,17 +61,17 @@ RSpec.describe MeritsTaskService do
         tasks: {
           'latest_incident_details' => [],
           'opponent_details' => [],
-          'statement_of_case' => []
-        }
+          'statement_of_case' => [],
+        },
       },
       proceeding_types: [
         {
           ccms_code: 'DA005',
           tasks: {
-            'chances_of_success' => []
-          }
+            'chances_of_success' => [],
+          },
         },
-      ]
+      ],
     }
   end
 
@@ -84,33 +84,33 @@ RSpec.describe MeritsTaskService do
           'latest_incident_details' => [],
           'opponent_details' => [],
           'statement_of_case' => [],
-          'children_application' => []
-        }
+          'children_application' => [],
+        },
       },
       proceeding_types: [
         {
           ccms_code: 'DA005',
           tasks: {
-            'chances_of_success' => []
-          }
+            'chances_of_success' => [],
+          },
         },
         {
           ccms_code: 'SE003',
           tasks: {
             'chances_of_success' => [],
             'children_proceeding' => ['children_application'],
-            'attempts_to_settle' => []
-          }
+            'attempts_to_settle' => [],
+          },
         },
         {
           ccms_code: 'SE013',
           tasks: {
             'chances_of_success' => [],
             'children_proceeding' => ['children_application'],
-            'attempts_to_settle' => []
-          }
+            'attempts_to_settle' => [],
+          },
         },
-      ]
+      ],
     }
   end
 end

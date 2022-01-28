@@ -46,7 +46,7 @@ class ProceedingType < ApplicationRecord
       description: description,
       ccms_category_law: matter_type.category_of_law,
       ccms_matter_code: matter_type.code,
-      ccms_matter: matter_type.name
+      ccms_matter: matter_type.name,
     }.to_json
   end
 

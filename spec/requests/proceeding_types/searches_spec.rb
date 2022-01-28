@@ -22,7 +22,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
 
     let(:params) do
       {
-        search_term: search_term
+        search_term: search_term,
       }
     end
     let(:search_term) { 'Occupation' }
@@ -39,9 +39,9 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
               ccms_code: 'DA005',
               description: 'to be represented on an application for an occupation order.',
               ccms_category_law: 'Family',
-              ccms_matter: 'Domestic abuse'
+              ccms_matter: 'Domestic abuse',
             },
-          ]
+          ],
         }
       end
 
@@ -59,7 +59,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       let(:expected_result) do
         {
           success: false,
-          data: []
+          data: [],
         }
       end
 
@@ -80,7 +80,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         {
           success: false,
           error: 'StandardError',
-          message: 'Unexpected error in full text search'
+          message: 'Unexpected error in full text search',
         }
       end
 
@@ -106,7 +106,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         let(:params) do
           {
             search_term: 'injunction',
-            excluded_codes: 'DA001'
+            excluded_codes: 'DA001',
           }
         end
 
@@ -125,13 +125,13 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         let(:params) do
           {
             search_term: search_term,
-            excluded_codes: 'DA005'
+            excluded_codes: 'DA005',
           }
         end
         let(:expected_result) do
           {
             success: false,
-            data: []
+            data: [],
           }
         end
 

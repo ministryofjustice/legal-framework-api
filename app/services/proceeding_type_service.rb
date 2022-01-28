@@ -87,7 +87,7 @@ private
       ccms_category_law: '',
       ccms_matter: '',
       cost_limitations: {},
-      default_scope_limitations: {}
+      default_scope_limitations: {},
     }
   end
 
@@ -97,7 +97,7 @@ private
       success: false,
       error_class: err.class.to_s,
       message: err.message,
-      backtrace: err.backtrace
+      backtrace: err.backtrace,
     }
   end
 end

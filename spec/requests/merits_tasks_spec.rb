@@ -11,7 +11,7 @@ RSpec.describe MeritsTasksController, type: :request do
     let(:params) do
       {
         request_id:,
-        proceeding_types:
+        proceeding_types:,
       }
     end
 
@@ -50,33 +50,33 @@ RSpec.describe MeritsTasksController, type: :request do
               'latest_incident_details' => [],
               'opponent_details' => [],
               'statement_of_case' => [],
-              'children_application' => []
-            }
+              'children_application' => [],
+            },
           },
           proceeding_types: [
             {
               ccms_code: 'DA005',
               tasks: {
-                'chances_of_success' => []
-              }
+                'chances_of_success' => [],
+              },
             },
             {
               ccms_code: 'SE004',
               tasks: {
                 'chances_of_success' => [],
                 'children_proceeding' => ['children_application'],
-                'attempts_to_settle' => []
-              }
+                'attempts_to_settle' => [],
+              },
             },
             {
               ccms_code: 'SE013',
               tasks: {
                 'chances_of_success' => [],
                 'children_proceeding' => ['children_application'],
-                'attempts_to_settle' => []
-              }
+                'attempts_to_settle' => [],
+              },
             },
-          ]
+          ],
         }
       end
     end

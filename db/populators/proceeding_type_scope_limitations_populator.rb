@@ -32,7 +32,7 @@ private
       proceeding_type_id: proceeding_type_id(seed_row),
       scope_limitation_id: scope_limitation_id(seed_row),
       substantive_default: seed_row[2],
-      delegated_functions_default: seed_row[3]
+      delegated_functions_default: seed_row[3],
     }
   end
 

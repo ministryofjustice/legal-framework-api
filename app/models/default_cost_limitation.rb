@@ -3,7 +3,7 @@ class DefaultCostLimitation < ApplicationRecord
 
   enum cost_type: {
     delegated_functions: 'delegated_functions'.freeze,
-    substantive: 'substantive'.freeze
+    substantive: 'substantive'.freeze,
   }
 
   def self.for_date(date)

@@ -54,12 +54,12 @@ RSpec.describe ProceedingTypeService do
       cost_limitations: {
         substantive: {
           start_date: '1970-01-01',
-          value: '25000.0'
+          value: '25000.0',
         },
         delegated_functions: {
           start_date: '2021-09-13',
-          value: '2250.0'
-        }
+          value: '2250.0',
+        },
       },
       default_scope_limitations: {
         substantive: {
@@ -71,15 +71,15 @@ RSpec.describe ProceedingTypeService do
                        ' to the exercise of a power of arrest to representation on'\
                        ' the consideration of the breach by the court (but excluding'\
                        ' applying for a warrant of arrest, if not attached, and'\
-                       ' representation in contempt proceedings).'
+                       ' representation in contempt proceedings).',
         },
         delegated_functions: {
           code: 'CV117',
           meaning: 'Interim order inc. return date',
           description: 'Limited to all steps necessary to apply for an interim order;'\
-                       ' where application is made without notice to include representation on the return date.'
-        }
-      }
+                       ' where application is made without notice to include representation on the return date.',
+        },
+      },
     }
   end
 end
