@@ -20,7 +20,7 @@ class ThresholdWaiverService
     @response = error_response_for(err)
   end
 
-  private
+private
 
   def create_skeleton_response
     {

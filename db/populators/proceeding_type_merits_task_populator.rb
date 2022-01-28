@@ -11,7 +11,7 @@ class ProceedingTypeMeritsTaskPopulator
     end
   end
 
-  private
+private
 
   def populate(proceeding_type_key, task_names)
     proceeding_type = ProceedingType.find_by!(ccms_code: proceeding_type_key)

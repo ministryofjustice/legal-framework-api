@@ -19,7 +19,7 @@ class ProceedingTypeService
     @response = error_response_for(err)
   end
 
-  private
+private
 
   def populate_response(ccms_code)
     pt = ProceedingType.find_by!(ccms_code:)

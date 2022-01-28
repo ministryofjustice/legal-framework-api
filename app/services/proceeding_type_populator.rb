@@ -10,7 +10,7 @@ class ProceedingTypePopulator
     populate_default_cost_limitations
   end
 
-  private
+private
 
   # rubocop:disable Metrics/MethodLength
   def populate(seed_row)
