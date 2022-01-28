@@ -74,7 +74,7 @@ private
     proceeding_type.proceeding_type_scope_limitations.default_substantive_scope_limitation
   end
 
-  def skeleton_response # rubocop:disable Metrics/MethodLength
+  def skeleton_response
     {
       # do we need a request_id to track these requests
       success: true,
