@@ -74,17 +74,6 @@ Style/HashSyntax:
 Style/StringLiterals:
   Enabled: false
 
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'app/services/matter_type_populator.rb'
-    - 'app/services/proceeding_type_populator.rb'
-    - 'config/spring.rb'
-    - 'db/populators/scope_limitations_populator.rb'
-
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForMultiline.

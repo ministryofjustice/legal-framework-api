@@ -19,7 +19,7 @@ private
       meaning:,
       description:,
       substantive:,
-      delegated_functions:
+      delegated_functions:,
     )
   end
 
