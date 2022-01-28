@@ -6,7 +6,7 @@ RSpec.describe ProceedingTypeService do
   before { seed_live_data }
 
   context 'successful_response' do
-    let(:ccms_code) { ['DA003'] }
+    let(:ccms_code) { %w[DA003] }
 
     it 'returns valid response with expected tasks' do
       expect(subject).to eq expected_da003_response

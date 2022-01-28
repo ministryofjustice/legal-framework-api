@@ -64,7 +64,7 @@ RSpec.describe MeritsTasksController, type: :request do
               ccms_code: 'SE004',
               tasks: {
                 'chances_of_success' => [],
-                'children_proceeding' => ['children_application'],
+                'children_proceeding' => %w[children_application],
                 'attempts_to_settle' => [],
               },
             },
@@ -72,7 +72,7 @@ RSpec.describe MeritsTasksController, type: :request do
               ccms_code: 'SE013',
               tasks: {
                 'chances_of_success' => [],
-                'children_proceeding' => ['children_application'],
+                'children_proceeding' => %w[children_application],
                 'attempts_to_settle' => [],
               },
             },

@@ -9,7 +9,7 @@ RSpec.describe MeritsTaskService do
 
   context 'successful_response' do
     context 'domestic abuse proceeding type' do
-      let(:ccms_codes) { ['DA005'] }
+      let(:ccms_codes) { %w[DA005] }
 
       it 'returns valid response with expected tasks' do
         expect(subject).to eq expected_da005_response
@@ -27,7 +27,7 @@ RSpec.describe MeritsTaskService do
 
   context 'error response' do
     context 'non_existent ccms_code' do
-      let(:ccms_codes) { ['XX001'] }
+      let(:ccms_codes) { %w[XX001] }
 
       it 'returns error' do
         response = subject
@@ -98,7 +98,7 @@ RSpec.describe MeritsTaskService do
           ccms_code: 'SE003',
           tasks: {
             'chances_of_success' => [],
-            'children_proceeding' => ['children_application'],
+            'children_proceeding' => %w[children_application],
             'attempts_to_settle' => [],
           },
         },
@@ -106,7 +106,7 @@ RSpec.describe MeritsTaskService do
           ccms_code: 'SE013',
           tasks: {
             'chances_of_success' => [],
-            'children_proceeding' => ['children_application'],
+            'children_proceeding' => %w[children_application],
             'attempts_to_settle' => [],
           },
         },

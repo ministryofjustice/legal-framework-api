@@ -9,7 +9,7 @@ RSpec.describe ThresholdWaiverService do
 
   context 'successful_response' do
     context 'domestic abuse proceeding type' do
-      let(:ccms_codes) { ['DA005'] }
+      let(:ccms_codes) { %w[DA005] }
 
       it 'returns valid response with expected tasks' do
         expect(subject).to eq expected_da005_response
@@ -27,7 +27,7 @@ RSpec.describe ThresholdWaiverService do
 
   context 'error response' do
     context 'non_existent ccms_code' do
-      let(:ccms_codes) { ['XX001'] }
+      let(:ccms_codes) { %w[XX001] }
 
       it 'returns error' do
         response = subject
