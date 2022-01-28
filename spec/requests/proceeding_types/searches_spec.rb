@@ -7,6 +7,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
 
   describe 'GET proceeding_types/all' do
     subject { get proceeding_types_all_path, headers: headers }
+
     before { subject }
 
     it 'returns a successful response with all proceedingtypes' do
