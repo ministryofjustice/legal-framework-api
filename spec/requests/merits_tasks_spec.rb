@@ -4,6 +4,8 @@ require 'rails_helper'
 
 RSpec.describe MeritsTasksController, type: :request do
   describe 'POST /merits_tasks' do
+    subject { post merits_tasks_path, params: params.to_json, headers: headers }
+
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
@@ -12,8 +14,6 @@ RSpec.describe MeritsTasksController, type: :request do
         proceeding_types:
       }
     end
-
-    subject { post merits_tasks_path, params: params.to_json, headers: headers }
 
     context 'successful request' do
       before { seed_live_data }

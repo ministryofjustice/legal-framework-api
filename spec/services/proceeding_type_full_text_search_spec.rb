@@ -100,10 +100,10 @@ RSpec.describe ProceedingTypeFullTextSearch do
   end
 
   describe 'transformation of search terms' do
+    subject { service.instance_variable_get(:@ts_query) }
+
     let(:dummy_url) { nil }
     let(:service) { described_class.new(search_terms) }
-
-    subject { service.instance_variable_get(:@ts_query) }
 
     context 'one single search term' do
       let(:search_terms) { 'term1' }

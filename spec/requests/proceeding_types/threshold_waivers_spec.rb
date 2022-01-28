@@ -4,6 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'ProceedingTypes/ThresholdWaiversController', type: :request do
   describe 'POST proceeding_types/threshold_waivers' do
+    subject { post proceeding_types_threshold_waivers_path, params: params.to_json, headers: headers }
+
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
     let(:params) do
@@ -13,8 +15,6 @@ RSpec.describe 'ProceedingTypes/ThresholdWaiversController', type: :request do
       }
     end
     let(:proceeding_types) { %w[DA005 SE004 SE013] }
-
-    subject { post proceeding_types_threshold_waivers_path, params: params.to_json, headers: headers }
 
     context 'successful request' do
       before { seed_live_data }

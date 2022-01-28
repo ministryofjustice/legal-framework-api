@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe ThresholdWaiverService do
+  subject { described_class.call(request_id, ccms_codes) }
+
   before { seed_live_data }
 
   let(:request_id) { SecureRandom.uuid }
-
-  subject { described_class.call(request_id, ccms_codes) }
 
   context 'successful_response' do
     context 'domestic abuse proceeding type' do
