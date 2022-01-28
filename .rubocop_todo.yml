@@ -32,14 +32,6 @@ RSpec/DescribedClass:
     - 'spec/models/merits_task_spec.rb'
     - 'spec/models/proceeding_type_spec.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-RSpec/EmptyLineAfterExampleGroup:
-  Exclude:
-    - 'spec/services/merits_task_service_spec.rb'
-    - 'spec/services/proceeding_type_service_spec.rb'
-    - 'spec/services/threshold_waiver_service_spec.rb'
-
 # Offense count: 16
 # Cop supports --auto-correct.
 RSpec/EmptyLineAfterFinalLet:

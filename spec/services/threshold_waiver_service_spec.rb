@@ -36,6 +36,7 @@ RSpec.describe ThresholdWaiverService do
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
+
     context 'no ccms codes specified' do
       let(:ccms_codes) { [] }
       it 'returns error' do

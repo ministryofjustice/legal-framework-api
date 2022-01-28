@@ -24,6 +24,7 @@ RSpec.describe ProceedingTypeService do
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
+
     context 'no ccms codes specified' do
       let(:ccms_code) { nil }
       it 'returns error' do
