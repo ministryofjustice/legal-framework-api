@@ -16,6 +16,7 @@ RSpec.describe ProceedingTypeService do
   context 'error response' do
     context 'non_existent ccms_code' do
       let(:ccms_code) { 'XX001' }
+
       it 'returns error' do
         response = subject
         expect(response[:success]).to be false
@@ -27,6 +28,7 @@ RSpec.describe ProceedingTypeService do
 
     context 'no ccms codes specified' do
       let(:ccms_code) { nil }
+
       it 'returns error' do
         response = subject
         expect(response[:success]).to be false

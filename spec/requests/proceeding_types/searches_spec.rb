@@ -22,6 +22,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       }
     end
     let(:search_term) { 'Occupation' }
+
     subject { post proceeding_types_searches_path, params: params.to_json, headers: headers }
 
     context 'when the params are valid' do

@@ -106,6 +106,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
     context 'one single search term' do
       let(:search_terms) { 'term1' }
+
       it 'returns term followed by :*' do
         expect(subject).to eq 'term1:*'
       end
@@ -113,6 +114,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
     context 'terms separated by a single space' do
       let(:search_terms) { 'term1 term2' }
+
       it 'returns :* after each item separated by &' do
         expect(subject).to eq 'term1:* & term2:*'
       end
@@ -120,6 +122,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
     context 'terms separated by a tab' do
       let(:search_terms) { "term1\tterm2" }
+
       it 'returns :* after each item separated by &' do
         expect(subject).to eq 'term1:* & term2:*'
       end
@@ -127,6 +130,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
     context 'terms separated by multiple spaces' do
       let(:search_terms) { 'term1   term2' }
+
       it 'returns :* after each item separated by &' do
         expect(subject).to eq 'term1:* & term2:*'
       end
@@ -134,6 +138,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
     context 'terms separated by mixture of multiple spaces and tabs' do
       let(:search_terms) { "term1\t\tterm2  term3\t term4  \tterm5" }
+
       it 'returns :* after each item separated by &' do
         expect(subject).to eq 'term1:* & term2:* & term3:* & term4:* & term5:*'
       end
