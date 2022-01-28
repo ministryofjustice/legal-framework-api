@@ -6,15 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredName.
-Naming/RescuedExceptionsVariableName:
-  Exclude:
-    - 'app/services/merits_task_service.rb'
-    - 'app/services/proceeding_type_service.rb'
-    - 'app/services/threshold_waiver_service.rb'
-
 # Offense count: 40
 # Configuration parameters: Prefixes.
 # Prefixes: when, with, without

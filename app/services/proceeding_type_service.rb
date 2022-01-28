@@ -15,8 +15,8 @@ class ProceedingTypeService
 
     populate_response(@ccms_code)
     @response
-  rescue StandardError => err
-    @response = error_response_for(err)
+  rescue StandardError => e
+    @response = error_response_for(e)
   end
 
 private

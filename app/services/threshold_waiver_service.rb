@@ -16,8 +16,8 @@ class ThresholdWaiverService
 
     @ccms_codes.each { |ccms_code| add_proceeding_types_to_response(ccms_code) }
     @response
-  rescue StandardError => err
-    @response = error_response_for(err)
+  rescue StandardError => e
+    @response = error_response_for(e)
   end
 
 private
