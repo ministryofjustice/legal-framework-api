@@ -63,6 +63,7 @@ RSpec.describe ProceedingTypesController, type: :request do
 
     context 'unsuccessful_request' do
       before { seed_live_data }
+
       let(:ccms_code) { 'AZ123' }
 
       it 'returns bad request', :show_in_doc do

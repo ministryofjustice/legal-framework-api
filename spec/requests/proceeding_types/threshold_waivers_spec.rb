@@ -75,6 +75,7 @@ RSpec.describe 'ProceedingTypes/ThresholdWaiversController', type: :request do
 
     context 'unsuccessful_request' do
       before { seed_live_data }
+
       let(:proceeding_types) { %w[DA005 ZZ262 SE013] }
 
       it 'returns bad request', :show_in_doc do

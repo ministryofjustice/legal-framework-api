@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe ProceedingTypeFullTextSearch do
   context 'whole service' do
     before { seed_live_data }
+
     let(:excluded_codes) { [] }
 
     describe '.call' do
