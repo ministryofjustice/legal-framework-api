@@ -15,7 +15,7 @@ class ProceedingTypeScopeLimitationsPopulator
     seed_data.each { |seed_row| populate(seed_row) }
   end
 
-  private
+private
 
   def populate(seed_row)
     record = ProceedingTypeScopeLimitation.where(proceeding_type_id: proceeding_type_id(seed_row),

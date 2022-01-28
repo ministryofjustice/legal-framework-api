@@ -23,6 +23,7 @@ RSpec.describe DefaultCostLimitation do
 
     context 'on change date' do
       let(:date) { Date.parse('2021-09-13') }
+
       it 'returns the old value' do
         dcl = DefaultCostLimitation.delegated_functions.for_date(date)
         expect(dcl.value).to eq 2250
@@ -31,6 +32,7 @@ RSpec.describe DefaultCostLimitation do
 
     context 'on change date' do
       let(:date) { Date.parse('2021-09-19') }
+
       it 'returns the old value' do
         dcl = DefaultCostLimitation.delegated_functions.for_date(date)
         expect(dcl.value).to eq 2250

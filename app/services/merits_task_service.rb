@@ -16,11 +16,11 @@ class MeritsTaskService
 
     @ccms_codes.each { |ccms_code| add_tasks_to_response(ccms_code) }
     @response
-  rescue StandardError => err
-    @response = error_response_for(err)
+  rescue StandardError => e
+    @response = error_response_for(e)
   end
 
-  private
+private
 
   def create_skeleton_response
     {

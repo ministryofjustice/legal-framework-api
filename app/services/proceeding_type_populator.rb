@@ -10,9 +10,8 @@ class ProceedingTypePopulator
     populate_default_cost_limitations
   end
 
-  private
+private
 
-  # rubocop:disable Metrics/MethodLength
   def populate(seed_row)
     ccms_code, meaning, name, description, matter_type_id_method, additional_search_terms = seed_row
     matter_type_id = __send__(matter_type_id_method)
@@ -26,7 +25,6 @@ class ProceedingTypePopulator
       matter_type_id:
     )
   end
-  # rubocop:enable Metrics/MethodLength
 
   def domestic_abuse_id
     @domestic_abuse_id ||= MatterType.domestic_abuse.id

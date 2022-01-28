@@ -55,7 +55,7 @@ module ProceedingTypes
       render status: status, json: { success: }.merge(results).to_json
     end
 
-    private
+  private
 
     def success
       @success ||= status.eql?(200) && results.symbolize_keys[:data].count.positive?

@@ -9,7 +9,7 @@ class ScopeLimitationsPopulator
     seed_data.each { |seed_row| populate(seed_row) }
   end
 
-  private
+private
 
   def populate(seed_row)
     code, meaning, description, substantive, delegated_functions = seed_row

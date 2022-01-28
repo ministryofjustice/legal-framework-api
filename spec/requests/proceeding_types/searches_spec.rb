@@ -2,10 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'ProceedingTypes/SearchController', type: :request do
   before { seed_live_data }
+
   let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
 
   describe 'GET proceeding_types/all' do
     subject { get proceeding_types_all_path, headers: headers }
+
     before { subject }
 
     it 'returns a successful response with all proceedingtypes' do
@@ -22,10 +24,12 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
       }
     end
     let(:search_term) { 'Occupation' }
+
     subject { post proceeding_types_searches_path, params: params.to_json, headers: headers }
 
     context 'when the params are valid' do
       before { subject }
+
       let(:expected_result) do
         {
           success: true,
@@ -50,6 +54,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
 
     context 'when no matches found' do
       before { subject }
+
       let(:search_term) { 'nonexistant' }
       let(:expected_result) do
         {
@@ -70,6 +75,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
         allow(ProceedingTypeFullTextSearch).to receive(:call).and_raise(StandardError.new('Unexpected error in full text search'))
         subject
       end
+
       let(:expected_result) do
         {
           success: false,
@@ -87,6 +93,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
 
     context 'when returning multiple results' do
       before { subject }
+
       let(:search_term) { 'injunction' }
 
       it 'returns a successful response with three results' do
@@ -114,6 +121,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
     context 'when excluded_codes matches' do
       describe 'the single match' do
         before { subject }
+
         let(:params) do
           {
             search_term: search_term,

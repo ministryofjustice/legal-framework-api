@@ -16,6 +16,7 @@ RSpec.describe ProceedingTypeService do
   context 'error response' do
     context 'non_existent ccms_code' do
       let(:ccms_code) { 'XX001' }
+
       it 'returns error' do
         response = subject
         expect(response[:success]).to be false
@@ -24,8 +25,10 @@ RSpec.describe ProceedingTypeService do
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
+
     context 'no ccms codes specified' do
       let(:ccms_code) { nil }
+
       it 'returns error' do
         response = subject
         expect(response[:success]).to be false

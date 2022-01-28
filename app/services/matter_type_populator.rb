@@ -9,7 +9,7 @@ class MatterTypePopulator
     seed_data.each { |seed_row| populate(seed_row) }.freeze
   end
 
-  private
+private
 
   def populate(seed_row)
     name, matter_code, category_of_law, category_of_law_code, gross_income, disposable_income, capital = seed_row

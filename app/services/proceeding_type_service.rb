@@ -15,11 +15,11 @@ class ProceedingTypeService
 
     populate_response(@ccms_code)
     @response
-  rescue StandardError => err
-    @response = error_response_for(err)
+  rescue StandardError => e
+    @response = error_response_for(e)
   end
 
-  private
+private
 
   def populate_response(ccms_code)
     pt = ProceedingType.find_by!(ccms_code:)
@@ -74,7 +74,7 @@ class ProceedingTypeService
     proceeding_type.proceeding_type_scope_limitations.default_substantive_scope_limitation
   end
 
-  def skeleton_response # rubocop:disable Metrics/MethodLength
+  def skeleton_response
     {
       # do we need a request_id to track these requests
       success: true,

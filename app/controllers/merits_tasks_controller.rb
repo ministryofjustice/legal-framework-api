@@ -49,7 +49,7 @@ class MeritsTasksController < ApplicationController
     render json: response, status: status
   end
 
-  private
+private
 
   def request_id
     params[:request_id]

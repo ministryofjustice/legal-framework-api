@@ -23,7 +23,7 @@ class ProceedingTypeFullTextSearch
     matching_results.delete_if { |result| result.ccms_code.in?(already_selected_codes) }
   end
 
-  private
+private
 
   def already_selected_codes
     @already_selected_codes ||= @excluded_codes.split(',')

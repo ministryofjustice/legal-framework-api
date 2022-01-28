@@ -26,7 +26,7 @@ class MeritsTaskPopulator
     end
   end
 
-  private
+private
 
   def populate(merits_task, klass)
     record = klass.find_by(name: merits_task) || klass.new

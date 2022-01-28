@@ -18,6 +18,7 @@ RSpec.describe ThresholdWaiverService do
 
     context 'domestic abuse and section 8 proceeding type' do
       let(:ccms_codes) { %w[DA005 SE003 SE013] }
+
       it 'returns response with dependencies' do
         expect(subject).to eq expected_da005_se003_se013_response
       end
@@ -27,6 +28,7 @@ RSpec.describe ThresholdWaiverService do
   context 'error response' do
     context 'non_existent ccms_code' do
       let(:ccms_codes) { ['XX001'] }
+
       it 'returns error' do
         response = subject
         expect(response[:request_id]).to eq request_id
@@ -36,8 +38,10 @@ RSpec.describe ThresholdWaiverService do
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
+
     context 'no ccms codes specified' do
       let(:ccms_codes) { [] }
+
       it 'returns error' do
         response = subject
         expect(response[:request_id]).to eq request_id

@@ -11,7 +11,7 @@ class TaskDependencyPopulator
     end
   end
 
-  private
+private
 
   def repopulate!
     TaskDependency.delete_all

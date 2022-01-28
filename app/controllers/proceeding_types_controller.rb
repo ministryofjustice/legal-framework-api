@@ -14,7 +14,7 @@ class ProceedingTypesController < ApplicationController
   param :ccms_code, String, required: true
   formats(%w[json])
 
-  returns code: :ok, desc: 'Successful response' do # rubocop:disable Metrics/BlockLength
+  returns code: :ok, desc: 'Successful response' do
     property :ccms_code, String, desc: 'The ccms_code specified in the request'
     property :success, ['true'], desc: 'Success flag shows true'
     property :meaning, String, desc: 'The Proceeding Type meaning'
