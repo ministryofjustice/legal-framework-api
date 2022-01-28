@@ -40,7 +40,7 @@ RSpec.describe 'ProceedingTypes/SearchController', type: :request do
               description: 'to be represented on an application for an occupation order.',
               ccms_category_law: 'Family',
               ccms_matter: 'Domestic abuse'
-            }
+            },
           ]
         }
       end

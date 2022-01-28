@@ -75,7 +75,7 @@ RSpec.describe MeritsTasksController, type: :request do
                 'children_proceeding' => ['children_application'],
                 'attempts_to_settle' => []
               }
-            }
+            },
           ]
         }
       end

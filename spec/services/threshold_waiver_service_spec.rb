@@ -64,7 +64,7 @@ RSpec.describe ThresholdWaiverService do
           disposable_income_upper: true,
           gross_income_upper: true,
           matter_type: 'Domestic abuse'
-        }
+        },
       ]
     }
   end
@@ -94,7 +94,7 @@ RSpec.describe ThresholdWaiverService do
           disposable_income_upper: false,
           gross_income_upper: false,
           matter_type: 'Children - section 8'
-        }
+        },
       ]
     }
   end

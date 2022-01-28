@@ -70,7 +70,7 @@ RSpec.describe MeritsTaskService do
           tasks: {
             'chances_of_success' => []
           }
-        }
+        },
       ]
     }
   end
@@ -109,7 +109,7 @@ RSpec.describe MeritsTaskService do
             'children_proceeding' => ['children_application'],
             'attempts_to_settle' => []
           }
-        }
+        },
       ]
     }
   end

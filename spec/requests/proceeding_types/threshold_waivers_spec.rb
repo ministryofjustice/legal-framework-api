@@ -67,7 +67,7 @@ RSpec.describe 'ProceedingTypes/ThresholdWaiversController', type: :request do
               disposable_income_upper: false,
               capital_upper: false,
               matter_type: 'Children - section 8'
-            }
+            },
           ]
         }
       end

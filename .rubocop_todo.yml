@@ -74,18 +74,6 @@ Style/HashSyntax:
 Style/StringLiterals:
   Enabled: false
 
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArrayLiteral:
-  Exclude:
-    - 'spec/requests/merits_tasks_spec.rb'
-    - 'spec/requests/proceeding_types/searches_spec.rb'
-    - 'spec/requests/proceeding_types/threshold_waivers_spec.rb'
-    - 'spec/services/merits_task_service_spec.rb'
-    - 'spec/services/threshold_waiver_service_spec.rb'
-
 # Offense count: 72
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForMultiline.
