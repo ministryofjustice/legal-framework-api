@@ -43,14 +43,6 @@ RSpec/NamedSubject:
     - 'spec/services/proceeding_type_service_spec.rb'
     - 'spec/services/threshold_waiver_service_spec.rb'
 
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: numeric, symbolic
-RSpec/Rails/HttpStatus:
-  Exclude:
-    - 'spec/requests/proceeding_types/searches_spec.rb'
-
 # Offense count: 2
 RSpec/RepeatedExampleGroupBody:
   Exclude:
