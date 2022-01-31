@@ -8,6 +8,6 @@ class UuidValidator < Apipie::Validator::BaseValidator
   end
 
   def description
-    'Must be an UUID. For example: b369784a-6c81-4e08-bb17-ba3bd54a3551'
+    "Must be an UUID. For example: b369784a-6c81-4e08-bb17-ba3bd54a3551"
   end
 end

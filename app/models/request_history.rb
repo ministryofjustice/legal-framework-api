@@ -12,6 +12,6 @@ class RequestHistory < ApplicationRecord
   end
 
   def self.request_payload(http_request)
-    http_request.filtered_parameters.except('controller').except('action').to_json
+    http_request.filtered_parameters.except("controller").except("action").to_json
   end
 end

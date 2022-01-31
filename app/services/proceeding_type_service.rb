@@ -11,7 +11,7 @@ class ProceedingTypeService
   end
 
   def call
-    raise ProceedingTypeServiceError, 'Must specify a proceeding type' if @ccms_code.nil?
+    raise ProceedingTypeServiceError, "Must specify a proceeding type" if @ccms_code.nil?
 
     populate_response(@ccms_code)
     @response
@@ -78,14 +78,14 @@ private
     {
       # do we need a request_id to track these requests
       success: true,
-      ccms_code: '',
-      meaning: '',
-      ccms_category_law_code: '',
-      ccms_matter_code: '',
-      name: '',
-      description: '',
-      ccms_category_law: '',
-      ccms_matter: '',
+      ccms_code: "",
+      meaning: "",
+      ccms_category_law_code: "",
+      ccms_matter_code: "",
+      name: "",
+      description: "",
+      ccms_category_law: "",
+      ccms_matter: "",
       cost_limitations: {},
       default_scope_limitations: {},
     }

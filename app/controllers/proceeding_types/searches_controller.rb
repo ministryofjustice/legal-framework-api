@@ -1,7 +1,7 @@
 module ProceedingTypes
   class SearchesController < ApplicationController
     resource_description do
-      short 'Search proceeding types'
+      short "Search proceeding types"
       formats(%w[json])
       description <<-END_OF_TEXT
       == Description
@@ -32,18 +32,18 @@ module ProceedingTypes
       END_OF_TEXT
     end
 
-    api :POST, 'proceeding_types/search', 'Create a request to retrieve a list of proceeding types that match the search type'
-    param :search_term, String, required: false, desc: 'Search for proceeding types matching the `search_term`'
+    api :POST, "proceeding_types/search", "Create a request to retrieve a list of proceeding types that match the search type"
+    param :search_term, String, required: false, desc: "Search for proceeding types matching the `search_term`"
 
-    returns code: :ok, desc: 'Successful response' do
-      property :success, %w[true], desc: 'Success flag shows true'
-      property :data, array_of: String, desc: 'Returns an array of matching proceeding types'
+    returns code: :ok, desc: "Successful response" do
+      property :success, %w[true], desc: "Success flag shows true"
+      property :data, array_of: String, desc: "Returns an array of matching proceeding types"
     end
 
     returns code: :bad_request do
-      property :success, %w[false], desc: 'Success flag shows false'
-      property :error_class, String, desc: 'Name of the error class that caused the exception'
-      property :message, String, desc: 'Error message'
+      property :success, %w[false], desc: "Success flag shows false"
+      property :error_class, String, desc: "Name of the error class that caused the exception"
+      property :message, String, desc: "Error message"
     end
 
     def index
@@ -77,7 +77,7 @@ module ProceedingTypes
 
     def build_results
       find = search_param
-      exclude = params['excluded_codes'] ||= []
+      exclude = params["excluded_codes"] ||= []
       @build_results ||= ProceedingTypeFullTextSearch.call(find, exclude)
     end
 

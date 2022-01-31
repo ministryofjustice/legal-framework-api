@@ -1,5 +1,5 @@
 class ScopeLimitationsPopulator
-  DATA_FILE = Rails.root.join('db/seed_data/scope_limitations.yml').freeze
+  DATA_FILE = Rails.root.join("db/seed_data/scope_limitations.yml").freeze
 
   def self.call
     new.call

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe MeritsTasksController, type: :request do
-  describe 'POST /merits_tasks' do
+  describe "POST /merits_tasks" do
     subject { post merits_tasks_path, params: params.to_json, headers: headers }
 
     let(:request_id) { SecureRandom.uuid }
-    let(:headers) { { 'CONTENT_TYPE' => 'application/json' } }
+    let(:headers) { { "CONTENT_TYPE" => "application/json" } }
     let(:params) do
       {
         request_id:,
@@ -15,26 +15,26 @@ RSpec.describe MeritsTasksController, type: :request do
       }
     end
 
-    context 'successful request' do
+    context "successful request" do
       before { seed_live_data }
 
       let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
-      it 'returns success', :show_in_doc do
+      it "returns success", :show_in_doc do
         subject
         expect(response).to have_http_status(:success)
       end
 
-      it 'returns the response supplied by the MeritsTaskService' do
+      it "returns the response supplied by the MeritsTaskService" do
         subject
         expect(response.body).to eq expected_successful_response.to_json
       end
 
-      it 'creates a request_history record' do
+      it "creates a request_history record" do
         expect { subject }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
-        expect(history.request_method).to eq 'POST'
-        expect(history.endpoint).to eq '/merits_tasks'
+        expect(history.request_method).to eq "POST"
+        expect(history.endpoint).to eq "/merits_tasks"
 
         expect(history.request_payload).to eq params.to_json
         expect(history.response_status).to eq 200
@@ -47,33 +47,33 @@ RSpec.describe MeritsTasksController, type: :request do
           success: true,
           application: {
             tasks: {
-              'latest_incident_details' => [],
-              'opponent_details' => [],
-              'statement_of_case' => [],
-              'children_application' => [],
+              "latest_incident_details" => [],
+              "opponent_details" => [],
+              "statement_of_case" => [],
+              "children_application" => [],
             },
           },
           proceeding_types: [
             {
-              ccms_code: 'DA005',
+              ccms_code: "DA005",
               tasks: {
-                'chances_of_success' => [],
+                "chances_of_success" => [],
               },
             },
             {
-              ccms_code: 'SE004',
+              ccms_code: "SE004",
               tasks: {
-                'chances_of_success' => [],
-                'children_proceeding' => %w[children_application],
-                'attempts_to_settle' => [],
+                "chances_of_success" => [],
+                "children_proceeding" => %w[children_application],
+                "attempts_to_settle" => [],
               },
             },
             {
-              ccms_code: 'SE013',
+              ccms_code: "SE013",
               tasks: {
-                'chances_of_success' => [],
-                'children_proceeding' => %w[children_application],
-                'attempts_to_settle' => [],
+                "chances_of_success" => [],
+                "children_proceeding" => %w[children_application],
+                "attempts_to_settle" => [],
               },
             },
           ],
@@ -81,34 +81,34 @@ RSpec.describe MeritsTasksController, type: :request do
       end
     end
 
-    context 'unsuccessful_request' do
+    context "unsuccessful_request" do
       let(:proceeding_types) { %w[DA005 ZZ262 SE013] }
 
-      it 'returns bad request', :show_in_doc do
+      it "returns bad request", :show_in_doc do
         subject
         expect(response.status).to eq 400
       end
 
-      it 'returns expected error response' do
+      it "returns expected error response" do
         subject
         expect(parsed_response[:request_id]).to eq request_id
         expect(parsed_response[:success]).to be false
-        expect(parsed_response[:error_class]).to eq 'ActiveRecord::RecordNotFound'
+        expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(parsed_response[:message]).to match(/Couldn't find ProceedingType/)
         expect(parsed_response[:backtrace]).to be_instance_of(Array)
       end
 
-      it 'records the result in the request history table' do
+      it "records the result in the request history table" do
         expect { subject }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
-        expect(history.request_method).to eq 'POST'
-        expect(history.endpoint).to eq '/merits_tasks'
+        expect(history.request_method).to eq "POST"
+        expect(history.endpoint).to eq "/merits_tasks"
         expect(history.request_payload).to eq params.to_json
         expect(history.response_status).to eq 400
         stored_response = JSON.parse(history.response_payload, symbolize_names: true)
         expect(stored_response[:request_id]).to eq request_id
         expect(stored_response[:success]).to be false
-        expect(stored_response[:error_class]).to eq 'ActiveRecord::RecordNotFound'
+        expect(stored_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(stored_response[:message]).to match(/Couldn't find ProceedingType/)
         expect(stored_response[:backtrace]).to be_instance_of(Array)
       end

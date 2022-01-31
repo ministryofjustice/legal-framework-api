@@ -5,7 +5,7 @@ class ProceedingTypeScopeLimitationsPopulator
   # [2] - substantive_default
   # [3] - delegated_functions_default
 
-  DATA_FILE = Rails.root.join('db/seed_data/proceeding_type_scope_limitations.yml').freeze
+  DATA_FILE = Rails.root.join("db/seed_data/proceeding_type_scope_limitations.yml").freeze
 
   def self.call
     new.call

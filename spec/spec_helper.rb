@@ -16,14 +16,14 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-require 'simplecov'
-require 'highline/import'
+require "simplecov"
+require "highline/import"
 
 SimpleCov.minimum_coverage 99
-unless ENV['NOCOVERAGE']
+unless ENV["NOCOVERAGE"]
   SimpleCov.start do
-    add_filter 'config/initializers/'
-    add_filter 'spec/'
+    add_filter "config/initializers/"
+    add_filter "spec/"
   end
 
   SimpleCov.at_exit do

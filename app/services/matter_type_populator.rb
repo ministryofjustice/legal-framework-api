@@ -1,5 +1,5 @@
 class MatterTypePopulator
-  DATA_FILE = Rails.root.join('db/seed_data/matter_types.yml').freeze
+  DATA_FILE = Rails.root.join("db/seed_data/matter_types.yml").freeze
 
   def self.call
     new.call

@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails'
+require "rails"
 # Pick the frameworks you want:
-require 'active_model/railtie'
-require 'active_job/railtie'
-require 'active_record/railtie'
-require 'active_storage/engine'
-require 'action_controller/railtie'
-require 'action_mailer/railtie'
-require 'action_mailbox/engine'
-require 'action_text/engine'
-require 'action_view/railtie'
-require 'action_cable/engine'
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+require "active_storage/engine"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_mailbox/engine"
+require "action_text/engine"
+require "action_view/railtie"
+require "action_cable/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
@@ -39,8 +39,8 @@ module LegalFrameworkApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.x.status.build_date = ENV['BUILD_DATE'] || 'Not Available'
-    config.x.status.build_tag = ENV['BUILD_TAG'] || 'Not Available'
-    config.x.status.app_branch = ENV['APP_BRANCH'] || 'Not Available'
+    config.x.status.build_date = ENV["BUILD_DATE"] || "Not Available"
+    config.x.status.build_tag = ENV["BUILD_TAG"] || "Not Available"
+    config.x.status.app_branch = ENV["APP_BRANCH"] || "Not Available"
   end
 end

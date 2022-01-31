@@ -1,6 +1,6 @@
 class CreateMatterTypes < ActiveRecord::Migration[6.1]
   def change
-    enable_extension 'pgcrypto'
+    enable_extension "pgcrypto"
     create_table :matter_types, id: :uuid do |t|
       t.string :name, null: false
       t.boolean :upper_gross_income_waiver, default: false, null: false
