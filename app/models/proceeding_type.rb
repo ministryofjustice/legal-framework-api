@@ -8,12 +8,12 @@ class ProceedingType < ApplicationRecord
   has_many :application_tasks,
            through: :proceeding_type_merits_tasks,
            source: :merits_task,
-           class_name: 'ApplicationTask'
+           class_name: "ApplicationTask"
 
   has_many :proceeding_tasks,
            through: :proceeding_type_merits_tasks,
            source: :merits_task,
-           class_name: 'ProceedingTask'
+           class_name: "ProceedingTask"
 
   has_many :default_cost_limitations, dependent: :destroy
   has_many :proceeding_type_scope_limitations, dependent: :destroy

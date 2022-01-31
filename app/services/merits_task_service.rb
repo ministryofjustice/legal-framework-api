@@ -12,7 +12,7 @@ class MeritsTaskService
   end
 
   def call
-    raise MeritsTaskServiceError, 'Must specify at least one proceeding type' if @ccms_codes.empty?
+    raise MeritsTaskServiceError, "Must specify at least one proceeding type" if @ccms_codes.empty?
 
     @ccms_codes.each { |ccms_code| add_tasks_to_response(ccms_code) }
     @response

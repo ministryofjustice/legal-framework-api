@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     apipie
     resources :merits_tasks, param: :ccms_code, only: %i[create]
-    get 'proceeding_types/all', to: 'proceeding_types/searches#index'
+    get "proceeding_types/all", to: "proceeding_types/searches#index"
     resources :proceeding_types, param: :ccms_code, only: %i[show]
     namespace :proceeding_types do
       resources :threshold_waivers, only: %i[create]
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'ping', to: 'status#ping', format: :json
+  get "ping", to: "status#ping", format: :json
 end

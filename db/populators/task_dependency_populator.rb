@@ -1,5 +1,5 @@
 class TaskDependencyPopulator
-  DATA_FILE = Rails.root.join('db/seed_data/task_dependencies.yml').freeze
+  DATA_FILE = Rails.root.join("db/seed_data/task_dependencies.yml").freeze
 
   def self.call
     new.call

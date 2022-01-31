@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe MeritsTaskService do
   subject { described_class.call(request_id, ccms_codes) }
@@ -7,47 +7,47 @@ RSpec.describe MeritsTaskService do
 
   let(:request_id) { SecureRandom.uuid }
 
-  context 'successful_response' do
-    context 'domestic abuse proceeding type' do
+  context "successful_response" do
+    context "domestic abuse proceeding type" do
       let(:ccms_codes) { %w[DA005] }
 
-      it 'returns valid response with expected tasks' do
+      it "returns valid response with expected tasks" do
         expect(subject).to eq expected_da005_response
       end
     end
 
-    context 'domestic abuse and section 8 proceeding type' do
+    context "domestic abuse and section 8 proceeding type" do
       let(:ccms_codes) { %w[DA005 SE003 SE013] }
 
-      it 'returns response with dependencies' do
+      it "returns response with dependencies" do
         expect(subject).to eq expected_da005_se004_se013_response
       end
     end
   end
 
-  context 'error response' do
-    context 'non_existent ccms_code' do
+  context "error response" do
+    context "non_existent ccms_code" do
       let(:ccms_codes) { %w[XX001] }
 
-      it 'returns error' do
+      it "returns error" do
         response = subject
         expect(response[:request_id]).to eq request_id
         expect(response[:success]).to be false
-        expect(response[:error_class]).to eq 'ActiveRecord::RecordNotFound'
+        expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(response[:message]).to match(/Couldn't find ProceedingType/)
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
 
-    context 'no ccms codes specified' do
+    context "no ccms codes specified" do
       let(:ccms_codes) { [] }
 
-      it 'returns error' do
+      it "returns error" do
         response = subject
         expect(response[:request_id]).to eq request_id
         expect(response[:success]).to be false
-        expect(response[:error_class]).to eq 'MeritsTaskService::MeritsTaskServiceError'
-        expect(response[:message]).to eq 'Must specify at least one proceeding type'
+        expect(response[:error_class]).to eq "MeritsTaskService::MeritsTaskServiceError"
+        expect(response[:message]).to eq "Must specify at least one proceeding type"
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
@@ -59,16 +59,16 @@ RSpec.describe MeritsTaskService do
       success: true,
       application: {
         tasks: {
-          'latest_incident_details' => [],
-          'opponent_details' => [],
-          'statement_of_case' => [],
+          "latest_incident_details" => [],
+          "opponent_details" => [],
+          "statement_of_case" => [],
         },
       },
       proceeding_types: [
         {
-          ccms_code: 'DA005',
+          ccms_code: "DA005",
           tasks: {
-            'chances_of_success' => [],
+            "chances_of_success" => [],
           },
         },
       ],
@@ -81,33 +81,33 @@ RSpec.describe MeritsTaskService do
       success: true,
       application: {
         tasks: {
-          'latest_incident_details' => [],
-          'opponent_details' => [],
-          'statement_of_case' => [],
-          'children_application' => [],
+          "latest_incident_details" => [],
+          "opponent_details" => [],
+          "statement_of_case" => [],
+          "children_application" => [],
         },
       },
       proceeding_types: [
         {
-          ccms_code: 'DA005',
+          ccms_code: "DA005",
           tasks: {
-            'chances_of_success' => [],
+            "chances_of_success" => [],
           },
         },
         {
-          ccms_code: 'SE003',
+          ccms_code: "SE003",
           tasks: {
-            'chances_of_success' => [],
-            'children_proceeding' => %w[children_application],
-            'attempts_to_settle' => [],
+            "chances_of_success" => [],
+            "children_proceeding" => %w[children_application],
+            "attempts_to_settle" => [],
           },
         },
         {
-          ccms_code: 'SE013',
+          ccms_code: "SE013",
           tasks: {
-            'chances_of_success' => [],
-            'children_proceeding' => %w[children_application],
-            'attempts_to_settle' => [],
+            "chances_of_success" => [],
+            "children_proceeding" => %w[children_application],
+            "attempts_to_settle" => [],
           },
         },
       ],

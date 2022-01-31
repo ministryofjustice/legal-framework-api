@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../config/environment', __dir__)
+require "spec_helper"
+ENV["RAILS_ENV"] ||= "test"
+require File.expand_path("../config/environment", __dir__)
 # Prevent database truncation if the environment is production
-abort('The Rails environment is running in production mode!') if Rails.env.production?
-require 'rspec/rails'
-require 'json_expressions/rspec'
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+require "rspec/rails"
+require "json_expressions/rspec"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -67,7 +67,7 @@ RSpec.configure do |config|
 end
 
 def seed_live_data
-  Dir[Rails.root.join('db/populators/*.rb')].sort.each do |seed_file|
+  Dir[Rails.root.join("db/populators/*.rb")].sort.each do |seed_file|
     require seed_file
   end
 

@@ -1,5 +1,5 @@
 class ProceedingTypeMeritsTaskPopulator
-  DATA_FILE = Rails.root.join('db/seed_data/proceeding_type_merits_task.yml').freeze
+  DATA_FILE = Rails.root.join("db/seed_data/proceeding_type_merits_task.yml").freeze
 
   def self.call
     new.call

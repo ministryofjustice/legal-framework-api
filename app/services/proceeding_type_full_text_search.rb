@@ -26,19 +26,19 @@ class ProceedingTypeFullTextSearch
 private
 
   def already_selected_codes
-    @already_selected_codes ||= @excluded_codes.split(',')
+    @already_selected_codes ||= @excluded_codes.split(",")
   end
 
   def matching_results
     result_set = ProceedingType.connection.exec_query(query_string,
-                                                      '-- PROCEEDING TYPE FULL TEXT SEARCH ---',
+                                                      "-- PROCEEDING TYPE FULL TEXT SEARCH ---",
                                                       [@ts_query],
                                                       prepare: true)
     result_set.map { |row| instantiate_result(row) }
   end
 
   def instantiate_result(row)
-    Result.new(row['meaning'].strip, row['ccms_code'], row['description'].strip, row['ccms_category_law']&.strip, row['ccms_matter'])
+    Result.new(row["meaning"].strip, row["ccms_code"], row["description"].strip, row["ccms_category_law"]&.strip, row["ccms_matter"])
   end
 
   def ts_query_transform(search_terms)
@@ -48,7 +48,7 @@ private
     # "An owl & a pussycat went to sea" => "An:* & owl:* & a:* & pussycat:* & went:* & to:* & sea:*"
     #
     words = search_terms.split(/\s+/).map { |w| "#{w}:*" }
-    words.join(' & ').gsub('& & &', '&')
+    words.join(" & ").gsub("& & &", "&")
   end
 
   def query_string

@@ -12,7 +12,7 @@ class ThresholdWaiverService
   end
 
   def call
-    raise ThresholdWaiverServiceError, 'Must specify at least one proceeding type' if @ccms_codes.empty?
+    raise ThresholdWaiverServiceError, "Must specify at least one proceeding type" if @ccms_codes.empty?
 
     @ccms_codes.each { |ccms_code| add_proceeding_types_to_response(ccms_code) }
     @response
