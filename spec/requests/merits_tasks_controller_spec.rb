@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe MeritsTasksController, type: :request do
   describe "POST /merits_tasks" do
-    subject { post merits_tasks_path, params: params.to_json, headers: headers }
+    subject(:merits_tasks_post_request) { post merits_tasks_path, params: params.to_json, headers: headers }
 
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
@@ -21,17 +21,17 @@ RSpec.describe MeritsTasksController, type: :request do
       let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
       it "returns success", :show_in_doc do
-        subject
+        merits_tasks_post_request
         expect(response).to have_http_status(:success)
       end
 
       it "returns the response supplied by the MeritsTaskService" do
-        subject
+        merits_tasks_post_request
         expect(response.body).to eq expected_successful_response.to_json
       end
 
       it "creates a request_history record" do
-        expect { subject }.to change(RequestHistory, :count).by(1)
+        expect { merits_tasks_post_request }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq "POST"
         expect(history.endpoint).to eq "/merits_tasks"
@@ -85,12 +85,12 @@ RSpec.describe MeritsTasksController, type: :request do
       let(:proceeding_types) { %w[DA005 ZZ262 SE013] }
 
       it "returns bad request", :show_in_doc do
-        subject
+        merits_tasks_post_request
         expect(response.status).to eq 400
       end
 
       it "returns expected error response" do
-        subject
+        merits_tasks_post_request
         expect(parsed_response[:request_id]).to eq request_id
         expect(parsed_response[:success]).to be false
         expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
@@ -99,7 +99,7 @@ RSpec.describe MeritsTasksController, type: :request do
       end
 
       it "records the result in the request history table" do
-        expect { subject }.to change(RequestHistory, :count).by(1)
+        expect { merits_tasks_post_request }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq "POST"
         expect(history.endpoint).to eq "/merits_tasks"

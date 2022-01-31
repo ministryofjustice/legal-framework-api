@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe ProceedingTypeService do
-  subject { described_class.call(ccms_code) }
+  subject(:proceeding_type_service_response) { described_class.call(ccms_code) }
 
   before { seed_live_data }
 
@@ -9,7 +9,7 @@ RSpec.describe ProceedingTypeService do
     let(:ccms_code) { %w[DA003] }
 
     it "returns valid response with expected tasks" do
-      expect(subject).to eq expected_da003_response
+      expect(proceeding_type_service_response).to eq expected_da003_response
     end
   end
 
@@ -18,7 +18,7 @@ RSpec.describe ProceedingTypeService do
       let(:ccms_code) { "XX001" }
 
       it "returns error" do
-        response = subject
+        response = proceeding_type_service_response
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(response[:message]).to match(/Couldn't find ProceedingType/)
@@ -30,7 +30,7 @@ RSpec.describe ProceedingTypeService do
       let(:ccms_code) { nil }
 
       it "returns error" do
-        response = subject
+        response = proceeding_type_service_response
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ProceedingTypeService::ProceedingTypeServiceError"
         expect(response[:message]).to eq "Must specify a proceeding type"

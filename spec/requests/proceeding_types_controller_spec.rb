@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe ProceedingTypesController, type: :request do
   describe "GET /proceeding_types/{code}" do
-    subject { get proceeding_type_path(ccms_code), headers: headers }
+    subject(:proceeding_type_get_request) { get proceeding_type_path(ccms_code), headers: headers }
 
     let(:ccms_code) { "SE003" }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
@@ -13,12 +13,12 @@ RSpec.describe ProceedingTypesController, type: :request do
       before { seed_live_data }
 
       it "returns success", :show_in_doc do
-        subject
+        proceeding_type_get_request
         expect(response).to have_http_status(:success)
       end
 
       it "returns the response supplied by the ProceedingTypesService" do
-        subject
+        proceeding_type_get_request
         expect(response.body).to eq expected_successful_response.to_json
       end
     end
@@ -67,12 +67,12 @@ RSpec.describe ProceedingTypesController, type: :request do
       let(:ccms_code) { "AZ123" }
 
       it "returns bad request", :show_in_doc do
-        subject
+        proceeding_type_get_request
         expect(response.status).to eq 400
       end
 
       it "returns expected error response" do
-        subject
+        proceeding_type_get_request
         expect(parsed_response[:success]).to be false
         expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(parsed_response[:message]).to match "Couldn't find ProceedingType"

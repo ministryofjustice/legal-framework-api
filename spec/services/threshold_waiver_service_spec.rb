@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe ThresholdWaiverService do
-  subject { described_class.call(request_id, ccms_codes) }
+  subject(:threshold_waiver_service_response) { described_class.call(request_id, ccms_codes) }
 
   before { seed_live_data }
 
@@ -12,7 +12,7 @@ RSpec.describe ThresholdWaiverService do
       let(:ccms_codes) { %w[DA005] }
 
       it "returns valid response with expected tasks" do
-        expect(subject).to eq expected_da005_response
+        expect(threshold_waiver_service_response).to eq expected_da005_response
       end
     end
 
@@ -20,7 +20,7 @@ RSpec.describe ThresholdWaiverService do
       let(:ccms_codes) { %w[DA005 SE003 SE013] }
 
       it "returns response with dependencies" do
-        expect(subject).to eq expected_da005_se003_se013_response
+        expect(threshold_waiver_service_response).to eq expected_da005_se003_se013_response
       end
     end
   end
@@ -30,7 +30,7 @@ RSpec.describe ThresholdWaiverService do
       let(:ccms_codes) { %w[XX001] }
 
       it "returns error" do
-        response = subject
+        response = threshold_waiver_service_response
         expect(response[:request_id]).to eq request_id
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
@@ -43,7 +43,7 @@ RSpec.describe ThresholdWaiverService do
       let(:ccms_codes) { [] }
 
       it "returns error" do
-        response = subject
+        response = threshold_waiver_service_response
         expect(response[:request_id]).to eq request_id
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ThresholdWaiverService::ThresholdWaiverServiceError"
