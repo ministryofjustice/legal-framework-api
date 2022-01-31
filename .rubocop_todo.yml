@@ -6,21 +6,7 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 4
-RSpec/RepeatedExampleGroupDescription:
-  Exclude:
-    - 'spec/models/default_cost_limitation_spec.rb'
-    - 'spec/models/proceeding_type_spec.rb'
-
 # Offense count: 1
 Rake/DuplicateTask:
   Exclude:
     - 'Rakefile'
-
-# Offense count: 42
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedShorthandSyntax, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-# SupportedShorthandSyntax: always, never, either
-Style/HashSyntax:
-  EnforcedStyle: ruby19
