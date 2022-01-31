@@ -7,8 +7,8 @@ RSpec.describe ThresholdWaiverService do
 
   let(:request_id) { SecureRandom.uuid }
 
-  context "successful_response" do
-    context "domestic abuse proceeding type" do
+  context "when the request is successful" do
+    context "with a domestic abuse proceeding type" do
       let(:ccms_codes) { %w[DA005] }
 
       it "returns valid response with expected tasks" do
@@ -16,7 +16,7 @@ RSpec.describe ThresholdWaiverService do
       end
     end
 
-    context "domestic abuse and section 8 proceeding type" do
+    context "with domestic abuse and section 8 proceeding types" do
       let(:ccms_codes) { %w[DA005 SE003 SE013] }
 
       it "returns response with dependencies" do
@@ -25,8 +25,8 @@ RSpec.describe ThresholdWaiverService do
     end
   end
 
-  context "error response" do
-    context "non_existent ccms_code" do
+  context "when the request is unsuccessful" do
+    context "with a non_existent ccms_code" do
       let(:ccms_codes) { %w[XX001] }
 
       it "returns error" do
@@ -39,7 +39,7 @@ RSpec.describe ThresholdWaiverService do
       end
     end
 
-    context "no ccms codes specified" do
+    context "with no ccms codes specified" do
       let(:ccms_codes) { [] }
 
       it "returns error" do

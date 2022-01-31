@@ -9,7 +9,7 @@ RSpec.describe ProceedingTypesController, type: :request do
     let(:ccms_code) { "SE003" }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
 
-    context "successful request" do
+    context "when the request is successful" do
       before { seed_live_data }
 
       it "returns success", :show_in_doc do
@@ -61,7 +61,7 @@ RSpec.describe ProceedingTypesController, type: :request do
       }
     end
 
-    context "unsuccessful_request" do
+    context "when the request is unsuccessful" do
       before { seed_live_data }
 
       let(:ccms_code) { "AZ123" }

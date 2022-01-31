@@ -12,7 +12,7 @@ RSpec.describe DefaultCostLimitation do
   end
 
   describe ".for_date(date)" do
-    context "before change date" do
+    context "with a date before the new cost limitation start date" do
       let(:date) { Date.parse("2021-09-12") }
 
       it "returns the old value" do
@@ -21,19 +21,19 @@ RSpec.describe DefaultCostLimitation do
       end
     end
 
-    context "on change date" do
+    context "with a date the same as the new cost limitation start date" do
       let(:date) { Date.parse("2021-09-13") }
 
-      it "returns the old value" do
+      it "returns the new value" do
         dcl = described_class.delegated_functions.for_date(date)
         expect(dcl.value).to eq 2250
       end
     end
 
-    context "on change date" do
+    context "with a date after the new cost limitation start date" do
       let(:date) { Date.parse("2021-09-19") }
 
-      it "returns the old value" do
+      it "returns the new value" do
         dcl = described_class.delegated_functions.for_date(date)
         expect(dcl.value).to eq 2250
       end

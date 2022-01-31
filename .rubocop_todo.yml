@@ -6,22 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 40
-# Configuration parameters: Prefixes.
-# Prefixes: when, with, without
-RSpec/ContextWording:
-  Exclude:
-    - 'spec/models/default_cost_limitation_spec.rb'
-    - 'spec/models/merits_task_spec.rb'
-    - 'spec/models/proceeding_type_spec.rb'
-    - 'spec/requests/merits_tasks_spec.rb'
-    - 'spec/requests/proceeding_types/threshold_waivers_spec.rb'
-    - 'spec/requests/proceeding_types_spec.rb'
-    - 'spec/services/merits_task_service_spec.rb'
-    - 'spec/services/proceeding_type_full_text_search_spec.rb'
-    - 'spec/services/proceeding_type_service_spec.rb'
-    - 'spec/services/threshold_waiver_service_spec.rb'
-
 # Offense count: 2
 # Configuration parameters: Include, CustomTransform, IgnoreMethods, SpecSuffixOnly.
 # Include: **/*_spec*rb*, **/spec/**/*

@@ -5,7 +5,7 @@ RSpec.describe ProceedingTypeService do
 
   before { seed_live_data }
 
-  context "successful_response" do
+  context "when the request is successful" do
     let(:ccms_code) { %w[DA003] }
 
     it "returns valid response with expected tasks" do
@@ -13,8 +13,8 @@ RSpec.describe ProceedingTypeService do
     end
   end
 
-  context "error response" do
-    context "non_existent ccms_code" do
+  context "when the request is unsuccessful" do
+    context "with a non_existent ccms_code" do
       let(:ccms_code) { "XX001" }
 
       it "returns error" do
@@ -26,7 +26,7 @@ RSpec.describe ProceedingTypeService do
       end
     end
 
-    context "no ccms codes specified" do
+    context "with no ccms codes specified" do
       let(:ccms_code) { nil }
 
       it "returns error" do

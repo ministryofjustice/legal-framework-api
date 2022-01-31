@@ -16,7 +16,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
     end
     let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
-    context "successful request" do
+    context "when the request is successful" do
       before { seed_live_data }
 
       let(:proceeding_types) { %w[DA005 SE004 SE013] }
@@ -73,7 +73,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
       end
     end
 
-    context "unsuccessful_request" do
+    context "when the request is unsuccessful" do
       before { seed_live_data }
 
       let(:proceeding_types) { %w[DA005 ZZ262 SE013] }

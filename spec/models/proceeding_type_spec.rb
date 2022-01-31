@@ -40,7 +40,7 @@ RSpec.describe ProceedingType do
     end
   end
 
-  context "cost limitations" do
+  context "with cost limitations" do
     let(:pt) { described_class.first }
 
     around do |example|
