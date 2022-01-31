@@ -67,11 +67,4 @@ RSpec.describe ProceedingType do
       end
     end
   end
-
-  describe ".populate" do
-    it "calls the proceeding_type_populator service" do
-      expect(ProceedingTypePopulator).to receive(:call).with(no_args)
-      described_class.populate
-    end
-  end
 end
