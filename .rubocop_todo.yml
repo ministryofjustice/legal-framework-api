@@ -73,25 +73,3 @@ Style/HashSyntax:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
   Enabled: false
-
-# Offense count: 72
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInHashLiteral:
-  Enabled: false
-
-# Offense count: 17
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, MinSize, WordRegex.
-# SupportedStyles: percent, brackets
-Style/WordArray:
-  Exclude:
-    - 'app/controllers/merits_tasks_controller.rb'
-    - 'app/controllers/proceeding_types/searches_controller.rb'
-    - 'app/controllers/proceeding_types/threshold_waivers_controller.rb'
-    - 'app/controllers/proceeding_types_controller.rb'
-    - 'spec/requests/merits_tasks_spec.rb'
-    - 'spec/services/merits_task_service_spec.rb'
-    - 'spec/services/proceeding_type_service_spec.rb'
-    - 'spec/services/threshold_waiver_service_spec.rb'

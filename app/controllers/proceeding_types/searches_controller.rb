@@ -36,12 +36,12 @@ module ProceedingTypes
     param :search_term, String, required: false, desc: 'Search for proceeding types matching the `search_term`'
 
     returns code: :ok, desc: 'Successful response' do
-      property :success, ['true'], desc: 'Success flag shows true'
+      property :success, %w[true], desc: 'Success flag shows true'
       property :data, array_of: String, desc: 'Returns an array of matching proceeding types'
     end
 
     returns code: :bad_request do
-      property :success, ['false'], desc: 'Success flag shows false'
+      property :success, %w[false], desc: 'Success flag shows false'
       property :error_class, String, desc: 'Name of the error class that caused the exception'
       property :message, String, desc: 'Error message'
     end

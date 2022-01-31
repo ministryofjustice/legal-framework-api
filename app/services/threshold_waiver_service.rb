@@ -26,7 +26,7 @@ private
     {
       request_id: @request_id,
       success: true,
-      proceeding_types: []
+      proceeding_types: [],
     }
   end
 
@@ -42,7 +42,7 @@ private
       gross_income_upper: proceeding_type.matter_type.upper_gross_income_waiver,
       disposable_income_upper: proceeding_type.matter_type.upper_disposable_income_waiver,
       capital_upper: proceeding_type.matter_type.upper_capital_waiver,
-      matter_type: proceeding_type.matter_type.name
+      matter_type: proceeding_type.matter_type.name,
     }
 
     @response[:proceeding_types] << tw_hash
@@ -54,7 +54,7 @@ private
       success: false,
       error_class: err.class.to_s,
       message: err.message,
-      backtrace: err.backtrace
+      backtrace: err.backtrace,
     }
   end
 end

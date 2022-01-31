@@ -19,7 +19,7 @@ class MeritsTasksController < ApplicationController
 
   returns code: :ok, desc: 'Successful response' do
     property :request_id, :uuid, desc: 'The request_id specified in the request'
-    property :success, ['true'], desc: 'Success flag shows true'
+    property :success, %w[true], desc: 'Success flag shows true'
     property :application, Hash, desc: 'Merits tasks required at the application level' do
       property :tasks, Hash, desc: 'List of tasks and dependencies' do
         property :task_and_dependency, Hash, desc: 'Hash of key value pairs where the key is the task name, and the value is an array of dependencies'
@@ -35,7 +35,7 @@ class MeritsTasksController < ApplicationController
 
   returns code: :bad_request do
     property :request_id, :uuid, desc: 'The request_id specified in the request'
-    property :success, ['false'], desc: 'Success flag shows false'
+    property :success, %w[false], desc: 'Success flag shows false'
     property :error_class, String, desc: 'Name of the error class that caused the exception'
     property :message, String, desc: 'Error message'
     property :backtrace, array_of: String, desc: 'Backtrace of exception'

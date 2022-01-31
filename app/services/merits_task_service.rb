@@ -27,9 +27,9 @@ private
       request_id: @request_id,
       success: true,
       application: {
-        tasks: {}
+        tasks: {},
       },
-      proceeding_types: []
+      proceeding_types: [],
     }
   end
 
@@ -59,7 +59,7 @@ private
       success: false,
       error_class: err.class.to_s,
       message: err.message,
-      backtrace: err.backtrace
+      backtrace: err.backtrace,
     }
   end
 end
