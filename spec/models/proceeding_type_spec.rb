@@ -40,7 +40,7 @@ RSpec.describe ProceedingType do
     end
   end
 
-  context "cost limitations" do
+  context "with cost limitations" do
     let(:pt) { described_class.first }
 
     around do |example|
@@ -65,13 +65,6 @@ RSpec.describe ProceedingType do
         expect(pt.default_cost_limitation_substantive).to eq 25_000.0
         expect(pt.default_cost_limitation_delegated_functions).to eq 2250.0
       end
-    end
-  end
-
-  describe ".populate" do
-    it "calls the proceeding_type_populator service" do
-      expect(ProceedingTypePopulator).to receive(:call).with(no_args)
-      described_class.populate
     end
   end
 end

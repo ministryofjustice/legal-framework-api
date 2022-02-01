@@ -6,9 +6,9 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
   let(:headers) { { "CONTENT_TYPE" => "application/json" } }
 
   describe "GET proceeding_types/all" do
-    subject { get proceeding_types_all_path, headers: headers }
+    subject(:proceeding_types_get_request) { get proceeding_types_all_path, headers: headers }
 
-    before { subject }
+    before { proceeding_types_get_request }
 
     it "returns a successful response with all proceedingtypes" do
       expect(response).to have_http_status(:ok)
@@ -18,7 +18,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
   end
 
   describe "POST proceeding_types/search" do
-    subject { post proceeding_types_searches_path, params: params.to_json, headers: headers }
+    subject(:proceeding_types_post_request) { post proceeding_types_searches_path, params: params.to_json, headers: headers }
 
     let(:params) do
       {
@@ -28,7 +28,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
     let(:search_term) { "Occupation" }
 
     context "when the params are valid" do
-      before { subject }
+      before { proceeding_types_post_request }
 
       let(:expected_result) do
         {
@@ -53,7 +53,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
     end
 
     context "when no matches found" do
-      before { subject }
+      before { proceeding_types_post_request }
 
       let(:search_term) { "nonexistant" }
       let(:expected_result) do
@@ -73,7 +73,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
     context "when an error occurs" do
       before do
         allow(ProceedingTypeFullTextSearch).to receive(:call).and_raise(StandardError.new("Unexpected error in full text search"))
-        subject
+        proceeding_types_post_request
       end
 
       let(:expected_result) do
@@ -92,7 +92,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
     end
 
     context "when returning multiple results" do
-      before { subject }
+      before { proceeding_types_post_request }
 
       let(:search_term) { "injunction" }
 
@@ -120,7 +120,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
 
     context "when excluded_codes matches" do
       describe "the single match" do
-        before { subject }
+        before { proceeding_types_post_request }
 
         let(:params) do
           {

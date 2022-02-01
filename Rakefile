@@ -8,6 +8,6 @@ require_relative "config/application"
 Rails.application.load_tasks
 
 unless Rails.env.production?
-  task(:default).clear
+  Rake::Task[:default].clear if Rake::Task.task_defined?(:default)
   task default: %i[rubocop spec]
 end

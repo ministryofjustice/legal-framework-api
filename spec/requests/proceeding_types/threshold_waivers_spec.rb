@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
   describe "POST proceeding_types/threshold_waivers" do
-    subject { post proceeding_types_threshold_waivers_path, params: params.to_json, headers: headers }
+    subject(:proceeding_types_threshold_post_request) { post proceeding_types_threshold_waivers_path, params: params.to_json, headers: headers }
 
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
@@ -16,23 +16,23 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
     end
     let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
-    context "successful request" do
+    context "when the request is successful" do
       before { seed_live_data }
 
       let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
       it "returns success", :show_in_doc do
-        subject
+        proceeding_types_threshold_post_request
         expect(response).to have_http_status(:success)
       end
 
       it "returns the response supplied by the MeritsTaskService" do
-        subject
+        proceeding_types_threshold_post_request
         expect(response.body).to eq expected_successful_response.to_json
       end
 
       it "creates a request_history record" do
-        expect { subject }.to change(RequestHistory, :count).by(1)
+        expect { proceeding_types_threshold_post_request }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq "POST"
         expect(history.endpoint).to eq "/proceeding_types/threshold_waivers"
@@ -73,18 +73,18 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
       end
     end
 
-    context "unsuccessful_request" do
+    context "when the request is unsuccessful" do
       before { seed_live_data }
 
       let(:proceeding_types) { %w[DA005 ZZ262 SE013] }
 
       it "returns bad request", :show_in_doc do
-        subject
+        proceeding_types_threshold_post_request
         expect(response.status).to eq 400
       end
 
       it "returns expected error response" do
-        subject
+        proceeding_types_threshold_post_request
         expect(parsed_response[:request_id]).to eq request_id
         expect(parsed_response[:success]).to be false
         expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
@@ -93,7 +93,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
       end
 
       it "records the result in the request history table" do
-        expect { subject }.to change(RequestHistory, :count).by(1)
+        expect { proceeding_types_threshold_post_request }.to change(RequestHistory, :count).by(1)
         history = RequestHistory.find_by(request_id:)
         expect(history.request_method).to eq "POST"
         expect(history.endpoint).to eq "/proceeding_types/threshold_waivers"
