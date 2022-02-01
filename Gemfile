@@ -39,6 +39,7 @@ group :development, :test do
   gem "json_expressions"
   gem "pry-byebug"
   gem "rspec_junit_formatter"
+  gem "rspec-rails", "~> 5.1"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end
@@ -52,7 +53,6 @@ end
 
 group :test do
   gem "highline"
-  gem "rspec-rails", "~> 5.1"
   gem "simplecov", require: false
   gem "simplecov-rcov"
 end
