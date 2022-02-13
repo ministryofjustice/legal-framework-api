@@ -6,11 +6,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem "rails", "~> 7.0.2"
+gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.3"
 # Use Puma as the app server
-gem "puma", "~> 5.6"
+gem "puma", "~> 5.6", ">= 5.6.2"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -39,7 +39,7 @@ group :development, :test do
   gem "json_expressions"
   gem "pry-byebug"
   gem "rspec_junit_formatter"
-  gem "rspec-rails", "~> 5.1"
+  gem "rspec-rails", "~> 5.1", ">= 5.1.0"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end
