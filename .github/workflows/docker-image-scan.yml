@@ -1,0 +1,41 @@
+name: Scan docker image
+on:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  scan-docker-image:
+    runs-on: ubuntu-latest
+    name: Scan docker image
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build docker image
+      run: |
+        docker build \
+          --tag legal-framework-application:scan \
+          --file Dockerfile .
+
+    - name: Scan docker image using Snyk
+      continue-on-error: true
+      uses: snyk/actions/docker@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        image: legal-framework-application:scan
+        args: --file=Dockerfile
+
+    - name: Monitor docker image using Snyk
+      uses: snyk/actions/docker@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        command: monitor
+        image: legal-framework-application:scan
+        args: --file=Dockerfile
+
+    - name: Upload result to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: snyk.sarif
