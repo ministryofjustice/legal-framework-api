@@ -22,9 +22,8 @@ RUN adduser --disabled-password apply -u 1001
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
-RUN gem install nokogiri -v '1.12.5' --source 'https://rubygems.org/'
-
-RUN gem install bundler -v 2.2.24 && bundle config --global without test:development && bundle install
+RUN gem update --system
+RUN bundle config set --local without 'test development' && bundle install
 
 COPY . /myapp
 
