@@ -46,7 +46,7 @@ class MeritsTasksController < ApplicationController
     response = MeritsTaskService.call(request_id, ccms_codes)
     status = response[:success] ? 200 : 400
     history.record_response(status, response)
-    render json: response, status: status
+    render json: response, status:
   end
 
 private

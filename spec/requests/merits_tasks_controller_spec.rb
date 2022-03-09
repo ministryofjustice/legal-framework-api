@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe MeritsTasksController, type: :request do
   describe "POST /merits_tasks" do
-    subject(:merits_tasks_post_request) { post merits_tasks_path, params: params.to_json, headers: headers }
+    subject(:merits_tasks_post_request) { post merits_tasks_path, params: params.to_json, headers: }
 
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
@@ -43,7 +43,7 @@ RSpec.describe MeritsTasksController, type: :request do
 
       def expected_successful_response
         {
-          request_id: request_id,
+          request_id:,
           success: true,
           application: {
             tasks: {

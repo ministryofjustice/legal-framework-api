@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe ProceedingTypesController, type: :request do
   describe "GET /proceeding_types/{code}" do
-    subject(:proceeding_type_get_request) { get proceeding_type_path(ccms_code), headers: headers }
+    subject(:proceeding_type_get_request) { get proceeding_type_path(ccms_code), headers: }
 
     let(:ccms_code) { "SE003" }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
