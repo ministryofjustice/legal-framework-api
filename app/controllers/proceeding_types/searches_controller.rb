@@ -32,7 +32,7 @@ module ProceedingTypes
       END_OF_TEXT
     end
 
-    api :POST, "proceeding_types/search", "Create a request to retrieve a list of proceeding types that match the search type"
+    api :POST, "proceeding_types/searches", "Create a request to retrieve a list of proceeding types that match the search type"
     param :search_term, String, required: false, desc: "Search for proceeding types matching the `search_term`"
 
     returns code: :ok, desc: "Successful response" do
