@@ -19,7 +19,7 @@ The documentation and input validation is maintained via
 A client will create a request by posting a payload to the `merits_tasks` endpoint, which will respond with the information required by the LAA to assess the 
 merits and means of the client for their specific proceeding type.
 
-`/proceeding_types/search`
+`/proceeding_types/searches`
 A client will create a payload with some search terms and the API will respond with an array of relevant proceeding types, which include those search terms in their name, description or meaning
 
 `/proceeding_types/threshold_waivers`

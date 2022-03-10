@@ -17,7 +17,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
     end
   end
 
-  describe "POST proceeding_types/search" do
+  describe "POST proceeding_types/searches" do
     subject(:proceeding_types_post_request) { post proceeding_types_searches_path, params: params.to_json, headers: headers }
 
     let(:params) do
