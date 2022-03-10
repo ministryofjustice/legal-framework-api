@@ -13,7 +13,9 @@ Dir[Rails.root.join("db/populators/*.rb")].sort.each do |seed_file|
 end
 
 MatterTypePopulator.call
-ProceedingTypePopulator.call
+# The following calls ProceedingTypePopulator.call
+# and ensures the textsearchable field is populated
+ProceedingType.populate
 MeritsTaskPopulator.call
 ProceedingTypeMeritsTaskPopulator.call
 TaskDependencyPopulator.call
