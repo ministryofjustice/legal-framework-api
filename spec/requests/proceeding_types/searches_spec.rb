@@ -6,7 +6,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
   let(:headers) { { "CONTENT_TYPE" => "application/json" } }
 
   describe "GET proceeding_types/all" do
-    subject(:proceeding_types_get_request) { get proceeding_types_all_path, headers: headers }
+    subject(:proceeding_types_get_request) { get proceeding_types_all_path, headers: }
 
     before { proceeding_types_get_request }
 
@@ -18,11 +18,11 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
   end
 
   describe "POST proceeding_types/searches" do
-    subject(:proceeding_types_post_request) { post proceeding_types_searches_path, params: params.to_json, headers: headers }
+    subject(:proceeding_types_post_request) { post proceeding_types_searches_path, params: params.to_json, headers: }
 
     let(:params) do
       {
-        search_term: search_term,
+        search_term:,
       }
     end
     let(:search_term) { "Occupation" }
@@ -124,7 +124,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
 
         let(:params) do
           {
-            search_term: search_term,
+            search_term:,
             excluded_codes: "DA005",
           }
         end

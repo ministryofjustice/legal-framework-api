@@ -55,7 +55,7 @@ RSpec.describe ThresholdWaiverService do
 
   def expected_da005_response
     {
-      request_id: request_id,
+      request_id:,
       success: true,
       proceeding_types: [
         {
@@ -71,7 +71,7 @@ RSpec.describe ThresholdWaiverService do
 
   def expected_da005_se003_se013_response
     {
-      request_id: request_id,
+      request_id:,
       success: true,
       proceeding_types: [
         {

@@ -55,7 +55,7 @@ RSpec.describe MeritsTaskService do
 
   def expected_da005_response
     {
-      request_id: request_id,
+      request_id:,
       success: true,
       application: {
         tasks: {
@@ -77,7 +77,7 @@ RSpec.describe MeritsTaskService do
 
   def expected_da005_se004_se013_response
     {
-      request_id: request_id,
+      request_id:,
       success: true,
       application: {
         tasks: {
