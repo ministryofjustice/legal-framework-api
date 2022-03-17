@@ -66,7 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    apipie-rails (0.5.19)
+    apipie-rails (0.5.20)
       rails (>= 4.1)
     ast (2.4.2)
     awesome_print (1.9.2)
