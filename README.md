@@ -14,9 +14,14 @@ The API is documented at /apidocs
 The documentation and input validation is maintained via
 [APIPIE](https://github.com/Apipie/apipie-rails).
 
+
+### Further reading
+* Developer looking to use the API? - [Click here](docs/development.md)
+
+
 ### Usage
 `/merits_tasks`
-A client will create a request by posting a payload to the `merits_tasks` endpoint, which will respond with the information required by the LAA to assess the 
+A client will create a request by posting a payload to the `merits_tasks` endpoint, which will respond with the information required by the LAA to assess the
 merits and means of the client for their specific proceeding type.
 
 `/proceeding_types/searches`
@@ -28,7 +33,9 @@ A client will create a payload which will include an array of proceeding types, 
 ## Generation of API documentation
 The documentation is automatically generated when tests are run with an environment variable set.
 
-```APIPIE_RECORD=examples bundle exec rspec```
+```shell
+APIPIE_RECORD=examples bundle exec rspec
+```
 
 This generates a JSON file `doc/apipie_examples.json` which is read and used when drilling down in the documentation available at '/apidocs'.
 
