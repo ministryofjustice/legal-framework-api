@@ -33,6 +33,18 @@ unless ENV["NOCOVERAGE"]
 end
 
 RSpec.configure do |config|
+  # These two settings work together to allow you to limit a spec run
+  # to individual examples or groups you care about by tagging them with
+  # `:focus` metadata. When nothing is tagged with `:focus`, all examples
+  # get run.
+  # NOTE: ENV['CI'] is a variable that is populated on circleci, at least, which
+  # thereby prevents focused running in the CI pipeline.
+  #
+  # NOTE: you can also use `fit`, `fdescribe`, `fcontext` to focus specs
+  #
+  config.filter_run_including focus: true unless ENV["CI"]
+  config.run_all_when_everything_filtered = true
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
