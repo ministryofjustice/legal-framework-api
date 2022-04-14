@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem "rails", "~> 7.0.2"
+gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.3"
 # Use Puma as the app server
@@ -28,7 +28,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "rack-cors"
 
 # Api documentation
-gem "apipie-rails", ">= 0.5.19"
+gem "apipie-rails", ">= 0.7.1"
 
 gem "webpacker", "~> 5", ">= 5.4.3"
 
@@ -39,7 +39,7 @@ group :development, :test do
   gem "json_expressions"
   gem "pry-byebug"
   gem "rspec_junit_formatter"
-  gem "rspec-rails", "~> 5.1"
+  gem "rspec-rails", "~> 5.1", ">= 5.1.1"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end
