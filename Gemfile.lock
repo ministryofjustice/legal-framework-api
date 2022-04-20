@@ -66,7 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    apipie-rails (0.7.1)
+    apipie-rails (0.7.2)
       actionpack (>= 5.0)
       activesupport (>= 5.0)
     ast (2.4.2)
@@ -276,7 +276,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  apipie-rails (>= 0.5.19)
+  apipie-rails (>= 0.7.1)
   awesome_print
   bootsnap (>= 1.4.4)
   byebug
@@ -291,8 +291,8 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.6)
   rack-cors
-  rails (~> 7.0.2)
-  rspec-rails (~> 5.1)
+  rails (~> 7.0.2, >= 7.0.2.3)
+  rspec-rails (~> 5.1, >= 5.1.1)
   rspec_junit_formatter
   rubocop-govuk
   rubocop-performance
