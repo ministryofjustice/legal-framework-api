@@ -2,8 +2,10 @@ require "rails_helper"
 
 RSpec.describe ProceedingTypePopulator do
   before do
-    MatterTypePopulator.call
+    DefaultCostLimitation.delete_all
+    ProceedingTypeScopeLimitation.delete_all
     ProceedingType.delete_all
+    MatterTypePopulator.call
   end
 
   describe "#call" do
@@ -14,7 +16,7 @@ RSpec.describe ProceedingTypePopulator do
     end
 
     context "when run twice" do
-      it "creates the same total number of proceeding_types" do
+      it "creates §the same total number of proceeding_types" do
         expect {
           described_class.call
           described_class.call

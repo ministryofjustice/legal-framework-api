@@ -1,0 +1,394 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/merits_tasks":
+    post:
+      summary: Return details of merits_tasks for specified proceeding types identified
+        by CCMS-codes
+      tags:
+      - Merits tasks
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              example:
+                request_id: 7d47425b-800a-41ef-a917-934acc09b50d
+                success: true
+                application:
+                  tasks:
+                    latest_incident_details: []
+                    opponent_details: []
+                    statement_of_case: []
+                    children_application: []
+                proceeding_types:
+                - ccms_code: DA001
+                  tasks:
+                    chances_of_success: []
+                - ccms_code: DA003
+                  tasks:
+                    chances_of_success: []
+                - ccms_code: SE014
+                  tasks:
+                    chances_of_success: []
+                    children_proceeding:
+                    - children_application
+                    attempts_to_settle: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                request_id:
+                  type: string
+                  example: 7d47425b-800a-41ef-a917-934acc09b50d
+                  description: Client generated request id that will be echoed back
+                    in the response
+                proceeding_types:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                  - DA001
+                  - DA003
+                  - SE014
+                  description: Array of CCMS codes of proceeding types to  be queried
+              required:
+              - request_id
+              - ccms_codes
+  "/proceeding_types/all":
+    get:
+      summary: Get summary of all proceeding types
+      tags:
+      - Proceeding types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              example:
+              - ccms_code: DA020
+                meaning: FGM Protection Order
+                description: To be represented on an application for a Female Genital
+                  Mutilation Protection Order under the Female Genital Mutilation
+                  Act.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA002
+                meaning: Variation or discharge under section 5 protection from harassment
+                  act 1997
+                description: to be represented on an application to vary or discharge
+                  an order under section 5 Protection from Harassment Act 1997 where
+                  the parties are associated persons (as defined by Part IV Family
+                  Law Act 1996).
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA007
+                meaning: Forced marriage protection order
+                description: to be represented on an application for a forced marriage
+                  protection order
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA006
+                meaning: Extend, variation or discharge - Part IV
+                description: to be represented on an application to extend, vary or
+                  discharge an order under Part IV Family Law Act 1996
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: SE003
+                meaning: Prohibited steps order
+                description: to be represented on an application for a prohibited
+                  steps order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+              - ccms_code: DA001
+                meaning: Inherent jurisdiction high court injunction
+                description: to be represented on an application for an injunction,
+                  order or declaration under the inherent jurisdiction of the court.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA003
+                meaning: Harassment - injunction
+                description: to be represented in an action for an injunction under
+                  section 3 Protection from Harassment Act 1997.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA004
+                meaning: Non-molestation order
+                description: to be represented on an application for a non-molestation
+                  order.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA005
+                meaning: Occupation order
+                description: to be represented on an application for an occupation
+                  order.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: SE004
+                meaning: Specific Issue Order
+                description: to be represented on an application for a specific issue
+                  order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+              - ccms_code: SE014
+                meaning: Child arrangements order (residence)
+                description: to be represented on an application for a child arrangements
+                  order –where the child(ren) will live
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+              - ccms_code: SE013
+                meaning: Child arrangements order (contact)
+                description: to be represented on an application for a child arrangements
+                  order-who the child(ren) spend time with.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+  "/proceeding_types/searches":
+    post:
+      summary: Search proceeding types matching a search term, optionally excluding
+        some ccms_codes
+      tags:
+      - Proceeding types
+      parameters: []
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              example: '{"success":true,"data":[{"meaning":"Harassment - injunction","ccms_code":"DA003","description":"to
+                be represented in an action for an injunction under section 3 Protection
+                from Harassment Act 1997.","ccms_category_law":"Family","ccms_matter":"Domestic
+                abuse"},{"meaning":"Non-molestation order","ccms_code":"DA004","description":"to
+                be represented on an application for a non-molestation order.","ccms_category_law":"Family","ccms_matter":"Domestic
+                abuse"}]}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                search_term:
+                  type: string
+                  example: Injunction
+                  description: search term
+                excluded_codes:
+                  type: string
+                  example: DA001,DA007,SE013
+                  description: comma separated list of ccms codes to exclude from
+                    search results
+              required:
+              - search_term
+  "/proceeding_types/{ccms_code}":
+    parameters:
+    - name: ccms_code
+      in: path
+      example: SE013
+      description: CCMS code, e.g. DA001 or SE013
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Show details for a single proceeding type
+      tags:
+      - Proceeding types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              example:
+                success: true
+                ccms_code: SE013
+                meaning: Child arrangements order (contact)
+                ccms_category_law_code: MAT
+                ccms_matter_code: KSEC8
+                name: child_arrangements_order_contact
+                description: to be represented on an application for a child arrangements
+                  order-who the child(ren) spend time with.
+                ccms_category_law: Family
+                ccms_matter: Children - section 8
+                cost_limitations:
+                  substantive:
+                    start_date: '1970-01-01'
+                    value: '25000.0'
+                  delegated_functions:
+                    start_date: '2021-09-13'
+                    value: '2250.0'
+                default_scope_limitations:
+                  substantive:
+                    code: FM059
+                    meaning: FHH Children
+                    description: Limited to Family Help (Higher) and to all steps
+                      necessary to negotiate and conclude a settlement. To include
+                      the issue of proceedings and representation in those proceedings
+                      save in relation to or at a contested final hearing.
+                  delegated_functions:
+                    code: CV117
+                    meaning: Interim order inc. return date
+                    description: Limited to all steps necessary to apply for an interim
+                      order; where application is made without notice to include representation
+                      on the return date.
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              example:
+                request_id:
+                success: false
+                error_class: ActiveRecord::RecordNotFound
+                message: 'No such proceeding type: ''XX999'''
+                backtrace:
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/activerecord-7.0.2.4/lib/active_record/relation/finder_methods.rb:378:in
+                  `raise_record_not_found_exception!'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/activerecord-7.0.2.4/lib/active_record/core.rb:330:in
+                  `find_by!'"
+                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:25:in
+                  `populate_response'"
+                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:16:in
+                  `call'"
+                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:5:in
+                  `call'"
+                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:24:in
+                  `block (4 levels) in <top (required)>'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `module_exec'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `subclass'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                  `block in define_example_group_method'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:56:in
+                  `response'"
+                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
+                  `block (3 levels) in <top (required)>'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `module_exec'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `subclass'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                  `block in define_example_group_method'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:14:in
+                  `block (2 levels) in <module:ExampleGroupHelpers>'"
+                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:12:in
+                  `block (2 levels) in <top (required)>'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `module_exec'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `subclass'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                  `block in define_example_group_method'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:8:in
+                  `path'"
+                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:4:in
+                  `block in <top (required)>'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `module_exec'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                  `subclass'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                  `block in define_example_group_method'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/dsl.rb:43:in
+                  `block in expose_example_group_alias'"
+                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:3:in
+                  `<top (required)>'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/bootsnap-1.11.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
+                  `load'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/bootsnap-1.11.1/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
+                  `load'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
+                  `load_file_handling_errors'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1615:in
+                  `block in load_spec_files'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
+                  `each'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
+                  `load_spec_files'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:102:in
+                  `setup'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:86:in
+                  `run'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                  `run'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                  `invoke'"
+                - "/Users/stephenrichards/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec:4:in
+                  `<main>'"
+  "/proceeding_types/threshold_waivers":
+    post:
+      summary: Return details of threshold waivers for specified proceeding types
+        identified by CCMS-codes
+      tags:
+      - Threshold waivers
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              example:
+                request_id: ff9679d7-ca3e-40b8-a47e-5006895d9026
+                success: true
+                proceeding_types:
+                - ccms_code: DA001
+                  gross_income_upper: true
+                  disposable_income_upper: true
+                  capital_upper: true
+                  matter_type: Domestic abuse
+                - ccms_code: DA003
+                  gross_income_upper: true
+                  disposable_income_upper: true
+                  capital_upper: true
+                  matter_type: Domestic abuse
+                - ccms_code: SE014
+                  gross_income_upper: false
+                  disposable_income_upper: false
+                  capital_upper: false
+                  matter_type: Children - section 8
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                request_id:
+                  type: string
+                  example: ff9679d7-ca3e-40b8-a47e-5006895d9026
+                  description: Client generated request id that will be echoed back
+                    in the response
+                proceeding_types:
+                  type: array
+                  items:
+                    type: string
+                    description: CCMS-codes of proceedings to be queried
+                  example:
+                  - DA001
+                  - DA003
+                  - SE014
+              required:
+              - request_id
+              - ccms_codes
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: legal-framework-api-staging.cloud-platform.service.justice.gov.uk/

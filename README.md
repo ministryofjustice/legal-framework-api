@@ -9,10 +9,12 @@ An API for checking the required information for legal aid applications
 
 ## Documentation
 
-The API is documented at /apidocs
+The API is documented at /api-docs.
 
-The documentation and input validation is maintained via
-[APIPIE](https://github.com/Apipie/apipie-rails).
+The documentation is generated with swagger for ruby [RSWAG](https://github.com/rswag/rswag#readme) from specs
+in the `spec/requests/swagger_docs` folder and allows real requests to be made.
+
+If changes are made to files in this directory, regenerate the swagger documentation by executing `rake swag`.
 
 
 ### Further reading
@@ -31,15 +33,8 @@ A client will create a payload with some search terms and the API will respond w
 A client will create a payload which will include an array of proceeding types, the API will respond with the threshold waivers for each given proceeding type
 
 ## Generation of API documentation
-The documentation is automatically generated when tests are run with an environment variable set.
+If changes are made to files in this directory, regenerate the swagger documentation by executing `rake swag`.
 
-```shell
-APIPIE_RECORD=examples bundle exec rspec
-```
-
-This generates a JSON file `doc/apipie_examples.json` which is read and used when drilling down in the documentation available at '/apidocs'.
-
-To add additional examples to this json file, add the `:show_in_doc` tag to the relevant rspec tests and rerun the above command.
 
 ## Running tests
 

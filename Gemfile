@@ -42,6 +42,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "rspec_junit_formatter"
   gem "rspec-rails", "~> 5.1"
+  gem "rswag"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end

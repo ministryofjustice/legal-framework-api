@@ -66,6 +66,9 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include FactoryBot::Syntax::Methods
+  
+  # This shuld exclude all specs with swagger: true metadata
+  config.filter_run_excluding swagger: true
 end
 
 def seed_live_data
