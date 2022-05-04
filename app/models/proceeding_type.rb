@@ -19,6 +19,9 @@ class ProceedingType < ApplicationRecord
   has_many :proceeding_type_scope_limitations, dependent: :destroy
   has_many :eligible_scope_limitations, through: :proceeding_type_scope_limitations, source: :scope_limitation
 
+  has_many :proceeding_type_service_levels, dependent: :destroy
+  has_many :service_levels, through: :proceeding_type_service_levels
+
   def default_cost_limitation_delegated_functions
     default_cost_limitations.delegated_functions.for_date(Date.current).value
   end
