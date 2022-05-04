@@ -57,6 +57,7 @@ end
 
 group :test do
   gem "highline"
+  gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "simplecov-rcov"
 end
