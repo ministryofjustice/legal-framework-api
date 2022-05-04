@@ -1,0 +1,16 @@
+---
+# List of service levels (a.k.a levels of service)
+# - level (integer)
+# - name (string)
+# - stage (integer)
+#
+# ServiceLevel.create(level: 3, name: "Full Representation", stage: 8)
+# ServiceLevel.create(level: 1, name: "Family Help (Higher)", stage: 1)
+#
+- - 3
+  - Full Representation
+  - 8
+  -
+- - 1
+  - Family Help (Higher)
+  - 1
