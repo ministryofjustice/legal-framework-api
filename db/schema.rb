@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_083530) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_121754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -68,6 +68,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_083530) do
     t.index ["scope_limitation_id"], name: "index_proceeding_type_scope_limitations_on_scope_limitation_id"
   end
 
+  create_table "proceeding_type_service_levels", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "proceeding_type_id"
+    t.uuid "service_level_id"
+    t.boolean "proceeding_default"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proceeding_type_id", "proceeding_default"], name: "index_proceedings_service_levels_unique_default", unique: true, where: "(proceeding_default = true)"
+    t.index ["proceeding_type_id", "service_level_id"], name: "index_proceedings_service_levels_unique_on_ids", unique: true
+    t.index ["proceeding_type_id"], name: "index_proceeding_type_service_levels_on_proceeding_type_id"
+    t.index ["service_level_id"], name: "index_proceeding_type_service_levels_on_service_level_id"
+  end
+
   create_table "proceeding_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "ccms_code", null: false
     t.string "meaning", null: false
@@ -123,4 +135,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_083530) do
   add_foreign_key "default_cost_limitations", "proceeding_types"
   add_foreign_key "proceeding_type_scope_limitations", "proceeding_types"
   add_foreign_key "proceeding_type_scope_limitations", "scope_limitations"
+  add_foreign_key "proceeding_type_service_levels", "proceeding_types"
+  add_foreign_key "proceeding_type_service_levels", "service_levels"
 end
