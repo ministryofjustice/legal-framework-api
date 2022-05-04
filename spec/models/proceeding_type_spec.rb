@@ -3,6 +3,12 @@ require "rails_helper"
 RSpec.describe ProceedingType do
   include ActiveSupport::Testing::TimeHelpers
 
+  it { is_expected.to have_many(:proceeding_type_service_levels).dependent(:destroy) }
+  it { is_expected.to have_many(:service_levels).through(:proceeding_type_service_levels) }
+
+  # OPTMIZE: not convinced this test is better than the shoulda-matchers, above, which are
+  # briefer, clear english description, fails under the same circumstances
+  # and with a much clearer error message.
   describe "#service_levels" do
     subject(:service_levels) { proceeding_type.service_levels }
 
