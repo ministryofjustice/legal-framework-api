@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_11_30_102438) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_083530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -102,6 +102,15 @@ ActiveRecord::Schema[7.0].define(version: 2021_11_30_102438) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_scope_limitations_on_code"
+  end
+
+  create_table "service_levels", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "level", null: false
+    t.string "name", null: false
+    t.integer "stage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level"], name: "index_service_levels_unique_on_level", unique: true
   end
 
   create_table "task_dependencies", force: :cascade do |t|
