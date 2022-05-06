@@ -22,3 +22,4 @@ TaskDependencyPopulator.call
 ScopeLimitationsPopulator.call
 ProceedingTypeScopeLimitationsPopulator.call
 ServiceLevelsPopulator.call
+ProceedingTypeServiceLevelsPopulator.call
