@@ -20,7 +20,9 @@ class ProceedingType < ApplicationRecord
   has_many :eligible_scope_limitations, through: :proceeding_type_scope_limitations, source: :scope_limitation
 
   has_many :proceeding_type_service_levels, dependent: :destroy
-  has_many :service_levels, through: :proceeding_type_service_levels
+  has_many :service_levels, -> { select("service_levels.*, proceeding_type_service_levels.proceeding_default as proceeding_default") },
+           through: :proceeding_type_service_levels,
+           source: :service_level
 
   def default_cost_limitation_delegated_functions
     default_cost_limitations.delegated_functions.for_date(Date.current).value
