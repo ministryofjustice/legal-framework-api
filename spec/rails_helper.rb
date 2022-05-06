@@ -66,8 +66,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include FactoryBot::Syntax::Methods
-  
-  # This shuld exclude all specs with swagger: true metadata
+
+  # This should exclude all specs with metadata "swagger: true"
   config.filter_run_excluding swagger: true
 end
 
