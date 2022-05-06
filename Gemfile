@@ -36,6 +36,8 @@ group :development, :test do
   gem "awesome_print"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails", ">= 6.2.0"
+  gem "faker", ">=1.9.1"
   gem "json_expressions"
   gem "pry-byebug"
   gem "rspec_junit_formatter"
