@@ -80,18 +80,10 @@ RSpec.configure do |config|
 end
 
 def seed_live_data
-  Dir[Rails.root.join("db/populators/*.rb")].sort.each do |seed_file|
-    require seed_file
+  # you get lots of <class> already defined warnings without this silencer
+  Kernel.silence_warnings do
+    load Rails.root.join("db/seeds.rb")
   end
-
-  MatterTypePopulator.call
-  ProceedingTypePopulator.call
-  ProceedingType.refresh_text_searchable
-  MeritsTaskPopulator.call
-  ProceedingTypeMeritsTaskPopulator.call
-  TaskDependencyPopulator.call
-  ScopeLimitationsPopulator.call
-  ProceedingTypeScopeLimitationsPopulator.call
 end
 
 def parsed_response
