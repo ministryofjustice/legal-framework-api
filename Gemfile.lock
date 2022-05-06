@@ -68,9 +68,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    apipie-rails (0.7.2)
-      actionpack (>= 5.0)
-      activesupport (>= 5.0)
     ast (2.4.2)
     awesome_print (1.9.2)
     bootsnap (1.11.1)
@@ -303,7 +300,6 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  apipie-rails (>= 0.7.1)
   awesome_print
   bootsnap (>= 1.4.4)
   byebug
