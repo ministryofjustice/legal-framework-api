@@ -56,6 +56,7 @@ group :development do
 end
 
 group :test do
+  gem "database_cleaner"
   gem "highline"
   gem "shoulda-matchers"
   gem "simplecov", require: false

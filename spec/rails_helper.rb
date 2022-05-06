@@ -77,10 +77,21 @@ RSpec.configure do |config|
 
   # This should exclude all specs with metadata "swagger: true"
   config.filter_run_excluding swagger: true
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
 
 def seed_live_data
-  # you get lots of <class> already defined warnings without this silencer
+  # you get lots of <class> or <constant> already initialized/defined warnings without this silencer
   Kernel.silence_warnings do
     load Rails.root.join("db/seeds.rb")
   end
