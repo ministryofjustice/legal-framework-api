@@ -1,5 +1,4 @@
 require "rails_helper"
-require Rails.root.join("db/populators/scope_limitations_populator")
 
 RSpec.describe ScopeLimitationsPopulator do
   it { expect(described_class).to respond_to(:call) }

@@ -59,4 +59,8 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  # Autoload db/populators as needed for testing. Could move to application
+  config.autoload_paths << Rails.root.join("db/populators")
+  config.eager_load_paths << Rails.root.join("db/populators")
 end

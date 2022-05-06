@@ -1,5 +1,4 @@
 require "rails_helper"
-require Rails.root.join("db/populators/service_levels_populator")
 
 RSpec.describe ServiceLevelsPopulator do
   it { expect(described_class).to respond_to(:call) }
