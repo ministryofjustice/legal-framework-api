@@ -75,7 +75,7 @@ RSpec.describe ProceedingTypesController, type: :request do
         proceeding_type_get_request
         expect(parsed_response[:success]).to be false
         expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
-        expect(parsed_response[:message]).to match "Couldn't find ProceedingType"
+        expect(parsed_response[:message]).to match "No such proceeding type: 'AZ123'"
         expect(parsed_response[:backtrace]).to be_instance_of(Array)
       end
     end

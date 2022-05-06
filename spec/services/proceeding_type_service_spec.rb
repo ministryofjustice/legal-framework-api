@@ -21,7 +21,7 @@ RSpec.describe ProceedingTypeService do
         response = proceeding_type_service_response
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
-        expect(response[:message]).to match(/Couldn't find ProceedingType/)
+        expect(response[:message]).to match("No such proceeding type: 'XX001'")
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end

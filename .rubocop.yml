@@ -12,3 +12,17 @@ inherit_gem:
 inherit_mode:
   merge:
     - Exclude
+
+
+# Swagger exclusions
+# ==================
+# because swagger does not use the standard RSpec layout, e.g.
+# context 'when x'
+#   describe 'and page submits'
+#     it 'displays'
+# etc, these RSpec cops are complaining. Therefore we are excluding the
+# following so that the RSpec cops do not fail, but the remaining ones
+# continue to monitor
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - 'spec/requests/swagger_docs/**/*_spec.rb'

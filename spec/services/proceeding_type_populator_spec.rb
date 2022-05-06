@@ -2,8 +2,10 @@ require "rails_helper"
 
 RSpec.describe ProceedingTypePopulator do
   before do
-    MatterTypePopulator.call
+    DefaultCostLimitation.delete_all
+    ProceedingTypeScopeLimitation.delete_all
     ProceedingType.delete_all
+    MatterTypePopulator.call
   end
 
   describe "#call" do

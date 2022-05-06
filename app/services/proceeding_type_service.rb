@@ -96,8 +96,16 @@ private
       request_id: @request_id,
       success: false,
       error_class: err.class.to_s,
-      message: err.message,
+      message: message_for(err),
       backtrace: err.backtrace,
     }
+  end
+
+  def message_for(err)
+    if err.is_a?(ActiveRecord::RecordNotFound)
+      "No such proceeding type: '#{@ccms_code}'"
+    else
+      err.message
+    end
   end
 end

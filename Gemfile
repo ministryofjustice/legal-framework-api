@@ -27,8 +27,9 @@ gem "bootsnap", ">= 1.4.4", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
-# Api documentation
-gem "apipie-rails", ">= 0.7.1"
+# Generate documentation
+gem "rswag-api"
+gem "rswag-ui"
 
 gem "webpacker", "~> 5", ">= 5.4.3"
 
@@ -42,6 +43,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "rspec_junit_formatter"
   gem "rspec-rails", "~> 5.1"
+  gem "rswag-specs"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end
