@@ -16,7 +16,7 @@ RSpec.describe ProceedingTypePopulator do
     end
 
     context "when run twice" do
-      it "creates §the same total number of proceeding_types" do
+      it "creates the same total number of proceeding_types" do
         expect {
           described_class.call
           described_class.call
