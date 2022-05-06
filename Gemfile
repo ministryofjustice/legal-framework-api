@@ -28,7 +28,8 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "rack-cors"
 
 # Generate documentation
-gem "rswag"
+gem "rswag-api"
+gem "rswag-ui"
 
 gem "webpacker", "~> 5", ">= 5.4.3"
 
@@ -42,6 +43,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "rspec_junit_formatter"
   gem "rspec-rails", "~> 5.1"
+  gem "rswag-specs"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end

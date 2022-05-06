@@ -222,10 +222,6 @@ GEM
     rspec-support (3.11.0)
     rspec_junit_formatter (0.5.1)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rswag (2.5.1)
-      rswag-api (= 2.5.1)
-      rswag-specs (= 2.5.1)
-      rswag-ui (= 2.5.1)
     rswag-api (2.5.1)
       railties (>= 3.1, < 7.1)
     rswag-specs (2.5.1)
@@ -266,8 +262,6 @@ GEM
     ruby-progressbar (1.11.0)
     semantic_range (3.0.0)
     shellany (0.0.1)
-    shoulda-matchers (5.1.0)
-      activesupport (>= 5.2.0)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -319,10 +313,11 @@ DEPENDENCIES
   rails (~> 7.0.2)
   rspec-rails (~> 5.1)
   rspec_junit_formatter
-  rswag
+  rswag-api
+  rswag-specs
+  rswag-ui
   rubocop-govuk
   rubocop-performance
-  shoulda-matchers (~> 5.1)
   simplecov
   simplecov-rcov
   spring
