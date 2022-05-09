@@ -27,6 +27,7 @@ private
     add_proceeding_type_to_response(pt)
     add_cost_limitations_to_response(pt)
     add_scope_limitations_to_response(pt)
+    add_service_levels_to_response(pt)
   end
 
   def add_matter_type_to_response(proceeding_type)
@@ -56,6 +57,13 @@ private
     dfcl = delegated_functions_scope_limitations(proceeding_type)
     @response[:default_scope_limitations] = { substantive: { code: scl.code, meaning: scl.meaning, description: scl.description },
                                               delegated_functions: { code: dfcl.code, meaning: dfcl.meaning, description: dfcl.description } }
+  end
+
+  def add_service_levels_to_response(proceeding_type)
+    @response[:service_levels] = []
+    proceeding_type.service_levels.each do |lvl|
+      @response[:service_levels] << { level: lvl.level, name: lvl.name, stage: lvl.stage, proceeding_default: lvl.proceeding_default }
+    end
   end
 
   def delegated_functions_cost_limitations(proceeding_type)

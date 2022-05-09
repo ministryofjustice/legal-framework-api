@@ -1,20 +1,28 @@
 require "rails_helper"
 
 RSpec.describe ProceedingTypeService do
-  subject(:proceeding_type_service_response) { described_class.call(ccms_code) }
+  describe ".call" do
+    subject(:proceeding_type_service_response) { described_class.call(ccms_code) }
 
-  before { seed_live_data }
+    before { seed_live_data }
 
-  context "when the request is successful" do
-    let(:ccms_code) { %w[DA003] }
+    context "with a valid proceeding that has just one service level" do
+      let(:ccms_code) { %w[DA003] }
 
-    it "returns valid response with expected tasks" do
-      expect(proceeding_type_service_response).to eq expected_da003_response
+      it "returns valid response with expected tasks" do
+        expect(proceeding_type_service_response).to eq expected_da003_response
+      end
     end
-  end
 
-  context "when the request is unsuccessful" do
-    context "with a non_existent ccms_code" do
+    context "with a valid proceeding that has multiple service levels" do
+      let(:ccms_code) { %w[SE003] }
+
+      it "returns valid response with expected tasks" do
+        expect(proceeding_type_service_response).to eq expected_se003_response
+      end
+    end
+
+    context "with a non-existent ccms_code" do
       let(:ccms_code) { "XX001" }
 
       it "returns error" do
@@ -26,7 +34,7 @@ RSpec.describe ProceedingTypeService do
       end
     end
 
-    context "with no ccms codes specified" do
+    context "with no ccms_code specified" do
       let(:ccms_code) { nil }
 
       it "returns error" do
@@ -80,6 +88,66 @@ RSpec.describe ProceedingTypeService do
                        " where application is made without notice to include representation on the return date.",
         },
       },
+      service_levels: [
+        {
+          level: 3,
+          name: "Full Representation",
+          stage: 8,
+          proceeding_default: true,
+        },
+      ],
+    }
+  end
+
+  def expected_se003_response
+    {
+      success: true,
+      ccms_code: "SE003",
+      meaning: "Prohibited steps order",
+      ccms_category_law_code: "MAT",
+      ccms_matter_code: "KSEC8",
+      name: "prohibited_steps_order_s8",
+      description: "to be represented on an application for a prohibited steps order.",
+      ccms_category_law: "Family",
+      ccms_matter: "Children - section 8",
+      cost_limitations: {
+        substantive: {
+          start_date: "1970-01-01",
+          value: "25000.0",
+        },
+        delegated_functions: {
+          start_date: "2021-09-13",
+          value: "2250.0",
+        },
+      },
+      default_scope_limitations: {
+        substantive: {
+          code: "FM059",
+          meaning: "FHH Children",
+          description: "Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement."\
+                       " To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
+        },
+        delegated_functions: {
+          code: "CV117",
+          meaning: "Interim order inc. return date",
+          description: "Limited to all steps necessary to apply for an interim order;"\
+                       " where application is made without notice to include representation on the return date.",
+        },
+      },
+      service_levels: [
+        {
+          level: 3,
+          name: "Full Representation",
+          stage: 8,
+          proceeding_default: false,
+        },
+        {
+          level: 1,
+          name: "Family Help (Higher)",
+          stage: 1,
+          proceeding_default: true,
+        },
+      ],
     }
   end
 end
