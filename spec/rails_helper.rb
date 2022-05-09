@@ -33,6 +33,14 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -69,21 +77,24 @@ RSpec.configure do |config|
 
   # This should exclude all specs with metadata "swagger: true"
   config.filter_run_excluding swagger: true
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
 
 def seed_live_data
-  Dir[Rails.root.join("db/populators/*.rb")].sort.each do |seed_file|
-    require seed_file
+  # you get lots of <class> or <constant> already initialized/defined warnings without this silencer
+  Kernel.silence_warnings do
+    load Rails.root.join("db/seeds.rb")
   end
-
-  MatterTypePopulator.call
-  ProceedingTypePopulator.call
-  ProceedingType.refresh_text_searchable
-  MeritsTaskPopulator.call
-  ProceedingTypeMeritsTaskPopulator.call
-  TaskDependencyPopulator.call
-  ScopeLimitationsPopulator.call
-  ProceedingTypeScopeLimitationsPopulator.call
 end
 
 def parsed_response

@@ -3,6 +3,9 @@ require "rails_helper"
 RSpec.describe ProceedingType do
   include ActiveSupport::Testing::TimeHelpers
 
+  it { is_expected.to have_many(:proceeding_type_service_levels).dependent(:destroy) }
+  it { is_expected.to have_many(:service_levels).through(:proceeding_type_service_levels) }
+
   describe "#service_levels" do
     subject(:service_levels) { proceeding_type.service_levels }
 
@@ -16,8 +19,17 @@ RSpec.describe ProceedingType do
       create(:service_level)
     end
 
-    it "returns associated service levels" do
-      expect(service_levels).to match_array [service_level1, service_level2]
+    it "returns associated service levels only" do
+      expect(service_levels).to match_array([service_level1, service_level2])
+    end
+
+    it "each service_level includes attribute `proceeding_default`" do
+      expect(service_levels).to all(have_attributes(proceeding_default: be_in([true, false])))
+    end
+
+    it "each service_level responds to #proceeding_default" do
+      expect(service_levels).to all(respond_to(:proceeding_default))
+      expect(service_levels.map(&:proceeding_default)).to all(be_in([true, false]))
     end
   end
 

@@ -1,0 +1,71 @@
+---
+# List of proceeding type service levels join table records
+# - service_level_level (integer) service-level-unique-identifier
+# - proceeding_type_ccms_code (string) proceeding-type-unique-identifier
+# - proceeding_default (boolean)
+#
+# TABLE service_levels
+# id, level, name, stage
+# #uuid1, 3, ”Full Representation”, 8
+# #uuid2 1, ”Family Help (Higher)”, 1
+#
+# TABLE proceeding_type_service_levels
+# id, service_level_id, proceeding_type_id, default
+# [#, #uuid1, each domestic abuse proceeding id, true] * all DA proceedings
+# [#, #uuid1, each section 8 proceeding id, false] * all section 8 proceedings
+# [#, #uuid2, each section 8 proceeding id, true] * all section 8 proceedings
+#
+
+# Full Representation, domestic abuse proceeding, default
+- - 3
+  - DA001
+  - true
+- - 3
+  - DA002
+  - true
+- - 3
+  - DA003
+  - true
+- - 3
+  - DA004
+  - true
+- - 3
+  - DA005
+  - true
+- - 3
+  - DA006
+  - true
+- - 3
+  - DA007
+  - true
+- - 3
+  - DA020
+  - true
+
+# Full Representation, section 8 proceeding, not-default
+- - 3
+  - SE003
+  - false
+- - 3
+  - SE004
+  - false
+- - 3
+  - SE013
+  - false
+- - 3
+  - SE014
+  - false
+
+# Family Help (Higher), section 8 proceeding, default
+- - 1
+  - SE003
+  - true
+- - 1
+  - SE004
+  - true
+- - 1
+  - SE013
+  - true
+- - 1
+  - SE014
+  - true
