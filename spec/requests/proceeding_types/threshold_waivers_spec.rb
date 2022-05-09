@@ -21,7 +21,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
 
       let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
-      it "returns success", :show_in_doc do
+      it "returns success" do
         proceeding_types_threshold_post_request
         expect(response).to have_http_status(:success)
       end
@@ -78,7 +78,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
 
       let(:proceeding_types) { %w[DA005 ZZ262 SE013] }
 
-      it "returns bad request", :show_in_doc do
+      it "returns bad request" do
         proceeding_types_threshold_post_request
         expect(response.status).to eq 400
       end

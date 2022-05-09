@@ -12,7 +12,7 @@ RSpec.describe ProceedingTypesController, type: :request do
     context "when the request is successful" do
       before { seed_live_data }
 
-      it "returns success", :show_in_doc do
+      it "returns success" do
         proceeding_type_get_request
         expect(response).to have_http_status(:success)
       end
@@ -66,7 +66,7 @@ RSpec.describe ProceedingTypesController, type: :request do
 
       let(:ccms_code) { "AZ123" }
 
-      it "returns bad request", :show_in_doc do
+      it "returns bad request" do
         proceeding_type_get_request
         expect(response.status).to eq 400
       end
