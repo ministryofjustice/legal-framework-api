@@ -8,10 +8,7 @@ RUN set -ex
 RUN apk --no-cache add --virtual build-dependencies \
                     build-base \
                     postgresql-dev \
-&& apk --no-cache add \
-                  postgresql-client \
-                  nodejs \
-                  shared-mime-info
+&& apk --no-cache add postgresql-client
 
 RUN mkdir /myapp
 WORKDIR /myapp
