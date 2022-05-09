@@ -11,8 +11,7 @@ RUN apk --no-cache add --virtual build-dependencies \
 && apk --no-cache add \
                   postgresql-client \
                   nodejs \
-                  shared-mime-info \
-                  yarn
+                  shared-mime-info
 
 RUN mkdir /myapp
 WORKDIR /myapp
@@ -26,10 +25,6 @@ RUN gem update --system
 RUN bundle config set --local without 'test development' && bundle install
 
 COPY . /myapp
-
-RUN yarn --prod
-
-#RUN bundle exec rake assets:precompile SECRET_KEY_BASE=a-real-secret-key-is-not-needed-here
 
 RUN apk del build-dependencies
 
