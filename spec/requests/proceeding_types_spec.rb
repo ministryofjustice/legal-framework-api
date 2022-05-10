@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe ProceedingTypesController, type: :request do
+RSpec.describe "ProceedingTypesController", type: :request do
   describe "GET /proceeding_types/{code}" do
     subject(:proceeding_type_get_request) { get proceeding_type_path(ccms_code), headers: }
 
@@ -58,6 +58,20 @@ RSpec.describe ProceedingTypesController, type: :request do
                          " where application is made without notice to include representation on the return date.",
           },
         },
+        service_levels: [
+          {
+            level: 3,
+            name: "Full Representation",
+            stage: 8,
+            proceeding_default: false,
+          },
+          {
+            level: 1,
+            name: "Family Help (Higher)",
+            stage: 1,
+            proceeding_default: true,
+          },
+        ],
       }
     end
 
