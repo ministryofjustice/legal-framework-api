@@ -279,7 +279,7 @@ GEM
       simplecov (>= 0.4.1)
     simplecov_json_formatter (0.1.4)
     spring (4.0.0)
-    strscan (3.0.1)
+    strscan (3.0.2)
     thor (1.2.1)
     timeout (0.2.0)
     tzinfo (2.0.4)
