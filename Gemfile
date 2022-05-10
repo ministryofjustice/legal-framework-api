@@ -31,8 +31,6 @@ gem "rack-cors"
 gem "rswag-api"
 gem "rswag-ui"
 
-gem "webpacker", "~> 5", ">= 5.4.3"
-
 group :development, :test do
   gem "awesome_print"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
