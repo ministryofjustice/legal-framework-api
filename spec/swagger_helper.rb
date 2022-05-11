@@ -22,24 +22,6 @@ RSpec.configure do |config|
         version: "v1",
       },
       paths: {},
-      servers: [
-        {
-          url: "http://{defaultHost}",
-          variables: {
-            defaultHost: {
-              default: "localhost:3000",
-            },
-          },
-        },
-        {
-          url: "https://{defaultHost}",
-          variables: {
-            defaultHost: {
-              default: "legal-framework-api-staging.cloud-platform.service.justice.gov.uk/",
-            },
-          },
-        },
-      ],
     },
   }
 

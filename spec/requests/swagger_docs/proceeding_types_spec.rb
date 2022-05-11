@@ -9,6 +9,7 @@ RSpec.describe "proceeding_types", type: :request, swagger: true do
               description: "CCMS code, e.g. DA001 or SE013"
 
     get("Show details for a single proceeding type") do
+      description "Return all details for specified proceeding type"
       tags "Proceeding types"
 
       produces "application/json"
