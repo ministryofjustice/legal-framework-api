@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   root to: "main#index"
 
   get "ping", to: "status#ping", format: :json
+  get "status", to: "status#status", format: :json
 end

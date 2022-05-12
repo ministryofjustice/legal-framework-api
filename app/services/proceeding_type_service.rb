@@ -59,7 +59,7 @@ private
   end
 
   def add_service_levels_to_response
-    proceeding_type.service_levels.each do |lvl|
+    proceeding_type.service_levels.order(:level).each do |lvl|
       @response[:service_levels] << { level: lvl.level, name: lvl.name, stage: lvl.stage, proceeding_default: lvl.proceeding_default }
     end
   end

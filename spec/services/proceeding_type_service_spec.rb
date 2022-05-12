@@ -136,16 +136,16 @@ RSpec.describe ProceedingTypeService do
       },
       service_levels: [
         {
-          level: 3,
-          name: "Full Representation",
-          stage: 8,
-          proceeding_default: false,
-        },
-        {
           level: 1,
           name: "Family Help (Higher)",
           stage: 1,
           proceeding_default: true,
+        },
+        {
+          level: 3,
+          name: "Full Representation",
+          stage: 8,
+          proceeding_default: false,
         },
       ],
     }
