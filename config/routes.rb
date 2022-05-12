@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     resources :searches, only: %i[create]
   end
 
+  root to: "main#index"
+
   get "ping", to: "status#ping", format: :json
 end
