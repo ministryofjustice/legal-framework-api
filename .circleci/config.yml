@@ -255,10 +255,10 @@ workflows:
             - build_and_push
           <<: *generic-slack-fail-post-step
       - delete_dependabot_deployment:
-          filters:
-            branches:
-              only:
-                - /dependabot.*/
+#          filters:
+#            branches:
+#              only:
+#                - /dependabot.*/
           requires:
             - deploy_uat
           <<: *generic-slack-fail-post-step
