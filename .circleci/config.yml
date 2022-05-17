@@ -211,6 +211,17 @@ jobs:
                         --set image.repository="$ECR_ENDPOINT/laa-apply-for-legal-aid/legal-framework-api-uat-ecr" \
                         --set image.tag="${CIRCLE_SHA1}"
 
+  delete_dependabot_deployment:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker
+      - *authenticate_k8s_live
+      - run:
+          name: Delete dependabot deployment
+          command: |
+            ./bin/delete_dependabot_deployment
+
 generic-slack-fail-post-step: &generic-slack-fail-post-step
   post-steps:
     - slack/notify:
