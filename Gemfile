@@ -40,7 +40,7 @@ group :development, :test do
   gem "json_expressions"
   gem "pry-byebug"
   gem "rspec_junit_formatter"
-  gem "rspec-rails", "~> 5.1"
+  gem "rspec-rails", "~> 5.1", ">= 5.1.2"
   gem "rswag-specs"
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
