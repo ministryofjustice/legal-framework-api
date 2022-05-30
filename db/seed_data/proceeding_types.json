@@ -1,0 +1,101 @@
+{
+  "seed_data": [
+    {
+      "ccms_code": "DA006",
+      "meaning": "Extend, variation or discharge - Part IV",
+      "name": "extend_variation_or_discharge_part_iv",
+      "description": "to be represented on an application to extend, vary or discharge an order under Part IV Family Law Act 1996",
+      "method": "domestic_abuse_id"
+    },
+    {
+      "ccms_code": "DA007",
+      "meaning": "Forced marriage protection order",
+      "name": "Forced marriage protection order",
+      "description": "to be represented on an application for a forced marriage protection order",
+      "method": "domestic_abuse_id",
+      "default_cost_limitations": [
+        { "type": "substantive", "start_date": "1970-01-01", "threshold": "3000" },
+        { "type": "delegated_functions", "start_date": "1970-01-01", "threshold": "4000" },
+        { "type": "delegated_functions", "start_date": "2021-09-13", "threshold": "5000" }
+      ]
+    },
+    {
+      "ccms_code": "DA003",
+      "meaning": "Harassment - injunction",
+      "name": "harassment_injunction",
+      "description": "to be represented in an action for an injunction under section 3 Protection from Harassment Act 1997.",
+      "method": "domestic_abuse_id"
+    },
+    {
+      "ccms_code": "DA001",
+      "meaning": "Inherent jurisdiction high court injunction",
+      "name": "inherent_jurisdiction_high_court_injunction",
+      "description": "to be represented on an application for an injunction, order or declaration under the inherent jurisdiction of the court.",
+      "method": "domestic_abuse_id"
+    },
+    {
+      "ccms_code": "DA004",
+      "meaning": "Non-molestation order",
+      "name": "nonmolestation_order",
+      "description": "to be represented on an application for a non-molestation order.",
+      "method": "domestic_abuse_id",
+      "additional_search_terms": "harassment,injunction"
+    },
+    {
+      "ccms_code": "DA005",
+      "meaning": "Occupation order",
+      "name": "occupation_order",
+      "description": "to be represented on an application for an occupation order.",
+      "method": "domestic_abuse_id"
+    },
+    {
+      "ccms_code": "DA002",
+      "meaning": "Variation or discharge under section 5 protection from harassment act 1997",
+      "name": "variation_or_discharge_under_section_protection_from_harassment_act",
+      "description": "to be represented on an application to vary or discharge an order under section 5 Protection from Harassment Act 1997 where the parties are associated persons (as defined by Part IV Family Law Act 1996).",
+      "method": "domestic_abuse_id"
+    },
+    {
+      "ccms_code": "DA020",
+      "meaning": "FGM Protection Order",
+      "name": "fgm_protection_order",
+      "description": "To be represented on an application for a Female Genital Mutilation Protection Order under the Female Genital Mutilation Act.",
+      "method": "domestic_abuse_id"
+    },
+    {
+      "ccms_code": "SE003",
+      "meaning": "Prohibited steps order",
+      "name": "prohibited_steps_order_s8",
+      "description": "to be represented on an application for a prohibited steps order.",
+      "method": "section8_id"
+    },
+    {
+      "ccms_code": "SE004",
+      "meaning": "Specific Issue Order",
+      "name": "specified_issue_order_s8",
+      "description": "to be represented on an application for a specific issue order.",
+      "method": "section8_id"
+    },
+    {
+      "ccms_code": "SE013",
+      "meaning": "Child arrangements order (contact)",
+      "name": "child_arrangements_order_contact",
+      "description": "to be represented on an application for a child arrangements order-who the child(ren) spend time with.",
+      "method": "section8_id",
+      "additional_search_terms": "cao",
+      "default_cost_limitations": [
+        { "type": "substantive", "start_date": "1970-01-01", "threshold": "6000" },
+        { "type": "delegated_functions", "start_date": "1970-01-01", "threshold": "7000" },
+        { "type": "delegated_functions", "start_date": "2021-09-13", "threshold": "8000" }
+      ]
+    },
+    {
+      "ccms_code": "SE014",
+      "meaning": "Child arrangements order (residence)",
+      "name": "child_arrangements_order_residence",
+      "description": "to be represented on an application for a child arrangements order –where the child(ren) will live",
+      "method": "section8_id",
+      "additional_search_terms": "cao"
+    }
+  ]
+}

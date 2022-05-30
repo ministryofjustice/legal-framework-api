@@ -9,7 +9,7 @@ RSpec.describe ProceedingTypePopulator do
   end
 
   describe "#call" do
-    let(:seed_file) { Rails.root.join("db/seed_data/proceeding_types.yml").freeze }
+    let(:seed_file) { Rails.root.join("db/seed_data/proceeding_types.json").freeze }
 
     it "create instances from the seed file" do
       expect { described_class.call }.to change(ProceedingType, :count).by(12)

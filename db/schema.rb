@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_121754) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_131939) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_121754) do
     t.decimal "value", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["proceeding_type_id", "cost_type", "start_date"], name: "index_default_cost_limitations_unique_on_cost_date_and_type", unique: true
     t.index ["proceeding_type_id"], name: "index_default_cost_limitations_on_proceeding_type_id"
   end
 
