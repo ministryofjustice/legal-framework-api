@@ -165,16 +165,6 @@ jobs:
             ./bin/uat_deploy
   deploy_main_uat:
     <<: *deploy_uat
-  delete_uat_branch:
-    executor: cloud-platform-executor
-    steps:
-      - checkout
-      - setup_remote_docker
-      - *authenticate_k8s_live
-      - run:
-          name: Delete UAT release
-          command: |
-            ./bin/delete_uat_release.sh
   deploy_staging:
     executor: cloud-platform-executor
     steps:
@@ -285,11 +275,6 @@ workflows:
           requires:
             - build_and_push
           <<: *generic-slack-fail-post-step
-      - delete_uat_branch:
-          context: legal-framework-api-uat
-          requires:
-            - deploy_main_uat
-          <<: *generic-slack-fail-post-step
       - deploy_staging:
           context: legal-framework-api-staging
           requires:
@@ -339,7 +324,6 @@ workflows:
       - hold_production:
           type: approval
           requires:
-            - delete_uat_branch
             - deploy_staging
             - slack/on-hold
       - deploy_production:
