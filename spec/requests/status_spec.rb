@@ -17,7 +17,7 @@ RSpec.describe "StatusController", type: :request do
       let(:expected_response) { { "checks" => { "database" => false } } }
 
       it "returns false" do
-        allow(ActiveRecord::Base).to receive(:connection).and_raise(PG::ConnectionBad)
+        allow(ActiveRecord::Base).to receive(:connection).and_raise(PG::ConnectionBad, "Error")
         get status_path
         expect(JSON.parse(response.body)).to eq expected_response
       end
