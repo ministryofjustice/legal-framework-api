@@ -1,0 +1,2 @@
+class ClientInvolvementType < ApplicationRecord
+end
