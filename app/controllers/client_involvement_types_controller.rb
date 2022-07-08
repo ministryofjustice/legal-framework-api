@@ -1,6 +1,6 @@
 class ClientInvolvementTypesController < ApplicationController
   def index
-    result = ClientInvolvementType.all.map { |cit| JSON.parse(cit.api_json) }
-    render json: result.to_json, status: :ok
+    result = ClientInvolvementType.all.map { |cit| cit.api_json }
+    render json: result, status: :ok
   end
 end
