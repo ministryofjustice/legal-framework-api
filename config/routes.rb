@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :merits_tasks, param: :ccms_code, only: %i[create]
   get "proceeding_types/all", to: "proceeding_types/searches#index"
+  get "client_involvement_types", to: "client_involvement_types#index"
   resources :proceeding_types, param: :ccms_code, only: %i[show]
   namespace :proceeding_types do
     resources :threshold_waivers, only: %i[create]
