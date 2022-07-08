@@ -23,3 +23,4 @@ ScopeLimitationsPopulator.call
 ProceedingTypeScopeLimitationsPopulator.call
 ServiceLevelsPopulator.call
 ProceedingTypeServiceLevelsPopulator.call
+ClientInvolvementTypesPopulator.call
