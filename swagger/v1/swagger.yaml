@@ -4,6 +4,31 @@ info:
   title: API V1
   version: v1
 paths:
+  "/client_involvement_types":
+    get:
+      summary: Get all clientinvolvement types
+      description: |-
+        Returns an array of all proceeding types with summary data.
+                           Call <code>/proceeding_types/XX999</code> where <code>XX999</code> is the ccms_code for more
+                           detailed data on a specific proceeding type.
+      tags:
+      - Client involvement types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              example:
+              - ccms_code: A
+                description: Applicant/claimant/petitioner
+              - ccms_code: D
+                description: Defendant/respondent
+              - ccms_code: W
+                description: Subject of proceedings (child)
+              - ccms_code: Z
+                description: Joined party
+              - ccms_code: I
+                description: Intervenor
   "/merits_tasks":
     post:
       summary: Return details of merits_tasks for specified proceeding types identified
