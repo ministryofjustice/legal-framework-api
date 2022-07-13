@@ -28,7 +28,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
 
       it "returns the response supplied by the MeritsTaskService" do
         proceeding_types_threshold_post_request
-        expect(response.body).to eq expected_successful_response.to_json
+        expect(JSON.parse(response.body)).to eq JSON.parse(expected_successful_response.to_json)
       end
 
       it "creates a request_history record" do
@@ -39,7 +39,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
 
         expect(history.request_payload).to eq params.to_json
         expect(history.response_status).to eq 200
-        expect(history.response_payload).to eq expected_successful_response.to_json
+        expect(JSON.parse(history.response_payload)).to eq JSON.parse(expected_successful_response.to_json)
       end
 
       def expected_successful_response

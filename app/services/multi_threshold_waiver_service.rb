@@ -51,11 +51,8 @@ private
     tw_hash = {
       ccms_code: proceeding_type.ccms_code,
       client_involvement_type: client_involvement_type.ccms_code,
-      gross_income_upper: waivers[:gross_income_upper],
-      disposable_income_upper: waivers[:disposable_income_upper],
-      capital_upper: waivers[:capital_upper],
       matter_type: proceeding_type.matter_type.name,
-    }
+    }.merge(waivers)
 
     @response[:proceedings] << tw_hash
   end
