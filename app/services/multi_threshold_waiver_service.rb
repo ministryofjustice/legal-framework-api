@@ -15,7 +15,6 @@ class MultiThresholdWaiverService
     raise MultiThresholdWaiverServiceError, "Must specify at least one proceeding type" if @values.empty?
 
     @values.each { |value| add_proceeding_types_to_response(value) }
-
     @response
   rescue StandardError => e
     @response = error_response_for(e)
@@ -27,7 +26,7 @@ private
     {
       request_id: @request_id,
       success: true,
-      proceeding_types: [],
+      proceedings: [],
     }
   end
 
@@ -53,7 +52,7 @@ private
       matter_type: proceeding_type.matter_type.name,
     }
 
-    @response[:proceeding_types] << tw_hash
+    @response[:proceedings] << tw_hash
   end
 
   def error_response_for(err)

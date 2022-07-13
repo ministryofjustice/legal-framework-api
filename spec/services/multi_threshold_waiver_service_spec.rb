@@ -106,7 +106,7 @@ RSpec.describe MultiThresholdWaiverService do
     {
       request_id:,
       success: true,
-      proceeding_types: [
+      proceedings: [
         {
           ccms_code: "DA005",
           client_involvement_type: "A",
@@ -123,7 +123,7 @@ RSpec.describe MultiThresholdWaiverService do
     {
       request_id:,
       success: true,
-      proceeding_types: [
+      proceedings: [
         {
           ccms_code: "DA005",
           client_involvement_type: "A",

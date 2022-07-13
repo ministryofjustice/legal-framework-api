@@ -53,7 +53,7 @@ RSpec.describe "ThresholdWaiversController", type: :request do
         {
           request_id:,
           success: true,
-          proceeding_types: [
+          proceedings: [
             {
               ccms_code: "DA005",
               client_involvement_type: "A",
