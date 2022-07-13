@@ -32,16 +32,27 @@ private
 
   def add_proceeding_types_to_response(ccms_code)
     proceeding_type = ProceedingType.find_by!(ccms_code:)
+    client_involvement_type = ClientInvolvementType.find_by!(ccms_code: "A")
+    waivers = get_threshold_waivers(proceeding_type, client_involvement_type)
 
-    add_threshold_waivers(proceeding_type)
+    add_threshold_waivers(proceeding_type, client_involvement_type, waivers)
   end
 
-  def add_threshold_waivers(proceeding_type)
+  def get_threshold_waivers(proceeding_type, client_involvement_type)
+    thresholds = ThresholdWaiver.find_by(matter_type: proceeding_type.matter_type, client_involvement_type:)
+    {
+      gross_income_upper: thresholds&.gross_income_upper || false,
+      disposable_income_upper: thresholds&.disposable_income_upper || false,
+      capital_upper: thresholds&.capital_upper || false,
+    }
+  end
+
+  def add_threshold_waivers(proceeding_type, _client_involvement_type, waivers)
     tw_hash = {
       ccms_code: proceeding_type.ccms_code,
-      gross_income_upper: proceeding_type.matter_type.upper_gross_income_waiver,
-      disposable_income_upper: proceeding_type.matter_type.upper_disposable_income_waiver,
-      capital_upper: proceeding_type.matter_type.upper_capital_waiver,
+      gross_income_upper: waivers[:gross_income_upper],
+      disposable_income_upper: waivers[:disposable_income_upper],
+      capital_upper: waivers[:capital_upper],
       matter_type: proceeding_type.matter_type.name,
     }
 
