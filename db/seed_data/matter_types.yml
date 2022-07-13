@@ -5,20 +5,11 @@
 #  - matter_code          - This code is required for the CCMS Submission and will be needed by Apply
 #  - category_of_law      - This is required proceeding_type searches
 #  - category_of_law_code - This code is required for the CCMS Submission and will be needed by Apply
-#  - true                 - upper_gross_income threshold is waived
-#  - true                 - upper_disposable_income threshold is waived
-#  - true                 - upper_capital threshold is waived
 - - Domestic abuse # TODO: Capitalise `Abuse` that is how it is used in Apply
   - MINJN
   - Family
   - MAT
-  - true
-  - true
-  - true
 - - Children - section 8 # TODO: Change to `Section 8 orders` as it appears in Apply?
   - KSEC8
   - Family
   - MAT
-  - false
-  - false
-  - false
