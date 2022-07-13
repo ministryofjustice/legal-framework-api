@@ -120,7 +120,7 @@ paths:
               example:
                 request_id: ff9679d7-ca3e-40b8-a47e-5006895d9026
                 success: true
-                proceeding_types:
+                proceedings:
                 - ccms_code: DA005
                   client_involvement_type: A
                   gross_income_upper: true
@@ -188,6 +188,20 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+              - ccms_code: SE013
+                meaning: Child arrangements order (contact)
+                description: to be represented on an application for a child arrangements
+                  order-who the child(ren) spend time with.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+              - ccms_code: SE014
+                meaning: Child arrangements order (residence)
+                description: to be represented on an application for a child arrangements
+                  order –where the child(ren) will live
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
               - ccms_code: DA001
                 meaning: Inherent jurisdiction high court injunction
                 description: to be represented on an application for an injunction,
@@ -199,6 +213,13 @@ paths:
                 meaning: Non-molestation order
                 description: to be represented on an application for a non-molestation
                   order.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA003
+                meaning: Harassment - injunction
+                description: to be represented in an action for an injunction under
+                  section 3 Protection from Harassment Act 1997.
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -219,6 +240,13 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+              - ccms_code: SE003
+                meaning: Prohibited steps order
+                description: to be represented on an application for a prohibited
+                  steps order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
               - ccms_code: DA020
                 meaning: FGM Protection Order
                 description: To be represented on an application for a Female Genital
@@ -227,38 +255,10 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-              - ccms_code: SE003
-                meaning: Prohibited steps order
-                description: to be represented on an application for a prohibited
-                  steps order.
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
               - ccms_code: SE004
                 meaning: Specific Issue Order
                 description: to be represented on an application for a specific issue
                   order.
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE013
-                meaning: Child arrangements order (contact)
-                description: to be represented on an application for a child arrangements
-                  order-who the child(ren) spend time with.
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: DA003
-                meaning: Harassment - injunction
-                description: to be represented in an action for an injunction under
-                  section 3 Protection from Harassment Act 1997.
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: SE014
-                meaning: Child arrangements order (residence)
-                description: to be represented on an application for a child arrangements
-                  order –where the child(ren) will live
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
