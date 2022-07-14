@@ -122,17 +122,17 @@ paths:
                 success: true
                 proceedings:
                 - ccms_code: DA005
-                  client_involvement_type: A
+                  matter_type: Domestic abuse
                   gross_income_upper: true
                   disposable_income_upper: true
                   capital_upper: true
-                  matter_type: Domestic abuse
+                  client_involvement_type: A
                 - ccms_code: SE004
-                  client_involvement_type: D
+                  matter_type: Children - section 8
                   gross_income_upper: false
                   disposable_income_upper: false
                   capital_upper: false
-                  matter_type: Children - section 8
+                  client_involvement_type: D
       requestBody:
         content:
           application/json:
@@ -188,20 +188,13 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-              - ccms_code: SE013
-                meaning: Child arrangements order (contact)
-                description: to be represented on an application for a child arrangements
-                  order-who the child(ren) spend time with.
+              - ccms_code: DA003
+                meaning: Harassment - injunction
+                description: to be represented in an action for an injunction under
+                  section 3 Protection from Harassment Act 1997.
                 ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE014
-                meaning: Child arrangements order (residence)
-                description: to be represented on an application for a child arrangements
-                  order –where the child(ren) will live
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
               - ccms_code: DA001
                 meaning: Inherent jurisdiction high court injunction
                 description: to be represented on an application for an injunction,
@@ -213,13 +206,6 @@ paths:
                 meaning: Non-molestation order
                 description: to be represented on an application for a non-molestation
                   order.
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA003
-                meaning: Harassment - injunction
-                description: to be represented in an action for an injunction under
-                  section 3 Protection from Harassment Act 1997.
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -240,13 +226,6 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-              - ccms_code: SE003
-                meaning: Prohibited steps order
-                description: to be represented on an application for a prohibited
-                  steps order.
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
               - ccms_code: DA020
                 meaning: FGM Protection Order
                 description: To be represented on an application for a Female Genital
@@ -255,10 +234,31 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+              - ccms_code: SE003
+                meaning: Prohibited steps order
+                description: to be represented on an application for a prohibited
+                  steps order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
               - ccms_code: SE004
                 meaning: Specific Issue Order
                 description: to be represented on an application for a specific issue
                   order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+              - ccms_code: SE013
+                meaning: Child arrangements order (contact)
+                description: to be represented on an application for a child arrangements
+                  order-who the child(ren) spend time with.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
+              - ccms_code: SE014
+                meaning: Child arrangements order (residence)
+                description: to be represented on an application for a child arrangements
+                  order –where the child(ren) will live
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
@@ -472,20 +472,20 @@ paths:
                 success: true
                 proceeding_types:
                 - ccms_code: DA001
+                  matter_type: Domestic abuse
                   gross_income_upper: true
                   disposable_income_upper: true
                   capital_upper: true
-                  matter_type: Domestic abuse
                 - ccms_code: DA003
+                  matter_type: Domestic abuse
                   gross_income_upper: true
                   disposable_income_upper: true
                   capital_upper: true
-                  matter_type: Domestic abuse
                 - ccms_code: SE014
+                  matter_type: Children - section 8
                   gross_income_upper: false
                   disposable_income_upper: false
                   capital_upper: false
-                  matter_type: Children - section 8
       requestBody:
         content:
           application/json:
