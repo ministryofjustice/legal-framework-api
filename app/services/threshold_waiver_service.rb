@@ -35,7 +35,7 @@ private
     client_involvement_type = ClientInvolvementType.find_by!(ccms_code: "A")
     waivers = get_threshold_waivers(proceeding_type, client_involvement_type)
 
-    add_threshold_waivers(proceeding_type, client_involvement_type, waivers)
+    add_threshold_waivers(proceeding_type, nil, waivers)
   end
 
   def get_threshold_waivers(proceeding_type, client_involvement_type)
@@ -47,11 +47,12 @@ private
     }
   end
 
-  def add_threshold_waivers(proceeding_type, _client_involvement_type, waivers)
+  def add_threshold_waivers(proceeding_type, client_involvement_type, waivers)
     tw_hash = {
       ccms_code: proceeding_type.ccms_code,
       matter_type: proceeding_type.matter_type.name,
     }.merge(waivers)
+    tw_hash[:client_involvement_type] = client_involvement_type.ccms_code if client_involvement_type
 
     @response[:proceeding_types] << tw_hash
   end
