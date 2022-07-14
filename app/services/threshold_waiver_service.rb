@@ -28,13 +28,14 @@ private
     {
       request_id: @request_id,
       success: true,
-      proceeding_types: [],
     }
   end
 
   def values_have_key_value_pairs?
     JSON.parse(@values.first.to_json).key?("ccms_code")
+    @response[:proceedings] = []
   rescue NoMethodError
+    @response[:proceeding_types] = []
     false
   end
 
@@ -67,7 +68,11 @@ private
     }.merge(waivers)
     tw_hash[:client_involvement_type] = client_involvement_type.ccms_code unless @converted
 
-    @response[:proceeding_types] << tw_hash
+    if @converted
+      @response[:proceeding_types] << tw_hash
+    else
+      @response[:proceedings] << tw_hash
+    end
   end
 
   def error_response_for(err)
