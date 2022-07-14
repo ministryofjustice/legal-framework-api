@@ -9,11 +9,13 @@ class MultiThresholdWaiverService
     @request_id = request_id
     @values = JSON.parse(values.to_json)
     @response = create_skeleton_response
+    @converted = false
   end
 
   def call
     raise MultiThresholdWaiverServiceError, "Must specify at least one proceeding type" if @values.empty?
 
+    @values = convert_only_ccms_codes_values unless values_have_key_value_pairs?
     @values.each { |value| add_proceeding_types_to_response(value) }
     @response
   rescue StandardError => e
@@ -28,6 +30,17 @@ private
       success: true,
       proceedings: [],
     }
+  end
+
+  def values_have_key_value_pairs?
+    JSON.parse(@values.first.to_json).key?("ccms_code")
+  rescue NoMethodError
+    false
+  end
+
+  def convert_only_ccms_codes_values
+    @converted = true
+    @values.map { |code| { "ccms_code": code, "client_involvement_type": "A" } }
   end
 
   def add_proceeding_types_to_response(values)
@@ -52,7 +65,7 @@ private
       ccms_code: proceeding_type.ccms_code,
       matter_type: proceeding_type.matter_type.name,
     }.merge(waivers)
-    tw_hash[:client_involvement_type] = client_involvement_type.ccms_code if client_involvement_type
+    tw_hash[:client_involvement_type] = client_involvement_type.ccms_code unless @converted
 
     @response[:proceedings] << tw_hash
   end
