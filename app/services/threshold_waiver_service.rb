@@ -9,11 +9,13 @@ class ThresholdWaiverService
     @request_id = request_id
     @values = JSON.parse(values.to_json)
     @response = create_skeleton_response
+    @converted = false
   end
 
   def call
     raise ThresholdWaiverServiceError, "Must specify at least one proceeding type" if @values.empty?
 
+    @values = convert_only_ccms_codes_values unless values_have_key_value_pairs?
     @values.each { |value| add_proceeding_types_to_response(value) }
     @response
   rescue StandardError => e
@@ -30,12 +32,23 @@ private
     }
   end
 
-  def add_proceeding_types_to_response(ccms_code)
-    proceeding_type = ProceedingType.find_by!(ccms_code:)
-    client_involvement_type = ClientInvolvementType.find_by!(ccms_code: "A")
+  def values_have_key_value_pairs?
+    JSON.parse(@values.first.to_json).key?("ccms_code")
+  rescue NoMethodError
+    false
+  end
+
+  def convert_only_ccms_codes_values
+    @converted = true
+    @values.map { |x| { "ccms_code" => x.to_s, "client_involvement_type" => "A" } }
+  end
+
+  def add_proceeding_types_to_response(values)
+    proceeding_type = ProceedingType.find_by!(ccms_code: values["ccms_code"])
+    client_involvement_type = ClientInvolvementType.find_by!(ccms_code: values["client_involvement_type"])
     waivers = get_threshold_waivers(proceeding_type, client_involvement_type)
 
-    add_threshold_waivers(proceeding_type, nil, waivers)
+    add_threshold_waivers(proceeding_type, client_involvement_type, waivers)
   end
 
   def get_threshold_waivers(proceeding_type, client_involvement_type)
@@ -52,7 +65,7 @@ private
       ccms_code: proceeding_type.ccms_code,
       matter_type: proceeding_type.matter_type.name,
     }.merge(waivers)
-    tw_hash[:client_involvement_type] = client_involvement_type.ccms_code if client_involvement_type
+    tw_hash[:client_involvement_type] = client_involvement_type.ccms_code unless @converted
 
     @response[:proceeding_types] << tw_hash
   end
