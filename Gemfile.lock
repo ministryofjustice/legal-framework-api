@@ -111,7 +111,7 @@ GEM
       guard (~> 2.0)
       rubocop (< 2.0)
     highline (2.0.3)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     json-schema (2.8.1)
       addressable (>= 2.4)
