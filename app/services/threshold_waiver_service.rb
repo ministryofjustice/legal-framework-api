@@ -1,20 +1,20 @@
 class ThresholdWaiverService
   class ThresholdWaiverServiceError < StandardError; end
 
-  def self.call(request_id, ccms_codes)
-    new(request_id, ccms_codes).call
+  def self.call(request_id, values)
+    new(request_id, values).call
   end
 
-  def initialize(request_id, ccms_codes)
+  def initialize(request_id, values)
     @request_id = request_id
-    @ccms_codes = ccms_codes
+    @values = JSON.parse(values.to_json)
     @response = create_skeleton_response
   end
 
   def call
-    raise ThresholdWaiverServiceError, "Must specify at least one proceeding type" if @ccms_codes.empty?
+    raise ThresholdWaiverServiceError, "Must specify at least one proceeding type" if @values.empty?
 
-    @ccms_codes.each { |ccms_code| add_proceeding_types_to_response(ccms_code) }
+    @values.each { |value| add_proceeding_types_to_response(value) }
     @response
   rescue StandardError => e
     @response = error_response_for(e)
