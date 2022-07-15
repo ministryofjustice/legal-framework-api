@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :threshold_waivers, only: %i[create]
     resources :searches, only: %i[create]
   end
+  resources :threshold_waivers, only: %i[create]
 
   root to: "main#index"
 

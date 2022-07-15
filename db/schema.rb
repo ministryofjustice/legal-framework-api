@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_07_101059) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_13_135652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -29,14 +29,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_101059) do
     t.decimal "value", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["proceeding_type_id", "cost_type", "start_date"], name: "index_default_cost_limitations_unique_on_cost_date_and_type", unique: true
     t.index ["proceeding_type_id"], name: "index_default_cost_limitations_on_proceeding_type_id"
   end
 
   create_table "matter_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
-    t.boolean "upper_gross_income_waiver", default: false, null: false
-    t.boolean "upper_disposable_income_waiver", default: false, null: false
-    t.boolean "upper_capital_waiver", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category_of_law"
@@ -139,9 +137,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_101059) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "threshold_waivers", force: :cascade do |t|
+    t.uuid "client_involvement_type_id", null: false
+    t.uuid "matter_type_id", null: false
+    t.boolean "gross_income_upper"
+    t.boolean "disposable_income_upper"
+    t.boolean "capital_upper"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_involvement_type_id", "matter_type_id"], name: "index_threshold_waivers_on_client_involvement_and_matter_types", unique: true
+    t.index ["client_involvement_type_id"], name: "index_threshold_waivers_on_client_involvement_type_id"
+    t.index ["matter_type_id"], name: "index_threshold_waivers_on_matter_type_id"
+  end
+
   add_foreign_key "default_cost_limitations", "proceeding_types"
   add_foreign_key "proceeding_type_scope_limitations", "proceeding_types"
   add_foreign_key "proceeding_type_scope_limitations", "scope_limitations"
   add_foreign_key "proceeding_type_service_levels", "proceeding_types"
   add_foreign_key "proceeding_type_service_levels", "service_levels"
+  add_foreign_key "threshold_waivers", "client_involvement_types"
+  add_foreign_key "threshold_waivers", "matter_types"
 end

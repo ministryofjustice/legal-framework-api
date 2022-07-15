@@ -12,15 +12,12 @@ class MatterTypePopulator
 private
 
   def populate(seed_row)
-    name, matter_code, category_of_law, category_of_law_code, gross_income, disposable_income, capital = seed_row
+    name, matter_code, category_of_law, category_of_law_code = seed_row
     matter_type(name).update!(
       name:,
       code: matter_code,
       category_of_law:,
       category_of_law_code:,
-      upper_gross_income_waiver: gross_income,
-      upper_disposable_income_waiver: disposable_income,
-      upper_capital_waiver: capital,
     )
   end
 
