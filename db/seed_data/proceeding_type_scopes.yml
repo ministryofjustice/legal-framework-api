@@ -1,0 +1,80 @@
+---
+proceeding_types:
+  - proceeding_type_code: SE013
+    service_levels:
+      - level_num: 1
+        scopes:
+          - CV118
+          - CV079
+          - CV117
+          - FM004
+          - FM007
+          - FM007
+          - FM059
+          - FM015
+          - FM019
+          - CV027
+        defaults:
+          substantive:
+            cit_a: FM059
+            cit_diwz: FM059
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+      - level_num: 3
+        scopes:
+          - CV118
+          - CV079
+          - CV117
+          - FM004
+          - FM007
+          - FM059
+          - FM015
+          - FM019
+          - CV027
+        defaults:
+          substantive:
+            cit_a: FM059
+            cit_diwz: FM059
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+  - proceeding_type_code: SE013
+    service_levels:
+      - level_num: 1
+        scopes:
+          - CV118
+          - CV079
+          - CV117
+          - FM004
+          - FM007
+          - FM007
+          - FM059
+          - FM015
+          - FM019
+          - CV027
+        defaults:
+          substantive:
+            cit_a: FM059
+            cit_diwz: FM059
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+      - level_num: 3
+        scopes:
+          - CV118
+          - CV079
+          - CV117
+          - FM004
+          - FM007
+          - FM059
+          - FM015
+          - FM019
+          - CV027
+        defaults:
+          substantive:
+            cit_a: FM059
+            cit_diwz: FM059
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118

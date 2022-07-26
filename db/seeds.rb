@@ -12,16 +12,17 @@ Dir[Rails.root.join("db/populators/*.rb")].sort.each do |seed_file|
   load seed_file
 end
 
-MatterTypePopulator.call
-# The following calls ProceedingTypePopulator.call
-# and ensures the textsearchable field is populated
-ProceedingType.populate
-MeritsTaskPopulator.call
-ProceedingTypeMeritsTaskPopulator.call
-TaskDependencyPopulator.call
+# MatterTypePopulator.call
+# # The following calls ProceedingTypePopulator.call
+# # and ensures the textsearchable field is populated
+# ProceedingType.populate
+# MeritsTaskPopulator.call
+# ProceedingTypeMeritsTaskPopulator.call
+# TaskDependencyPopulator.call
 ScopeLimitationsPopulator.call
-ProceedingTypeScopeLimitationsPopulator.call
-ServiceLevelsPopulator.call
-ProceedingTypeServiceLevelsPopulator.call
-ClientInvolvementTypesPopulator.call
-ThresholdWaiverPopulator.call
+# ProceedingTypeScopeLimitationsPopulator.call
+# ServiceLevelsPopulator.call
+# ProceedingTypeServiceLevelsPopulator.call
+# ClientInvolvementTypesPopulator.call
+# ThresholdWaiverPopulator.call
+# ProceedingTypeScopePopulator.call
