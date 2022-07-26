@@ -3,6 +3,7 @@ class ClientInvolvementType < ApplicationRecord
     {
       ccms_code:,
       description:,
+      ordering:,
     }.to_json
   end
 end
