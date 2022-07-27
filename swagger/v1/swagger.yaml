@@ -22,10 +22,10 @@ paths:
                 description: Defendant/respondent
               - ccms_code: W
                 description: Subject of proceedings (child)
-              - ccms_code: Z
-                description: Joined party
               - ccms_code: I
                 description: Intervenor
+              - ccms_code: Z
+                description: Joined party
   "/merits_tasks":
     post:
       summary: Return details of merits_tasks for specified proceeding types identified
@@ -195,6 +195,21 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+              - ccms_code: DA020
+                meaning: FGM Protection Order
+                description: To be represented on an application for a Female Genital
+                  Mutilation Protection Order under the Female Genital Mutilation
+                  Act.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: SE003
+                meaning: Prohibited steps order
+                description: to be represented on an application for a prohibited
+                  steps order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
               - ccms_code: DA001
                 meaning: Inherent jurisdiction high court injunction
                 description: to be represented on an application for an injunction,
@@ -226,21 +241,6 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-              - ccms_code: DA020
-                meaning: FGM Protection Order
-                description: To be represented on an application for a Female Genital
-                  Mutilation Protection Order under the Female Genital Mutilation
-                  Act.
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: SE003
-                meaning: Prohibited steps order
-                description: to be represented on an application for a prohibited
-                  steps order.
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
               - ccms_code: SE004
                 meaning: Specific Issue Order
                 description: to be represented on an application for a specific issue
@@ -370,83 +370,83 @@ paths:
                 error_class: ActiveRecord::RecordNotFound
                 message: 'No such proceeding type: ''XX999'''
                 backtrace:
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.3/lib/active_record/relation/finder_methods.rb:378:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activerecord-7.0.3.1/lib/active_record/relation/finder_methods.rb:378:in
                   `raise_record_not_found_exception!'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.3/lib/active_record/core.rb:330:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activerecord-7.0.3.1/lib/active_record/core.rb:330:in
                   `find_by!'"
-                - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:84:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:84:in
                   `proceeding_type'"
-                - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:33:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:33:in
                   `add_matter_type_to_response'"
-                - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:25:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:25:in
                   `populate_response'"
-                - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:16:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:16:in
                   `call'"
-                - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:5:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:5:in
                   `call'"
-                - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:24:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:24:in
                   `block (4 levels) in <top (required)>'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `module_exec'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `subclass'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
                   `block in define_example_group_method'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:56:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:56:in
                   `response'"
-                - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
                   `block (3 levels) in <top (required)>'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `module_exec'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `subclass'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
                   `block in define_example_group_method'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:14:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:14:in
                   `block (2 levels) in <module:ExampleGroupHelpers>'"
-                - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:11:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:11:in
                   `block (2 levels) in <top (required)>'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `module_exec'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `subclass'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
                   `block in define_example_group_method'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:8:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:8:in
                   `path'"
-                - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:4:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:4:in
                   `block in <top (required)>'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `module_exec'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `subclass'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
                   `block in define_example_group_method'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/dsl.rb:43:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/dsl.rb:43:in
                   `block in expose_example_group_alias'"
-                - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:3:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:3:in
                   `<top (required)>'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
                   `load'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
                   `load'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
                   `load_file_handling_errors'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1615:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1615:in
                   `block in load_spec_files'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
                   `each'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
                   `load_spec_files'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:102:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:102:in
                   `setup'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:86:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:86:in
                   `run'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
                   `run'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
                   `invoke'"
-                - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/exe/rspec:4:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec:4:in
                   `<main>'"
   "/proceeding_types/threshold_waivers":
     post:

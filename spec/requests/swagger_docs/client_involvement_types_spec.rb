@@ -11,7 +11,7 @@ RSpec.describe "ClientInvolvementTypesController", type: :request, swagger: true
 
       response(200, "successful") do
         seed_live_data
-        examples "application/json" => ClientInvolvementType.all.map { |cit| JSON.parse(cit.api_json) }
+        examples "application/json" => ClientInvolvementType.order(:ordering).map { |cit| JSON.parse(cit.api_json) }
         run_test!
       end
     end

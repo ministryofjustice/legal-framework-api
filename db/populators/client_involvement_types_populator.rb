@@ -12,11 +12,12 @@ class ClientInvolvementTypesPopulator
 private
 
   def populate(seed_row)
-    ccms_code, description = seed_row
+    ccms_code, description, ordering = seed_row
     record = ClientInvolvementType.find_by(ccms_code:) || ClientInvolvementType.new
     record.update!(
       ccms_code:,
       description:,
+      ordering:,
     )
   end
 
