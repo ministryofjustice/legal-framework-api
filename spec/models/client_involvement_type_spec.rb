@@ -7,7 +7,7 @@ RSpec.describe ClientInvolvementType, type: :model do
     subject(:api_json) { create(:client_involvement_type).api_json }
 
     it "returns the expected json keys" do
-      expect(JSON.parse(api_json).keys).to match_array(%w[ccms_code description ordering])
+      expect(JSON.parse(api_json).keys).to match_array(%w[ccms_code description])
     end
   end
 end

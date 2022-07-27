@@ -18,19 +18,14 @@ paths:
               example:
               - ccms_code: A
                 description: Applicant/claimant/petitioner
-                ordering: 1
               - ccms_code: D
                 description: Defendant/respondent
-                ordering: 2
               - ccms_code: W
                 description: Subject of proceedings (child)
-                ordering: 3
-              - ccms_code: Z
-                description: Joined party
-                ordering: 5
               - ccms_code: I
                 description: Intervenor
-                ordering: 4
+              - ccms_code: Z
+                description: Joined party
   "/merits_tasks":
     post:
       summary: Return details of merits_tasks for specified proceeding types identified
