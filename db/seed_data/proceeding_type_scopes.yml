@@ -4,16 +4,15 @@ proceeding_types:
     service_levels:
       - level_num: 1
         scopes:
-          - CV118
+          - CV027
           - CV079
           - CV117
+          - CV118
           - FM004
           - FM007
-          - FM007
-          - FM059
           - FM015
           - FM019
-          - CV027
+          - FM059
         defaults:
           substantive:
             cit_a: FM059
@@ -23,36 +22,33 @@ proceeding_types:
             cit_diwz: CV118
       - level_num: 3
         scopes:
-          - CV118
-          - CV079
-          - CV117
-          - FM004
-          - FM007
-          - FM059
-          - FM015
-          - FM019
           - CV027
+          - CV117
+          - CV118
+          - FM007
+          - FM019
+          - FM039
+          - FM049
         defaults:
           substantive:
-            cit_a: FM059
-            cit_diwz: FM059
+            cit_a: FM049
+            cit_diwz: FM049
           df_used:
             cit_a: CV117
             cit_diwz: CV118
-  - proceeding_type_code: SE013
+  - proceeding_type_code: SE014
     service_levels:
       - level_num: 1
         scopes:
-          - CV118
+          - CV027
           - CV079
           - CV117
+          - CV118
           - FM004
           - FM007
-          - FM007
-          - FM059
           - FM015
           - FM019
-          - CV027
+          - FM059
         defaults:
           substantive:
             cit_a: FM059
@@ -62,19 +58,125 @@ proceeding_types:
             cit_diwz: CV118
       - level_num: 3
         scopes:
+          - CV027
+          - CV117
           - CV118
+          - FM007
+          - FM019
+          - FM039
+          - FM049
+        defaults:
+          substantive:
+            cit_a: FM049
+            cit_diwz: FM049
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+#  - proceeding_type_code: SE015
+#    service_levels:
+#      - level_num: 1
+#        scopes:
+#          - CV027
+#          - CV079
+#          - CV117
+#          - CV118
+#          - FM004
+#          - FM007
+#          - FM015
+#          - FM019
+#          - FM059
+#        defaults:
+#          substantive:
+#            cit_a: FM059
+#            cit_diwz: FM059
+#          df_used:
+#            cit_a: CV117
+#            cit_diwz: CV118
+#      - level_num: 3
+#        scopes:
+#          - CV027
+#          - CV117
+#          - CV118
+#          - FM007
+#          - FM019
+#          - FM039
+#          - FM049
+#        defaults:
+#          substantive:
+#            cit_a: FM049
+#            cit_diwz: FM049
+#          df_used:
+#            cit_a: CV117
+#            cit_diwz: CV118
+  - proceeding_type_code: SE003
+    service_levels:
+      - level_num: 1
+        scopes:
+          - CV027
           - CV079
           - CV117
+          - CV118
           - FM004
           - FM007
-          - FM059
           - FM015
           - FM019
-          - CV027
+          - FM059
         defaults:
           substantive:
             cit_a: FM059
             cit_diwz: FM059
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+      - level_num: 3
+        scopes:
+          - CV027
+          - CV117
+          - CV118
+          - FM007
+          - FM019
+          - FM039
+          - FM049
+        defaults:
+          substantive:
+            cit_a: FM049
+            cit_diwz: FM049
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+  - proceeding_type_code: SE004
+    service_levels:
+      - level_num: 1
+        scopes:
+          - CV027
+          - CV079
+          - CV117
+          - CV118
+          - FM004
+          - FM007
+          - FM015
+          - FM019
+          - FM059
+        defaults:
+          substantive:
+            cit_a: FM059
+            cit_diwz: FM059
+          df_used:
+            cit_a: CV117
+            cit_diwz: CV118
+      - level_num: 3
+        scopes:
+          - CV027
+          - CV117
+          - CV118
+          - FM007
+          - FM019
+          - FM039
+          - FM049
+        defaults:
+          substantive:
+            cit_a: FM049
+            cit_diwz: FM049
           df_used:
             cit_a: CV117
             cit_diwz: CV118

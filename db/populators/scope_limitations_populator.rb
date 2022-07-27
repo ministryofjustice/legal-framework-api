@@ -12,11 +12,11 @@ class ScopeLimitationsPopulator
 private
 
   def populate(attrs)
-    record = ScopeLimitation.find_by(code: attrs['code']) || ScopeLimitation.new
-    record.update(attrs)
+    record = ScopeLimitation.find_by(code: attrs["code"]) || ScopeLimitation.new
+    record.update!(attrs)
   end
 
   def seed_data
-    @seed_data ||= YAML.load_file(DATA_FILE)['scope_limitations']
+    @seed_data ||= YAML.load_file(DATA_FILE)["scope_limitations"]
   end
 end

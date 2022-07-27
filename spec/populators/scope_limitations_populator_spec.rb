@@ -7,6 +7,6 @@ RSpec.describe ScopeLimitationsPopulator do
   describe ".call" do
     subject(:call) { described_class.call }
 
-    specify { expect { call }.to change(ScopeLimitation, :count).from(0).to(16) }
+    specify { expect { call }.to change(ScopeLimitation, :count).from(0).to(22) }
   end
 end
