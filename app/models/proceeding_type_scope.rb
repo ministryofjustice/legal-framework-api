@@ -5,6 +5,8 @@ class ProceedingTypeScope < ApplicationRecord
            :valid_scope_limitation,
            :only_one_default_in_group
 
+private
+
   def valid_proceeding_type_code
     unless proceeding_type_ccms_code.in?(ProceedingType.pluck(:ccms_code))
       errors.add(:proceeding_type_ccms_code, "Code #{proceeding_type_ccms_code} doesn't exist on the proceeding_types table")
