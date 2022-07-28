@@ -42,6 +42,7 @@ private
     @response[:meaning] = proceeding_type.meaning
     @response[:name] = proceeding_type.name
     @response[:description] = proceeding_type.description
+    @response[:full_s8_only] = proceeding_type.full_s8_only
   end
 
   def add_cost_limitations_to_response
@@ -94,6 +95,7 @@ private
       ccms_matter_code: "",
       name: "",
       description: "",
+      full_s8_only: "",
       ccms_category_law: "",
       ccms_matter: "",
       cost_limitations: {},

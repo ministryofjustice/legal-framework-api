@@ -32,6 +32,7 @@ RSpec.describe "ProceedingTypesController", type: :request do
         ccms_matter_code: "KSEC8",
         name: "prohibited_steps_order_s8",
         description: "to be represented on an application for a prohibited steps order.",
+        full_s8_only: false,
         ccms_category_law: "Family",
         ccms_matter: "Children - section 8",
         cost_limitations: {

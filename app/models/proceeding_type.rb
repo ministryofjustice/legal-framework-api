@@ -49,6 +49,7 @@ class ProceedingType < ApplicationRecord
       ccms_code:,
       meaning:,
       description:,
+      full_s8_only:,
       ccms_category_law: matter_type.category_of_law,
       ccms_matter_code: matter_type.code,
       ccms_matter: matter_type.name,

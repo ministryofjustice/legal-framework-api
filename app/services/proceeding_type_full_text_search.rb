@@ -8,7 +8,7 @@
 # method.
 #
 class ProceedingTypeFullTextSearch
-  Result = Struct.new(:meaning, :ccms_code, :description, :ccms_category_law, :ccms_matter)
+  Result = Struct.new(:meaning, :ccms_code, :description, :full_s8_only, :ccms_category_law, :ccms_matter)
 
   def self.call(search_terms, excluded_codes = [])
     new(search_terms, excluded_codes).call
@@ -39,7 +39,7 @@ private
   end
 
   def instantiate_result(row)
-    Result.new(row["meaning"].strip, row["ccms_code"], row["description"].strip, row["ccms_category_law"]&.strip, row["ccms_matter"])
+    Result.new(row["meaning"].strip, row["ccms_code"], row["description"].strip, row["full_s8_only"], row["ccms_category_law"]&.strip, row["ccms_matter"])
   end
 
   def ts_query_transform(search_terms)
@@ -58,6 +58,7 @@ private
         meaning,
         ccms_code,
         description,
+        full_s8_only,
         mt.category_of_law as ccms_category_law,
         mt.name as ccms_matter,
         ts_rank(textsearchable, query) AS rank
