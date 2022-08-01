@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe MatterType do
   describe "finders" do
-    before do
-      MatterTypePopulator.call
-    end
+    # before do
+    #   MatterTypePopulator.call
+    # end
 
     describe ".domestic_abuse" do
       it "returns the domestic abuse record" do

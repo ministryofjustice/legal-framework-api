@@ -12,7 +12,6 @@ RSpec.describe "ProceedingTypes::SearchesController", type: :request, swagger: t
       produces "application/json"
 
       response(200, "successful") do
-        seed_live_data
         examples "application/json" => ProceedingType.all.map { |pt| JSON.parse(pt.api_json) }
         run_test!
       end
@@ -43,7 +42,6 @@ RSpec.describe "ProceedingTypes::SearchesController", type: :request, swagger: t
       }
 
       response(200, "success") do
-        seed_live_data
         results = { data: ProceedingTypeFullTextSearch.call(search_term, excluded_codes) }
         formatted_results = { success: true }.merge(results).to_json
 

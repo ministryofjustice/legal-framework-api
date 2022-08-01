@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe ScopeLimitation do
-  before { populate_seed_data }
+  # before { populate_seed_data }
 
   let(:pt_ccms_code) { "SE013" }
   let(:service_level) { 1 }

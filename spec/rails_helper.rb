@@ -81,19 +81,16 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
+    # you get lots of <class> or <constant> already initialized/defined warnings without this silencer
+    Kernel.silence_warnings do
+      load Rails.root.join("db/seeds.rb")
+    end
   end
 
   config.around do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
-  end
-end
-
-def seed_live_data
-  # you get lots of <class> or <constant> already initialized/defined warnings without this silencer
-  Kernel.silence_warnings do
-    load Rails.root.join("db/seeds.rb")
   end
 end
 

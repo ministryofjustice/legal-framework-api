@@ -32,7 +32,6 @@ RSpec.describe "threshold_waivers", type: :request, swagger: true do
                     required: %w[request_id ccms_codes],
                   }
         response(200, "success") do
-          seed_live_data
           response = ThresholdWaiverService.call(request_id, ccms_codes)
 
           examples "application/json" => response

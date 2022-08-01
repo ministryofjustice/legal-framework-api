@@ -1,8 +1,6 @@
 require "rails_helper"
 
 RSpec.describe ThresholdWaiverService do
-  before { seed_live_data }
-
   let(:request_id) { SecureRandom.uuid }
 
   context "when the new style submission is raised" do

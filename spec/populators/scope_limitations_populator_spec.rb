@@ -7,6 +7,11 @@ RSpec.describe ScopeLimitationsPopulator do
   describe ".call" do
     subject(:call) { described_class.call }
 
+    before do
+      # clear out existing Client Involvement Type data - because it is transactional, the seeded data will be restored
+      ScopeLimitation.all.map(&:destroy!)
+    end
+
     specify { expect { call }.to change(ScopeLimitation, :count).from(0).to(22) }
   end
 end

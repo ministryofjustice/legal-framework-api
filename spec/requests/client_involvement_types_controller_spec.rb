@@ -1,8 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "ClientInvolvementTypesController", type: :request do
-  before { seed_live_data }
-
   let(:headers) { { "CONTENT_TYPE" => "application/json" } }
   let(:expected_result) do
     [{ "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },

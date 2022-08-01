@@ -15,7 +15,6 @@ RSpec.describe "proceeding_types", type: :request, swagger: true do
       produces "application/json"
 
       response(200, "successful") do
-        seed_live_data
         examples "application/json" => ProceedingTypeService.call("SE013")
         run_test!
       end

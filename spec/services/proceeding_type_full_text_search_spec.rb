@@ -4,8 +4,6 @@ RSpec.describe ProceedingTypeFullTextSearch do
   describe ".call" do
     subject(:proceeding_type_full_text_search_results) { described_class.call(search_term) }
 
-    before { seed_live_data }
-
     let(:excluded_codes) { [] }
 
     context "when searching for a non-existent term" do

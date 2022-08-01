@@ -16,8 +16,6 @@ RSpec.describe MeritsTasksController, type: :request do
     end
 
     context "when the request is successful" do
-      before { seed_live_data }
-
       let(:proceeding_types) { %w[DA005 SE004 SE013] }
 
       it "returns success" do

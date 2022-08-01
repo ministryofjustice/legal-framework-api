@@ -8,9 +8,8 @@ RSpec.describe ProceedingTypeServiceLevelsPopulator do
     subject(:call) { described_class.call }
 
     before do
-      MatterTypePopulator.call
-      ServiceLevelsPopulator.call
-      ProceedingTypePopulator.call
+      # clear out seeded data - because it is transactional, the seeded data will be restored
+      ProceedingTypeServiceLevel.all.map(&:destroy!)
     end
 
     specify { expect { call }.to change(ProceedingTypeServiceLevel, :count).from(0).to(16) }

@@ -3,8 +3,6 @@ require "rails_helper"
 RSpec.describe MeritsTaskService do
   subject(:merits_task_service_response) { described_class.call(request_id, ccms_codes) }
 
-  before { seed_live_data }
-
   let(:request_id) { SecureRandom.uuid }
 
   context "when the request is successful" do

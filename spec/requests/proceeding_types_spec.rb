@@ -10,8 +10,6 @@ RSpec.describe "ProceedingTypesController", type: :request do
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
 
     context "when the request is successful" do
-      before { seed_live_data }
-
       it "returns success" do
         proceeding_type_get_request
         expect(response).to have_http_status(:success)
@@ -76,8 +74,6 @@ RSpec.describe "ProceedingTypesController", type: :request do
     end
 
     context "when the request is unsuccessful" do
-      before { seed_live_data }
-
       let(:ccms_code) { "AZ123" }
 
       it "returns bad request" do
