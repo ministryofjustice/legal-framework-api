@@ -72,42 +72,53 @@ proceeding_types:
           df_used:
             cit_a: CV117
             cit_diwz: CV118
-  - proceeding_type_code: SE015
-    service_levels:
-      - level_num: 1
-        scopes:
-          - CV027
-          - CV079
-          - CV117
-          - CV118
-          - FM004
-          - FM007
-          - FM015
-          - FM019
-          - FM059
-        defaults:
-          substantive:
-            cit_a: FM059
-            cit_diwz: FM059
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-      - level_num: 3
-        scopes:
-          - CV027
-          - CV117
-          - CV118
-          - FM007
-          - FM019
-          - FM039
-          - FM049
-        defaults:
-          substantive:
-            cit_a: FM049
-            cit_diwz: FM049
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
+#
+#
+#
+# The seed data for SE015 below is commented out for now. The seeded proceeding_types table does not contain a record for SE015,
+# and we can't add the join record in this table until it exists.
+# We can't simply add the SE015 Proceeding type yet (it is one of the proceeding types that will be introduced with full section 8) until there is a mechanism in
+# Apply for ignoring full section 8 proceedings for un-enabled providers.
+#
+#
+#
+#
+#  - proceeding_type_code: SE015
+#    service_levels:
+#      - level_num: 1
+#        scopes:
+#          - CV027
+#          - CV079
+#          - CV117
+#          - CV118
+#          - FM004
+#          - FM007
+#          - FM015
+#          - FM019
+#          - FM059
+#        defaults:
+#          substantive:
+#            cit_a: FM059
+#            cit_diwz: FM059
+#          df_used:
+#            cit_a: CV117
+#            cit_diwz: CV118
+#      - level_num: 3
+#        scopes:
+#          - CV027
+#          - CV117
+#          - CV118
+#          - FM007
+#          - FM019
+#          - FM039
+#          - FM049
+#        defaults:
+#          substantive:
+#            cit_a: FM049
+#            cit_diwz: FM049
+#          df_used:
+#            cit_a: CV117
+#            cit_diwz: CV118
   - proceeding_type_code: SE003
     service_levels:
       - level_num: 1
