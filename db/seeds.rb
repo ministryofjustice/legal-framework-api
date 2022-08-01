@@ -25,3 +25,4 @@ ServiceLevelsPopulator.call
 ProceedingTypeServiceLevelsPopulator.call
 ClientInvolvementTypesPopulator.call
 ThresholdWaiverPopulator.call
+ProceedingTypeScopePopulator.call

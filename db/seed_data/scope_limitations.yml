@@ -1,88 +1,156 @@
 ---
-# List of scope limitations
-# - code
-# - meaning
-# - description
-# - substantive
-# - delegated_functions
-#
-- - AA009
-  - Warrant of arrest FLA
-  - As to an order under Part IV Family Law Act 1996 limited to an application for the issue of a warrant of arrest.
-  - true
-  - true
-- - AA019
-  - Injunction FLA-to final hearing
-  - As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
-  - true
-  - false
-- - AA028
-  - Interim Order (Emergency only) FGM
-  - As to an application under the Female Genital Mutilation Act 2003 limited to all steps necessary to apply for an interim order where application is made without notice to include representation on the return date.
-  - true
-  - true
-- - AA029
-  - Hearing (Emergency only) FGM
-  - As to application under the Female Genital Mutilation Act 2003 limited to all steps up to and including the hearing on [date]
-  - true
-  - true
-- - AA030
-  - Injunction-FGM-to final hearing
-  - As to proceedings under the Female Genital Mutilation Act 2003 limited to all steps up to and including obtaining and service a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest, if not attached, and representation in contempt proceedings).
-  - true
-  - false
-- - AA031
-  - Vary/dscg/rvke FGM Protection Order
-  - As to an order under Female Genital Mutilation Act 2003 limited to an application to extend/vary or discharge.
-  - true
-  - true
-- - AA032
-  - Overseas applicant-FGMPO
-  - Limited where the applicant is overseas, to their return to the jurisdiction and thereafter a solicitor's report.
-  - true
-  - true
-- - CV027
-  - Hearing/Adjournment
-  - Limited to all steps (including any adjournment thereof) up to and including the hearing on [date]
-  - true
-  - true
-- - CV079
-  - "Counsel's Opinion"
-  - "Limited to obtaining external Counsel''s Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available."
-  - true
-  - true
-- - CV117
-  - Interim order inc. return date
-  - Limited to all steps necessary to apply for an interim order; where application is made without notice to include representation on the return date.
-  - true
-  - true
-- - CV118
-  - Hearing
-  - Limited to all steps up to and including the hearing on [see additional limitation notes]
-  - true
-  - true
-- - CV128
-  - "Counsel's opinion-merits, quantum, and cost benefit"
-  - "Limited to obtaining counsel's opinion or the opinion of an external solicitor with higher court advocacy rights particularly in regard to the merits, quantum, and cost benefit of the action."
-  - true
-  - true
-- - CV129
-  - "Counsel's opinion-merits"
-  - "Limited to obtaining counsel's opinion or the opinion of an external solicitor with higher court advocacy rights particularly in regard to the merits of the case."
-  - true
-  - true
-- - FM054
-  - Overseas applicant (forced marriage)
-  - "Limited where the applicant is overseas, to their return to the jurisdiction and thereafter a solicitor's report"
-  - true
-  - true
-- - FM062
-  - Final hearing
-  - Limited to all steps up to and including final hearing and any action necessary to implement (but not enforce) the order.
-  - true
-  - false
-- - FM059
-  - FHH Children
-  - Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.
-  - true
-  - false
+scope_limitations:
+  - code: AA009
+    meaning: Warrant of arrest FLA
+    description: As to an order under Part IV Family Law Act 1996 limited to an application
+      for the issue of a warrant of arrest.
+    substantive: true
+    delegated_functions: true
+  - code: AA019
+    meaning: Injunction FLA-to final hearing
+    description: As to proceedings under Part IV Family Law Act 1996 limited to all
+      steps up to and including obtaining and serving a final order and in the event
+      of breach leading to the exercise of a power of arrest to representation on the
+      consideration of the breach by the court (but excluding applying for a warrant
+      of arrest, if not attached, and representation in contempt proceedings).
+    substantive: true
+    delegated_functions: false
+  - code: AA028
+    meaning: Interim Order (Emergency only) FGM
+    description: As to an application under the Female Genital Mutilation Act 2003 limited
+      to all steps necessary to apply for an interim order where application is made
+      without notice to include representation on the return date.
+    substantive: true
+    delegated_functions: true
+  - code: AA029
+    meaning: Hearing (Emergency only) FGM
+    description: As to application under the Female Genital Mutilation Act 2003 limited
+      to all steps up to and including the hearing on [date]
+    substantive: true
+    delegated_functions: true
+  - code: AA030
+    meaning: Injunction-FGM-to final hearing
+    description: As to proceedings under the Female Genital Mutilation Act 2003 limited
+      to all steps up to and including obtaining and service a final order and in the
+      event of breach leading to the exercise of a power of arrest to representation
+      on the consideration of the breach by the court (but excluding applying for a
+      warrant of arrest, if not attached, and representation in contempt proceedings).
+    substantive: true
+    delegated_functions: false
+  - code: AA031
+    meaning: Vary/dscg/rvke FGM Protection Order
+    description: As to an order under Female Genital Mutilation Act 2003 limited to
+      an application to extend/vary or discharge.
+    substantive: true
+    delegated_functions: true
+  - code: AA032
+    meaning: Overseas applicant-FGMPO
+    description: Limited where the applicant is overseas, to their return to the jurisdiction
+      and thereafter a solicitor's report.
+    substantive: true
+    delegated_functions: true
+  - code: CV027
+    meaning: Hearing/Adjournment
+    description: Limited to all steps (including any adjournment thereof) up to and
+      including the hearing on [date]
+    substantive: true
+    delegated_functions: true
+  - code: CV079
+    meaning: Counsel's Opinion
+    description: Limited to obtaining external Counsel''s Opinion or the opinion of
+      an external solicitor with higher court advocacy rights on the information already
+      available.
+    substantive: true
+    delegated_functions: true
+  - code: CV117
+    meaning: Interim order inc. return date
+    description: Limited to all steps necessary to apply for an interim order; where
+      application is made without notice to include representation on the return date.
+    substantive: true
+    delegated_functions: true
+  - code: CV118
+    meaning: Hearing
+    description: Limited to all steps up to and including the hearing on [see additional
+      limitation notes]
+    substantive: true
+    delegated_functions: true
+  - code: CV128
+    meaning: Counsel's opinion-merits, quantum, and cost benefit
+    description: Limited to obtaining counsel's opinion or the opinion of an external
+      solicitor with higher court advocacy rights particularly in regard to the merits,
+      quantum, and cost benefit of the action.
+    substantive: true
+    delegated_functions: true
+  - code: CV129
+    meaning: Counsel's opinion-merits
+    description: Limited to obtaining counsel's opinion or the opinion of an external
+      solicitor with higher court advocacy rights particularly in regard to the merits
+      of the case.
+    substantive: true
+    delegated_functions: true
+  - code: FM004
+    meaning: CAFCASS report
+    description: Limited to all steps up to and including the Children and Family Reporter's
+      Report and thereafter a solicitor's report.
+    substantive: true
+    delegated_functions: true
+  - code: FM007
+    meaning: Blood Tests or DNA Tests
+    description: Limited to all steps up to and including the obtaining of blood tests or
+      DNA tests and thereafter a solicitor's report.
+    substantive: true
+    delegated_functions: true
+  - code: FM015
+    meaning: Section 37 Report
+    description: Limited to a section 37 report only.
+    substantive: true
+    delegated_functions: true
+  - code: FM019
+    meaning: Exchange of Evidence
+    description: Limited to all steps up to and including the exchange of evidence
+      (including any welfare officer's/guardian ad litem's report) and directions appointments
+      but not including a final contested hearing and thereafter to a solicitors report
+      (or if so advised a Counsel's opinion) on the issues and prospects of success.
+    substantive: true
+    delegated_functions: true
+  - code: FM039
+    meaning: Final hearing(CAFCASS rept)priv law only
+    description: Limited to all steps up to and including the final hearing save in the event
+      of a Court and Family Reporter's/Children's Guardian's report unfavourable to the client,
+      in which case the certificate is thereafter limited to a Solicitor's report or, if the
+      Solicitor so advises, external Counsel's opinion or the opinion of an external solicitor
+      with higher court advocacy rights on the merits of the matter continuing on a contested basis.
+    substantive: true
+    delegated_functions: true
+  - code: FM049
+    meaning: Hearing-children
+    description: Limited to all steps up to and including trial/final hearing and any action necessary
+      to implement (but not enforce) the judgment or order.
+    substantive: true
+    delegated_functions: true
+  - code: FM054
+    meaning: Overseas applicant (forced marriage)
+    description: Limited where the applicant is overseas, to their return to the jurisdiction
+      and thereafter a solicitor's report
+    substantive: true
+    delegated_functions: true
+  - code: FM059
+    meaning: FHH Children
+    description: Limited to Family Help (Higher) and to all steps necessary to negotiate
+      and conclude a settlement. To include the issue of proceedings and representation
+      in those proceedings save in relation to or at a contested final hearing.
+    substantive: true
+    delegated_functions: false
+  - code: FM062
+    meaning: Final hearing
+    description: Limited to all steps up to and including final hearing and any action
+      necessary to implement (but not enforce) the order.
+    substantive: true
+    delegated_functions: false
+
+
+
+
+
+
+

@@ -6,24 +6,17 @@ class ScopeLimitationsPopulator
   end
 
   def call
-    seed_data.each { |seed_row| populate(seed_row) }
+    seed_data.each { |attrs| populate(attrs) }
   end
 
 private
 
-  def populate(seed_row)
-    code, meaning, description, substantive, delegated_functions = seed_row
-    record = ScopeLimitation.find_by(code:) || ScopeLimitation.new
-    record.update!(
-      code:,
-      meaning:,
-      description:,
-      substantive:,
-      delegated_functions:,
-    )
+  def populate(attrs)
+    record = ScopeLimitation.find_by(code: attrs["code"]) || ScopeLimitation.new
+    record.update!(attrs)
   end
 
   def seed_data
-    @seed_data ||= YAML.load_file(DATA_FILE)
+    @seed_data ||= YAML.load_file(DATA_FILE)["scope_limitations"]
   end
 end
