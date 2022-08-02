@@ -36,6 +36,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
               meaning: "Occupation order",
               ccms_code: "DA005",
               description: "to be represented on an application for an occupation order.",
+              full_s8_only: false,
               ccms_category_law: "Family",
               ccms_matter: "Domestic abuse",
             },

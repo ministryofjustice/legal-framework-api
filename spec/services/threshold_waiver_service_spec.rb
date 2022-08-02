@@ -108,6 +108,7 @@ RSpec.describe ThresholdWaiverService do
         proceedings: [
           {
             ccms_code: "DA005",
+            full_s8_only: false,
             client_involvement_type: "A",
             capital_upper: true,
             disposable_income_upper: true,
@@ -125,6 +126,7 @@ RSpec.describe ThresholdWaiverService do
         proceedings: [
           {
             ccms_code: "DA005",
+            full_s8_only: false,
             client_involvement_type: "A",
             capital_upper: true,
             disposable_income_upper: true,
@@ -133,6 +135,7 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE003",
+            full_s8_only: false,
             client_involvement_type: "A",
             capital_upper: false,
             disposable_income_upper: false,
@@ -141,6 +144,7 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE013",
+            full_s8_only: false,
             client_involvement_type: "D",
             capital_upper: false,
             disposable_income_upper: false,
@@ -208,6 +212,7 @@ RSpec.describe ThresholdWaiverService do
         proceeding_types: [
           {
             ccms_code: "DA005",
+            full_s8_only: false,
             capital_upper: true,
             disposable_income_upper: true,
             gross_income_upper: true,
@@ -224,6 +229,7 @@ RSpec.describe ThresholdWaiverService do
         proceeding_types: [
           {
             ccms_code: "DA005",
+            full_s8_only: false,
             capital_upper: true,
             disposable_income_upper: true,
             gross_income_upper: true,
@@ -231,6 +237,7 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE003",
+            full_s8_only: false,
             capital_upper: false,
             disposable_income_upper: false,
             gross_income_upper: false,
@@ -238,6 +245,7 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE013",
+            full_s8_only: false,
             capital_upper: false,
             disposable_income_upper: false,
             gross_income_upper: false,

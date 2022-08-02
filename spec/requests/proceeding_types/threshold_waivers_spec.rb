@@ -47,6 +47,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
           proceeding_types: [
             {
               ccms_code: "DA005",
+              full_s8_only: false,
               gross_income_upper: true,
               disposable_income_upper: true,
               capital_upper: true,
@@ -54,6 +55,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
             },
             {
               ccms_code: "SE004",
+              full_s8_only: false,
               gross_income_upper: false,
               disposable_income_upper: false,
               capital_upper: false,
@@ -61,6 +63,7 @@ RSpec.describe "ProceedingTypes/ThresholdWaiversController", type: :request do
             },
             {
               ccms_code: "SE013",
+              full_s8_only: false,
               gross_income_upper: false,
               disposable_income_upper: false,
               capital_upper: false,

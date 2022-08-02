@@ -55,6 +55,7 @@ RSpec.describe ProceedingTypeService do
       ccms_matter_code: "MINJN",
       description: "to be represented in an action for an injunction under"\
                    " section 3 Protection from Harassment Act 1997.",
+      full_s8_only: false,
       ccms_category_law: "Family",
       ccms_matter: "Domestic abuse",
       cost_limitations: {
@@ -106,6 +107,7 @@ RSpec.describe ProceedingTypeService do
       ccms_matter_code: "KSEC8",
       name: "prohibited_steps_order_s8",
       description: "to be represented on an application for a prohibited steps order.",
+      full_s8_only: false,
       ccms_category_law: "Family",
       ccms_matter: "Children - section 8",
       cost_limitations: {

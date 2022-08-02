@@ -122,12 +122,14 @@ paths:
                 success: true
                 proceedings:
                 - ccms_code: DA005
+                  full_s8_only: false
                   matter_type: Domestic abuse
                   gross_income_upper: true
                   disposable_income_upper: true
                   capital_upper: true
                   client_involvement_type: A
                 - ccms_code: SE004
+                  full_s8_only: false
                   matter_type: Children - section 8
                   gross_income_upper: false
                   disposable_income_upper: false
@@ -178,6 +180,7 @@ paths:
                 meaning: Extend, variation or discharge - Part IV
                 description: to be represented on an application to extend, vary or
                   discharge an order under Part IV Family Law Act 1996
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -185,13 +188,15 @@ paths:
                 meaning: Forced marriage protection order
                 description: to be represented on an application for a forced marriage
                   protection order
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-              - ccms_code: DA003
-                meaning: Harassment - injunction
-                description: to be represented in an action for an injunction under
-                  section 3 Protection from Harassment Act 1997.
+              - ccms_code: DA004
+                meaning: Non-molestation order
+                description: to be represented on an application for a non-molestation
+                  order.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -200,6 +205,7 @@ paths:
                 description: To be represented on an application for a Female Genital
                   Mutilation Protection Order under the Female Genital Mutilation
                   Act.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -207,20 +213,23 @@ paths:
                 meaning: Prohibited steps order
                 description: to be represented on an application for a prohibited
                   steps order.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
+              - ccms_code: DA003
+                meaning: Harassment - injunction
+                description: to be represented in an action for an injunction under
+                  section 3 Protection from Harassment Act 1997.
+                full_s8_only: false
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
               - ccms_code: DA001
                 meaning: Inherent jurisdiction high court injunction
                 description: to be represented on an application for an injunction,
                   order or declaration under the inherent jurisdiction of the court.
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA004
-                meaning: Non-molestation order
-                description: to be represented on an application for a non-molestation
-                  order.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -228,6 +237,7 @@ paths:
                 meaning: Occupation order
                 description: to be represented on an application for an occupation
                   order.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -238,6 +248,7 @@ paths:
                   an order under section 5 Protection from Harassment Act 1997 where
                   the parties are associated persons (as defined by Part IV Family
                   Law Act 1996).
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -245,6 +256,7 @@ paths:
                 meaning: Specific Issue Order
                 description: to be represented on an application for a specific issue
                   order.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
@@ -252,6 +264,7 @@ paths:
                 meaning: Child arrangements order (contact)
                 description: to be represented on an application for a child arrangements
                   order-who the child(ren) spend time with.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
@@ -259,6 +272,7 @@ paths:
                 meaning: Child arrangements order (residence)
                 description: to be represented on an application for a child arrangements
                   order –where the child(ren) will live
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
@@ -279,9 +293,9 @@ paths:
             application/json:
               example: '{"success":true,"data":[{"meaning":"Harassment - injunction","ccms_code":"DA003","description":"to
                 be represented in an action for an injunction under section 3 Protection
-                from Harassment Act 1997.","ccms_category_law":"Family","ccms_matter":"Domestic
+                from Harassment Act 1997.","full_s8_only":false,"ccms_category_law":"Family","ccms_matter":"Domestic
                 abuse"},{"meaning":"Non-molestation order","ccms_code":"DA004","description":"to
-                be represented on an application for a non-molestation order.","ccms_category_law":"Family","ccms_matter":"Domestic
+                be represented on an application for a non-molestation order.","full_s8_only":false,"ccms_category_law":"Family","ccms_matter":"Domestic
                 abuse"}]}'
       requestBody:
         content:
@@ -328,6 +342,7 @@ paths:
                 name: child_arrangements_order_contact
                 description: to be represented on an application for a child arrangements
                   order-who the child(ren) spend time with.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter: Children - section 8
                 cost_limitations:
@@ -374,7 +389,7 @@ paths:
                   `raise_record_not_found_exception!'"
                 - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activerecord-7.0.3.1/lib/active_record/core.rb:330:in
                   `find_by!'"
-                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:84:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:85:in
                   `proceeding_type'"
                 - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:33:in
                   `add_matter_type_to_response'"
@@ -472,16 +487,19 @@ paths:
                 success: true
                 proceeding_types:
                 - ccms_code: DA001
+                  full_s8_only: false
                   matter_type: Domestic abuse
                   gross_income_upper: true
                   disposable_income_upper: true
                   capital_upper: true
                 - ccms_code: DA003
+                  full_s8_only: false
                   matter_type: Domestic abuse
                   gross_income_upper: true
                   disposable_income_upper: true
                   capital_upper: true
                 - ccms_code: SE014
+                  full_s8_only: false
                   matter_type: Children - section 8
                   gross_income_upper: false
                   disposable_income_upper: false
