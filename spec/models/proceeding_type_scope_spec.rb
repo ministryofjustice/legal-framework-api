@@ -17,10 +17,7 @@ RSpec.describe ProceedingTypeScope, type: :model do
     let(:scope_limitation_code) { "CV117" }
 
     before do
-      create :proceeding_type, ccms_code: "SE013"
-      create :service_level, level: 1
-      create :client_involvement_type, ccms_code: "A"
-      create :scope_limitation, :cv117
+      create :proceeding_type, ccms_code: "XX013"
     end
 
     context "with all fields valid" do
@@ -30,11 +27,11 @@ RSpec.describe ProceedingTypeScope, type: :model do
     end
 
     context "with invalid proceeding_type_code" do
-      let(:proceeding_type_ccms_code) { "XX100" }
+      let(:proceeding_type_ccms_code) { "XX666" }
 
       it "is not valid" do
         expect(record).not_to be_valid
-        expect(record.errors[:proceeding_type_ccms_code]).to include("Code XX100 doesn't exist on the proceeding_types table")
+        expect(record.errors[:proceeding_type_ccms_code]).to include("Code XX666 doesn't exist on the proceeding_types table")
       end
     end
 
@@ -66,13 +63,6 @@ RSpec.describe ProceedingTypeScope, type: :model do
     end
 
     context "with multiple defaults for one proceeding_type/service_level/client_involvement_type/df_used" do
-      before do
-        create :scope_limitation, code: "CV118"
-        create :scope_limitation, code: "CV119"
-        create :proceeding_type_scope, :se013_cv117, default: true
-        create :proceeding_type_scope, :se013_cv118, default: false
-      end
-
       it "fails when I create a second default record in the same goup" do
         record = FactoryBot.build :proceeding_type_scope, :se013_cv119, default: true
         expect(record).not_to be_valid

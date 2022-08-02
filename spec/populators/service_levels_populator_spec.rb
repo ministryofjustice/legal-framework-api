@@ -7,6 +7,11 @@ RSpec.describe ServiceLevelsPopulator do
   describe ".call" do
     subject(:call) { described_class.call }
 
+    before do
+      # clear out existing Client Involvement Type data - because it is transactional, the seeded data will be restored
+      ServiceLevel.all.map(&:destroy!)
+    end
+
     specify { expect { call }.to change(ServiceLevel, :count).from(0).to(2) }
   end
 end

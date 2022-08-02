@@ -1,8 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "ProceedingTypes/SearchController", type: :request do
-  before { seed_live_data }
-
   let(:headers) { { "CONTENT_TYPE" => "application/json" } }
 
   describe "GET proceeding_types/all" do

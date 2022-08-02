@@ -26,8 +26,6 @@ RSpec.describe "ThresholdWaiversController", type: :request do
     end
 
     context "when the request is successful" do
-      before { seed_live_data }
-
       it "returns success" do
         proceeding_types_threshold_post_request
         expect(response).to have_http_status(:success)
@@ -76,8 +74,6 @@ RSpec.describe "ThresholdWaiversController", type: :request do
     end
 
     context "when the request is unsuccessful" do
-      before { seed_live_data }
-
       let(:proceeding_types_with_client_involvement_types) do
         [
           {

@@ -4,6 +4,7 @@ RSpec.describe ProceedingTypePopulator do
   before do
     DefaultCostLimitation.delete_all
     ProceedingTypeScopeLimitation.delete_all
+    ProceedingTypeServiceLevel.delete_all
     ProceedingType.delete_all
     MatterTypePopulator.call
   end

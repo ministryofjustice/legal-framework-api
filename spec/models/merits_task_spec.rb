@@ -1,8 +1,6 @@
 require "rails_helper"
 
 RSpec.describe MeritsTask do
-  before { seed_live_data }
-
   describe "#dependencies" do
     context "when the task has no dependencies" do
       it "returns and empty collection" do

@@ -1,8 +1,6 @@
 require "rails_helper"
 
 RSpec.describe DefaultCostLimitation do
-  before { seed_live_data }
-
   describe "#cost_type" do
     it "does not allow invalid cost types" do
       expect {

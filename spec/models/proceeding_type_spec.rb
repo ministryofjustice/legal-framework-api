@@ -9,18 +9,10 @@ RSpec.describe ProceedingType do
   describe "#service_levels" do
     subject(:service_levels) { proceeding_type.service_levels }
 
-    let(:proceeding_type) { create :proceeding_type }
-    let!(:service_level1) { create :service_level }
-    let!(:service_level2) { create :service_level }
-
-    before do
-      create(:proceeding_type_service_level, :as_default, proceeding_type:, service_level: service_level1)
-      create(:proceeding_type_service_level, :as_non_default, proceeding_type:, service_level: service_level2)
-      create(:service_level)
-    end
+    let(:proceeding_type) { described_class.find_by!(ccms_code: "SE013") }
 
     it "returns associated service levels only" do
-      expect(service_levels).to match_array([service_level1, service_level2])
+      expect(service_levels.map(&:level)).to match_array([1, 3])
     end
 
     it "each service_level includes attribute `proceeding_default`" do
@@ -34,8 +26,6 @@ RSpec.describe ProceedingType do
   end
 
   context "when data has been seeded" do
-    before { seed_live_data }
-
     describe "#matter_type" do
       it "returns the correct matter type record" do
         rec = described_class.find_by(ccms_code: "DA006")

@@ -4,8 +4,6 @@ RSpec.describe ProceedingTypeService do
   describe ".call" do
     subject(:proceeding_type_service_response) { described_class.call(ccms_code) }
 
-    before { seed_live_data }
-
     context "with a valid proceeding that has just one service level" do
       let(:ccms_code) { %w[DA003] }
 

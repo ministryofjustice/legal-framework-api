@@ -41,7 +41,6 @@ RSpec.describe "merits_tasks", type: :request, swagger: true do
                     required: %w[request_id ccms_codes],
                   }
         response(200, "success") do
-          seed_live_data
           response = MeritsTaskService.call(request_id, proceeding_types)
 
           examples "application/json" => response
