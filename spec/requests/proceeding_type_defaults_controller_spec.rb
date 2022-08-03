@@ -70,6 +70,7 @@ RSpec.describe "ProceedingTypeDefaultsController", type: :request do
           meaning: "FHH Children",
           description: "Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
         },
+        additional_params: [],
       }.as_json
     end
   end

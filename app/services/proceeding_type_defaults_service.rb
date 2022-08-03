@@ -14,6 +14,7 @@ class ProceedingTypeDefaultsService
   def call
     add_default_service_level_to_response
     add_default_scope_to_response
+    add_additional_params_to_response
     @response
   rescue StandardError => e
     @response = error_response_for(e)
@@ -41,6 +42,11 @@ private
   def add_default_scope_to_response
     ds = ScopeLimitation.default_for(@proceeding_type_ccms_code, @client_involvement_type, @level_of_service_code, @delegated_functions_used)
     @response[:default_scope] = { code: ds.code, description: ds.description, meaning: ds.meaning }
+  end
+
+  def add_additional_params_to_response
+    # TODO: populate additional params once scopes that require it populated
+    @response[:additional_params] = []
   end
 
   def error_response_for(err)

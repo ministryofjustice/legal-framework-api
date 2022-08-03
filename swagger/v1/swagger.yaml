@@ -194,6 +194,7 @@ paths:
                     proceedings and representation in those proceedings save in relation
                     to or at a contested final hearing.
                   meaning: FHH Children
+                additional_params: []
       requestBody:
         content:
           application/json:

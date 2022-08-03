@@ -47,6 +47,7 @@ RSpec.describe ProceedingTypeDefaultsService do
         meaning: "Hearing",
         description: "Limited to all steps up to and including the hearing on [see additional limitation notes]",
       },
+      additional_params: [],
     }
   end
 end
