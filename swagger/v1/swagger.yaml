@@ -161,6 +161,63 @@ paths:
               required:
               - request_id
               - values
+  "/proceeding_type_defaults":
+    post:
+      summary: Return details of defaults for specified proceeding_type_ccms_code,
+        delegated_functions_used, client_involvement_type and level_of_service_code
+      description: |-
+        POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used, client_involvement_type and level_of_service_code
+                          to recieve a payload containing the same request params, and the default scope and default level_of_service.
+      tags:
+      - Proceeding types defaults
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              example:
+                success: true
+                requested_params:
+                  proceeding_type_ccms_code: SE004
+                  delegated_functions_used: false
+                  client_involvement_type: A
+                  level_of_service_code: 1
+                default_level_of_service:
+                  level: 1
+                  name: Family Help (Higher)
+                  stage: 1
+                default_scope:
+                  code: FM059
+                  description: Limited to Family Help (Higher) and to all steps necessary
+                    to negotiate and conclude a settlement. To include the issue of
+                    proceedings and representation in those proceedings save in relation
+                    to or at a contested final hearing.
+                  meaning: FHH Children
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                proceeding_type_ccms_code:
+                  type: string
+                  description: A code uniquely identifying the proceeding_type
+                delegated_functions_used:
+                  type: boolean
+                  description: A boolean indicating whether delegated functions were
+                    used
+                client_involvement_type:
+                  type: string
+                  description: A code uniquely identifying the client_involvement_type
+                service_level:
+                  type: integer
+                  description: A code uniquely identifying the service_level
+              required:
+              - proceeding_type_ccms_code
+              - delegated_functions_used
+              - client_involvement_type
+              - service_level
   "/proceeding_types/all":
     get:
       summary: Get summary of all proceeding types
@@ -200,6 +257,7 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+<<<<<<< HEAD
               - ccms_code: DA020
                 meaning: FGM Protection Order
                 description: To be represented on an application for a Female Genital
@@ -225,6 +283,8 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+=======
+>>>>>>> cde33f3... ap-3350: add swagger docs for proceeding_type_defaults endpoint
               - ccms_code: DA001
                 meaning: Inherent jurisdiction high court injunction
                 description: to be represented on an application for an injunction,
@@ -252,6 +312,21 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
+              - ccms_code: DA020
+                meaning: FGM Protection Order
+                description: To be represented on an application for a Female Genital
+                  Mutilation Protection Order under the Female Genital Mutilation
+                  Act.
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: SE003
+                meaning: Prohibited steps order
+                description: to be represented on an application for a prohibited
+                  steps order.
+                ccms_category_law: Family
+                ccms_matter_code: KSEC8
+                ccms_matter: Children - section 8
               - ccms_code: SE004
                 meaning: Specific Issue Order
                 description: to be represented on an application for a specific issue
@@ -399,7 +474,7 @@ paths:
                   `call'"
                 - "/Users/katharineahern/workspaces/legal-framework-api/app/services/proceeding_type_service.rb:5:in
                   `call'"
-                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:24:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
                   `block (4 levels) in <top (required)>'"
                 - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `module_exec'"
@@ -409,7 +484,7 @@ paths:
                   `block in define_example_group_method'"
                 - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:56:in
                   `response'"
-                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
+                - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:22:in
                   `block (3 levels) in <top (required)>'"
                 - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
                   `module_exec'"
@@ -441,9 +516,7 @@ paths:
                   `block in expose_example_group_alias'"
                 - "/Users/katharineahern/workspaces/legal-framework-api/spec/requests/swagger_docs/proceeding_types_spec.rb:3:in
                   `<top (required)>'"
-                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
-                  `load'"
-                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:39:in
+                - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
                   `load'"
                 - "/Users/katharineahern/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
                   `load_file_handling_errors'"
