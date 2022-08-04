@@ -250,32 +250,6 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-              - ccms_code: DA004
-                meaning: Non-molestation order
-                description: to be represented on an application for a non-molestation
-                  order.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-<<<<<<< HEAD
-              - ccms_code: DA020
-                meaning: FGM Protection Order
-                description: To be represented on an application for a Female Genital
-                  Mutilation Protection Order under the Female Genital Mutilation
-                  Act.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: SE003
-                meaning: Prohibited steps order
-                description: to be represented on an application for a prohibited
-                  steps order.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
               - ccms_code: DA003
                 meaning: Harassment - injunction
                 description: to be represented in an action for an injunction under
@@ -284,12 +258,18 @@ paths:
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
-=======
->>>>>>> cde33f3... ap-3350: add swagger docs for proceeding_type_defaults endpoint
               - ccms_code: DA001
                 meaning: Inherent jurisdiction high court injunction
                 description: to be represented on an application for an injunction,
                   order or declaration under the inherent jurisdiction of the court.
+                full_s8_only: false
+                ccms_category_law: Family
+                ccms_matter_code: MINJN
+                ccms_matter: Domestic abuse
+              - ccms_code: DA004
+                meaning: Non-molestation order
+                description: to be represented on an application for a non-molestation
+                  order.
                 full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
@@ -318,6 +298,7 @@ paths:
                 description: To be represented on an application for a Female Genital
                   Mutilation Protection Order under the Female Genital Mutilation
                   Act.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: MINJN
                 ccms_matter: Domestic abuse
@@ -325,6 +306,7 @@ paths:
                 meaning: Prohibited steps order
                 description: to be represented on an application for a prohibited
                   steps order.
+                full_s8_only: false
                 ccms_category_law: Family
                 ccms_matter_code: KSEC8
                 ccms_matter: Children - section 8
