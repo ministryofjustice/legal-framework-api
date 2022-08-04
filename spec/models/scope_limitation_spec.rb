@@ -129,13 +129,13 @@ RSpec.describe ScopeLimitation do
     let(:opponent_name) { create :scope_user_input, :opponent_name }
     let(:scope) { create :scope_limitation }
 
-    context "adding new user inputs" do
+    context "when adding new user inputs" do
       it "creates a record in the join table" do
-        expect { scope.user_inputs << hearing_date }.to change { ScopeLimitationUserInput.count }.by(1)
+        expect { scope.user_inputs << hearing_date }.to change(ScopeLimitationUserInput, :count).by(1)
       end
     end
 
-    context "retrieving user inputs" do
+    context "when retrieving user inputs" do
       before do
         scope.user_inputs << hearing_date
         scope.user_inputs << opponent_name
