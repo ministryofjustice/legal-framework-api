@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :searches, only: %i[create]
   end
   resources :threshold_waivers, only: %i[create]
+  resources :proceeding_type_defaults, only: %i[create]
 
   root to: "main#index"
 
