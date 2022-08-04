@@ -26,8 +26,8 @@ RSpec.describe "proceeding_type_defaults", type: :request, swagger: true do
                                                   description: "A boolean indicating whether delegated functions were used" },
                       client_involvement_type: { type: :string,
                                                  description: "A code uniquely identifying the client_involvement_type" },
-                      service_level: { type: :integer,
-                                       description: "A code uniquely identifying the service_level" },
+                      level_of_service_code: { type: :integer,
+                                               description: "A code uniquely identifying the service_level" },
                     },
                     required: %w[proceeding_type_ccms_code delegated_functions_used client_involvement_type service_level],
                   }

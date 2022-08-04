@@ -211,7 +211,7 @@ paths:
                 client_involvement_type:
                   type: string
                   description: A code uniquely identifying the client_involvement_type
-                service_level:
+                level_of_service_code:
                   type: integer
                   description: A code uniquely identifying the service_level
               required:
