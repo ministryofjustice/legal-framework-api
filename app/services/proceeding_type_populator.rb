@@ -6,24 +6,17 @@ class ProceedingTypePopulator
   end
 
   def call
-    seed_data.each { |seed_row| populate(seed_row) }
+    seed_data.each { |seed_hash| populate(seed_hash) }
     populate_default_cost_limitations
   end
 
 private
 
-  def populate(seed_row)
-    ccms_code, meaning, name, description, matter_type_id_method, additional_search_terms = seed_row
-    matter_type_id = __send__(matter_type_id_method)
-    record = ProceedingType.find_by(ccms_code:) || ProceedingType.new
-    record.update!(
-      ccms_code:,
-      meaning:,
-      name:,
-      description:,
-      additional_search_terms:,
-      matter_type_id:,
-    )
+  def populate(seed_hash)
+    seed_hash['matter_type_id'] = __send__(seed_hash['matter_type_method'])
+    seed_hash.delete('matter_type_method')
+    record = ProceedingType.find_by(ccms_code: seed_hash['ccms_code']) || ProceedingType.new
+    record.update!(seed_hash)
   end
 
   def domestic_abuse_id

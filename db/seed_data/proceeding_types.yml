@@ -1,89 +1,94 @@
 ---
-# List of proceeding types
-# - ccms_code
-# - meaning
-# - name
-# - description
-# - method to call to get the matter_type id
-# - additional_search_terms
-#
-- - DA006
-  - Extend, variation or discharge - Part IV
-  - extend_variation_or_discharge_part_iv
-  - to be represented on an application to extend, vary or discharge an order under
-    Part IV Family Law Act 1996
-  - domestic_abuse_id
-  -
-- - DA007
-  - Forced marriage protection order
-  - forced_marriage_protection_order
-  - to be represented on an application for a forced marriage protection order
-  - domestic_abuse_id
-  -
-- - DA003
-  - Harassment - injunction
-  - harassment_injunction
-  - to be represented in an action for an injunction under section 3 Protection from
-    Harassment Act 1997.
-  - domestic_abuse_id
-  -
-- - DA001
-  - Inherent jurisdiction high court injunction
-  - inherent_jurisdiction_high_court_injunction
-  - to be represented on an application for an injunction, order or declaration under
-    the inherent jurisdiction of the court.
-  - domestic_abuse_id
-  -
-- - DA004
-  - Non-molestation order
-  - nonmolestation_order
-  - to be represented on an application for a non-molestation order.
-  - domestic_abuse_id
-  - harassment,injunction
-- - DA005
-  - Occupation order
-  - occupation_order
-  - to be represented on an application for an occupation order.
-  - domestic_abuse_id
-  -
-- - DA002
-  - Variation or discharge under section 5 protection from harassment act 1997
-  - variation_or_discharge_under_section_protection_from_harassment_act
-  - to be represented on an application to vary or discharge an order under section
-    5 Protection from Harassment Act 1997 where the parties are associated persons
-    (as defined by Part IV Family Law Act 1996).
-  - domestic_abuse_id
-  -
-- - DA020
-  - FGM Protection Order
-  - fgm_protection_order
-  - To be represented on an application for a Female Genital Mutilation Protection
-    Order under the Female Genital Mutilation Act.
-  - domestic_abuse_id
-  -
-- - SE003
-  - Prohibited steps order
-  - prohibited_steps_order_s8
-  - to be represented on an application for a prohibited steps order.
-  - section8_id
-  -
-- - SE004
-  - Specific Issue Order
-  - specified_issue_order_s8
-  - to be represented on an application for a specific issue order.
-  - section8_id
-  -
-- - SE013
-  - Child arrangements order (contact)
-  - child_arrangements_order_contact
-  - to be represented on an application for a child arrangements order-who the child(ren)
-    spend time with.
-  - section8_id
-  - cao
-- - SE014
-  - Child arrangements order (residence)
-  - child_arrangements_order_residence
-  - to be represented on an application for a child arrangements order –where the
-    child(ren) will live
-  - section8_id
-  - cao
+- ccms_code: DA001
+  meaning: Inherent jurisdiction high court injunction
+  name: inherent_jurisdiction_high_court_injunction
+  description: to be represented on an application for an injunction, order or declaration
+    under the inherent jurisdiction of the court.
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: DA002
+  meaning: Variation or discharge under section 5 protection from harassment act 1997
+  name: variation_or_discharge_under_section_protection_from_harassment_act
+  description: to be represented on an application to vary or discharge an order under
+    section 5 Protection from Harassment Act 1997 where the parties are associated
+    persons (as defined by Part IV Family Law Act 1996).
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: DA003
+  meaning: Harassment - injunction
+  name: harassment_injunction
+  description: to be represented in an action for an injunction under section 3 Protection
+    from Harassment Act 1997.
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: DA004
+  meaning: Non-molestation order
+  name: nonmolestation_order
+  description: to be represented on an application for a non-molestation order.
+  matter_type_method: domestic_abuse_id
+  additional_search_terms: harassment,injunction
+  full_s8_only: false
+- ccms_code: DA005
+  meaning: Occupation order
+  name: occupation_order
+  description: to be represented on an application for an occupation order.
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: DA006
+  meaning: Extend, variation or discharge - Part IV
+  name: extend_variation_or_discharge_part_iv
+  description: to be represented on an application to extend, vary or discharge an
+    order under Part IV Family Law Act 1996
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: DA007
+  meaning: Forced marriage protection order
+  name: forced_marriage_protection_order
+  description: to be represented on an application for a forced marriage protection
+    order
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: DA020
+  meaning: FGM Protection Order
+  name: fgm_protection_order
+  description: To be represented on an application for a Female Genital Mutilation
+    Protection Order under the Female Genital Mutilation Act.
+  matter_type_method: domestic_abuse_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: SE003
+  meaning: Prohibited steps order
+  name: prohibited_steps_order_s8
+  description: to be represented on an application for a prohibited steps order.
+  matter_type_method: section8_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: SE004
+  meaning: Specific Issue Order
+  name: specified_issue_order_s8
+  description: to be represented on an application for a specific issue order.
+  matter_type_method: section8_id
+  additional_search_terms:
+  full_s8_only: false
+- ccms_code: SE013
+  meaning: Child arrangements order (contact)
+  name: child_arrangements_order_contact
+  description: to be represented on an application for a child arrangements order-who
+    the child(ren) spend time with.
+  matter_type_method: section8_id
+  additional_search_terms: cao
+  full_s8_only: false
+- ccms_code: SE014
+  meaning: Child arrangements order (residence)
+  name: child_arrangements_order_residence
+  description: to be represented on an application for a child arrangements order
+    –where the child(ren) will live
+  matter_type_method: section8_id
+  additional_search_terms: cao
+  full_s8_only: false
