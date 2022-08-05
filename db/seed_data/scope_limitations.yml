@@ -49,16 +49,191 @@ scope_limitations:
       and thereafter a solicitor's report.
     substantive: true
     delegated_functions: true
+  - code: APL07
+    meaning: Appeal-paper app for perm
+    description: Limited to making an application for permission to appeal on the papers,
+      including preparation of an appellant's notice and a skeleton argument.
+    substantive: true
+    delegated_functions: true
+  - code: APL09
+    meaning: High Court-final hearing (resp)
+    description: Limited to representation as respondent on an appeal to the High Court,
+      up to and including the final hearing of the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL11
+    meaning: High Court-Counsel's Opinion (resp)
+    description: Limited to representation as respondent on an appeal to the High Court,
+      limited to obtaining Counsel's Opinion on the merits of defending the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL13
+    meaning: High Court-limited steps (resp)
+    description: Limited to representation as respondent on an appeal to the High Court,
+      limited to
+    substantive: true
+    delegated_functions: true
+  - code: APL15
+    meaning: Court of Appeal-Counsel's Opinion (Resp)
+    description: Limited to representation as respondent on an appeal to the Court of
+      Appeal, limited to obtaining Counsel's Opinion on the merits of defending the
+      appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL16
+    meaning: Court of Appeal-paper app for perm
+    description: Limited to representation on an appeal to the Court of Appeal, limited
+      to making an application for permission to appeal on the papers, including preparation
+      of an appellant's notice and skeleton argument.
+    substantive: true
+    delegated_functions: true
+  - code: APL18
+    meaning: Court of Appeal-oral app for perm (resp)
+    description: Limited to representation as respondent on an appeal to the Court of
+      Appeal, limited to all steps up to and including the hearing of an application
+      for permission to appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL20
+    meaning: Court of Appeal-limited steps (resp)
+    description: Limited to representation as respondent on an appeal to the Court of
+      Appeal, limited to
+    substantive: true
+    delegated_functions: true
+  - code: APL22
+    meaning: Court of Appeal-final hearing (resp)
+    description: Limited to representation as respondent on an appeal to the Court of
+      Appeal, up to and including the final hearing of the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL27
+    meaning: Judge from DJ-Counsel's Opinion (resp)
+    description: Limited to representation as respondent on an appeal to the Judge against
+      a decision of the District Judge or Master, limited to obtaining Counsel's Opinion
+      on the merits of defending the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL29
+    meaning: Judge from DJ-limited steps (resp)
+    description: Limited to representation as respondent on an appeal to the Judge against
+      a decision of the District Judge or Master, limited to
+    substantive: true
+    delegated_functions: true
+  - code: APL31
+    meaning: Judge from DJ-final hearing (resp)
+    description: Limited to representation as respondent on an appeal to the Judge against
+      a decision of the District Judge or Master, up to and including the final hearing
+      of the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL48
+    meaning: High Court-final hearing
+    description: Limited to representation on an appeal to the High Court, up to and
+      including the final hearing of the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL49
+    meaning: High Court-Counsel's Opinion
+    description: Limited to representation on an appeal to the High Court, limited to
+      obtaining Counsel's Opinion on the merits of an appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL50
+    meaning: High Court-limited steps
+    description: Limited to representation on an appeal to the High Court, limited to
+    substantive: true
+    delegated_functions: true
+  - code: APL51
+    meaning: Court of Appeal-Counsel's Opinion
+    description: Limited to representation on an appeal to the Court of Appeal, limited
+      to obtaining Counsel's Opinion on the merits of an appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL52
+    meaning: Court of Appeal-oral app for perm
+    description: Limited to representation on an appeal to the Court of Appeal, limited
+      to all steps up to and including the hearing of an application for permission
+      to appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL53
+    meaning: Court of Appeal-limited steps
+    description: Limited to representation on an appeal to the Court of Appeal limited
+      to
+    substantive: true
+    delegated_functions: true
+  - code: APL54
+    meaning: Court of Appeal-final hearing
+    description: Limited to representation on an appeal to the Court of Appeal, up to
+      and including the final hearing of the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL55
+    meaning: Judge from DJ-Counsel's Opinion
+    description: Limited to representation on an appeal to the Judge against a decision
+      of the District Judge or Master, limited to obtaining Counsel's Opinion on the
+      merits of an appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL56
+    meaning: Judge from DJ-limited steps
+    description: Limited to representation on an appeal to the Judge against a decision
+      of the District Judge or Master, limited to
+    substantive: true
+    delegated_functions: true
+  - code: APL57
+    meaning: Judge from DJ-final hearing
+    description: Limited to representation on an appeal to the Judge against a decision
+      of the District Judge or Master, up to and including the final hearing of the
+      appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL65
+    meaning: Appeal family court-C opinion (App)
+    description: Limited to representation as an appellant on an appeal in the family
+      court LIMITED to obtaining Counsel’s opinion on the merits of an appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL66
+    meaning: Appeal family court-C opinion (Resp)
+    description: Limited to representation as respondent on an appeal in the family
+      court LIMITED to obtaining counsel’s opinion on the merits of defending the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL67
+    meaning: Appeal family crt-limited steps (App)
+    description: Llimited to be represented as appellant on an appeal in the family
+      court LIMITED TO
+    substantive: true
+    delegated_functions: true
+  - code: APL68
+    meaning: Appeal family crt-limited steps (Resp)
+    description: Limited to be represented as respondent to an appeal in the family
+      court, LIMITED TO
+    substantive: true
+    delegated_functions: true
+  - code: APL69
+    meaning: Appeal family crt-final hearing (App)
+    description: Limited to representation as appellant on an appeal in the family court,
+      up to and including the final hearing of the appeal.
+    substantive: true
+    delegated_functions: true
+  - code: APL70
+    meaning: Appeal family crt-final hearing (Rep)
+    description: Limited to representation on an appeal in the family court, up to an
+      including the final hearing of the appeal.
+    substantive: true
+    delegated_functions: true
   - code: CV027
     meaning: Hearing/Adjournment
     description: Limited to all steps (including any adjournment thereof) up to and
-      including the hearing on [date]
+      including the hearing on
     substantive: true
     delegated_functions: true
   - code: CV079
     meaning: Counsel's Opinion
-    description: Limited to obtaining external Counsel''s Opinion or the opinion of
-      an external solicitor with higher court advocacy rights on the information already
+    description: Limited to obtaining external Counsel's Opinion or the opinion of an
+      external solicitor with higher court advocacy rights on the information already
       available.
     substantive: true
     delegated_functions: true
@@ -88,6 +263,36 @@ scope_limitations:
       of the case.
     substantive: true
     delegated_functions: true
+  - code: EF012
+    meaning: Attachment of earnings order
+    description: Limited to an application for enforcement by way of an attachment of
+      earnings order.
+    substantive: true
+    delegated_functions: true
+  - code: EF022
+    meaning: Further committal application
+    description: Limited to a further application for enforcement by way of committal
+      for breach of an order or undertaking.
+    substantive: true
+    delegated_functions: true
+  - code: EF025
+    meaning: Committal-breach of order
+    description: Limited to an application for enforcement by way of committal for breach
+      of an order or undertaking.
+    substantive: true
+    delegated_functions: true
+  - code: EF026
+    meaning: Purge Contempt
+    description: Limited to an application to purge contempt and representation on purging
+      contempt order.
+    substantive: true
+    delegated_functions: true
+  - code: EF027
+    meaning: Enforce contact order
+    description: Limited to enforcement of a contact order under Section 11J Children
+      Act 1989
+    substantive: true
+    delegated_functions: true
   - code: FM004
     meaning: CAFCASS report
     description: Limited to all steps up to and including the Children and Family Reporter's
@@ -96,8 +301,8 @@ scope_limitations:
     delegated_functions: true
   - code: FM007
     meaning: Blood Tests or DNA Tests
-    description: Limited to all steps up to and including the obtaining of blood tests or
-      DNA tests and thereafter a solicitor's report.
+    description: Limited to all steps up to and including the obtaining of blood tests
+      or DNA tests and thereafter a solicitor's report.
     substantive: true
     delegated_functions: true
   - code: FM015
@@ -107,25 +312,26 @@ scope_limitations:
     delegated_functions: true
   - code: FM019
     meaning: Exchange of Evidence
-    description: Limited to all steps up to and including the exchange of evidence
-      (including any welfare officer's/guardian ad litem's report) and directions appointments
+    description: Limited to all steps up to and including the exchange of evidence (including
+      any welfare officer's/guardian ad litem's report) and directions appointments
       but not including a final contested hearing and thereafter to a solicitors report
       (or if so advised a Counsel's opinion) on the issues and prospects of success.
     substantive: true
     delegated_functions: true
   - code: FM039
     meaning: Final hearing(CAFCASS rept)priv law only
-    description: Limited to all steps up to and including the final hearing save in the event
-      of a Court and Family Reporter's/Children's Guardian's report unfavourable to the client,
-      in which case the certificate is thereafter limited to a Solicitor's report or, if the
-      Solicitor so advises, external Counsel's opinion or the opinion of an external solicitor
-      with higher court advocacy rights on the merits of the matter continuing on a contested basis.
+    description: Limited to all steps up to and including the final hearing save in
+      the event of a Court and Family Reporter's/Children's Guardian's report unfavourable
+      to the client, in which case the certificate is thereafter limited to a Solicitor's
+      report or, if the Solicitor so advises, external Counsel's opinion or the opinion
+      of an external solicitor with higher court advocacy rights on the merits of the
+      matter continuing on a contested basis.
     substantive: true
     delegated_functions: true
   - code: FM049
     meaning: Hearing-children
-    description: Limited to all steps up to and including trial/final hearing and any action necessary
-      to implement (but not enforce) the judgment or order.
+    description: Limited to all steps up to and including trial/final hearing and any
+      action necessary to implement (but not enforce) the judgment or order.
     substantive: true
     delegated_functions: true
   - code: FM054
@@ -147,10 +353,10 @@ scope_limitations:
       necessary to implement (but not enforce) the order.
     substantive: true
     delegated_functions: false
-
-
-
-
-
-
-
+  - code: MC029
+    meaning: Further Directions/Liberty to apply
+    description: Limited to an application for further directions pursuant to a provision
+      allowing liberty to apply including steps to negotiate any settlement and complying
+      with further directions.
+    substantive: true
+    delegated_functions: true

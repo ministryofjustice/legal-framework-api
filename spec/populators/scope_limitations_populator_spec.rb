@@ -12,6 +12,6 @@ RSpec.describe ScopeLimitationsPopulator do
       ScopeLimitation.all.map(&:destroy!)
     end
 
-    specify { expect { call }.to change(ScopeLimitation, :count).from(0).to(22) }
+    specify { expect { call }.to change(ScopeLimitation, :count).from(0).to(56) }
   end
 end

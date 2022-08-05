@@ -125,8 +125,8 @@ RSpec.describe ScopeLimitation do
   end
 
   describe "user_inputs" do
-    let(:hearing_date) { create :scope_user_input, :hearing_date }
-    let(:opponent_name) { create :scope_user_input, :opponent_name }
+    let(:hearing_date) { ScopeUserInput.find_by(input_name: "hearing_date") }
+    let(:limitation_note) { ScopeUserInput.find_by(input_name: "limitation_note") }
     let(:scope) { create :scope_limitation }
 
     context "when adding new user inputs" do
@@ -138,11 +138,11 @@ RSpec.describe ScopeLimitation do
     context "when retrieving user inputs" do
       before do
         scope.user_inputs << hearing_date
-        scope.user_inputs << opponent_name
+        scope.user_inputs << limitation_note
       end
 
       it "returns both user input records" do
-        expect(scope.user_inputs).to match_array [hearing_date, opponent_name]
+        expect(scope.user_inputs).to match_array [hearing_date, limitation_note]
       end
     end
   end
