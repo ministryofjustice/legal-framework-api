@@ -47,9 +47,9 @@ RSpec.describe ProceedingTypeFullTextSearch do
     context "when the search term only exists in additional_search_terms" do
       let(:search_term) { "cao" }
 
-      it "returns two records" do
+      it "returns twelve records" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:ccms_code).sort).to eq %w[SE013 SE014]
+        expect(result_set.map(&:ccms_code).sort).to eq %w[SE013 SE013A SE013E SE014 SE014A SE014E SE015 SE015A SE015E SE016 SE016A SE016E]
       end
     end
 

@@ -11,7 +11,7 @@ RSpec.describe "ProceedingTypes/SearchController", type: :request do
     it "returns a successful response with all proceedingtypes" do
       expect(response).to have_http_status(:ok)
       expect(response.media_type).to eql("application/json")
-      expect(JSON.parse(response.body).count).to eq 12
+      expect(JSON.parse(response.body).count).to eq 41
     end
   end
 
