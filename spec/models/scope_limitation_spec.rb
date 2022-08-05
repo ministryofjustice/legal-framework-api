@@ -124,6 +124,29 @@ RSpec.describe ScopeLimitation do
     end
   end
 
+  describe "user_inputs" do
+    let(:hearing_date) { create :scope_user_input, :hearing_date }
+    let(:opponent_name) { create :scope_user_input, :opponent_name }
+    let(:scope) { create :scope_limitation }
+
+    context "when adding new user inputs" do
+      it "creates a record in the join table" do
+        expect { scope.user_inputs << hearing_date }.to change(ScopeLimitationUserInput, :count).by(1)
+      end
+    end
+
+    context "when retrieving user inputs" do
+      before do
+        scope.user_inputs << hearing_date
+        scope.user_inputs << opponent_name
+      end
+
+      it "returns both user input records" do
+        expect(scope.user_inputs).to match_array [hearing_date, opponent_name]
+      end
+    end
+  end
+
   def populate_seed_data
     MatterTypePopulator.call
     ProceedingType.populate

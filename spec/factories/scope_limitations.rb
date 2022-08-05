@@ -13,5 +13,17 @@ FactoryBot.define do
       substantive { true }
       delegated_functions { true }
     end
+
+    trait :with_hearing_date do
+      after(:create) do |rec|
+        rec.user_inputs << create(:scope_user_input, :hearing_date)
+      end
+    end
+
+    trait :with_opponent_name do
+      after(:create) do |rec|
+        rec.user_inputs << create(:scope_user_input, :opponent_name)
+      end
+    end
   end
 end
