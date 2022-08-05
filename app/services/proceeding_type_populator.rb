@@ -13,9 +13,9 @@ class ProceedingTypePopulator
 private
 
   def populate(seed_hash)
-    seed_hash['matter_type_id'] = __send__(seed_hash['matter_type_method'])
-    seed_hash.delete('matter_type_method')
-    record = ProceedingType.find_by(ccms_code: seed_hash['ccms_code']) || ProceedingType.new
+    seed_hash["matter_type_id"] = __send__(seed_hash["matter_type_method"])
+    seed_hash.delete("matter_type_method")
+    record = ProceedingType.find_by(ccms_code: seed_hash["ccms_code"]) || ProceedingType.new
     record.update!(seed_hash)
   end
 
