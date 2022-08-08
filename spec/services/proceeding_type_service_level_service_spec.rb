@@ -1,9 +1,9 @@
 require "rails_helper"
 
-RSpec.describe ProceedingTypeServiceLevelsService do
-  subject(:proceeding_type_service_levels_response) { described_class.call(proceeding_type_levels_of_service_params:) }
+RSpec.describe ProceedingTypeServiceLevelService do
+  subject(:proceeding_type_service_level_response) { described_class.call(proceeding_type_level_of_service_params:) }
 
-  let(:proceeding_type_levels_of_service_params) do
+  let(:proceeding_type_level_of_service_params) do
     {
       proceeding_type_ccms_code:,
       delegated_functions_used:,
@@ -18,7 +18,7 @@ RSpec.describe ProceedingTypeServiceLevelsService do
 
   context "when the request is successful" do
     it "returns valid response with expected defaults" do
-      expect(proceeding_type_service_levels_response).to eq expected_successful_response
+      expect(proceeding_type_service_level_response).to eq expected_successful_response
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe ProceedingTypeServiceLevelsService do
       let(:level_of_service_code) { 7 }
 
       it "returns error" do
-        response = proceeding_type_service_levels_response
+        response = proceeding_type_service_level_response
         expect(response[:success]).to be false
         expect(response[:errors]).to match [/The property '#\/level_of_service_code' value 7 did not match one of the following values: .* in schema file/]
       end

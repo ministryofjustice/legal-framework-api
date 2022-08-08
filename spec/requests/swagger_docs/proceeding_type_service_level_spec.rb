@@ -1,8 +1,8 @@
 require "swagger_helper"
 
-RSpec.describe "proceeding_type_levels_of_service", type: :request, swagger: true do
-  path "/proceeding_type_levels_of_service" do
-    post("Return details of levels_of_service and scope_limitations for specified proceeding_type_ccms_code, delegated_functions_used, client_involvement_type and level_of_service_code") do
+RSpec.describe "proceeding_type_level_of_service", type: :request, swagger: true do
+  path "/proceeding_type_level_of_service" do
+    post("Return details of level_of_service and scope_limitations for specified proceeding_type_ccms_code, delegated_functions_used, client_involvement_type and level_of_service_code") do
       description "POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used, client_involvement_type and level_of_service_code
                   to recieve a payload containing the same request params, and level_of_service and associated scope_limitations."
 
@@ -11,11 +11,11 @@ RSpec.describe "proceeding_type_levels_of_service", type: :request, swagger: tru
       client_involvement_type = "A"
       level_of_service_code = 1
 
-      tags "Proceeding type service levels"
+      tags "Proceeding type service level"
       response(200, "successful") do
         consumes "application/json"
         produces "application/json"
-        parameter name: "proceeding_type_service_levels_query",
+        parameter name: "proceeding_type_service_level_query",
                   in: :body,
                   schema: {
                     type: :object,
@@ -32,7 +32,7 @@ RSpec.describe "proceeding_type_levels_of_service", type: :request, swagger: tru
                     required: %w[proceeding_type_ccms_code delegated_functions_used client_involvement_type service_level],
                   }
         response(200, "success") do
-          response = ProceedingTypeServiceLevelsService.call(proceeding_type_levels_of_service_params: { proceeding_type_ccms_code:, delegated_functions_used:, client_involvement_type:, level_of_service_code: }.to_json)
+          response = ProceedingTypeServiceLevelService.call(proceeding_type_level_of_service_params: { proceeding_type_ccms_code:, delegated_functions_used:, client_involvement_type:, level_of_service_code: }.to_json)
 
           examples "application/json" => response
           run_test!

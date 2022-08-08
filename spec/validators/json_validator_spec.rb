@@ -15,7 +15,7 @@ RSpec.describe "JsonValidator" do
   let(:client_involvement_type) { "W" }
   let(:level_of_service_code) { 3 }
 
-  let(:schema_name) { "proceeding_type_levels_of_service" }
+  let(:schema_name) { "proceeding_type_level_of_service" }
 
   let(:validator) { JsonValidator.new(schema_name, payload) }
 

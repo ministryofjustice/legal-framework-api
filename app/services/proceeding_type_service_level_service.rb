@@ -1,10 +1,10 @@
-class ProceedingTypeServiceLevelsService
-  def self.call(proceeding_type_levels_of_service_params:)
-    new(proceeding_type_levels_of_service_params).call
+class ProceedingTypeServiceLevelService
+  def self.call(proceeding_type_level_of_service_params:)
+    new(proceeding_type_level_of_service_params).call
   end
 
-  def initialize(proceeding_type_levels_of_service_params)
-    @proceeding_type_levels_of_service_params = proceeding_type_levels_of_service_params
+  def initialize(proceeding_type_level_of_service_params)
+    @proceeding_type_level_of_service_params = proceeding_type_level_of_service_params
     @errors = []
   end
 
@@ -49,19 +49,19 @@ private
   end
 
   def proceeding_type_ccms_code
-    @proceeding_type_ccms_code ||= JSON.parse(@proceeding_type_levels_of_service_params, symbolize_names: true)[:proceeding_type_ccms_code]
+    @proceeding_type_ccms_code ||= JSON.parse(@proceeding_type_level_of_service_params, symbolize_names: true)[:proceeding_type_ccms_code]
   end
 
   def delegated_functions_used
-    @delegated_functions_used ||= JSON.parse(@proceeding_type_levels_of_service_params, symbolize_names: true)[:delegated_functions_used]
+    @delegated_functions_used ||= JSON.parse(@proceeding_type_level_of_service_params, symbolize_names: true)[:delegated_functions_used]
   end
 
   def client_involvement_type
-    @client_involvement_type ||= JSON.parse(@proceeding_type_levels_of_service_params, symbolize_names: true)[:client_involvement_type]
+    @client_involvement_type ||= JSON.parse(@proceeding_type_level_of_service_params, symbolize_names: true)[:client_involvement_type]
   end
 
   def level_of_service_code
-    @level_of_service_code ||= JSON.parse(@proceeding_type_levels_of_service_params, symbolize_names: true)[:level_of_service_code]
+    @level_of_service_code ||= JSON.parse(@proceeding_type_level_of_service_params, symbolize_names: true)[:level_of_service_code]
   end
 
   def error_response
@@ -72,6 +72,6 @@ private
   end
 
   def json_validator
-    @json_validator ||= JsonValidator.new("proceeding_type_levels_of_service", @proceeding_type_levels_of_service_params)
+    @json_validator ||= JsonValidator.new("proceeding_type_level_of_service", @proceeding_type_level_of_service_params)
   end
 end

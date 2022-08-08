@@ -617,16 +617,16 @@ paths:
                     search results
               required:
               - search_term
-  "/proceeding_type_levels_of_service":
+  "/proceeding_type_level_of_service":
     post:
-      summary: Return details of levels_of_service and scope_limitations for specified
+      summary: Return details of level_of_service and scope_limitations for specified
         proceeding_type_ccms_code, delegated_functions_used, client_involvement_type
         and level_of_service_code
       description: |-
         POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used, client_involvement_type and level_of_service_code
                           to recieve a payload containing the same request params, and level_of_service and associated scope_limitations.
       tags:
-      - Proceeding type service levels
+      - Proceeding type service level
       parameters: []
       responses:
         '200':

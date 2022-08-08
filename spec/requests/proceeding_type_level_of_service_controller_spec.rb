@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe "ProceedingTypeLevelsOfServiceController", type: :request do
-  describe "POST proceeding type levels of service" do
-    subject(:proceeding_type_levels_of_service_request) { post proceeding_type_levels_of_service_index_path, params: params.to_json, headers: }
+RSpec.describe "ProceedingTypeLevelOfServiceController", type: :request do
+  describe "POST proceeding type level of service" do
+    subject(:proceeding_type_level_of_service_request) { post proceeding_type_level_of_service_index_path, params: params.to_json, headers: }
 
     let(:request_id) { SecureRandom.uuid }
     let(:headers) { { "CONTENT_TYPE" => "application/json" } }
@@ -17,12 +17,12 @@ RSpec.describe "ProceedingTypeLevelsOfServiceController", type: :request do
 
     context "when the request is successful" do
       it "returns success" do
-        proceeding_type_levels_of_service_request
+        proceeding_type_level_of_service_request
         expect(response).to have_http_status(:success)
       end
 
       it "returns the expected response" do
-        proceeding_type_levels_of_service_request
+        proceeding_type_level_of_service_request
         expect(JSON.parse(response.body)).to match expected_successful_response
       end
     end
@@ -38,12 +38,12 @@ RSpec.describe "ProceedingTypeLevelsOfServiceController", type: :request do
       end
 
       it "returns bad request" do
-        proceeding_type_levels_of_service_request
+        proceeding_type_level_of_service_request
         expect(response.status).to eq 400
       end
 
       it "returns expected error response" do
-        proceeding_type_levels_of_service_request
+        proceeding_type_level_of_service_request
         expect(parsed_response[:success]).to be false
         expect(parsed_response[:errors]).to match [/The property '#\/proceeding_type_ccms_code' value "XX123" did not match one of the following values: .* in schema file/]
       end
