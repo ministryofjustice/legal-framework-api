@@ -2,6 +2,7 @@ class ProceedingTypeScopePopulator
   DATA_FILE = Rails.root.join("db/seed_data/proceeding_type_scopes.yml").freeze
   DELEGATED_FUNCTION_STATES = [true, false].freeze
   CLIENT_INVOLVEMENT_TYPES = %w[A D I W Z].freeze
+  NON_A_CLIENT_INVOLVEMENT_TYPES = %w[D I W Z].freeze
 
   def self.call
     new.call
@@ -9,7 +10,6 @@ class ProceedingTypeScopePopulator
 
   def initialize
     @seed_data = YAML.load_file(DATA_FILE)
-    @versbose = false
   end
 
   def call
@@ -21,81 +21,84 @@ class ProceedingTypeScopePopulator
 
 private
 
-  def verbose?
-    @verbose
-  end
-
   def populate!
-    @seed_data["proceeding_types"].each do |proceeding_type|
-      populate_proceeding_type(proceeding_type)
+    @seed_data.each do |_category_name, config|
+      populate_category(config)
     end
   end
 
-  def populate_proceeding_type(proceeding_type_hash)
-    pt_ccms_code = proceeding_type_hash["proceeding_type_code"]
-    proceeding_type_hash["service_levels"].each do |service_level_hash|
-      populate_service_level(pt_ccms_code, service_level_hash)
+  def populate_category(config)
+    proceeding_type_codes = config[:proceeding_types]
+    config[:service_levels].each { |level_hash| populate_service_level(level_hash, proceeding_type_codes) }
+  end
+
+  def populate_service_level(level_hash, proceeding_type_codes)
+    level = level_hash[:level]
+    scopes = level_hash[:scopes]
+    proceeding_type_codes.each do |ptc|
+      scopes.each do |scope|
+        populate_scope(ptc, level, scope)
+      end
+      update_defaults(level, ptc, level_hash[:defaults])
     end
   end
 
-  def populate_service_level(pt_ccms_code, service_level_hash)
-    level_num = service_level_hash["level_num"]
-    scopes = service_level_hash["scopes"]
-    scopes.each do |scope|
-      populate_scope(scope, level_num, pt_ccms_code)
-    end
-    update_defaults(pt_ccms_code, level_num, service_level_hash["defaults"])
-  end
-
-  def populate_scope(scope, level_num, pt_ccms_code)
+  def populate_scope(ptc, level, scope)
     DELEGATED_FUNCTION_STATES.each do |df_state|
-      populate_df_state(df_state, scope, level_num, pt_ccms_code)
+      CLIENT_INVOLVEMENT_TYPES.each do |cit|
+        populate_record(ptc, level, df_state, cit, scope)
+      end
     end
   end
 
-  def populate_df_state(df_state, scope, level_num, pt_ccms_code)
-    CLIENT_INVOLVEMENT_TYPES.each do |cit|
-      populate_record(cit, df_state, scope, level_num, pt_ccms_code)
-    end
-  end
+  def populate_record(ptc, level, df_state, cit, scope)
+    return if scope_not_available_for_this_df_state?(scope, df_state)
 
-  def populate_record(cit, df_state, scope, level_num, pt_ccms_code)
     ProceedingTypeScope.create!(
-      proceeding_type_ccms_code: pt_ccms_code,
-      service_level: level_num,
+      proceeding_type_ccms_code: ptc,
+      service_level: level,
       client_involvement_type_code: cit,
       df_used: df_state,
       scope_limitation_code: scope,
       default: false,
     )
-    Rails.logger.debug "Writing #{pt_ccms_code}/#{level_num}/#{cit}/#{df_state}/#{scope} with default false" if verbose?
   end
 
-  def update_defaults(pt_ccms_code, level_num, defaults)
-    update_defaults_for_df_state(true, pt_ccms_code, level_num, defaults["df_used"])
-    update_defaults_for_df_state(false, pt_ccms_code, level_num, defaults["substantive"])
-  end
+  def update_defaults(level, ptc, defaults_config)
+    subst_a_scope = defaults_config[:substantive][:cit_a]
+    update_default(false, ptc, level, "A", subst_a_scope)
 
-  def update_defaults_for_df_state(df_state, pt_ccms_code, level_num, specific_defaults)
-    scope_code = specific_defaults["cit_a"]
-    cit_code_a = "A"
-    update_default(df_state, pt_ccms_code, level_num, cit_code_a, scope_code)
-    scope_code = specific_defaults["cit_diwz"]
-    %w[D I W Z].each do |cit_code_diwz|
-      update_default(df_state, pt_ccms_code, level_num, cit_code_diwz, scope_code)
+    subst_non_a_scope = defaults_config[:substantive][:cit_not_a]
+    NON_A_CLIENT_INVOLVEMENT_TYPES.each do |cit|
+      update_default(false, ptc, level, cit, subst_non_a_scope)
+    end
+
+    df_a_scope = defaults_config[:delegated_functions][:cit_a]
+    update_default(true, ptc, level, "A", df_a_scope)
+
+    df_non_a_scope = defaults_config[:delegated_functions][:cit_not_a]
+    NON_A_CLIENT_INVOLVEMENT_TYPES.each do |cit|
+      update_default(true, ptc, level, cit, df_non_a_scope)
     end
   end
 
-  def update_default(df_state, pt_ccms_code, level_num, cit_code, scope)
-    Rails.logger.debug "Updating #{pt_ccms_code}/#{level_num}/#{cit_code}/#{df_state}/#{scope} with default true" if verbose?
+  def update_default(df_state, ptc, level, cit, scope)
+    return if scope_not_available_for_this_df_state?(scope, df_state)
 
-    pt_scope = ProceedingTypeScope.find_by!(
-      proceeding_type_ccms_code: pt_ccms_code,
-      service_level: level_num,
-      client_involvement_type_code: cit_code,
-      df_used: df_state,
-      scope_limitation_code: scope,
-    )
-    pt_scope.update!(default: true)
+    join_rec = ProceedingTypeScope.find_by!(proceeding_type_ccms_code: ptc,
+                                            service_level: level,
+                                            client_involvement_type_code: cit,
+                                            df_used: df_state,
+                                            scope_limitation_code: scope)
+    join_rec.update!(default: true)
+  end
+
+  def scope_not_available_for_this_df_state?(scope_code, df_state)
+    sl_rec = ScopeLimitation.find_by(code: scope_code)
+    return true if !df_state && !sl_rec.substantive?
+
+    return true if df_state && !sl_rec.delegated_functions?
+
+    false
   end
 end

@@ -1,193 +1,163 @@
 ---
-proceeding_types:
-  - proceeding_type_code: SE013
-    service_levels:
-      - level_num: 1
-        scopes:
-          - CV027
-          - CV079
-          - CV117
-          - CV118
-          - FM004
-          - FM007
-          - FM015
-          - FM019
-          - FM059
-        defaults:
-          substantive:
-            cit_a: FM059
-            cit_diwz: FM059
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-      - level_num: 3
-        scopes:
-          - CV027
-          - CV117
-          - CV118
-          - FM007
-          - FM019
-          - FM039
-          - FM049
-        defaults:
-          substantive:
-            cit_a: FM049
-            cit_diwz: FM049
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-  - proceeding_type_code: SE014
-    service_levels:
-      - level_num: 1
-        scopes:
-          - CV027
-          - CV079
-          - CV117
-          - CV118
-          - FM004
-          - FM007
-          - FM015
-          - FM019
-          - FM059
-        defaults:
-          substantive:
-            cit_a: FM059
-            cit_diwz: FM059
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-      - level_num: 3
-        scopes:
-          - CV027
-          - CV117
-          - CV118
-          - FM007
-          - FM019
-          - FM039
-          - FM049
-        defaults:
-          substantive:
-            cit_a: FM049
-            cit_diwz: FM049
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-#
-#
-#
-# The seed data for SE015 below is commented out for now. The seeded proceeding_types table does not contain a record for SE015,
-# and we can't add the join record in this table until it exists.
-# We can't simply add the SE015 Proceeding type yet (it is one of the proceeding types that will be introduced with full section 8) until there is a mechanism in
-# Apply for ignoring full section 8 proceedings for un-enabled providers.
-#
-#
-#
-#
-#  - proceeding_type_code: SE015
-#    service_levels:
-#      - level_num: 1
-#        scopes:
-#          - CV027
-#          - CV079
-#          - CV117
-#          - CV118
-#          - FM004
-#          - FM007
-#          - FM015
-#          - FM019
-#          - FM059
-#        defaults:
-#          substantive:
-#            cit_a: FM059
-#            cit_diwz: FM059
-#          df_used:
-#            cit_a: CV117
-#            cit_diwz: CV118
-#      - level_num: 3
-#        scopes:
-#          - CV027
-#          - CV117
-#          - CV118
-#          - FM007
-#          - FM019
-#          - FM039
-#          - FM049
-#        defaults:
-#          substantive:
-#            cit_a: FM049
-#            cit_diwz: FM049
-#          df_used:
-#            cit_a: CV117
-#            cit_diwz: CV118
-  - proceeding_type_code: SE003
-    service_levels:
-      - level_num: 1
-        scopes:
-          - CV027
-          - CV079
-          - CV117
-          - CV118
-          - FM004
-          - FM007
-          - FM015
-          - FM019
-          - FM059
-        defaults:
-          substantive:
-            cit_a: FM059
-            cit_diwz: FM059
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-      - level_num: 3
-        scopes:
-          - CV027
-          - CV117
-          - CV118
-          - FM007
-          - FM019
-          - FM039
-          - FM049
-        defaults:
-          substantive:
-            cit_a: FM049
-            cit_diwz: FM049
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-  - proceeding_type_code: SE004
-    service_levels:
-      - level_num: 1
-        scopes:
-          - CV027
-          - CV079
-          - CV117
-          - CV118
-          - FM004
-          - FM007
-          - FM015
-          - FM019
-          - FM059
-        defaults:
-          substantive:
-            cit_a: FM059
-            cit_diwz: FM059
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
-      - level_num: 3
-        scopes:
-          - CV027
-          - CV117
-          - CV118
-          - FM007
-          - FM019
-          - FM039
-          - FM049
-        defaults:
-          substantive:
-            cit_a: FM049
-            cit_diwz: FM049
-          df_used:
-            cit_a: CV117
-            cit_diwz: CV118
+:section_8_base:
+  :proceeding_types:
+    - SE003
+    - SE004
+    - SE007
+    - SE008
+    - SE013
+    - SE014
+    - SE015
+    - SE016
+    - SE095
+    - SE097
+  :service_levels:
+    - :level: 1
+      :scopes:
+        - CV027
+        - CV079
+        - CV117
+        - CV118
+        - FM004
+        - FM007
+        - FM015
+        - FM019
+        - FM059
+      :defaults:
+        :substantive:
+          :cit_a: FM059
+          :cit_not_a: FM059
+        :delegated_functions:
+          :cit_a: CV117
+          :cit_not_a: CV118
+    - :level: 3
+      :scopes:
+        - CV027
+        - CV117
+        - CV118
+        - FM007
+        - FM019
+        - FM039
+        - FM049
+      :defaults:
+        :substantive:
+          :cit_a: FM049
+          :cit_not_a: FM049
+        :delegated_functions:
+          :cit_a: CV117
+          :cit_not_a: CV118
+:section_8_appeals:
+  :proceeding_types:
+    - SE003A
+    - SE004A
+    - SE007A
+    - SE008A
+    - SE013A
+    - SE014A
+    - SE015A
+    - SE016A
+    - SE095A
+    - SE097A
+    - SE101A
+  :service_levels:
+    - :level: 3
+      :scopes:
+        - APL09
+        - APL07
+        - APL11
+        - APL13
+        - APL15
+        - APL16
+        - APL18
+        - APL20
+        - APL22
+        - APL27
+        - APL29
+        - APL31
+        - APL48
+        - APL49
+        - APL50
+        - APL51
+        - APL52
+        - APL53
+        - APL54
+        - APL55
+        - APL56
+        - APL57
+        - APL65
+        - APL66
+        - APL67
+        - APL68
+        - APL69
+        - APL70
+        - CV027
+        - CV079
+        - CV118
+      :defaults:
+        :substantive:
+          :cit_a: CV079
+          :cit_not_a: CV079
+        :delegated_functions:
+          :cit_a: CV118
+          :cit_not_a: CV118
+:section_8_enforcements:
+  :proceeding_types:
+    - SE003E
+    - SE004E
+    - SE007E
+    - SE008E
+    - SE013E
+    - SE014E
+    - SE015E
+    - SE016E
+    - SE096E
+    - SE099E
+    - SE100E
+    - SE101E
+  :service_levels:
+    - :level: 3
+      :scopes:
+        - CV027
+        - CV118
+        - EF012
+        - EF022
+        - EF025
+        - EF026
+        - EF027
+        - FM019
+        - FM049
+        - MC029
+      :defaults:
+        :substantive:
+          :cit_a: FM019
+          :cit_not_a: FM019
+        :delegated_functions:
+          :cit_a: FM019
+          :cit_not_a: FM019
+:domestic_abuse:
+  :proceeding_types:
+    - DA001
+    - DA002
+    - DA003
+    - DA004
+    - DA005
+    - DA006
+    - DA007
+    - DA020
+  :service_levels:
+    - :level: 3
+      :scopes:
+        - AA009
+        - AA019
+        - CV027
+        - CV079
+        - CV117
+        - CV118
+        - FM054
+      :defaults:
+        :substantive:
+          :cit_a: AA019
+          :cit_not_a: AA019
+        :delegated_functions:
+          :cit_a: CV117
+          :cit_not_a: CV118

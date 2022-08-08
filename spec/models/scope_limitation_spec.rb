@@ -11,7 +11,7 @@ RSpec.describe ScopeLimitation do
 
     context "with service level 1" do
       it "returns all the correct scope limitation records" do
-        expected_codes = %w[CV027 CV079 CV117 CV118 FM004 FM007 FM015 FM019 FM059]
+        expected_codes = %w[CV027 CV079 CV117 CV118 FM004 FM007 FM015 FM019]
         expect(actual_codes).to match_array(expected_codes)
       end
     end
