@@ -1,3 +1,4 @@
+# :nocov:
 class ThresholdWaiverPopulator
   DATA_FILE = Rails.root.join("db/seed_data/threshold_waivers.json").freeze
 
@@ -30,3 +31,4 @@ private
     @seed_data ||= JSON.load_file(DATA_FILE, symbolize_names: true)[:seed_data]
   end
 end
+# :nocov:

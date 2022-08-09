@@ -1,3 +1,4 @@
+# :nocov:
 class ProceedingTypeScopeLimitationsPopulator
   # The yaml file does not include headers therefore items are selected based on their position in the array
   # [0] - proceeding_type_code
@@ -52,3 +53,4 @@ private
     @scope_limitations ||= ScopeLimitation.select(:id, :code).all
   end
 end
+# :nocov:

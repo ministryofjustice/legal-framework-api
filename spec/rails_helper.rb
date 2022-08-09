@@ -81,10 +81,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
-    # you get lots of <class> or <constant> already initialized/defined warnings without this silencer
-    Kernel.silence_warnings do
-      load Rails.root.join("db/seeds.rb")
-    end
+    puts "Loading test data from sql"
+    system "psql legal_framework_api_test < spec/fixtures/seeded_db_test.sql >/dev/null"
   end
 
   config.around do |example|

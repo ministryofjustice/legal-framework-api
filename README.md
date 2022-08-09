@@ -43,6 +43,16 @@ The full rspec test suite can be run with
 bundle exec rspec
 ```
 
+### Seeding the database for the test suite
+
+A lot of the tests rely on there being a fully-seeded database, and so `spec/rails_helper.rb` has a
+`before(:suite)` configuration to seed the database once at the beginning of running
+the test suite.  Because the normal way of seeding the database using `rake db:seed` is slow (it takes up to 2 minutes),
+the database is seeded from an sql dump of the database in `spec/fixtures/seeded_db_test.sql`.
+
+If the seed data changes, and this file needs to be re-generated,
+run `rake db:test:populated:dump` which will re-seed the database the old way using `rake db:seed` and then dump the database to the sql file above.
+
 ## Deployment
 
 The deployment is triggered on all builds in [CircleCI](https://circleci.com/gh/ministryofjustice/legal-framework-api) but requires approval to the desired environment.

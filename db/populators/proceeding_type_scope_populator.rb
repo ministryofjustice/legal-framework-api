@@ -1,3 +1,4 @@
+# :nocov:
 class ProceedingTypeScopePopulator
   DATA_FILE = Rails.root.join("db/seed_data/proceeding_type_scopes.yml").freeze
   DELEGATED_FUNCTION_STATES = [true, false].freeze
@@ -102,3 +103,4 @@ private
     false
   end
 end
+# :nocov:

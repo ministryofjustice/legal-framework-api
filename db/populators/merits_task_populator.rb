@@ -1,3 +1,4 @@
+# :nocov:
 class MeritsTaskPopulator
   APPLICATION_MERITS_TASKS = %w[
     latest_incident_details
@@ -33,3 +34,4 @@ private
     record.update!(name: merits_task)
   end
 end
+# :nocov:

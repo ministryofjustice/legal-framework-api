@@ -1,3 +1,4 @@
+# :nocov:
 class TaskDependencyPopulator
   DATA_FILE = Rails.root.join("db/seed_data/task_dependencies.yml").freeze
 
@@ -32,3 +33,4 @@ private
     TaskDependency.create!(merits_task: task, dependency:)
   end
 end
+# :nocov:

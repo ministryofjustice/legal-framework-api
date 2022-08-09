@@ -1,3 +1,4 @@
+# :nocov:
 class ProceedingTypeMeritsTaskPopulator
   DATA_FILE = Rails.root.join("db/seed_data/proceeding_type_merits_task.yml").freeze
 
@@ -26,3 +27,4 @@ private
     @proceeding_type_keys ||= YAML.load_file(DATA_FILE)
   end
 end
+# :nocov:
