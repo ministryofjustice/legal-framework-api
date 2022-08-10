@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   resources :threshold_waivers, only: %i[create]
   resources :proceeding_type_defaults, only: %i[create]
+  resources :proceeding_type_scopes, only: %i[create]
 
   root to: "main#index"
 

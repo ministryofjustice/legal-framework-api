@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "ProceedingTypeDefaultsController", type: :request do
-  describe "POST threshold_waivers" do
+  describe "POST proceeding_type_defaults" do
     subject(:proceeding_type_defaults_post_request) { post proceeding_type_defaults_path, params: params.to_json, headers: }
 
     let(:request_id) { SecureRandom.uuid }

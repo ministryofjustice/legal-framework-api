@@ -304,6 +304,7 @@ DEPENDENCIES
   faker (>= 1.9.1)
   guard-rubocop
   highline
+  json-schema (~> 2.8.1)
   json_expressions
   listen (~> 3.7)
   net-imap
