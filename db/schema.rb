@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_04_112224) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_10_143751) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -72,18 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_04_112224) do
     t.index ["proceeding_type_id", "substantive_default"], name: "index_proceedings_scopes_unique_substantive_default", unique: true, where: "(substantive_default = true)"
     t.index ["proceeding_type_id"], name: "index_proceeding_type_scope_limitations_on_proceeding_type_id"
     t.index ["scope_limitation_id"], name: "index_proceeding_type_scope_limitations_on_scope_limitation_id"
-  end
-
-  create_table "proceeding_type_scopes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "proceeding_type_ccms_code", null: false
-    t.integer "service_level", null: false
-    t.string "client_involvement_type_code", null: false
-    t.boolean "df_used", null: false
-    t.string "scope_limitation_code", null: false
-    t.boolean "default", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["proceeding_type_ccms_code", "service_level", "client_involvement_type_code", "df_used"], name: "pt_sl_cit_df_idx"
   end
 
   create_table "proceeding_type_service_levels", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
