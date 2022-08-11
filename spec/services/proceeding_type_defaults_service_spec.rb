@@ -1,8 +1,16 @@
 require "rails_helper"
 
 RSpec.describe ProceedingTypeDefaultsService do
-  subject(:proceeding_type_default_response) { described_class.call(proceeding_type_ccms_code:, delegated_functions_used:, client_involvement_type:, level_of_service_code:) }
+  subject(:proceeding_type_default_response) { described_class.call(proceeding_type_defaults_params:) }
 
+  let(:proceeding_type_defaults_params) do
+    {
+      proceeding_type_ccms_code:,
+      delegated_functions_used:,
+      client_involvement_type:,
+      level_of_service_code:,
+    }.to_json
+  end
   let(:proceeding_type_ccms_code) { "SE003" }
   let(:delegated_functions_used) { true }
   let(:client_involvement_type) { "D" }
@@ -21,9 +29,7 @@ RSpec.describe ProceedingTypeDefaultsService do
       it "returns error" do
         response = proceeding_type_default_response
         expect(response[:success]).to be false
-        expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
-        expect(response[:message]).to match(/Couldn't find ProceedingTypeScope/)
-        expect(response[:backtrace]).to be_instance_of(Array)
+        expect(response[:errors]).to match [/The property '#\/client_involvement_type' value "X" did not match one of the following values: .* in schema file/]
       end
     end
   end
