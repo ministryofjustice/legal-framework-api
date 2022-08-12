@@ -8,19 +8,16 @@ class ScopeLimitation < ApplicationRecord
            class_name: "ScopeUserInput"
 
   def self.eligible_for(pt_ccms_code, client_involvement_type, service_level, df_used)
-    codes = ProceedingTypeScope.where(proceeding_type_ccms_code: pt_ccms_code,
-                                      service_level:,
-                                      client_involvement_type_code: client_involvement_type,
-                                      df_used:).pluck(:scope_limitation_code)
-    where(code: codes)
+    codes = EligibleScopesService.eligible_scopes(pt_ccms_code, client_involvement_type, service_level, df_used)
+    recs = where(code: codes)
+    raise "Scope Limitation record(s) not found for #{codes.join(', ')}" if recs.size != codes.size
+
+    recs
   end
 
   def self.default_for(pt_ccms_code, client_involvement_type, service_level, df_used)
-    rec = ProceedingTypeScope.find_by!(proceeding_type_ccms_code: pt_ccms_code,
-                                       service_level:,
-                                       client_involvement_type_code: client_involvement_type,
-                                       df_used:,
-                                       default: true)
-    find_by!(code: rec.scope_limitation_code)
+    sl_code = EligibleScopesService.default_scope(pt_ccms_code, client_involvement_type, service_level, df_used)
+
+    find_by!(code: sl_code)
   end
 end
