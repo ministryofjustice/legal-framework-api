@@ -20,4 +20,13 @@ class ScopeLimitation < ApplicationRecord
 
     find_by!(code: sl_code)
   end
+
+  def as_json
+    {
+      code:,
+      meaning:,
+      description:,
+      additional_params: user_inputs.map(&:as_json),
+    }
+  end
 end
