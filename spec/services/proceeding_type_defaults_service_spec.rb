@@ -52,8 +52,14 @@ RSpec.describe ProceedingTypeDefaultsService do
         code: "CV118",
         meaning: "Hearing",
         description: "Limited to all steps up to and including the hearing on [see additional limitation notes]",
+        additional_params: [
+          {
+            name: "hearing_date",
+            type: "date",
+            mandatory: true,
+          },
+        ],
       },
-      additional_params: [],
     }
   end
 end

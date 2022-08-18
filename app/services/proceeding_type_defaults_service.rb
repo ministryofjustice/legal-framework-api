@@ -13,7 +13,6 @@ class ProceedingTypeDefaultsService
       @response = create_skeleton_response
       add_default_service_level_to_response
       add_default_scope_to_response
-      add_additional_params_to_response
     else
       @response = error_response
       @errors.concat(json_validator.errors)
@@ -37,17 +36,12 @@ private
 
   def add_default_service_level_to_response
     dsl = ServiceLevel.includes(:proceeding_types, :proceeding_type_service_levels).find_by!(proceeding_types: { ccms_code: proceeding_type_ccms_code }, proceeding_type_service_levels: { proceeding_default: true })
-    @response[:default_level_of_service] = { level: dsl.level, name: dsl.name, stage: dsl.stage }
+    @response[:default_level_of_service] = dsl.as_json
   end
 
   def add_default_scope_to_response
     ds = ScopeLimitation.default_for(proceeding_type_ccms_code, client_involvement_type, level_of_service_code, delegated_functions_used)
-    @response[:default_scope] = { code: ds.code, description: ds.description, meaning: ds.meaning }
-  end
-
-  def add_additional_params_to_response
-    # TODO: populate additional params once scopes that require it populated
-    @response[:additional_params] = []
+    @response[:default_scope] = ds.as_json
   end
 
   def proceeding_type_ccms_code
