@@ -46,8 +46,7 @@
 # schemes
 :schemes:
   :domestic_abuse:
-    :service_levels:
-      - 3
+    :default_service_level: 3
     :service_level_3:
       :substantive:
         :scopes:
@@ -73,6 +72,7 @@
           :cit_a: CV117
           :non_cit_a: CV118
   :section_8_base:
+    :default_service_level: 1
     :service_level_1:
       :substantive:
         :scopes:
@@ -127,6 +127,7 @@
           :cit_a: CV117
           :non_cit_a: CV118
   :section_8_appeals:
+    :default_service_level: 3
     :service_level_3:
       :substantive:
         :scopes:
@@ -201,6 +202,7 @@
           :cit_a: CV118
           :non_cit_a: CV118
   :section_8_enforcements:
+    :default_service_level: 3
     :service_level_3:
       :substantive:
         :scopes:

@@ -164,9 +164,9 @@ paths:
   "/proceeding_type_defaults":
     post:
       summary: Return details of defaults for specified proceeding_type_ccms_code,
-        delegated_functions_used, client_involvement_type and level_of_service_code
+        delegated_functions_used, client_involvement_type
       description: |-
-        POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used, client_involvement_type and level_of_service_code
+        POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used and client_involvement_type
                           to recieve a payload containing the same request params, and the default scope and default level_of_service.
       tags:
       - Proceeding types defaults
@@ -182,7 +182,6 @@ paths:
                   proceeding_type_ccms_code: SE004
                   delegated_functions_used: false
                   client_involvement_type: A
-                  level_of_service_code: 1
                 default_level_of_service:
                   level: 1
                   name: Family Help (Higher)
@@ -211,14 +210,10 @@ paths:
                 client_involvement_type:
                   type: string
                   description: A code uniquely identifying the client_involvement_type
-                level_of_service_code:
-                  type: integer
-                  description: A code uniquely identifying the service_level
               required:
               - proceeding_type_ccms_code
               - delegated_functions_used
               - client_involvement_type
-              - service_level
   "/proceeding_type_scopes":
     post:
       summary: Return details of level_of_service and scope_limitations for specified

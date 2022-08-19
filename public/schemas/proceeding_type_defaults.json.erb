@@ -1,0 +1,22 @@
+{
+  "id": "file://#{@schema_dir}/proceeding_type_defaults.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Legal Framework Api proceeding_type_defaults schema",
+  "type": "object",
+  "required": [
+    "proceeding_type_ccms_code",
+    "delegated_functions_used",
+    "client_involvement_type"
+  ],
+  "properties": {
+    "proceeding_type_ccms_code": {
+      "enum": <%= ProceedingType.pluck(:ccms_code).as_json %>
+    },
+    "delegated_functions_used": {
+      "type": "boolean"
+    },
+    "client_involvement_type": {
+      "enum": <%= ClientInvolvementType.pluck(:ccms_code).as_json %>
+    }
+  }
+}

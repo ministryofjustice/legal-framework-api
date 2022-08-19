@@ -10,6 +10,7 @@ class ProceedingTypeDefaultsService
 
   def call
     if json_validator.valid?
+      populate_instance_vars
       @response = create_skeleton_response
       add_default_service_level_to_response
       add_default_scope_to_response
@@ -22,42 +23,33 @@ class ProceedingTypeDefaultsService
 
 private
 
+  def populate_instance_vars
+    hash = JSON.parse(@proceeding_type_defaults_params, symbolize_names: true)
+    @proceeding_type_ccms_code = hash[:proceeding_type_ccms_code]
+    @delegated_functions_used = hash[:delegated_functions_used]
+    @client_involvement_type = hash[:client_involvement_type]
+  end
+
   def create_skeleton_response
     {
       success: true,
       requested_params: {
-        proceeding_type_ccms_code:,
-        delegated_functions_used:,
-        client_involvement_type:,
-        level_of_service_code:,
+        proceeding_type_ccms_code: @proceeding_type_ccms_code,
+        delegated_functions_used: @delegated_functions_used,
+        client_involvement_type: @client_involvement_type,
       },
     }
   end
 
   def add_default_service_level_to_response
-    dsl = ServiceLevel.includes(:proceeding_types, :proceeding_type_service_levels).find_by!(proceeding_types: { ccms_code: proceeding_type_ccms_code }, proceeding_type_service_levels: { proceeding_default: true })
-    @response[:default_level_of_service] = dsl.as_json
+    @level_of_service_code = EligibleScopesService.default_service_level(@proceeding_type_ccms_code)
+    sl_record = ServiceLevel.find_by!(level: @level_of_service_code)
+    @response[:default_level_of_service] = sl_record.as_json
   end
 
   def add_default_scope_to_response
-    ds = ScopeLimitation.default_for(proceeding_type_ccms_code, client_involvement_type, level_of_service_code, delegated_functions_used)
+    ds = ScopeLimitation.default_for(@proceeding_type_ccms_code, @client_involvement_type, @level_of_service_code, @delegated_functions_used)
     @response[:default_scope] = ds.as_json
-  end
-
-  def proceeding_type_ccms_code
-    @proceeding_type_ccms_code ||= JSON.parse(@proceeding_type_defaults_params, symbolize_names: true)[:proceeding_type_ccms_code]
-  end
-
-  def delegated_functions_used
-    @delegated_functions_used ||= JSON.parse(@proceeding_type_defaults_params, symbolize_names: true)[:delegated_functions_used]
-  end
-
-  def client_involvement_type
-    @client_involvement_type ||= JSON.parse(@proceeding_type_defaults_params, symbolize_names: true)[:client_involvement_type]
-  end
-
-  def level_of_service_code
-    @level_of_service_code ||= JSON.parse(@proceeding_type_defaults_params, symbolize_names: true)[:level_of_service_code]
   end
 
   def error_response
@@ -68,6 +60,6 @@ private
   end
 
   def json_validator
-    @json_validator ||= JsonValidator.new("proceeding_type_scopes", @proceeding_type_defaults_params)
+    @json_validator ||= JsonValidator.new("proceeding_type_defaults", @proceeding_type_defaults_params)
   end
 end
