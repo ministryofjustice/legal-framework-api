@@ -33,7 +33,6 @@ RSpec.describe MeritsTaskService do
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(response[:message]).to match(/Couldn't find ProceedingType/)
-        expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
 
@@ -46,7 +45,6 @@ RSpec.describe MeritsTaskService do
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "MeritsTaskService::MeritsTaskServiceError"
         expect(response[:message]).to eq "Must specify at least one proceeding type"
-        expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
   end

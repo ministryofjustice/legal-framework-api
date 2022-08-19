@@ -82,7 +82,6 @@ private
       success: false,
       error_class: err.class.to_s,
       message: err.message,
-      backtrace: err.backtrace,
     }
   end
 end

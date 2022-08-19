@@ -99,7 +99,6 @@ RSpec.describe "proceeding_types", type: :request do
           expect(response).to have_http_status(:bad_request)
           expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
           expect(parsed_response[:message]).to match "No such proceeding type: 'AZ123'"
-          expect(parsed_response[:backtrace]).to be_instance_of(Array)
         end
       end
     end

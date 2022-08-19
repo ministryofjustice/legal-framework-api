@@ -112,7 +112,6 @@ private
       success: false,
       error_class: err.class.to_s,
       message: message_for(err),
-      backtrace: err.backtrace,
     }
   end
 

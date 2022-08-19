@@ -127,7 +127,6 @@ RSpec.describe "merits_tasks", type: :request do
           expect(parsed_response[:success]).to be false
           expect(parsed_response[:error_class]).to eq "ActiveRecord::RecordNotFound"
           expect(parsed_response[:message]).to match(/Couldn't find ProceedingType/)
-          expect(parsed_response[:backtrace]).to be_instance_of(Array)
         end
       end
     end
