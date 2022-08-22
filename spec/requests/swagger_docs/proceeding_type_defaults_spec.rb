@@ -29,7 +29,7 @@ RSpec.describe "proceeding_type_defaults", type: :request, swagger: true do
                     required: %w[proceeding_type_ccms_code delegated_functions_used client_involvement_type],
                   }
         response(200, "success") do
-          response = ProceedingTypeDefaultsService.call(proceeding_type_defaults_params: { proceeding_type_ccms_code:, delegated_functions_used:, client_involvement_type:}.to_json)
+          response = ProceedingTypeDefaultsService.call(proceeding_type_defaults_params: { proceeding_type_ccms_code:, delegated_functions_used:, client_involvement_type: }.to_json)
 
           examples "application/json" => response
           run_test!
