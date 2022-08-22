@@ -64,7 +64,13 @@ RSpec.describe ProceedingTypeScopesService do
             code: "CV079",
             meaning: "Counsel's Opinion",
             description: "Limited to obtaining external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available.",
-            additional_params: [],
+            additional_params: [
+              {
+                name: "hearing_date",
+                type: "date",
+                mandatory: true,
+              },
+            ],
           },
           {
             code: "FM019",
@@ -82,13 +88,25 @@ RSpec.describe ProceedingTypeScopesService do
             code: "CV118",
             meaning: "Hearing",
             description: "Limited to all steps up to and including the hearing on [see additional limitation notes]",
-            additional_params: [],
+            additional_params: [
+              {
+                name: "hearing_date",
+                type: "date",
+                mandatory: true,
+              },
+            ],
           },
           {
             code: "CV027",
             meaning: "Hearing/Adjournment",
             description: "Limited to all steps (including any adjournment thereof) up to and including the hearing on",
-            additional_params: [],
+            additional_params: [
+              {
+                name: "hearing_date",
+                type: "date",
+                mandatory: true,
+              },
+            ],
           },
           {
             code: "CV117",

@@ -21,12 +21,20 @@ class EligibleScopesService
     new(proceeding_type, client_involvement_type, service_level, df_used).default_scope
   end
 
+  def self.default_service_level(proceeding_type)
+    new(proceeding_type, nil, nil, nil).default_service_level
+  end
+
   def eligible_scopes
     innermost_config[:scopes]
   end
 
   def default_scope
     innermost_config[:defaults][cit_key]
+  end
+
+  def default_service_level
+    scheme_config[:default_service_level]
   end
 
 private

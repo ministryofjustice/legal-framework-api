@@ -11,7 +11,6 @@ RSpec.describe "ProceedingTypeDefaultsController", type: :request do
         proceeding_type_ccms_code: "SE013",
         delegated_functions_used: false,
         client_involvement_type: "A",
-        level_of_service_code: 1,
       }
     end
 
@@ -33,7 +32,6 @@ RSpec.describe "ProceedingTypeDefaultsController", type: :request do
           proceeding_type_ccms_code: "XX123",
           delegated_functions_used: false,
           client_involvement_type: "A",
-          level_of_service_code: 1,
         }
       end
 
@@ -56,7 +54,6 @@ RSpec.describe "ProceedingTypeDefaultsController", type: :request do
           proceeding_type_ccms_code: "SE013",
           delegated_functions_used: false,
           client_involvement_type: "A",
-          level_of_service_code: 1,
         },
         default_level_of_service: {
           level: 1,
@@ -67,8 +64,8 @@ RSpec.describe "ProceedingTypeDefaultsController", type: :request do
           code: "FM059",
           meaning: "FHH Children",
           description: "Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
+          additional_params: [],
         },
-        additional_params: [],
       }.as_json
     end
   end

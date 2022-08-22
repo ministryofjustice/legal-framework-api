@@ -39,12 +39,8 @@ private
   end
 
   def scope_limitations
-    scope_limitations = []
     scopes = ScopeLimitation.eligible_for(proceeding_type_ccms_code, client_involvement_type, level_of_service_code, delegated_functions_used).order(:meaning)
-    scopes.each do |scope|
-      scope_limitations << { code: scope.code, meaning: scope.meaning, description: scope.description, additional_params: [] }
-    end
-    scope_limitations
+    scopes.map(&:as_json)
   end
 
   def proceeding_type_ccms_code
