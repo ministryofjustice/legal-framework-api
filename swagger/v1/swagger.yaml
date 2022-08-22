@@ -163,11 +163,11 @@ paths:
               - values
   "/proceeding_type_defaults":
     post:
-      summary: Return details of defaults for specified proceeding_type_ccms_code,
-        delegated_functions_used, client_involvement_type
+      summary: Return details of default scope and level of service for specified
+        proceeding_type_ccms_code, delegated_functions_used, client_involvement_type
       description: |-
         POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used and client_involvement_type
-                          to recieve a payload containing the same request params, and the default scope and default level_of_service.
+                          to recieve a payload containing the same request params, and the default scope and level_of_service.
       tags:
       - Proceeding types defaults
       parameters: []
