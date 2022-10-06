@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :merits_tasks, param: :ccms_code, only: %i[create]
+  resources :civil_merits_questions, param: :ccms_code, only: %i[create]
   get "proceeding_types/all", to: "proceeding_types/searches#index"
   get "client_involvement_types", to: "client_involvement_types#index"
   resources :proceeding_types, param: :ccms_code, only: %i[show]
