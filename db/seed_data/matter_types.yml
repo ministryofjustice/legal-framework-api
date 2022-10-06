@@ -1,5 +1,5 @@
 ---
-# this file lists the matter types, and for each matter type, whether or not the thresholds are overridden:, e.g.
+# this file lists the matter types
 #
 # - - Domestic abuse      - name of the matter type
 #  - matter_code          - This code is required for the CCMS Submission and will be needed by Apply
