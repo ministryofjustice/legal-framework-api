@@ -26,3 +26,4 @@ inherit_mode:
 RSpec/EmptyExampleGroup:
   Exclude:
     - 'spec/requests/swagger_docs/**/*_spec.rb'
+    - 'spec/**/*swagger*_spec.rb'
