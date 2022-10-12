@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_10_143751) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_10_132246) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_10_143751) do
     t.decimal "value", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["proceeding_type_id", "cost_type", "start_date"], name: "index_default_cost_limitations_unique_on_cost_date_and_type", unique: true
     t.index ["proceeding_type_id"], name: "index_default_cost_limitations_on_proceeding_type_id"
   end
 
@@ -57,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_10_143751) do
     t.integer "sequence", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "display_rules"
     t.index ["proceeding_type_id"], name: "index_proceeding_type_merits_tasks_on_proceeding_type_id"
   end
 
