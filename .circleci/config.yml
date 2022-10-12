@@ -140,6 +140,15 @@ jobs:
           path: /tmp/test-results/rspec
       - store_artifacts:
           path: ./coverage
+  clean_up_ecr:
+    executor: cloud-platform-executor
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Delete old images from ecr repo
+          command: |
+            ./bin/delete_ecr_images
   build_and_push:
     executor: cloud-platform-executor
     steps:
@@ -331,3 +340,13 @@ workflows:
           requires:
             - hold_production
           <<: *generic-slack-fail-post-step
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 2 * * *"
+          filters:
+            branches:
+              only: main
+    jobs:
+      - clean_up_ecr
