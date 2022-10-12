@@ -6,19 +6,25 @@ class ProceedingTypeMeritsTaskPopulator
   end
 
   def call
-    proceeding_type_keys.each do |proceeding_type_key, task_names|
-      populate(proceeding_type_key, task_names)
+    proceeding_type_keys.each do |seed_hash|
+      @loop_index = 0
+      populate(seed_hash["ccms_code"], seed_hash["questions"])
     end
   end
 
 private
 
-  def populate(proceeding_type_key, task_names)
+  def populate(proceeding_type_key, task_names, display_rules: nil)
     proceeding_type = ProceedingType.find_by!(ccms_code: proceeding_type_key)
-    task_names.each_with_index do |task_name, index|
+    task_names.each do |task_name|
+      if task_name.is_a?(Hash)
+        populate(proceeding_type_key, task_name.values.flatten, display_rules: task_name.keys.first)
+        next
+      end
+      @loop_index += 1
       task = MeritsTask.find_by!(name: task_name)
       rec = ProceedingTypeMeritsTask.find_by(proceeding_type_id: proceeding_type.id, merits_task_id: task.id) || ProceedingTypeMeritsTask.new
-      rec.update!(proceeding_type_id: proceeding_type.id, merits_task_id: task.id, sequence: (index + 1) * 10)
+      rec.update!(proceeding_type_id: proceeding_type.id, merits_task_id: task.id, display_rules:, sequence: @loop_index)
     end
   end
 
