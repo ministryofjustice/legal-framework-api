@@ -93,6 +93,13 @@ RSpec.describe "threshold_waivers", type: :request do
         run_test! do |response|
           expect(response).to have_http_status(:success)
           expect(parsed_response).to eq expected_response
+
+          history = RequestHistory.find_by(request_id: "ff9679d7-ca3e-40b8-a47e-5006895d9026")
+          expect(history.request_method).to eq "POST"
+          expect(history.endpoint).to eq "/threshold_waivers"
+          expect(history.request_payload).to match_json_expression threshold_waiver_query
+          expect(history.response_status).to eq 200
+          expect(history.response_payload).to match_json_expression expected_response
         end
       end
 
