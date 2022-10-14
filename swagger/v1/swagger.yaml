@@ -4,6 +4,109 @@ info:
   title: API V1
   version: v1
 paths:
+  "/civil_merits_questions":
+    post:
+      summary: Request civil merits questions for a set of proceedings
+      description: Return questions base on proceeding codes, client involvement type
+        and delegated function use
+      tags:
+      - Merits tasks
+      parameters: []
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    request_id: 7d47425b-800a-41ef-a917-934acc09b50d
+                    success: true
+                    application:
+                      tasks:
+                        latest_incident_details: []
+                        opponent_details: []
+                        statement_of_case: []
+                    proceedings:
+                    - ccms_code: DA001
+                      tasks:
+                        chances_of_success: []
+                  summary: Successful request
+                  description: Request a single proceeding, DA001, without triggering
+                    any rules
+                success_with_rules:
+                  value:
+                    request_id: 7d47425b-800a-41ef-a917-934acc09b50d
+                    success: true
+                    application:
+                      tasks:
+                        latest_incident_details: []
+                        opponent_details: []
+                        statement_of_case: []
+                        client_denial_of_allegation: []
+                        client_offer_of_undertakings: []
+                    proceedings:
+                    - ccms_code: DA001
+                      tasks:
+                        chances_of_success: []
+                  summary: Successful request with extra questions
+                  description: Request a single proceeding, DA001, triggering additional,
+                    domestic abuse, questions
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              examples:
+                invalid_cit:
+                  value:
+                    request_id: 7d47425b-800a-41ef-a917-934acc09b50d
+                    success: false
+                    errors:
+                    - 'The property ''#/proceedings/0/client_involvement_type'' value
+                      "X" did not match one of the following values: A, D, W, Z, I
+                      in schema file://#'
+                  summary: Invalid CIT
+                  description: User requests a non-existent client involvement type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - request_id
+              - proceedings
+              description: An array of proceeding data
+              properties:
+                request_id:
+                  type: string
+                  example: 2a614e1a-a3d5-49ca-949a-c3248483d274
+                  description: Client generated request id that will be echoed back
+                    in the response
+                proceedings:
+                  type: array
+                  description: something something data
+                  items:
+                    type: object
+                    required:
+                    - ccms_code
+                    - delegated_function_used
+                    - client_involvement_type
+                    properties:
+                      ccms_code:
+                        type: string
+                        description: A code uniquely identifying the proceeding_type
+                        example: SE013
+                      delegated_functions_used:
+                        type: boolean
+                        description: A boolean indicating whether delegated functions
+                          were used
+                        example: true
+                      client_involvement_type:
+                        type: string
+                        description: A code uniquely identifying the client_involvement_type
+                        example: A
+                    description: Array of CCMS codes, df_used and client involvement
+                      type of proceeding types to  be queried
   "/client_involvement_types":
     get:
       summary: Get all client involvement types
@@ -15,17 +118,19 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-              - ccms_code: A
-                description: Applicant/claimant/petitioner
-              - ccms_code: D
-                description: Defendant/respondent
-              - ccms_code: W
-                description: Subject of proceedings (child)
-              - ccms_code: I
-                description: Intervenor
-              - ccms_code: Z
-                description: Joined party
+              examples:
+                example_0:
+                  value:
+                  - ccms_code: A
+                    description: Applicant/claimant/petitioner
+                  - ccms_code: D
+                    description: Defendant/respondent
+                  - ccms_code: W
+                    description: Subject of proceedings (child)
+                  - ccms_code: I
+                    description: Intervenor
+                  - ccms_code: Z
+                    description: Joined party
   "/merits_tasks":
     post:
       summary: Return details of merits_tasks for specified proceeding types identified
@@ -53,28 +158,30 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-                request_id: 7d47425b-800a-41ef-a917-934acc09b50d
-                success: true
-                application:
-                  tasks:
-                    latest_incident_details: []
-                    opponent_details: []
-                    statement_of_case: []
-                    children_application: []
-                proceeding_types:
-                - ccms_code: DA001
-                  tasks:
-                    chances_of_success: []
-                - ccms_code: DA003
-                  tasks:
-                    chances_of_success: []
-                - ccms_code: SE014
-                  tasks:
-                    chances_of_success: []
-                    children_proceeding:
-                    - children_application
-                    attempts_to_settle: []
+              examples:
+                example_0:
+                  value:
+                    request_id: 7d47425b-800a-41ef-a917-934acc09b50d
+                    success: true
+                    application:
+                      tasks:
+                        latest_incident_details: []
+                        opponent_details: []
+                        statement_of_case: []
+                        children_application: []
+                    proceeding_types:
+                    - ccms_code: DA001
+                      tasks:
+                        chances_of_success: []
+                    - ccms_code: DA003
+                      tasks:
+                        chances_of_success: []
+                    - ccms_code: SE014
+                      tasks:
+                        chances_of_success: []
+                        children_proceeding:
+                        - children_application
+                        attempts_to_settle: []
       requestBody:
         content:
           application/json:
@@ -117,24 +224,26 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-                request_id: ff9679d7-ca3e-40b8-a47e-5006895d9026
-                success: true
-                proceedings:
-                - ccms_code: DA005
-                  full_s8_only: false
-                  matter_type: Domestic abuse
-                  gross_income_upper: true
-                  disposable_income_upper: true
-                  capital_upper: true
-                  client_involvement_type: A
-                - ccms_code: SE004
-                  full_s8_only: false
-                  matter_type: Children - section 8
-                  gross_income_upper: false
-                  disposable_income_upper: false
-                  capital_upper: false
-                  client_involvement_type: D
+              examples:
+                example_0:
+                  value:
+                    request_id: ff9679d7-ca3e-40b8-a47e-5006895d9026
+                    success: true
+                    proceedings:
+                    - ccms_code: DA005
+                      full_s8_only: false
+                      matter_type: Domestic abuse
+                      gross_income_upper: true
+                      disposable_income_upper: true
+                      capital_upper: true
+                      client_involvement_type: A
+                    - ccms_code: SE004
+                      full_s8_only: false
+                      matter_type: Children - section 8
+                      gross_income_upper: false
+                      disposable_income_upper: false
+                      capital_upper: false
+                      client_involvement_type: D
       requestBody:
         content:
           application/json:
@@ -176,24 +285,26 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-                success: true
-                requested_params:
-                  proceeding_type_ccms_code: SE004
-                  delegated_functions_used: false
-                  client_involvement_type: A
-                default_level_of_service:
-                  level: 1
-                  name: Family Help (Higher)
-                  stage: 1
-                default_scope:
-                  code: FM059
-                  meaning: FHH Children
-                  description: Limited to Family Help (Higher) and to all steps necessary
-                    to negotiate and conclude a settlement. To include the issue of
-                    proceedings and representation in those proceedings save in relation
-                    to or at a contested final hearing.
-                  additional_params: []
+              examples:
+                example_0:
+                  value:
+                    success: true
+                    requested_params:
+                      proceeding_type_ccms_code: SE004
+                      delegated_functions_used: false
+                      client_involvement_type: A
+                    default_level_of_service:
+                      level: 1
+                      name: Family Help (Higher)
+                      stage: 1
+                    default_scope:
+                      code: FM059
+                      meaning: FHH Children
+                      description: Limited to Family Help (Higher) and to all steps
+                        necessary to negotiate and conclude a settlement. To include
+                        the issue of proceedings and representation in those proceedings
+                        save in relation to or at a contested final hearing.
+                      additional_params: []
       requestBody:
         content:
           application/json:
@@ -230,79 +341,83 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-                success: true
-                requested_params:
-                  proceeding_type_ccms_code: SE004
-                  delegated_functions_used: false
-                  client_involvement_type: A
-                  level_of_service_code: 1
-                level_of_service:
-                  level: 1
-                  name: Family Help (Higher)
-                  stage: 1
-                  scope_limitations:
-                  - code: FM007
-                    meaning: Blood Tests or DNA Tests
-                    description: Limited to all steps up to and including the obtaining
-                      of blood tests or DNA tests and thereafter a solicitor's report.
-                    additional_params: []
-                  - code: FM004
-                    meaning: CAFCASS report
-                    description: Limited to all steps up to and including the Children
-                      and Family Reporter's Report and thereafter a solicitor's report.
-                    additional_params: []
-                  - code: CV079
-                    meaning: Counsel's Opinion
-                    description: Limited to obtaining external Counsel's Opinion or
-                      the opinion of an external solicitor with higher court advocacy
-                      rights on the information already available.
-                    additional_params:
-                    - name: hearing_date
-                      type: date
-                      mandatory: true
-                  - code: FM019
-                    meaning: Exchange of Evidence
-                    description: Limited to all steps up to and including the exchange
-                      of evidence (including any welfare officer's/guardian ad litem's
-                      report) and directions appointments but not including a final
-                      contested hearing and thereafter to a solicitors report (or
-                      if so advised a Counsel's opinion) on the issues and prospects
-                      of success.
-                    additional_params: []
-                  - code: FM059
-                    meaning: FHH Children
-                    description: Limited to Family Help (Higher) and to all steps
-                      necessary to negotiate and conclude a settlement. To include
-                      the issue of proceedings and representation in those proceedings
-                      save in relation to or at a contested final hearing.
-                    additional_params: []
-                  - code: CV118
-                    meaning: Hearing
-                    description: Limited to all steps up to and including the hearing
-                      on [see additional limitation notes]
-                    additional_params:
-                    - name: hearing_date
-                      type: date
-                      mandatory: true
-                  - code: CV027
-                    meaning: Hearing/Adjournment
-                    description: Limited to all steps (including any adjournment thereof)
-                      up to and including the hearing on
-                    additional_params:
-                    - name: hearing_date
-                      type: date
-                      mandatory: true
-                  - code: CV117
-                    meaning: Interim order inc. return date
-                    description: Limited to all steps necessary to apply for an interim
-                      order; where application is made without notice to include representation
-                      on the return date.
-                    additional_params: []
-                  - code: FM015
-                    meaning: Section 37 Report
-                    description: Limited to a section 37 report only.
-                    additional_params: []
+              examples:
+                example_0:
+                  value:
+                    success: true
+                    requested_params:
+                      proceeding_type_ccms_code: SE004
+                      delegated_functions_used: false
+                      client_involvement_type: A
+                      level_of_service_code: 1
+                    level_of_service:
+                      level: 1
+                      name: Family Help (Higher)
+                      stage: 1
+                      scope_limitations:
+                      - code: FM007
+                        meaning: Blood Tests or DNA Tests
+                        description: Limited to all steps up to and including the
+                          obtaining of blood tests or DNA tests and thereafter a solicitor's
+                          report.
+                        additional_params: []
+                      - code: FM004
+                        meaning: CAFCASS report
+                        description: Limited to all steps up to and including the
+                          Children and Family Reporter's Report and thereafter a solicitor's
+                          report.
+                        additional_params: []
+                      - code: CV079
+                        meaning: Counsel's Opinion
+                        description: Limited to obtaining external Counsel's Opinion
+                          or the opinion of an external solicitor with higher court
+                          advocacy rights on the information already available.
+                        additional_params:
+                        - name: hearing_date
+                          type: date
+                          mandatory: true
+                      - code: FM019
+                        meaning: Exchange of Evidence
+                        description: Limited to all steps up to and including the
+                          exchange of evidence (including any welfare officer's/guardian
+                          ad litem's report) and directions appointments but not including
+                          a final contested hearing and thereafter to a solicitors
+                          report (or if so advised a Counsel's opinion) on the issues
+                          and prospects of success.
+                        additional_params: []
+                      - code: FM059
+                        meaning: FHH Children
+                        description: Limited to Family Help (Higher) and to all steps
+                          necessary to negotiate and conclude a settlement. To include
+                          the issue of proceedings and representation in those proceedings
+                          save in relation to or at a contested final hearing.
+                        additional_params: []
+                      - code: CV118
+                        meaning: Hearing
+                        description: Limited to all steps up to and including the
+                          hearing on [see additional limitation notes]
+                        additional_params:
+                        - name: hearing_date
+                          type: date
+                          mandatory: true
+                      - code: CV027
+                        meaning: Hearing/Adjournment
+                        description: Limited to all steps (including any adjournment
+                          thereof) up to and including the hearing on
+                        additional_params:
+                        - name: hearing_date
+                          type: date
+                          mandatory: true
+                      - code: CV117
+                        meaning: Interim order inc. return date
+                        description: Limited to all steps necessary to apply for an
+                          interim order; where application is made without notice
+                          to include representation on the return date.
+                        additional_params: []
+                      - code: FM015
+                        meaning: Section 37 Report
+                        description: Limited to a section 37 report only.
+                        additional_params: []
       requestBody:
         content:
           application/json:
@@ -341,352 +456,355 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-              - ccms_code: DA001
-                meaning: Inherent jurisdiction high court injunction
-                description: to be represented on an application for an injunction,
-                  order or declaration under the inherent jurisdiction of the court.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA002
-                meaning: Variation or discharge under section 5 protection from harassment
-                  act 1997
-                description: to be represented on an application to vary or discharge
-                  an order under section 5 Protection from Harassment Act 1997 where
-                  the parties are associated persons (as defined by Part IV Family
-                  Law Act 1996).
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA003
-                meaning: Harassment - injunction
-                description: to be represented in an action for an injunction under
-                  section 3 Protection from Harassment Act 1997.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA004
-                meaning: Non-molestation order
-                description: to be represented on an application for a non-molestation
-                  order.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA005
-                meaning: Occupation order
-                description: to be represented on an application for an occupation
-                  order.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA006
-                meaning: Extend, variation or discharge - Part IV
-                description: to be represented on an application to extend, vary or
-                  discharge an order under Part IV Family Law Act 1996
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA007
-                meaning: Forced marriage protection order
-                description: to be represented on an application for a forced marriage
-                  protection order
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: DA020
-                meaning: FGM Protection Order
-                description: To be represented on an application for a Female Genital
-                  Mutilation Protection Order under the Female Genital Mutilation
-                  Act.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: MINJN
-                ccms_matter: Domestic abuse
-              - ccms_code: SE003
-                meaning: Prohibited steps order
-                description: to be represented on an application for a prohibited
-                  steps order.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE003A
-                meaning: Prohibited Steps Order-Appeal-S8
-                description: to be represented on an application for a prohibited
-                  steps order.  Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE003E
-                meaning: Prohibited Steps Order-Enforcement-S8
-                description: to be represented on an application for a prohibited
-                  steps order.  Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE004
-                meaning: Specific Issue Order
-                description: to be represented on an application for a specific issue
-                  order.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE004A
-                meaning: Specific Issue Order-Appeal-S8
-                description: to be represented on an application for a specific issue
-                  order.  Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE004E
-                meaning: Specific Issue Order-Enforcement-S8
-                description: to be represented on an application for a specific issue
-                  order.  Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE007
-                meaning: Vary/Discharge Prohib Steps Order-S8
-                description: to be represented on an application to vary or discharge
-                  a prohibited steps order.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE007A
-                meaning: Vary/Discharge Prohib Steps Order-Appeal-S8
-                description: to be represented on an application to vary or discharge
-                  a prohibited steps order.  Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE007E
-                meaning: Vary/Discharge Prohib Steps Order-Enforcement-S8
-                description: to be represented on an application to vary or discharge
-                  a prohibited steps order.  Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE008
-                meaning: Vary/Discharge Specific Issues Ord-S8
-                description: to be represented on an application to vary or discharge
-                  a specific issue order.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE008A
-                meaning: Vary/Discharge Specific Issues Ord-Appeal-S8
-                description: to be represented on an application to vary or discharge
-                  a specific issue order.  Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE008E
-                meaning: Vary/Discharge Specific Issues Ord-Enforcement-S8
-                description: to be represented on an application to vary or discharge
-                  a specific issue order.  Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE013
-                meaning: Child arrangements order (contact)
-                description: to be represented on an application for a child arrangements
-                  order-who the child(ren) spend time with.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE013A
-                meaning: CAO contact-Appeal
-                description: to be represented on an application for a child arrangements
-                  order-who the child(ren) spend time with. Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE013E
-                meaning: CAO contact-Enforcement
-                description: to be represented on an application for a child arrangements
-                  order-who the child(ren) spend time with. Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE014
-                meaning: Child arrangements order (residence)
-                description: to be represented on an application for a child arrangements
-                  order –where the child(ren) will live
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE014A
-                meaning: CAO residence-Appeal
-                description: to be represented on an application for a child arrangements
-                  order –where the child(ren) will live. Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE014E
-                meaning: CAO residence-Enforcement
-                description: to be represented on an application for a child arrangements
-                  order –where the child(ren) will live. Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE015
-                meaning: Vary CAO contact
-                description: to be represented on an application to vary/discharge
-                  a child arrangements order-who the child(ren) spend time with.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE015A
-                meaning: Vary CAO contact-Appeal
-                description: to be represented on an application to vary/discharge
-                  a child arrangements order-who the child(ren) spend time with. Appeals
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE015E
-                meaning: Vary CAO contact-Enforcement
-                description: to be represented on an application to vary/discharge
-                  a child arrangements order-who the child(ren) spend time with. Enforcement
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE016
-                meaning: Vary CAO residence
-                description: to be represented on an application to vary or discharge
-                  a child arrangements order –where the child(ren) will live.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE016A
-                meaning: Vary CAO residence-Appeal
-                description: to be represented on an application to vary or discharge
-                  a child arrangements order –where the child(ren) will live. Appeals
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE016E
-                meaning: Vary CAO residence-Enforcement
-                description: to be represented on an application to vary or discharge
-                  a child arrangements order –where the child(ren) will live. Enforcement
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE095
-                meaning: Enforcement order 11J-S8
-                description: to be represented on an application for an enforcement
-                  order under section 11J Children Act 1989.  Enforcement only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE095A
-                meaning: Enforcement order-Appeal-S8
-                description: to be represented on an application for an enforcement
-                  order under section 11J Children Act 1989.  Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE096E
-                meaning: Enforcement order+c’tal-S8
-                description: to be represented on an application for committal and
-                  for an enforcement order under section 11J Children Act 1989. Enforcement
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE097
-                meaning: Revocation enforcement-S8
-                description: to be represented on an application for the revocation
-                  of an enforcement order under section 11J and Schedule A1 Children
-                  Act 1989.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE097A
-                meaning: Revocation enforcement-Appeal-S8
-                description: to be represented on an application for the revocation
-                  of an enforcement order under section 11J and Schedule A1 Children
-                  Act 1989.  Appeals only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE099E
-                meaning: Amd enforcement-breach-S8
-                description: to be represented on an application, following breach,
-                  for an amendment to an enforcement order or for a further enforcement
-                  order under section 11J and Schedule A1 Children Act 1989.  Enforcement
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE100E
-                meaning: Breach enforcement-S8
-                description: to be represented on an application, following breach,
-                  for an amendment to an enforcement order or for a further enforcement
-                  order under section 11J and Schedule A1 Children Act 1989.  Enforcement
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE101A
-                meaning: Compensation-Appeal-S8
-                description: to be represented on an application for compensation
-                  for financial loss under section 11O Children Act 1989.  Appeals
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
-              - ccms_code: SE101E
-                meaning: Compensation-Enforcement-S8
-                description: to be represented on an application for compensation
-                  for financial loss under section 11O Children Act 1989.  Enforcement
-                  only.
-                full_s8_only: true
-                ccms_category_law: Family
-                ccms_matter_code: KSEC8
-                ccms_matter: Children - section 8
+              examples:
+                example_0:
+                  value:
+                  - ccms_code: DA001
+                    meaning: Inherent jurisdiction high court injunction
+                    description: to be represented on an application for an injunction,
+                      order or declaration under the inherent jurisdiction of the
+                      court.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA002
+                    meaning: Variation or discharge under section 5 protection from
+                      harassment act 1997
+                    description: to be represented on an application to vary or discharge
+                      an order under section 5 Protection from Harassment Act 1997
+                      where the parties are associated persons (as defined by Part
+                      IV Family Law Act 1996).
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA003
+                    meaning: Harassment - injunction
+                    description: to be represented in an action for an injunction
+                      under section 3 Protection from Harassment Act 1997.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA004
+                    meaning: Non-molestation order
+                    description: to be represented on an application for a non-molestation
+                      order.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA005
+                    meaning: Occupation order
+                    description: to be represented on an application for an occupation
+                      order.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA006
+                    meaning: Extend, variation or discharge - Part IV
+                    description: to be represented on an application to extend, vary
+                      or discharge an order under Part IV Family Law Act 1996
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA007
+                    meaning: Forced marriage protection order
+                    description: to be represented on an application for a forced
+                      marriage protection order
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: DA020
+                    meaning: FGM Protection Order
+                    description: To be represented on an application for a Female
+                      Genital Mutilation Protection Order under the Female Genital
+                      Mutilation Act.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: MINJN
+                    ccms_matter: Domestic abuse
+                  - ccms_code: SE003
+                    meaning: Prohibited steps order
+                    description: to be represented on an application for a prohibited
+                      steps order.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE003A
+                    meaning: Prohibited Steps Order-Appeal-S8
+                    description: to be represented on an application for a prohibited
+                      steps order.  Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE003E
+                    meaning: Prohibited Steps Order-Enforcement-S8
+                    description: to be represented on an application for a prohibited
+                      steps order.  Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE004
+                    meaning: Specific Issue Order
+                    description: to be represented on an application for a specific
+                      issue order.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE004A
+                    meaning: Specific Issue Order-Appeal-S8
+                    description: to be represented on an application for a specific
+                      issue order.  Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE004E
+                    meaning: Specific Issue Order-Enforcement-S8
+                    description: to be represented on an application for a specific
+                      issue order.  Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE007
+                    meaning: Vary/Discharge Prohib Steps Order-S8
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE007A
+                    meaning: Vary/Discharge Prohib Steps Order-Appeal-S8
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.  Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE007E
+                    meaning: Vary/Discharge Prohib Steps Order-Enforcement-S8
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.  Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE008
+                    meaning: Vary/Discharge Specific Issues Ord-S8
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE008A
+                    meaning: Vary/Discharge Specific Issues Ord-Appeal-S8
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.  Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE008E
+                    meaning: Vary/Discharge Specific Issues Ord-Enforcement-S8
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.  Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE013
+                    meaning: Child arrangements order (contact)
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE013A
+                    meaning: CAO contact-Appeal
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with. Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE013E
+                    meaning: CAO contact-Enforcement
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with. Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE014
+                    meaning: Child arrangements order (residence)
+                    description: to be represented on an application for a child arrangements
+                      order –where the child(ren) will live
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE014A
+                    meaning: CAO residence-Appeal
+                    description: to be represented on an application for a child arrangements
+                      order –where the child(ren) will live. Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE014E
+                    meaning: CAO residence-Enforcement
+                    description: to be represented on an application for a child arrangements
+                      order –where the child(ren) will live. Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE015
+                    meaning: Vary CAO contact
+                    description: to be represented on an application to vary/discharge
+                      a child arrangements order-who the child(ren) spend time with.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE015A
+                    meaning: Vary CAO contact-Appeal
+                    description: to be represented on an application to vary/discharge
+                      a child arrangements order-who the child(ren) spend time with.
+                      Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE015E
+                    meaning: Vary CAO contact-Enforcement
+                    description: to be represented on an application to vary/discharge
+                      a child arrangements order-who the child(ren) spend time with.
+                      Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE016
+                    meaning: Vary CAO residence
+                    description: to be represented on an application to vary or discharge
+                      a child arrangements order –where the child(ren) will live.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE016A
+                    meaning: Vary CAO residence-Appeal
+                    description: to be represented on an application to vary or discharge
+                      a child arrangements order –where the child(ren) will live.
+                      Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE016E
+                    meaning: Vary CAO residence-Enforcement
+                    description: to be represented on an application to vary or discharge
+                      a child arrangements order –where the child(ren) will live.
+                      Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE095
+                    meaning: Enforcement order 11J-S8
+                    description: to be represented on an application for an enforcement
+                      order under section 11J Children Act 1989.  Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE095A
+                    meaning: Enforcement order-Appeal-S8
+                    description: to be represented on an application for an enforcement
+                      order under section 11J Children Act 1989.  Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE096E
+                    meaning: Enforcement order+c’tal-S8
+                    description: to be represented on an application for committal
+                      and for an enforcement order under section 11J Children Act
+                      1989. Enforcement only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE097
+                    meaning: Revocation enforcement-S8
+                    description: to be represented on an application for the revocation
+                      of an enforcement order under section 11J and Schedule A1 Children
+                      Act 1989.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE097A
+                    meaning: Revocation enforcement-Appeal-S8
+                    description: to be represented on an application for the revocation
+                      of an enforcement order under section 11J and Schedule A1 Children
+                      Act 1989.  Appeals only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE099E
+                    meaning: Amd enforcement-breach-S8
+                    description: to be represented on an application, following breach,
+                      for an amendment to an enforcement order or for a further enforcement
+                      order under section 11J and Schedule A1 Children Act 1989.  Enforcement
+                      only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE100E
+                    meaning: Breach enforcement-S8
+                    description: to be represented on an application, following breach,
+                      for an amendment to an enforcement order or for a further enforcement
+                      order under section 11J and Schedule A1 Children Act 1989.  Enforcement
+                      only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE101A
+                    meaning: Compensation-Appeal-S8
+                    description: to be represented on an application for compensation
+                      for financial loss under section 11O Children Act 1989.  Appeals
+                      only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
+                  - ccms_code: SE101E
+                    meaning: Compensation-Enforcement-S8
+                    description: to be represented on an application for compensation
+                      for financial loss under section 11O Children Act 1989.  Enforcement
+                      only.
+                    full_s8_only: true
+                    ccms_category_law: Family
+                    ccms_matter_code: KSEC8
+                    ccms_matter: Children - section 8
   "/proceeding_types/searches":
     post:
       summary: Search proceeding types matching a search term, optionally excluding
@@ -702,12 +820,14 @@ paths:
           description: success
           content:
             application/json:
-              example: '{"success":true,"data":[{"meaning":"Harassment - injunction","ccms_code":"DA003","description":"to
-                be represented in an action for an injunction under section 3 Protection
-                from Harassment Act 1997.","full_s8_only":false,"ccms_category_law":"Family","ccms_matter":"Domestic
-                abuse"},{"meaning":"Non-molestation order","ccms_code":"DA004","description":"to
-                be represented on an application for a non-molestation order.","full_s8_only":false,"ccms_category_law":"Family","ccms_matter":"Domestic
-                abuse"}]}'
+              examples:
+                example_0:
+                  value: '{"success":true,"data":[{"meaning":"Harassment - injunction","ccms_code":"DA003","description":"to
+                    be represented in an action for an injunction under section 3
+                    Protection from Harassment Act 1997.","full_s8_only":false,"ccms_category_law":"Family","ccms_matter":"Domestic
+                    abuse"},{"meaning":"Non-molestation order","ccms_code":"DA004","description":"to
+                    be represented on an application for a non-molestation order.","full_s8_only":false,"ccms_category_law":"Family","ccms_matter":"Domestic
+                    abuse"}]}'
       requestBody:
         content:
           application/json:
@@ -744,134 +864,138 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-                success: true
-                ccms_code: SE013
-                meaning: Child arrangements order (contact)
-                ccms_category_law_code: MAT
-                ccms_matter_code: KSEC8
-                name: child_arrangements_order_contact
-                description: to be represented on an application for a child arrangements
-                  order-who the child(ren) spend time with.
-                full_s8_only: false
-                ccms_category_law: Family
-                ccms_matter: Children - section 8
-                cost_limitations:
-                  substantive:
-                    start_date: '1970-01-01'
-                    value: '25000.0'
-                  delegated_functions:
-                    start_date: '2021-09-13'
-                    value: '2250.0'
-                default_scope_limitations:
-                  substantive:
-                    code: FM059
-                    meaning: FHH Children
-                    description: Limited to Family Help (Higher) and to all steps
-                      necessary to negotiate and conclude a settlement. To include
-                      the issue of proceedings and representation in those proceedings
-                      save in relation to or at a contested final hearing.
-                  delegated_functions:
-                    code: CV117
-                    meaning: Interim order inc. return date
-                    description: Limited to all steps necessary to apply for an interim
-                      order; where application is made without notice to include representation
-                      on the return date.
-                service_levels:
-                - level: 1
-                  name: Family Help (Higher)
-                  stage: 1
-                  proceeding_default: true
-                - level: 3
-                  name: Full Representation
-                  stage: 8
-                  proceeding_default: false
+              examples:
+                example_0:
+                  value:
+                    success: true
+                    ccms_code: SE013
+                    meaning: Child arrangements order (contact)
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    name: child_arrangements_order_contact
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with.
+                    full_s8_only: false
+                    ccms_category_law: Family
+                    ccms_matter: Children - section 8
+                    cost_limitations:
+                      substantive:
+                        start_date: '1970-01-01'
+                        value: '25000.0'
+                      delegated_functions:
+                        start_date: '2021-09-13'
+                        value: '2250.0'
+                    default_scope_limitations:
+                      substantive:
+                        code: FM059
+                        meaning: FHH Children
+                        description: Limited to Family Help (Higher) and to all steps
+                          necessary to negotiate and conclude a settlement. To include
+                          the issue of proceedings and representation in those proceedings
+                          save in relation to or at a contested final hearing.
+                      delegated_functions:
+                        code: CV117
+                        meaning: Interim order inc. return date
+                        description: Limited to all steps necessary to apply for an
+                          interim order; where application is made without notice
+                          to include representation on the return date.
+                    service_levels:
+                    - level: 1
+                      name: Family Help (Higher)
+                      stage: 1
+                      proceeding_default: true
+                    - level: 3
+                      name: Full Representation
+                      stage: 8
+                      proceeding_default: false
         '400':
           description: Bad request
           content:
             application/json:
-              example:
-                request_id:
-                success: false
-                error_class: ActiveRecord::RecordNotFound
-                message: 'No such proceeding type: ''XX999'''
-                backtrace:
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activerecord-7.0.3.1/lib/active_record/relation/finder_methods.rb:378:in
-                  `raise_record_not_found_exception!'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activerecord-7.0.3.1/lib/active_record/core.rb:330:in
-                  `find_by!'"
-                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:85:in
-                  `proceeding_type'"
-                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:33:in
-                  `add_matter_type_to_response'"
-                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:25:in
-                  `populate_response'"
-                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:16:in
-                  `call'"
-                - "/Users/stephenrichards/moj/lfa/app/services/proceeding_type_service.rb:5:in
-                  `call'"
-                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
-                  `block (4 levels) in <top (required)>'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `module_exec'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `subclass'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
-                  `block in define_example_group_method'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:56:in
-                  `response'"
-                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:22:in
-                  `block (3 levels) in <top (required)>'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `module_exec'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `subclass'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
-                  `block in define_example_group_method'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:14:in
-                  `block (2 levels) in <module:ExampleGroupHelpers>'"
-                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:11:in
-                  `block (2 levels) in <top (required)>'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `module_exec'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `subclass'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
-                  `block in define_example_group_method'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rswag-specs-2.5.1/lib/rswag/specs/example_group_helpers.rb:8:in
-                  `path'"
-                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:4:in
-                  `block in <top (required)>'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `module_exec'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
-                  `subclass'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
-                  `block in define_example_group_method'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/dsl.rb:43:in
-                  `block in expose_example_group_alias'"
-                - "/Users/stephenrichards/moj/lfa/spec/requests/swagger_docs/proceeding_types_spec.rb:3:in
-                  `<top (required)>'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
-                  `load'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
-                  `load_file_handling_errors'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1615:in
-                  `block in load_spec_files'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
-                  `each'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
-                  `load_spec_files'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:102:in
-                  `setup'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:86:in
-                  `run'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
-                  `run'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
-                  `invoke'"
-                - "/Users/stephenrichards/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.11.0/exe/rspec:4:in
-                  `<main>'"
+              examples:
+                example_0:
+                  value:
+                    request_id:
+                    success: false
+                    error_class: ActiveRecord::RecordNotFound
+                    message: 'No such proceeding type: ''XX999'''
+                    backtrace:
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/relation/finder_methods.rb:378:in
+                      `raise_record_not_found_exception!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/core.rb:330:in
+                      `find_by!'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:85:in
+                      `proceeding_type'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:33:in
+                      `add_matter_type_to_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:25:in
+                      `populate_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:16:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:5:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:23:in
+                      `block (4 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `module_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `subclass'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                      `block in define_example_group_method'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.6.0/lib/rswag/specs/example_group_helpers.rb:56:in
+                      `response'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:22:in
+                      `block (3 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `module_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `subclass'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                      `block in define_example_group_method'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.6.0/lib/rswag/specs/example_group_helpers.rb:14:in
+                      `block (2 levels) in <module:ExampleGroupHelpers>'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:11:in
+                      `block (2 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `module_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `subclass'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                      `block in define_example_group_method'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.6.0/lib/rswag/specs/example_group_helpers.rb:8:in
+                      `path'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:4:in
+                      `block in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `module_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:398:in
+                      `subclass'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:271:in
+                      `block in define_example_group_method'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/dsl.rb:43:in
+                      `block in expose_example_group_alias'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/requests/swagger_docs/proceeding_types_spec.rb:3:in
+                      `<top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
+                      `load'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2115:in
+                      `load_file_handling_errors'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1615:in
+                      `block in load_spec_files'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:1613:in
+                      `load_spec_files'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:102:in
+                      `setup'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:86:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                      `invoke'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/exe/rspec:4:in
+                      `<main>'"
   "/proceeding_types/threshold_waivers":
     post:
       summary: Return details of threshold waivers for specified proceeding types
@@ -891,28 +1015,30 @@ paths:
           description: successful
           content:
             application/json:
-              example:
-                request_id: ff9679d7-ca3e-40b8-a47e-5006895d9026
-                success: true
-                proceeding_types:
-                - ccms_code: DA001
-                  full_s8_only: false
-                  matter_type: Domestic abuse
-                  gross_income_upper: true
-                  disposable_income_upper: true
-                  capital_upper: true
-                - ccms_code: DA003
-                  full_s8_only: false
-                  matter_type: Domestic abuse
-                  gross_income_upper: true
-                  disposable_income_upper: true
-                  capital_upper: true
-                - ccms_code: SE014
-                  full_s8_only: false
-                  matter_type: Children - section 8
-                  gross_income_upper: false
-                  disposable_income_upper: false
-                  capital_upper: false
+              examples:
+                example_0:
+                  value:
+                    request_id: ff9679d7-ca3e-40b8-a47e-5006895d9026
+                    success: true
+                    proceeding_types:
+                    - ccms_code: DA001
+                      full_s8_only: false
+                      matter_type: Domestic abuse
+                      gross_income_upper: true
+                      disposable_income_upper: true
+                      capital_upper: true
+                    - ccms_code: DA003
+                      full_s8_only: false
+                      matter_type: Domestic abuse
+                      gross_income_upper: true
+                      disposable_income_upper: true
+                      capital_upper: true
+                    - ccms_code: SE014
+                      full_s8_only: false
+                      matter_type: Children - section 8
+                      gross_income_upper: false
+                      disposable_income_upper: false
+                      capital_upper: false
       requestBody:
         content:
           application/json:

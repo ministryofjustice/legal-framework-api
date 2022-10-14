@@ -1,47 +1,80 @@
 ---
 # This file lists the proceeding types by ccms_code, and for each a list of the names of the merits tasks that the proceeding requires.
 #
-:DA001:
+- ccms_code: "DA001"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA002:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA002"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA003:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA003"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA004:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA004"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA005:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA005"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA006:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA006"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA007:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA007"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:DA020:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "DA020"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
-:SE003:
+  - domestic_abuse_with_non_applicant:
+    - client_denial_of_allegation
+    - client_offer_of_undertakings
+- ccms_code: "SE003"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
@@ -49,7 +82,8 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
-:SE004:
+- ccms_code: "SE004"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
@@ -57,7 +91,8 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
-:SE013:
+- ccms_code: "SE013"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case
@@ -65,7 +100,8 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
-:SE014:
+- ccms_code: "SE014"
+  questions:
   - latest_incident_details
   - opponent_details
   - statement_of_case

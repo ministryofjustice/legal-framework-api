@@ -1,0 +1,38 @@
+{
+  "id": "file://#{@schema_dir}/civil_merits_questions.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Legal Framework Api civil_merits_questions schema",
+  "type": "object",
+  "required": [
+    "request_id",
+    "proceedings"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "proceedings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "ccms_code",
+          "delegated_functions_used",
+          "client_involvement_type"
+        ],
+        "properties": {
+          "ccms_code": {
+            "enum": <%= ProceedingType.pluck(:ccms_code).as_json %>
+          },
+          "delegated_functions_used": {
+            "type": "boolean"
+          },
+          "client_involvement_type": {
+            "enum": <%= ClientInvolvementType.pluck(:ccms_code).as_json %>
+          }
+        }
+      }
+    }
+  }
+}
