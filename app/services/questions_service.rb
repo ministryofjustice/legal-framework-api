@@ -1,6 +1,4 @@
 class QuestionsService
-  class InvalidSubmissionError < StandardError; end
-
   def initialize(question_params)
     @question_params = JSON.parse(question_params, symbolize_names: true)
     @request_id =  @question_params[:request_id]
@@ -14,8 +12,6 @@ class QuestionsService
   end
 
   def call
-    raise InvalidSubmissionError, "Must specify at least one proceeding" if @proceedings.empty?
-
     if json_validator.valid?
       @proceedings.each { |proceeding| add_tasks_to_response(proceeding) }
     else
