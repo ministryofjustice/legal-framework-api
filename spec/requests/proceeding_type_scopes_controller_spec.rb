@@ -79,13 +79,7 @@ RSpec.describe "ProceedingTypeScopesController", type: :request do
               code: "CV079",
               meaning: "Counsel's Opinion",
               description: "Limited to obtaining external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available.",
-              additional_params: [
-                {
-                  name: "hearing_date",
-                  type: "date",
-                  mandatory: true,
-                },
-              ],
+              additional_params: [],
             },
             {
               code: "FM019",
