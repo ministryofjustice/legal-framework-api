@@ -84,8 +84,10 @@ RSpec.describe QuestionsService do
     context "when no proceedings data is supplied" do
       let(:proceedings) { [] }
 
-      it "raises an error" do
-        expect { question_service }.to raise_error(QuestionsService::InvalidSubmissionError, "Must specify at least one proceeding")
+      it "returns error" do
+        response = question_service
+        expect(response[:success]).to be false
+        expect(response[:errors]).to match [/The property '#\/proceedings' did not contain a minimum number of items 1 in schema file/]
       end
     end
 
