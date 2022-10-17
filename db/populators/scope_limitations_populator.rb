@@ -1,6 +1,6 @@
 class ScopeLimitationsPopulator
   DATA_FILE = Rails.root.join("db/seed_data/scope_limitations.yml").freeze
-  HEARING_DATE_CODES = %w[CV118 CV027 CV079].freeze
+  HEARING_DATE_CODES = %w[CV118 CV027].freeze
   LIMITATION_NOTE_CODES = %w[APL13 APL20 APL29 APL50 APL53 APL56 APL67 APL68].freeze
 
   def self.call
