@@ -33,7 +33,7 @@ RSpec.describe "civil_merits_questions", type: :request do
                                   description: "Client generated request id that will be echoed back in the response" },
                     proceedings: {
                       type: :array,
-                      description: "something something data",
+                      description: "An array of hashes containing ccms_code, delegated_function_used and client_involvement_type as keys",
                       items: {
                         type: :object,
                         required: %i[ccms_code delegated_function_used client_involvement_type],
