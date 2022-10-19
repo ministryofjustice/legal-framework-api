@@ -43,6 +43,14 @@ RSpec.describe ProceedingTypeService do
         expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
+
+    context "with a valid new s8 proceeding type" do
+      let(:ccms_code) { %w[SE003A] }
+
+      it "returns valid response without scope limitations or service levels" do
+        expect(proceeding_type_service_response).to eq expected_se003a_response
+      end
+    end
   end
 
   def expected_da003_response
@@ -148,6 +156,33 @@ RSpec.describe ProceedingTypeService do
           proceeding_default: false,
         },
       ],
+    }
+  end
+
+  def expected_se003a_response
+    {
+      success: true,
+      ccms_code: "SE003A",
+      meaning: "Prohibited Steps Order-Appeal-S8",
+      ccms_category_law_code: "MAT",
+      ccms_matter_code: "KSEC8",
+      name: "prohibited_steps_order_appeal_s8",
+      description: "to be represented on an application for a prohibited steps order.  Appeals only.",
+      full_s8_only: true,
+      ccms_category_law: "Family",
+      ccms_matter: "Children - section 8",
+      cost_limitations: {
+        substantive: {
+          start_date: "1970-01-01",
+          value: "25000.0",
+        },
+        delegated_functions: {
+          start_date: "2021-09-13",
+          value: "2250.0",
+        },
+      },
+      default_scope_limitations: {},
+      service_levels: [],
     }
   end
 end

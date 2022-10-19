@@ -55,6 +55,8 @@ private
   def add_scope_limitations_to_response
     scl = substantive_scope_limitations
     dfcl = delegated_functions_scope_limitations
+    return unless scl && dfcl
+
     @response[:default_scope_limitations] = { substantive: { code: scl.code, meaning: scl.meaning, description: scl.description },
                                               delegated_functions: { code: dfcl.code, meaning: dfcl.meaning, description: dfcl.description } }
   end
@@ -74,11 +76,11 @@ private
   end
 
   def delegated_functions_scope_limitations
-    proceeding_type.proceeding_type_scope_limitations.default_delegated_functions_scope_limitation
+    proceeding_type.proceeding_type_scope_limitations&.default_delegated_functions_scope_limitation
   end
 
   def substantive_scope_limitations
-    proceeding_type.proceeding_type_scope_limitations.default_substantive_scope_limitation
+    proceeding_type.proceeding_type_scope_limitations&.default_substantive_scope_limitation
   end
 
   def proceeding_type
