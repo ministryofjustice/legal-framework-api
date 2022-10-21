@@ -63,7 +63,6 @@ RSpec.describe ThresholdWaiverService do
           expect(response[:success]).to be false
           expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
           expect(response[:message]).to match "Couldn't find ProceedingType"
-          expect(response[:backtrace]).to be_instance_of(Array)
         end
       end
 
@@ -83,7 +82,6 @@ RSpec.describe ThresholdWaiverService do
           expect(response[:success]).to be false
           expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
           expect(response[:message]).to match "Couldn't find ClientInvolvementType"
-          expect(response[:backtrace]).to be_instance_of(Array)
         end
       end
 
@@ -96,7 +94,6 @@ RSpec.describe ThresholdWaiverService do
           expect(response[:success]).to be false
           expect(response[:error_class]).to eq "ThresholdWaiverService::ThresholdWaiverServiceError"
           expect(response[:message]).to eq "Must specify at least one proceeding type"
-          expect(response[:backtrace]).to be_instance_of(Array)
         end
       end
     end
@@ -187,7 +184,6 @@ RSpec.describe ThresholdWaiverService do
           expect(response[:success]).to be false
           expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
           expect(response[:message]).to match "Couldn't find ProceedingType"
-          expect(response[:backtrace]).to be_instance_of(Array)
         end
       end
 
@@ -200,7 +196,6 @@ RSpec.describe ThresholdWaiverService do
           expect(response[:success]).to be false
           expect(response[:error_class]).to eq "ThresholdWaiverService::ThresholdWaiverServiceError"
           expect(response[:message]).to eq "Must specify at least one proceeding type"
-          expect(response[:backtrace]).to be_instance_of(Array)
         end
       end
     end

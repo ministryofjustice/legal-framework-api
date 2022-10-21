@@ -28,7 +28,6 @@ RSpec.describe ProceedingTypeService do
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
         expect(response[:message]).to match("No such proceeding type: 'XX001'")
-        expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
 
@@ -40,7 +39,6 @@ RSpec.describe ProceedingTypeService do
         expect(response[:success]).to be false
         expect(response[:error_class]).to eq "ProceedingTypeService::ProceedingTypeServiceError"
         expect(response[:message]).to eq "Must specify a proceeding type"
-        expect(response[:backtrace]).to be_instance_of(Array)
       end
     end
 
