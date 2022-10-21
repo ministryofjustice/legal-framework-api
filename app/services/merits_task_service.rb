@@ -40,7 +40,7 @@ private
   end
 
   def add_application_level_tasks_to_response(proceeding_type)
-    applicable_tasks = proceeding_type.application_tasks.where("proceeding_type_merits_tasks.display_rules IS NULL")
+    applicable_tasks = proceeding_type.application_tasks.where("display_rules IS NULL OR display_rules = 'always_unless_all_da_and_non_applicant'")
     applicable_tasks.each do |task|
       @response[:application][:tasks][task.name] = task.dependency_names
     end
