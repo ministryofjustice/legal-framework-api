@@ -3,7 +3,8 @@
 #
 - ccms_code: "DA001"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+    - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -12,7 +13,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA002"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -21,7 +23,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA003"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -30,7 +33,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA004"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -39,7 +43,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA005"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -48,7 +53,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA006"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -57,7 +63,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA007"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -66,7 +73,8 @@
     - client_offer_of_undertakings
 - ccms_code: "DA020"
   questions:
-  - latest_incident_details
+  - always_unless_all_da_and_non_applicant:
+      - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
