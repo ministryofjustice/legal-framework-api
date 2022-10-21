@@ -40,7 +40,6 @@ paths:
                     success: true
                     application:
                       tasks:
-                        latest_incident_details: []
                         opponent_details: []
                         statement_of_case: []
                         client_denial_of_allegation: []
@@ -204,6 +203,266 @@ paths:
                     error_class: ActiveRecord::RecordNotFound
                     message: Couldn't find ProceedingType with [WHERE "proceeding_types"."ccms_code"
                       = $1]
+<<<<<<< HEAD
+=======
+                    backtrace:
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/relation/finder_methods.rb:378:in
+                      `raise_record_not_found_exception!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/core.rb:330:in
+                      `find_by!'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/merits_task_service.rb:37:in
+                      `add_tasks_to_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/merits_task_service.rb:17:in
+                      `block in call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/merits_task_service.rb:17:in
+                      `each'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/merits_task_service.rb:17:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/merits_task_service.rb:5:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/controllers/merits_tasks_controller.rb:6:in
+                      `create'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/basic_implicit_render.rb:6:in
+                      `send_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:215:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rendering.rb:53:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:234:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:233:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rescue.rb:22:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:67:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `block in instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:66:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/params_wrapper.rb:259:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/railties/controller_runtime.rb:27:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:151:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:188:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:251:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:49:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:50:in
+                      `block in serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:852:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/etag.rb:27:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/conditional_get.rb:40:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/head.rb:12:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:27:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/debug_exceptions.rb:28:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/show_exceptions.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:40:in
+                      `call_app'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `block in tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/remote_ip.rb:93:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/request_id.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/runtime.rb:22:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/static.rb:23:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/sendfile.rb:110:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/host_authorization.rb:131:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/engine.rb:530:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:358:in
+                      `process_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:155:in
+                      `request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:279:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:22:in
+                      `post'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:370:in
+                      `post'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_helpers.rb:20:in
+                      `submit_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_group_helpers.rb:119:in
+                      `block in run_test!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:365:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:529:in
+                      `block in run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:615:in
+                      `block in run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `reverse_each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:484:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:505:in
+                      `run_before_example'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:261:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `block in with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `block in with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:626:in
+                      `block in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-rails-6.0.1/lib/rspec/rails/adapters.rb:75:in
+                      `block (2 levels) in <module:MinitestLifecycleAdapter>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:89:in
+                      `block (3 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/strategy.rb:30:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:34:in
+                      `block (2 levels) in cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:35:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:88:in
+                      `block (2 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:629:in
+                      `run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:259:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:646:in
+                      `block in run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:607:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (3 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (2 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2068:in
+                      `with_suite_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:116:in
+                      `block in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/reporter.rb:74:in
+                      `report'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:115:in
+                      `run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:89:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                      `invoke'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/exe/rspec:4:in
+                      `<main>'"
+>>>>>>> 0dffc9c (AP-3529: Regenerate swagger docs)
                   summary: Unsuccessful request
                   description: When invalid proceeding types are submitted an error
                     will be raised and returned to the users
@@ -972,6 +1231,266 @@ paths:
                     error_class: ActiveRecord::RecordNotFound
                     message: Couldn't find ProceedingType with [WHERE "proceeding_types"."ccms_code"
                       = $1]
+<<<<<<< HEAD
+=======
+                    backtrace:
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/relation/finder_methods.rb:378:in
+                      `raise_record_not_found_exception!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/core.rb:330:in
+                      `find_by!'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:48:in
+                      `add_proceeding_types_to_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:19:in
+                      `block in call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:19:in
+                      `each'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:19:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:5:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/controllers/proceeding_types/threshold_waivers_controller.rb:5:in
+                      `create'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/basic_implicit_render.rb:6:in
+                      `send_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:215:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rendering.rb:53:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:234:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:233:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rescue.rb:22:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:67:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `block in instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:66:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/params_wrapper.rb:259:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/railties/controller_runtime.rb:27:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:151:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:188:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:251:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:49:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:50:in
+                      `block in serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:852:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/etag.rb:27:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/conditional_get.rb:40:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/head.rb:12:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:27:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/debug_exceptions.rb:28:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/show_exceptions.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:40:in
+                      `call_app'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `block in tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/remote_ip.rb:93:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/request_id.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/runtime.rb:22:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/static.rb:23:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/sendfile.rb:110:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/host_authorization.rb:131:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/engine.rb:530:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:358:in
+                      `process_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:155:in
+                      `request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:279:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:22:in
+                      `post'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:370:in
+                      `post'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_helpers.rb:20:in
+                      `submit_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_group_helpers.rb:119:in
+                      `block in run_test!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:365:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:529:in
+                      `block in run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:615:in
+                      `block in run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `reverse_each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:484:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:505:in
+                      `run_before_example'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:261:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `block in with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `block in with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:626:in
+                      `block in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-rails-6.0.1/lib/rspec/rails/adapters.rb:75:in
+                      `block (2 levels) in <module:MinitestLifecycleAdapter>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:89:in
+                      `block (3 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/strategy.rb:30:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:34:in
+                      `block (2 levels) in cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:35:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:88:in
+                      `block (2 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:629:in
+                      `run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:259:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:646:in
+                      `block in run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:607:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (3 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (2 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2068:in
+                      `with_suite_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:116:in
+                      `block in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/reporter.rb:74:in
+                      `report'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:115:in
+                      `run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:89:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                      `invoke'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/exe/rspec:4:in
+                      `<main>'"
+>>>>>>> 0dffc9c (AP-3529: Regenerate swagger docs)
                   summary: Unsuccessful request
                   description: When invalid proceeding types are submitted an error
                     will be raised and returned to the users
@@ -1074,6 +1593,266 @@ paths:
                     success: false
                     error_class: ActiveRecord::RecordNotFound
                     message: 'No such proceeding type: ''AZ123'''
+<<<<<<< HEAD
+=======
+                    backtrace:
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/relation/finder_methods.rb:378:in
+                      `raise_record_not_found_exception!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/core.rb:330:in
+                      `find_by!'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:87:in
+                      `proceeding_type'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:33:in
+                      `add_matter_type_to_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:25:in
+                      `populate_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:16:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/proceeding_type_service.rb:5:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/controllers/proceeding_types_controller.rb:5:in
+                      `show'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/basic_implicit_render.rb:6:in
+                      `send_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:215:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rendering.rb:53:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:234:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:233:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rescue.rb:22:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:67:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `block in instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:66:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/params_wrapper.rb:259:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/railties/controller_runtime.rb:27:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:151:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:188:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:251:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:49:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:50:in
+                      `block in serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:852:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/etag.rb:27:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/conditional_get.rb:27:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/head.rb:12:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:27:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/debug_exceptions.rb:28:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/show_exceptions.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:40:in
+                      `call_app'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `block in tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/remote_ip.rb:93:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/request_id.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/runtime.rb:22:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/static.rb:23:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/sendfile.rb:110:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/host_authorization.rb:131:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/engine.rb:530:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:358:in
+                      `process_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:155:in
+                      `request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:279:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:16:in
+                      `get'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:370:in
+                      `get'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_helpers.rb:20:in
+                      `submit_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_group_helpers.rb:119:in
+                      `block in run_test!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:365:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:529:in
+                      `block in run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:615:in
+                      `block in run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `reverse_each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:484:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:505:in
+                      `run_before_example'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:261:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `block in with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `block in with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:626:in
+                      `block in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-rails-6.0.1/lib/rspec/rails/adapters.rb:75:in
+                      `block (2 levels) in <module:MinitestLifecycleAdapter>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:89:in
+                      `block (3 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/strategy.rb:30:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:34:in
+                      `block (2 levels) in cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:35:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:88:in
+                      `block (2 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:629:in
+                      `run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:259:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:646:in
+                      `block in run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:607:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (3 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (2 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2068:in
+                      `with_suite_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:116:in
+                      `block in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/reporter.rb:74:in
+                      `report'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:115:in
+                      `run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:89:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                      `invoke'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/exe/rspec:4:in
+                      `<main>'"
+>>>>>>> 0dffc9c (AP-3529: Regenerate swagger docs)
                   summary: Bad request
                   description: When a non-existent ccms_code is sent, an error is
                     generated from the json schema and returned
@@ -1131,6 +1910,266 @@ paths:
                     error_class: ActiveRecord::RecordNotFound
                     message: Couldn't find ProceedingType with [WHERE "proceeding_types"."ccms_code"
                       = $1]
+<<<<<<< HEAD
+=======
+                    backtrace:
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/relation/finder_methods.rb:378:in
+                      `raise_record_not_found_exception!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/core.rb:330:in
+                      `find_by!'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:48:in
+                      `add_proceeding_types_to_response'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:19:in
+                      `block in call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:19:in
+                      `each'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:19:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/services/threshold_waiver_service.rb:5:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/app/controllers/threshold_waivers_controller.rb:4:in
+                      `create'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/basic_implicit_render.rb:6:in
+                      `send_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:215:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rendering.rb:53:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:234:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/callbacks.rb:233:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/rescue.rb:22:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:67:in
+                      `block in process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `block in instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in
+                      `instrument'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/instrumentation.rb:66:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal/params_wrapper.rb:259:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activerecord-7.0.4/lib/active_record/railties/controller_runtime.rb:27:in
+                      `process_action'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/abstract_controller/base.rb:151:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:188:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_controller/metal.rb:251:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:49:in
+                      `dispatch'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:50:in
+                      `block in serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/journey/router.rb:32:in
+                      `serve'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/routing/route_set.rb:852:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/etag.rb:27:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/conditional_get.rb:40:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/head.rb:12:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:27:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:99:in
+                      `run_callbacks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/callbacks.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/debug_exceptions.rb:28:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/show_exceptions.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:40:in
+                      `call_app'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `block in call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `block in tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in
+                      `tagged'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/rack/logger.rb:25:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/remote_ip.rb:93:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/request_id.rb:26:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/runtime.rb:22:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/activesupport-7.0.4/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/executor.rb:14:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/static.rb:23:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-2.2.4/lib/rack/sendfile.rb:110:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/middleware/host_authorization.rb:131:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4/lib/rails/engine.rb:530:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:358:in
+                      `process_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rack-test-2.0.2/lib/rack/test.rb:155:in
+                      `request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:279:in
+                      `process'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:22:in
+                      `post'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/actionpack-7.0.4/lib/action_dispatch/testing/integration.rb:370:in
+                      `post'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_helpers.rb:20:in
+                      `submit_request'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rswag-specs-2.7.0/lib/rswag/specs/example_group_helpers.rb:119:in
+                      `block in run_test!'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:365:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:529:in
+                      `block in run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:528:in
+                      `run_owned_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:615:in
+                      `block in run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `reverse_each'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:614:in
+                      `run_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:484:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:505:in
+                      `run_before_example'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:261:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `block in with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `block in with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:626:in
+                      `block in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-rails-6.0.1/lib/rspec/rails/adapters.rb:75:in
+                      `block (2 levels) in <module:MinitestLifecycleAdapter>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:89:in
+                      `block (3 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/strategy.rb:30:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:34:in
+                      `block (2 levels) in cleaning'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/database_cleaner-core-2.0.1/lib/database_cleaner/cleaners.rb:35:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/.rvm/rubies/ruby-3.1.2/lib/ruby/3.1.0/forwardable.rb:238:in
+                      `cleaning'"
+                    - "/Users/colin.bruce/projects/laa-framework/spec/rails_helper.rb:88:in
+                      `block (2 levels) in <top (required)>'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:457:in
+                      `instance_exec'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:390:in
+                      `execute_with'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:628:in
+                      `block (2 levels) in run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:352:in
+                      `call'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:629:in
+                      `run_around_example_hooks_for'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/hooks.rb:486:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:468:in
+                      `with_around_example_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:511:in
+                      `with_around_and_singleton_context_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example.rb:259:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:646:in
+                      `block in run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:642:in
+                      `run_examples'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:607:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `block in run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/example_group.rb:608:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (3 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `map'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:121:in
+                      `block (2 levels) in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/configuration.rb:2068:in
+                      `with_suite_hooks'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:116:in
+                      `block in run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/reporter.rb:74:in
+                      `report'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:115:in
+                      `run_specs'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:89:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:71:in
+                      `run'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/lib/rspec/core/runner.rb:45:in
+                      `invoke'"
+                    - "/Users/colin.bruce/.rvm/gems/ruby-3.1.2/gems/rspec-core-3.11.0/exe/rspec:4:in
+                      `<main>'"
+>>>>>>> 0dffc9c (AP-3529: Regenerate swagger docs)
                   summary: Bad request
                   description: When a non-existent ccms_code is sent, an error is
                     generated and returned
