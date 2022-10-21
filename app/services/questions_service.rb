@@ -63,6 +63,11 @@ private
     @proceedings.select { |h| h[:ccms_code].match(/DA\d{3}/) && h[:client_involvement_type] != "A" }.any?
   end
 
+  def always_unless_all_da_and_non_applicant
+    matches = @proceedings.select { |h| h[:ccms_code].match(/DA\d{3}/) && h[:client_involvement_type] != "A" }
+    return true unless matches.present? && matches.all?
+  end
+
   def error_response
     {
       request_id: @request_id,

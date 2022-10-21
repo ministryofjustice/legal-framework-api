@@ -130,7 +130,6 @@ RSpec.describe QuestionsService do
       success: true,
       application: {
         tasks: {
-          "latest_incident_details" => [],
           "opponent_details" => [],
           "statement_of_case" => [],
           "client_denial_of_allegation" => [],
