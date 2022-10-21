@@ -14,7 +14,7 @@ The API is documented at /api-docs.
 The documentation is generated with swagger for ruby [RSWAG](https://github.com/rswag/rswag#readme) from specs
 in the `spec/requests/swagger_docs` folder and allows real requests to be made.
 
-If changes are made to files in this directory, regenerate the swagger documentation by executing `rake swag`.
+If changes are made to files in this directory, regenerate the swagger documentation by executing `NOCOVERAGE=true rake rswag`.
 
 
 ### Further reading

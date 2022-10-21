@@ -75,9 +75,6 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
-  # This should exclude all specs with metadata "swagger: true"
-  config.filter_run_excluding swagger: true unless ENV["SWAGGER"] == "true"
-
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
