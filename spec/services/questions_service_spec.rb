@@ -54,7 +54,7 @@ RSpec.describe QuestionsService do
       end
 
       it "returns valid response without domestic abuse/non applicant questions" do
-        expect(question_service).to eq expected_multiple_no_questions_response
+        expect(question_service).to eq expected_multiple_no_questions_response_with_defendant
       end
     end
 
@@ -111,6 +111,7 @@ RSpec.describe QuestionsService do
           "latest_incident_details" => [],
           "opponent_details" => [],
           "statement_of_case" => [],
+          "nature_of_urgency" => [],
         },
       },
       proceedings: [
@@ -134,6 +135,7 @@ RSpec.describe QuestionsService do
           "statement_of_case" => [],
           "client_denial_of_allegation" => [],
           "client_offer_of_undertakings" => [],
+          "nature_of_urgency" => [],
         },
       },
       proceedings: [
@@ -141,6 +143,7 @@ RSpec.describe QuestionsService do
           ccms_code: "DA005",
           tasks: {
             "chances_of_success" => [],
+            "opponents_application" => [],
           },
         },
       ],
@@ -157,6 +160,8 @@ RSpec.describe QuestionsService do
           "opponent_details" => [],
           "statement_of_case" => [],
           "children_application" => [],
+          "nature_of_urgency" => [],
+          "why_matter_opposed" => [],
         },
       },
       proceedings: [
@@ -172,6 +177,40 @@ RSpec.describe QuestionsService do
             "chances_of_success" => [],
             "children_proceeding" => %w[children_application],
             "attempts_to_settle" => [],
+          },
+        },
+      ],
+    }
+  end
+
+  def expected_multiple_no_questions_response_with_defendant
+    {
+      request_id:,
+      success: true,
+      application: {
+        tasks: {
+          "latest_incident_details" => [],
+          "opponent_details" => [],
+          "statement_of_case" => [],
+          "children_application" => [],
+          "nature_of_urgency" => [],
+          "why_matter_opposed" => [],
+        },
+      },
+      proceedings: [
+        {
+          ccms_code: "DA005",
+          tasks: {
+            "chances_of_success" => [],
+          },
+        },
+        {
+          ccms_code: "SE013",
+          tasks: {
+            "chances_of_success" => [],
+            "children_proceeding" => %w[children_application],
+            "attempts_to_settle" => [],
+            "opponents_application" => [],
           },
         },
       ],
