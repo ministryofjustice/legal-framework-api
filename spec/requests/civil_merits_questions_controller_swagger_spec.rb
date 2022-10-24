@@ -64,12 +64,15 @@ RSpec.describe "civil_merits_questions", type: :request do
                   latest_incident_details: [],
                   opponent_details: [],
                   statement_of_case: [],
+                  nature_of_urgency: [],
                 },
               },
               proceedings: [
                 {
                   ccms_code: "DA001",
-                  tasks: { chances_of_success: [] },
+                  tasks: {
+                    chances_of_success: [],
+                  },
                 },
               ],
             }
@@ -103,12 +106,16 @@ RSpec.describe "civil_merits_questions", type: :request do
                   statement_of_case: [],
                   client_denial_of_allegation: [],
                   client_offer_of_undertakings: [],
+                  nature_of_urgency: [],
                 },
               },
               proceedings: [
                 {
                   ccms_code: "DA001",
-                  tasks: { chances_of_success: [] },
+                  tasks: {
+                    chances_of_success: [],
+                    opponents_application: [],
+                  },
                 },
               ],
             }
