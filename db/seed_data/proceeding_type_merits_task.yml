@@ -11,6 +11,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+    - nature_of_urgency
+  - defendant_on_this_proceeding:
+    - opponents_application
 - ccms_code: "DA002"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -21,6 +25,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "DA003"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -31,6 +39,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "DA004"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -41,6 +53,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "DA005"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -51,6 +67,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "DA006"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -61,6 +81,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "DA007"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -71,6 +95,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "DA020"
   questions:
   - always_unless_all_da_and_non_applicant:
@@ -81,6 +109,10 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "SE003"
   questions:
   - latest_incident_details
@@ -90,6 +122,12 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
+  - prohibited_steps
+  - why_matter_opposed
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "SE004"
   questions:
   - latest_incident_details
@@ -99,6 +137,26 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
+  - specific_issue
+  - why_matter_opposed
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
+- ccms_code: "SE007"
+  questions:
+  - latest_incident_details
+  - opponent_details
+  - statement_of_case
+  - chances_of_success
+  - children_application
+  - children_proceeding
+  - attempts_to_settle
+  - reason_for_new_application
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "SE013"
   questions:
   - latest_incident_details
@@ -108,6 +166,11 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
+  - why_matter_opposed
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
 - ccms_code: "SE014"
   questions:
   - latest_incident_details
@@ -117,3 +180,8 @@
   - children_application
   - children_proceeding
   - attempts_to_settle
+  - why_matter_opposed
+  - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+  - defendant_on_this_proceeding:
+      - opponents_application
