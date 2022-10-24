@@ -27,6 +27,7 @@ paths:
                         latest_incident_details: []
                         opponent_details: []
                         statement_of_case: []
+                        nature_of_urgency: []
                     proceedings:
                     - ccms_code: DA001
                       tasks:
@@ -44,10 +45,12 @@ paths:
                         statement_of_case: []
                         client_denial_of_allegation: []
                         client_offer_of_undertakings: []
+                        nature_of_urgency: []
                     proceedings:
                     - ccms_code: DA001
                       tasks:
                         chances_of_success: []
+                        opponents_application: []
                   summary: Successful request with extra questions
                   description: Request a single proceeding, DA001, triggering additional,
                     domestic abuse, questions
@@ -172,22 +175,27 @@ paths:
                         opponent_details: []
                         statement_of_case: []
                         children_application: []
+                        why_matter_opposed: []
                     proceeding_types:
                     - ccms_code: DA005
                       tasks:
                         chances_of_success: []
+                        opponents_application: []
                     - ccms_code: SE004
                       tasks:
                         chances_of_success: []
                         children_proceeding:
                         - children_application
                         attempts_to_settle: []
+                        specific_issue: []
+                        opponents_application: []
                     - ccms_code: SE013
                       tasks:
                         chances_of_success: []
                         children_proceeding:
                         - children_application
                         attempts_to_settle: []
+                        opponents_application: []
                   summary: Successful request
                   description: A request for three proceedings returns a set of tasks
                     with dependencies
