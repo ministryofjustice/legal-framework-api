@@ -45,20 +45,21 @@ private
   def add_application_level_tasks_to_response(proceeding_type)
     applicable_tasks = proceeding_type.application_tasks
     applicable_tasks.each do |task|
-      display_rules = task.proceeding_type_merits_tasks.find_by(proceeding_type_id: proceeding_type.id).display_rules
-      display_task = display_rules.nil? || send(display_rules, proceeding_type)
-      @response[:application][:tasks][task.name] = task.dependency_names if display_task
+      @response[:application][:tasks][task.name] = task.dependency_names if display_rules_for(proceeding_type, task)
     end
   end
 
   def add_proceeding_level_tasks_to_response(proceeding_type, ccms_code)
     pt_hash = { ccms_code:, tasks: {} }
     proceeding_type.proceeding_tasks.each do |task|
-      display_rules = task.proceeding_type_merits_tasks.find_by(proceeding_type_id: proceeding_type.id).display_rules
-      display_task = display_rules.nil? || send(display_rules, proceeding_type)
-      pt_hash[:tasks][task.name] = task.dependency_names if display_task
+      pt_hash[:tasks][task.name] = task.dependency_names if display_rules_for(proceeding_type, task)
     end
     @response[:proceedings] << pt_hash
+  end
+
+  def display_rules_for(proceeding_type, task)
+    display_rules = task.proceeding_type_merits_tasks.find_by(proceeding_type_id: proceeding_type.id).display_rules
+    display_rules.nil? || send(display_rules, proceeding_type)
   end
 
   def domestic_abuse_with_non_applicant(_proceeding)
