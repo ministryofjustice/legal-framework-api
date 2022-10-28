@@ -115,7 +115,6 @@
       - opponents_application
 - ccms_code: "SE003"
   questions:
-  - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -130,7 +129,6 @@
       - opponents_application
 - ccms_code: "SE004"
   questions:
-  - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -145,7 +143,6 @@
       - opponents_application
 - ccms_code: "SE007"
   questions:
-  - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
@@ -173,7 +170,6 @@
       - opponents_application
 - ccms_code: "SE014"
   questions:
-  - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
