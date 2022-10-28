@@ -6,12 +6,18 @@ class MeritsTaskPopulator
     statement_of_case
     client_denial_of_allegation
     client_offer_of_undertakings
+    nature_of_urgency
+    why_matter_opposed
   ].freeze
 
   PROCEEDING_TYPE_MERITS_TASKS = %w[
     chances_of_success
     children_proceeding
     attempts_to_settle
+    specific_issue
+    prohibited_steps
+    opponents_application
+    reason_for_new_application
   ].freeze
 
   def self.call

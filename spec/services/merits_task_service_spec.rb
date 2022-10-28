@@ -65,6 +65,7 @@ RSpec.describe MeritsTaskService do
           ccms_code: "DA005",
           tasks: {
             "chances_of_success" => [],
+            "opponents_application" => [],
           },
         },
       ],
@@ -81,6 +82,7 @@ RSpec.describe MeritsTaskService do
           "opponent_details" => [],
           "statement_of_case" => [],
           "children_application" => [],
+          "why_matter_opposed" => [],
         },
       },
       proceeding_types: [
@@ -88,6 +90,7 @@ RSpec.describe MeritsTaskService do
           ccms_code: "DA005",
           tasks: {
             "chances_of_success" => [],
+            "opponents_application" => [],
           },
         },
         {
@@ -96,6 +99,8 @@ RSpec.describe MeritsTaskService do
             "chances_of_success" => [],
             "children_proceeding" => %w[children_application],
             "attempts_to_settle" => [],
+            "opponents_application" => [],
+            "prohibited_steps" => [],
           },
         },
         {
@@ -104,6 +109,7 @@ RSpec.describe MeritsTaskService do
             "chances_of_success" => [],
             "children_proceeding" => %w[children_application],
             "attempts_to_settle" => [],
+            "opponents_application" => [],
           },
         },
       ],
