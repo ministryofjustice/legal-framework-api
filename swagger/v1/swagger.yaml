@@ -175,6 +175,7 @@ paths:
                         opponent_details: []
                         statement_of_case: []
                         children_application: []
+                        laspo: []
                         why_matter_opposed: []
                     proceeding_types:
                     - ccms_code: DA005
