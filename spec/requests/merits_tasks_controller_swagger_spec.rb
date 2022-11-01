@@ -54,6 +54,7 @@ RSpec.describe "merits_tasks", type: :request do
                 "opponent_details" => [],
                 "statement_of_case" => [],
                 "children_application" => [],
+                "laspo" => [],
                 "why_matter_opposed" => [],
               },
             },

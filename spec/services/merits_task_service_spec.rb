@@ -82,6 +82,7 @@ RSpec.describe MeritsTaskService do
           "opponent_details" => [],
           "statement_of_case" => [],
           "children_application" => [],
+          "laspo" => [],
           "why_matter_opposed" => [],
         },
       },
