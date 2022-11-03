@@ -153,6 +153,7 @@
   - children_proceeding
   - attempts_to_settle
   - reason_for_new_application
+  - vary_order
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:

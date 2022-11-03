@@ -19,6 +19,7 @@ class MeritsTaskPopulator
     prohibited_steps
     opponents_application
     reason_for_new_application
+    vary_order
   ].freeze
 
   def self.call
