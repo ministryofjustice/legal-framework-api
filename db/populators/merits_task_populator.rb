@@ -8,6 +8,7 @@ class MeritsTaskPopulator
     client_offer_of_undertakings
     nature_of_urgency
     why_matter_opposed
+    laspo
   ].freeze
 
   PROCEEDING_TYPE_MERITS_TASKS = %w[

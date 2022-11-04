@@ -119,6 +119,7 @@
   - statement_of_case
   - chances_of_success
   - children_application
+  - laspo
   - children_proceeding
   - attempts_to_settle
   - prohibited_steps
@@ -133,6 +134,7 @@
   - statement_of_case
   - chances_of_success
   - children_application
+  - laspo
   - children_proceeding
   - attempts_to_settle
   - specific_issue
@@ -147,6 +149,7 @@
   - statement_of_case
   - chances_of_success
   - children_application
+  - laspo
   - children_proceeding
   - attempts_to_settle
   - reason_for_new_application
@@ -161,6 +164,7 @@
   - statement_of_case
   - chances_of_success
   - children_application
+  - laspo
   - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
@@ -174,6 +178,7 @@
   - statement_of_case
   - chances_of_success
   - children_application
+  - laspo
   - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
