@@ -22,6 +22,7 @@
   - opponent_details
   - statement_of_case
   - chances_of_success
+  - reason_for_new_application
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
@@ -78,6 +79,7 @@
   - opponent_details
   - statement_of_case
   - chances_of_success
+  - reason_for_new_application
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
