@@ -159,7 +159,6 @@
       - opponents_application
 - ccms_code: "SE013"
   questions:
-  - latest_incident_details
   - opponent_details
   - statement_of_case
   - chances_of_success
