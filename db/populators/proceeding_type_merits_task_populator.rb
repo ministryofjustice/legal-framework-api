@@ -15,8 +15,6 @@ class ProceedingTypeMeritsTaskPopulator
       total = @proceeding_type_keys.map { |p| p["questions"].map { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 }.sum }.sum
       raise ActiveRecord::Rollback unless ProceedingTypeMeritsTask.count == total
     end
-  rescue ActiveRecord::Rollback
-    Rails.logger.error "ProceedingTypeMeritsTask mismatch when generating seed data"
   end
 
 private
