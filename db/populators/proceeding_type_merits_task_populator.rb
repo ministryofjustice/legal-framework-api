@@ -6,10 +6,17 @@ class ProceedingTypeMeritsTaskPopulator
   end
 
   def call
-    proceeding_type_keys.each do |seed_hash|
-      @loop_index = 0
-      populate(seed_hash["ccms_code"], seed_hash["questions"])
+    ActiveRecord::Base.transaction do
+      ProceedingTypeMeritsTask.destroy_all
+      proceeding_type_keys.each do |seed_hash|
+        @loop_index = 0
+        populate(seed_hash["ccms_code"], seed_hash["questions"])
+      end
+      total = @proceeding_type_keys.map { |p| p["questions"].map { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 }.sum }.sum
+      raise ActiveRecord::Rollback unless ProceedingTypeMeritsTask.count == total
     end
+  rescue ActiveRecord::Rollback
+    Rails.logger.error "ProceedingTypeMeritsTask mismatch when generating seed data"
   end
 
 private
