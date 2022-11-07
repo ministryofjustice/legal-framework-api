@@ -66,9 +66,8 @@ private
     @proceedings.select { |h| h[:ccms_code].match(/DA\d{3}/) && h[:client_involvement_type] != "A" }.any?
   end
 
-  def always_unless_all_da_and_non_applicant(_proceeding)
-    matches = @proceedings.select { |h| h[:ccms_code].match(/DA\d{3}/) && h[:client_involvement_type] != "A" }
-    return true unless matches.present? && matches.all?
+  def at_least_one_domestic_abuse_with_applicant(_proceeding)
+    @proceedings.select { |h| h[:ccms_code].match(/DA\d{3}/) && h[:client_involvement_type] == "A" }.any?
   end
 
   def delegated_functions_on_any_proceeding(_proceeding)

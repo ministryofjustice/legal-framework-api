@@ -78,6 +78,27 @@ RSpec.describe QuestionsService do
         expect(question_service).to eq expected_multiple_no_questions_response
       end
     end
+
+    context "when there are two DA proceedings with one as Applicant and one as Defendant" do
+      let(:proceedings) do
+        [
+          {
+            ccms_code: "DA001",
+            delegated_functions_used: false,
+            client_involvement_type: "A",
+          },
+          {
+            ccms_code: "DA005",
+            delegated_functions_used: false,
+            client_involvement_type: "D",
+          },
+        ]
+      end
+
+      it "returns valid response that includes the latest_incident_details questions" do
+        expect(question_service).to eq expected_latest_incident_details_response
+      end
+    end
   end
 
   context "when the request fails" do
@@ -100,6 +121,37 @@ RSpec.describe QuestionsService do
         expect(response[:errors]).to match [/The property '#\/proceedings\/0\/client_involvement_type' value "X" did not match one of the following values: .* in schema file/]
       end
     end
+  end
+
+  def expected_latest_incident_details_response
+    {
+      request_id:,
+      success: true,
+      application: {
+        tasks: {
+          "latest_incident_details" => [],
+          "client_denial_of_allegation" => [],
+          "client_offer_of_undertakings" => [],
+          "opponent_details" => [],
+          "statement_of_case" => [],
+        },
+      },
+      proceedings: [
+        {
+          ccms_code: "DA001",
+          tasks: {
+            "chances_of_success" => [],
+          },
+        },
+        {
+          ccms_code: "DA005",
+          tasks: {
+            "chances_of_success" => [],
+            "opponents_application" => [],
+          },
+        },
+      ],
+    }
   end
 
   def expected_da005_applicant_response
