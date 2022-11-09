@@ -18,7 +18,7 @@ class MeritsTaskPopulator
     specific_issue
     prohibited_steps
     opponents_application
-    reason_for_new_application
+    vary_order
   ].freeze
 
   def self.call
@@ -26,6 +26,8 @@ class MeritsTaskPopulator
   end
 
   def call
+    destroy_unseeded_merits_tasks
+
     APPLICATION_MERITS_TASKS.each do |mt|
       populate(mt, ApplicationTask)
     end
@@ -40,5 +42,9 @@ private
   def populate(merits_task, klass)
     record = klass.find_by(name: merits_task) || klass.new
     record.update!(name: merits_task)
+  end
+
+  def destroy_unseeded_merits_tasks
+    MeritsTask.where.not(name: APPLICATION_MERITS_TASKS + PROCEEDING_TYPE_MERITS_TASKS).destroy_all
   end
 end

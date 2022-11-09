@@ -22,6 +22,7 @@
   - opponent_details
   - statement_of_case
   - chances_of_success
+  - vary_order
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
@@ -78,6 +79,7 @@
   - opponent_details
   - statement_of_case
   - chances_of_success
+  - vary_order
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
@@ -152,7 +154,7 @@
   - laspo
   - children_proceeding
   - attempts_to_settle
-  - reason_for_new_application
+  - vary_order
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
