@@ -33,6 +33,10 @@ gem "rack-cors"
 gem "rswag-api"
 gem "rswag-ui"
 
+# Sentry for error tracking
+gem "sentry-rails"
+gem "sentry-ruby"
+
 group :development, :test do
   gem "awesome_print"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

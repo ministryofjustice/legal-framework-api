@@ -260,6 +260,11 @@ GEM
     rubocop-rspec (2.14.1)
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
+    sentry-rails (5.6.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.6.0)
+    sentry-ruby (5.6.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     shellany (0.0.1)
     shoulda-matchers (5.2.0)
       activesupport (>= 5.2.0)
@@ -315,6 +320,8 @@ DEPENDENCIES
   rswag-ui
   rubocop-govuk
   rubocop-performance
+  sentry-rails
+  sentry-ruby
   shoulda-matchers
   simplecov
   simplecov-rcov
