@@ -62,7 +62,9 @@ RSpec.describe "civil_merits_questions", type: :request do
               application: {
                 tasks: {
                   latest_incident_details: [],
-                  opponent_details: [],
+                  opponent_name: [],
+                  opponent_mental_capacity: [],
+                  domestic_abuse_summary: [],
                   statement_of_case: [],
                   nature_of_urgency: [],
                 },
@@ -102,7 +104,8 @@ RSpec.describe "civil_merits_questions", type: :request do
               success: true,
               application: {
                 tasks: {
-                  opponent_details: [],
+                  opponent_name: [],
+                  opponent_mental_capacity: [],
                   statement_of_case: [],
                   client_denial_of_allegation: [],
                   client_offer_of_undertakings: [],

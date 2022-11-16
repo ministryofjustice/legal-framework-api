@@ -132,7 +132,9 @@ RSpec.describe QuestionsService do
           "latest_incident_details" => [],
           "client_denial_of_allegation" => [],
           "client_offer_of_undertakings" => [],
-          "opponent_details" => [],
+          "opponent_name" => [],
+          "opponent_mental_capacity" => [],
+          "domestic_abuse_summary" => [],
           "statement_of_case" => [],
         },
       },
@@ -161,7 +163,9 @@ RSpec.describe QuestionsService do
       application: {
         tasks: {
           "latest_incident_details" => [],
-          "opponent_details" => [],
+          "opponent_name" => [],
+          "opponent_mental_capacity" => [],
+          "domestic_abuse_summary" => [],
           "statement_of_case" => [],
           "nature_of_urgency" => [],
         },
@@ -183,7 +187,8 @@ RSpec.describe QuestionsService do
       success: true,
       application: {
         tasks: {
-          "opponent_details" => [],
+          "opponent_name" => [],
+          "opponent_mental_capacity" => [],
           "statement_of_case" => [],
           "client_denial_of_allegation" => [],
           "client_offer_of_undertakings" => [],
@@ -209,7 +214,9 @@ RSpec.describe QuestionsService do
       application: {
         tasks: {
           "latest_incident_details" => [],
-          "opponent_details" => [],
+          "opponent_name" => [],
+          "opponent_mental_capacity" => [],
+          "domestic_abuse_summary" => [],
           "statement_of_case" => [],
           "children_application" => [],
           "laspo" => [],
@@ -243,7 +250,9 @@ RSpec.describe QuestionsService do
       application: {
         tasks: {
           "latest_incident_details" => [],
-          "opponent_details" => [],
+          "opponent_name" => [],
+          "opponent_mental_capacity" => [],
+          "domestic_abuse_summary" => [],
           "statement_of_case" => [],
           "children_application" => [],
           "laspo" => [],

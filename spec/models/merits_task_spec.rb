@@ -4,7 +4,7 @@ RSpec.describe MeritsTask do
   describe "#dependencies" do
     context "when the task has no dependencies" do
       it "returns and empty collection" do
-        task = described_class.find_by!(name: "opponent_details")
+        task = described_class.find_by!(name: "domestic_abuse_summary")
         expect(task.dependencies).to be_empty
       end
     end
