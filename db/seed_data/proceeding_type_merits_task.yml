@@ -5,7 +5,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
     - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -19,7 +22,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -33,7 +39,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -47,7 +56,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -61,7 +73,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -75,7 +90,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -89,7 +107,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -103,7 +124,10 @@
   questions:
   - at_least_one_domestic_abuse_with_applicant:
       - latest_incident_details
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - domestic_abuse_with_non_applicant:
@@ -115,7 +139,8 @@
       - opponents_application
 - ccms_code: "SE003"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
   - children_application
@@ -130,7 +155,8 @@
       - opponents_application
 - ccms_code: "SE004"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
   - children_application
@@ -145,7 +171,8 @@
       - opponents_application
 - ccms_code: "SE007"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
   - children_application
@@ -159,7 +186,8 @@
       - opponents_application
 - ccms_code: "SE013"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
   - children_application
@@ -173,7 +201,8 @@
       - opponents_application
 - ccms_code: "SE014"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
   - children_application
