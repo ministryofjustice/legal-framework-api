@@ -16,7 +16,7 @@
 # [#, #uuid2, each section 8 proceeding id, true] * all section 8 proceedings
 #
 
-# Full Representation, domestic abuse proceeding, default
+# Full Representation, domestic abuse proceeding and Section 8, default
 - service_level_id: 3
   default: true
   proceeding_type_ids:
@@ -28,6 +28,29 @@
   - DA006
   - DA007
   - DA020
+  - SE003A
+  - SE004A
+  - SE007A
+  - SE008A
+  - SE013A
+  - SE014A
+  - SE015A
+  - SE016A
+  - SE095A
+  - SE097A
+  - SE101A
+  - SE003E
+  - SE004E
+  - SE007E
+  - SE008E
+  - SE013E
+  - SE014E
+  - SE015E
+  - SE016E
+  - SE096E
+  - SE099E
+  - SE100E
+  - SE101E
 
 # Full Representation, section 8 proceeding, not-default
 - service_level_id: 3
@@ -35,8 +58,14 @@
   proceeding_type_ids:
   - SE003
   - SE004
+  - SE007
+  - SE008
   - SE013
   - SE014
+  - SE015
+  - SE016
+  - SE095
+  - SE097
 
 # Family Help (Higher), section 8 proceeding, default
 - service_level_id: 1
@@ -44,5 +73,11 @@
   proceeding_type_ids:
   - SE003
   - SE004
+  - SE007
+  - SE008
   - SE013
   - SE014
+  - SE015
+  - SE016
+  - SE095
+  - SE097

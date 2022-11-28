@@ -12,8 +12,7 @@ RSpec.describe ProceedingTypeServiceLevelsPopulator do
       ProceedingTypeServiceLevel.all.map(&:destroy!)
     end
 
-    specify { expect { call }.to change(ProceedingTypeServiceLevel, :count).from(0).to(16) }
-
+    specify { expect { call }.to change(ProceedingTypeServiceLevel, :count).from(0).to(51) }
 
     context "when filtered" do
       before { call }
@@ -21,7 +20,7 @@ RSpec.describe ProceedingTypeServiceLevelsPopulator do
       describe "by full rep and default" do
         let(:full_rep_default) { ProceedingTypeServiceLevel.where(service_level_id: ServiceLevel.find_by(level: 3).id, proceeding_default: true).count }
 
-        it { expect(full_rep_default).to eq 8 }
+        it { expect(full_rep_default).to eq 31 }
       end
 
       describe "by full rep and non default" do
@@ -29,7 +28,7 @@ RSpec.describe ProceedingTypeServiceLevelsPopulator do
 
         before { call }
 
-        it { expect(full_rep_non_default).to eq 4 }
+        it { expect(full_rep_non_default).to eq 10 }
       end
 
       describe "by FHH and default" do
@@ -37,7 +36,7 @@ RSpec.describe ProceedingTypeServiceLevelsPopulator do
 
         before { call }
 
-        it { expect(fhh_default).to eq 4 }
+        it { expect(fhh_default).to eq 10 }
       end
     end
   end
