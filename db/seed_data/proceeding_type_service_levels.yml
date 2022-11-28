@@ -17,55 +17,32 @@
 #
 
 # Full Representation, domestic abuse proceeding, default
-- - 3
+- service_level_id: 3
+  default: true
+  proceeding_type_ids:
   - DA001
-  - true
-- - 3
   - DA002
-  - true
-- - 3
   - DA003
-  - true
-- - 3
   - DA004
-  - true
-- - 3
   - DA005
-  - true
-- - 3
   - DA006
-  - true
-- - 3
   - DA007
-  - true
-- - 3
   - DA020
-  - true
 
 # Full Representation, section 8 proceeding, not-default
-- - 3
+- service_level_id: 3
+  default: false
+  proceeding_type_ids:
   - SE003
-  - false
-- - 3
   - SE004
-  - false
-- - 3
   - SE013
-  - false
-- - 3
   - SE014
-  - false
 
 # Family Help (Higher), section 8 proceeding, default
-- - 1
+- service_level_id: 1
+  default: true
+  proceeding_type_ids:
   - SE003
-  - true
-- - 1
   - SE004
-  - true
-- - 1
   - SE013
-  - true
-- - 1
   - SE014
-  - true

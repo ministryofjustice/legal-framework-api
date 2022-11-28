@@ -14,13 +14,6 @@ RSpec.describe ProceedingTypeServiceLevelsPopulator do
 
     specify { expect { call }.to change(ProceedingTypeServiceLevel, :count).from(0).to(16) }
 
-    context "when filtered by full rep and default" do
-      let(:full_rep_default) { ProceedingTypeServiceLevel.where(service_level_id: ServiceLevel.find_by(level: 3).id, proceeding_default: true).count }
-
-      before { call }
-
-      it { expect(full_rep_default).to eq 8 }
-    end
 
     context "when filtered" do
       before { call }
