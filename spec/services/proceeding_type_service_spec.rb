@@ -180,7 +180,14 @@ RSpec.describe ProceedingTypeService do
         },
       },
       default_scope_limitations: {},
-      service_levels: [],
+      service_levels: [
+        {
+          level: 3,
+          name: "Full Representation",
+          proceeding_default: true,
+          stage: 8,
+        },
+      ],
     }
   end
 end
