@@ -179,7 +179,18 @@ RSpec.describe ProceedingTypeService do
           value: "2250.0",
         },
       },
-      default_scope_limitations: {},
+      default_scope_limitations: {
+        substantive: {
+          code: "CV079",
+          meaning: "Counsel's Opinion",
+          description: "Limited to obtaining external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available.",
+        },
+        delegated_functions: {
+          code: "CV118",
+          meaning: "Hearing",
+          description: "Limited to all steps up to and including the hearing on [see additional limitation notes]",
+        },
+      },
       service_levels: [
         {
           level: 3,
