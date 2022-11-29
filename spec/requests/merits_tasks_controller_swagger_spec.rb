@@ -51,7 +51,9 @@ RSpec.describe "merits_tasks", type: :request do
             application: {
               tasks: {
                 "latest_incident_details" => [],
-                "opponent_details" => [],
+                "opponent_name" => [],
+                "opponent_mental_capacity" => [],
+                "domestic_abuse_summary" => [],
                 "statement_of_case" => [],
                 "children_application" => [],
                 "laspo" => [],

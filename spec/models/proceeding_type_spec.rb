@@ -44,14 +44,14 @@ RSpec.describe ProceedingType do
       it "returns ordered list of all merits tasks" do
         rec = described_class.find_by(ccms_code: "DA003")
         tasks = rec.merits_tasks.pluck(:name)
-        expect(tasks).to eq %w[latest_incident_details opponent_details statement_of_case chances_of_success client_denial_of_allegation client_offer_of_undertakings nature_of_urgency opponents_application]
+        expect(tasks).to eq %w[latest_incident_details opponent_name opponent_mental_capacity domestic_abuse_summary statement_of_case chances_of_success client_denial_of_allegation client_offer_of_undertakings nature_of_urgency opponents_application]
       end
     end
 
     describe "application_tasks" do
       it "returns ordered list of application tasks only" do
         rec = described_class.find_by(ccms_code: "DA003")
-        expect(rec.application_tasks.map(&:name)).to eq %w[latest_incident_details opponent_details statement_of_case client_denial_of_allegation client_offer_of_undertakings nature_of_urgency]
+        expect(rec.application_tasks.map(&:name)).to eq %w[latest_incident_details opponent_name opponent_mental_capacity domestic_abuse_summary statement_of_case client_denial_of_allegation client_offer_of_undertakings nature_of_urgency]
       end
     end
 
