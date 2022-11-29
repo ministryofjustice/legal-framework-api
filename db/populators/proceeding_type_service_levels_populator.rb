@@ -17,11 +17,11 @@ class ProceedingTypeServiceLevelsPopulator
 private
 
   def populate(seed_data)
-    seed_data["proceeding_type_ids"].each do |proceeding_id|
+    seed_data["proceeding_type_ids"].each do |proceeding_ccms_code|
       record = ProceedingTypeServiceLevel.where(service_level_id: service_level_id(seed_data),
-                                                proceeding_type_id: proceeding_type_id(proceeding_id)).first_or_initialize
+                                                proceeding_type_id: proceeding_type_id(proceeding_ccms_code)).first_or_initialize
       record.update!(
-        proceeding_type_id: proceeding_type_id(proceeding_id),
+        proceeding_type_id: proceeding_type_id(proceeding_ccms_code),
         service_level_id: service_level_id(seed_data),
         proceeding_default: seed_data["default"],
       )
