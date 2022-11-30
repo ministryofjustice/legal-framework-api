@@ -16,56 +16,68 @@
 # [#, #uuid2, each section 8 proceeding id, true] * all section 8 proceedings
 #
 
-# Full Representation, domestic abuse proceeding, default
-- - 3
+# Full Representation, domestic abuse proceeding and Section 8, default
+- service_level_id: 3
+  default: true
+  proceeding_type_ids:
   - DA001
-  - true
-- - 3
   - DA002
-  - true
-- - 3
   - DA003
-  - true
-- - 3
   - DA004
-  - true
-- - 3
   - DA005
-  - true
-- - 3
   - DA006
-  - true
-- - 3
   - DA007
-  - true
-- - 3
   - DA020
-  - true
+  - SE003A
+  - SE004A
+  - SE007A
+  - SE008A
+  - SE013A
+  - SE014A
+  - SE015A
+  - SE016A
+  - SE095A
+  - SE097A
+  - SE101A
+  - SE003E
+  - SE004E
+  - SE007E
+  - SE008E
+  - SE013E
+  - SE014E
+  - SE015E
+  - SE016E
+  - SE096E
+  - SE099E
+  - SE100E
+  - SE101E
 
 # Full Representation, section 8 proceeding, not-default
-- - 3
+- service_level_id: 3
+  default: false
+  proceeding_type_ids:
   - SE003
-  - false
-- - 3
   - SE004
-  - false
-- - 3
+  - SE007
+  - SE008
   - SE013
-  - false
-- - 3
   - SE014
-  - false
+  - SE015
+  - SE016
+  - SE095
+  - SE097
 
 # Family Help (Higher), section 8 proceeding, default
-- - 1
+- service_level_id: 1
+  default: true
+  proceeding_type_ids:
   - SE003
-  - true
-- - 1
   - SE004
-  - true
-- - 1
+  - SE007
+  - SE008
   - SE013
-  - true
-- - 1
   - SE014
-  - true
+  - SE015
+  - SE016
+  - SE095
+  - SE097

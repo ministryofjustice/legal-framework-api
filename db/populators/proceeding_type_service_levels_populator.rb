@@ -11,35 +11,33 @@ class ProceedingTypeServiceLevelsPopulator
   end
 
   def call
-    seed_data.each { |seed_row| populate(seed_row) }
+    seed_data_keys.each { |seed_hash| populate(seed_hash) }
   end
 
 private
 
-  def populate(seed_row)
-    record = ProceedingTypeServiceLevel.where(service_level_id: service_level_id(seed_row),
-                                              proceeding_type_id: proceeding_type_id(seed_row)).first_or_initialize
-    record.update! attributes(seed_row)
+  def populate(seed_data)
+    seed_data["proceeding_type_ids"].each do |proceeding_ccms_code|
+      record = ProceedingTypeServiceLevel.where(service_level_id: service_level_id(seed_data),
+                                                proceeding_type_id: proceeding_type_id(proceeding_ccms_code)).first_or_initialize
+      record.update!(
+        proceeding_type_id: proceeding_type_id(proceeding_ccms_code),
+        service_level_id: service_level_id(seed_data),
+        proceeding_default: seed_data["default"],
+      )
+    end
   end
 
-  def seed_data
-    @seed_data ||= YAML.load_file(DATA_FILE)
-  end
-
-  def attributes(seed_row)
-    {
-      proceeding_type_id: proceeding_type_id(seed_row),
-      service_level_id: service_level_id(seed_row),
-      proceeding_default: seed_row[2],
-    }
+  def seed_data_keys
+    @seed_data_keys ||= YAML.load_file(DATA_FILE)
   end
 
   def service_level_id(seed_row)
-    service_levels.find { |service_level| service_level.level == seed_row[0] }.id
+    service_levels.find { |service_level| service_level.level == seed_row["service_level_id"] }.id
   end
 
-  def proceeding_type_id(seed_row)
-    proceeding_types.find { |proceeding_type| proceeding_type.ccms_code == seed_row[1] }.id
+  def proceeding_type_id(proceeding_code)
+    proceeding_types.find { |proceeding_type| proceeding_type.ccms_code == proceeding_code }.id
   end
 
   def proceeding_types

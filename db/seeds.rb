@@ -20,7 +20,6 @@ MeritsTaskPopulator.call
 ProceedingTypeMeritsTaskPopulator.call
 TaskDependencyPopulator.call
 ScopeLimitationsPopulator.call
-ProceedingTypeScopeLimitationsPopulator.call
 ServiceLevelsPopulator.call
 ProceedingTypeServiceLevelsPopulator.call
 ClientInvolvementTypesPopulator.call

@@ -76,11 +76,13 @@ private
   end
 
   def delegated_functions_scope_limitations
-    proceeding_type.proceeding_type_scope_limitations&.default_delegated_functions_scope_limitation
+    los = EligibleScopesService.default_service_level(proceeding_type.ccms_code)
+    ScopeLimitation.default_for(proceeding_type.ccms_code, "A", los, true)
   end
 
   def substantive_scope_limitations
-    proceeding_type.proceeding_type_scope_limitations&.default_substantive_scope_limitation
+    los = EligibleScopesService.default_service_level(proceeding_type.ccms_code)
+    ScopeLimitation.default_for(proceeding_type.ccms_code, "A", los, false)
   end
 
   def proceeding_type
