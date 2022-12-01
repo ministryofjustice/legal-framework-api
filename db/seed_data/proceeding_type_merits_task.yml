@@ -157,7 +157,10 @@
       - opponents_application
 - ccms_code: "SE003A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -172,7 +175,10 @@
       - opponents_application
 - ccms_code: "SE003E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -203,7 +209,10 @@
       - opponents_application
 - ccms_code: "SE004A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -218,7 +227,10 @@
       - opponents_application
 - ccms_code: "SE004E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -250,7 +262,10 @@
       - opponents_application
 - ccms_code: "SE007A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -266,7 +281,10 @@
       - opponents_application
 - ccms_code: "SE007E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -282,7 +300,10 @@
       - opponents_application
 - ccms_code: "SE008"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -298,7 +319,10 @@
       - opponents_application
 - ccms_code: "SE008A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -314,7 +338,10 @@
       - opponents_application
 - ccms_code: "SE008E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -345,7 +372,10 @@
       - opponents_application
 - ccms_code: SE013A
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -359,7 +389,10 @@
       - opponents_application
 - ccms_code: SE013E
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -388,7 +421,10 @@
       - opponents_application
 - ccms_code: "SE014A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -402,7 +438,10 @@
       - opponents_application
 - ccms_code: "SE014E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -416,7 +455,10 @@
       - opponents_application
 - ccms_code: "SE015"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -431,7 +473,10 @@
       - opponents_application
 - ccms_code: "SE015A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -446,7 +491,10 @@
       - opponents_application
 - ccms_code: "SE015E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -461,7 +509,10 @@
       - opponents_application
 - ccms_code: "SE016"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -476,7 +527,10 @@
       - opponents_application
 - ccms_code: "SE016A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -491,7 +545,10 @@
       - opponents_application
 - ccms_code: "SE016E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -506,7 +563,10 @@
       - opponents_application
 - ccms_code: "SE095"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -520,7 +580,10 @@
       - opponents_application
 - ccms_code: "SE095A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -534,7 +597,10 @@
       - opponents_application
 - ccms_code: "SE096E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -548,7 +614,10 @@
       - opponents_application
 - ccms_code: "SE097"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -562,7 +631,10 @@
       - opponents_application
 - ccms_code: "SE097A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -576,7 +648,10 @@
       - opponents_application
 - ccms_code: "SE099E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -590,7 +665,10 @@
       - opponents_application
 - ccms_code: "SE100E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -604,7 +682,10 @@
       - opponents_application
 - ccms_code: "SE101A"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
@@ -618,7 +699,10 @@
       - opponents_application
 - ccms_code: "SE101E"
   questions:
-  - opponent_details
+  - opponent_name
+  - opponent_mental_capacity
+  - at_least_one_domestic_abuse_with_applicant:
+    - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
   - children_application
