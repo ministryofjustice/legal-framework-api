@@ -9,7 +9,7 @@ jobs:
     name: Scan docker image
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Build docker image
       run: |
@@ -36,6 +36,6 @@ jobs:
         args: --file=Dockerfile
 
     - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v1
+      uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: snyk.sarif
