@@ -167,7 +167,6 @@ RSpec.describe QuestionsService do
           "opponent_mental_capacity" => [],
           "domestic_abuse_summary" => [],
           "statement_of_case" => [],
-          "nature_of_urgency" => [],
         },
       },
       proceedings: [

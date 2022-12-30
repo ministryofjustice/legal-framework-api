@@ -14,7 +14,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
     - nature_of_urgency
   - defendant_on_this_proceeding:
     - opponents_application
@@ -32,7 +32,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
@@ -49,7 +49,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
@@ -66,7 +66,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
@@ -83,7 +83,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
@@ -101,7 +101,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
@@ -118,7 +118,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
@@ -135,7 +135,7 @@
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
-  - delegated_functions_on_any_proceeding:
+  - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application

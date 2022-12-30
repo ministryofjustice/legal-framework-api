@@ -79,6 +79,10 @@ private
     match.present?
   end
 
+  def delegated_functions_and_domestic_abuse_with_non_applicant(_proceeding)
+    @proceedings.select { |p| p[:ccms_code].match(/DA\d{3}/) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }.any?
+  end
+
   def error_response
     {
       request_id: @request_id,
