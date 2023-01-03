@@ -1,5 +1,5 @@
 class QuestionsService
-  DA_CODE_REGEXP = /DA\d{3}/
+  DOMESTIC_ABUSE_CODE_REGEXP = /DA\d{3}/
 
   def initialize(question_params)
     @question_params = JSON.parse(question_params, symbolize_names: true)
@@ -65,11 +65,11 @@ private
   end
 
   def domestic_abuse_with_non_applicant(_proceeding)
-    @proceedings.select { |h| h[:ccms_code].match(DA_CODE_REGEXP) && h[:client_involvement_type] != "A" }.any?
+    @proceedings.select { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && h[:client_involvement_type] != "A" }.any?
   end
 
   def at_least_one_domestic_abuse_with_applicant(_proceeding)
-    @proceedings.select { |h| h[:ccms_code].match(DA_CODE_REGEXP) && h[:client_involvement_type] == "A" }.any?
+    @proceedings.select { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && h[:client_involvement_type] == "A" }.any?
   end
 
   def delegated_functions_on_any_proceeding(_proceeding)
@@ -82,7 +82,7 @@ private
   end
 
   def delegated_functions_and_domestic_abuse_with_non_applicant(_proceeding)
-    @proceedings.select { |p| p[:ccms_code].match(DA_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }.any?
+    @proceedings.select { |p| p[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }.any?
   end
 
   def error_response
