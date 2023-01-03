@@ -66,7 +66,6 @@ RSpec.describe "civil_merits_questions", type: :request do
                   opponent_mental_capacity: [],
                   domestic_abuse_summary: [],
                   statement_of_case: [],
-                  nature_of_urgency: [],
                 },
               },
               proceedings: [
