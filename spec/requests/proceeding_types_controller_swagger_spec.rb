@@ -27,7 +27,7 @@ RSpec.describe "proceeding_types", type: :request do
             description: "to be represented on an application for a prohibited steps order.",
             full_s8_only: false,
             ccms_category_law: "Family",
-            ccms_matter: "Children - section 8",
+            ccms_matter: "Section 8 orders",
             cost_limitations: {
               substantive: {
                 start_date: "1970-01-01",

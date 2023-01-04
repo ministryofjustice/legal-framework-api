@@ -1,7 +1,7 @@
 {
   "seed_data": [
     {
-      "matter_type": "Domestic abuse",
+      "matter_type": "Domestic Abuse",
       "client_involvement_type": "A",
       "gross_income_upper": true,
       "disposable_income_upper":true,

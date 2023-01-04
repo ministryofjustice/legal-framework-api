@@ -63,7 +63,7 @@ RSpec.describe ProceedingTypeService do
                    " section 3 Protection from Harassment Act 1997.",
       full_s8_only: false,
       ccms_category_law: "Family",
-      ccms_matter: "Domestic abuse",
+      ccms_matter: "Domestic Abuse",
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",
@@ -115,7 +115,7 @@ RSpec.describe ProceedingTypeService do
       description: "to be represented on an application for a prohibited steps order.",
       full_s8_only: false,
       ccms_category_law: "Family",
-      ccms_matter: "Children - section 8",
+      ccms_matter: "Section 8 orders",
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",
@@ -168,7 +168,7 @@ RSpec.describe ProceedingTypeService do
       description: "to be represented on an application for a prohibited steps order.  Appeals only.",
       full_s8_only: true,
       ccms_category_law: "Family",
-      ccms_matter: "Children - section 8",
+      ccms_matter: "Section 8 orders",
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",

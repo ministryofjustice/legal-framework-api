@@ -75,7 +75,7 @@ RSpec.describe "proceeding_types/searches_controller", type: :request do
                     description: "to be represented on an application for an occupation order.",
                     full_s8_only: false,
                     ccms_category_law: "Family",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "Domestic Abuse",
                   },
                 ],
             }
@@ -132,7 +132,7 @@ RSpec.describe "proceeding_types/searches_controller", type: :request do
                     description: "to be represented on an application for an injunction, order or declaration under the inherent jurisdiction of the court.",
                     full_s8_only: false,
                     ccms_category_law: "Family",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "Domestic Abuse",
                   },
                   {
                     meaning: "Harassment - injunction",
@@ -140,7 +140,7 @@ RSpec.describe "proceeding_types/searches_controller", type: :request do
                     description: "to be represented in an action for an injunction under section 3 Protection from Harassment Act 1997.",
                     full_s8_only: false,
                     ccms_category_law: "Family",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "Domestic Abuse",
                   },
                   {
                     meaning: "Non-molestation order",
@@ -148,7 +148,7 @@ RSpec.describe "proceeding_types/searches_controller", type: :request do
                     description: "to be represented on an application for a non-molestation order.",
                     full_s8_only: false,
                     ccms_category_law: "Family",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "Domestic Abuse",
                   },
                 ],
             }
