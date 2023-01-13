@@ -58,6 +58,7 @@ class ProceedingType < ApplicationRecord
 
   def self.populate
     ProceedingTypePopulator.call
+    DefaultCostLimitationPopulator.call
     refresh_text_searchable
   end
 
