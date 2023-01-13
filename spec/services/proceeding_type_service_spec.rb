@@ -172,7 +172,7 @@ RSpec.describe ProceedingTypeService do
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",
-          value: "25000.0",
+          value: "5000.0",
         },
         delegated_functions: {
           start_date: "2021-09-13",
