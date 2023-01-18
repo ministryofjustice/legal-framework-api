@@ -63,7 +63,7 @@ RSpec.describe ProceedingType do
     end
 
     context "with cost limitations" do
-      let(:pt) { described_class.first }
+      let(:pt) { described_class.find_by(ccms_code: "DA001") }
 
       around do |example|
         travel_to run_date
