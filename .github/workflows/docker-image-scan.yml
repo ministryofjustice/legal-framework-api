@@ -5,37 +5,8 @@ on:
 
 jobs:
   scan-docker-image:
-    runs-on: ubuntu-latest
-    name: Scan docker image
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Build docker image
-      run: |
-        docker build \
-          --tag legal-framework-application:scan \
-          --file Dockerfile .
-
-    - name: Scan docker image using Snyk
-      continue-on-error: true
-      uses: snyk/actions/docker@master
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        image: legal-framework-application:scan
-        args: --file=Dockerfile
-
-    - name: Monitor docker image using Snyk
-      uses: snyk/actions/docker@master
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        command: monitor
-        image: legal-framework-application:scan
-        args: --file=Dockerfile
-
-    - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: snyk.sarif
+    uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/snyk.yml@main
+    with:
+      tag: "legal-framework-application"
+    secrets:
+      snyk_token: ${{ secrets.SNYK_TOKEN }}
