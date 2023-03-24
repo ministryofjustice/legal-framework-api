@@ -8,7 +8,7 @@ executors:
       - image: cimg/base:2021.04
   cloud-platform-executor:
     docker:
-      - image: ministryofjustice/cloud-platform-tools:2.1
+      - image: ministryofjustice/cloud-platform-tools:2.3.0
         environment:
           GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
   linting-executor:
@@ -41,7 +41,6 @@ references:
     run:
       name: Build docker image
       command: |
-        $(aws ecr get-login --no-include-email)
         docker build \
         --build-arg BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z) \
         --build-arg BUILD_TAG="app-${CIRCLE_SHA1}" \
@@ -51,6 +50,7 @@ references:
     run:
       name: Push image to ecr repo
       command: |
+        aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin ${ECR_ENDPOINT}
         docker tag app "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
         docker push "${ECR_ENDPOINT}/laa-apply-for-legal-aid/legal-framework-api-uat-ecr:${CIRCLE_SHA1}"
 
