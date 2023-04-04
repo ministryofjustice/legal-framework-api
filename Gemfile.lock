@@ -320,7 +320,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 6.2)
   rack-cors
-  rails (~> 7.0.4)
+  rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails (~> 6.0, >= 6.0.1)
   rspec_junit_formatter
   rswag-api
@@ -340,4 +340,4 @@ RUBY VERSION
    ruby 3.2.0p0
 
 BUNDLED WITH
-   2.3.8
+   2.4.6
