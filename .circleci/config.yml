@@ -13,13 +13,13 @@ executors:
           GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
   linting-executor:
     docker:
-      - image: cimg/ruby:3.2.0-node
+      - image: cimg/ruby:3.2.2-node
         environment:
           RAILS_ENV: test
           TZ: "Europe/London"
   test-executor:
     docker:
-      - image: cimg/ruby:3.2.0-node
+      - image: cimg/ruby:3.2.2-node
         environment:
           RAILS_ENV: test
           PGHOST: localhost
@@ -76,7 +76,7 @@ references:
   restore_gems_cache: &restore_gems_cache
     restore_cache:
       keys:
-        - legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.2.0
+        - legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.2.2
   install_gems: &install_gems
     run:
       name: Install ruby gems
@@ -87,7 +87,7 @@ references:
         bundle install --jobs=4 && bundle clean
   save_gems_cache: &save_gems_cache
     save_cache:
-      key: legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.2.0
+      key: legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.2.2
       paths:
         - vendor/bundle
   install_packages_for_testing: &install_packages_for_testing
