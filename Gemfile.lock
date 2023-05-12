@@ -285,7 +285,7 @@ GEM
       simplecov (>= 0.4.1)
     simplecov_json_formatter (0.1.4)
     spring (4.1.1)
-    thor (1.2.1)
+    thor (1.2.2)
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
