@@ -127,7 +127,7 @@ RSpec.describe ScopeLimitation do
   describe "user_inputs" do
     let(:hearing_date) { ScopeUserInput.find_by(input_name: "hearing_date") }
     let(:limitation_note) { ScopeUserInput.find_by(input_name: "limitation_note") }
-    let(:scope) { create :scope_limitation }
+    let(:scope) { create(:scope_limitation) }
 
     context "when adding new user inputs" do
       it "creates a record in the join table" do
