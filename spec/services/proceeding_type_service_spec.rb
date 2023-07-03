@@ -59,8 +59,8 @@ RSpec.describe ProceedingTypeService do
       meaning: "Harassment - injunction",
       ccms_category_law_code: "MAT",
       ccms_matter_code: "MINJN",
-      description: "to be represented in an action for an injunction under"\
-                   " section 3 Protection from Harassment Act 1997.",
+      description: "to be represented in an action for an injunction under " \
+                   "section 3 Protection from Harassment Act 1997.",
       full_s8_only: false,
       ccms_category_law: "Family",
       ccms_matter: "Domestic abuse",
@@ -78,19 +78,19 @@ RSpec.describe ProceedingTypeService do
         substantive: {
           code: "AA019",
           meaning: "Injunction FLA-to final hearing",
-          description: "As to proceedings under Part IV Family Law Act 1996"\
-                       " limited to all steps up to and including obtaining and"\
-                       " serving a final order and in the event of breach leading"\
-                       " to the exercise of a power of arrest to representation on"\
-                       " the consideration of the breach by the court (but excluding"\
-                       " applying for a warrant of arrest, if not attached, and"\
-                       " representation in contempt proceedings).",
+          description: "As to proceedings under Part IV Family Law Act 1996 " \
+                       "limited to all steps up to and including obtaining and " \
+                       "serving a final order and in the event of breach leading " \
+                       "to the exercise of a power of arrest to representation on " \
+                       "the consideration of the breach by the court (but excluding " \
+                       "applying for a warrant of arrest, if not attached, and " \
+                       "representation in contempt proceedings).",
         },
         delegated_functions: {
           code: "CV117",
           meaning: "Interim order inc. return date",
-          description: "Limited to all steps necessary to apply for an interim order;"\
-                       " where application is made without notice to include representation on the return date.",
+          description: "Limited to all steps necessary to apply for an interim order; " \
+                       "where application is made without notice to include representation on the return date.",
         },
       },
       service_levels: [
@@ -130,14 +130,14 @@ RSpec.describe ProceedingTypeService do
         substantive: {
           code: "FM059",
           meaning: "FHH Children",
-          description: "Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement."\
-                       " To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
+          description: "Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. " \
+                       "To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
         },
         delegated_functions: {
           code: "CV117",
           meaning: "Interim order inc. return date",
-          description: "Limited to all steps necessary to apply for an interim order;"\
-                       " where application is made without notice to include representation on the return date.",
+          description: "Limited to all steps necessary to apply for an interim order; " \
+                       "where application is made without notice to include representation on the return date.",
         },
       },
       service_levels: [
