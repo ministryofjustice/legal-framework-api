@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "StatusController", type: :request do
+RSpec.describe "StatusController" do
   describe "GET /satus" do
     context "when database is available" do
       let(:expected_response) { { "checks" => { "database" => true } } }

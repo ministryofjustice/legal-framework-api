@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "MainController", type: :request do
+RSpec.describe "MainController" do
   describe "GET /" do
     it "redirects to the api-docs" do
       get root_path

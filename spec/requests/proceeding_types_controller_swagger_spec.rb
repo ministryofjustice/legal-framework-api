@@ -1,6 +1,6 @@
 require "swagger_helper"
 
-RSpec.describe "proceeding_types", type: :request do
+RSpec.describe "proceeding_types" do
   path "/proceeding_types/{ccms_code}" do
     get("Show details for a single proceeding type") do
       let(:ccms_code) { "SE003" }

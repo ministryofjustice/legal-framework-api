@@ -1,6 +1,6 @@
 require "swagger_helper"
 
-RSpec.describe "civil_merits_questions", type: :request do
+RSpec.describe "civil_merits_questions" do
   let(:data) do
     {
       request_id: "7d47425b-800a-41ef-a917-934acc09b50d",
