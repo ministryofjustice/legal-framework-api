@@ -43,13 +43,13 @@ RSpec.describe "proceeding_types" do
                 code: "FM059",
                 meaning: "FHH Children",
                 description: "Limited to Family Help (Higher) and to all steps necessary to negotiate and conclude a settlement. " \
-                           "To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
+                             "To include the issue of proceedings and representation in those proceedings save in relation to or at a contested final hearing.",
               },
               delegated_functions: {
                 code: "CV117",
                 meaning: "Interim order inc. return date",
                 description: "Limited to all steps necessary to apply for an interim order; " \
-                           "where application is made without notice to include representation on the return date.",
+                             "where application is made without notice to include representation on the return date.",
               },
             },
             service_levels: [
