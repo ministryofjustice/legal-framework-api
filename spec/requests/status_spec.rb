@@ -9,7 +9,7 @@ RSpec.describe "StatusController", type: :request do
 
       it "returns ok" do
         get status_path
-        expect(JSON.parse(response.body)).to eq expected_response
+        expect(response.parsed_body).to eq expected_response
       end
     end
 
@@ -19,7 +19,7 @@ RSpec.describe "StatusController", type: :request do
       it "returns false" do
         allow(ActiveRecord::Base).to receive(:connection).and_raise(PG::ConnectionBad, "Error")
         get status_path
-        expect(JSON.parse(response.body)).to eq expected_response
+        expect(response.parsed_body).to eq expected_response
       end
     end
   end
