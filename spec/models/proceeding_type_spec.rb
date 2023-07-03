@@ -12,7 +12,7 @@ RSpec.describe ProceedingType do
     let(:proceeding_type) { described_class.find_by!(ccms_code: "SE013") }
 
     it "returns associated service levels only" do
-      expect(service_levels.map(&:level)).to match_array([1, 3])
+      expect(service_levels.map(&:level)).to contain_exactly(1, 3)
     end
 
     it "each service_level includes attribute `proceeding_default`" do

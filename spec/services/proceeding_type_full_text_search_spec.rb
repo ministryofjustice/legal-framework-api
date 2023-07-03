@@ -63,7 +63,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
       it "returns the ones in which the search term appears first; and additional terms matches are last" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:meaning)).to match_array ["Harassment - injunction", "Inherent jurisdiction high court injunction", "Non-molestation order"]
+        expect(result_set.map(&:meaning)).to contain_exactly("Harassment - injunction", "Inherent jurisdiction high court injunction", "Non-molestation order")
         expect(result_set.map(&:meaning)[2]).to eq "Non-molestation order"
       end
 
@@ -89,9 +89,9 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
       it "returns results matching either term" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:meaning)).to match_array(["FGM Protection Order",
+        expect(result_set.map(&:meaning)).to contain_exactly("FGM Protection Order",
                                                           "Forced marriage protection order",
-                                                          "Variation or discharge under section 5 protection from harassment act 1997"])
+                                                          "Variation or discharge under section 5 protection from harassment act 1997")
       end
     end
   end

@@ -142,7 +142,7 @@ RSpec.describe ScopeLimitation do
       end
 
       it "returns both user input records" do
-        expect(scope.user_inputs).to match_array [hearing_date, limitation_note]
+        expect(scope.user_inputs).to contain_exactly(hearing_date, limitation_note)
       end
     end
   end
