@@ -65,15 +65,15 @@ private
   end
 
   def domestic_abuse_with_non_applicant(_proceeding)
-    @proceedings.select { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && h[:client_involvement_type] != "A" }.any?
+    @proceedings.any? { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && h[:client_involvement_type] != "A" }
   end
 
   def at_least_one_domestic_abuse_with_applicant(_proceeding)
-    @proceedings.select { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && h[:client_involvement_type] == "A" }.any?
+    @proceedings.any? { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && h[:client_involvement_type] == "A" }
   end
 
   def delegated_functions_on_any_proceeding(_proceeding)
-    @proceedings.select { |proceeding| proceeding[:delegated_functions_used].to_s == "true" }.any?
+    @proceedings.any? { |proceeding| proceeding[:delegated_functions_used].to_s == "true" }
   end
 
   def defendant_on_this_proceeding(proceeding)
@@ -82,7 +82,7 @@ private
   end
 
   def delegated_functions_and_domestic_abuse_with_non_applicant(_proceeding)
-    @proceedings.select { |p| p[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }.any?
+    @proceedings.any? { |p| p[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }
   end
 
   def error_response
