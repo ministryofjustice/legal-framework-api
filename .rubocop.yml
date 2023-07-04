@@ -16,6 +16,10 @@ AllCops:
   Exclude:
     - 'db/migrate/*'
 
+Lint/RedundantDirGlobSort:
+  Exclude:
+    - 'db/seeds.rb'
+
 # Swagger exclusions
 # ==================
 # because swagger does not use the standard RSpec layout, e.g.
