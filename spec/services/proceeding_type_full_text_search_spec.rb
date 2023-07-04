@@ -90,8 +90,8 @@ RSpec.describe ProceedingTypeFullTextSearch do
       it "returns results matching either term" do
         result_set = proceeding_type_full_text_search_results
         expect(result_set.map(&:meaning)).to contain_exactly("FGM Protection Order",
-                                                          "Forced marriage protection order",
-                                                          "Variation or discharge under section 5 protection from harassment act 1997")
+                                                             "Forced marriage protection order",
+                                                             "Variation or discharge under section 5 protection from harassment act 1997")
       end
     end
   end
