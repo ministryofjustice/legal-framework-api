@@ -20,6 +20,11 @@ Lint/RedundantDirGlobSort:
   Exclude:
     - 'db/seeds.rb'
 
+Rails/I18nLocaleTexts:
+  Exclude:
+    - 'app/models/client_involvement_type.rb'
+    - 'app/models/scope_user_input.rb'
+
 # Swagger exclusions
 # ==================
 # because swagger does not use the standard RSpec layout, e.g.
