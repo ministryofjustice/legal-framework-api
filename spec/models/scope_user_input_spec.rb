@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe ScopeUserInput, type: :model do
+RSpec.describe ScopeUserInput do
   describe "validations" do
-    let(:user_input) { build :scope_user_input, input_name: "my input", input_type:, mandatory: true }
+    let(:user_input) { build(:scope_user_input, input_name: "my input", input_type:, mandatory: true) }
 
     describe "input_type" do
       context "with valid value of date" do

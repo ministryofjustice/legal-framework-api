@@ -2,14 +2,14 @@
 
 require "rails_helper"
 
-RSpec.describe "StatusController", type: :request do
+RSpec.describe "StatusController" do
   describe "GET /satus" do
     context "when database is available" do
       let(:expected_response) { { "checks" => { "database" => true } } }
 
       it "returns ok" do
         get status_path
-        expect(JSON.parse(response.body)).to eq expected_response
+        expect(response.parsed_body).to eq expected_response
       end
     end
 
@@ -19,7 +19,7 @@ RSpec.describe "StatusController", type: :request do
       it "returns false" do
         allow(ActiveRecord::Base).to receive(:connection).and_raise(PG::ConnectionBad, "Error")
         get status_path
-        expect(JSON.parse(response.body)).to eq expected_response
+        expect(response.parsed_body).to eq expected_response
       end
     end
   end

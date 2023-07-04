@@ -1,6 +1,6 @@
 require "swagger_helper"
 
-RSpec.describe "proceeding_types/searches_controller", type: :request do
+RSpec.describe "proceeding_types/searches_controller" do
   path "/proceeding_types/all" do
     get("Get summary of all proceeding types") do
       description "Returns an array of all proceeding types with summary data.

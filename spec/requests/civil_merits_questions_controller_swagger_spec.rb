@@ -1,6 +1,6 @@
 require "swagger_helper"
 
-RSpec.describe "civil_merits_questions", type: :request do
+RSpec.describe "civil_merits_questions" do
   let(:data) do
     {
       request_id: "7d47425b-800a-41ef-a917-934acc09b50d",
@@ -74,22 +74,22 @@ RSpec.describe "civil_merits_questions", type: :request do
               success: true,
               application: {
                 tasks: {
-                  "opponent_name": [],
-                  "opponent_mental_capacity": [],
-                  "statement_of_case": [],
-                  "children_application": [],
-                  "laspo": [],
-                  "why_matter_opposed": [],
-                  "nature_of_urgency": [],
+                  opponent_name: [],
+                  opponent_mental_capacity: [],
+                  statement_of_case: [],
+                  children_application: [],
+                  laspo: [],
+                  why_matter_opposed: [],
+                  nature_of_urgency: [],
                 },
               },
               proceedings: [
                 {
-                  "ccms_code": "SE013",
-                  "tasks": {
-                    "chances_of_success": [],
-                    "children_proceeding": %w[children_application],
-                    "attempts_to_settle": [],
+                  ccms_code: "SE013",
+                  tasks: {
+                    chances_of_success: [],
+                    children_proceeding: %w[children_application],
+                    attempts_to_settle: [],
                   },
                 },
               ],

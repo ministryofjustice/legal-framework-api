@@ -26,6 +26,6 @@ private
   end
 
   def schema_dir
-    @schema_dir ||= Rails.root.join("public/schemas")
+    @schema_dir ||= Rails.public_path.join("schemas")
   end
 end

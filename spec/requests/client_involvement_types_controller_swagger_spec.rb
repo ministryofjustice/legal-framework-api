@@ -1,6 +1,6 @@
 require "swagger_helper"
 
-RSpec.describe "client_involvement_types", type: :request do
+RSpec.describe "client_involvement_types" do
   path "/client_involvement_types" do
     get("Get all client involvement types") do
       description "Returns an array of all client involvement types with summary data."

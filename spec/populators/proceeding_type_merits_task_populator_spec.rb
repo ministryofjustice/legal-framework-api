@@ -8,7 +8,7 @@ RSpec.describe ProceedingTypeMeritsTaskPopulator do
     subject(:call) { described_class.call }
 
     let(:proceeding_type_keys) { YAML.load_file(Rails.root.join("db/seed_data/proceeding_type_merits_task.yml")) }
-    let(:seed_count) { proceeding_type_keys.map { |p| p["questions"].map { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 }.sum }.sum }
+    let(:seed_count) { proceeding_type_keys.sum { |p| p["questions"].sum { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 } } }
 
     it "deletes all existing records" do
       expect(ProceedingTypeMeritsTask).to receive(:destroy_all)

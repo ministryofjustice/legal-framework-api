@@ -11,6 +11,19 @@ inherit_mode:
   merge:
     - Exclude
 
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/migrate/*'
+
+Lint/RedundantDirGlobSort:
+  Exclude:
+    - 'db/seeds.rb'
+
+Rails/I18nLocaleTexts:
+  Exclude:
+    - 'app/models/client_involvement_type.rb'
+    - 'app/models/scope_user_input.rb'
 
 # Swagger exclusions
 # ==================

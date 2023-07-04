@@ -5,6 +5,6 @@ FactoryBot.define do
     description { Faker::Lorem.sentence(word_count: 4) }
     name { Faker::Lorem.sentence(word_count: 2) }
 
-    association :matter_type
+    matter_type
   end
 end

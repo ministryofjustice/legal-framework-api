@@ -12,7 +12,7 @@ class ProceedingTypeMeritsTaskPopulator
         @loop_index = 0
         populate(seed_hash["ccms_code"], seed_hash["questions"])
       end
-      total = @proceeding_type_keys.map { |p| p["questions"].map { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 }.sum }.sum
+      total = @proceeding_type_keys.sum { |p| p["questions"].sum { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 } }
       raise ActiveRecord::Rollback unless ProceedingTypeMeritsTask.count == total
     end
   end

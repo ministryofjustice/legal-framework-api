@@ -1,6 +1,6 @@
 require "swagger_helper"
 
-RSpec.describe "proceeding_type_defaults", type: :request do
+RSpec.describe "proceeding_type_defaults" do
   path "/proceeding_type_defaults" do
     post("Return details of default scope and level of service for specified proceeding_type_ccms_code, delegated_functions_used, client_involvement_type") do
       description "POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used and client_involvement_type
