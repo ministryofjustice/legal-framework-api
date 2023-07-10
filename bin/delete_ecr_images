@@ -2,7 +2,7 @@
 require 'json'
 require 'date'
 
-repo = 'laa-apply-for-legal-aid/legal-framework-api-uat-ecr'
+repo = $ECR_REPOSITORY
 delete_if_older_than = 10 # days
 
 puts 'Identifying images to delete'
