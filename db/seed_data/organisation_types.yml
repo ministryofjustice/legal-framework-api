@@ -1,0 +1,33 @@
+---
+# List of organisation types
+# - ccms_code (string) - required for CCMS
+# - description (string)
+#
+- - CHAR
+  - Charity
+- - CO
+  - Court
+- - GOVT
+  - Government Department
+- - HMO
+  - HM Prison or Young Offender Institute
+- - HOA
+  - Housing Association
+- - IRC
+  - Immigration Removal Centre
+- - LA
+  - Local Authority
+- - LLP
+  - Limited Liability Partnership
+- - LTD
+  - Limited Company
+- - NHS
+  - National Health Service
+- - PART
+  - Partnership
+- - PLC
+  - Public Limited Company
+- - POLICE
+  - Police Authority
+- - SOLE
+  - Sole Trader
