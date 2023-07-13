@@ -50,10 +50,22 @@ class ProceedingType < ApplicationRecord
       meaning:,
       description:,
       full_s8_only:,
-      ccms_category_law: matter_type.category_of_law,
-      ccms_matter_code: matter_type.code,
-      ccms_matter: matter_type.name,
+      ccms_category_law:,
+      ccms_matter_code:,
+      ccms_matter:,
     }.as_json
+  end
+
+  def ccms_category_law
+    matter_type.category_of_law
+  end
+
+  def ccms_matter_code
+    matter_type.code
+  end
+
+  def ccms_matter
+    matter_type.name
   end
 
   def self.populate
