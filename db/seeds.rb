@@ -24,3 +24,4 @@ ServiceLevelsPopulator.call
 ProceedingTypeServiceLevelsPopulator.call
 ClientInvolvementTypesPopulator.call
 ThresholdWaiverPopulator.call
+OrganisationTypesPopulator.call
