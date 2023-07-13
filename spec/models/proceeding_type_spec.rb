@@ -21,7 +21,7 @@ RSpec.describe ProceedingType do
           "ccms_category_law" => proceeding_type.matter_type.category_of_law,
           "ccms_matter_code" => proceeding_type.matter_type.code,
           "ccms_matter" => proceeding_type.matter_type.name,
-        }.to_json,
+        },
       )
     end
   end

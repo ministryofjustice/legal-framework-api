@@ -53,7 +53,7 @@ class ProceedingType < ApplicationRecord
       ccms_category_law: matter_type.category_of_law,
       ccms_matter_code: matter_type.code,
       ccms_matter: matter_type.name,
-    }.to_json
+    }.as_json
   end
 
   def self.populate
