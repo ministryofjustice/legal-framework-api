@@ -1,8 +1,5 @@
 class OrganisationType < ApplicationRecord
   def api_json
-    {
-      ccms_code:,
-      description:,
-    }.as_json
+    as_json(only: %i[ccms_code description])
   end
 end
