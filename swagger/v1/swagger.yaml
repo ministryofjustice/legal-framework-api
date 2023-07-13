@@ -157,6 +157,51 @@ paths:
                   summary: Successful request
                   description: Returns an array of all client involvement types with
                     summary data.
+  "/organisation_types/all":
+    get:
+      summary: Get all organisation types
+      description: Returns an array of all organisation types with ccms codes.
+      tags:
+      - Organisation types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - ccms_code: CHAR
+                    description: Charity
+                  - ccms_code: CO
+                    description: Court
+                  - ccms_code: GOVT
+                    description: Government Department
+                  - ccms_code: HMO
+                    description: HM Prison or Young Offender Institute
+                  - ccms_code: HOA
+                    description: Housing Association
+                  - ccms_code: IRC
+                    description: Immigration Removal Centre
+                  - ccms_code: LTD
+                    description: Limited Company
+                  - ccms_code: LLP
+                    description: Limited Liability Partnership
+                  - ccms_code: LA
+                    description: Local Authority
+                  - ccms_code: NHS
+                    description: National Health Service
+                  - ccms_code: PART
+                    description: Partnership
+                  - ccms_code: POLICE
+                    description: Police Authority
+                  - ccms_code: PLC
+                    description: Public Limited Company
+                  - ccms_code: SOLE
+                    description: Sole Trader
+                  summary: Successful request
+                  description: Returns an array of all organisation types with ccms
+                    codes.
   "/proceeding_type_defaults":
     post:
       summary: Return details of default scope and level of service for specified

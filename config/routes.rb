@@ -3,17 +3,20 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => "/api-docs"
   mount Rswag::Api::Engine => "/api-docs"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :merits_tasks, param: :ccms_code, only: %i[create]
   resources :civil_merits_questions, param: :ccms_code, only: %i[create]
-  get "proceeding_types/all", to: "proceeding_types/searches#index"
+
   get "client_involvement_types", to: "client_involvement_types#index"
+  get "organisation_types/all", to: "organisation_types#index"
+  get "proceeding_types/all", to: "proceeding_types/searches#index"
+
   resources :proceeding_types, param: :ccms_code, only: %i[show]
   namespace :proceeding_types do
     resources :threshold_waivers, only: %i[create]
     resources :searches, only: %i[create]
   end
+
   resources :threshold_waivers, only: %i[create]
   resources :proceeding_type_defaults, only: %i[create]
   resources :proceeding_type_scopes, only: %i[create]
