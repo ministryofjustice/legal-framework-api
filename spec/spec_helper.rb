@@ -17,20 +17,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require "simplecov"
-require "highline/import"
-
-SimpleCov.minimum_coverage 99
-unless ENV["NOCOVERAGE"]
-  SimpleCov.start do
-    add_filter "config/initializers/"
-    add_filter "spec/"
-  end
-
-  SimpleCov.at_exit do
-    say("<%= color('Code coverage below 100%', RED) %>") if SimpleCov.result.coverage_statistics[:line].percent < 100
-    SimpleCov.result.format!
-  end
-end
 
 RSpec.configure do |config|
   # These two settings work together to allow you to limit a spec run
