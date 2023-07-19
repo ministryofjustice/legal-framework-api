@@ -18,7 +18,8 @@ RSpec.configure do |config|
     "v1/swagger.yaml" => {
       openapi: "3.0.1",
       info: {
-        title: "API V1",
+        title: "LAA Legal Framework",
+        description: "This service provides read-only lookup data relating to applications for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]",
         version: "v1",
       },
       paths: {},
