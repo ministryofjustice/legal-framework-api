@@ -2,7 +2,8 @@
 openapi: 3.0.1
 info:
   title: LAA Legal Framework
-  description: This service provides read-only lookup data relating to applications for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]
+  description: This service provides read-only lookup data relating to applications
+    for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]
   version: v1
 paths:
   "/civil_merits_questions":
@@ -203,6 +204,46 @@ paths:
                   summary: Successful request
                   description: Returns an array of all organisation types with ccms
                     codes.
+  "/organisation_types/{ccms_code}":
+    get:
+      summary: Show details for a single organisation type
+      parameters:
+      - name: ccms_code
+        in: path
+        example: CHAR
+        description: CCMS code, e.g. CO or GOVT
+        required: true
+        schema:
+          type: string
+      description: Return details for specified organisation type
+      tags:
+      - Organisation types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    success: true
+                    organisation_type:
+                      ccms_code: CHAR
+                      description: Charity
+                  summary: Successful request
+                  description: Return details for specified organisation type
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              examples:
+                bad_request:
+                  value:
+                    success: false
+                    message: 'No such organisation type: ''AZ123'''
+                  summary: Bad request
+                  description: When a non-existent ccms_code is sent, an error is
+                    generated from the json schema and returned
   "/proceeding_type_defaults":
     post:
       summary: Return details of default scope and level of service for specified
