@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :searches, only: %i[create]
   end
 
+  resources :organisation_types, param: :ccms_code, only: %i[show]
   resources :threshold_waivers, only: %i[create]
   resources :proceeding_type_defaults, only: %i[create]
   resources :proceeding_type_scopes, only: %i[create]
