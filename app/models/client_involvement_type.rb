@@ -4,9 +4,6 @@ class ClientInvolvementType < ApplicationRecord
   validates :ccms_code, inclusion: { in: VALID_CLIENT_INVOLVEMENT_TYPES, message: "%{value} is not a valid client_involvement_type" }
 
   def api_json
-    {
-      ccms_code:,
-      description:,
-    }.to_json
+    as_json(only: %i[ccms_code description])
   end
 end

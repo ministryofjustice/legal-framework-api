@@ -6,6 +6,26 @@ RSpec.describe ProceedingType do
   it { is_expected.to have_many(:proceeding_type_service_levels).dependent(:destroy) }
   it { is_expected.to have_many(:service_levels).through(:proceeding_type_service_levels) }
 
+  describe "#api_json" do
+    subject(:api_json) { proceeding_type.api_json }
+
+    let(:proceeding_type) { create(:proceeding_type) }
+
+    it "returns the expected json key value pairs" do
+      expect(api_json).to eql(
+        {
+          "ccms_code" => proceeding_type.ccms_code,
+          "meaning" => proceeding_type.meaning,
+          "description" => proceeding_type.description,
+          "full_s8_only" => proceeding_type.full_s8_only,
+          "ccms_category_law" => proceeding_type.matter_type.category_of_law,
+          "ccms_matter_code" => proceeding_type.matter_type.code,
+          "ccms_matter" => proceeding_type.matter_type.name,
+        },
+      )
+    end
+  end
+
   describe "#service_levels" do
     subject(:service_levels) { proceeding_type.service_levels }
 
