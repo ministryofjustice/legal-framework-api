@@ -2,8 +2,7 @@
 openapi: 3.0.1
 info:
   title: LAA Legal Framework
-  description: This service provides read-only lookup data relating to applications
-    for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]
+  description: This service provides read-only lookup data relating to applications for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]
   version: v1
 paths:
   "/civil_merits_questions":
