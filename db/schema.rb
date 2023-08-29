@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_162507) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_172236) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_162507) do
     t.datetime "updated_at", null: false
     t.virtual "searchable", type: :tsvector, as: "(setweight(to_tsvector('simple'::regconfig, (COALESCE(name, ''::character varying))::text), 'A'::\"char\") || setweight(to_tsvector('simple'::regconfig, (COALESCE(searchable_type, ''::character varying))::text), 'B'::\"char\"))", stored: true
     t.index ["organisation_type_id"], name: "index_organisations_on_organisation_type_id"
+    t.index ["searchable"], name: "index_organisations_on_searchable", using: :gin
   end
 
   create_table "proceeding_type_merits_tasks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
