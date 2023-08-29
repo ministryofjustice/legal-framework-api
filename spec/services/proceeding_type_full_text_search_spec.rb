@@ -1,6 +1,9 @@
 require "rails_helper"
+require_relative "full_text_search_query_transformer_examples"
 
 RSpec.describe ProceedingTypeFullTextSearch do
+  it_behaves_like "full text search query transformer"
+
   describe ".call" do
     subject(:proceeding_type_full_text_search_results) { described_class.call(search_term) }
 
@@ -92,53 +95,6 @@ RSpec.describe ProceedingTypeFullTextSearch do
         expect(result_set.map(&:meaning)).to contain_exactly("FGM Protection Order",
                                                              "Forced marriage protection order",
                                                              "Variation or discharge under section 5 protection from harassment act 1997")
-      end
-    end
-  end
-
-  describe "transformation of search terms" do
-    subject(:transformed_search_terms) { service.instance_variable_get(:@ts_query) }
-
-    let(:dummy_url) { nil }
-    let(:service) { described_class.new(search_terms) }
-
-    context "with one single search term" do
-      let(:search_terms) { "term1" }
-
-      it "returns term followed by :*" do
-        expect(transformed_search_terms).to eq "term1:*"
-      end
-    end
-
-    context "with terms separated by a single space" do
-      let(:search_terms) { "term1 term2" }
-
-      it "returns :* after each item separated by &" do
-        expect(transformed_search_terms).to eq "term1:* & term2:*"
-      end
-    end
-
-    context "with terms separated by a tab" do
-      let(:search_terms) { "term1\tterm2" }
-
-      it "returns :* after each item separated by &" do
-        expect(transformed_search_terms).to eq "term1:* & term2:*"
-      end
-    end
-
-    context "with terms separated by multiple spaces" do
-      let(:search_terms) { "term1   term2" }
-
-      it "returns :* after each item separated by &" do
-        expect(transformed_search_terms).to eq "term1:* & term2:*"
-      end
-    end
-
-    context "with terms separated by mixture of multiple spaces and tabs" do
-      let(:search_terms) { "term1\t\tterm2  term3\t term4  \tterm5" }
-
-      it "returns :* after each item separated by &" do
-        expect(transformed_search_terms).to eq "term1:* & term2:* & term3:* & term4:* & term5:*"
       end
     end
   end

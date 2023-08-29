@@ -27,7 +27,7 @@ RSpec.describe Organisation do
     subject(:api_json) { organisation.api_json }
 
     it "returns expected JSON response payload item" do
-      expect(api_json).to eql({ "ccms_code" => "280361", "name" => "Angus Council" })
+      expect(api_json).to eql({ "ccms_code" => "280361", "name" => "Angus Council", "searchable_type" => "Local Authority" })
     end
   end
 end
