@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_073341) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_162507) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_073341) do
     t.uuid "organisation_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.virtual "searchable", type: :tsvector, as: "(setweight(to_tsvector('simple'::regconfig, (COALESCE(name, ''::character varying))::text), 'A'::\"char\") || setweight(to_tsvector('simple'::regconfig, (COALESCE(searchable_type, ''::character varying))::text), 'B'::\"char\"))", stored: true
     t.index ["organisation_type_id"], name: "index_organisations_on_organisation_type_id"
   end
 
