@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resources :searches, only: %i[create]
   end
 
+  get "organisation_searches/all", to: "organisation_searches#index"
+  post "organisation_searches", to: "organisation_searches#create"
+
   resources :organisation_types, param: :ccms_code, only: %i[show]
   resources :threshold_waivers, only: %i[create]
   resources :proceeding_type_defaults, only: %i[create]
