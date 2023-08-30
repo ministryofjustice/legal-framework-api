@@ -1,0 +1,3595 @@
+---
+# List of the organisation opponents extracted from CCMS GetCommonOrg endpoint a@29/08/2023
+#
+# ccms_code: primary key from CCMS, can be used to reference this org in CCMS
+# name: name of organisation from CCMS
+# organisation_type: ccms_code for the organisation type to use to build foreign key in LFA
+#
+- :ccms_code: '280361'
+  :name: Angus Council
+  :organisation_type: LA
+- :ccms_code: '280362'
+  :name: Antrim Borough Council
+  :organisation_type: LA
+- :ccms_code: '280363'
+  :name: Ards Borough Council
+  :organisation_type: LA
+- :ccms_code: '280364'
+  :name: Argyll and Bute Council
+  :organisation_type: LA
+- :ccms_code: '280365'
+  :name: Armagh City and District Council
+  :organisation_type: LA
+- :ccms_code: '280366'
+  :name: Arun District Council
+  :organisation_type: LA
+- :ccms_code: '280367'
+  :name: Ashfield District Council
+  :organisation_type: LA
+- :ccms_code: '280368'
+  :name: Ashford Borough Council
+  :organisation_type: LA
+- :ccms_code: '280369'
+  :name: Aylesbury Vale District Council
+  :organisation_type: LA
+- :ccms_code: '280371'
+  :name: Ballymena Borough Council
+  :organisation_type: LA
+- :ccms_code: '280372'
+  :name: Ballymoney Borough Council
+  :organisation_type: LA
+- :ccms_code: '280373'
+  :name: Banbridge District Council
+  :organisation_type: LA
+- :ccms_code: '280374'
+  :name: Barnsley Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '280375'
+  :name: Barrow in Furness Borough Council
+  :organisation_type: LA
+- :ccms_code: '280376'
+  :name: Basildon Borough Council
+  :organisation_type: LA
+- :ccms_code: '280377'
+  :name: Basingstoke and Deane Borough Council
+  :organisation_type: LA
+- :ccms_code: '280378'
+  :name: Bassetlaw District Council
+  :organisation_type: LA
+- :ccms_code: '280379'
+  :name: Bath and North East Somerset Council
+  :organisation_type: LA
+- :ccms_code: '280380'
+  :name: Bedford Borough Council
+  :organisation_type: LA
+- :ccms_code: '280381'
+  :name: Belfast City Council
+  :organisation_type: LA
+- :ccms_code: '280382'
+  :name: Birmingham City Council
+  :organisation_type: LA
+- :ccms_code: '280383'
+  :name: Blaby District Council
+  :organisation_type: LA
+- :ccms_code: '280384'
+  :name: Blackburn with Darwen Borough Council
+  :organisation_type: LA
+- :ccms_code: '280385'
+  :name: Blackpool Council
+  :organisation_type: LA
+- :ccms_code: '280386'
+  :name: Blaenau Gwent County Borough Council
+  :organisation_type: LA
+- :ccms_code: '280387'
+  :name: Bolsover District Council
+  :organisation_type: LA
+- :ccms_code: '280388'
+  :name: Bolton Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '280389'
+  :name: Borough of Poole Council
+  :organisation_type: LA
+- :ccms_code: '280390'
+  :name: Boston Borough Council
+  :organisation_type: LA
+- :ccms_code: '280391'
+  :name: Bournemouth Borough Council
+  :organisation_type: LA
+- :ccms_code: '280392'
+  :name: Bracknell Forest Borough Council
+  :organisation_type: LA
+- :ccms_code: '280393'
+  :name: Braintree District Council
+  :organisation_type: LA
+- :ccms_code: '280394'
+  :name: Breckland District Council
+  :organisation_type: LA
+- :ccms_code: '280395'
+  :name: Brentwood Borough Council
+  :organisation_type: LA
+- :ccms_code: '280396'
+  :name: Bridgend County Borough Council
+  :organisation_type: LA
+- :ccms_code: '280397'
+  :name: Brighton & Hove City Council
+  :organisation_type: LA
+- :ccms_code: '280398'
+  :name: Bristol City Council
+  :organisation_type: LA
+- :ccms_code: '280399'
+  :name: Broadland District Council
+  :organisation_type: LA
+- :ccms_code: '280400'
+  :name: Bromsgrove District Council
+  :organisation_type: LA
+- :ccms_code: '280401'
+  :name: Broxbourne Borough Council
+  :organisation_type: LA
+- :ccms_code: '378830'
+  :name: London Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378831'
+  :name: London Probation Trust
+  :organisation_type: GOVT
+- :ccms_code: '378832'
+  :name: Maritime and Coastguard Agency
+  :organisation_type: GOVT
+- :ccms_code: '378833'
+  :name: Medicines and Healthcare Products and Regulatory Agency (mhra)
+  :organisation_type: GOVT
+- :ccms_code: '378834'
+  :name: Mental Health Tribunal for Scotland
+  :organisation_type: GOVT
+- :ccms_code: '378835'
+  :name: Met Office
+  :organisation_type: GOVT
+- :ccms_code: '378836'
+  :name: MI5 (director General of Security)
+  :organisation_type: GOVT
+- :ccms_code: '378837'
+  :name: MI6 (secret Intelligence Service)
+  :organisation_type: GOVT
+- :ccms_code: '378838'
+  :name: Ministry of Defence
+  :organisation_type: GOVT
+- :ccms_code: '378839'
+  :name: Ministry of Defence Police and Guarding Agency
+  :organisation_type: GOVT
+- :ccms_code: '378840'
+  :name: Ministry of Justice
+  :organisation_type: GOVT
+- :ccms_code: '378841'
+  :name: National Archives
+  :organisation_type: GOVT
+- :ccms_code: '378842'
+  :name: National Assembly for Wales
+  :organisation_type: GOVT
+- :ccms_code: '378843'
+  :name: National Fraud Authority
+  :organisation_type: GOVT
+- :ccms_code: '378844'
+  :name: National Measurement Office
+  :organisation_type: GOVT
+- :ccms_code: '378845'
+  :name: National offender Management Service (noms)
+  :organisation_type: GOVT
+- :ccms_code: '378846'
+  :name: National School of Government
+  :organisation_type: GOVT
+- :ccms_code: '378847'
+  :name: NHS Blood 7 Transport
+  :organisation_type: GOVT
+- :ccms_code: '281384'
+  :name: London Borough of Bromley Council
+  :organisation_type: LA
+- :ccms_code: '281389'
+  :name: Liverpool City Council
+  :organisation_type: LA
+- :ccms_code: '281394'
+  :name: London Borough of Barking and Dagenham Council
+  :organisation_type: LA
+- :ccms_code: '281396'
+  :name: London Borough of Barnet Council
+  :organisation_type: LA
+- :ccms_code: '281398'
+  :name: London Borough of Bexley Council
+  :organisation_type: LA
+- :ccms_code: '281410'
+  :name: Lincolnshire County Council
+  :organisation_type: LA
+- :ccms_code: '281412'
+  :name: Limavady Borough Council
+  :organisation_type: LA
+- :ccms_code: '281414'
+  :name: Lichfield District Council
+  :organisation_type: LA
+- :ccms_code: '281416'
+  :name: Lewes District Council
+  :organisation_type: LA
+- :ccms_code: '281422'
+  :name: Leicestershire County Council
+  :organisation_type: LA
+- :ccms_code: '281429'
+  :name: Lisburn City Council
+  :organisation_type: LA
+- :ccms_code: '281433'
+  :name: London Borough of Camden Council
+  :organisation_type: LA
+- :ccms_code: '281434'
+  :name: London Borough of Croydon Council
+  :organisation_type: LA
+- :ccms_code: '281435'
+  :name: London Borough of Ealing Council
+  :organisation_type: LA
+- :ccms_code: '281436'
+  :name: London Borough of Enfield Council
+  :organisation_type: LA
+- :ccms_code: '281437'
+  :name: London Borough of Hackney Council
+  :organisation_type: LA
+- :ccms_code: '281438'
+  :name: London Borough of Hammersmith and Fulham Council
+  :organisation_type: LA
+- :ccms_code: '281439'
+  :name: London Borough of Haringey Council
+  :organisation_type: LA
+- :ccms_code: '281440'
+  :name: London Borough of Harrow Council
+  :organisation_type: LA
+- :ccms_code: '281441'
+  :name: London Borough of Havering Council
+  :organisation_type: LA
+- :ccms_code: '281442'
+  :name: London Borough of Hillingdon Council
+  :organisation_type: LA
+- :ccms_code: '281443'
+  :name: London Borough of Hounslow Council
+  :organisation_type: LA
+- :ccms_code: '281444'
+  :name: London Borough of Islington Council
+  :organisation_type: LA
+- :ccms_code: '281445'
+  :name: London Borough of Lambeth Council
+  :organisation_type: LA
+- :ccms_code: '281446'
+  :name: London Borough of Lewisham Council
+  :organisation_type: LA
+- :ccms_code: '281447'
+  :name: London Borough of Merton Council
+  :organisation_type: LA
+- :ccms_code: '281448'
+  :name: London Borough of Newham Council
+  :organisation_type: LA
+- :ccms_code: '281449'
+  :name: London Borough of Redbridge Council
+  :organisation_type: LA
+- :ccms_code: '281450'
+  :name: London Borough of Richmond upon Thames Council
+  :organisation_type: LA
+- :ccms_code: '281456'
+  :name: London Borough of Sutton Council
+  :organisation_type: LA
+- :ccms_code: '281458'
+  :name: London Borough of Tower Hamlets Council
+  :organisation_type: LA
+- :ccms_code: '281460'
+  :name: London Borough of Waltham Forest Council
+  :organisation_type: LA
+- :ccms_code: '281462'
+  :name: London Borough of Wandsworth Council
+  :organisation_type: LA
+- :ccms_code: '281464'
+  :name: Luton Borough Council
+  :organisation_type: LA
+- :ccms_code: '281465'
+  :name: Magherafelt District Council
+  :organisation_type: LA
+- :ccms_code: '281467'
+  :name: Maidstone Borough Council
+  :organisation_type: LA
+- :ccms_code: '281469'
+  :name: Maldon District Council
+  :organisation_type: LA
+- :ccms_code: '281470'
+  :name: Malvern Hills District Council
+  :organisation_type: LA
+- :ccms_code: '281471'
+  :name: Manchester City Council
+  :organisation_type: LA
+- :ccms_code: '281472'
+  :name: Mansfield District Council
+  :organisation_type: LA
+- :ccms_code: '281473'
+  :name: Medway Council
+  :organisation_type: LA
+- :ccms_code: '281475'
+  :name: Melton Borough Council
+  :organisation_type: LA
+- :ccms_code: '281477'
+  :name: Mendip District Council
+  :organisation_type: LA
+- :ccms_code: '281479'
+  :name: Merthyr Tydfil County Borough Council
+  :organisation_type: LA
+- :ccms_code: '281480'
+  :name: Mid Devon District Council
+  :organisation_type: LA
+- :ccms_code: '281484'
+  :name: Mid Suffolk District Council
+  :organisation_type: LA
+- :ccms_code: '281486'
+  :name: Mid Sussex District Council
+  :organisation_type: LA
+- :ccms_code: '281487'
+  :name: Middlesbrough Council
+  :organisation_type: LA
+- :ccms_code: '281489'
+  :name: Midlothian Council
+  :organisation_type: LA
+- :ccms_code: '281491'
+  :name: Milton Keynes Council
+  :organisation_type: LA
+- :ccms_code: '281493'
+  :name: Mole Valley District Council
+  :organisation_type: LA
+- :ccms_code: '281495'
+  :name: Monmouthshire County Council
+  :organisation_type: LA
+- :ccms_code: '281496'
+  :name: Moray Council
+  :organisation_type: LA
+- :ccms_code: '281497'
+  :name: Moyle District Council
+  :organisation_type: LA
+- :ccms_code: '281499'
+  :name: Neath Port Talbot County Borough Council
+  :organisation_type: LA
+- :ccms_code: '281501'
+  :name: New Forest District Council
+  :organisation_type: LA
+- :ccms_code: '281503'
+  :name: Newark and Sherwood District Council
+  :organisation_type: LA
+- :ccms_code: '281505'
+  :name: Newcastle under Lyme Borough Council
+  :organisation_type: LA
+- :ccms_code: '281507'
+  :name: Newcastle upon Tyne City Council
+  :organisation_type: LA
+- :ccms_code: '281509'
+  :name: Newport City Council
+  :organisation_type: LA
+- :ccms_code: '281510'
+  :name: Newry and Mourne District Council
+  :organisation_type: LA
+- :ccms_code: '281512'
+  :name: Newtownabbey Borough Council
+  :organisation_type: LA
+- :ccms_code: '280360'
+  :name: Amber Valley Borough Council
+  :organisation_type: LA
+- :ccms_code: '281514'
+  :name: Norfolk County Council
+  :organisation_type: LA
+- :ccms_code: '281516'
+  :name: North Ayrshire Council
+  :organisation_type: LA
+- :ccms_code: '281518'
+  :name: North Devon Council
+  :organisation_type: LA
+- :ccms_code: '281519'
+  :name: North Dorset District Council
+  :organisation_type: LA
+- :ccms_code: '281520'
+  :name: North Down Borough Council
+  :organisation_type: LA
+- :ccms_code: '281522'
+  :name: North East Derbyshire District Council
+  :organisation_type: LA
+- :ccms_code: '281524'
+  :name: North East Lincolnshire Council
+  :organisation_type: LA
+- :ccms_code: '281526'
+  :name: North Hertfordshire District Council
+  :organisation_type: LA
+- :ccms_code: '281528'
+  :name: North Kesteven District Council
+  :organisation_type: LA
+- :ccms_code: '281530'
+  :name: North Lanarkshire Council
+  :organisation_type: LA
+- :ccms_code: '281531'
+  :name: North Lincolnshire Council
+  :organisation_type: LA
+- :ccms_code: '281533'
+  :name: North Norfolk District Council
+  :organisation_type: LA
+- :ccms_code: '281535'
+  :name: North Somerset District Council
+  :organisation_type: LA
+- :ccms_code: '281537'
+  :name: North Tyneside Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281539'
+  :name: North Warwickshire Borough Council
+  :organisation_type: LA
+- :ccms_code: '281541'
+  :name: North West Leicestershire District Council
+  :organisation_type: LA
+- :ccms_code: '281543'
+  :name: North Yorkshire County Council
+  :organisation_type: LA
+- :ccms_code: '281545'
+  :name: Northampton Borough Council
+  :organisation_type: LA
+- :ccms_code: '281546'
+  :name: Northamptonshire County Council
+  :organisation_type: LA
+- :ccms_code: '281548'
+  :name: Northumberland County Council
+  :organisation_type: LA
+- :ccms_code: '281550'
+  :name: Norwich City Council
+  :organisation_type: LA
+- :ccms_code: '281552'
+  :name: Nottingham City Council
+  :organisation_type: LA
+- :ccms_code: '281554'
+  :name: Nottinghamshire County Council
+  :organisation_type: LA
+- :ccms_code: '281556'
+  :name: Nuneaton and Bedworth Borough Council
+  :organisation_type: LA
+- :ccms_code: '281560'
+  :name: Wakefield Council
+  :organisation_type: LA
+- :ccms_code: '281561'
+  :name: Walsall Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281562'
+  :name: Warrington Borough Council
+  :organisation_type: LA
+- :ccms_code: '281564'
+  :name: Warwick District Council
+  :organisation_type: LA
+- :ccms_code: '281566'
+  :name: Warwickshire County Council
+  :organisation_type: LA
+- :ccms_code: '281568'
+  :name: Watford Borough Council
+  :organisation_type: LA
+- :ccms_code: '281569'
+  :name: Waveney District Council
+  :organisation_type: LA
+- :ccms_code: '281570'
+  :name: Waverley Borough Council
+  :organisation_type: LA
+- :ccms_code: '281571'
+  :name: Wealden District Council
+  :organisation_type: LA
+- :ccms_code: '281572'
+  :name: Wellingborough Borough Council
+  :organisation_type: LA
+- :ccms_code: '281574'
+  :name: Welwyn Hatfield Borough Council
+  :organisation_type: LA
+- :ccms_code: '281576'
+  :name: West Berkshire Council
+  :organisation_type: LA
+- :ccms_code: '281578'
+  :name: West Devon Borough Council
+  :organisation_type: LA
+- :ccms_code: '281580'
+  :name: West Dorset District Council
+  :organisation_type: LA
+- :ccms_code: '281582'
+  :name: West Dunbartonshire Council
+  :organisation_type: LA
+- :ccms_code: '281584'
+  :name: West Lancashire Borough Council
+  :organisation_type: LA
+- :ccms_code: '281585'
+  :name: West Lindsey District Council
+  :organisation_type: LA
+- :ccms_code: '281587'
+  :name: West Lothian Council
+  :organisation_type: LA
+- :ccms_code: '281589'
+  :name: West Oxfordshire District Council
+  :organisation_type: LA
+- :ccms_code: '281591'
+  :name: West Somerset District Council
+  :organisation_type: LA
+- :ccms_code: '298345'
+  :name: Newcastle CC
+  :organisation_type: LA
+- :ccms_code: '298370'
+  :name: Newcastle City Council
+  :organisation_type: LA
+- :ccms_code: '378848'
+  :name: North East Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '380677'
+  :name: Risley
+  :organisation_type: HMO
+- :ccms_code: '380678'
+  :name: Rye Hill
+  :organisation_type: HMO
+- :ccms_code: '380679'
+  :name: Send
+  :organisation_type: HMO
+- :ccms_code: '380787'
+  :name: Bedfordshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '380788'
+  :name: Barnet & Chase Farm Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380789'
+  :name: Barnet & Enfield PCT Holbrook House
+  :organisation_type: NHS
+- :ccms_code: '281628'
+  :name: West Sussex County Council
+  :organisation_type: LA
+- :ccms_code: '281630'
+  :name: Westminster City Council
+  :organisation_type: LA
+- :ccms_code: '281632'
+  :name: Weymouth and Portland Borough Council
+  :organisation_type: LA
+- :ccms_code: '281633'
+  :name: Wigan Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281635'
+  :name: Wiltshire Council
+  :organisation_type: LA
+- :ccms_code: '281637'
+  :name: Winchester City Council
+  :organisation_type: LA
+- :ccms_code: '281639'
+  :name: Windsor and Maidenhead Royal Borough Council
+  :organisation_type: LA
+- :ccms_code: '281641'
+  :name: Wirral Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281643'
+  :name: Woking Borough Council
+  :organisation_type: LA
+- :ccms_code: '281645'
+  :name: Wokingham Borough Council
+  :organisation_type: LA
+- :ccms_code: '281647'
+  :name: Wolverhampton City Council
+  :organisation_type: LA
+- :ccms_code: '281648'
+  :name: Worcester City Council
+  :organisation_type: LA
+- :ccms_code: '281650'
+  :name: Worcestershire County Council
+  :organisation_type: LA
+- :ccms_code: '281652'
+  :name: Worthing Borough Council
+  :organisation_type: LA
+- :ccms_code: '281654'
+  :name: Wrexham County Borough Council
+  :organisation_type: LA
+- :ccms_code: '281655'
+  :name: Wychavon District Council
+  :organisation_type: LA
+- :ccms_code: '281657'
+  :name: Wycombe District Council
+  :organisation_type: LA
+- :ccms_code: '281659'
+  :name: Wyre Borough Council
+  :organisation_type: LA
+- :ccms_code: '281660'
+  :name: Wyre Forest District Council
+  :organisation_type: LA
+- :ccms_code: '281661'
+  :name: York City Council
+  :organisation_type: LA
+- :ccms_code: '378750'
+  :name: Northampton Magistrate Court
+  :organisation_type: CO
+- :ccms_code: '380689'
+  :name: Spring Hill
+  :organisation_type: HMO
+- :ccms_code: '380690'
+  :name: Standford Hill
+  :organisation_type: HMO
+- :ccms_code: '380703'
+  :name: Stocken
+  :organisation_type: HMO
+- :ccms_code: '380719'
+  :name: Stoke Heath
+  :organisation_type: HMO
+- :ccms_code: '380720'
+  :name: Styal
+  :organisation_type: HMO
+- :ccms_code: '380721'
+  :name: Swaleside
+  :organisation_type: HMO
+- :ccms_code: '380722'
+  :name: Swinfen Hall
+  :organisation_type: HMO
+- :ccms_code: '380723'
+  :name: The Mount
+  :organisation_type: HMO
+- :ccms_code: '380724'
+  :name: The Verne
+  :organisation_type: HMO
+- :ccms_code: '380725'
+  :name: Thorn Cross
+  :organisation_type: HMO
+- :ccms_code: '380727'
+  :name: Wayland
+  :organisation_type: HMO
+- :ccms_code: '380728'
+  :name: Wealstun
+  :organisation_type: HMO
+- :ccms_code: '380729'
+  :name: Whatton
+  :organisation_type: HMO
+- :ccms_code: '380730'
+  :name: Whitemoor
+  :organisation_type: HMO
+- :ccms_code: '380731'
+  :name: Wolds
+  :organisation_type: HMO
+- :ccms_code: '380732'
+  :name: Woodhill
+  :organisation_type: HMO
+- :ccms_code: '380733'
+  :name: Wormwood Scrubs
+  :organisation_type: HMO
+- :ccms_code: '380734'
+  :name: Wymott
+  :organisation_type: HMO
+- :ccms_code: '380735'
+  :name: Broxbourne Housing Association
+  :organisation_type: HOA
+- :ccms_code: '380736'
+  :name: Family Mosaic Housing Association
+  :organisation_type: HOA
+- :ccms_code: '380737'
+  :name: Gateshead Housing Company
+  :organisation_type: HOA
+- :ccms_code: '380738'
+  :name: Housing Hartlepool
+  :organisation_type: HOA
+- :ccms_code: '380739'
+  :name: Kensington Housing Trust
+  :organisation_type: HOA
+- :ccms_code: '380742'
+  :name: Notting Hill Housing Trust
+  :organisation_type: HOA
+- :ccms_code: '380743'
+  :name: Tower Hamlets Council
+  :organisation_type: HOA
+- :ccms_code: '380744'
+  :name: Brook House Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380745'
+  :name: Campsfield House Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380746'
+  :name: Colnbrook Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380747'
+  :name: Dover Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380748'
+  :name: Dungavel House Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380749'
+  :name: Harmondsworth Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380750'
+  :name: Haslar Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380751'
+  :name: Larne House
+  :organisation_type: IRC
+- :ccms_code: '380752'
+  :name: Morton Hall Immigration Removal Centre
+  :organisation_type: IRC
+- :ccms_code: '380753'
+  :name: Pennine House
+  :organisation_type: IRC
+- :ccms_code: '380754'
+  :name: Yarl's Wood Immigration Removal Centre,
+  :organisation_type: IRC
+- :ccms_code: '380755'
+  :name: 2gether NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380756'
+  :name: 5 Boroughs Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380757'
+  :name: Aintree University Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380758'
+  :name: Airedale NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '378849'
+  :name: North West Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378850'
+  :name: Northern Ireland Office
+  :organisation_type: GOVT
+- :ccms_code: '378851'
+  :name: Nugent Care Society
+  :organisation_type: GOVT
+- :ccms_code: '378852'
+  :name: Office for Standards In Education, Children's Services and Skills
+  :organisation_type: GOVT
+- :ccms_code: '378853'
+  :name: Office of Gas and Electricity Markets
+  :organisation_type: GOVT
+- :ccms_code: '378854'
+  :name: Office of Qualifications and Examinations Regulation
+  :organisation_type: GOVT
+- :ccms_code: '378855'
+  :name: Office of Rail Regulation
+  :organisation_type: GOVT
+- :ccms_code: '378856'
+  :name: Office of The Leader of The House of Commons and Lord Privy Seal
+  :organisation_type: GOVT
+- :ccms_code: '378857'
+  :name: Office of The Public Guardian
+  :organisation_type: GOVT
+- :ccms_code: '378858'
+  :name: Office of Water Services
+  :organisation_type: GOVT
+- :ccms_code: '378859'
+  :name: Official Receiver (insolvency Service)
+  :organisation_type: GOVT
+- :ccms_code: '378860'
+  :name: Official Solicitor
+  :organisation_type: GOVT
+- :ccms_code: '378861'
+  :name: Ordnance Survey
+  :organisation_type: GOVT
+- :ccms_code: '378862'
+  :name: Parole Board
+  :organisation_type: GOVT
+- :ccms_code: '378863'
+  :name: Pension, Disability and Carers Service
+  :organisation_type: GOVT
+- :ccms_code: '378864'
+  :name: People, Pay and Pensions Agency
+  :organisation_type: GOVT
+- :ccms_code: '378865'
+  :name: Planning Inspectorate
+  :organisation_type: GOVT
+- :ccms_code: '378866'
+  :name: Postal Services Commission
+  :organisation_type: GOVT
+- :ccms_code: '378867'
+  :name: Prime Minister's Office
+  :organisation_type: GOVT
+- :ccms_code: '378868'
+  :name: Public Works Loan Board
+  :organisation_type: GOVT
+- :ccms_code: '378869'
+  :name: Queen Elizabeth Ii Conference Centre
+  :organisation_type: GOVT
+- :ccms_code: '378870'
+  :name: Refugee Council HQ
+  :organisation_type: GOVT
+- :ccms_code: '378871'
+  :name: Rural Payments Agency
+  :organisation_type: GOVT
+- :ccms_code: '378872'
+  :name: Scotland Office
+  :organisation_type: GOVT
+- :ccms_code: '378873'
+  :name: Secretary of State for Defence War Office
+  :organisation_type: GOVT
+- :ccms_code: '378875'
+  :name: Secretary of State Home Department
+  :organisation_type: GOVT
+- :ccms_code: '378876'
+  :name: Serious Fraud Office
+  :organisation_type: GOVT
+- :ccms_code: '378877'
+  :name: Service Children's Education
+  :organisation_type: GOVT
+- :ccms_code: '378878'
+  :name: Service Personnel and Veterans Agency (ex-service and Veterens Personel Issues)
+  :organisation_type: GOVT
+- :ccms_code: '378895'
+  :name: Skills Funding Agency
+  :organisation_type: GOVT
+- :ccms_code: '378896'
+  :name: Solicitors Regulation Authority
+  :organisation_type: GOVT
+- :ccms_code: '378897'
+  :name: South East Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378898'
+  :name: South West Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378899'
+  :name: The Crown Estate
+  :organisation_type: GOVT
+- :ccms_code: '378900'
+  :name: The Food and Environment Research Agency
+  :organisation_type: GOVT
+- :ccms_code: '378901'
+  :name: The London Programme for IT (LPFIT)
+  :organisation_type: GOVT
+- :ccms_code: '378903'
+  :name: The Royal Parks
+  :organisation_type: GOVT
+- :ccms_code: '378904'
+  :name: The Southern Programme for IT (SPFIT)
+  :organisation_type: GOVT
+- :ccms_code: '378905'
+  :name: Treasury Solicitor's Department
+  :organisation_type: GOVT
+- :ccms_code: '378906'
+  :name: Tribunals Service
+  :organisation_type: GOVT
+- :ccms_code: '378907'
+  :name: Uk Hydrographic Office
+  :organisation_type: GOVT
+- :ccms_code: '378908'
+  :name: Uk Intellectual Property Office
+  :organisation_type: GOVT
+- :ccms_code: '378909'
+  :name: Uk Statistics Authority
+  :organisation_type: GOVT
+- :ccms_code: '378910'
+  :name: Uk Trade & Investment
+  :organisation_type: GOVT
+- :ccms_code: '378911'
+  :name: Valuation Office
+  :organisation_type: GOVT
+- :ccms_code: '378912'
+  :name: Vehicle and Operator Services Agency
+  :organisation_type: GOVT
+- :ccms_code: '378913'
+  :name: Vehicle Certification Agency
+  :organisation_type: GOVT
+- :ccms_code: '378914'
+  :name: Veterinary Laboratories Agency
+  :organisation_type: GOVT
+- :ccms_code: '378915'
+  :name: Veterinary Medicines Directorate
+  :organisation_type: GOVT
+- :ccms_code: '378916'
+  :name: Wales Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378917'
+  :name: Wales Office
+  :organisation_type: GOVT
+- :ccms_code: '378918'
+  :name: West Glamorgan Joint Childcare Legal Services
+  :organisation_type: GOVT
+- :ccms_code: '378919'
+  :name: West Midlands Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378920'
+  :name: Wilton Park
+  :organisation_type: GOVT
+- :ccms_code: '378921'
+  :name: Yorkshire & The Humber Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378922'
+  :name: Acklington
+  :organisation_type: HMO
+- :ccms_code: '378923'
+  :name: Albany
+  :organisation_type: HMO
+- :ccms_code: '378932'
+  :name: Altcourse
+  :organisation_type: HMO
+- :ccms_code: '282434'
+  :name: Hartlepool Borough Council
+  :organisation_type: LA
+- :ccms_code: '378933'
+  :name: Ashwell
+  :organisation_type: HMO
+- :ccms_code: '378934'
+  :name: Askham Grange
+  :organisation_type: HMO
+- :ccms_code: '378936'
+  :name: Belmarsh
+  :organisation_type: HMO
+- :ccms_code: '378937'
+  :name: Blakenhurst
+  :organisation_type: HMO
+- :ccms_code: '378938'
+  :name: Blantyre House
+  :organisation_type: HMO
+- :ccms_code: '378939'
+  :name: Blundeston
+  :organisation_type: HMO
+- :ccms_code: '378949'
+  :name: Brinsford
+  :organisation_type: HMO
+- :ccms_code: '378951'
+  :name: Brockhill
+  :organisation_type: HMO
+- :ccms_code: '378952'
+  :name: Bronzefield
+  :organisation_type: HMO
+- :ccms_code: '378953'
+  :name: Buckley Hall
+  :organisation_type: HMO
+- :ccms_code: '378954'
+  :name: Bullingdon
+  :organisation_type: HMO
+- :ccms_code: '378955'
+  :name: Bullwood Hall
+  :organisation_type: HMO
+- :ccms_code: '378956'
+  :name: Camp Hill
+  :organisation_type: HMO
+- :ccms_code: '378974'
+  :name: Castington
+  :organisation_type: HMO
+- :ccms_code: '378975'
+  :name: Channings Wood
+  :organisation_type: HMO
+- :ccms_code: '378976'
+  :name: Coldingley
+  :organisation_type: HMO
+- :ccms_code: '378977'
+  :name: Cookham Wood
+  :organisation_type: HMO
+- :ccms_code: '378978'
+  :name: Dartmoor
+  :organisation_type: HMO
+- :ccms_code: '378979'
+  :name: Deerbolt
+  :organisation_type: HMO
+- :ccms_code: '378980'
+  :name: Dovegate
+  :organisation_type: HMO
+- :ccms_code: '378981'
+  :name: Downview
+  :organisation_type: HMO
+- :ccms_code: '378982'
+  :name: East Sutton Park
+  :organisation_type: HMO
+- :ccms_code: '378983'
+  :name: Eastwood Park
+  :organisation_type: HMO
+- :ccms_code: '378984'
+  :name: Edmunds Hill
+  :organisation_type: HMO
+- :ccms_code: '378985'
+  :name: Elmley
+  :organisation_type: HMO
+- :ccms_code: '378986'
+  :name: Erlestoke
+  :organisation_type: HMO
+- :ccms_code: '378987'
+  :name: Everthorpe
+  :organisation_type: HMO
+- :ccms_code: '378988'
+  :name: Featherstone
+  :organisation_type: HMO
+- :ccms_code: '378989'
+  :name: Feltham
+  :organisation_type: HMO
+- :ccms_code: '378990'
+  :name: Ford
+  :organisation_type: HMO
+- :ccms_code: '378991'
+  :name: Forest Bank
+  :organisation_type: HMO
+- :ccms_code: '378992'
+  :name: Foston Hall
+  :organisation_type: HMO
+- :ccms_code: '378993'
+  :name: Frankland
+  :organisation_type: HMO
+- :ccms_code: '378994'
+  :name: Full Sutton
+  :organisation_type: HMO
+- :ccms_code: '378995'
+  :name: Garth
+  :organisation_type: HMO
+- :ccms_code: '378996'
+  :name: Gartree
+  :organisation_type: HMO
+- :ccms_code: '378997'
+  :name: Glen Parva
+  :organisation_type: HMO
+- :ccms_code: '379016'
+  :name: Grendon
+  :organisation_type: HMO
+- :ccms_code: '379017'
+  :name: Guys Marsh
+  :organisation_type: HMO
+- :ccms_code: '379018'
+  :name: Haverigg
+  :organisation_type: HMO
+- :ccms_code: '379019'
+  :name: Hewell Grange
+  :organisation_type: HMO
+- :ccms_code: '379020'
+  :name: High Down
+  :organisation_type: HMO
+- :ccms_code: '379021'
+  :name: Highpoint
+  :organisation_type: HMO
+- :ccms_code: '379022'
+  :name: Hindley
+  :organisation_type: HMO
+- :ccms_code: '379023'
+  :name: Hollesley Bay
+  :organisation_type: HMO
+- :ccms_code: '379024'
+  :name: Holme House
+  :organisation_type: HMO
+- :ccms_code: '379025'
+  :name: Kirklevington Grange
+  :organisation_type: HMO
+- :ccms_code: '379026'
+  :name: Lancaster Castle
+  :organisation_type: HMO
+- :ccms_code: '379027'
+  :name: Lancaster Farms
+  :organisation_type: HMO
+- :ccms_code: '379028'
+  :name: Latchmere House
+  :organisation_type: HMO
+- :ccms_code: '379030'
+  :name: Leyhill
+  :organisation_type: HMO
+- :ccms_code: '379031'
+  :name: Lindholme
+  :organisation_type: HMO
+- :ccms_code: '379032'
+  :name: Littlehey
+  :organisation_type: HMO
+- :ccms_code: '379033'
+  :name: Long Lartin
+  :organisation_type: HMO
+- :ccms_code: '379034'
+  :name: Low Newton
+  :organisation_type: HMO
+- :ccms_code: '379035'
+  :name: Lowdham Grange
+  :organisation_type: HMO
+- :ccms_code: '379036'
+  :name: Moorland Closed
+  :organisation_type: HMO
+- :ccms_code: '379037'
+  :name: Moorland Open
+  :organisation_type: HMO
+- :ccms_code: '296351'
+  :name: Redcar and Cleveland Local Authority
+  :organisation_type: LA
+- :ccms_code: '294391'
+  :name: Stockton Borough Council
+  :organisation_type: LA
+- :ccms_code: '291474'
+  :name: Middlesbrough Council
+  :organisation_type: LA
+- :ccms_code: '379038'
+  :name: Morton Hall
+  :organisation_type: HMO
+- :ccms_code: '379039'
+  :name: New Hall
+  :organisation_type: HMO
+- :ccms_code: '379040'
+  :name: North Sea Camp
+  :organisation_type: HMO
+- :ccms_code: '379041'
+  :name: Onley
+  :organisation_type: HMO
+- :ccms_code: '379042'
+  :name: Parkhurst
+  :organisation_type: HMO
+- :ccms_code: '379043'
+  :name: Pentonville
+  :organisation_type: HMO
+- :ccms_code: '379044'
+  :name: Portland
+  :organisation_type: HMO
+- :ccms_code: '379045'
+  :name: Prescoed
+  :organisation_type: HMO
+- :ccms_code: '379046'
+  :name: Ranby
+  :organisation_type: HMO
+- :ccms_code: '380760'
+  :name: Alder Hey Children's NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380763'
+  :name: Avon and Wiltshire Mental Health Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380774'
+  :name: Barking and Dagenham PCT
+  :organisation_type: NHS
+- :ccms_code: '380775'
+  :name: Barking Havering & Redbridge Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380786'
+  :name: Avon & Somerset Police
+  :organisation_type: POLICE
+- :ccms_code: '380790'
+  :name: Barnet PCT
+  :organisation_type: NHS
+- :ccms_code: '380791'
+  :name: Barnet, Enfield and Haringey Mental Health NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380792'
+  :name: Barnsley Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380793'
+  :name: Barnsley PCT
+  :organisation_type: NHS
+- :ccms_code: '380794'
+  :name: Bart & The London NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380795'
+  :name: Basildon and Thurrock University Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380796'
+  :name: Bassetlaw PCT
+  :organisation_type: NHS
+- :ccms_code: '380797'
+  :name: Bedford NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380798'
+  :name: Bedfordshire PCT
+  :organisation_type: NHS
+- :ccms_code: '380799'
+  :name: Berkshire East PCT
+  :organisation_type: NHS
+- :ccms_code: '380800'
+  :name: Berkshire Healthcare NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380801'
+  :name: Berkshire West NHS Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '380802'
+  :name: Betsi Cadwaladr University Health Board
+  :organisation_type: NHS
+- :ccms_code: '380803'
+  :name: Birmingham and Solihull Mental Health NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380804'
+  :name: Birmingham Children's Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380805'
+  :name: Birmingham Community Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380806'
+  :name: Birmingham East & North PCT
+  :organisation_type: NHS
+- :ccms_code: '380807'
+  :name: Birmingham University Hospitals
+  :organisation_type: NHS
+- :ccms_code: '380808'
+  :name: Birmingham Women’s NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380809'
+  :name: Black Country Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380810'
+  :name: Blackburn With Darwen Teaching Care Trust Plus
+  :organisation_type: NHS
+- :ccms_code: '380811'
+  :name: Blackpool PCT
+  :organisation_type: NHS
+- :ccms_code: '380812'
+  :name: Blackpool Teaching Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380813'
+  :name: Bolton NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380814'
+  :name: Bolton PCT
+  :organisation_type: NHS
+- :ccms_code: '380815'
+  :name: Bournemouth and Poole Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380816'
+  :name: Bradford & Airdale Primary NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380817'
+  :name: Bradford and Airedale Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380818'
+  :name: Bradford District Care Trust
+  :organisation_type: NHS
+- :ccms_code: '380819'
+  :name: Bradford Teaching Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380820'
+  :name: Brent Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380821'
+  :name: Bridgewater Community Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380822'
+  :name: Brighton and Sussex University Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380823'
+  :name: Bristol PCT
+  :organisation_type: NHS
+- :ccms_code: '380824'
+  :name: Bristol Royal Children's Hospital
+  :organisation_type: NHS
+- :ccms_code: '380825'
+  :name: Bro Morgannwg NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380826'
+  :name: Bromley Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380827'
+  :name: Bromley PCT
+  :organisation_type: NHS
+- :ccms_code: '380828'
+  :name: Buckinghamshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380829'
+  :name: Buckinghamshire PCT
+  :organisation_type: NHS
+- :ccms_code: '380830'
+  :name: Burton NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380831'
+  :name: Bury PCT
+  :organisation_type: NHS
+- :ccms_code: '380832'
+  :name: Calderdale & Huddersfield NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380833'
+  :name: Calderdale PCT
+  :organisation_type: NHS
+- :ccms_code: '380834'
+  :name: Calderstones Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380835'
+  :name: Cambridge University Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380836'
+  :name: Cambridgeshire and Peterborough NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380837'
+  :name: Cambridgeshire Community Services NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380838'
+  :name: Cambridgeshire PCT
+  :organisation_type: NHS
+- :ccms_code: '380839'
+  :name: Camden PCT
+  :organisation_type: NHS
+- :ccms_code: '380840'
+  :name: Cardiff & Vale NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380841'
+  :name: Central & Eastern Cheshire NHS PCT
+  :organisation_type: NHS
+- :ccms_code: '380843'
+  :name: Central and North West London NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380844'
+  :name: Central Lancashire PCT
+  :organisation_type: NHS
+- :ccms_code: '380845'
+  :name: Central London Community Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380846'
+  :name: Central Manchester NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380847'
+  :name: Chelsea and Westminster Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380848'
+  :name: Cheshire and Wirral Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380849'
+  :name: Chesterfield NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380850'
+  :name: City and Hackney Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380851'
+  :name: City Hospitals Sunderland NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380852'
+  :name: Colchester Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380853'
+  :name: Cornwall and Isles of Scilly PCT
+  :organisation_type: NHS
+- :ccms_code: '380854'
+  :name: Cornwall Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380855'
+  :name: Countess of Chester Hospital
+  :organisation_type: NHS
+- :ccms_code: '380856'
+  :name: County Durham PCT
+  :organisation_type: NHS
+- :ccms_code: '380858'
+  :name: Coventry and Warwickshire Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380859'
+  :name: Coventry PCT
+  :organisation_type: NHS
+- :ccms_code: '380860'
+  :name: Croydon Health Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380861'
+  :name: Croydon PCT
+  :organisation_type: NHS
+- :ccms_code: '380862'
+  :name: Cumbria NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380863'
+  :name: Cumbria Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380864'
+  :name: Cwm Taf NHS Health Board
+  :organisation_type: NHS
+- :ccms_code: '380865'
+  :name: Darlington PCT
+  :organisation_type: NHS
+- :ccms_code: '380866'
+  :name: Dartford and Gravesham NHS Hospital Trust
+  :organisation_type: NHS
+- :ccms_code: '380867'
+  :name: Derby City PCT
+  :organisation_type: NHS
+- :ccms_code: '380868'
+  :name: Derby Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380869'
+  :name: Derbyshire Community Health Services NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380870'
+  :name: Derbyshire County PCT
+  :organisation_type: NHS
+- :ccms_code: '380882'
+  :name: Derbyshire Healthcare NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380883'
+  :name: Derbyshire Mental Health Trust
+  :organisation_type: NHS
+- :ccms_code: '380884'
+  :name: Devon Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380885'
+  :name: Devon PCT
+  :organisation_type: NHS
+- :ccms_code: '380886'
+  :name: Diana Princess of Wales Hospital
+  :organisation_type: NHS
+- :ccms_code: '380887'
+  :name: Doncaster & Bassetlaw NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380888'
+  :name: Doncaster PCT
+  :organisation_type: NHS
+- :ccms_code: '380889'
+  :name: Dorset County Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380890'
+  :name: Dorset Healthcare University NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380891'
+  :name: Dorset PCT
+  :organisation_type: NHS
+- :ccms_code: '380892'
+  :name: Dudley and Walsall Mental Health Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380893'
+  :name: Dudley PCT
+  :organisation_type: NHS
+- :ccms_code: '380894'
+  :name: Durham & Darlington NHS Foundation Trust Darlington Memorial Hospital
+  :organisation_type: NHS
+- :ccms_code: '380895'
+  :name: Ealing NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380896'
+  :name: Ealing PCT
+  :organisation_type: NHS
+- :ccms_code: '380897'
+  :name: East & North Hertfordshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '281338'
+  :name: Harborough District Council
+  :organisation_type: LA
+- :ccms_code: '281339'
+  :name: Harlow District Council
+  :organisation_type: LA
+- :ccms_code: '281340'
+  :name: Harrogate Borough Council
+  :organisation_type: LA
+- :ccms_code: '281341'
+  :name: Hart District Council
+  :organisation_type: LA
+- :ccms_code: '281342'
+  :name: Hastings Borough Council
+  :organisation_type: LA
+- :ccms_code: '281345'
+  :name: Havant Borough Council
+  :organisation_type: LA
+- :ccms_code: '281346'
+  :name: Herefordshire Council
+  :organisation_type: LA
+- :ccms_code: '281347'
+  :name: Hertfordshire County Council
+  :organisation_type: LA
+- :ccms_code: '281348'
+  :name: Hertsmere Borough Council
+  :organisation_type: LA
+- :ccms_code: '281349'
+  :name: High Peak Borough Council
+  :organisation_type: LA
+- :ccms_code: '281350'
+  :name: Highland Council
+  :organisation_type: LA
+- :ccms_code: '281351'
+  :name: Hinckley and Bosworth Borough Council
+  :organisation_type: LA
+- :ccms_code: '281352'
+  :name: Horsham District Council
+  :organisation_type: LA
+- :ccms_code: '281353'
+  :name: Huntingdonshire District Council
+  :organisation_type: LA
+- :ccms_code: '281354'
+  :name: Hyndburn Borough Council
+  :organisation_type: LA
+- :ccms_code: '281355'
+  :name: Inverclyde Council
+  :organisation_type: LA
+- :ccms_code: '281356'
+  :name: Ipswich Borough Council
+  :organisation_type: LA
+- :ccms_code: '281357'
+  :name: Isle of Anglesey County Council
+  :organisation_type: LA
+- :ccms_code: '281358'
+  :name: Isle of Wight Council
+  :organisation_type: LA
+- :ccms_code: '281359'
+  :name: Kent County Council
+  :organisation_type: LA
+- :ccms_code: '281360'
+  :name: Kettering Borough Council
+  :organisation_type: LA
+- :ccms_code: '281361'
+  :name: King's Lynn and West Norfolk Borough Council
+  :organisation_type: LA
+- :ccms_code: '281362'
+  :name: Kingston upon Hull City Council
+  :organisation_type: LA
+- :ccms_code: '281363'
+  :name: Kirklees Council
+  :organisation_type: LA
+- :ccms_code: '281364'
+  :name: Knowsley Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281365'
+  :name: Lancashire County Council
+  :organisation_type: LA
+- :ccms_code: '281366'
+  :name: Lancaster City Council
+  :organisation_type: LA
+- :ccms_code: '281367'
+  :name: Larne Borough Council
+  :organisation_type: LA
+- :ccms_code: '281368'
+  :name: Leeds City County Council
+  :organisation_type: LA
+- :ccms_code: '282338'
+  :name: Ceredigion County Council
+  :organisation_type: LA
+- :ccms_code: '282339'
+  :name: Charnwood Borough Council
+  :organisation_type: LA
+- :ccms_code: '282340'
+  :name: Chelmsford Borough Council
+  :organisation_type: LA
+- :ccms_code: '282341'
+  :name: Cheltenham Borough Council
+  :organisation_type: LA
+- :ccms_code: '282342'
+  :name: Cherwell District Council
+  :organisation_type: LA
+- :ccms_code: '282343'
+  :name: City of Bradford Metropolitan District Council
+  :organisation_type: LA
+- :ccms_code: '282344'
+  :name: City of Lincoln Council
+  :organisation_type: LA
+- :ccms_code: '282345'
+  :name: City of London
+  :organisation_type: LA
+- :ccms_code: '282346'
+  :name: Clackmannanshire Council
+  :organisation_type: LA
+- :ccms_code: '282347'
+  :name: Colchester Borough Council
+  :organisation_type: LA
+- :ccms_code: '282348'
+  :name: Coleraine Borough Council
+  :organisation_type: LA
+- :ccms_code: '282349'
+  :name: Comhairle nan Eilean Siar
+  :organisation_type: LA
+- :ccms_code: '282350'
+  :name: Conwy County Borough Council
+  :organisation_type: LA
+- :ccms_code: '282351'
+  :name: Cookstown District Council
+  :organisation_type: LA
+- :ccms_code: '282352'
+  :name: Copeland Borough Council
+  :organisation_type: LA
+- :ccms_code: '282353'
+  :name: Corby Borough Council
+  :organisation_type: LA
+- :ccms_code: '282354'
+  :name: Cornwall Council
+  :organisation_type: LA
+- :ccms_code: '282355'
+  :name: Cotswold District Council
+  :organisation_type: LA
+- :ccms_code: '282356'
+  :name: Council of the Isles of Scilly
+  :organisation_type: LA
+- :ccms_code: '282357'
+  :name: Coventry City Council
+  :organisation_type: LA
+- :ccms_code: '282358'
+  :name: Craigavon Borough Council
+  :organisation_type: LA
+- :ccms_code: '282359'
+  :name: Craven District Council
+  :organisation_type: LA
+- :ccms_code: '282360'
+  :name: Crawley Borough Council
+  :organisation_type: LA
+- :ccms_code: '282361'
+  :name: Cumbria County Council
+  :organisation_type: LA
+- :ccms_code: '282362'
+  :name: Dacorum Borough Council
+  :organisation_type: LA
+- :ccms_code: '282363'
+  :name: Darlington Borough Council
+  :organisation_type: LA
+- :ccms_code: '282364'
+  :name: Dartford Borough Council
+  :organisation_type: LA
+- :ccms_code: '282365'
+  :name: Daventry District Council
+  :organisation_type: LA
+- :ccms_code: '282366'
+  :name: Derby City Council
+  :organisation_type: LA
+- :ccms_code: '282367'
+  :name: Derbyshire County Council
+  :organisation_type: LA
+- :ccms_code: '282368'
+  :name: Derbyshire Dales District Council
+  :organisation_type: LA
+- :ccms_code: '378755'
+  :name: Animal Health
+  :organisation_type: GOVT
+- :ccms_code: '378760'
+  :name: Asset Protection Agency
+  :organisation_type: GOVT
+- :ccms_code: '281369'
+  :name: Dorset County Council
+  :organisation_type: LA
+- :ccms_code: '281370'
+  :name: Cheshire West and Chester Council
+  :organisation_type: LA
+- :ccms_code: '281371'
+  :name: Chesterfield Borough Council
+  :organisation_type: LA
+- :ccms_code: '281372'
+  :name: Chichester District Council
+  :organisation_type: LA
+- :ccms_code: '281373'
+  :name: Chiltern District Council
+  :organisation_type: LA
+- :ccms_code: '281374'
+  :name: Chorley Borough Council
+  :organisation_type: LA
+- :ccms_code: '281375'
+  :name: Derry City Council
+  :organisation_type: LA
+- :ccms_code: '281376'
+  :name: Devon County Council
+  :organisation_type: LA
+- :ccms_code: '281377'
+  :name: Doncaster Council
+  :organisation_type: LA
+- :ccms_code: '281378'
+  :name: Dover District Council
+  :organisation_type: LA
+- :ccms_code: '281379'
+  :name: Down District Council
+  :organisation_type: LA
+- :ccms_code: '281380'
+  :name: Dudley Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281381'
+  :name: Dumfries and Galloway Council
+  :organisation_type: LA
+- :ccms_code: '281382'
+  :name: Dundee City Council
+  :organisation_type: LA
+- :ccms_code: '281383'
+  :name: Dungannon and South Tyrone Borough Council
+  :organisation_type: LA
+- :ccms_code: '281385'
+  :name: East Ayrshire Council
+  :organisation_type: LA
+- :ccms_code: '281386'
+  :name: East Cambridgeshire District Council
+  :organisation_type: LA
+- :ccms_code: '281387'
+  :name: East Devon District Council
+  :organisation_type: LA
+- :ccms_code: '281388'
+  :name: East Dorset District Council
+  :organisation_type: LA
+- :ccms_code: '281390'
+  :name: East Dunbartonshire Council
+  :organisation_type: LA
+- :ccms_code: '281391'
+  :name: East Hampshire District Council
+  :organisation_type: LA
+- :ccms_code: '281392'
+  :name: East Hertfordshire District Council
+  :organisation_type: LA
+- :ccms_code: '281393'
+  :name: East Lindsey District Council
+  :organisation_type: LA
+- :ccms_code: '281395'
+  :name: East Lothian Council
+  :organisation_type: LA
+- :ccms_code: '281397'
+  :name: East Northamptonshire District Council
+  :organisation_type: LA
+- :ccms_code: '281399'
+  :name: East Renfrewshire Council
+  :organisation_type: LA
+- :ccms_code: '281400'
+  :name: East Riding of Yorkshire Council
+  :organisation_type: LA
+- :ccms_code: '281401'
+  :name: East Staffordshire Borough Council
+  :organisation_type: LA
+- :ccms_code: '281402'
+  :name: West Sussex County Council
+  :organisation_type: LA
+- :ccms_code: '281403'
+  :name: Eastbourne Borough Council
+  :organisation_type: LA
+- :ccms_code: '281404'
+  :name: Eastleigh Borough Council
+  :organisation_type: LA
+- :ccms_code: '281405'
+  :name: Eden District Council
+  :organisation_type: LA
+- :ccms_code: '281406'
+  :name: Edinburgh City Council
+  :organisation_type: LA
+- :ccms_code: '281407'
+  :name: Elmbridge Borough Council
+  :organisation_type: LA
+- :ccms_code: '281408'
+  :name: Epping Forest District Council
+  :organisation_type: LA
+- :ccms_code: '281409'
+  :name: Epsom and Ewell Borough Council
+  :organisation_type: LA
+- :ccms_code: '281411'
+  :name: Erewash Borough Council
+  :organisation_type: LA
+- :ccms_code: '281413'
+  :name: Exeter City Council
+  :organisation_type: LA
+- :ccms_code: '281415'
+  :name: Falkirk Council
+  :organisation_type: LA
+- :ccms_code: '281417'
+  :name: Fareham Borough Council
+  :organisation_type: LA
+- :ccms_code: '281418'
+  :name: Fenland District Council
+  :organisation_type: LA
+- :ccms_code: '281419'
+  :name: Fermanagh District Council
+  :organisation_type: LA
+- :ccms_code: '281420'
+  :name: Fife Council
+  :organisation_type: LA
+- :ccms_code: '281421'
+  :name: Flintshire County Council
+  :organisation_type: LA
+- :ccms_code: '281423'
+  :name: Forest Heath District Council
+  :organisation_type: LA
+- :ccms_code: '281424'
+  :name: Forest of Dean District Council
+  :organisation_type: LA
+- :ccms_code: '281425'
+  :name: Fylde Borough Council
+  :organisation_type: LA
+- :ccms_code: '281426'
+  :name: Gateshead Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281427'
+  :name: Gedling Borough Council
+  :organisation_type: LA
+- :ccms_code: '281428'
+  :name: Glasgow City Council
+  :organisation_type: LA
+- :ccms_code: '281430'
+  :name: Gloucester City Council
+  :organisation_type: LA
+- :ccms_code: '281431'
+  :name: Gloucestershire County Council
+  :organisation_type: LA
+- :ccms_code: '281432'
+  :name: Gosport Borough Council
+  :organisation_type: LA
+- :ccms_code: '281451'
+  :name: Oadby and Wigston Borough Council
+  :organisation_type: LA
+- :ccms_code: '281452'
+  :name: Oldham Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281453'
+  :name: Omagh District Council
+  :organisation_type: LA
+- :ccms_code: '281454'
+  :name: Orkney Islands Council
+  :organisation_type: LA
+- :ccms_code: '281455'
+  :name: Oxford City Council
+  :organisation_type: LA
+- :ccms_code: '281457'
+  :name: Oxfordshire County Council
+  :organisation_type: LA
+- :ccms_code: '281459'
+  :name: Pembrokeshire County Council
+  :organisation_type: LA
+- :ccms_code: '281461'
+  :name: Pendle Borough Council
+  :organisation_type: LA
+- :ccms_code: '281463'
+  :name: Perth and Kinross Council
+  :organisation_type: LA
+- :ccms_code: '281466'
+  :name: Peterborough City Council
+  :organisation_type: LA
+- :ccms_code: '281468'
+  :name: Plymouth City Council
+  :organisation_type: LA
+- :ccms_code: '281474'
+  :name: Powys County Council
+  :organisation_type: LA
+- :ccms_code: '281476'
+  :name: Preston City Council
+  :organisation_type: LA
+- :ccms_code: '281478'
+  :name: Purbeck District Council
+  :organisation_type: LA
+- :ccms_code: '281481'
+  :name: Reading Borough Council
+  :organisation_type: LA
+- :ccms_code: '281482'
+  :name: Redcar and Cleveland Borough Council
+  :organisation_type: LA
+- :ccms_code: '281483'
+  :name: Redditch Borough Council
+  :organisation_type: LA
+- :ccms_code: '281485'
+  :name: Reigate and Banstead Borough Council
+  :organisation_type: LA
+- :ccms_code: '281488'
+  :name: Renfrewshire Council
+  :organisation_type: LA
+- :ccms_code: '281490'
+  :name: Rhondda Cynon Taf County Borough Council
+  :organisation_type: LA
+- :ccms_code: '281492'
+  :name: Ribble Valley Borough Council
+  :organisation_type: LA
+- :ccms_code: '281494'
+  :name: Richmondshire District Council
+  :organisation_type: LA
+- :ccms_code: '281498'
+  :name: Rochdale Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281500'
+  :name: Rochford District Council
+  :organisation_type: LA
+- :ccms_code: '281502'
+  :name: Rossendale Borough Council
+  :organisation_type: LA
+- :ccms_code: '281504'
+  :name: Rother District Council
+  :organisation_type: LA
+- :ccms_code: '281506'
+  :name: Rotherham Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281508'
+  :name: Royal Borough of Greenwich
+  :organisation_type: LA
+- :ccms_code: '281511'
+  :name: Royal Borough of Kensington and Chelsea Council
+  :organisation_type: LA
+- :ccms_code: '281513'
+  :name: Royal Borough of Kingston upon Thames Council
+  :organisation_type: LA
+- :ccms_code: '281515'
+  :name: Rugby Borough Council
+  :organisation_type: LA
+- :ccms_code: '281517'
+  :name: Runnymede Borough Council
+  :organisation_type: LA
+- :ccms_code: '281521'
+  :name: Rushcliffe Borough Council
+  :organisation_type: LA
+- :ccms_code: '281523'
+  :name: Rushmoor Borough Council
+  :organisation_type: LA
+- :ccms_code: '281525'
+  :name: Rutland County Council
+  :organisation_type: LA
+- :ccms_code: '281527'
+  :name: Ryedale District Council
+  :organisation_type: LA
+- :ccms_code: '281529'
+  :name: Salford City Council
+  :organisation_type: LA
+- :ccms_code: '281532'
+  :name: Sandwell Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281534'
+  :name: Scarborough Borough Council
+  :organisation_type: LA
+- :ccms_code: '281536'
+  :name: Scottish Borders Council
+  :organisation_type: LA
+- :ccms_code: '281538'
+  :name: Sedgemoor District Council
+  :organisation_type: LA
+- :ccms_code: '281540'
+  :name: Sefton Council
+  :organisation_type: LA
+- :ccms_code: '281542'
+  :name: Selby District Council
+  :organisation_type: LA
+- :ccms_code: '281544'
+  :name: Sevenoaks District Council
+  :organisation_type: LA
+- :ccms_code: '281547'
+  :name: Sheffield City Council
+  :organisation_type: LA
+- :ccms_code: '281549'
+  :name: Shepway District Council
+  :organisation_type: LA
+- :ccms_code: '281551'
+  :name: Shetland Islands Council
+  :organisation_type: LA
+- :ccms_code: '281553'
+  :name: Shropshire Council
+  :organisation_type: LA
+- :ccms_code: '281555'
+  :name: Slough Borough Council
+  :organisation_type: LA
+- :ccms_code: '281557'
+  :name: Solihull Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281558'
+  :name: Somerset County Council
+  :organisation_type: LA
+- :ccms_code: '281559'
+  :name: South Ayrshire Council
+  :organisation_type: LA
+- :ccms_code: '281563'
+  :name: South Bucks District Council
+  :organisation_type: LA
+- :ccms_code: '281565'
+  :name: South Cambridgeshire District Council
+  :organisation_type: LA
+- :ccms_code: '281567'
+  :name: South Derbyshire District Council
+  :organisation_type: LA
+- :ccms_code: '281573'
+  :name: South Gloucestershire Council
+  :organisation_type: LA
+- :ccms_code: '281575'
+  :name: South Hams District Council
+  :organisation_type: LA
+- :ccms_code: '281577'
+  :name: South Holland District Council
+  :organisation_type: LA
+- :ccms_code: '281579'
+  :name: South Kesteven District Council
+  :organisation_type: LA
+- :ccms_code: '281581'
+  :name: South Lakeland District Council
+  :organisation_type: LA
+- :ccms_code: '281583'
+  :name: South Lanarkshire Council
+  :organisation_type: LA
+- :ccms_code: '281586'
+  :name: South Norfolk Council
+  :organisation_type: LA
+- :ccms_code: '281588'
+  :name: South Northamptonshire Council
+  :organisation_type: LA
+- :ccms_code: '281590'
+  :name: South Oxfordshire District Council
+  :organisation_type: LA
+- :ccms_code: '281592'
+  :name: South Ribble Borough Council
+  :organisation_type: LA
+- :ccms_code: '281593'
+  :name: South Somerset District Council
+  :organisation_type: LA
+- :ccms_code: '281594'
+  :name: South Staffordshire Council
+  :organisation_type: LA
+- :ccms_code: '281595'
+  :name: South Tyneside Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281596'
+  :name: Southend on Sea Borough Council
+  :organisation_type: LA
+- :ccms_code: '281597'
+  :name: Spelthorne Borough Council
+  :organisation_type: LA
+- :ccms_code: '281598'
+  :name: St Albans District Council
+  :organisation_type: LA
+- :ccms_code: '281599'
+  :name: St Edmundsbury Borough Council
+  :organisation_type: LA
+- :ccms_code: '281600'
+  :name: St Helens Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281602'
+  :name: Staffordshire County Council
+  :organisation_type: LA
+- :ccms_code: '281603'
+  :name: Staffordshire Moorlands District Council
+  :organisation_type: LA
+- :ccms_code: '281604'
+  :name: Stevenage Borough Council
+  :organisation_type: LA
+- :ccms_code: '281605'
+  :name: Stirling Council
+  :organisation_type: LA
+- :ccms_code: '281606'
+  :name: Stockport Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281607'
+  :name: Stockton-on-Tees Borough Council
+  :organisation_type: LA
+- :ccms_code: '281608'
+  :name: Stoke on Trent City Council
+  :organisation_type: LA
+- :ccms_code: '281609'
+  :name: Strabane District Council
+  :organisation_type: LA
+- :ccms_code: '281610'
+  :name: Stratford on Avon District Council
+  :organisation_type: LA
+- :ccms_code: '281611'
+  :name: Stroud District Council
+  :organisation_type: LA
+- :ccms_code: '281612'
+  :name: Suffolk Coastal District Council
+  :organisation_type: LA
+- :ccms_code: '281613'
+  :name: Suffolk County Council
+  :organisation_type: LA
+- :ccms_code: '281614'
+  :name: Sunderland City Council
+  :organisation_type: LA
+- :ccms_code: '281615'
+  :name: Surrey County Council
+  :organisation_type: LA
+- :ccms_code: '281616'
+  :name: Surrey Heath Borough Council
+  :organisation_type: LA
+- :ccms_code: '281617'
+  :name: Swale Borough Council
+  :organisation_type: LA
+- :ccms_code: '281620'
+  :name: Swindon Borough Council
+  :organisation_type: LA
+- :ccms_code: '281621'
+  :name: Tameside Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281622'
+  :name: Tamworth Borough Council
+  :organisation_type: LA
+- :ccms_code: '281623'
+  :name: Tandridge District Council
+  :organisation_type: LA
+- :ccms_code: '281624'
+  :name: Taunton Deane Borough Council
+  :organisation_type: LA
+- :ccms_code: '281625'
+  :name: Teignbridge District Council
+  :organisation_type: LA
+- :ccms_code: '281626'
+  :name: Telford & Wrekin Council
+  :organisation_type: LA
+- :ccms_code: '281627'
+  :name: Tendring District Council
+  :organisation_type: LA
+- :ccms_code: '281629'
+  :name: Test Valley Borough Council
+  :organisation_type: LA
+- :ccms_code: '281631'
+  :name: Tewkesbury Borough Council
+  :organisation_type: LA
+- :ccms_code: '281634'
+  :name: Thanet District Council
+  :organisation_type: LA
+- :ccms_code: '281636'
+  :name: Three Rivers District Council
+  :organisation_type: LA
+- :ccms_code: '281638'
+  :name: Thurrock Council
+  :organisation_type: LA
+- :ccms_code: '281640'
+  :name: Tonbridge and Malling Borough Council
+  :organisation_type: LA
+- :ccms_code: '281642'
+  :name: Torbay Council
+  :organisation_type: LA
+- :ccms_code: '281644'
+  :name: Torfaen County Borough Council
+  :organisation_type: LA
+- :ccms_code: '281646'
+  :name: Torridge District Council
+  :organisation_type: LA
+- :ccms_code: '281649'
+  :name: Trafford Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '281651'
+  :name: Tunbridge Wells Borough Council
+  :organisation_type: LA
+- :ccms_code: '281653'
+  :name: Uttlesford District Council
+  :organisation_type: LA
+- :ccms_code: '281656'
+  :name: Vale of Glamorgan Council
+  :organisation_type: LA
+- :ccms_code: '281658'
+  :name: Vale of White Horse District Council
+  :organisation_type: LA
+- :ccms_code: '282435'
+  :name: Carrickfergus Borough Council
+  :organisation_type: LA
+- :ccms_code: '282436'
+  :name: Castle Point Borough Council
+  :organisation_type: LA
+- :ccms_code: '282437'
+  :name: Castlereagh Borough Council
+  :organisation_type: LA
+- :ccms_code: '282438'
+  :name: Central Bedfordshire Council
+  :organisation_type: LA
+- :ccms_code: '282439'
+  :name: City and County of Swansea
+  :organisation_type: LA
+- :ccms_code: '282440'
+  :name: Christchurch Borough Council
+  :organisation_type: LA
+- :ccms_code: '283338'
+  :name: Broxtowe Borough Council
+  :organisation_type: LA
+- :ccms_code: '283339'
+  :name: Buckinghamshire County Council
+  :organisation_type: LA
+- :ccms_code: '283340'
+  :name: Burnley Borough Council
+  :organisation_type: LA
+- :ccms_code: '283341'
+  :name: Bury Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '283342'
+  :name: Caerphilly County Borough Council
+  :organisation_type: LA
+- :ccms_code: '283343'
+  :name: Calderdale Metropolitan Borough Council
+  :organisation_type: LA
+- :ccms_code: '283344'
+  :name: Cambridge City Council
+  :organisation_type: LA
+- :ccms_code: '283345'
+  :name: Cambridgeshire County Council
+  :organisation_type: LA
+- :ccms_code: '283346'
+  :name: Cannock Chase District Council
+  :organisation_type: LA
+- :ccms_code: '283347'
+  :name: Canterbury City Council
+  :organisation_type: LA
+- :ccms_code: '283348'
+  :name: Cardiff Council
+  :organisation_type: LA
+- :ccms_code: '283349'
+  :name: Carlisle City Council
+  :organisation_type: LA
+- :ccms_code: '283350'
+  :name: Carmarthenshire County Council
+  :organisation_type: LA
+- :ccms_code: '283351'
+  :name: Cheshire East Council
+  :organisation_type: LA
+- :ccms_code: '280402'
+  :name: Gravesham Borough Council
+  :organisation_type: LA
+- :ccms_code: '280403'
+  :name: Guildford Borough Council
+  :organisation_type: LA
+- :ccms_code: '280404'
+  :name: Gwynedd County Council
+  :organisation_type: LA
+- :ccms_code: '280405'
+  :name: Halton Borough Council
+  :organisation_type: LA
+- :ccms_code: '280406'
+  :name: Hambleton District Council
+  :organisation_type: LA
+- :ccms_code: '280407'
+  :name: Hampshire County Council
+  :organisation_type: LA
+- :ccms_code: '378761'
+  :name: Attorney General’s Office
+  :organisation_type: GOVT
+- :ccms_code: '378762'
+  :name: British National Space Agency
+  :organisation_type: GOVT
+- :ccms_code: '378763'
+  :name: Buying Solutions
+  :organisation_type: GOVT
+- :ccms_code: '378764'
+  :name: Cabinet Office
+  :organisation_type: GOVT
+- :ccms_code: '378765'
+  :name: Central Office of Information
+  :organisation_type: GOVT
+- :ccms_code: '378766'
+  :name: Centre for Environment, Fisheries and Aquaculture Science
+  :organisation_type: GOVT
+- :ccms_code: '378768'
+  :name: Child Support Agency
+  :organisation_type: GOVT
+- :ccms_code: '378769'
+  :name: Commissioners for The Reduction of The National Debt
+  :organisation_type: GOVT
+- :ccms_code: '378770'
+  :name: Companies House
+  :organisation_type: GOVT
+- :ccms_code: '378771'
+  :name: Criminal Records Bureau
+  :organisation_type: GOVT
+- :ccms_code: '378772'
+  :name: Crown Prosecution
+  :organisation_type: GOVT
+- :ccms_code: '378773'
+  :name: Defence Science and Technology Laboratory
+  :organisation_type: GOVT
+- :ccms_code: '378774'
+  :name: Defence Storage and Distribution Agency
+  :organisation_type: GOVT
+- :ccms_code: '378775'
+  :name: Defence Support Group
+  :organisation_type: GOVT
+- :ccms_code: '378776'
+  :name: Defence Vetting Agency
+  :organisation_type: GOVT
+- :ccms_code: '378777'
+  :name: Department for Business Innovation and Skills
+  :organisation_type: GOVT
+- :ccms_code: '378778'
+  :name: Department for Communities and Local Government
+  :organisation_type: GOVT
+- :ccms_code: '378779'
+  :name: Department for Culture Olympics, Media and Sport
+  :organisation_type: GOVT
+- :ccms_code: '378780'
+  :name: Department for Education
+  :organisation_type: GOVT
+- :ccms_code: '378781'
+  :name: Department for Environment, Food and Rural Affairs
+  :organisation_type: GOVT
+- :ccms_code: '378782'
+  :name: Department for International Development
+  :organisation_type: GOVT
+- :ccms_code: '378783'
+  :name: Department for Transport London
+  :organisation_type: GOVT
+- :ccms_code: '378784'
+  :name: Department of Energy and Climate Change
+  :organisation_type: GOVT
+- :ccms_code: '378785'
+  :name: Department of Health
+  :organisation_type: GOVT
+- :ccms_code: '378786'
+  :name: Driver and Vehicle Licensing Agency
+  :organisation_type: GOVT
+- :ccms_code: '378787'
+  :name: Driving Standards Agency
+  :organisation_type: GOVT
+- :ccms_code: '378788'
+  :name: East Midlands Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378793'
+  :name: East of England Government Office Region
+  :organisation_type: GOVT
+- :ccms_code: '378794'
+  :name: Equality & Human Rights Commission
+  :organisation_type: GOVT
+- :ccms_code: '378797'
+  :name: FCO Services
+  :organisation_type: GOVT
+- :ccms_code: '378798'
+  :name: Fire Service College
+  :organisation_type: GOVT
+- :ccms_code: '378809'
+  :name: Food Standards Agency
+  :organisation_type: GOVT
+- :ccms_code: '378810'
+  :name: Foreign and Commonwealth Office
+  :organisation_type: GOVT
+- :ccms_code: '378811'
+  :name: Forest Enterprise England
+  :organisation_type: GOVT
+- :ccms_code: '378812'
+  :name: Forest Research
+  :organisation_type: GOVT
+- :ccms_code: '378813'
+  :name: Forestry Commission
+  :organisation_type: GOVT
+- :ccms_code: '378814'
+  :name: Government Actuary’s Department
+  :organisation_type: GOVT
+- :ccms_code: '378815'
+  :name: Government Car and Despatch Agency
+  :organisation_type: GOVT
+- :ccms_code: '378816'
+  :name: Government Equalities Office
+  :organisation_type: GOVT
+- :ccms_code: '378817'
+  :name: Health Protection Agency
+  :organisation_type: GOVT
+- :ccms_code: '378819'
+  :name: Highways Agency
+  :organisation_type: GOVT
+- :ccms_code: '378820'
+  :name: HM Courts Service
+  :organisation_type: GOVT
+- :ccms_code: '378821'
+  :name: HM Land Registry
+  :organisation_type: GOVT
+- :ccms_code: '378822'
+  :name: HM Revenue and Customs
+  :organisation_type: GOVT
+- :ccms_code: '378823'
+  :name: HM Treasury
+  :organisation_type: GOVT
+- :ccms_code: '378824'
+  :name: HM Treasury Correspondence & Enquiry Unit
+  :organisation_type: GOVT
+- :ccms_code: '378826'
+  :name: Identity and Passport Service
+  :organisation_type: GOVT
+- :ccms_code: '378827'
+  :name: Independent Police Complaints Commission
+  :organisation_type: GOVT
+- :ccms_code: '378828'
+  :name: Jobcentre Plus
+  :organisation_type: GOVT
+- :ccms_code: '378829'
+  :name: Kensington and Chelsea Tenant Management Org
+  :organisation_type: GOVT
+- :ccms_code: '381109'
+  :name: Norfolk Community Health and Care NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381110'
+  :name: Norfolk Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381111'
+  :name: North Bristol NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381112'
+  :name: North Cumbria NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381113'
+  :name: North Cumbria University Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381114'
+  :name: North East Ambulance Service NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381115'
+  :name: North East Essex PCT
+  :organisation_type: NHS
+- :ccms_code: '381116'
+  :name: North East Lincolnshire Care Trust Plus
+  :organisation_type: NHS
+- :ccms_code: '381117'
+  :name: North East London NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381118'
+  :name: North East Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381119'
+  :name: North East Wales NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381121'
+  :name: North Essex Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381122'
+  :name: North Lancashire Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381123'
+  :name: North Lincolnshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381124'
+  :name: North Lincolnshire PCT
+  :organisation_type: NHS
+- :ccms_code: '381125'
+  :name: North Middlesex University Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381126'
+  :name: North Somerset PCT
+  :organisation_type: NHS
+- :ccms_code: '381127'
+  :name: North Staffordshire NHS Trust/university Hospitals
+  :organisation_type: NHS
+- :ccms_code: '381128'
+  :name: North Staffordshire PCT
+  :organisation_type: NHS
+- :ccms_code: '381129'
+  :name: North Tees & Hartlepool NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381130'
+  :name: North Tyneside PCT
+  :organisation_type: NHS
+- :ccms_code: '381131'
+  :name: North West Ambulance Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381144'
+  :name: North West London Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381145'
+  :name: North West Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381146'
+  :name: North Yorkshire & York PCT
+  :organisation_type: NHS
+- :ccms_code: '381147'
+  :name: Northampton General Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381148'
+  :name: Northampton NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381149'
+  :name: Northamptonshire Healthcare NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381150'
+  :name: Northamptonshire Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381151'
+  :name: Northern Devon Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381152'
+  :name: Northern Lincolnshire and Goole Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381153'
+  :name: Northumberland Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381154'
+  :name: Northumberland, Tyne and Wear NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381155'
+  :name: Northumbria Healthcare NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381156'
+  :name: Northwick Park Hospital
+  :organisation_type: NHS
+- :ccms_code: '381157'
+  :name: Nottingham City Hospital
+  :organisation_type: NHS
+- :ccms_code: '381158'
+  :name: Nottingham City PCT
+  :organisation_type: NHS
+- :ccms_code: '381159'
+  :name: Nottingham University Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381160'
+  :name: Nottinghamshire County Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381161'
+  :name: Nottinghamshire Healthcare Trust
+  :organisation_type: NHS
+- :ccms_code: '381162'
+  :name: Nuffield Orthopaedic Centre NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381163'
+  :name: Oldham PCT
+  :organisation_type: NHS
+- :ccms_code: '381164'
+  :name: Oxford & Buckinghamshire Mental Health Trust
+  :organisation_type: NHS
+- :ccms_code: '381165'
+  :name: Oxford Health NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381166'
+  :name: Oxford University Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381170'
+  :name: Oxfordshire Learning Disability NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381171'
+  :name: Oxfordshire PCT
+  :organisation_type: NHS
+- :ccms_code: '381172'
+  :name: Oxleas NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381173'
+  :name: Papworth NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381178'
+  :name: Pennine Acute Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381186'
+  :name: Pennine Care NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381187'
+  :name: Peterborough & Stamford NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381192'
+  :name: Peterborough PCT
+  :organisation_type: NHS
+- :ccms_code: '381193'
+  :name: Plymouth Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381194'
+  :name: Plymouth Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381195'
+  :name: Poole Hospital NHS Trust Foundation
+  :organisation_type: NHS
+- :ccms_code: '381196'
+  :name: Portsmouth City Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381197'
+  :name: Portsmouth Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381198'
+  :name: Public Health Wales NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381199'
+  :name: Queen Elizabeth Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381200'
+  :name: Queen Victoria Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381201'
+  :name: Redbridge PCT
+  :organisation_type: NHS
+- :ccms_code: '381486'
+  :name: Dyfed-powys Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381487'
+  :name: Essex Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381488'
+  :name: Fife Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381489'
+  :name: Gloucestershire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381490'
+  :name: Grampian Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381491'
+  :name: Greater Manchester Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381492'
+  :name: Gwent Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381493'
+  :name: Hampshire Constabulary
+  :organisation_type: POLICE
+- :ccms_code: '381494'
+  :name: Hampshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381495'
+  :name: Hertfordshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381496'
+  :name: Humberside Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381497'
+  :name: Kent Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381498'
+  :name: Lancashire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381499'
+  :name: Leicestershire Constabulary
+  :organisation_type: POLICE
+- :ccms_code: '381500'
+  :name: Leicestershire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381501'
+  :name: Lincolnshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381502'
+  :name: Lothian & Borders Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381503'
+  :name: Mayor's Office for Policing and Crime
+  :organisation_type: POLICE
+- :ccms_code: '381516'
+  :name: Merseyside Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381517'
+  :name: Metropolitan Police
+  :organisation_type: POLICE
+- :ccms_code: '381518'
+  :name: National Policing Improvement Agency
+  :organisation_type: POLICE
+- :ccms_code: '381527'
+  :name: Norfolk Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381529'
+  :name: North Wales Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381534'
+  :name: North Yorkshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381535'
+  :name: Northamptonshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381536'
+  :name: Northern Ireland Policing Board
+  :organisation_type: POLICE
+- :ccms_code: '381547'
+  :name: Northern Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381548'
+  :name: Northumbria Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381549'
+  :name: Nottinghamshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381550'
+  :name: Police Service for Northern Ireland HQ
+  :organisation_type: POLICE
+- :ccms_code: '381551'
+  :name: Scottish Crime & Drug Enforcement Agency Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381552'
+  :name: SOCA
+  :organisation_type: POLICE
+- :ccms_code: '381553'
+  :name: South Wales Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381554'
+  :name: South Yorkshire Police Authority
+  :organisation_type: POLICE
+- :ccms_code: '381555'
+  :name: South Yorkshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381556'
+  :name: Staffordshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381557'
+  :name: Strathclyde Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381558'
+  :name: Suffolk Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381559'
+  :name: Surrey Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381560'
+  :name: Sussex Police Authority
+  :organisation_type: POLICE
+- :ccms_code: '381561'
+  :name: Tayside Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381570'
+  :name: Thames Valley Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381571'
+  :name: Warwickshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381572'
+  :name: West Mercia Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381573'
+  :name: West Midlands Police Authority
+  :organisation_type: POLICE
+- :ccms_code: '381574'
+  :name: West Yorkshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381575'
+  :name: Wiltshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381576'
+  :name: G4S
+  :organisation_type: PLC
+- :ccms_code: '381577'
+  :name: Imperial College London
+  :organisation_type: PLC
+- :ccms_code: '381578'
+  :name: University North Durham
+  :organisation_type: PLC
+- :ccms_code: '380761'
+  :name: Ashford and St Peter’s Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380762'
+  :name: Ashton, Leigh and Wigan PCT
+  :organisation_type: NHS
+- :ccms_code: '378935'
+  :name: Aylesbury
+  :organisation_type: CHAR
+- :ccms_code: '280370'
+  :name: Babergh District Council
+  :organisation_type: LA
+- :ccms_code: '378950'
+  :name: Bristol
+  :organisation_type: CHAR
+- :ccms_code: '378767'
+  :name: Charity Commission for England and Wales
+  :organisation_type: CHAR
+- :ccms_code: '378825'
+  :name: Home Office
+  :organisation_type: CHAR
+- :ccms_code: '381011'
+  :name: Kingston Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '379029'
+  :name: Leeds
+  :organisation_type: CHAR
+- :ccms_code: '380740'
+  :name: London and Quadrant Housing Association
+  :organisation_type: HOA
+- :ccms_code: '378874'
+  :name: Secretary of State for Transport
+  :organisation_type: CHAR
+- :ccms_code: '281601'
+  :name: Stafford Borough Council
+  :organisation_type: LA
+- :ccms_code: '378902'
+  :name: The North Midlands and East Programme for It (nmepfit)
+  :organisation_type: CHAR
+- :ccms_code: '381202'
+  :name: Redcar and Cleveland PCT
+  :organisation_type: NHS
+- :ccms_code: '381203'
+  :name: Richmond and Twickenham PCT
+  :organisation_type: NHS
+- :ccms_code: '381204'
+  :name: Rotherham PCT
+  :organisation_type: NHS
+- :ccms_code: '381205'
+  :name: Rotherham, Doncaster and South Humber NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381206'
+  :name: Royal Berkshire NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381207'
+  :name: Royal Bolton Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381208'
+  :name: Royal Brompton and Harefield NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381209'
+  :name: Royal Cornwall Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381210'
+  :name: Royal Devon & Exeter NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381211'
+  :name: Royal Free London NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381212'
+  :name: Royal Liverpool and Broadgreen NHS University Hospital
+  :organisation_type: NHS
+- :ccms_code: '381213'
+  :name: Royal National Hospital for Rheumatic Diseases NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381214'
+  :name: Royal National Orthopaedic Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381215'
+  :name: Royal Surrey County Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381216'
+  :name: Royal United Hospital Bath NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381217'
+  :name: Salford NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381218'
+  :name: Salford PCT
+  :organisation_type: NHS
+- :ccms_code: '381219'
+  :name: Salford Royal NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381220'
+  :name: Salisbury NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381221'
+  :name: Sandwell and West Birmingham Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381222'
+  :name: Sandwell PCT
+  :organisation_type: NHS
+- :ccms_code: '381223'
+  :name: Scarborough & North East Yorkshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381224'
+  :name: Sefton PCT
+  :organisation_type: NHS
+- :ccms_code: '381225'
+  :name: Sheffield Children’s NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381226'
+  :name: Sheffield Children's NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381231'
+  :name: Sheffield Health and Social Care NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381232'
+  :name: Sheffield PCT
+  :organisation_type: NHS
+- :ccms_code: '381233'
+  :name: Sheffield Teaching Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381234'
+  :name: Sherwood forest Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381235'
+  :name: Shrewsbury and Telford Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381236'
+  :name: Shropshire Community Health NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381237'
+  :name: Shropshire County PCT
+  :organisation_type: NHS
+- :ccms_code: '381238'
+  :name: Solent NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381239'
+  :name: Solihull NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381240'
+  :name: Solihull PCT
+  :organisation_type: NHS
+- :ccms_code: '381241'
+  :name: Somerset NHS Hospital Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381242'
+  :name: Somerset Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381243'
+  :name: South Birmingham PCT
+  :organisation_type: NHS
+- :ccms_code: '381244'
+  :name: South Central Ambulance Service NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381245'
+  :name: South Central Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381246'
+  :name: South Devon Healthcare NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381247'
+  :name: South Durham NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381248'
+  :name: South East Coast Ambulance Service NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381249'
+  :name: South East Coast Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381250'
+  :name: South East Essex PCT
+  :organisation_type: NHS
+- :ccms_code: '381251'
+  :name: South Essex Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381252'
+  :name: South Gloucestershire PCT
+  :organisation_type: NHS
+- :ccms_code: '381253'
+  :name: South London & Maudsley NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381254'
+  :name: South London Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381255'
+  :name: South Staffordshire and Shropshire Healthcare NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381256'
+  :name: South Staffordshire PCT
+  :organisation_type: NHS
+- :ccms_code: '381257'
+  :name: South Tees NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381258'
+  :name: South Tyneside NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381259'
+  :name: South Tyneside PCT
+  :organisation_type: NHS
+- :ccms_code: '381260'
+  :name: South Warwickshire NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381261'
+  :name: South West Essex PCT
+  :organisation_type: NHS
+- :ccms_code: '381262'
+  :name: South West London and St George's Mental Health NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381263'
+  :name: South West Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381264'
+  :name: South West Yorkshire Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381265'
+  :name: South Western Ambulance Service NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381266'
+  :name: Southampton City PCT
+  :organisation_type: NHS
+- :ccms_code: '381267'
+  :name: Southampton University Teaching Hospitals
+  :organisation_type: NHS
+- :ccms_code: '381268'
+  :name: Southend University Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381269'
+  :name: Southern Health NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381270'
+  :name: Southport and Ormskirk Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381271'
+  :name: Southwark NHS Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381272'
+  :name: Southwark PCT
+  :organisation_type: NHS
+- :ccms_code: '381273'
+  :name: St Bartholomews Hospital
+  :organisation_type: NHS
+- :ccms_code: '381274'
+  :name: St George’s NHS Hospital Trust
+  :organisation_type: NHS
+- :ccms_code: '381275'
+  :name: St Helens and Knowsley Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381277'
+  :name: Staffordshire and Stoke On Trent Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381278'
+  :name: Stockport NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381279'
+  :name: Stockport PCT
+  :organisation_type: NHS
+- :ccms_code: '381280'
+  :name: Stockton-on-tees Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381282'
+  :name: Stoke On Trent PCT
+  :organisation_type: NHS
+- :ccms_code: '381283'
+  :name: Suffolk Mental Health Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381284'
+  :name: Suffolk PCT
+  :organisation_type: NHS
+- :ccms_code: '381285'
+  :name: Sunderland Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381286'
+  :name: Surrey & Sussex NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381287'
+  :name: Surrey and Borders Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381288'
+  :name: Surrey PCT
+  :organisation_type: NHS
+- :ccms_code: '381289'
+  :name: Sussex Community NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381290'
+  :name: Sussex Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381291'
+  :name: Sutton and Merton PCT
+  :organisation_type: NHS
+- :ccms_code: '381292'
+  :name: Swansea NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381293'
+  :name: Swindon Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381294'
+  :name: Tameside and Glossop PCT
+  :organisation_type: NHS
+- :ccms_code: '381295'
+  :name: Tameside Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381296'
+  :name: Taunton and Somerset NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381317'
+  :name: Tavistock and Portman NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381318'
+  :name: Tees, Esk and Wear Valleys NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381319'
+  :name: Telford & Wrekin PCT
+  :organisation_type: NHS
+- :ccms_code: '381320'
+  :name: The Christie NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381321'
+  :name: The Clatterbridge Cancer Centre NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381322'
+  :name: The Dudley Group NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381323'
+  :name: The Hillingdon Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381324'
+  :name: The Princess Alexandra Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381325'
+  :name: The Queen Elizabeth Hospital, King's Lynn, NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381346'
+  :name: The Rotherham NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381367'
+  :name: The Royal Bournemouth and Christchurch Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381368'
+  :name: The Royal Marsden NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381369'
+  :name: The Royal Orthopaedic Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381370'
+  :name: The Royal Wolverhampton Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381371'
+  :name: The Walton Centre NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381372'
+  :name: The Whittington Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381373'
+  :name: Torbay and Southern Devon Health and Care NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381374'
+  :name: Tower Hamlets PCT NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381375'
+  :name: Trafford Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381376'
+  :name: Trafford PCT
+  :organisation_type: NHS
+- :ccms_code: '381377'
+  :name: United Bristol Healthcare Trust
+  :organisation_type: NHS
+- :ccms_code: '381378'
+  :name: United Lincolnshire Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381380'
+  :name: University College London Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381381'
+  :name: University College London NHS Trust Foundation
+  :organisation_type: NHS
+- :ccms_code: '381382'
+  :name: University Hospital Lewisham NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381383'
+  :name: University Hospital North Tees
+  :organisation_type: NHS
+- :ccms_code: '381384'
+  :name: University Hospital of North Staffordshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381385'
+  :name: University Hospital of South Manchester
+  :organisation_type: NHS
+- :ccms_code: '381386'
+  :name: University Hospital Southampton NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381387'
+  :name: University Hospitals Birmingham NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381388'
+  :name: University Hospitals Bristol NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381389'
+  :name: University Hospitals Coventry & Warwickshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381390'
+  :name: University Hospitals of Leicester NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381391'
+  :name: University Hospitals of Morecambe Bay NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381392'
+  :name: Velindre NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381393'
+  :name: Wakefield District PCT
+  :organisation_type: NHS
+- :ccms_code: '381394'
+  :name: Wakefield NHS Trust White Rose House
+  :organisation_type: NHS
+- :ccms_code: '381395'
+  :name: Walsall Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381396'
+  :name: Walsall Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '381407'
+  :name: Waltham forest PCT
+  :organisation_type: NHS
+- :ccms_code: '381408'
+  :name: Wandsworth PCT
+  :organisation_type: NHS
+- :ccms_code: '381409'
+  :name: Warrington and Halton Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381416'
+  :name: Warrington PCT
+  :organisation_type: NHS
+- :ccms_code: '381425'
+  :name: Warwickshire PCT Acute Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381426'
+  :name: Welsh Ambulance Services NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381427'
+  :name: West Hertfordshire Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381428'
+  :name: West Hertfordshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381429'
+  :name: West Kent PCT
+  :organisation_type: NHS
+- :ccms_code: '381433'
+  :name: West London Mental Health Authority NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381434'
+  :name: West Middlesex University Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381435'
+  :name: West Midlands Ambulance Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381436'
+  :name: West Midlands and East NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381437'
+  :name: West Midlands Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381438'
+  :name: West Suffolk NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381439'
+  :name: West Sussex NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381440'
+  :name: West Sussex PCT
+  :organisation_type: NHS
+- :ccms_code: '381441'
+  :name: Western Cheshire PCT
+  :organisation_type: NHS
+- :ccms_code: '381442'
+  :name: Western Sussex Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381443'
+  :name: Westminster NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381444'
+  :name: Weston Area NHS Hospital Trust
+  :organisation_type: NHS
+- :ccms_code: '381445'
+  :name: Whipps Cross University Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381446'
+  :name: Wiltshire PCT
+  :organisation_type: NHS
+- :ccms_code: '381447'
+  :name: Winchester and Eastleigh Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381448'
+  :name: Wirral Community NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381449'
+  :name: Wirral PCT
+  :organisation_type: NHS
+- :ccms_code: '381450'
+  :name: Wirral Teaching Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381451'
+  :name: Wolverhampton City PCT
+  :organisation_type: NHS
+- :ccms_code: '381452'
+  :name: Wolverhampton Royal NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381453'
+  :name: Worcestershire Acute Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381454'
+  :name: Worcestershire Health and Care NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381455'
+  :name: Worcestershire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381456'
+  :name: Worcestershire PCT
+  :organisation_type: NHS
+- :ccms_code: '381457'
+  :name: Wrightington, Wigan & Leigh NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381458'
+  :name: Wye Valley NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381459'
+  :name: Yeovil District Hospital and NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381460'
+  :name: York Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381461'
+  :name: Yorkshire & Humber NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381462'
+  :name: Yorkshire Ambulance Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381463'
+  :name: Bexley Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381464'
+  :name: St Albans NHS
+  :organisation_type: NHS
+- :ccms_code: '381465'
+  :name: British Transport Police London
+  :organisation_type: POLICE
+- :ccms_code: '381466'
+  :name: Cambridgeshire Police
+  :organisation_type: POLICE
+- :ccms_code: '381467'
+  :name: Central Scotland Police
+  :organisation_type: POLICE
+- :ccms_code: '381468'
+  :name: Cheshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381469'
+  :name: City of London Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381470'
+  :name: Civil Nuclear Police Authority
+  :organisation_type: POLICE
+- :ccms_code: '381471'
+  :name: Cleveland Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381472'
+  :name: Cumbria Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381473'
+  :name: Derbyshire Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381474'
+  :name: Devon & Cornwall Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381482'
+  :name: Dorset Police Authority
+  :organisation_type: POLICE
+- :ccms_code: '381483'
+  :name: Dorset Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381484'
+  :name: Dumfries & Galloway Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '381485'
+  :name: Durham Police HQ
+  :organisation_type: POLICE
+- :ccms_code: '380898'
+  :name: East Cheshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380899'
+  :name: East Kent University NHS Hospital
+  :organisation_type: NHS
+- :ccms_code: '380900'
+  :name: East Lancashire Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380901'
+  :name: East Lancashire Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380902'
+  :name: East London NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380903'
+  :name: East Midland Ambulance Service
+  :organisation_type: NHS
+- :ccms_code: '380904'
+  :name: East Midlands Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '380907'
+  :name: East of England Ambulance Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380908'
+  :name: East of England Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '380917'
+  :name: East Sussex Downs and Weald PCT
+  :organisation_type: NHS
+- :ccms_code: '380918'
+  :name: East Sussex NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380919'
+  :name: Eastern and Coastal Kent PCT
+  :organisation_type: NHS
+- :ccms_code: '380920'
+  :name: Epsom & St Helier Teaching Hospitals
+  :organisation_type: NHS
+- :ccms_code: '380921'
+  :name: Fairfield NHS
+  :organisation_type: NHS
+- :ccms_code: '380922'
+  :name: Frimley Park Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380923'
+  :name: Gateshead PCT
+  :organisation_type: NHS
+- :ccms_code: '380924'
+  :name: Gateshead/Sunderland Health NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380925'
+  :name: George Eliot Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380926'
+  :name: Gloucestershire Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380927'
+  :name: Gloucestershire NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380928'
+  :name: Gloucestershire PCT
+  :organisation_type: NHS
+- :ccms_code: '380929'
+  :name: Good Hope Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380930'
+  :name: Great Ormand Street Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380931'
+  :name: Great Western Ambulance Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380932'
+  :name: Great Western Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380933'
+  :name: Great Yarmouth and Waveney PCT
+  :organisation_type: NHS
+- :ccms_code: '380934'
+  :name: Greater Manchester West Mental Health NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380935'
+  :name: Greenwich Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380936'
+  :name: Guys & Thomas NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380937'
+  :name: Gwent NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380938'
+  :name: Halton & St Helens PCT Widnes Health Care Resource Centre
+  :organisation_type: NHS
+- :ccms_code: '380948'
+  :name: Hammersmith and Fulham PCT
+  :organisation_type: NHS
+- :ccms_code: '380949'
+  :name: Hammersmith Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380950'
+  :name: Hampshire Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380951'
+  :name: Hampshire PCT
+  :organisation_type: NHS
+- :ccms_code: '380953'
+  :name: Haringey Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380954'
+  :name: Harrogate & District NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380955'
+  :name: Harrow PCT
+  :organisation_type: NHS
+- :ccms_code: '380956'
+  :name: Hartlepool PCT
+  :organisation_type: NHS
+- :ccms_code: '380957'
+  :name: Hastings and Rother PCT
+  :organisation_type: NHS
+- :ccms_code: '380958'
+  :name: Havering PCT
+  :organisation_type: NHS
+- :ccms_code: '380959'
+  :name: Health Solutions Wales
+  :organisation_type: NHS
+- :ccms_code: '380960'
+  :name: Heart of Birmingham Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380962'
+  :name: Heart of England NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380963'
+  :name: Heatherwood and Wexham Park Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380964'
+  :name: Hereford NHS
+  :organisation_type: NHS
+- :ccms_code: '380965'
+  :name: Herefordshire PCT
+  :organisation_type: NHS
+- :ccms_code: '380966'
+  :name: Hertfordshire Community NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380967'
+  :name: Hertfordshire Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380968'
+  :name: Hertfordshire PCT
+  :organisation_type: NHS
+- :ccms_code: '380969'
+  :name: Heywood, Middleton and Rochdale PCT
+  :organisation_type: NHS
+- :ccms_code: '380970'
+  :name: Hillingdon PCT
+  :organisation_type: NHS
+- :ccms_code: '380971'
+  :name: Hinchingbrooke NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380972'
+  :name: Homerton University Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '380973'
+  :name: Hounslow and Richmond Community Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380974'
+  :name: Hounslow PCT
+  :organisation_type: NHS
+- :ccms_code: '380994'
+  :name: Hull and East Yorkshire Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380995'
+  :name: Hull Teaching PCT
+  :organisation_type: NHS
+- :ccms_code: '380996'
+  :name: Humber NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380997'
+  :name: Imperial College Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380998'
+  :name: Imperial College NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '380999'
+  :name: Ipswich Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381000'
+  :name: Isle of Wight NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381001'
+  :name: Isle of Wight Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381002'
+  :name: Islington PCT
+  :organisation_type: NHS
+- :ccms_code: '381003'
+  :name: James Paget University Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381004'
+  :name: Kensington and Chelsea PCT
+  :organisation_type: NHS
+- :ccms_code: '381005'
+  :name: Kent and Medway NHS and Social Care Partnership Trust
+  :organisation_type: NHS
+- :ccms_code: '381006'
+  :name: Kent Community Health NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381007'
+  :name: Kettering General Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381008'
+  :name: Kings College Hospital
+  :organisation_type: NHS
+- :ccms_code: '381009'
+  :name: King's College Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381010'
+  :name: Kingsmill Hospital
+  :organisation_type: NHS
+- :ccms_code: '381012'
+  :name: Kingston PCT
+  :organisation_type: NHS
+- :ccms_code: '381014'
+  :name: Kirklees PCT
+  :organisation_type: NHS
+- :ccms_code: '381015'
+  :name: Knowsley PCT
+  :organisation_type: NHS
+- :ccms_code: '381016'
+  :name: Lambeth PCT
+  :organisation_type: NHS
+- :ccms_code: '381017'
+  :name: Lancashire Care NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381018'
+  :name: Lancashire Teaching Hospitals
+  :organisation_type: NHS
+- :ccms_code: '381019'
+  :name: Leeds and York Partnership NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381021'
+  :name: Leeds Community Healthcare NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381022'
+  :name: Leeds NHS PCT
+  :organisation_type: NHS
+- :ccms_code: '381023'
+  :name: Leeds Teaching Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381024'
+  :name: Leeds Teaching Hospitals
+  :organisation_type: NHS
+- :ccms_code: '381025'
+  :name: Leicester City PCT
+  :organisation_type: NHS
+- :ccms_code: '381026'
+  :name: Leicester University Hospital NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381027'
+  :name: Leicestershire County and Rutland PCT
+  :organisation_type: NHS
+- :ccms_code: '381028'
+  :name: Leicestershire Partnership NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381029'
+  :name: Lewisham NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381030'
+  :name: Lewisham PCT
+  :organisation_type: NHS
+- :ccms_code: '381031'
+  :name: Lincolnshire Community Health Services NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381032'
+  :name: Lincolnshire Teaching Hospitals Primary Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381033'
+  :name: Liverpool Community Health NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381034'
+  :name: Liverpool Heart and Chest NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381035'
+  :name: Liverpool PCT NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381036'
+  :name: Liverpool Womens NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381039'
+  :name: London Ambulance Service NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381040'
+  :name: London Strategic Health Authority
+  :organisation_type: NHS
+- :ccms_code: '381041'
+  :name: Luton & Dunstable NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381042'
+  :name: Luton PCT
+  :organisation_type: NHS
+- :ccms_code: '381053'
+  :name: Maidstone & Tunbridge Wells NHS Hospital
+  :organisation_type: NHS
+- :ccms_code: '381054'
+  :name: Manchester Mental Health and Social Care Trust
+  :organisation_type: NHS
+- :ccms_code: '381089'
+  :name: Manchester PCT
+  :organisation_type: NHS
+- :ccms_code: '381090'
+  :name: Medway NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381091'
+  :name: Medway PCT
+  :organisation_type: NHS
+- :ccms_code: '381092'
+  :name: Mersey Care NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381093'
+  :name: Mid Cheshire NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381094'
+  :name: Mid Essex Hospital Services NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381095'
+  :name: Mid Essex PCT
+  :organisation_type: NHS
+- :ccms_code: '381096'
+  :name: Mid Staffordshire NHS Foundation Trust Staffordshire General Hospital
+  :organisation_type: NHS
+- :ccms_code: '381097'
+  :name: Mid Yorkshire Hospitals NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381098'
+  :name: Middlesbrough PCT
+  :organisation_type: NHS
+- :ccms_code: '381099'
+  :name: Milton Keynes NHS Foundation Hospitals Trust
+  :organisation_type: NHS
+- :ccms_code: '381100'
+  :name: Milton Keynes PCT
+  :organisation_type: NHS
+- :ccms_code: '381101'
+  :name: Moorfields Eye Hospital NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381102'
+  :name: Newcastle PCT
+  :organisation_type: NHS
+- :ccms_code: '381103'
+  :name: Newcastle Upon Tyne Hospitals NHS Foundation Trust
+  :organisation_type: NHS
+- :ccms_code: '381104'
+  :name: Newham PCT
+  :organisation_type: NHS
+- :ccms_code: '381105'
+  :name: Newham University NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381106'
+  :name: NHS Direct NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381107'
+  :name: Norfolk & Norwich NHS Trust
+  :organisation_type: NHS
+- :ccms_code: '381108'
+  :name: Norfolk and Suffolk NHS Foundation Trust
+  :organisation_type: NHS

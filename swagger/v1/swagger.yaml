@@ -2,7 +2,8 @@
 openapi: 3.0.1
 info:
   title: LAA Legal Framework
-  description: This service provides read-only lookup data relating to applications for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]
+  description: This service provides read-only lookup data relating to applications
+    for Civil legal aid. [It is primarily used by the Apply for civil legal aid service]
   version: v1
 paths:
   "/civil_merits_questions":
@@ -238,11 +239,3701 @@ paths:
               examples:
                 bad_request:
                   value:
+                    request_id:
                     success: false
                     message: 'No such organisation type: ''AZ123'''
                   summary: Bad request
                   description: When a non-existent ccms_code is sent, an error is
                     generated from the json schema and returned
+  "/organisation_searches/all":
+    get:
+      summary: Get summary of all organisations
+      description: Returns an array of all organisations with summary data.
+      tags:
+      - Organisations
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - name: 2gether NHS Foundation Trust
+                    ccms_code: '380755'
+                    searchable_type: National Health Service
+                  - name: 5 Boroughs Partnership NHS Foundation Trust
+                    ccms_code: '380756'
+                    searchable_type: National Health Service
+                  - name: Acklington
+                    ccms_code: '378922'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Aintree University Hospital NHS Trust
+                    ccms_code: '380757'
+                    searchable_type: National Health Service
+                  - name: Airedale NHS Foundation Trust
+                    ccms_code: '380758'
+                    searchable_type: National Health Service
+                  - name: Albany
+                    ccms_code: '378923'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Alder Hey Children's NHS Foundation Trust
+                    ccms_code: '380760'
+                    searchable_type: National Health Service
+                  - name: Altcourse
+                    ccms_code: '378932'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Amber Valley Borough Council
+                    ccms_code: '280360'
+                    searchable_type: Local Authority
+                  - name: Angus Council
+                    ccms_code: '280361'
+                    searchable_type: Local Authority
+                  - name: Animal Health
+                    ccms_code: '378755'
+                    searchable_type: Government Department
+                  - name: Antrim Borough Council
+                    ccms_code: '280362'
+                    searchable_type: Local Authority
+                  - name: Ards Borough Council
+                    ccms_code: '280363'
+                    searchable_type: Local Authority
+                  - name: Argyll and Bute Council
+                    ccms_code: '280364'
+                    searchable_type: Local Authority
+                  - name: Armagh City and District Council
+                    ccms_code: '280365'
+                    searchable_type: Local Authority
+                  - name: Arun District Council
+                    ccms_code: '280366'
+                    searchable_type: Local Authority
+                  - name: Ashfield District Council
+                    ccms_code: '280367'
+                    searchable_type: Local Authority
+                  - name: Ashford Borough Council
+                    ccms_code: '280368'
+                    searchable_type: Local Authority
+                  - name: Ashford and St Peter’s Hospitals NHS Foundation Trust
+                    ccms_code: '380761'
+                    searchable_type: National Health Service
+                  - name: Ashton, Leigh and Wigan PCT
+                    ccms_code: '380762'
+                    searchable_type: National Health Service
+                  - name: Ashwell
+                    ccms_code: '378933'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Askham Grange
+                    ccms_code: '378934'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Asset Protection Agency
+                    ccms_code: '378760'
+                    searchable_type: Government Department
+                  - name: Attorney General’s Office
+                    ccms_code: '378761'
+                    searchable_type: Government Department
+                  - name: Avon & Somerset Police
+                    ccms_code: '380786'
+                    searchable_type: Police Authority
+                  - name: Avon and Wiltshire Mental Health Partnership NHS Trust
+                    ccms_code: '380763'
+                    searchable_type: National Health Service
+                  - name: Aylesbury
+                    ccms_code: '378935'
+                    searchable_type: Charity
+                  - name: Aylesbury Vale District Council
+                    ccms_code: '280369'
+                    searchable_type: Local Authority
+                  - name: Babergh District Council
+                    ccms_code: '280370'
+                    searchable_type: Local Authority
+                  - name: Ballymena Borough Council
+                    ccms_code: '280371'
+                    searchable_type: Local Authority
+                  - name: Ballymoney Borough Council
+                    ccms_code: '280372'
+                    searchable_type: Local Authority
+                  - name: Banbridge District Council
+                    ccms_code: '280373'
+                    searchable_type: Local Authority
+                  - name: Barking Havering & Redbridge Hospitals NHS Trust
+                    ccms_code: '380775'
+                    searchable_type: National Health Service
+                  - name: Barking and Dagenham PCT
+                    ccms_code: '380774'
+                    searchable_type: National Health Service
+                  - name: Barnet & Chase Farm Hospitals NHS Trust
+                    ccms_code: '380788'
+                    searchable_type: National Health Service
+                  - name: Barnet & Enfield PCT Holbrook House
+                    ccms_code: '380789'
+                    searchable_type: National Health Service
+                  - name: Barnet PCT
+                    ccms_code: '380790'
+                    searchable_type: National Health Service
+                  - name: Barnet, Enfield and Haringey Mental Health NHS Trust
+                    ccms_code: '380791'
+                    searchable_type: National Health Service
+                  - name: Barnsley Hospital NHS Foundation Trust
+                    ccms_code: '380792'
+                    searchable_type: National Health Service
+                  - name: Barnsley Metropolitan Borough Council
+                    ccms_code: '280374'
+                    searchable_type: Local Authority
+                  - name: Barnsley PCT
+                    ccms_code: '380793'
+                    searchable_type: National Health Service
+                  - name: Barrow in Furness Borough Council
+                    ccms_code: '280375'
+                    searchable_type: Local Authority
+                  - name: Bart & The London NHS Trust
+                    ccms_code: '380794'
+                    searchable_type: National Health Service
+                  - name: Basildon Borough Council
+                    ccms_code: '280376'
+                    searchable_type: Local Authority
+                  - name: Basildon and Thurrock University Hospitals NHS Trust
+                    ccms_code: '380795'
+                    searchable_type: National Health Service
+                  - name: Basingstoke and Deane Borough Council
+                    ccms_code: '280377'
+                    searchable_type: Local Authority
+                  - name: Bassetlaw District Council
+                    ccms_code: '280378'
+                    searchable_type: Local Authority
+                  - name: Bassetlaw PCT
+                    ccms_code: '380796'
+                    searchable_type: National Health Service
+                  - name: Bath and North East Somerset Council
+                    ccms_code: '280379'
+                    searchable_type: Local Authority
+                  - name: Bedford Borough Council
+                    ccms_code: '280380'
+                    searchable_type: Local Authority
+                  - name: Bedford NHS Trust
+                    ccms_code: '380797'
+                    searchable_type: National Health Service
+                  - name: Bedfordshire PCT
+                    ccms_code: '380798'
+                    searchable_type: National Health Service
+                  - name: Bedfordshire Police HQ
+                    ccms_code: '380787'
+                    searchable_type: Police Authority
+                  - name: Belfast City Council
+                    ccms_code: '280381'
+                    searchable_type: Local Authority
+                  - name: Belmarsh
+                    ccms_code: '378936'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Berkshire East PCT
+                    ccms_code: '380799'
+                    searchable_type: National Health Service
+                  - name: Berkshire Healthcare NHS Foundation Trust
+                    ccms_code: '380800'
+                    searchable_type: National Health Service
+                  - name: Berkshire West NHS Primary Care Trust
+                    ccms_code: '380801'
+                    searchable_type: National Health Service
+                  - name: Betsi Cadwaladr University Health Board
+                    ccms_code: '380802'
+                    searchable_type: National Health Service
+                  - name: Bexley Care Trust
+                    ccms_code: '381463'
+                    searchable_type: National Health Service
+                  - name: Birmingham Children's Hospital NHS Foundation Trust
+                    ccms_code: '380804'
+                    searchable_type: National Health Service
+                  - name: Birmingham City Council
+                    ccms_code: '280382'
+                    searchable_type: Local Authority
+                  - name: Birmingham Community Healthcare NHS Trust
+                    ccms_code: '380805'
+                    searchable_type: National Health Service
+                  - name: Birmingham East & North PCT
+                    ccms_code: '380806'
+                    searchable_type: National Health Service
+                  - name: Birmingham University Hospitals
+                    ccms_code: '380807'
+                    searchable_type: National Health Service
+                  - name: Birmingham Women’s NHS Foundation Trust
+                    ccms_code: '380808'
+                    searchable_type: National Health Service
+                  - name: Birmingham and Solihull Mental Health NHS Foundation Trust
+                    ccms_code: '380803'
+                    searchable_type: National Health Service
+                  - name: Blaby District Council
+                    ccms_code: '280383'
+                    searchable_type: Local Authority
+                  - name: Black Country Partnership NHS Foundation Trust
+                    ccms_code: '380809'
+                    searchable_type: National Health Service
+                  - name: Blackburn With Darwen Teaching Care Trust Plus
+                    ccms_code: '380810'
+                    searchable_type: National Health Service
+                  - name: Blackburn with Darwen Borough Council
+                    ccms_code: '280384'
+                    searchable_type: Local Authority
+                  - name: Blackpool Council
+                    ccms_code: '280385'
+                    searchable_type: Local Authority
+                  - name: Blackpool PCT
+                    ccms_code: '380811'
+                    searchable_type: National Health Service
+                  - name: Blackpool Teaching Hospitals NHS Foundation Trust
+                    ccms_code: '380812'
+                    searchable_type: National Health Service
+                  - name: Blaenau Gwent County Borough Council
+                    ccms_code: '280386'
+                    searchable_type: Local Authority
+                  - name: Blakenhurst
+                    ccms_code: '378937'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Blantyre House
+                    ccms_code: '378938'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Blundeston
+                    ccms_code: '378939'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Bolsover District Council
+                    ccms_code: '280387'
+                    searchable_type: Local Authority
+                  - name: Bolton Metropolitan Borough Council
+                    ccms_code: '280388'
+                    searchable_type: Local Authority
+                  - name: Bolton NHS Foundation Trust
+                    ccms_code: '380813'
+                    searchable_type: National Health Service
+                  - name: Bolton PCT
+                    ccms_code: '380814'
+                    searchable_type: National Health Service
+                  - name: Borough of Poole Council
+                    ccms_code: '280389'
+                    searchable_type: Local Authority
+                  - name: Boston Borough Council
+                    ccms_code: '280390'
+                    searchable_type: Local Authority
+                  - name: Bournemouth Borough Council
+                    ccms_code: '280391'
+                    searchable_type: Local Authority
+                  - name: Bournemouth and Poole Teaching PCT
+                    ccms_code: '380815'
+                    searchable_type: National Health Service
+                  - name: Bracknell Forest Borough Council
+                    ccms_code: '280392'
+                    searchable_type: Local Authority
+                  - name: Bradford & Airdale Primary NHS Trust
+                    ccms_code: '380816'
+                    searchable_type: National Health Service
+                  - name: Bradford District Care Trust
+                    ccms_code: '380818'
+                    searchable_type: National Health Service
+                  - name: Bradford Teaching Hospitals NHS Foundation Trust
+                    ccms_code: '380819'
+                    searchable_type: National Health Service
+                  - name: Bradford and Airedale Teaching PCT
+                    ccms_code: '380817'
+                    searchable_type: National Health Service
+                  - name: Braintree District Council
+                    ccms_code: '280393'
+                    searchable_type: Local Authority
+                  - name: Breckland District Council
+                    ccms_code: '280394'
+                    searchable_type: Local Authority
+                  - name: Brent Teaching PCT
+                    ccms_code: '380820'
+                    searchable_type: National Health Service
+                  - name: Brentwood Borough Council
+                    ccms_code: '280395'
+                    searchable_type: Local Authority
+                  - name: Bridgend County Borough Council
+                    ccms_code: '280396'
+                    searchable_type: Local Authority
+                  - name: Bridgewater Community Healthcare NHS Trust
+                    ccms_code: '380821'
+                    searchable_type: National Health Service
+                  - name: Brighton & Hove City Council
+                    ccms_code: '280397'
+                    searchable_type: Local Authority
+                  - name: Brighton and Sussex University Hospitals NHS Trust
+                    ccms_code: '380822'
+                    searchable_type: National Health Service
+                  - name: Brinsford
+                    ccms_code: '378949'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Bristol
+                    ccms_code: '378950'
+                    searchable_type: Charity
+                  - name: Bristol City Council
+                    ccms_code: '280398'
+                    searchable_type: Local Authority
+                  - name: Bristol PCT
+                    ccms_code: '380823'
+                    searchable_type: National Health Service
+                  - name: Bristol Royal Children's Hospital
+                    ccms_code: '380824'
+                    searchable_type: National Health Service
+                  - name: British National Space Agency
+                    ccms_code: '378762'
+                    searchable_type: Government Department
+                  - name: British Transport Police London
+                    ccms_code: '381465'
+                    searchable_type: Police Authority
+                  - name: Bro Morgannwg NHS Trust
+                    ccms_code: '380825'
+                    searchable_type: National Health Service
+                  - name: Broadland District Council
+                    ccms_code: '280399'
+                    searchable_type: Local Authority
+                  - name: Brockhill
+                    ccms_code: '378951'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Bromley Hospital NHS Trust
+                    ccms_code: '380826'
+                    searchable_type: National Health Service
+                  - name: Bromley PCT
+                    ccms_code: '380827'
+                    searchable_type: National Health Service
+                  - name: Bromsgrove District Council
+                    ccms_code: '280400'
+                    searchable_type: Local Authority
+                  - name: Bronzefield
+                    ccms_code: '378952'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Brook House Immigration Removal Centre
+                    ccms_code: '380744'
+                    searchable_type: Immigration Removal Centre
+                  - name: Broxbourne Borough Council
+                    ccms_code: '280401'
+                    searchable_type: Local Authority
+                  - name: Broxbourne Housing Association
+                    ccms_code: '380735'
+                    searchable_type: Housing Association
+                  - name: Broxtowe Borough Council
+                    ccms_code: '283338'
+                    searchable_type: Local Authority
+                  - name: Buckinghamshire County Council
+                    ccms_code: '283339'
+                    searchable_type: Local Authority
+                  - name: Buckinghamshire NHS Trust
+                    ccms_code: '380828'
+                    searchable_type: National Health Service
+                  - name: Buckinghamshire PCT
+                    ccms_code: '380829'
+                    searchable_type: National Health Service
+                  - name: Buckley Hall
+                    ccms_code: '378953'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Bullingdon
+                    ccms_code: '378954'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Bullwood Hall
+                    ccms_code: '378955'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Burnley Borough Council
+                    ccms_code: '283340'
+                    searchable_type: Local Authority
+                  - name: Burton NHS Trust
+                    ccms_code: '380830'
+                    searchable_type: National Health Service
+                  - name: Bury Metropolitan Borough Council
+                    ccms_code: '283341'
+                    searchable_type: Local Authority
+                  - name: Bury PCT
+                    ccms_code: '380831'
+                    searchable_type: National Health Service
+                  - name: Buying Solutions
+                    ccms_code: '378763'
+                    searchable_type: Government Department
+                  - name: Cabinet Office
+                    ccms_code: '378764'
+                    searchable_type: Government Department
+                  - name: Caerphilly County Borough Council
+                    ccms_code: '283342'
+                    searchable_type: Local Authority
+                  - name: Calderdale & Huddersfield NHS Trust
+                    ccms_code: '380832'
+                    searchable_type: National Health Service
+                  - name: Calderdale Metropolitan Borough Council
+                    ccms_code: '283343'
+                    searchable_type: Local Authority
+                  - name: Calderdale PCT
+                    ccms_code: '380833'
+                    searchable_type: National Health Service
+                  - name: Calderstones Partnership NHS Foundation Trust
+                    ccms_code: '380834'
+                    searchable_type: National Health Service
+                  - name: Cambridge City Council
+                    ccms_code: '283344'
+                    searchable_type: Local Authority
+                  - name: Cambridge University Hospitals NHS Foundation Trust
+                    ccms_code: '380835'
+                    searchable_type: National Health Service
+                  - name: Cambridgeshire Community Services NHS Trust
+                    ccms_code: '380837'
+                    searchable_type: National Health Service
+                  - name: Cambridgeshire County Council
+                    ccms_code: '283345'
+                    searchable_type: Local Authority
+                  - name: Cambridgeshire PCT
+                    ccms_code: '380838'
+                    searchable_type: National Health Service
+                  - name: Cambridgeshire Police
+                    ccms_code: '381466'
+                    searchable_type: Police Authority
+                  - name: Cambridgeshire and Peterborough NHS Foundation Trust
+                    ccms_code: '380836'
+                    searchable_type: National Health Service
+                  - name: Camden PCT
+                    ccms_code: '380839'
+                    searchable_type: National Health Service
+                  - name: Camp Hill
+                    ccms_code: '378956'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Campsfield House Immigration Removal Centre
+                    ccms_code: '380745'
+                    searchable_type: Immigration Removal Centre
+                  - name: Cannock Chase District Council
+                    ccms_code: '283346'
+                    searchable_type: Local Authority
+                  - name: Canterbury City Council
+                    ccms_code: '283347'
+                    searchable_type: Local Authority
+                  - name: Cardiff & Vale NHS Trust
+                    ccms_code: '380840'
+                    searchable_type: National Health Service
+                  - name: Cardiff Council
+                    ccms_code: '283348'
+                    searchable_type: Local Authority
+                  - name: Carlisle City Council
+                    ccms_code: '283349'
+                    searchable_type: Local Authority
+                  - name: Carmarthenshire County Council
+                    ccms_code: '283350'
+                    searchable_type: Local Authority
+                  - name: Carrickfergus Borough Council
+                    ccms_code: '282435'
+                    searchable_type: Local Authority
+                  - name: Castington
+                    ccms_code: '378974'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Castle Point Borough Council
+                    ccms_code: '282436'
+                    searchable_type: Local Authority
+                  - name: Castlereagh Borough Council
+                    ccms_code: '282437'
+                    searchable_type: Local Authority
+                  - name: Central & Eastern Cheshire NHS PCT
+                    ccms_code: '380841'
+                    searchable_type: National Health Service
+                  - name: Central Bedfordshire Council
+                    ccms_code: '282438'
+                    searchable_type: Local Authority
+                  - name: Central Lancashire PCT
+                    ccms_code: '380844'
+                    searchable_type: National Health Service
+                  - name: Central London Community Healthcare NHS Trust
+                    ccms_code: '380845'
+                    searchable_type: National Health Service
+                  - name: Central Manchester NHS Foundation Trust
+                    ccms_code: '380846'
+                    searchable_type: National Health Service
+                  - name: Central Office of Information
+                    ccms_code: '378765'
+                    searchable_type: Government Department
+                  - name: Central Scotland Police
+                    ccms_code: '381467'
+                    searchable_type: Police Authority
+                  - name: Central and North West London NHS Foundation Trust
+                    ccms_code: '380843'
+                    searchable_type: National Health Service
+                  - name: Centre for Environment, Fisheries and Aquaculture Science
+                    ccms_code: '378766'
+                    searchable_type: Government Department
+                  - name: Ceredigion County Council
+                    ccms_code: '282338'
+                    searchable_type: Local Authority
+                  - name: Channings Wood
+                    ccms_code: '378975'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Charity Commission for England and Wales
+                    ccms_code: '378767'
+                    searchable_type: Charity
+                  - name: Charnwood Borough Council
+                    ccms_code: '282339'
+                    searchable_type: Local Authority
+                  - name: Chelmsford Borough Council
+                    ccms_code: '282340'
+                    searchable_type: Local Authority
+                  - name: Chelsea and Westminster Hospital NHS Foundation Trust
+                    ccms_code: '380847'
+                    searchable_type: National Health Service
+                  - name: Cheltenham Borough Council
+                    ccms_code: '282341'
+                    searchable_type: Local Authority
+                  - name: Cherwell District Council
+                    ccms_code: '282342'
+                    searchable_type: Local Authority
+                  - name: Cheshire East Council
+                    ccms_code: '283351'
+                    searchable_type: Local Authority
+                  - name: Cheshire Police HQ
+                    ccms_code: '381468'
+                    searchable_type: Police Authority
+                  - name: Cheshire West and Chester Council
+                    ccms_code: '281370'
+                    searchable_type: Local Authority
+                  - name: Cheshire and Wirral Partnership NHS Foundation Trust
+                    ccms_code: '380848'
+                    searchable_type: National Health Service
+                  - name: Chesterfield Borough Council
+                    ccms_code: '281371'
+                    searchable_type: Local Authority
+                  - name: Chesterfield NHS Foundation Trust
+                    ccms_code: '380849'
+                    searchable_type: National Health Service
+                  - name: Chichester District Council
+                    ccms_code: '281372'
+                    searchable_type: Local Authority
+                  - name: Child Support Agency
+                    ccms_code: '378768'
+                    searchable_type: Government Department
+                  - name: Chiltern District Council
+                    ccms_code: '281373'
+                    searchable_type: Local Authority
+                  - name: Chorley Borough Council
+                    ccms_code: '281374'
+                    searchable_type: Local Authority
+                  - name: Christchurch Borough Council
+                    ccms_code: '282440'
+                    searchable_type: Local Authority
+                  - name: City Hospitals Sunderland NHS Foundation Trust
+                    ccms_code: '380851'
+                    searchable_type: National Health Service
+                  - name: City and County of Swansea
+                    ccms_code: '282439'
+                    searchable_type: Local Authority
+                  - name: City and Hackney Teaching PCT
+                    ccms_code: '380850'
+                    searchable_type: National Health Service
+                  - name: City of Bradford Metropolitan District Council
+                    ccms_code: '282343'
+                    searchable_type: Local Authority
+                  - name: City of Lincoln Council
+                    ccms_code: '282344'
+                    searchable_type: Local Authority
+                  - name: City of London
+                    ccms_code: '282345'
+                    searchable_type: Local Authority
+                  - name: City of London Police HQ
+                    ccms_code: '381469'
+                    searchable_type: Police Authority
+                  - name: Civil Nuclear Police Authority
+                    ccms_code: '381470'
+                    searchable_type: Police Authority
+                  - name: Clackmannanshire Council
+                    ccms_code: '282346'
+                    searchable_type: Local Authority
+                  - name: Cleveland Police HQ
+                    ccms_code: '381471'
+                    searchable_type: Police Authority
+                  - name: Colchester Borough Council
+                    ccms_code: '282347'
+                    searchable_type: Local Authority
+                  - name: Colchester Hospital NHS Trust
+                    ccms_code: '380852'
+                    searchable_type: National Health Service
+                  - name: Coldingley
+                    ccms_code: '378976'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Coleraine Borough Council
+                    ccms_code: '282348'
+                    searchable_type: Local Authority
+                  - name: Colnbrook Immigration Removal Centre
+                    ccms_code: '380746'
+                    searchable_type: Immigration Removal Centre
+                  - name: Comhairle nan Eilean Siar
+                    ccms_code: '282349'
+                    searchable_type: Local Authority
+                  - name: Commissioners for The Reduction of The National Debt
+                    ccms_code: '378769'
+                    searchable_type: Government Department
+                  - name: Companies House
+                    ccms_code: '378770'
+                    searchable_type: Government Department
+                  - name: Conwy County Borough Council
+                    ccms_code: '282350'
+                    searchable_type: Local Authority
+                  - name: Cookham Wood
+                    ccms_code: '378977'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Cookstown District Council
+                    ccms_code: '282351'
+                    searchable_type: Local Authority
+                  - name: Copeland Borough Council
+                    ccms_code: '282352'
+                    searchable_type: Local Authority
+                  - name: Corby Borough Council
+                    ccms_code: '282353'
+                    searchable_type: Local Authority
+                  - name: Cornwall Council
+                    ccms_code: '282354'
+                    searchable_type: Local Authority
+                  - name: Cornwall Partnership NHS Foundation Trust
+                    ccms_code: '380854'
+                    searchable_type: National Health Service
+                  - name: Cornwall and Isles of Scilly PCT
+                    ccms_code: '380853'
+                    searchable_type: National Health Service
+                  - name: Cotswold District Council
+                    ccms_code: '282355'
+                    searchable_type: Local Authority
+                  - name: Council of the Isles of Scilly
+                    ccms_code: '282356'
+                    searchable_type: Local Authority
+                  - name: Countess of Chester Hospital
+                    ccms_code: '380855'
+                    searchable_type: National Health Service
+                  - name: County Durham PCT
+                    ccms_code: '380856'
+                    searchable_type: National Health Service
+                  - name: Coventry City Council
+                    ccms_code: '282357'
+                    searchable_type: Local Authority
+                  - name: Coventry PCT
+                    ccms_code: '380859'
+                    searchable_type: National Health Service
+                  - name: Coventry and Warwickshire Partnership NHS Trust
+                    ccms_code: '380858'
+                    searchable_type: National Health Service
+                  - name: Craigavon Borough Council
+                    ccms_code: '282358'
+                    searchable_type: Local Authority
+                  - name: Craven District Council
+                    ccms_code: '282359'
+                    searchable_type: Local Authority
+                  - name: Crawley Borough Council
+                    ccms_code: '282360'
+                    searchable_type: Local Authority
+                  - name: Criminal Records Bureau
+                    ccms_code: '378771'
+                    searchable_type: Government Department
+                  - name: Crown Prosecution
+                    ccms_code: '378772'
+                    searchable_type: Government Department
+                  - name: Croydon Health Service NHS Trust
+                    ccms_code: '380860'
+                    searchable_type: National Health Service
+                  - name: Croydon PCT
+                    ccms_code: '380861'
+                    searchable_type: National Health Service
+                  - name: Cumbria County Council
+                    ccms_code: '282361'
+                    searchable_type: Local Authority
+                  - name: Cumbria NHS Trust
+                    ccms_code: '380862'
+                    searchable_type: National Health Service
+                  - name: Cumbria Police HQ
+                    ccms_code: '381472'
+                    searchable_type: Police Authority
+                  - name: Cumbria Teaching PCT
+                    ccms_code: '380863'
+                    searchable_type: National Health Service
+                  - name: Cwm Taf NHS Health Board
+                    ccms_code: '380864'
+                    searchable_type: National Health Service
+                  - name: Dacorum Borough Council
+                    ccms_code: '282362'
+                    searchable_type: Local Authority
+                  - name: Darlington Borough Council
+                    ccms_code: '282363'
+                    searchable_type: Local Authority
+                  - name: Darlington PCT
+                    ccms_code: '380865'
+                    searchable_type: National Health Service
+                  - name: Dartford Borough Council
+                    ccms_code: '282364'
+                    searchable_type: Local Authority
+                  - name: Dartford and Gravesham NHS Hospital Trust
+                    ccms_code: '380866'
+                    searchable_type: National Health Service
+                  - name: Dartmoor
+                    ccms_code: '378978'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Daventry District Council
+                    ccms_code: '282365'
+                    searchable_type: Local Authority
+                  - name: Deerbolt
+                    ccms_code: '378979'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Defence Science and Technology Laboratory
+                    ccms_code: '378773'
+                    searchable_type: Government Department
+                  - name: Defence Storage and Distribution Agency
+                    ccms_code: '378774'
+                    searchable_type: Government Department
+                  - name: Defence Support Group
+                    ccms_code: '378775'
+                    searchable_type: Government Department
+                  - name: Defence Vetting Agency
+                    ccms_code: '378776'
+                    searchable_type: Government Department
+                  - name: Department for Business Innovation and Skills
+                    ccms_code: '378777'
+                    searchable_type: Government Department
+                  - name: Department for Communities and Local Government
+                    ccms_code: '378778'
+                    searchable_type: Government Department
+                  - name: Department for Culture Olympics, Media and Sport
+                    ccms_code: '378779'
+                    searchable_type: Government Department
+                  - name: Department for Education
+                    ccms_code: '378780'
+                    searchable_type: Government Department
+                  - name: Department for Environment, Food and Rural Affairs
+                    ccms_code: '378781'
+                    searchable_type: Government Department
+                  - name: Department for International Development
+                    ccms_code: '378782'
+                    searchable_type: Government Department
+                  - name: Department for Transport London
+                    ccms_code: '378783'
+                    searchable_type: Government Department
+                  - name: Department of Energy and Climate Change
+                    ccms_code: '378784'
+                    searchable_type: Government Department
+                  - name: Department of Health
+                    ccms_code: '378785'
+                    searchable_type: Government Department
+                  - name: Derby City Council
+                    ccms_code: '282366'
+                    searchable_type: Local Authority
+                  - name: Derby City PCT
+                    ccms_code: '380867'
+                    searchable_type: National Health Service
+                  - name: Derby Hospitals NHS Foundation Trust
+                    ccms_code: '380868'
+                    searchable_type: National Health Service
+                  - name: Derbyshire Community Health Services NHS Trust
+                    ccms_code: '380869'
+                    searchable_type: National Health Service
+                  - name: Derbyshire County Council
+                    ccms_code: '282367'
+                    searchable_type: Local Authority
+                  - name: Derbyshire County PCT
+                    ccms_code: '380870'
+                    searchable_type: National Health Service
+                  - name: Derbyshire Dales District Council
+                    ccms_code: '282368'
+                    searchable_type: Local Authority
+                  - name: Derbyshire Healthcare NHS Foundation Trust
+                    ccms_code: '380882'
+                    searchable_type: National Health Service
+                  - name: Derbyshire Mental Health Trust
+                    ccms_code: '380883'
+                    searchable_type: National Health Service
+                  - name: Derbyshire Police HQ
+                    ccms_code: '381473'
+                    searchable_type: Police Authority
+                  - name: Derry City Council
+                    ccms_code: '281375'
+                    searchable_type: Local Authority
+                  - name: Devon & Cornwall Police HQ
+                    ccms_code: '381474'
+                    searchable_type: Police Authority
+                  - name: Devon County Council
+                    ccms_code: '281376'
+                    searchable_type: Local Authority
+                  - name: Devon PCT
+                    ccms_code: '380885'
+                    searchable_type: National Health Service
+                  - name: Devon Partnership NHS Trust
+                    ccms_code: '380884'
+                    searchable_type: National Health Service
+                  - name: Diana Princess of Wales Hospital
+                    ccms_code: '380886'
+                    searchable_type: National Health Service
+                  - name: Doncaster & Bassetlaw NHS Trust
+                    ccms_code: '380887'
+                    searchable_type: National Health Service
+                  - name: Doncaster Council
+                    ccms_code: '281377'
+                    searchable_type: Local Authority
+                  - name: Doncaster PCT
+                    ccms_code: '380888'
+                    searchable_type: National Health Service
+                  - name: Dorset County Council
+                    ccms_code: '281369'
+                    searchable_type: Local Authority
+                  - name: Dorset County Hospital NHS Foundation Trust
+                    ccms_code: '380889'
+                    searchable_type: National Health Service
+                  - name: Dorset Healthcare University NHS Foundation Trust
+                    ccms_code: '380890'
+                    searchable_type: National Health Service
+                  - name: Dorset PCT
+                    ccms_code: '380891'
+                    searchable_type: National Health Service
+                  - name: Dorset Police Authority
+                    ccms_code: '381482'
+                    searchable_type: Police Authority
+                  - name: Dorset Police HQ
+                    ccms_code: '381483'
+                    searchable_type: Police Authority
+                  - name: Dovegate
+                    ccms_code: '378980'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Dover District Council
+                    ccms_code: '281378'
+                    searchable_type: Local Authority
+                  - name: Dover Immigration Removal Centre
+                    ccms_code: '380747'
+                    searchable_type: Immigration Removal Centre
+                  - name: Down District Council
+                    ccms_code: '281379'
+                    searchable_type: Local Authority
+                  - name: Downview
+                    ccms_code: '378981'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Driver and Vehicle Licensing Agency
+                    ccms_code: '378786'
+                    searchable_type: Government Department
+                  - name: Driving Standards Agency
+                    ccms_code: '378787'
+                    searchable_type: Government Department
+                  - name: Dudley Metropolitan Borough Council
+                    ccms_code: '281380'
+                    searchable_type: Local Authority
+                  - name: Dudley PCT
+                    ccms_code: '380893'
+                    searchable_type: National Health Service
+                  - name: Dudley and Walsall Mental Health Partnership NHS Trust
+                    ccms_code: '380892'
+                    searchable_type: National Health Service
+                  - name: Dumfries & Galloway Police HQ
+                    ccms_code: '381484'
+                    searchable_type: Police Authority
+                  - name: Dumfries and Galloway Council
+                    ccms_code: '281381'
+                    searchable_type: Local Authority
+                  - name: Dundee City Council
+                    ccms_code: '281382'
+                    searchable_type: Local Authority
+                  - name: Dungannon and South Tyrone Borough Council
+                    ccms_code: '281383'
+                    searchable_type: Local Authority
+                  - name: Dungavel House Immigration Removal Centre
+                    ccms_code: '380748'
+                    searchable_type: Immigration Removal Centre
+                  - name: Durham & Darlington NHS Foundation Trust Darlington Memorial
+                      Hospital
+                    ccms_code: '380894'
+                    searchable_type: National Health Service
+                  - name: Durham Police HQ
+                    ccms_code: '381485'
+                    searchable_type: Police Authority
+                  - name: Dyfed-powys Police HQ
+                    ccms_code: '381486'
+                    searchable_type: Police Authority
+                  - name: Ealing NHS Trust
+                    ccms_code: '380895'
+                    searchable_type: National Health Service
+                  - name: Ealing PCT
+                    ccms_code: '380896'
+                    searchable_type: National Health Service
+                  - name: East & North Hertfordshire NHS Trust
+                    ccms_code: '380897'
+                    searchable_type: National Health Service
+                  - name: East Ayrshire Council
+                    ccms_code: '281385'
+                    searchable_type: Local Authority
+                  - name: East Cambridgeshire District Council
+                    ccms_code: '281386'
+                    searchable_type: Local Authority
+                  - name: East Cheshire NHS Trust
+                    ccms_code: '380898'
+                    searchable_type: National Health Service
+                  - name: East Devon District Council
+                    ccms_code: '281387'
+                    searchable_type: Local Authority
+                  - name: East Dorset District Council
+                    ccms_code: '281388'
+                    searchable_type: Local Authority
+                  - name: East Dunbartonshire Council
+                    ccms_code: '281390'
+                    searchable_type: Local Authority
+                  - name: East Hampshire District Council
+                    ccms_code: '281391'
+                    searchable_type: Local Authority
+                  - name: East Hertfordshire District Council
+                    ccms_code: '281392'
+                    searchable_type: Local Authority
+                  - name: East Kent University NHS Hospital
+                    ccms_code: '380899'
+                    searchable_type: National Health Service
+                  - name: East Lancashire Hospitals NHS Trust
+                    ccms_code: '380900'
+                    searchable_type: National Health Service
+                  - name: East Lancashire Teaching PCT
+                    ccms_code: '380901'
+                    searchable_type: National Health Service
+                  - name: East Lindsey District Council
+                    ccms_code: '281393'
+                    searchable_type: Local Authority
+                  - name: East London NHS Foundation Trust
+                    ccms_code: '380902'
+                    searchable_type: National Health Service
+                  - name: East Lothian Council
+                    ccms_code: '281395'
+                    searchable_type: Local Authority
+                  - name: East Midland Ambulance Service
+                    ccms_code: '380903'
+                    searchable_type: National Health Service
+                  - name: East Midlands Government Office Region
+                    ccms_code: '378788'
+                    searchable_type: Government Department
+                  - name: East Midlands Strategic Health Authority
+                    ccms_code: '380904'
+                    searchable_type: National Health Service
+                  - name: East Northamptonshire District Council
+                    ccms_code: '281397'
+                    searchable_type: Local Authority
+                  - name: East Renfrewshire Council
+                    ccms_code: '281399'
+                    searchable_type: Local Authority
+                  - name: East Riding of Yorkshire Council
+                    ccms_code: '281400'
+                    searchable_type: Local Authority
+                  - name: East Staffordshire Borough Council
+                    ccms_code: '281401'
+                    searchable_type: Local Authority
+                  - name: East Sussex Downs and Weald PCT
+                    ccms_code: '380917'
+                    searchable_type: National Health Service
+                  - name: East Sussex NHS Trust
+                    ccms_code: '380918'
+                    searchable_type: National Health Service
+                  - name: East Sutton Park
+                    ccms_code: '378982'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: East of England Ambulance Service NHS Trust
+                    ccms_code: '380907'
+                    searchable_type: National Health Service
+                  - name: East of England Government Office Region
+                    ccms_code: '378793'
+                    searchable_type: Government Department
+                  - name: East of England Strategic Health Authority
+                    ccms_code: '380908'
+                    searchable_type: National Health Service
+                  - name: Eastbourne Borough Council
+                    ccms_code: '281403'
+                    searchable_type: Local Authority
+                  - name: Eastern and Coastal Kent PCT
+                    ccms_code: '380919'
+                    searchable_type: National Health Service
+                  - name: Eastleigh Borough Council
+                    ccms_code: '281404'
+                    searchable_type: Local Authority
+                  - name: Eastwood Park
+                    ccms_code: '378983'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Eden District Council
+                    ccms_code: '281405'
+                    searchable_type: Local Authority
+                  - name: Edinburgh City Council
+                    ccms_code: '281406'
+                    searchable_type: Local Authority
+                  - name: Edmunds Hill
+                    ccms_code: '378984'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Elmbridge Borough Council
+                    ccms_code: '281407'
+                    searchable_type: Local Authority
+                  - name: Elmley
+                    ccms_code: '378985'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Epping Forest District Council
+                    ccms_code: '281408'
+                    searchable_type: Local Authority
+                  - name: Epsom & St Helier Teaching Hospitals
+                    ccms_code: '380920'
+                    searchable_type: National Health Service
+                  - name: Epsom and Ewell Borough Council
+                    ccms_code: '281409'
+                    searchable_type: Local Authority
+                  - name: Equality & Human Rights Commission
+                    ccms_code: '378794'
+                    searchable_type: Government Department
+                  - name: Erewash Borough Council
+                    ccms_code: '281411'
+                    searchable_type: Local Authority
+                  - name: Erlestoke
+                    ccms_code: '378986'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Essex Police HQ
+                    ccms_code: '381487'
+                    searchable_type: Police Authority
+                  - name: Everthorpe
+                    ccms_code: '378987'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Exeter City Council
+                    ccms_code: '281413'
+                    searchable_type: Local Authority
+                  - name: FCO Services
+                    ccms_code: '378797'
+                    searchable_type: Government Department
+                  - name: Fairfield NHS
+                    ccms_code: '380921'
+                    searchable_type: National Health Service
+                  - name: Falkirk Council
+                    ccms_code: '281415'
+                    searchable_type: Local Authority
+                  - name: Family Mosaic Housing Association
+                    ccms_code: '380736'
+                    searchable_type: Housing Association
+                  - name: Fareham Borough Council
+                    ccms_code: '281417'
+                    searchable_type: Local Authority
+                  - name: Featherstone
+                    ccms_code: '378988'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Feltham
+                    ccms_code: '378989'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Fenland District Council
+                    ccms_code: '281418'
+                    searchable_type: Local Authority
+                  - name: Fermanagh District Council
+                    ccms_code: '281419'
+                    searchable_type: Local Authority
+                  - name: Fife Council
+                    ccms_code: '281420'
+                    searchable_type: Local Authority
+                  - name: Fife Police HQ
+                    ccms_code: '381488'
+                    searchable_type: Police Authority
+                  - name: Fire Service College
+                    ccms_code: '378798'
+                    searchable_type: Government Department
+                  - name: Flintshire County Council
+                    ccms_code: '281421'
+                    searchable_type: Local Authority
+                  - name: Food Standards Agency
+                    ccms_code: '378809'
+                    searchable_type: Government Department
+                  - name: Ford
+                    ccms_code: '378990'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Foreign and Commonwealth Office
+                    ccms_code: '378810'
+                    searchable_type: Government Department
+                  - name: Forest Bank
+                    ccms_code: '378991'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Forest Enterprise England
+                    ccms_code: '378811'
+                    searchable_type: Government Department
+                  - name: Forest Heath District Council
+                    ccms_code: '281423'
+                    searchable_type: Local Authority
+                  - name: Forest Research
+                    ccms_code: '378812'
+                    searchable_type: Government Department
+                  - name: Forest of Dean District Council
+                    ccms_code: '281424'
+                    searchable_type: Local Authority
+                  - name: Forestry Commission
+                    ccms_code: '378813'
+                    searchable_type: Government Department
+                  - name: Foston Hall
+                    ccms_code: '378992'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Frankland
+                    ccms_code: '378993'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Frimley Park Hospital NHS Foundation Trust
+                    ccms_code: '380922'
+                    searchable_type: National Health Service
+                  - name: Full Sutton
+                    ccms_code: '378994'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Fylde Borough Council
+                    ccms_code: '281425'
+                    searchable_type: Local Authority
+                  - name: G4S
+                    ccms_code: '381576'
+                    searchable_type: Public Limited Company
+                  - name: Garth
+                    ccms_code: '378995'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Gartree
+                    ccms_code: '378996'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Gateshead Housing Company
+                    ccms_code: '380737'
+                    searchable_type: Housing Association
+                  - name: Gateshead Metropolitan Borough Council
+                    ccms_code: '281426'
+                    searchable_type: Local Authority
+                  - name: Gateshead PCT
+                    ccms_code: '380923'
+                    searchable_type: National Health Service
+                  - name: Gateshead/Sunderland Health NHS Foundation Trust
+                    ccms_code: '380924'
+                    searchable_type: National Health Service
+                  - name: Gedling Borough Council
+                    ccms_code: '281427'
+                    searchable_type: Local Authority
+                  - name: George Eliot Hospital NHS Trust
+                    ccms_code: '380925'
+                    searchable_type: National Health Service
+                  - name: Glasgow City Council
+                    ccms_code: '281428'
+                    searchable_type: Local Authority
+                  - name: Glen Parva
+                    ccms_code: '378997'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Gloucester City Council
+                    ccms_code: '281430'
+                    searchable_type: Local Authority
+                  - name: Gloucestershire County Council
+                    ccms_code: '281431'
+                    searchable_type: Local Authority
+                  - name: Gloucestershire Hospitals NHS Foundation Trust
+                    ccms_code: '380926'
+                    searchable_type: National Health Service
+                  - name: Gloucestershire NHS Foundation Trust
+                    ccms_code: '380927'
+                    searchable_type: National Health Service
+                  - name: Gloucestershire PCT
+                    ccms_code: '380928'
+                    searchable_type: National Health Service
+                  - name: Gloucestershire Police HQ
+                    ccms_code: '381489'
+                    searchable_type: Police Authority
+                  - name: Good Hope Hospital NHS Trust
+                    ccms_code: '380929'
+                    searchable_type: National Health Service
+                  - name: Gosport Borough Council
+                    ccms_code: '281432'
+                    searchable_type: Local Authority
+                  - name: Government Actuary’s Department
+                    ccms_code: '378814'
+                    searchable_type: Government Department
+                  - name: Government Car and Despatch Agency
+                    ccms_code: '378815'
+                    searchable_type: Government Department
+                  - name: Government Equalities Office
+                    ccms_code: '378816'
+                    searchable_type: Government Department
+                  - name: Grampian Police HQ
+                    ccms_code: '381490'
+                    searchable_type: Police Authority
+                  - name: Gravesham Borough Council
+                    ccms_code: '280402'
+                    searchable_type: Local Authority
+                  - name: Great Ormand Street Hospital NHS Trust
+                    ccms_code: '380930'
+                    searchable_type: National Health Service
+                  - name: Great Western Ambulance Service NHS Trust
+                    ccms_code: '380931'
+                    searchable_type: National Health Service
+                  - name: Great Western Hospitals NHS Foundation Trust
+                    ccms_code: '380932'
+                    searchable_type: National Health Service
+                  - name: Great Yarmouth and Waveney PCT
+                    ccms_code: '380933'
+                    searchable_type: National Health Service
+                  - name: Greater Manchester Police HQ
+                    ccms_code: '381491'
+                    searchable_type: Police Authority
+                  - name: Greater Manchester West Mental Health NHS Foundation Trust
+                    ccms_code: '380934'
+                    searchable_type: National Health Service
+                  - name: Greenwich Teaching PCT
+                    ccms_code: '380935'
+                    searchable_type: National Health Service
+                  - name: Grendon
+                    ccms_code: '379016'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Guildford Borough Council
+                    ccms_code: '280403'
+                    searchable_type: Local Authority
+                  - name: Guys & Thomas NHS Trust
+                    ccms_code: '380936'
+                    searchable_type: National Health Service
+                  - name: Guys Marsh
+                    ccms_code: '379017'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Gwent NHS Trust
+                    ccms_code: '380937'
+                    searchable_type: National Health Service
+                  - name: Gwent Police HQ
+                    ccms_code: '381492'
+                    searchable_type: Police Authority
+                  - name: Gwynedd County Council
+                    ccms_code: '280404'
+                    searchable_type: Local Authority
+                  - name: HM Courts Service
+                    ccms_code: '378820'
+                    searchable_type: Government Department
+                  - name: HM Land Registry
+                    ccms_code: '378821'
+                    searchable_type: Government Department
+                  - name: HM Revenue and Customs
+                    ccms_code: '378822'
+                    searchable_type: Government Department
+                  - name: HM Treasury
+                    ccms_code: '378823'
+                    searchable_type: Government Department
+                  - name: HM Treasury Correspondence & Enquiry Unit
+                    ccms_code: '378824'
+                    searchable_type: Government Department
+                  - name: Halton & St Helens PCT Widnes Health Care Resource Centre
+                    ccms_code: '380938'
+                    searchable_type: National Health Service
+                  - name: Halton Borough Council
+                    ccms_code: '280405'
+                    searchable_type: Local Authority
+                  - name: Hambleton District Council
+                    ccms_code: '280406'
+                    searchable_type: Local Authority
+                  - name: Hammersmith Hospital NHS Trust
+                    ccms_code: '380949'
+                    searchable_type: National Health Service
+                  - name: Hammersmith and Fulham PCT
+                    ccms_code: '380948'
+                    searchable_type: National Health Service
+                  - name: Hampshire Constabulary
+                    ccms_code: '381493'
+                    searchable_type: Police Authority
+                  - name: Hampshire County Council
+                    ccms_code: '280407'
+                    searchable_type: Local Authority
+                  - name: Hampshire Hospitals NHS Foundation Trust
+                    ccms_code: '380950'
+                    searchable_type: National Health Service
+                  - name: Hampshire PCT
+                    ccms_code: '380951'
+                    searchable_type: National Health Service
+                  - name: Hampshire Police HQ
+                    ccms_code: '381494'
+                    searchable_type: Police Authority
+                  - name: Harborough District Council
+                    ccms_code: '281338'
+                    searchable_type: Local Authority
+                  - name: Haringey Teaching PCT
+                    ccms_code: '380953'
+                    searchable_type: National Health Service
+                  - name: Harlow District Council
+                    ccms_code: '281339'
+                    searchable_type: Local Authority
+                  - name: Harmondsworth Immigration Removal Centre
+                    ccms_code: '380749'
+                    searchable_type: Immigration Removal Centre
+                  - name: Harrogate & District NHS Foundation Trust
+                    ccms_code: '380954'
+                    searchable_type: National Health Service
+                  - name: Harrogate Borough Council
+                    ccms_code: '281340'
+                    searchable_type: Local Authority
+                  - name: Harrow PCT
+                    ccms_code: '380955'
+                    searchable_type: National Health Service
+                  - name: Hart District Council
+                    ccms_code: '281341'
+                    searchable_type: Local Authority
+                  - name: Hartlepool Borough Council
+                    ccms_code: '282434'
+                    searchable_type: Local Authority
+                  - name: Hartlepool PCT
+                    ccms_code: '380956'
+                    searchable_type: National Health Service
+                  - name: Haslar Immigration Removal Centre
+                    ccms_code: '380750'
+                    searchable_type: Immigration Removal Centre
+                  - name: Hastings Borough Council
+                    ccms_code: '281342'
+                    searchable_type: Local Authority
+                  - name: Hastings and Rother PCT
+                    ccms_code: '380957'
+                    searchable_type: National Health Service
+                  - name: Havant Borough Council
+                    ccms_code: '281345'
+                    searchable_type: Local Authority
+                  - name: Haverigg
+                    ccms_code: '379018'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Havering PCT
+                    ccms_code: '380958'
+                    searchable_type: National Health Service
+                  - name: Health Protection Agency
+                    ccms_code: '378817'
+                    searchable_type: Government Department
+                  - name: Health Solutions Wales
+                    ccms_code: '380959'
+                    searchable_type: National Health Service
+                  - name: Heart of Birmingham Teaching PCT
+                    ccms_code: '380960'
+                    searchable_type: National Health Service
+                  - name: Heart of England NHS Trust
+                    ccms_code: '380962'
+                    searchable_type: National Health Service
+                  - name: Heatherwood and Wexham Park Hospitals NHS Foundation Trust
+                    ccms_code: '380963'
+                    searchable_type: National Health Service
+                  - name: Hereford NHS
+                    ccms_code: '380964'
+                    searchable_type: National Health Service
+                  - name: Herefordshire Council
+                    ccms_code: '281346'
+                    searchable_type: Local Authority
+                  - name: Herefordshire PCT
+                    ccms_code: '380965'
+                    searchable_type: National Health Service
+                  - name: Hertfordshire Community NHS Trust
+                    ccms_code: '380966'
+                    searchable_type: National Health Service
+                  - name: Hertfordshire County Council
+                    ccms_code: '281347'
+                    searchable_type: Local Authority
+                  - name: Hertfordshire PCT
+                    ccms_code: '380968'
+                    searchable_type: National Health Service
+                  - name: Hertfordshire Partnership NHS Foundation Trust
+                    ccms_code: '380967'
+                    searchable_type: National Health Service
+                  - name: Hertfordshire Police HQ
+                    ccms_code: '381495'
+                    searchable_type: Police Authority
+                  - name: Hertsmere Borough Council
+                    ccms_code: '281348'
+                    searchable_type: Local Authority
+                  - name: Hewell Grange
+                    ccms_code: '379019'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Heywood, Middleton and Rochdale PCT
+                    ccms_code: '380969'
+                    searchable_type: National Health Service
+                  - name: High Down
+                    ccms_code: '379020'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: High Peak Borough Council
+                    ccms_code: '281349'
+                    searchable_type: Local Authority
+                  - name: Highland Council
+                    ccms_code: '281350'
+                    searchable_type: Local Authority
+                  - name: Highpoint
+                    ccms_code: '379021'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Highways Agency
+                    ccms_code: '378819'
+                    searchable_type: Government Department
+                  - name: Hillingdon PCT
+                    ccms_code: '380970'
+                    searchable_type: National Health Service
+                  - name: Hinchingbrooke NHS Trust
+                    ccms_code: '380971'
+                    searchable_type: National Health Service
+                  - name: Hinckley and Bosworth Borough Council
+                    ccms_code: '281351'
+                    searchable_type: Local Authority
+                  - name: Hindley
+                    ccms_code: '379022'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Hollesley Bay
+                    ccms_code: '379023'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Holme House
+                    ccms_code: '379024'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Home Office
+                    ccms_code: '378825'
+                    searchable_type: Charity
+                  - name: Homerton University Hospital NHS Foundation Trust
+                    ccms_code: '380972'
+                    searchable_type: National Health Service
+                  - name: Horsham District Council
+                    ccms_code: '281352'
+                    searchable_type: Local Authority
+                  - name: Hounslow PCT
+                    ccms_code: '380974'
+                    searchable_type: National Health Service
+                  - name: Hounslow and Richmond Community Healthcare NHS Trust
+                    ccms_code: '380973'
+                    searchable_type: National Health Service
+                  - name: Housing Hartlepool
+                    ccms_code: '380738'
+                    searchable_type: Housing Association
+                  - name: Hull Teaching PCT
+                    ccms_code: '380995'
+                    searchable_type: National Health Service
+                  - name: Hull and East Yorkshire Hospitals NHS Trust
+                    ccms_code: '380994'
+                    searchable_type: National Health Service
+                  - name: Humber NHS Trust
+                    ccms_code: '380996'
+                    searchable_type: National Health Service
+                  - name: Humberside Police HQ
+                    ccms_code: '381496'
+                    searchable_type: Police Authority
+                  - name: Huntingdonshire District Council
+                    ccms_code: '281353'
+                    searchable_type: Local Authority
+                  - name: Hyndburn Borough Council
+                    ccms_code: '281354'
+                    searchable_type: Local Authority
+                  - name: Identity and Passport Service
+                    ccms_code: '378826'
+                    searchable_type: Government Department
+                  - name: Imperial College Healthcare NHS Trust
+                    ccms_code: '380997'
+                    searchable_type: National Health Service
+                  - name: Imperial College London
+                    ccms_code: '381577'
+                    searchable_type: Public Limited Company
+                  - name: Imperial College NHS Trust
+                    ccms_code: '380998'
+                    searchable_type: National Health Service
+                  - name: Independent Police Complaints Commission
+                    ccms_code: '378827'
+                    searchable_type: Government Department
+                  - name: Inverclyde Council
+                    ccms_code: '281355'
+                    searchable_type: Local Authority
+                  - name: Ipswich Borough Council
+                    ccms_code: '281356'
+                    searchable_type: Local Authority
+                  - name: Ipswich Hospital NHS Trust
+                    ccms_code: '380999'
+                    searchable_type: National Health Service
+                  - name: Isle of Anglesey County Council
+                    ccms_code: '281357'
+                    searchable_type: Local Authority
+                  - name: Isle of Wight Council
+                    ccms_code: '281358'
+                    searchable_type: Local Authority
+                  - name: Isle of Wight NHS Trust
+                    ccms_code: '381000'
+                    searchable_type: National Health Service
+                  - name: Isle of Wight Primary Care Trust
+                    ccms_code: '381001'
+                    searchable_type: National Health Service
+                  - name: Islington PCT
+                    ccms_code: '381002'
+                    searchable_type: National Health Service
+                  - name: James Paget University Hospitals NHS Foundation Trust
+                    ccms_code: '381003'
+                    searchable_type: National Health Service
+                  - name: Jobcentre Plus
+                    ccms_code: '378828'
+                    searchable_type: Government Department
+                  - name: Kensington Housing Trust
+                    ccms_code: '380739'
+                    searchable_type: Housing Association
+                  - name: Kensington and Chelsea PCT
+                    ccms_code: '381004'
+                    searchable_type: National Health Service
+                  - name: Kensington and Chelsea Tenant Management Org
+                    ccms_code: '378829'
+                    searchable_type: Government Department
+                  - name: Kent Community Health NHS Trust
+                    ccms_code: '381006'
+                    searchable_type: National Health Service
+                  - name: Kent County Council
+                    ccms_code: '281359'
+                    searchable_type: Local Authority
+                  - name: Kent Police HQ
+                    ccms_code: '381497'
+                    searchable_type: Police Authority
+                  - name: Kent and Medway NHS and Social Care Partnership Trust
+                    ccms_code: '381005'
+                    searchable_type: National Health Service
+                  - name: Kettering Borough Council
+                    ccms_code: '281360'
+                    searchable_type: Local Authority
+                  - name: Kettering General Hospitals NHS Trust
+                    ccms_code: '381007'
+                    searchable_type: National Health Service
+                  - name: King's College Hospital NHS Foundation Trust
+                    ccms_code: '381009'
+                    searchable_type: National Health Service
+                  - name: King's Lynn and West Norfolk Borough Council
+                    ccms_code: '281361'
+                    searchable_type: Local Authority
+                  - name: Kings College Hospital
+                    ccms_code: '381008'
+                    searchable_type: National Health Service
+                  - name: Kingsmill Hospital
+                    ccms_code: '381010'
+                    searchable_type: National Health Service
+                  - name: Kingston Hospital NHS Trust
+                    ccms_code: '381011'
+                    searchable_type: National Health Service
+                  - name: Kingston PCT
+                    ccms_code: '381012'
+                    searchable_type: National Health Service
+                  - name: Kingston upon Hull City Council
+                    ccms_code: '281362'
+                    searchable_type: Local Authority
+                  - name: Kirklees Council
+                    ccms_code: '281363'
+                    searchable_type: Local Authority
+                  - name: Kirklees PCT
+                    ccms_code: '381014'
+                    searchable_type: National Health Service
+                  - name: Kirklevington Grange
+                    ccms_code: '379025'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Knowsley Metropolitan Borough Council
+                    ccms_code: '281364'
+                    searchable_type: Local Authority
+                  - name: Knowsley PCT
+                    ccms_code: '381015'
+                    searchable_type: National Health Service
+                  - name: Lambeth PCT
+                    ccms_code: '381016'
+                    searchable_type: National Health Service
+                  - name: Lancashire Care NHS Foundation Trust
+                    ccms_code: '381017'
+                    searchable_type: National Health Service
+                  - name: Lancashire County Council
+                    ccms_code: '281365'
+                    searchable_type: Local Authority
+                  - name: Lancashire Police HQ
+                    ccms_code: '381498'
+                    searchable_type: Police Authority
+                  - name: Lancashire Teaching Hospitals
+                    ccms_code: '381018'
+                    searchable_type: National Health Service
+                  - name: Lancaster Castle
+                    ccms_code: '379026'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Lancaster City Council
+                    ccms_code: '281366'
+                    searchable_type: Local Authority
+                  - name: Lancaster Farms
+                    ccms_code: '379027'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Larne Borough Council
+                    ccms_code: '281367'
+                    searchable_type: Local Authority
+                  - name: Larne House
+                    ccms_code: '380751'
+                    searchable_type: Immigration Removal Centre
+                  - name: Latchmere House
+                    ccms_code: '379028'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Leeds
+                    ccms_code: '379029'
+                    searchable_type: Charity
+                  - name: Leeds City County Council
+                    ccms_code: '281368'
+                    searchable_type: Local Authority
+                  - name: Leeds Community Healthcare NHS Trust
+                    ccms_code: '381021'
+                    searchable_type: National Health Service
+                  - name: Leeds NHS PCT
+                    ccms_code: '381022'
+                    searchable_type: National Health Service
+                  - name: Leeds Teaching Hospital NHS Trust
+                    ccms_code: '381023'
+                    searchable_type: National Health Service
+                  - name: Leeds Teaching Hospitals
+                    ccms_code: '381024'
+                    searchable_type: National Health Service
+                  - name: Leeds and York Partnership NHS Foundation Trust
+                    ccms_code: '381019'
+                    searchable_type: National Health Service
+                  - name: Leicester City PCT
+                    ccms_code: '381025'
+                    searchable_type: National Health Service
+                  - name: Leicester University Hospital NHS Trust
+                    ccms_code: '381026'
+                    searchable_type: National Health Service
+                  - name: Leicestershire Constabulary
+                    ccms_code: '381499'
+                    searchable_type: Police Authority
+                  - name: Leicestershire County Council
+                    ccms_code: '281422'
+                    searchable_type: Local Authority
+                  - name: Leicestershire County and Rutland PCT
+                    ccms_code: '381027'
+                    searchable_type: National Health Service
+                  - name: Leicestershire Partnership NHS Trust
+                    ccms_code: '381028'
+                    searchable_type: National Health Service
+                  - name: Leicestershire Police HQ
+                    ccms_code: '381500'
+                    searchable_type: Police Authority
+                  - name: Lewes District Council
+                    ccms_code: '281416'
+                    searchable_type: Local Authority
+                  - name: Lewisham NHS Trust
+                    ccms_code: '381029'
+                    searchable_type: National Health Service
+                  - name: Lewisham PCT
+                    ccms_code: '381030'
+                    searchable_type: National Health Service
+                  - name: Leyhill
+                    ccms_code: '379030'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Lichfield District Council
+                    ccms_code: '281414'
+                    searchable_type: Local Authority
+                  - name: Limavady Borough Council
+                    ccms_code: '281412'
+                    searchable_type: Local Authority
+                  - name: Lincolnshire Community Health Services NHS Trust
+                    ccms_code: '381031'
+                    searchable_type: National Health Service
+                  - name: Lincolnshire County Council
+                    ccms_code: '281410'
+                    searchable_type: Local Authority
+                  - name: Lincolnshire Police HQ
+                    ccms_code: '381501'
+                    searchable_type: Police Authority
+                  - name: Lincolnshire Teaching Hospitals Primary Care Trust
+                    ccms_code: '381032'
+                    searchable_type: National Health Service
+                  - name: Lindholme
+                    ccms_code: '379031'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Lisburn City Council
+                    ccms_code: '281429'
+                    searchable_type: Local Authority
+                  - name: Littlehey
+                    ccms_code: '379032'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Liverpool City Council
+                    ccms_code: '281389'
+                    searchable_type: Local Authority
+                  - name: Liverpool Community Health NHS Trust
+                    ccms_code: '381033'
+                    searchable_type: National Health Service
+                  - name: Liverpool Heart and Chest NHS Foundation Trust
+                    ccms_code: '381034'
+                    searchable_type: National Health Service
+                  - name: Liverpool PCT NHS Trust
+                    ccms_code: '381035'
+                    searchable_type: National Health Service
+                  - name: Liverpool Womens NHS Trust
+                    ccms_code: '381036'
+                    searchable_type: National Health Service
+                  - name: London Ambulance Service NHS Trust
+                    ccms_code: '381039'
+                    searchable_type: National Health Service
+                  - name: London Borough of Barking and Dagenham Council
+                    ccms_code: '281394'
+                    searchable_type: Local Authority
+                  - name: London Borough of Barnet Council
+                    ccms_code: '281396'
+                    searchable_type: Local Authority
+                  - name: London Borough of Bexley Council
+                    ccms_code: '281398'
+                    searchable_type: Local Authority
+                  - name: London Borough of Bromley Council
+                    ccms_code: '281384'
+                    searchable_type: Local Authority
+                  - name: London Borough of Camden Council
+                    ccms_code: '281433'
+                    searchable_type: Local Authority
+                  - name: London Borough of Croydon Council
+                    ccms_code: '281434'
+                    searchable_type: Local Authority
+                  - name: London Borough of Ealing Council
+                    ccms_code: '281435'
+                    searchable_type: Local Authority
+                  - name: London Borough of Enfield Council
+                    ccms_code: '281436'
+                    searchable_type: Local Authority
+                  - name: London Borough of Hackney Council
+                    ccms_code: '281437'
+                    searchable_type: Local Authority
+                  - name: London Borough of Hammersmith and Fulham Council
+                    ccms_code: '281438'
+                    searchable_type: Local Authority
+                  - name: London Borough of Haringey Council
+                    ccms_code: '281439'
+                    searchable_type: Local Authority
+                  - name: London Borough of Harrow Council
+                    ccms_code: '281440'
+                    searchable_type: Local Authority
+                  - name: London Borough of Havering Council
+                    ccms_code: '281441'
+                    searchable_type: Local Authority
+                  - name: London Borough of Hillingdon Council
+                    ccms_code: '281442'
+                    searchable_type: Local Authority
+                  - name: London Borough of Hounslow Council
+                    ccms_code: '281443'
+                    searchable_type: Local Authority
+                  - name: London Borough of Islington Council
+                    ccms_code: '281444'
+                    searchable_type: Local Authority
+                  - name: London Borough of Lambeth Council
+                    ccms_code: '281445'
+                    searchable_type: Local Authority
+                  - name: London Borough of Lewisham Council
+                    ccms_code: '281446'
+                    searchable_type: Local Authority
+                  - name: London Borough of Merton Council
+                    ccms_code: '281447'
+                    searchable_type: Local Authority
+                  - name: London Borough of Newham Council
+                    ccms_code: '281448'
+                    searchable_type: Local Authority
+                  - name: London Borough of Redbridge Council
+                    ccms_code: '281449'
+                    searchable_type: Local Authority
+                  - name: London Borough of Richmond upon Thames Council
+                    ccms_code: '281450'
+                    searchable_type: Local Authority
+                  - name: London Borough of Sutton Council
+                    ccms_code: '281456'
+                    searchable_type: Local Authority
+                  - name: London Borough of Tower Hamlets Council
+                    ccms_code: '281458'
+                    searchable_type: Local Authority
+                  - name: London Borough of Waltham Forest Council
+                    ccms_code: '281460'
+                    searchable_type: Local Authority
+                  - name: London Borough of Wandsworth Council
+                    ccms_code: '281462'
+                    searchable_type: Local Authority
+                  - name: London Government Office Region
+                    ccms_code: '378830'
+                    searchable_type: Government Department
+                  - name: London Probation Trust
+                    ccms_code: '378831'
+                    searchable_type: Government Department
+                  - name: London Strategic Health Authority
+                    ccms_code: '381040'
+                    searchable_type: National Health Service
+                  - name: London and Quadrant Housing Association
+                    ccms_code: '380740'
+                    searchable_type: Housing Association
+                  - name: Long Lartin
+                    ccms_code: '379033'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Lothian & Borders Police HQ
+                    ccms_code: '381502'
+                    searchable_type: Police Authority
+                  - name: Low Newton
+                    ccms_code: '379034'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Lowdham Grange
+                    ccms_code: '379035'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Luton & Dunstable NHS Trust
+                    ccms_code: '381041'
+                    searchable_type: National Health Service
+                  - name: Luton Borough Council
+                    ccms_code: '281464'
+                    searchable_type: Local Authority
+                  - name: Luton PCT
+                    ccms_code: '381042'
+                    searchable_type: National Health Service
+                  - name: MI5 (director General of Security)
+                    ccms_code: '378836'
+                    searchable_type: Government Department
+                  - name: MI6 (secret Intelligence Service)
+                    ccms_code: '378837'
+                    searchable_type: Government Department
+                  - name: Magherafelt District Council
+                    ccms_code: '281465'
+                    searchable_type: Local Authority
+                  - name: Maidstone & Tunbridge Wells NHS Hospital
+                    ccms_code: '381053'
+                    searchable_type: National Health Service
+                  - name: Maidstone Borough Council
+                    ccms_code: '281467'
+                    searchable_type: Local Authority
+                  - name: Maldon District Council
+                    ccms_code: '281469'
+                    searchable_type: Local Authority
+                  - name: Malvern Hills District Council
+                    ccms_code: '281470'
+                    searchable_type: Local Authority
+                  - name: Manchester City Council
+                    ccms_code: '281471'
+                    searchable_type: Local Authority
+                  - name: Manchester Mental Health and Social Care Trust
+                    ccms_code: '381054'
+                    searchable_type: National Health Service
+                  - name: Manchester PCT
+                    ccms_code: '381089'
+                    searchable_type: National Health Service
+                  - name: Mansfield District Council
+                    ccms_code: '281472'
+                    searchable_type: Local Authority
+                  - name: Maritime and Coastguard Agency
+                    ccms_code: '378832'
+                    searchable_type: Government Department
+                  - name: Mayor's Office for Policing and Crime
+                    ccms_code: '381503'
+                    searchable_type: Police Authority
+                  - name: Medicines and Healthcare Products and Regulatory Agency
+                      (mhra)
+                    ccms_code: '378833'
+                    searchable_type: Government Department
+                  - name: Medway Council
+                    ccms_code: '281473'
+                    searchable_type: Local Authority
+                  - name: Medway NHS Trust
+                    ccms_code: '381090'
+                    searchable_type: National Health Service
+                  - name: Medway PCT
+                    ccms_code: '381091'
+                    searchable_type: National Health Service
+                  - name: Melton Borough Council
+                    ccms_code: '281475'
+                    searchable_type: Local Authority
+                  - name: Mendip District Council
+                    ccms_code: '281477'
+                    searchable_type: Local Authority
+                  - name: Mental Health Tribunal for Scotland
+                    ccms_code: '378834'
+                    searchable_type: Government Department
+                  - name: Mersey Care NHS Trust
+                    ccms_code: '381092'
+                    searchable_type: National Health Service
+                  - name: Merseyside Police HQ
+                    ccms_code: '381516'
+                    searchable_type: Police Authority
+                  - name: Merthyr Tydfil County Borough Council
+                    ccms_code: '281479'
+                    searchable_type: Local Authority
+                  - name: Met Office
+                    ccms_code: '378835'
+                    searchable_type: Government Department
+                  - name: Metropolitan Police
+                    ccms_code: '381517'
+                    searchable_type: Police Authority
+                  - name: Mid Cheshire NHS Trust
+                    ccms_code: '381093'
+                    searchable_type: National Health Service
+                  - name: Mid Devon District Council
+                    ccms_code: '281480'
+                    searchable_type: Local Authority
+                  - name: Mid Essex Hospital Services NHS Trust
+                    ccms_code: '381094'
+                    searchable_type: National Health Service
+                  - name: Mid Essex PCT
+                    ccms_code: '381095'
+                    searchable_type: National Health Service
+                  - name: Mid Staffordshire NHS Foundation Trust Staffordshire General
+                      Hospital
+                    ccms_code: '381096'
+                    searchable_type: National Health Service
+                  - name: Mid Suffolk District Council
+                    ccms_code: '281484'
+                    searchable_type: Local Authority
+                  - name: Mid Sussex District Council
+                    ccms_code: '281486'
+                    searchable_type: Local Authority
+                  - name: Mid Yorkshire Hospitals NHS Trust
+                    ccms_code: '381097'
+                    searchable_type: National Health Service
+                  - name: Middlesbrough Council
+                    ccms_code: '291474'
+                    searchable_type: Local Authority
+                  - name: Middlesbrough Council
+                    ccms_code: '281487'
+                    searchable_type: Local Authority
+                  - name: Middlesbrough PCT
+                    ccms_code: '381098'
+                    searchable_type: National Health Service
+                  - name: Midlothian Council
+                    ccms_code: '281489'
+                    searchable_type: Local Authority
+                  - name: Milton Keynes Council
+                    ccms_code: '281491'
+                    searchable_type: Local Authority
+                  - name: Milton Keynes NHS Foundation Hospitals Trust
+                    ccms_code: '381099'
+                    searchable_type: National Health Service
+                  - name: Milton Keynes PCT
+                    ccms_code: '381100'
+                    searchable_type: National Health Service
+                  - name: Ministry of Defence
+                    ccms_code: '378838'
+                    searchable_type: Government Department
+                  - name: Ministry of Defence Police and Guarding Agency
+                    ccms_code: '378839'
+                    searchable_type: Government Department
+                  - name: Ministry of Justice
+                    ccms_code: '378840'
+                    searchable_type: Government Department
+                  - name: Mole Valley District Council
+                    ccms_code: '281493'
+                    searchable_type: Local Authority
+                  - name: Monmouthshire County Council
+                    ccms_code: '281495'
+                    searchable_type: Local Authority
+                  - name: Moorfields Eye Hospital NHS Foundation Trust
+                    ccms_code: '381101'
+                    searchable_type: National Health Service
+                  - name: Moorland Closed
+                    ccms_code: '379036'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Moorland Open
+                    ccms_code: '379037'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Moray Council
+                    ccms_code: '281496'
+                    searchable_type: Local Authority
+                  - name: Morton Hall
+                    ccms_code: '379038'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Morton Hall Immigration Removal Centre
+                    ccms_code: '380752'
+                    searchable_type: Immigration Removal Centre
+                  - name: Moyle District Council
+                    ccms_code: '281497'
+                    searchable_type: Local Authority
+                  - name: NHS Blood 7 Transport
+                    ccms_code: '378847'
+                    searchable_type: Government Department
+                  - name: NHS Direct NHS Trust
+                    ccms_code: '381106'
+                    searchable_type: National Health Service
+                  - name: National Archives
+                    ccms_code: '378841'
+                    searchable_type: Government Department
+                  - name: National Assembly for Wales
+                    ccms_code: '378842'
+                    searchable_type: Government Department
+                  - name: National Fraud Authority
+                    ccms_code: '378843'
+                    searchable_type: Government Department
+                  - name: National Measurement Office
+                    ccms_code: '378844'
+                    searchable_type: Government Department
+                  - name: National Policing Improvement Agency
+                    ccms_code: '381518'
+                    searchable_type: Police Authority
+                  - name: National School of Government
+                    ccms_code: '378846'
+                    searchable_type: Government Department
+                  - name: National offender Management Service (noms)
+                    ccms_code: '378845'
+                    searchable_type: Government Department
+                  - name: Neath Port Talbot County Borough Council
+                    ccms_code: '281499'
+                    searchable_type: Local Authority
+                  - name: New Forest District Council
+                    ccms_code: '281501'
+                    searchable_type: Local Authority
+                  - name: New Hall
+                    ccms_code: '379039'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Newark and Sherwood District Council
+                    ccms_code: '281503'
+                    searchable_type: Local Authority
+                  - name: Newcastle CC
+                    ccms_code: '298345'
+                    searchable_type: Local Authority
+                  - name: Newcastle City Council
+                    ccms_code: '298370'
+                    searchable_type: Local Authority
+                  - name: Newcastle PCT
+                    ccms_code: '381102'
+                    searchable_type: National Health Service
+                  - name: Newcastle Upon Tyne Hospitals NHS Foundation Trust
+                    ccms_code: '381103'
+                    searchable_type: National Health Service
+                  - name: Newcastle under Lyme Borough Council
+                    ccms_code: '281505'
+                    searchable_type: Local Authority
+                  - name: Newcastle upon Tyne City Council
+                    ccms_code: '281507'
+                    searchable_type: Local Authority
+                  - name: Newham PCT
+                    ccms_code: '381104'
+                    searchable_type: National Health Service
+                  - name: Newham University NHS Trust
+                    ccms_code: '381105'
+                    searchable_type: National Health Service
+                  - name: Newport City Council
+                    ccms_code: '281509'
+                    searchable_type: Local Authority
+                  - name: Newry and Mourne District Council
+                    ccms_code: '281510'
+                    searchable_type: Local Authority
+                  - name: Newtownabbey Borough Council
+                    ccms_code: '281512'
+                    searchable_type: Local Authority
+                  - name: Norfolk & Norwich NHS Trust
+                    ccms_code: '381107'
+                    searchable_type: National Health Service
+                  - name: Norfolk Community Health and Care NHS Trust
+                    ccms_code: '381109'
+                    searchable_type: National Health Service
+                  - name: Norfolk County Council
+                    ccms_code: '281514'
+                    searchable_type: Local Authority
+                  - name: Norfolk Police HQ
+                    ccms_code: '381527'
+                    searchable_type: Police Authority
+                  - name: Norfolk Primary Care Trust
+                    ccms_code: '381110'
+                    searchable_type: National Health Service
+                  - name: Norfolk and Suffolk NHS Foundation Trust
+                    ccms_code: '381108'
+                    searchable_type: National Health Service
+                  - name: North Ayrshire Council
+                    ccms_code: '281516'
+                    searchable_type: Local Authority
+                  - name: North Bristol NHS Trust
+                    ccms_code: '381111'
+                    searchable_type: National Health Service
+                  - name: North Cumbria NHS Trust
+                    ccms_code: '381112'
+                    searchable_type: National Health Service
+                  - name: North Cumbria University Hospitals NHS Trust
+                    ccms_code: '381113'
+                    searchable_type: National Health Service
+                  - name: North Devon Council
+                    ccms_code: '281518'
+                    searchable_type: Local Authority
+                  - name: North Dorset District Council
+                    ccms_code: '281519'
+                    searchable_type: Local Authority
+                  - name: North Down Borough Council
+                    ccms_code: '281520'
+                    searchable_type: Local Authority
+                  - name: North East Ambulance Service NHS Foundation Trust
+                    ccms_code: '381114'
+                    searchable_type: National Health Service
+                  - name: North East Derbyshire District Council
+                    ccms_code: '281522'
+                    searchable_type: Local Authority
+                  - name: North East Essex PCT
+                    ccms_code: '381115'
+                    searchable_type: National Health Service
+                  - name: North East Government Office Region
+                    ccms_code: '378848'
+                    searchable_type: Government Department
+                  - name: North East Lincolnshire Care Trust Plus
+                    ccms_code: '381116'
+                    searchable_type: National Health Service
+                  - name: North East Lincolnshire Council
+                    ccms_code: '281524'
+                    searchable_type: Local Authority
+                  - name: North East London NHS Foundation Trust
+                    ccms_code: '381117'
+                    searchable_type: National Health Service
+                  - name: North East Strategic Health Authority
+                    ccms_code: '381118'
+                    searchable_type: National Health Service
+                  - name: North East Wales NHS Trust
+                    ccms_code: '381119'
+                    searchable_type: National Health Service
+                  - name: North Essex Partnership NHS Foundation Trust
+                    ccms_code: '381121'
+                    searchable_type: National Health Service
+                  - name: North Hertfordshire District Council
+                    ccms_code: '281526'
+                    searchable_type: Local Authority
+                  - name: North Kesteven District Council
+                    ccms_code: '281528'
+                    searchable_type: Local Authority
+                  - name: North Lanarkshire Council
+                    ccms_code: '281530'
+                    searchable_type: Local Authority
+                  - name: North Lancashire Teaching PCT
+                    ccms_code: '381122'
+                    searchable_type: National Health Service
+                  - name: North Lincolnshire Council
+                    ccms_code: '281531'
+                    searchable_type: Local Authority
+                  - name: North Lincolnshire NHS Trust
+                    ccms_code: '381123'
+                    searchable_type: National Health Service
+                  - name: North Lincolnshire PCT
+                    ccms_code: '381124'
+                    searchable_type: National Health Service
+                  - name: North Middlesex University Hospital NHS Trust
+                    ccms_code: '381125'
+                    searchable_type: National Health Service
+                  - name: North Norfolk District Council
+                    ccms_code: '281533'
+                    searchable_type: Local Authority
+                  - name: North Sea Camp
+                    ccms_code: '379040'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: North Somerset District Council
+                    ccms_code: '281535'
+                    searchable_type: Local Authority
+                  - name: North Somerset PCT
+                    ccms_code: '381126'
+                    searchable_type: National Health Service
+                  - name: North Staffordshire NHS Trust/university Hospitals
+                    ccms_code: '381127'
+                    searchable_type: National Health Service
+                  - name: North Staffordshire PCT
+                    ccms_code: '381128'
+                    searchable_type: National Health Service
+                  - name: North Tees & Hartlepool NHS Trust
+                    ccms_code: '381129'
+                    searchable_type: National Health Service
+                  - name: North Tyneside Metropolitan Borough Council
+                    ccms_code: '281537'
+                    searchable_type: Local Authority
+                  - name: North Tyneside PCT
+                    ccms_code: '381130'
+                    searchable_type: National Health Service
+                  - name: North Wales Police HQ
+                    ccms_code: '381529'
+                    searchable_type: Police Authority
+                  - name: North Warwickshire Borough Council
+                    ccms_code: '281539'
+                    searchable_type: Local Authority
+                  - name: North West Ambulance Service NHS Trust
+                    ccms_code: '381131'
+                    searchable_type: National Health Service
+                  - name: North West Government Office Region
+                    ccms_code: '378849'
+                    searchable_type: Government Department
+                  - name: North West Leicestershire District Council
+                    ccms_code: '281541'
+                    searchable_type: Local Authority
+                  - name: North West London Hospital NHS Trust
+                    ccms_code: '381144'
+                    searchable_type: National Health Service
+                  - name: North West Strategic Health Authority
+                    ccms_code: '381145'
+                    searchable_type: National Health Service
+                  - name: North Yorkshire & York PCT
+                    ccms_code: '381146'
+                    searchable_type: National Health Service
+                  - name: North Yorkshire County Council
+                    ccms_code: '281543'
+                    searchable_type: Local Authority
+                  - name: North Yorkshire Police HQ
+                    ccms_code: '381534'
+                    searchable_type: Police Authority
+                  - name: Northampton Borough Council
+                    ccms_code: '281545'
+                    searchable_type: Local Authority
+                  - name: Northampton General Hospital NHS Trust
+                    ccms_code: '381147'
+                    searchable_type: National Health Service
+                  - name: Northampton Magistrate Court
+                    ccms_code: '378750'
+                    searchable_type: Court
+                  - name: Northampton NHS Trust
+                    ccms_code: '381148'
+                    searchable_type: National Health Service
+                  - name: Northamptonshire County Council
+                    ccms_code: '281546'
+                    searchable_type: Local Authority
+                  - name: Northamptonshire Healthcare NHS Foundation Trust
+                    ccms_code: '381149'
+                    searchable_type: National Health Service
+                  - name: Northamptonshire Police HQ
+                    ccms_code: '381535'
+                    searchable_type: Police Authority
+                  - name: Northamptonshire Teaching PCT
+                    ccms_code: '381150'
+                    searchable_type: National Health Service
+                  - name: Northern Devon Healthcare NHS Trust
+                    ccms_code: '381151'
+                    searchable_type: National Health Service
+                  - name: Northern Ireland Office
+                    ccms_code: '378850'
+                    searchable_type: Government Department
+                  - name: Northern Ireland Policing Board
+                    ccms_code: '381536'
+                    searchable_type: Police Authority
+                  - name: Northern Lincolnshire and Goole Hospitals NHS Foundation
+                      Trust
+                    ccms_code: '381152'
+                    searchable_type: National Health Service
+                  - name: Northern Police HQ
+                    ccms_code: '381547'
+                    searchable_type: Police Authority
+                  - name: Northumberland Care Trust
+                    ccms_code: '381153'
+                    searchable_type: National Health Service
+                  - name: Northumberland County Council
+                    ccms_code: '281548'
+                    searchable_type: Local Authority
+                  - name: Northumberland, Tyne and Wear NHS Foundation Trust
+                    ccms_code: '381154'
+                    searchable_type: National Health Service
+                  - name: Northumbria Healthcare NHS Foundation Trust
+                    ccms_code: '381155'
+                    searchable_type: National Health Service
+                  - name: Northumbria Police HQ
+                    ccms_code: '381548'
+                    searchable_type: Police Authority
+                  - name: Northwick Park Hospital
+                    ccms_code: '381156'
+                    searchable_type: National Health Service
+                  - name: Norwich City Council
+                    ccms_code: '281550'
+                    searchable_type: Local Authority
+                  - name: Notting Hill Housing Trust
+                    ccms_code: '380742'
+                    searchable_type: Housing Association
+                  - name: Nottingham City Council
+                    ccms_code: '281552'
+                    searchable_type: Local Authority
+                  - name: Nottingham City Hospital
+                    ccms_code: '381157'
+                    searchable_type: National Health Service
+                  - name: Nottingham City PCT
+                    ccms_code: '381158'
+                    searchable_type: National Health Service
+                  - name: Nottingham University Hospitals NHS Trust
+                    ccms_code: '381159'
+                    searchable_type: National Health Service
+                  - name: Nottinghamshire County Council
+                    ccms_code: '281554'
+                    searchable_type: Local Authority
+                  - name: Nottinghamshire County Teaching PCT
+                    ccms_code: '381160'
+                    searchable_type: National Health Service
+                  - name: Nottinghamshire Healthcare Trust
+                    ccms_code: '381161'
+                    searchable_type: National Health Service
+                  - name: Nottinghamshire Police HQ
+                    ccms_code: '381549'
+                    searchable_type: Police Authority
+                  - name: Nuffield Orthopaedic Centre NHS Trust
+                    ccms_code: '381162'
+                    searchable_type: National Health Service
+                  - name: Nugent Care Society
+                    ccms_code: '378851'
+                    searchable_type: Government Department
+                  - name: Nuneaton and Bedworth Borough Council
+                    ccms_code: '281556'
+                    searchable_type: Local Authority
+                  - name: Oadby and Wigston Borough Council
+                    ccms_code: '281451'
+                    searchable_type: Local Authority
+                  - name: Office for Standards In Education, Children's Services and
+                      Skills
+                    ccms_code: '378852'
+                    searchable_type: Government Department
+                  - name: Office of Gas and Electricity Markets
+                    ccms_code: '378853'
+                    searchable_type: Government Department
+                  - name: Office of Qualifications and Examinations Regulation
+                    ccms_code: '378854'
+                    searchable_type: Government Department
+                  - name: Office of Rail Regulation
+                    ccms_code: '378855'
+                    searchable_type: Government Department
+                  - name: Office of The Leader of The House of Commons and Lord Privy
+                      Seal
+                    ccms_code: '378856'
+                    searchable_type: Government Department
+                  - name: Office of The Public Guardian
+                    ccms_code: '378857'
+                    searchable_type: Government Department
+                  - name: Office of Water Services
+                    ccms_code: '378858'
+                    searchable_type: Government Department
+                  - name: Official Receiver (insolvency Service)
+                    ccms_code: '378859'
+                    searchable_type: Government Department
+                  - name: Official Solicitor
+                    ccms_code: '378860'
+                    searchable_type: Government Department
+                  - name: Oldham Metropolitan Borough Council
+                    ccms_code: '281452'
+                    searchable_type: Local Authority
+                  - name: Oldham PCT
+                    ccms_code: '381163'
+                    searchable_type: National Health Service
+                  - name: Omagh District Council
+                    ccms_code: '281453'
+                    searchable_type: Local Authority
+                  - name: Onley
+                    ccms_code: '379041'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Ordnance Survey
+                    ccms_code: '378861'
+                    searchable_type: Government Department
+                  - name: Orkney Islands Council
+                    ccms_code: '281454'
+                    searchable_type: Local Authority
+                  - name: Oxford & Buckinghamshire Mental Health Trust
+                    ccms_code: '381164'
+                    searchable_type: National Health Service
+                  - name: Oxford City Council
+                    ccms_code: '281455'
+                    searchable_type: Local Authority
+                  - name: Oxford Health NHS Foundation Trust
+                    ccms_code: '381165'
+                    searchable_type: National Health Service
+                  - name: Oxford University Hospitals NHS Trust
+                    ccms_code: '381166'
+                    searchable_type: National Health Service
+                  - name: Oxfordshire County Council
+                    ccms_code: '281457'
+                    searchable_type: Local Authority
+                  - name: Oxfordshire Learning Disability NHS Trust
+                    ccms_code: '381170'
+                    searchable_type: National Health Service
+                  - name: Oxfordshire PCT
+                    ccms_code: '381171'
+                    searchable_type: National Health Service
+                  - name: Oxleas NHS Foundation Trust
+                    ccms_code: '381172'
+                    searchable_type: National Health Service
+                  - name: Papworth NHS Trust
+                    ccms_code: '381173'
+                    searchable_type: National Health Service
+                  - name: Parkhurst
+                    ccms_code: '379042'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Parole Board
+                    ccms_code: '378862'
+                    searchable_type: Government Department
+                  - name: Pembrokeshire County Council
+                    ccms_code: '281459'
+                    searchable_type: Local Authority
+                  - name: Pendle Borough Council
+                    ccms_code: '281461'
+                    searchable_type: Local Authority
+                  - name: Pennine Acute Hospitals NHS Trust
+                    ccms_code: '381178'
+                    searchable_type: National Health Service
+                  - name: Pennine Care NHS Foundation Trust
+                    ccms_code: '381186'
+                    searchable_type: National Health Service
+                  - name: Pennine House
+                    ccms_code: '380753'
+                    searchable_type: Immigration Removal Centre
+                  - name: Pension, Disability and Carers Service
+                    ccms_code: '378863'
+                    searchable_type: Government Department
+                  - name: Pentonville
+                    ccms_code: '379043'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: People, Pay and Pensions Agency
+                    ccms_code: '378864'
+                    searchable_type: Government Department
+                  - name: Perth and Kinross Council
+                    ccms_code: '281463'
+                    searchable_type: Local Authority
+                  - name: Peterborough & Stamford NHS Foundation Trust
+                    ccms_code: '381187'
+                    searchable_type: National Health Service
+                  - name: Peterborough City Council
+                    ccms_code: '281466'
+                    searchable_type: Local Authority
+                  - name: Peterborough PCT
+                    ccms_code: '381192'
+                    searchable_type: National Health Service
+                  - name: Planning Inspectorate
+                    ccms_code: '378865'
+                    searchable_type: Government Department
+                  - name: Plymouth City Council
+                    ccms_code: '281468'
+                    searchable_type: Local Authority
+                  - name: Plymouth Hospitals NHS Trust
+                    ccms_code: '381193'
+                    searchable_type: National Health Service
+                  - name: Plymouth Teaching PCT
+                    ccms_code: '381194'
+                    searchable_type: National Health Service
+                  - name: Police Service for Northern Ireland HQ
+                    ccms_code: '381550'
+                    searchable_type: Police Authority
+                  - name: Poole Hospital NHS Trust Foundation
+                    ccms_code: '381195'
+                    searchable_type: National Health Service
+                  - name: Portland
+                    ccms_code: '379044'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Portsmouth City Teaching PCT
+                    ccms_code: '381196'
+                    searchable_type: National Health Service
+                  - name: Portsmouth Hospitals NHS Trust
+                    ccms_code: '381197'
+                    searchable_type: National Health Service
+                  - name: Postal Services Commission
+                    ccms_code: '378866'
+                    searchable_type: Government Department
+                  - name: Powys County Council
+                    ccms_code: '281474'
+                    searchable_type: Local Authority
+                  - name: Prescoed
+                    ccms_code: '379045'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Preston City Council
+                    ccms_code: '281476'
+                    searchable_type: Local Authority
+                  - name: Prime Minister's Office
+                    ccms_code: '378867'
+                    searchable_type: Government Department
+                  - name: Public Health Wales NHS Trust
+                    ccms_code: '381198'
+                    searchable_type: National Health Service
+                  - name: Public Works Loan Board
+                    ccms_code: '378868'
+                    searchable_type: Government Department
+                  - name: Purbeck District Council
+                    ccms_code: '281478'
+                    searchable_type: Local Authority
+                  - name: Queen Elizabeth Hospital NHS Trust
+                    ccms_code: '381199'
+                    searchable_type: National Health Service
+                  - name: Queen Elizabeth Ii Conference Centre
+                    ccms_code: '378869'
+                    searchable_type: Government Department
+                  - name: Queen Victoria Hospital NHS Foundation Trust
+                    ccms_code: '381200'
+                    searchable_type: National Health Service
+                  - name: Ranby
+                    ccms_code: '379046'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Reading Borough Council
+                    ccms_code: '281481'
+                    searchable_type: Local Authority
+                  - name: Redbridge PCT
+                    ccms_code: '381201'
+                    searchable_type: National Health Service
+                  - name: Redcar and Cleveland Borough Council
+                    ccms_code: '281482'
+                    searchable_type: Local Authority
+                  - name: Redcar and Cleveland Local Authority
+                    ccms_code: '296351'
+                    searchable_type: Local Authority
+                  - name: Redcar and Cleveland PCT
+                    ccms_code: '381202'
+                    searchable_type: National Health Service
+                  - name: Redditch Borough Council
+                    ccms_code: '281483'
+                    searchable_type: Local Authority
+                  - name: Refugee Council HQ
+                    ccms_code: '378870'
+                    searchable_type: Government Department
+                  - name: Reigate and Banstead Borough Council
+                    ccms_code: '281485'
+                    searchable_type: Local Authority
+                  - name: Renfrewshire Council
+                    ccms_code: '281488'
+                    searchable_type: Local Authority
+                  - name: Rhondda Cynon Taf County Borough Council
+                    ccms_code: '281490'
+                    searchable_type: Local Authority
+                  - name: Ribble Valley Borough Council
+                    ccms_code: '281492'
+                    searchable_type: Local Authority
+                  - name: Richmond and Twickenham PCT
+                    ccms_code: '381203'
+                    searchable_type: National Health Service
+                  - name: Richmondshire District Council
+                    ccms_code: '281494'
+                    searchable_type: Local Authority
+                  - name: Risley
+                    ccms_code: '380677'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Rochdale Metropolitan Borough Council
+                    ccms_code: '281498'
+                    searchable_type: Local Authority
+                  - name: Rochford District Council
+                    ccms_code: '281500'
+                    searchable_type: Local Authority
+                  - name: Rossendale Borough Council
+                    ccms_code: '281502'
+                    searchable_type: Local Authority
+                  - name: Rother District Council
+                    ccms_code: '281504'
+                    searchable_type: Local Authority
+                  - name: Rotherham Metropolitan Borough Council
+                    ccms_code: '281506'
+                    searchable_type: Local Authority
+                  - name: Rotherham PCT
+                    ccms_code: '381204'
+                    searchable_type: National Health Service
+                  - name: Rotherham, Doncaster and South Humber NHS Foundation Trust
+                    ccms_code: '381205'
+                    searchable_type: National Health Service
+                  - name: Royal Berkshire NHS Foundation Trust
+                    ccms_code: '381206'
+                    searchable_type: National Health Service
+                  - name: Royal Bolton Hospital NHS Foundation Trust
+                    ccms_code: '381207'
+                    searchable_type: National Health Service
+                  - name: Royal Borough of Greenwich
+                    ccms_code: '281508'
+                    searchable_type: Local Authority
+                  - name: Royal Borough of Kensington and Chelsea Council
+                    ccms_code: '281511'
+                    searchable_type: Local Authority
+                  - name: Royal Borough of Kingston upon Thames Council
+                    ccms_code: '281513'
+                    searchable_type: Local Authority
+                  - name: Royal Brompton and Harefield NHS Foundation Trust
+                    ccms_code: '381208'
+                    searchable_type: National Health Service
+                  - name: Royal Cornwall Hospital NHS Trust
+                    ccms_code: '381209'
+                    searchable_type: National Health Service
+                  - name: Royal Devon & Exeter NHS Foundation Trust
+                    ccms_code: '381210'
+                    searchable_type: National Health Service
+                  - name: Royal Free London NHS Foundation Trust
+                    ccms_code: '381211'
+                    searchable_type: National Health Service
+                  - name: Royal Liverpool and Broadgreen NHS University Hospital
+                    ccms_code: '381212'
+                    searchable_type: National Health Service
+                  - name: Royal National Hospital for Rheumatic Diseases NHS Foundation
+                      Trust
+                    ccms_code: '381213'
+                    searchable_type: National Health Service
+                  - name: Royal National Orthopaedic Hospital NHS Trust
+                    ccms_code: '381214'
+                    searchable_type: National Health Service
+                  - name: Royal Surrey County Hospital NHS Foundation Trust
+                    ccms_code: '381215'
+                    searchable_type: National Health Service
+                  - name: Royal United Hospital Bath NHS Trust
+                    ccms_code: '381216'
+                    searchable_type: National Health Service
+                  - name: Rugby Borough Council
+                    ccms_code: '281515'
+                    searchable_type: Local Authority
+                  - name: Runnymede Borough Council
+                    ccms_code: '281517'
+                    searchable_type: Local Authority
+                  - name: Rural Payments Agency
+                    ccms_code: '378871'
+                    searchable_type: Government Department
+                  - name: Rushcliffe Borough Council
+                    ccms_code: '281521'
+                    searchable_type: Local Authority
+                  - name: Rushmoor Borough Council
+                    ccms_code: '281523'
+                    searchable_type: Local Authority
+                  - name: Rutland County Council
+                    ccms_code: '281525'
+                    searchable_type: Local Authority
+                  - name: Rye Hill
+                    ccms_code: '380678'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Ryedale District Council
+                    ccms_code: '281527'
+                    searchable_type: Local Authority
+                  - name: SOCA
+                    ccms_code: '381552'
+                    searchable_type: Police Authority
+                  - name: Salford City Council
+                    ccms_code: '281529'
+                    searchable_type: Local Authority
+                  - name: Salford NHS Trust
+                    ccms_code: '381217'
+                    searchable_type: National Health Service
+                  - name: Salford PCT
+                    ccms_code: '381218'
+                    searchable_type: National Health Service
+                  - name: Salford Royal NHS Trust
+                    ccms_code: '381219'
+                    searchable_type: National Health Service
+                  - name: Salisbury NHS Foundation Trust
+                    ccms_code: '381220'
+                    searchable_type: National Health Service
+                  - name: Sandwell Metropolitan Borough Council
+                    ccms_code: '281532'
+                    searchable_type: Local Authority
+                  - name: Sandwell PCT
+                    ccms_code: '381222'
+                    searchable_type: National Health Service
+                  - name: Sandwell and West Birmingham Hospitals NHS Trust
+                    ccms_code: '381221'
+                    searchable_type: National Health Service
+                  - name: Scarborough & North East Yorkshire NHS Trust
+                    ccms_code: '381223'
+                    searchable_type: National Health Service
+                  - name: Scarborough Borough Council
+                    ccms_code: '281534'
+                    searchable_type: Local Authority
+                  - name: Scotland Office
+                    ccms_code: '378872'
+                    searchable_type: Government Department
+                  - name: Scottish Borders Council
+                    ccms_code: '281536'
+                    searchable_type: Local Authority
+                  - name: Scottish Crime & Drug Enforcement Agency Police HQ
+                    ccms_code: '381551'
+                    searchable_type: Police Authority
+                  - name: Secretary of State Home Department
+                    ccms_code: '378875'
+                    searchable_type: Government Department
+                  - name: Secretary of State for Defence War Office
+                    ccms_code: '378873'
+                    searchable_type: Government Department
+                  - name: Secretary of State for Transport
+                    ccms_code: '378874'
+                    searchable_type: Charity
+                  - name: Sedgemoor District Council
+                    ccms_code: '281538'
+                    searchable_type: Local Authority
+                  - name: Sefton Council
+                    ccms_code: '281540'
+                    searchable_type: Local Authority
+                  - name: Sefton PCT
+                    ccms_code: '381224'
+                    searchable_type: National Health Service
+                  - name: Selby District Council
+                    ccms_code: '281542'
+                    searchable_type: Local Authority
+                  - name: Send
+                    ccms_code: '380679'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Serious Fraud Office
+                    ccms_code: '378876'
+                    searchable_type: Government Department
+                  - name: Service Children's Education
+                    ccms_code: '378877'
+                    searchable_type: Government Department
+                  - name: Service Personnel and Veterans Agency (ex-service and Veterens
+                      Personel Issues)
+                    ccms_code: '378878'
+                    searchable_type: Government Department
+                  - name: Sevenoaks District Council
+                    ccms_code: '281544'
+                    searchable_type: Local Authority
+                  - name: Sheffield Children's NHS Foundation Trust
+                    ccms_code: '381226'
+                    searchable_type: National Health Service
+                  - name: Sheffield Children’s NHS Trust
+                    ccms_code: '381225'
+                    searchable_type: National Health Service
+                  - name: Sheffield City Council
+                    ccms_code: '281547'
+                    searchable_type: Local Authority
+                  - name: Sheffield Health and Social Care NHS Foundation Trust
+                    ccms_code: '381231'
+                    searchable_type: National Health Service
+                  - name: Sheffield PCT
+                    ccms_code: '381232'
+                    searchable_type: National Health Service
+                  - name: Sheffield Teaching Hospitals NHS Foundation Trust
+                    ccms_code: '381233'
+                    searchable_type: National Health Service
+                  - name: Shepway District Council
+                    ccms_code: '281549'
+                    searchable_type: Local Authority
+                  - name: Sherwood forest Hospitals NHS Foundation Trust
+                    ccms_code: '381234'
+                    searchable_type: National Health Service
+                  - name: Shetland Islands Council
+                    ccms_code: '281551'
+                    searchable_type: Local Authority
+                  - name: Shrewsbury and Telford Hospital NHS Trust
+                    ccms_code: '381235'
+                    searchable_type: National Health Service
+                  - name: Shropshire Community Health NHS Trust
+                    ccms_code: '381236'
+                    searchable_type: National Health Service
+                  - name: Shropshire Council
+                    ccms_code: '281553'
+                    searchable_type: Local Authority
+                  - name: Shropshire County PCT
+                    ccms_code: '381237'
+                    searchable_type: National Health Service
+                  - name: Skills Funding Agency
+                    ccms_code: '378895'
+                    searchable_type: Government Department
+                  - name: Slough Borough Council
+                    ccms_code: '281555'
+                    searchable_type: Local Authority
+                  - name: Solent NHS Trust
+                    ccms_code: '381238'
+                    searchable_type: National Health Service
+                  - name: Solicitors Regulation Authority
+                    ccms_code: '378896'
+                    searchable_type: Government Department
+                  - name: Solihull Metropolitan Borough Council
+                    ccms_code: '281557'
+                    searchable_type: Local Authority
+                  - name: Solihull NHS Trust
+                    ccms_code: '381239'
+                    searchable_type: National Health Service
+                  - name: Solihull PCT
+                    ccms_code: '381240'
+                    searchable_type: National Health Service
+                  - name: Somerset County Council
+                    ccms_code: '281558'
+                    searchable_type: Local Authority
+                  - name: Somerset NHS Hospital Primary Care Trust
+                    ccms_code: '381241'
+                    searchable_type: National Health Service
+                  - name: Somerset Partnership NHS Foundation Trust
+                    ccms_code: '381242'
+                    searchable_type: National Health Service
+                  - name: South Ayrshire Council
+                    ccms_code: '281559'
+                    searchable_type: Local Authority
+                  - name: South Birmingham PCT
+                    ccms_code: '381243'
+                    searchable_type: National Health Service
+                  - name: South Bucks District Council
+                    ccms_code: '281563'
+                    searchable_type: Local Authority
+                  - name: South Cambridgeshire District Council
+                    ccms_code: '281565'
+                    searchable_type: Local Authority
+                  - name: South Central Ambulance Service NHS Foundation Trust
+                    ccms_code: '381244'
+                    searchable_type: National Health Service
+                  - name: South Central Strategic Health Authority
+                    ccms_code: '381245'
+                    searchable_type: National Health Service
+                  - name: South Derbyshire District Council
+                    ccms_code: '281567'
+                    searchable_type: Local Authority
+                  - name: South Devon Healthcare NHS Foundation Trust
+                    ccms_code: '381246'
+                    searchable_type: National Health Service
+                  - name: South Durham NHS Trust
+                    ccms_code: '381247'
+                    searchable_type: National Health Service
+                  - name: South East Coast Ambulance Service NHS Foundation Trust
+                    ccms_code: '381248'
+                    searchable_type: National Health Service
+                  - name: South East Coast Strategic Health Authority
+                    ccms_code: '381249'
+                    searchable_type: National Health Service
+                  - name: South East Essex PCT
+                    ccms_code: '381250'
+                    searchable_type: National Health Service
+                  - name: South East Government Office Region
+                    ccms_code: '378897'
+                    searchable_type: Government Department
+                  - name: South Essex Partnership NHS Trust
+                    ccms_code: '381251'
+                    searchable_type: National Health Service
+                  - name: South Gloucestershire Council
+                    ccms_code: '281573'
+                    searchable_type: Local Authority
+                  - name: South Gloucestershire PCT
+                    ccms_code: '381252'
+                    searchable_type: National Health Service
+                  - name: South Hams District Council
+                    ccms_code: '281575'
+                    searchable_type: Local Authority
+                  - name: South Holland District Council
+                    ccms_code: '281577'
+                    searchable_type: Local Authority
+                  - name: South Kesteven District Council
+                    ccms_code: '281579'
+                    searchable_type: Local Authority
+                  - name: South Lakeland District Council
+                    ccms_code: '281581'
+                    searchable_type: Local Authority
+                  - name: South Lanarkshire Council
+                    ccms_code: '281583'
+                    searchable_type: Local Authority
+                  - name: South London & Maudsley NHS Trust
+                    ccms_code: '381253'
+                    searchable_type: National Health Service
+                  - name: South London Healthcare NHS Trust
+                    ccms_code: '381254'
+                    searchable_type: National Health Service
+                  - name: South Norfolk Council
+                    ccms_code: '281586'
+                    searchable_type: Local Authority
+                  - name: South Northamptonshire Council
+                    ccms_code: '281588'
+                    searchable_type: Local Authority
+                  - name: South Oxfordshire District Council
+                    ccms_code: '281590'
+                    searchable_type: Local Authority
+                  - name: South Ribble Borough Council
+                    ccms_code: '281592'
+                    searchable_type: Local Authority
+                  - name: South Somerset District Council
+                    ccms_code: '281593'
+                    searchable_type: Local Authority
+                  - name: South Staffordshire Council
+                    ccms_code: '281594'
+                    searchable_type: Local Authority
+                  - name: South Staffordshire PCT
+                    ccms_code: '381256'
+                    searchable_type: National Health Service
+                  - name: South Staffordshire and Shropshire Healthcare NHS Foundation
+                      Trust
+                    ccms_code: '381255'
+                    searchable_type: National Health Service
+                  - name: South Tees NHS Trust
+                    ccms_code: '381257'
+                    searchable_type: National Health Service
+                  - name: South Tyneside Metropolitan Borough Council
+                    ccms_code: '281595'
+                    searchable_type: Local Authority
+                  - name: South Tyneside NHS Foundation Trust
+                    ccms_code: '381258'
+                    searchable_type: National Health Service
+                  - name: South Tyneside PCT
+                    ccms_code: '381259'
+                    searchable_type: National Health Service
+                  - name: South Wales Police HQ
+                    ccms_code: '381553'
+                    searchable_type: Police Authority
+                  - name: South Warwickshire NHS Foundation Trust
+                    ccms_code: '381260'
+                    searchable_type: National Health Service
+                  - name: South West Essex PCT
+                    ccms_code: '381261'
+                    searchable_type: National Health Service
+                  - name: South West Government Office Region
+                    ccms_code: '378898'
+                    searchable_type: Government Department
+                  - name: South West London and St George's Mental Health NHS Trust
+                    ccms_code: '381262'
+                    searchable_type: National Health Service
+                  - name: South West Strategic Health Authority
+                    ccms_code: '381263'
+                    searchable_type: National Health Service
+                  - name: South West Yorkshire Partnership NHS Foundation Trust
+                    ccms_code: '381264'
+                    searchable_type: National Health Service
+                  - name: South Western Ambulance Service NHS Foundation Trust
+                    ccms_code: '381265'
+                    searchable_type: National Health Service
+                  - name: South Yorkshire Police Authority
+                    ccms_code: '381554'
+                    searchable_type: Police Authority
+                  - name: South Yorkshire Police HQ
+                    ccms_code: '381555'
+                    searchable_type: Police Authority
+                  - name: Southampton City PCT
+                    ccms_code: '381266'
+                    searchable_type: National Health Service
+                  - name: Southampton University Teaching Hospitals
+                    ccms_code: '381267'
+                    searchable_type: National Health Service
+                  - name: Southend University Hospital NHS Trust
+                    ccms_code: '381268'
+                    searchable_type: National Health Service
+                  - name: Southend on Sea Borough Council
+                    ccms_code: '281596'
+                    searchable_type: Local Authority
+                  - name: Southern Health NHS Foundation Trust
+                    ccms_code: '381269'
+                    searchable_type: National Health Service
+                  - name: Southport and Ormskirk Hospital NHS Trust
+                    ccms_code: '381270'
+                    searchable_type: National Health Service
+                  - name: Southwark NHS Primary Care Trust
+                    ccms_code: '381271'
+                    searchable_type: National Health Service
+                  - name: Southwark PCT
+                    ccms_code: '381272'
+                    searchable_type: National Health Service
+                  - name: Spelthorne Borough Council
+                    ccms_code: '281597'
+                    searchable_type: Local Authority
+                  - name: Spring Hill
+                    ccms_code: '380689'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: St Albans District Council
+                    ccms_code: '281598'
+                    searchable_type: Local Authority
+                  - name: St Albans NHS
+                    ccms_code: '381464'
+                    searchable_type: National Health Service
+                  - name: St Bartholomews Hospital
+                    ccms_code: '381273'
+                    searchable_type: National Health Service
+                  - name: St Edmundsbury Borough Council
+                    ccms_code: '281599'
+                    searchable_type: Local Authority
+                  - name: St George’s NHS Hospital Trust
+                    ccms_code: '381274'
+                    searchable_type: National Health Service
+                  - name: St Helens Metropolitan Borough Council
+                    ccms_code: '281600'
+                    searchable_type: Local Authority
+                  - name: St Helens and Knowsley Hospitals NHS Trust
+                    ccms_code: '381275'
+                    searchable_type: National Health Service
+                  - name: Stafford Borough Council
+                    ccms_code: '281601'
+                    searchable_type: Local Authority
+                  - name: Staffordshire County Council
+                    ccms_code: '281602'
+                    searchable_type: Local Authority
+                  - name: Staffordshire Moorlands District Council
+                    ccms_code: '281603'
+                    searchable_type: Local Authority
+                  - name: Staffordshire Police HQ
+                    ccms_code: '381556'
+                    searchable_type: Police Authority
+                  - name: Staffordshire and Stoke On Trent Partnership NHS Trust
+                    ccms_code: '381277'
+                    searchable_type: National Health Service
+                  - name: Standford Hill
+                    ccms_code: '380690'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Stevenage Borough Council
+                    ccms_code: '281604'
+                    searchable_type: Local Authority
+                  - name: Stirling Council
+                    ccms_code: '281605'
+                    searchable_type: Local Authority
+                  - name: Stocken
+                    ccms_code: '380703'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Stockport Metropolitan Borough Council
+                    ccms_code: '281606'
+                    searchable_type: Local Authority
+                  - name: Stockport NHS Foundation Trust
+                    ccms_code: '381278'
+                    searchable_type: National Health Service
+                  - name: Stockport PCT
+                    ccms_code: '381279'
+                    searchable_type: National Health Service
+                  - name: Stockton Borough Council
+                    ccms_code: '294391'
+                    searchable_type: Local Authority
+                  - name: Stockton-on-Tees Borough Council
+                    ccms_code: '281607'
+                    searchable_type: Local Authority
+                  - name: Stockton-on-tees Teaching PCT
+                    ccms_code: '381280'
+                    searchable_type: National Health Service
+                  - name: Stoke Heath
+                    ccms_code: '380719'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Stoke On Trent PCT
+                    ccms_code: '381282'
+                    searchable_type: National Health Service
+                  - name: Stoke on Trent City Council
+                    ccms_code: '281608'
+                    searchable_type: Local Authority
+                  - name: Strabane District Council
+                    ccms_code: '281609'
+                    searchable_type: Local Authority
+                  - name: Stratford on Avon District Council
+                    ccms_code: '281610'
+                    searchable_type: Local Authority
+                  - name: Strathclyde Police HQ
+                    ccms_code: '381557'
+                    searchable_type: Police Authority
+                  - name: Stroud District Council
+                    ccms_code: '281611'
+                    searchable_type: Local Authority
+                  - name: Styal
+                    ccms_code: '380720'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Suffolk Coastal District Council
+                    ccms_code: '281612'
+                    searchable_type: Local Authority
+                  - name: Suffolk County Council
+                    ccms_code: '281613'
+                    searchable_type: Local Authority
+                  - name: Suffolk Mental Health Partnership NHS Trust
+                    ccms_code: '381283'
+                    searchable_type: National Health Service
+                  - name: Suffolk PCT
+                    ccms_code: '381284'
+                    searchable_type: National Health Service
+                  - name: Suffolk Police HQ
+                    ccms_code: '381558'
+                    searchable_type: Police Authority
+                  - name: Sunderland City Council
+                    ccms_code: '281614'
+                    searchable_type: Local Authority
+                  - name: Sunderland Teaching PCT
+                    ccms_code: '381285'
+                    searchable_type: National Health Service
+                  - name: Surrey & Sussex NHS Trust
+                    ccms_code: '381286'
+                    searchable_type: National Health Service
+                  - name: Surrey County Council
+                    ccms_code: '281615'
+                    searchable_type: Local Authority
+                  - name: Surrey Heath Borough Council
+                    ccms_code: '281616'
+                    searchable_type: Local Authority
+                  - name: Surrey PCT
+                    ccms_code: '381288'
+                    searchable_type: National Health Service
+                  - name: Surrey Police HQ
+                    ccms_code: '381559'
+                    searchable_type: Police Authority
+                  - name: Surrey and Borders Partnership NHS Foundation Trust
+                    ccms_code: '381287'
+                    searchable_type: National Health Service
+                  - name: Sussex Community NHS Trust
+                    ccms_code: '381289'
+                    searchable_type: National Health Service
+                  - name: Sussex Partnership NHS Trust
+                    ccms_code: '381290'
+                    searchable_type: National Health Service
+                  - name: Sussex Police Authority
+                    ccms_code: '381560'
+                    searchable_type: Police Authority
+                  - name: Sutton and Merton PCT
+                    ccms_code: '381291'
+                    searchable_type: National Health Service
+                  - name: Swale Borough Council
+                    ccms_code: '281617'
+                    searchable_type: Local Authority
+                  - name: Swaleside
+                    ccms_code: '380721'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Swansea NHS Trust
+                    ccms_code: '381292'
+                    searchable_type: National Health Service
+                  - name: Swindon Borough Council
+                    ccms_code: '281620'
+                    searchable_type: Local Authority
+                  - name: Swindon Primary Care Trust
+                    ccms_code: '381293'
+                    searchable_type: National Health Service
+                  - name: Swinfen Hall
+                    ccms_code: '380722'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Tameside Hospital NHS Foundation Trust
+                    ccms_code: '381295'
+                    searchable_type: National Health Service
+                  - name: Tameside Metropolitan Borough Council
+                    ccms_code: '281621'
+                    searchable_type: Local Authority
+                  - name: Tameside and Glossop PCT
+                    ccms_code: '381294'
+                    searchable_type: National Health Service
+                  - name: Tamworth Borough Council
+                    ccms_code: '281622'
+                    searchable_type: Local Authority
+                  - name: Tandridge District Council
+                    ccms_code: '281623'
+                    searchable_type: Local Authority
+                  - name: Taunton Deane Borough Council
+                    ccms_code: '281624'
+                    searchable_type: Local Authority
+                  - name: Taunton and Somerset NHS Foundation Trust
+                    ccms_code: '381296'
+                    searchable_type: National Health Service
+                  - name: Tavistock and Portman NHS Foundation Trust
+                    ccms_code: '381317'
+                    searchable_type: National Health Service
+                  - name: Tayside Police HQ
+                    ccms_code: '381561'
+                    searchable_type: Police Authority
+                  - name: Tees, Esk and Wear Valleys NHS Trust
+                    ccms_code: '381318'
+                    searchable_type: National Health Service
+                  - name: Teignbridge District Council
+                    ccms_code: '281625'
+                    searchable_type: Local Authority
+                  - name: Telford & Wrekin Council
+                    ccms_code: '281626'
+                    searchable_type: Local Authority
+                  - name: Telford & Wrekin PCT
+                    ccms_code: '381319'
+                    searchable_type: National Health Service
+                  - name: Tendring District Council
+                    ccms_code: '281627'
+                    searchable_type: Local Authority
+                  - name: Test Valley Borough Council
+                    ccms_code: '281629'
+                    searchable_type: Local Authority
+                  - name: Tewkesbury Borough Council
+                    ccms_code: '281631'
+                    searchable_type: Local Authority
+                  - name: Thames Valley Police HQ
+                    ccms_code: '381570'
+                    searchable_type: Police Authority
+                  - name: Thanet District Council
+                    ccms_code: '281634'
+                    searchable_type: Local Authority
+                  - name: The Christie NHS Foundation Trust
+                    ccms_code: '381320'
+                    searchable_type: National Health Service
+                  - name: The Clatterbridge Cancer Centre NHS Foundation Trust
+                    ccms_code: '381321'
+                    searchable_type: National Health Service
+                  - name: The Crown Estate
+                    ccms_code: '378899'
+                    searchable_type: Government Department
+                  - name: The Dudley Group NHS Foundation Trust
+                    ccms_code: '381322'
+                    searchable_type: National Health Service
+                  - name: The Food and Environment Research Agency
+                    ccms_code: '378900'
+                    searchable_type: Government Department
+                  - name: The Hillingdon Hospitals NHS Foundation Trust
+                    ccms_code: '381323'
+                    searchable_type: National Health Service
+                  - name: The London Programme for IT (LPFIT)
+                    ccms_code: '378901'
+                    searchable_type: Government Department
+                  - name: The Mount
+                    ccms_code: '380723'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: The North Midlands and East Programme for It (nmepfit)
+                    ccms_code: '378902'
+                    searchable_type: Charity
+                  - name: The Princess Alexandra Hospital NHS Trust
+                    ccms_code: '381324'
+                    searchable_type: National Health Service
+                  - name: The Queen Elizabeth Hospital, King's Lynn, NHS Foundation
+                      Trust
+                    ccms_code: '381325'
+                    searchable_type: National Health Service
+                  - name: The Rotherham NHS Foundation Trust
+                    ccms_code: '381346'
+                    searchable_type: National Health Service
+                  - name: The Royal Bournemouth and Christchurch Hospitals NHS Foundation
+                      Trust
+                    ccms_code: '381367'
+                    searchable_type: National Health Service
+                  - name: The Royal Marsden NHS Foundation Trust
+                    ccms_code: '381368'
+                    searchable_type: National Health Service
+                  - name: The Royal Orthopaedic Hospital NHS Foundation Trust
+                    ccms_code: '381369'
+                    searchable_type: National Health Service
+                  - name: The Royal Parks
+                    ccms_code: '378903'
+                    searchable_type: Government Department
+                  - name: The Royal Wolverhampton Hospitals NHS Trust
+                    ccms_code: '381370'
+                    searchable_type: National Health Service
+                  - name: The Southern Programme for IT (SPFIT)
+                    ccms_code: '378904'
+                    searchable_type: Government Department
+                  - name: The Verne
+                    ccms_code: '380724'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: The Walton Centre NHS Foundation Trust
+                    ccms_code: '381371'
+                    searchable_type: National Health Service
+                  - name: The Whittington Hospital NHS Trust
+                    ccms_code: '381372'
+                    searchable_type: National Health Service
+                  - name: Thorn Cross
+                    ccms_code: '380725'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Three Rivers District Council
+                    ccms_code: '281636'
+                    searchable_type: Local Authority
+                  - name: Thurrock Council
+                    ccms_code: '281638'
+                    searchable_type: Local Authority
+                  - name: Tonbridge and Malling Borough Council
+                    ccms_code: '281640'
+                    searchable_type: Local Authority
+                  - name: Torbay Council
+                    ccms_code: '281642'
+                    searchable_type: Local Authority
+                  - name: Torbay and Southern Devon Health and Care NHS Trust
+                    ccms_code: '381373'
+                    searchable_type: National Health Service
+                  - name: Torfaen County Borough Council
+                    ccms_code: '281644'
+                    searchable_type: Local Authority
+                  - name: Torridge District Council
+                    ccms_code: '281646'
+                    searchable_type: Local Authority
+                  - name: Tower Hamlets Council
+                    ccms_code: '380743'
+                    searchable_type: Housing Association
+                  - name: Tower Hamlets PCT NHS Trust
+                    ccms_code: '381374'
+                    searchable_type: National Health Service
+                  - name: Trafford Healthcare NHS Trust
+                    ccms_code: '381375'
+                    searchable_type: National Health Service
+                  - name: Trafford Metropolitan Borough Council
+                    ccms_code: '281649'
+                    searchable_type: Local Authority
+                  - name: Trafford PCT
+                    ccms_code: '381376'
+                    searchable_type: National Health Service
+                  - name: Treasury Solicitor's Department
+                    ccms_code: '378905'
+                    searchable_type: Government Department
+                  - name: Tribunals Service
+                    ccms_code: '378906'
+                    searchable_type: Government Department
+                  - name: Tunbridge Wells Borough Council
+                    ccms_code: '281651'
+                    searchable_type: Local Authority
+                  - name: Uk Hydrographic Office
+                    ccms_code: '378907'
+                    searchable_type: Government Department
+                  - name: Uk Intellectual Property Office
+                    ccms_code: '378908'
+                    searchable_type: Government Department
+                  - name: Uk Statistics Authority
+                    ccms_code: '378909'
+                    searchable_type: Government Department
+                  - name: Uk Trade & Investment
+                    ccms_code: '378910'
+                    searchable_type: Government Department
+                  - name: United Bristol Healthcare Trust
+                    ccms_code: '381377'
+                    searchable_type: National Health Service
+                  - name: United Lincolnshire Hospitals NHS Trust
+                    ccms_code: '381378'
+                    searchable_type: National Health Service
+                  - name: University College London Hospitals NHS Foundation Trust
+                    ccms_code: '381380'
+                    searchable_type: National Health Service
+                  - name: University College London NHS Trust Foundation
+                    ccms_code: '381381'
+                    searchable_type: National Health Service
+                  - name: University Hospital Lewisham NHS Trust
+                    ccms_code: '381382'
+                    searchable_type: National Health Service
+                  - name: University Hospital North Tees
+                    ccms_code: '381383'
+                    searchable_type: National Health Service
+                  - name: University Hospital Southampton NHS Foundation Trust
+                    ccms_code: '381386'
+                    searchable_type: National Health Service
+                  - name: University Hospital of North Staffordshire NHS Trust
+                    ccms_code: '381384'
+                    searchable_type: National Health Service
+                  - name: University Hospital of South Manchester
+                    ccms_code: '381385'
+                    searchable_type: National Health Service
+                  - name: University Hospitals Birmingham NHS Foundation Trust
+                    ccms_code: '381387'
+                    searchable_type: National Health Service
+                  - name: University Hospitals Bristol NHS Foundation Trust
+                    ccms_code: '381388'
+                    searchable_type: National Health Service
+                  - name: University Hospitals Coventry & Warwickshire NHS Trust
+                    ccms_code: '381389'
+                    searchable_type: National Health Service
+                  - name: University Hospitals of Leicester NHS Trust
+                    ccms_code: '381390'
+                    searchable_type: National Health Service
+                  - name: University Hospitals of Morecambe Bay NHS Foundation Trust
+                    ccms_code: '381391'
+                    searchable_type: National Health Service
+                  - name: University North Durham
+                    ccms_code: '381578'
+                    searchable_type: Public Limited Company
+                  - name: Uttlesford District Council
+                    ccms_code: '281653'
+                    searchable_type: Local Authority
+                  - name: Vale of Glamorgan Council
+                    ccms_code: '281656'
+                    searchable_type: Local Authority
+                  - name: Vale of White Horse District Council
+                    ccms_code: '281658'
+                    searchable_type: Local Authority
+                  - name: Valuation Office
+                    ccms_code: '378911'
+                    searchable_type: Government Department
+                  - name: Vehicle Certification Agency
+                    ccms_code: '378913'
+                    searchable_type: Government Department
+                  - name: Vehicle and Operator Services Agency
+                    ccms_code: '378912'
+                    searchable_type: Government Department
+                  - name: Velindre NHS Trust
+                    ccms_code: '381392'
+                    searchable_type: National Health Service
+                  - name: Veterinary Laboratories Agency
+                    ccms_code: '378914'
+                    searchable_type: Government Department
+                  - name: Veterinary Medicines Directorate
+                    ccms_code: '378915'
+                    searchable_type: Government Department
+                  - name: Wakefield Council
+                    ccms_code: '281560'
+                    searchable_type: Local Authority
+                  - name: Wakefield District PCT
+                    ccms_code: '381393'
+                    searchable_type: National Health Service
+                  - name: Wakefield NHS Trust White Rose House
+                    ccms_code: '381394'
+                    searchable_type: National Health Service
+                  - name: Wales Government Office Region
+                    ccms_code: '378916'
+                    searchable_type: Government Department
+                  - name: Wales Office
+                    ccms_code: '378917'
+                    searchable_type: Government Department
+                  - name: Walsall Healthcare NHS Trust
+                    ccms_code: '381395'
+                    searchable_type: National Health Service
+                  - name: Walsall Metropolitan Borough Council
+                    ccms_code: '281561'
+                    searchable_type: Local Authority
+                  - name: Walsall Teaching PCT
+                    ccms_code: '381396'
+                    searchable_type: National Health Service
+                  - name: Waltham forest PCT
+                    ccms_code: '381407'
+                    searchable_type: National Health Service
+                  - name: Wandsworth PCT
+                    ccms_code: '381408'
+                    searchable_type: National Health Service
+                  - name: Warrington Borough Council
+                    ccms_code: '281562'
+                    searchable_type: Local Authority
+                  - name: Warrington PCT
+                    ccms_code: '381416'
+                    searchable_type: National Health Service
+                  - name: Warrington and Halton Hospitals NHS Foundation Trust
+                    ccms_code: '381409'
+                    searchable_type: National Health Service
+                  - name: Warwick District Council
+                    ccms_code: '281564'
+                    searchable_type: Local Authority
+                  - name: Warwickshire County Council
+                    ccms_code: '281566'
+                    searchable_type: Local Authority
+                  - name: Warwickshire PCT Acute Hospitals NHS Trust
+                    ccms_code: '381425'
+                    searchable_type: National Health Service
+                  - name: Warwickshire Police HQ
+                    ccms_code: '381571'
+                    searchable_type: Police Authority
+                  - name: Watford Borough Council
+                    ccms_code: '281568'
+                    searchable_type: Local Authority
+                  - name: Waveney District Council
+                    ccms_code: '281569'
+                    searchable_type: Local Authority
+                  - name: Waverley Borough Council
+                    ccms_code: '281570'
+                    searchable_type: Local Authority
+                  - name: Wayland
+                    ccms_code: '380727'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Wealden District Council
+                    ccms_code: '281571'
+                    searchable_type: Local Authority
+                  - name: Wealstun
+                    ccms_code: '380728'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Wellingborough Borough Council
+                    ccms_code: '281572'
+                    searchable_type: Local Authority
+                  - name: Welsh Ambulance Services NHS Trust
+                    ccms_code: '381426'
+                    searchable_type: National Health Service
+                  - name: Welwyn Hatfield Borough Council
+                    ccms_code: '281574'
+                    searchable_type: Local Authority
+                  - name: West Berkshire Council
+                    ccms_code: '281576'
+                    searchable_type: Local Authority
+                  - name: West Devon Borough Council
+                    ccms_code: '281578'
+                    searchable_type: Local Authority
+                  - name: West Dorset District Council
+                    ccms_code: '281580'
+                    searchable_type: Local Authority
+                  - name: West Dunbartonshire Council
+                    ccms_code: '281582'
+                    searchable_type: Local Authority
+                  - name: West Glamorgan Joint Childcare Legal Services
+                    ccms_code: '378918'
+                    searchable_type: Government Department
+                  - name: West Hertfordshire Hospitals NHS Trust
+                    ccms_code: '381427'
+                    searchable_type: National Health Service
+                  - name: West Hertfordshire NHS Trust
+                    ccms_code: '381428'
+                    searchable_type: National Health Service
+                  - name: West Kent PCT
+                    ccms_code: '381429'
+                    searchable_type: National Health Service
+                  - name: West Lancashire Borough Council
+                    ccms_code: '281584'
+                    searchable_type: Local Authority
+                  - name: West Lindsey District Council
+                    ccms_code: '281585'
+                    searchable_type: Local Authority
+                  - name: West London Mental Health Authority NHS Trust
+                    ccms_code: '381433'
+                    searchable_type: National Health Service
+                  - name: West Lothian Council
+                    ccms_code: '281587'
+                    searchable_type: Local Authority
+                  - name: West Mercia Police HQ
+                    ccms_code: '381572'
+                    searchable_type: Police Authority
+                  - name: West Middlesex University Hospital NHS Trust
+                    ccms_code: '381434'
+                    searchable_type: National Health Service
+                  - name: West Midlands Ambulance Service NHS Trust
+                    ccms_code: '381435'
+                    searchable_type: National Health Service
+                  - name: West Midlands Government Office Region
+                    ccms_code: '378919'
+                    searchable_type: Government Department
+                  - name: West Midlands Police Authority
+                    ccms_code: '381573'
+                    searchable_type: Police Authority
+                  - name: West Midlands Strategic Health Authority
+                    ccms_code: '381437'
+                    searchable_type: National Health Service
+                  - name: West Midlands and East NHS Trust
+                    ccms_code: '381436'
+                    searchable_type: National Health Service
+                  - name: West Oxfordshire District Council
+                    ccms_code: '281589'
+                    searchable_type: Local Authority
+                  - name: West Somerset District Council
+                    ccms_code: '281591'
+                    searchable_type: Local Authority
+                  - name: West Suffolk NHS Foundation Trust
+                    ccms_code: '381438'
+                    searchable_type: National Health Service
+                  - name: West Sussex County Council
+                    ccms_code: '281402'
+                    searchable_type: Local Authority
+                  - name: West Sussex County Council
+                    ccms_code: '281628'
+                    searchable_type: Local Authority
+                  - name: West Sussex NHS Trust
+                    ccms_code: '381439'
+                    searchable_type: National Health Service
+                  - name: West Sussex PCT
+                    ccms_code: '381440'
+                    searchable_type: National Health Service
+                  - name: West Yorkshire Police HQ
+                    ccms_code: '381574'
+                    searchable_type: Police Authority
+                  - name: Western Cheshire PCT
+                    ccms_code: '381441'
+                    searchable_type: National Health Service
+                  - name: Western Sussex Hospitals NHS Trust
+                    ccms_code: '381442'
+                    searchable_type: National Health Service
+                  - name: Westminster City Council
+                    ccms_code: '281630'
+                    searchable_type: Local Authority
+                  - name: Westminster NHS Trust
+                    ccms_code: '381443'
+                    searchable_type: National Health Service
+                  - name: Weston Area NHS Hospital Trust
+                    ccms_code: '381444'
+                    searchable_type: National Health Service
+                  - name: Weymouth and Portland Borough Council
+                    ccms_code: '281632'
+                    searchable_type: Local Authority
+                  - name: Whatton
+                    ccms_code: '380729'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Whipps Cross University Hospital NHS Trust
+                    ccms_code: '381445'
+                    searchable_type: National Health Service
+                  - name: Whitemoor
+                    ccms_code: '380730'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Wigan Metropolitan Borough Council
+                    ccms_code: '281633'
+                    searchable_type: Local Authority
+                  - name: Wilton Park
+                    ccms_code: '378920'
+                    searchable_type: Government Department
+                  - name: Wiltshire Council
+                    ccms_code: '281635'
+                    searchable_type: Local Authority
+                  - name: Wiltshire PCT
+                    ccms_code: '381446'
+                    searchable_type: National Health Service
+                  - name: Wiltshire Police HQ
+                    ccms_code: '381575'
+                    searchable_type: Police Authority
+                  - name: Winchester City Council
+                    ccms_code: '281637'
+                    searchable_type: Local Authority
+                  - name: Winchester and Eastleigh Healthcare NHS Trust
+                    ccms_code: '381447'
+                    searchable_type: National Health Service
+                  - name: Windsor and Maidenhead Royal Borough Council
+                    ccms_code: '281639'
+                    searchable_type: Local Authority
+                  - name: Wirral Community NHS Trust
+                    ccms_code: '381448'
+                    searchable_type: National Health Service
+                  - name: Wirral Metropolitan Borough Council
+                    ccms_code: '281641'
+                    searchable_type: Local Authority
+                  - name: Wirral PCT
+                    ccms_code: '381449'
+                    searchable_type: National Health Service
+                  - name: Wirral Teaching Hospitals NHS Trust
+                    ccms_code: '381450'
+                    searchable_type: National Health Service
+                  - name: Woking Borough Council
+                    ccms_code: '281643'
+                    searchable_type: Local Authority
+                  - name: Wokingham Borough Council
+                    ccms_code: '281645'
+                    searchable_type: Local Authority
+                  - name: Wolds
+                    ccms_code: '380731'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Wolverhampton City Council
+                    ccms_code: '281647'
+                    searchable_type: Local Authority
+                  - name: Wolverhampton City PCT
+                    ccms_code: '381451'
+                    searchable_type: National Health Service
+                  - name: Wolverhampton Royal NHS Trust
+                    ccms_code: '381452'
+                    searchable_type: National Health Service
+                  - name: Woodhill
+                    ccms_code: '380732'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Worcester City Council
+                    ccms_code: '281648'
+                    searchable_type: Local Authority
+                  - name: Worcestershire Acute Hospitals NHS Trust
+                    ccms_code: '381453'
+                    searchable_type: National Health Service
+                  - name: Worcestershire County Council
+                    ccms_code: '281650'
+                    searchable_type: Local Authority
+                  - name: Worcestershire Health and Care NHS Trust
+                    ccms_code: '381454'
+                    searchable_type: National Health Service
+                  - name: Worcestershire NHS Trust
+                    ccms_code: '381455'
+                    searchable_type: National Health Service
+                  - name: Worcestershire PCT
+                    ccms_code: '381456'
+                    searchable_type: National Health Service
+                  - name: Wormwood Scrubs
+                    ccms_code: '380733'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Worthing Borough Council
+                    ccms_code: '281652'
+                    searchable_type: Local Authority
+                  - name: Wrexham County Borough Council
+                    ccms_code: '281654'
+                    searchable_type: Local Authority
+                  - name: Wrightington, Wigan & Leigh NHS Foundation Trust
+                    ccms_code: '381457'
+                    searchable_type: National Health Service
+                  - name: Wychavon District Council
+                    ccms_code: '281655'
+                    searchable_type: Local Authority
+                  - name: Wycombe District Council
+                    ccms_code: '281657'
+                    searchable_type: Local Authority
+                  - name: Wye Valley NHS Trust
+                    ccms_code: '381458'
+                    searchable_type: National Health Service
+                  - name: Wymott
+                    ccms_code: '380734'
+                    searchable_type: HM Prison or Young Offender Institute
+                  - name: Wyre Borough Council
+                    ccms_code: '281659'
+                    searchable_type: Local Authority
+                  - name: Wyre Forest District Council
+                    ccms_code: '281660'
+                    searchable_type: Local Authority
+                  - name: Yarl's Wood Immigration Removal Centre,
+                    ccms_code: '380754'
+                    searchable_type: Immigration Removal Centre
+                  - name: Yeovil District Hospital and NHS Trust
+                    ccms_code: '381459'
+                    searchable_type: National Health Service
+                  - name: York City Council
+                    ccms_code: '281661'
+                    searchable_type: Local Authority
+                  - name: York Hospitals NHS Foundation Trust
+                    ccms_code: '381460'
+                    searchable_type: National Health Service
+                  - name: Yorkshire & Humber NHS Trust
+                    ccms_code: '381461'
+                    searchable_type: National Health Service
+                  - name: Yorkshire & The Humber Government Office Region
+                    ccms_code: '378921'
+                    searchable_type: Government Department
+                  - name: Yorkshire Ambulance Service NHS Trust
+                    ccms_code: '381462'
+                    searchable_type: National Health Service
+                  summary: Successful request
+                  description: Returns an array of all organisations with summary
+                    data
+  "/organisation_searches":
+    post:
+      summary: Search organisations matching one or more, partial or complete, search
+        terms/words
+      description: |-
+        <code>POST</code> a JSON payload containing search terms to
+                          receive a response containing an array of organisation names and related data.
+      tags:
+      - Organisations
+      parameters: []
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    success: true
+                    data:
+                    - name: Babergh District Council
+                      ccms_code: '280370'
+                      searchable_type: Local Authority
+                  summary: Single success
+                  description: When a user requests a single match it is returned
+                no_matches_found:
+                  value:
+                    success: false
+                    data: []
+                  summary: When no matching organisation exists
+                  description: |
+                    If a user requests data for a search term that does not exist the system has not
+                    errored so returns a successful status (200) but an empty array and a success false
+                multiple_results:
+                  value:
+                    success: true
+                    data:
+                    - name: G4S
+                      ccms_code: '381576'
+                      searchable_type: Public Limited Company
+                    - name: Imperial College London
+                      ccms_code: '381577'
+                      searchable_type: Public Limited Company
+                    - name: University North Durham
+                      ccms_code: '381578'
+                      searchable_type: Public Limited Company
+                  summary: Multiple results
+                  description: When searching for a organisation type that matches
+                    multiple organisations they are all returned
+        '400':
+          description: bad request
+          content:
+            application/json:
+              examples:
+                search_failed:
+                  value:
+                    success: false
+                    error: StandardError
+                    message: Unexpected error in full text search
+                  summary: Unexpected Error
+                  description: When an error occurs in the full text search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                search_term:
+                  type: string
+                  example: babergh
+                  description: search term
+              required:
+              - search_term
   "/proceeding_type_defaults":
     post:
       summary: Return details of default scope and level of service for specified
