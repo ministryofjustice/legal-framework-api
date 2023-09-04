@@ -61,8 +61,9 @@ RSpec.describe "organisations" do
                 [
                   {
                     name: "Babergh District Council",
-                    ccms_code: "280370",
-                    searchable_type: "Local Authority",
+                    ccms_opponent_id: "280370",
+                    ccms_type_code: "LA",
+                    ccms_type_text: "Local Authority",
                   },
                 ],
             }
@@ -115,18 +116,21 @@ RSpec.describe "organisations" do
                 [
                   {
                     name: "G4S",
-                    ccms_code: "381576",
-                    searchable_type: "Public Limited Company",
+                    ccms_opponent_id: "381576",
+                    ccms_type_code: "PLC",
+                    ccms_type_text: "Public Limited Company",
                   },
                   {
                     name: "Imperial College London",
-                    ccms_code: "381577",
-                    searchable_type: "Public Limited Company",
+                    ccms_opponent_id: "381577",
+                    ccms_type_code: "PLC",
+                    ccms_type_text: "Public Limited Company",
                   },
                   {
                     name: "University North Durham",
-                    ccms_code: "381578",
-                    searchable_type: "Public Limited Company",
+                    ccms_opponent_id: "381578",
+                    ccms_type_code: "PLC",
+                    ccms_type_text: "Public Limited Company",
                   },
                 ],
             }

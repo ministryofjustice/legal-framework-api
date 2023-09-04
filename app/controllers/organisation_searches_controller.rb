@@ -1,6 +1,6 @@
 class OrganisationSearchesController < ApplicationController
   def index
-    result = Organisation.order(:name).all.map(&:api_json)
+    result = Organisation.includes(:organisation_type).order(:name).all.map(&:api_json)
     render json: result, status: :ok
   end
 
