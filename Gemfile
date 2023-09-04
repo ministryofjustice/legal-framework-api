@@ -33,6 +33,8 @@ gem "rack-cors"
 gem "rswag-api"
 gem "rswag-ui"
 
+gem "savon"
+
 # Sentry for error tracking
 gem "sentry-rails"
 gem "sentry-ruby"
