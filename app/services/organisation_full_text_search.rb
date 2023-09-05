@@ -8,7 +8,7 @@
 # Partial word/term matching is acheived by adding awildcard to the end of each term
 #
 class OrganisationFullTextSearch
-  Result = Struct.new(:name, :searchable_type, :ccms_code)
+  Result = Struct.new(:name, :ccms_opponent_id, :ccms_type_code, :ccms_type_text)
 
   def self.call(search_terms)
     new(search_terms).call
@@ -34,7 +34,7 @@ private
   end
 
   def instantiate_result(row)
-    Result.new(row["name"].strip, row["searchable_type"], row["ccms_code"])
+    Result.new(row["name"].strip, row["ccms_opponent_id"], row["ccms_type_code"], row["ccms_type_text"])
   end
 
   def ts_query_transform(search_terms)
@@ -51,10 +51,11 @@ private
     <<~SQL.squish
       SELECT
         org.name,
-        org.ccms_code,
-        org.searchable_type,
+        org.ccms_code AS ccms_opponent_id,
+        org_type.ccms_code AS ccms_type_code,
+        org.searchable_type AS ccms_type_text,
         ts_rank(searchable, query) AS rank
-      FROM organisations AS org,
+      FROM organisations AS org LEFT JOIN organisation_types AS org_type ON org.organisation_type_id = org_type.id,
            to_tsquery('simple', $1) AS query
       WHERE query @@ searchable
       ORDER BY rank DESC;

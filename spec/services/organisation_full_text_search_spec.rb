@@ -35,10 +35,10 @@ RSpec.describe OrganisationFullTextSearch do
       end
 
       it "returns expected result" do
-        result = results.first
-        expect(result.name).to eq "Babergh District Council"
-        expect(result.searchable_type).to eq "Local Authority"
-        expect(result.ccms_code).to eq "280370"
+        expect(results.first).to have_attributes(name: "Babergh District Council",
+                                                 ccms_opponent_id: "280370",
+                                                 ccms_type_code: "LA",
+                                                 ccms_type_text: "Local Authority")
       end
     end
 
