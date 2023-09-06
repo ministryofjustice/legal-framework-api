@@ -3,10 +3,6 @@ module CCMS
     class BaseRequestor
       NAMESPACES = {
         "xmlns:bill" => "http://legalservices.gov.uk/CCMS/Finance/Payables/1.0/BillingBIO",
-        "xmlns:casebim" => "http://legalservices.gov.uk/CCMS/CaseManagement/Case/1.0/CaseBIM",
-        "xmlns:casebio" => "http://legalservices.gov.uk/CCMS/CaseManagement/Case/1.0/CaseBIO",
-        "xmlns:clientbio" => "http://legalservices.gov.uk/CCMS/ClientManagement/Client/1.0/ClientBIO",
-        "xmlns:clientbim" => "http://legalservices.gov.uk/CCMS/ClientManagement/Client/1.0/ClientBIM",
         "xmlns:common" => "http://legalservices.gov.uk/Enterprise/Common/1.0/Common",
         "xmlns:hdr" => "http://legalservices.gov.uk/Enterprise/Common/1.0/Header",
         "xmlns:refdatabim" => "http://legalservices.gov.uk/CCMS/Common/ReferenceData/1.0/ReferenceDataBIM",
