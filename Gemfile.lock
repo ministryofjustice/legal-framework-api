@@ -89,6 +89,10 @@ GEM
     date (3.3.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -295,6 +299,8 @@ GEM
       nori (~> 2.4)
       wasabi (~> 3.4)
     sentry-rails (5.11.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.11.0)
     sentry-ruby (5.11.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
     shellany (0.0.1)
@@ -334,6 +340,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   database_cleaner
+  dotenv-rails (>= 2.7.6)
   factory_bot_rails (>= 6.2.0)
   faker (>= 1.9.1)
   guard-rubocop

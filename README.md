@@ -74,3 +74,7 @@ helm delete --namespace=legal-framework-api-uat <name-of-the-release>
 
 View the [architecture diagram](https://structurizr.com/share/55246/diagrams#apply-container) for this project.
 It's defined as code and [can be edited](https://github.com/ministryofjustice/laa-architecture-as-code/blob/main/src/main/kotlin/model/Apply.kt) by anyone.
+
+## CCMS
+
+The API obtains details of organisations from CCMS using the GetCommonOrg web service (API). This is one of several web services exposed by “CCMS SOA” via a ”CCMS gateway”. You can configure your local machine to communicate with a specific environment’s web service by populating your .env.development (or equivalent) with the Connection to CCMS SOA details given in .env.sample.

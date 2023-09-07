@@ -33,6 +33,7 @@ gem "rack-cors"
 gem "rswag-api"
 gem "rswag-ui"
 
+# Support for SOAP requests
 gem "savon"
 
 # Sentry for error tracking
@@ -43,6 +44,7 @@ group :development, :test do
   gem "awesome_print"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "dotenv-rails", ">= 2.7.6"
   gem "factory_bot_rails", ">= 6.2.0"
   gem "faker", ">=1.9.1"
   gem "json_expressions"
