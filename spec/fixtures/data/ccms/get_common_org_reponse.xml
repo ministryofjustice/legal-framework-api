@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <env:Body>
+    <CommonOrgInqRS xmlns:msg="http://legalservices.gov.uk/CCMS/Common/ReferenceData/1.0/ReferenceDataBIM" xmlns:oracle-xsl-mapper="http://www.oracle.com/xsl/mapper/schemas" xmlns="http://legalservices.gov.uk/CCMS/Common/ReferenceData/1.0/ReferenceDataBIM">
+      <header:HeaderRS xmlns:header="http://legalservices.gov.uk/Enterprise/Common/1.0/Header">
+        <header:TransactionID>202309111233446082976949390</header:TransactionID>
+        <header:RequestDetails>
+          <header:TransactionRequestID>202309111233446082976949390</header:TransactionRequestID>
+          <header:Language>ENG</header:Language>
+          <header:UserLoginID>my_login</header:UserLoginID>
+          <header:UserRole>EXTERNAL</header:UserRole>
+        </header:RequestDetails>
+        <header:Status>
+          <header:Status>Success</header:Status>
+          <header:StatusFreeText>GetCommonOrg completed successfully.</header:StatusFreeText>
+        </header:Status>
+      </header:HeaderRS>
+      <msg:RecordCount>
+        <common:MaxRecordsToFetch xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">2000</common:MaxRecordsToFetch>
+        <common:RecordsFetched xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">1196</common:RecordsFetched>
+        <common:RetriveDataOnMaxCount xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">true</common:RetriveDataOnMaxCount>
+      </msg:RecordCount>
+      <msg:OrganizationList>
+        <msg:OrganizationPartyID>123456</msg:OrganizationPartyID>
+        <msg:OrganizationName>Existing Coucil</msg:OrganizationName>
+        <msg:OrganizationType>LA</msg:OrganizationType>
+        <msg:City>London</msg:City>
+        <msg:PostCode>AB1 2CD</msg:PostCode>
+      </msg:OrganizationList>
+      <msg:OrganizationList>
+        <msg:OrganizationPartyID>123457</msg:OrganizationPartyID>
+        <msg:OrganizationName>New Council</msg:OrganizationName>
+        <msg:OrganizationType>LA</msg:OrganizationType>
+        <msg:City>Birmingham</msg:City>
+        <msg:PostCode>BC2 3DE</msg:PostCode>
+      </msg:OrganizationList>
+    </CommonOrgInqRS>
+  </env:Body>
+</env:Envelope>

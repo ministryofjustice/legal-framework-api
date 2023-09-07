@@ -69,6 +69,7 @@ group :test do
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "simplecov-rcov"
+  gem "webmock"
 end
 
 gem "net-imap"

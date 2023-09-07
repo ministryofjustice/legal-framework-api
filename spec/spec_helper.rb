@@ -17,6 +17,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require "simplecov"
+require "webmock/rspec"
 
 RSpec.configure do |config|
   # These two settings work together to allow you to limit a spec run
