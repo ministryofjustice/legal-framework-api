@@ -48,14 +48,10 @@ module CCMS
       end
 
       describe "Header" do
-        let(:client_username) { "FakeUser" }
-        let(:client_password) { "FakePassword" }
-        let(:user_role) { "user_role" }
-
         it "generates the expected XML" do
-          allow(Rails.configuration.x.ccms_soa).to receive(:client_username).and_return(client_username)
-          allow(Rails.configuration.x.ccms_soa).to receive(:client_password).and_return(client_password)
-          allow(Rails.configuration.x.ccms_soa).to receive(:user_role).and_return(user_role)
+          allow(Rails.configuration.x.ccms_soa).to receive(:client_username).and_return("FakeUser")
+          allow(Rails.configuration.x.ccms_soa).to receive(:client_password).and_return("FakePassword")
+          allow(Rails.configuration.x.ccms_soa).to receive(:user_role).and_return("user_role")
 
           expect(requestor.formatted_xml)
             .to have_xml("//hdr:UserLoginID", "my_login")

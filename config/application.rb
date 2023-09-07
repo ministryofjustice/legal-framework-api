@@ -47,6 +47,6 @@ module LegalFrameworkApi
     config.x.ccms_soa.client_password_type = ENV.fetch("CCMS_SOA_CLIENT_PASSWORD_TYPE", nil)
     config.x.ccms_soa.client_password = ENV.fetch("CCMS_SOA_CLIENT_PASSWORD", nil)
     config.x.ccms_soa.user_role = ENV.fetch("CCMS_SOA_USER_ROLE", nil)
-    config.x.ccms_soa.getCommonOrgServiceWsdl = ENV.fetch("CCMS_SOA_GET_COMMON_ORG_WSDL", "GetCommonOrgWsdl.xml")
+    config.x.ccms_soa.getCommonOrgServiceWsdl = ENV.fetch("CCMS_SOA_GET_COMMON_ORG_WSDL", "GetCommonOrgDEVWsdl.xml")
   end
 end
