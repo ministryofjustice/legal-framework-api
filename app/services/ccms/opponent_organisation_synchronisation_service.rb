@@ -33,7 +33,7 @@ module CCMS
 
     def organisation_list
       @organisation_list ||= CCMS::Requestors::OpponentOrganisationSearchRequestor
-        .new("username")
+        .new(Rails.configuration.x.ccms_soa.provider_username)
         .call
         .body[:common_org_inq_rs][:organization_list]
     end

@@ -93,4 +93,9 @@ env:
       secretKeyRef:
         name: {{ template "app.fullname" . }}
         key: ccmsSoaGetCommonOrgWsdl
+  - name: CCMS_SOA_PROVIDER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: {{ template "app.fullname" . }}
+        key: ccmsSoaProviderUsername
 {{- end }}
