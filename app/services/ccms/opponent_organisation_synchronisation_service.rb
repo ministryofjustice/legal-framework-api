@@ -1,11 +1,16 @@
 module CCMS
+  class GetCommonOrgError < StandardError; end
+
   class OpponentOrganisationSynchronisationService
     OrganisationStruct = Struct.new(:name, :type, :ccms_code)
 
     def call
+      raise CCMS::GetCommonOrgError, "CCMSGetCommonOrg call failed" unless success?
+      raise CCMS::GetCommonOrgError, "CCMSGetCommonOrg returned no records" unless record_count.positive?
+
       organisation_collection.each { |organisation| populate(organisation) unless Organisation.find_by(ccms_code: organisation[:ccms_code]) }
-    rescue StandardError
-      false
+    rescue StandardError => e
+      raise CCMS::GetCommonOrgError, e.message
     end
 
   private
@@ -32,10 +37,21 @@ module CCMS
     end
 
     def organisation_list
-      @organisation_list ||= CCMS::Requestors::OpponentOrganisationSearchRequestor
+      requestor.body[:common_org_inq_rs][:organization_list]
+    end
+
+    def success?
+      requestor.body[:common_org_inq_rs][:header_rs][:status][:status].to_s == "Success"
+    end
+
+    def record_count
+      requestor.body[:common_org_inq_rs][:record_count][:records_fetched].to_i
+    end
+
+    def requestor
+      @requestor ||= CCMS::Requestors::OpponentOrganisationSearchRequestor
         .new(Rails.configuration.x.ccms_soa.provider_username)
         .call
-        .body[:common_org_inq_rs][:organization_list]
     end
   end
 end

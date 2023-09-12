@@ -17,23 +17,9 @@
       </header:HeaderRS>
       <msg:RecordCount>
         <common:MaxRecordsToFetch xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">2000</common:MaxRecordsToFetch>
-        <common:RecordsFetched xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">2</common:RecordsFetched>
+        <common:RecordsFetched xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">0</common:RecordsFetched>
         <common:RetriveDataOnMaxCount xmlns:common="http://legalservices.gov.uk/Enterprise/Common/1.0/Common">true</common:RetriveDataOnMaxCount>
       </msg:RecordCount>
-      <msg:OrganizationList>
-        <msg:OrganizationPartyID>123456</msg:OrganizationPartyID>
-        <msg:OrganizationName>Existing Coucil</msg:OrganizationName>
-        <msg:OrganizationType>LA</msg:OrganizationType>
-        <msg:City>London</msg:City>
-        <msg:PostCode>AB1 2CD</msg:PostCode>
-      </msg:OrganizationList>
-      <msg:OrganizationList>
-        <msg:OrganizationPartyID>123457</msg:OrganizationPartyID>
-        <msg:OrganizationName>New Council</msg:OrganizationName>
-        <msg:OrganizationType>LA</msg:OrganizationType>
-        <msg:City>Birmingham</msg:City>
-        <msg:PostCode>BC2 3DE</msg:PostCode>
-      </msg:OrganizationList>
     </CommonOrgInqRS>
   </env:Body>
 </env:Envelope>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <env:Body>
+    <CommonOrgInqRS xmlns:msg="http://legalservices.gov.uk/CCMS/Common/ReferenceData/1.0/ReferenceDataBIM" xmlns:oracle-xsl-mapper="http://www.oracle.com/xsl/mapper/schemas" xmlns="http://legalservices.gov.uk/CCMS/Common/ReferenceData/1.0/ReferenceDataBIM">
+      <header:HeaderRS xmlns:header="http://legalservices.gov.uk/Enterprise/Common/1.0/Header">
+        <header:TransactionID>202309111233446082976949390</header:TransactionID>
+        <header:RequestDetails>
+          <header:TransactionRequestID>202309111233446082976949390</header:TransactionRequestID>
+          <header:Language>ENG</header:Language>
+          <header:UserLoginID>my_login</header:UserLoginID>
+          <header:UserRole>EXTERNAL</header:UserRole>
+        </header:RequestDetails>
+        <header:Status>
+          <header:Status>Error</header:Status>
+          <header:StatusFreeText>GetCommonOrg failed.</header:StatusFreeText>
+        </header:Status>
+      </header:HeaderRS>
+    </CommonOrgInqRS>
+  </env:Body>
+</env:Envelope>
