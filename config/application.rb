@@ -42,11 +42,5 @@ module LegalFrameworkApi
     config.x.status.build_date = ENV["BUILD_DATE"] || "Not Available"
     config.x.status.build_tag = ENV["BUILD_TAG"] || "Not Available"
     config.x.status.app_branch = ENV["APP_BRANCH"] || "Not Available"
-    config.x.ccms_soa.aws_gateway_api_key = ENV.fetch("CCMS_SOA_AWS_GATEWAY_API_KEY", nil)
-    config.x.ccms_soa.client_username = ENV.fetch("CCMS_SOA_CLIENT_USERNAME", nil)
-    config.x.ccms_soa.client_password_type = ENV.fetch("CCMS_SOA_CLIENT_PASSWORD_TYPE", nil)
-    config.x.ccms_soa.client_password = ENV.fetch("CCMS_SOA_CLIENT_PASSWORD", nil)
-    config.x.ccms_soa.user_role = ENV.fetch("CCMS_SOA_USER_ROLE", nil)
-    config.x.ccms_soa.getCommonOrgServiceWsdl = ENV.fetch("CCMS_SOA_GET_COMMON_ORG_WSDL", "GetCommonOrgDEVWsdl.xml")
   end
 end
