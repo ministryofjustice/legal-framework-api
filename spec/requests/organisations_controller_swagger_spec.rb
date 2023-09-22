@@ -64,6 +64,8 @@ RSpec.describe "organisations" do
                     ccms_opponent_id: "280370",
                     ccms_type_code: "LA",
                     ccms_type_text: "Local Authority",
+                    name_headline: "<mark>Babergh</mark> District Council",
+                    type_headline: "Local Authority",
                   },
                 ],
             }
@@ -119,18 +121,24 @@ RSpec.describe "organisations" do
                     ccms_opponent_id: "381576",
                     ccms_type_code: "PLC",
                     ccms_type_text: "Public Limited Company",
+                    name_headline: "G4S",
+                    type_headline: "<mark>Public</mark> <mark>Limited</mark> <mark>Company</mark>",
                   },
                   {
                     name: "Imperial College London",
                     ccms_opponent_id: "381577",
                     ccms_type_code: "PLC",
                     ccms_type_text: "Public Limited Company",
+                    name_headline: "Imperial College London",
+                    type_headline: "<mark>Public</mark> <mark>Limited</mark> <mark>Company</mark>",
                   },
                   {
                     name: "University North Durham",
                     ccms_opponent_id: "381578",
                     ccms_type_code: "PLC",
                     ccms_type_text: "Public Limited Company",
+                    name_headline: "University North Durham",
+                    type_headline: "<mark>Public</mark> <mark>Limited</mark> <mark>Company</mark>",
                   },
                 ],
             }

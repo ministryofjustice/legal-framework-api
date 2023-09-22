@@ -8,7 +8,7 @@
 # Partial word/term matching is acheived by adding awildcard to the end of each term
 #
 class OrganisationFullTextSearch
-  Result = Struct.new(:name, :ccms_opponent_id, :ccms_type_code, :ccms_type_text)
+  Result = Struct.new(:name, :ccms_opponent_id, :ccms_type_code, :ccms_type_text, :name_headline, :type_headline)
 
   def self.call(search_terms)
     new(search_terms).call
@@ -34,7 +34,7 @@ private
   end
 
   def instantiate_result(row)
-    Result.new(row["name"].strip, row["ccms_opponent_id"], row["ccms_type_code"], row["ccms_type_text"])
+    Result.new(row["name"].strip, row["ccms_opponent_id"], row["ccms_type_code"], row["ccms_type_text"], row["name_headline"], row["type_headline"])
   end
 
   def ts_query_transform(search_terms)
@@ -54,7 +54,19 @@ private
         org.ccms_code AS ccms_opponent_id,
         org_type.ccms_code AS ccms_type_code,
         org.searchable_type AS ccms_type_text,
-        ts_rank(searchable, query) AS rank
+        ts_rank(searchable, query) AS rank,
+        ts_headline(
+          'simple',
+          org.name,
+          query,
+          'HighlightAll=true, StartSel=<mark>, StopSel=</mark>'
+        ) as name_headline,
+        ts_headline(
+          'simple',
+          org.searchable_type,
+          query,
+          'HighlightAll=true, StartSel=<mark>, StopSel=</mark>'
+        ) as type_headline
       FROM organisations AS org LEFT JOIN organisation_types AS org_type ON org.organisation_type_id = org_type.id,
            to_tsquery('simple', $1) AS query
       WHERE query @@ searchable
