@@ -9,3 +9,7 @@ updates:
     time: "03:00"
     timezone: Europe/London
   open-pull-requests-limit: 10
+  groups:
+    rswag-gems:
+      patterns:
+        - "rswag-*"
