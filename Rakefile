@@ -7,7 +7,7 @@ require_relative "config/application"
 # Workaround for https://github.com/rswag/rswag/issues/359
 if defined? RSpec
   RSpec.configure do |config|
-    config.swagger_dry_run = false
+    config.rswag_dry_run = false
   end
 end
 Rails.application.load_tasks
