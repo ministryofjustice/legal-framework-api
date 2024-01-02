@@ -163,7 +163,7 @@ jobs:
           docker_layer_caching: true
       - *decrypt_secrets
       - *authenticate_k8s_live
-      - deploy:
+      - run:
           name: Helm deployment to UAT
           command: |
             echo "k8s authenticated"
@@ -179,7 +179,7 @@ jobs:
           docker_layer_caching: true
       - *decrypt_secrets
       - *authenticate_k8s_live
-      - deploy:
+      - run:
           name: Helm deployment to staging
           command: |
             helm upgrade legal-framework-api ./deploy/helm/. \
@@ -196,7 +196,7 @@ jobs:
           docker_layer_caching: true
       - *decrypt_secrets
       - *authenticate_k8s_live
-      - deploy:
+      - run:
           name: Helm deployment to production
           command: |
             helm upgrade legal-framework-api ./deploy/helm/. \
