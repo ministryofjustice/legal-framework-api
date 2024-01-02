@@ -37,9 +37,7 @@ RSpec.describe "StatusController" do
     end
 
     before do
-      allow(Rails.configuration.x.status).to receive(:build_date).and_return(build_date)
-      allow(Rails.configuration.x.status).to receive(:build_tag).and_return(build_tag)
-      allow(Rails.configuration.x.status).to receive(:app_branch).and_return(app_branch)
+      allow(Rails.configuration.x.status).to receive_messages(build_date:, build_tag:, app_branch:)
     end
 
     it "returns build stats as a JSON body" do

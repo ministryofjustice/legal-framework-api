@@ -61,7 +61,7 @@ private
   end
 
   def service_level_key
-    @service_level_key ||= "service_level_#{@service_level}".to_sym
+    @service_level_key ||= :"service_level_#{@service_level}"
   end
 
   def df_state_key
