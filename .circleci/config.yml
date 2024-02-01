@@ -121,7 +121,7 @@ jobs:
       - *save_gems_cache
       - run:
           name: Run Rubocop
-          command:  bin/rails rubocop
+          command:  bundle exec rubocop
   unit_tests:
     executor: test-executor
     steps:
