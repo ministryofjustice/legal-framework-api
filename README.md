@@ -33,7 +33,7 @@ A client will create a payload with some search terms and the API will respond w
 A client will create a payload which will include an array of proceeding types, the API will respond with the threshold waivers for each given proceeding type
 
 ## Generation of API documentation
-If changes are made to files in this directory, regenerate the swagger documentation by executing `rake swag`.
+If changes are made to files in this directory, regenerate the swagger documentation by executing `rake rswag`.
 
 
 ## Running tests

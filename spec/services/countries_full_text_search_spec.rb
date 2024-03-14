@@ -49,22 +49,19 @@ RSpec.describe CountriesFullTextSearch do
     end
 
     context "with multiple partial matching term searches" do
-      let(:search_term) { "sai an" }
+      let(:search_term) { "isl co" }
 
       it "returns results matching either term" do
-        expect(results.map(&:description)).to contain_exactly("Saint Kitts and Nevis",
-                                                              "Saint Pierre and Miquelon",
-                                                              "Saint Vincent and the Grenadines")
+        expect(results.map(&:description)).to contain_exactly("Cook Islands",
+                                                              "Cocos (Keeling) Islands")
       end
     end
 
     context "with multiple exact matching term searches" do
-      let(:search_term) { "saint and" }
+      let(:search_term) { "island cook" }
 
       it "returns results matching either term" do
-        expect(results.map(&:description)).to contain_exactly("Saint Kitts and Nevis",
-                                                              "Saint Pierre and Miquelon",
-                                                              "Saint Vincent and the Grenadines")
+        expect(results.map(&:description)).to contain_exactly("Cook Islands")
       end
     end
   end

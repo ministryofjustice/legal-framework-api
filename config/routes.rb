@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "organisation_types/all", to: "organisation_types#index"
   get "proceeding_types/all", to: "proceeding_types/searches#index"
   get "countries/all", to: "countries#index"
+  post "countries/search", to: "countries#create"
 
   resources :proceeding_types, param: :ccms_code, only: %i[show]
   namespace :proceeding_types do
