@@ -26,4 +26,4 @@ ClientInvolvementTypesPopulator.call
 ThresholdWaiverPopulator.call
 OrganisationTypesPopulator.call
 OrganisationsPopulator.call
-CountriesPopulator.call
+Country.populate
