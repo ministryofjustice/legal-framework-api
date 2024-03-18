@@ -667,6 +667,82 @@ paths:
                     description: Zimbabwe
                   summary: Successful request
                   description: Returns an array of all countries with summary data
+  "/countries/search":
+    post:
+      summary: Search countries matching one or more, partial or complete, search
+        terms/words
+      description: |-
+        <code>POST</code> a JSON payload containing search terms to
+                          receive a response containing an array of country names and codes.
+      tags:
+      - Countries
+      parameters: []
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    success: true
+                    data:
+                    - description: Antarctica
+                      code: ATA
+                      description_headline: "<mark>Antarctica</mark>"
+                  summary: Single success
+                  description: When a user requests a single match it is returned
+                no_matches_found:
+                  value:
+                    success: false
+                    data: []
+                  summary: When no matching country exists
+                  description: |
+                    If a user requests data for a search term that does not exist the system has not
+                    errored so returns a successful status (200) but an empty array and a success false
+                multiple_results:
+                  value:
+                    success: true
+                    data:
+                    - description: Saint Kitts and Nevis
+                      code: KNA
+                      description_headline: "<mark>Saint</mark> Kitts <mark>and</mark>
+                        Nevis"
+                    - description: Saint Pierre and Miquelon
+                      code: SPM
+                      description_headline: "<mark>Saint</mark> Pierre <mark>and</mark>
+                        Miquelon"
+                    - description: Saint Vincent and the Grenadines
+                      code: VCT
+                      description_headline: "<mark>Saint</mark> Vincent <mark>and</mark>
+                        the Grenadines"
+                  summary: Multiple results
+                  description: When searching for country that matches multiple countries
+                    they are all returned
+        '400':
+          description: bad request
+          content:
+            application/json:
+              examples:
+                search_failed:
+                  value:
+                    success: false
+                    error: StandardError
+                    message: Unexpected error in full text search
+                  summary: Unexpected Error
+                  description: When an error occurs in the full text search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                search_term:
+                  type: string
+                  example: ant
+                  description: search term
+              required:
+              - search_term
   "/organisation_types/all":
     get:
       summary: Get all organisation types
