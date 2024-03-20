@@ -27,7 +27,7 @@ executors:
           PGHOST: localhost
           PGUSER: user
           TZ: "Europe/London"
-      - image: cimg/postgres:14.5
+      - image: cimg/postgres:14.10
         environment:
           POSTGRES_USER: user
           POSTGRES_DB: legal_framework_api_test
