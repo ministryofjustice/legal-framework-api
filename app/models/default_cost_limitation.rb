@@ -7,6 +7,6 @@ class DefaultCostLimitation < ApplicationRecord
   }
 
   def self.for_date(date)
-    where("start_date <= ?", date).order(start_date: :desc).first
+    where(start_date: ..date).order(start_date: :desc).first
   end
 end
