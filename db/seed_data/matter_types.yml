@@ -1,15 +1,14 @@
 ---
-# this file lists the matter types
-#
-# - - Domestic abuse      - name of the matter type
-#  - matter_code          - This code is required for the CCMS Submission and will be needed by Apply
-#  - category_of_law      - This is required proceeding_type searches
-#  - category_of_law_code - This code is required for the CCMS Submission and will be needed by Apply
-- - Domestic abuse
-  - MINJN
-  - Family
-  - MAT
-- - Children - section 8
-  - KSEC8
-  - Family
-  - MAT
+# This file lists the matter types
+# - name                  - Display name of the matter type, used to show providers
+#   code                  - This code is required for the CCMS Submission and will be needed by Apply
+#   category_of_law       - This is required proceeding_type searches
+#   category_of_law_code  - This code is required for the CCMS Submission and will be needed by Apply
+- name: Domestic abuse
+  code: MINJN
+  category_of_law: Family
+  category_of_law_code: MAT
+- name: Children - section 8
+  code: KSEC8
+  category_of_law: Family
+  category_of_law_code: MAT

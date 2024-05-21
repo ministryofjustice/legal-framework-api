@@ -6,18 +6,17 @@ class MatterTypePopulator
   end
 
   def call
-    seed_data.each { |seed_row| populate(seed_row) }.freeze
+    seed_data.each { |seed| populate(seed) }.freeze
   end
 
 private
 
-  def populate(seed_row)
-    name, matter_code, category_of_law, category_of_law_code = seed_row
-    matter_type(name).update!(
-      name:,
-      code: matter_code,
-      category_of_law:,
-      category_of_law_code:,
+  def populate(seed_hash)
+    matter_type(seed_hash["name"]).update!(
+      name: seed_hash["name"],
+      code: seed_hash["code"],
+      category_of_law: seed_hash["category_of_law"],
+      category_of_law_code: seed_hash["category_of_law_code"],
     )
   end
 
