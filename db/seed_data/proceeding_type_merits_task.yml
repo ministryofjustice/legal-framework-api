@@ -96,15 +96,11 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
-  - vary_order
   - domestic_abuse_with_non_applicant:
     - client_denial_of_allegation
     - client_offer_of_undertakings
   - delegated_functions_and_domestic_abuse_with_non_applicant:
       - nature_of_urgency
-  - defendant_on_this_proceeding:
-      - opponents_application
 - ccms_code: "DA007"
   questions:
   - at_least_one_domestic_abuse_with_applicant:
