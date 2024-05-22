@@ -51,6 +51,27 @@
   - SE099E
   - SE100E
   - SE101E
+  - PB003
+  - PB004
+  - PB005
+  - PB006
+  - PB007
+  - PB012
+  - PB014
+  - PB019
+  - PB020
+  - PB021
+  - PB022
+  - PB023
+  - PB024
+  - PB026
+  - PB027
+  - PB029
+  - PB030
+  - PB051
+  - PB052
+  - PB057
+  - PB059
 
 # Full Representation, section 8 proceeding, not-default
 - service_level_id: 3
