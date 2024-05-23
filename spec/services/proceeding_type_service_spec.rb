@@ -62,6 +62,8 @@ RSpec.describe ProceedingTypeService do
       description: "to be represented in an action for an injunction under " \
                    "section 3 Protection from Harassment Act 1997.",
       full_s8_only: false,
+      sca_core: false,
+      sca_related: false,
       ccms_category_law: "Family",
       ccms_matter: "Domestic abuse",
       cost_limitations: {
@@ -114,6 +116,8 @@ RSpec.describe ProceedingTypeService do
       name: "prohibited_steps_order_s8",
       description: "to be represented on an application for a prohibited steps order.",
       full_s8_only: false,
+      sca_core: false,
+      sca_related: false,
       ccms_category_law: "Family",
       ccms_matter: "Children - section 8",
       cost_limitations: {
@@ -167,6 +171,8 @@ RSpec.describe ProceedingTypeService do
       name: "prohibited_steps_order_appeal_s8",
       description: "to be represented on an application for a prohibited steps order.  Appeals only.",
       full_s8_only: true,
+      sca_core: false,
+      sca_related: false,
       ccms_category_law: "Family",
       ccms_matter: "Children - section 8",
       cost_limitations: {
