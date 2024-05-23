@@ -67,6 +67,8 @@ RSpec.describe "threshold_waivers" do
               {
                 ccms_code: "DA005",
                 full_s8_only: false,
+                sca_core: false,
+                sca_related: false,
                 client_involvement_type: "A",
                 gross_income_upper: true,
                 disposable_income_upper: true,
@@ -76,6 +78,8 @@ RSpec.describe "threshold_waivers" do
               {
                 ccms_code: "SE004",
                 full_s8_only: false,
+                sca_core: false,
+                sca_related: false,
                 client_involvement_type: "D",
                 gross_income_upper: false,
                 disposable_income_upper: false,
