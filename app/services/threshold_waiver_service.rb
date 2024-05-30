@@ -65,6 +65,8 @@ private
     tw_hash = {
       ccms_code: proceeding_type.ccms_code,
       full_s8_only: proceeding_type.full_s8_only,
+      sca_core: proceeding_type.sca_core,
+      sca_related: proceeding_type.sca_related,
       matter_type: proceeding_type.matter_type.name,
     }.merge(waivers)
     tw_hash[:client_involvement_type] = client_involvement_type.ccms_code unless @converted

@@ -12,18 +12,10 @@ class ProceedingTypePopulator
 private
 
   def populate(seed_hash)
-    seed_hash["matter_type_id"] = __send__(seed_hash["matter_type_method"])
-    seed_hash.delete("matter_type_method")
+    seed_hash["matter_type_id"] = MatterType.find_by(code: seed_hash["matter_type_code"]).id
+    seed_hash.delete("matter_type_code")
     record = ProceedingType.find_by(ccms_code: seed_hash["ccms_code"]) || ProceedingType.new
     record.update!(seed_hash)
-  end
-
-  def domestic_abuse_id
-    @domestic_abuse_id ||= MatterType.domestic_abuse.id
-  end
-
-  def section8_id
-    @section8_id ||= MatterType.section8.id
   end
 
   def seed_data

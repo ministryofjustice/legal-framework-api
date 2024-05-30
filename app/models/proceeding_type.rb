@@ -50,6 +50,8 @@ class ProceedingType < ApplicationRecord
       meaning:,
       description:,
       full_s8_only:,
+      sca_core:,
+      sca_related:,
       ccms_category_law:,
       ccms_matter_code:,
       ccms_matter:,

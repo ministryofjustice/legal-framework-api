@@ -4,294 +4,565 @@
   name: inherent_jurisdiction_high_court_injunction
   description: to be represented on an application for an injunction, order or declaration
     under the inherent jurisdiction of the court.
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA002
   meaning: Variation or discharge under section 5 protection from harassment act 1997
   name: variation_or_discharge_under_section_protection_from_harassment_act
   description: to be represented on an application to vary or discharge an order under
     section 5 Protection from Harassment Act 1997 where the parties are associated
     persons (as defined by Part IV Family Law Act 1996).
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA003
   meaning: Harassment - injunction
   name: harassment_injunction
   description: to be represented in an action for an injunction under section 3 Protection
     from Harassment Act 1997.
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA004
   meaning: Non-molestation order
   name: nonmolestation_order
   description: to be represented on an application for a non-molestation order.
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms: harassment,injunction
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA005
   meaning: Occupation order
   name: occupation_order
   description: to be represented on an application for an occupation order.
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA006
   meaning: Extend, variation or discharge - Part IV
   name: extend_variation_or_discharge_part_iv
   description: to be represented on an application to extend, vary or discharge an
     order under Part IV Family Law Act 1996
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA007
   meaning: Forced marriage protection order
   name: forced_marriage_protection_order
   description: to be represented on an application for a forced marriage protection
     order
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: DA020
   meaning: FGM Protection Order
   name: fgm_protection_order
   description: To be represented on an application for a Female Genital Mutilation
     Protection Order under the Female Genital Mutilation Act.
-  matter_type_method: domestic_abuse_id
+  matter_type_code: MINJN
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: SE003
   meaning: Prohibited steps order
   name: prohibited_steps_order_s8
   description: to be represented on an application for a prohibited steps order.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: SE003A
   meaning: Prohibited Steps Order-Appeal-S8
   name: prohibited_steps_order_appeal_s8
   description: to be represented on an application for a prohibited steps order.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE003E
   meaning: Prohibited Steps Order-Enforcement-S8
   name: prohibited_steps_order_enforcement_s8
   description: to be represented on an application for a prohibited steps order.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE004
   meaning: Specific Issue Order
   name: specified_issue_order_s8
   description: to be represented on an application for a specific issue order.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: SE004A
   meaning: Specific Issue Order-Appeal-S8
   name: speciied_issue_order_s8_appeal
   description: to be represented on an application for a specific issue order.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE004E
   meaning: Specific Issue Order-Enforcement-S8
   name: speciied_issue_order_s8_enforcement
   description: to be represented on an application for a specific issue order.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE007
   meaning: Vary/Discharge Prohib Steps Order-S8
   name: vary_discharge_prohib_steps_s8
   description: to be represented on an application to vary or discharge a prohibited steps order.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE007A
   meaning: Vary/Discharge Prohib Steps Order-Appeal-S8
   name: vary_discharge_prohib_steps_s8_appeal
   description: to be represented on an application to vary or discharge a prohibited steps order.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE007E
   meaning: Vary/Discharge Prohib Steps Order-Enforcement-S8
   name: vary_discharge_prohib_steps_s8_enforcement
   description: to be represented on an application to vary or discharge a prohibited steps order.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE008
   meaning: Vary/Discharge Specific Issues Ord-S8
   name: vary_discharge_specific_issues_s8
   description: to be represented on an application to vary or discharge a specific issue order.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE008A
   meaning: Vary/Discharge Specific Issues Ord-Appeal-S8
   name: vary_discharge_specific_issues_s8_appeal
   description: to be represented on an application to vary or discharge a specific issue order.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE008E
   meaning: Vary/Discharge Specific Issues Ord-Enforcement-S8
   name: vary_discharge_specific_issues_s8_enforcement
   description: to be represented on an application to vary or discharge a specific issue order.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE013
   meaning: Child arrangements order (contact)
   name: child_arrangements_order_contact
   description: to be represented on an application for a child arrangements order-who
     the child(ren) spend time with.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms: cao
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: SE013A
   meaning: CAO contact-Appeal
   name: cao_contact_appeal
   description: to be represented on an application for a child arrangements order-who the child(ren) spend time with. Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE013E
   meaning: CAO contact-Enforcement
   name: cao_contact_appeal
   description: to be represented on an application for a child arrangements order-who the child(ren) spend time with. Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE014
   meaning: Child arrangements order (residence)
   name: child_arrangements_order_residence
   description: to be represented on an application for a child arrangements order
     –where the child(ren) will live
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms: cao
   full_s8_only: false
+  sca_core: false
+  sca_related: false
 - ccms_code: SE014A
   meaning: CAO residence-Appeal
   name: cao_residence_appeal
   description: to be represented on an application for a child arrangements order –where the child(ren) will live. Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE014E
   meaning: CAO residence-Enforcement
   name: cao_residence_enforcement
   description: to be represented on an application for a child arrangements order –where the child(ren) will live. Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE015
   meaning: Vary CAO contact
   name: vary_cao_contact
   description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE015A
   meaning: Vary CAO contact-Appeal
   name: vary_cao_contact_appeal
   description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with. Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE015E
   meaning: Vary CAO contact-Enforcement
   name: vary_cao_contact_enforcement
   description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with. Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE016
   meaning: Vary CAO residence
   name: vary_cao_residence
   description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE016A
   meaning: Vary CAO residence-Appeal
   name: vary_cao_redidence_appeal
   description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live. Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE016E
   meaning: Vary CAO residence-Enforcement
   name: vary_cao_residence_enforcement
   description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live. Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE095
   meaning: Enforcement order 11J-S8
   name: enforcement_order_11j_s8
   description: to be represented on an application for an enforcement order under section 11J Children Act 1989.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE095A
   meaning: Enforcement order-Appeal-S8
   name: enforcement_order_11j_s8_appeal
   description: to be represented on an application for an enforcement order under section 11J Children Act 1989.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE096E
   meaning: Enforcement order+c’tal-S8
   name: enforcement_committal_order
   description: to be represented on an application for committal and for an enforcement order under section 11J Children Act 1989. Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE097
   meaning: Revocation enforcement-S8
   name: revocation_enforcement_s8
   description: to be represented on an application for the revocation of an enforcement order under section 11J and Schedule A1 Children Act 1989.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE097A
   meaning: Revocation enforcement-Appeal-S8
   name: revocation_enforcement_appeal_s8
   description: to be represented on an application for the revocation of an enforcement order under section 11J and Schedule A1 Children Act 1989.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE099E
   meaning: Amd enforcement-breach-S8
   name: amd_enforcement_breach
   description: to be represented on an application, following breach, for an amendment to an enforcement order or for a further enforcement order under section 11J and Schedule A1 Children Act 1989.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE100E
   meaning: Breach enforcement-S8
   name: breach_enforcement_s8
   description: to be represented on an application, following breach, for an amendment to an enforcement order or for a further enforcement order under section 11J and Schedule A1 Children Act 1989.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE101A
   meaning: Compensation-Appeal-S8
   name: compensation_appeal_s8
   description: to be represented on an application for compensation for financial loss under section 11O Children Act 1989.  Appeals only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
 - ccms_code: SE101E
   meaning: Compensation-Enforcement-S8
   name: compensation_enforcement_s8
   description: to be represented on an application for compensation for financial loss under section 11O Children Act 1989.  Enforcement only.
-  matter_type_method: section8_id
+  matter_type_code: KSEC8
   additional_search_terms:
   full_s8_only: true
+  sca_core: false
+  sca_related: false
+- ccms_code: PB003
+  meaning: Child assessment order
+  name: child_assessment_order_sca
+  description: to be represented on an application for a child assessment order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB004
+  meaning: Emergency protection order - extend
+  name: extend_emergency_protection_sca
+  description: to be represented on an application for or to extend an emergency protection order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB005
+  meaning: Emergency protection order - discharge
+  name: app_discharge_emergency_sca
+  description: to be represented on an application to discharge an emergency protection order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB006
+  meaning: Secure accommodation order
+  name: secure_accommodation_order_sca
+  description: to be represented on an application for a secure accommodation order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB026
+  meaning: Emergency protection order
+  name: emergency_protection_order_sca
+  description: to be represented on an application for an emergency protection order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB057
+  meaning: Care order
+  name: app_for_care_order_sca
+  description: to be represented on an application for a care order
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB059
+  meaning: Supervision order
+  name: app_for_supervision_order_sca
+  description: to be represented on an application for a supervision order
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: true
+  sca_related: false
+- ccms_code: PB007
+  meaning: Contact with a child in care
+  name: contact_child_in_care_sca
+  description: to be represented on an application for contact with a child in care.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB012
+  meaning: Recovery of children order
+  name: order_recovery_children_sca
+  description: to be represented on an application for the recovery of a child(ren).
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB014
+  meaning: End contact with a child in care
+  name: end_contact_with_child_in_care_sca
+  description: to be represented on an application to terminate contact with a child/children in care.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB019
+  meaning: Prohibited steps order
+  name: prohibited_steps_order_sca
+  description: to be represented on an application for a prohibited steps order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB020
+  meaning: Specific issue order
+  name: specific_issue_order_sca
+  description: to be represented on an application for a specific issue order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB021
+  meaning: Contact order - vary or discharge
+  name: vary_discharge_contact_order_sca
+  description: to be represented on an application to vary or discharge a contact order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB022
+  meaning: Residence - vary or discharge
+  name: vary_discharge_residence_sca
+  description: to be represented on an application to vary or discharge a residence order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB023
+  meaning: Prohibited steps order - vary or discharge
+  name: vary_discharge_prohibitive_step_sca
+  description: to be represented on an application to vary or discharge a prohibitive steps order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB024
+  meaning: Specific issue order - vary or discharge
+  name: vary_discharge_specific_issue_sca
+  description: to be represented on an application to vary or discharge a specific issues order.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB027
+  meaning: Parental responsibility
+  name: parental_responsibility_sca
+  description: to be represented on an application for parental responsibility.
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB029
+  meaning: Child arrangements order - contact
+  name: cao_contact_sca
+  description: to be represented on an application for a child arrangements order-who the child(ren) spend time with
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB030
+  meaning: Child arrangements order - residence
+  name: cao_residence_sca
+  description: to be represented on an application for a child arrangements order-where the child(ren) will live
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB051
+  meaning: Placement order
+  name: placement_order_sca
+  description: to be represented on an application for a placement order .
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true
+- ccms_code: PB052
+  meaning: Special guardianship order
+  name: special_guardianship_order_sca
+  description: to be represented on an application for a Special Guardianship Order .
+  matter_type_code: KPBLW
+  additional_search_terms:
+  full_s8_only: false
+  sca_core: false
+  sca_related: true

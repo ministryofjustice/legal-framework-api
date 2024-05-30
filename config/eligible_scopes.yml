@@ -42,6 +42,27 @@
   DA006: :domestic_abuse
   DA007: :domestic_abuse
   DA020: :domestic_abuse
+  PB003: :special_children_act
+  PB004: :special_children_act
+  PB005: :special_children_act
+  PB006: :special_children_act
+  PB007: :special_children_act
+  PB012: :special_children_act
+  PB014: :special_children_act
+  PB019: :special_children_act
+  PB020: :special_children_act
+  PB021: :special_children_act
+  PB022: :special_children_act
+  PB023: :special_children_act
+  PB024: :special_children_act
+  PB026: :special_children_act
+  PB027: :special_children_act
+  PB029: :special_children_act
+  PB030: :special_children_act
+  PB051: :special_children_act
+  PB052: :special_children_act
+  PB057: :special_children_act
+  PB059: :special_children_act
 
 # schemes
 :schemes:
@@ -234,3 +255,20 @@
         :defaults:
           :cit_a: FM019
           :non_cit_a: FM019
+  :special_children_act:
+    :default_service_level: 3
+    :service_level_3:
+      :substantive:
+        :scopes:
+          - CV118
+          - FM062
+        :defaults:
+          :cit_a: FM062
+          :non_cit_a: FM062
+      :delegated_functions:
+        :scopes:
+          - CV118
+          - FM062
+        :defaults:
+          :cit_a: FM062
+          :non_cit_a: FM062

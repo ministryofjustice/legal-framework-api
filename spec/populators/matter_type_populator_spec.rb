@@ -12,6 +12,6 @@ RSpec.describe MatterTypePopulator do
       MatterType.all.map(&:destroy!)
     end
 
-    specify { expect { call }.to change(MatterType, :count).from(0).to(2) }
+    specify { expect { call }.to change(MatterType, :count).from(0).to(3) }
   end
 end
