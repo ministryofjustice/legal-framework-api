@@ -325,12 +325,13 @@ workflows:
               ]
             }
           requires:
+            - deploy_main_uat
             - deploy_staging
       - hold_production:
           type: approval
           requires:
+            - deploy_main_uat
             - deploy_staging
-            - slack/on-hold
       - deploy_production:
           context: legal-framework-api-production
           requires:
