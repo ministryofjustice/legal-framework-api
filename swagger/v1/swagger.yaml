@@ -159,6 +159,44 @@ paths:
                   summary: Successful request
                   description: Returns an array of all client involvement types with
                     summary data.
+  "/client_involvement_types/{proceeding_type_ccms_code}":
+    get:
+      summary: Show client involvement type for specific proceeding type
+      parameters:
+        - name: proceeding_type_ccms_code
+          in: path
+          example: DA001
+          description: Proceeding_type_ccms_code, e.g. DA001
+          schema:
+            type: string
+      description: 
+        Returns an array of client involvement types with summary data for the specified
+        proceeding type.
+      tags:
+      - Client involvement types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    success: true
+                    client_involvement_type:
+                    - ccms_code: A
+                      description: Applicant/claimant/petitioner
+                    - ccms_code: D
+                      description: Defendant/respondent
+                    - ccms_code: W
+                      description: Subject of proceedings (child)
+                    - ccms_code: I
+                      description: Intervenor
+                    - ccms_code: Z
+                      description: Joined party
+                  summary: Successful request
+                  description: Returns an array of all client involvement types with
+                    summary data.
   "/countries/all":
     get:
       summary: Get all countries
