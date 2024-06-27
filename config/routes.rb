@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :civil_merits_questions, param: :ccms_code, only: %i[create]
 
   get "client_involvement_types", to: "client_involvement_types#index"
+
+  resources :client_involvement_types, param: :proceeding_type_ccms_code, only: %i[show]
+
   get "organisation_types/all", to: "organisation_types#index"
   get "proceeding_types/all", to: "proceeding_types/searches#index"
   get "countries/all", to: "countries#index"
