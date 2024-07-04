@@ -76,13 +76,18 @@ private
     @proceedings.any? { |proceeding| proceeding[:delegated_functions_used].to_s == "true" }
   end
 
+  def delegated_functions_and_domestic_abuse_with_non_applicant(_proceeding)
+    @proceedings.any? { |p| p[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }
+  end
+
   def defendant_on_this_proceeding(proceeding)
     match = @proceedings.find { |e| e[:ccms_code] == proceeding.ccms_code && e[:client_involvement_type] == "D" }
     match.present?
   end
 
-  def delegated_functions_and_domestic_abuse_with_non_applicant(_proceeding)
-    @proceedings.any? { |p| p[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }
+  def not_child_subject_for_this_proceeding(proceeding)
+    match = @proceedings.find { |e| e[:ccms_code] == proceeding.ccms_code && e[:client_involvement_type] != "W" }
+    match.present?
   end
 
   def error_response

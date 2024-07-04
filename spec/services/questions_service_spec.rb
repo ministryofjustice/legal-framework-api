@@ -99,6 +99,171 @@ RSpec.describe QuestionsService do
         expect(question_service).to eq expected_latest_incident_details_response
       end
     end
+
+    describe "Special Children Act questions" do
+      context "when there is a sole SCA core proceeding" do
+        let(:proceedings) do
+          [
+            {
+              ccms_code: "PB003",
+              delegated_functions_used: false,
+              client_involvement_type:,
+            },
+          ]
+        end
+
+        context "and the client_involvement_type is Respondent" do
+          let(:client_involvement_type) { "D" }
+          let(:expected_response) do
+            {
+              request_id:,
+              success: true,
+              application: {
+                tasks: {
+                  "opponent_name" => [],
+                  "children_application" => [],
+                },
+              },
+              proceedings: [
+                {
+                  ccms_code: "PB003",
+                  tasks: {
+                    "children_proceeding" => %w[children_application],
+                    "client_relationship_to_proceeding" => [],
+                  },
+                },
+              ],
+            }
+          end
+
+          it "returns the expected questions" do
+            expect(question_service).to eq expected_response
+          end
+        end
+
+        context "and the client_involvement_type is Subject of proceedings (child)" do
+          let(:client_involvement_type) { "W" }
+          let(:expected_response) do
+            {
+              request_id:,
+              success: true,
+              application: {
+                tasks: {
+                  "opponent_name" => [],
+                },
+              },
+              proceedings: [
+                {
+                  ccms_code: "PB003",
+                  tasks: {},
+                },
+              ],
+            }
+          end
+
+          it "returns the expected questions" do
+            expect(question_service).to eq expected_response
+          end
+        end
+      end
+
+      context "when there are SCA core and related proceedings" do
+        let(:proceedings) do
+          [
+            {
+              ccms_code: "PB003",
+              delegated_functions_used: false,
+              client_involvement_type:,
+            },
+            {
+              ccms_code: "PB007",
+              delegated_functions_used: false,
+              client_involvement_type:,
+            },
+          ]
+        end
+
+        context "and the client_involvement_type is Respondent for both" do
+          let(:client_involvement_type) { "D" }
+          let(:expected_response) do
+            {
+              request_id:,
+              success: true,
+              application: {
+                tasks: {
+                  "opponent_name" => [],
+                  "children_application" => [],
+                },
+              },
+              proceedings: [
+                {
+                  ccms_code: "PB003",
+                  tasks: {
+                    "children_proceeding" => %w[children_application],
+                    "client_relationship_to_proceeding" => [],
+                  },
+                },
+                {
+                  ccms_code: "PB007",
+                  tasks: {
+                    "children_proceeding" => %w[children_application],
+                  },
+                },
+              ],
+            }
+          end
+
+          it "returns the expected questions" do
+            expect(question_service).to eq expected_response
+          end
+        end
+
+        context "and they have differing client)involvement_types" do
+          let(:proceedings) do
+            [
+              {
+                ccms_code: "PB003",
+                delegated_functions_used: false,
+                client_involvement_type: "W",
+              },
+              {
+                ccms_code: "PB007",
+                delegated_functions_used: false,
+                client_involvement_type: "D",
+              },
+            ]
+          end
+          let(:expected_response) do
+            {
+              request_id:,
+              success: true,
+              application: {
+                tasks: {
+                  "opponent_name" => [],
+                  "children_application" => [],
+                },
+              },
+              proceedings: [
+                {
+                  ccms_code: "PB003",
+                  tasks: {},
+                },
+                {
+                  ccms_code: "PB007",
+                  tasks: {
+                    "children_proceeding" => %w[children_application],
+                  },
+                },
+              ],
+            }
+          end
+
+          it "returns the expected questions" do
+            expect(question_service).to eq expected_response
+          end
+        end
+      end
+    end
   end
 
   context "when the request fails" do
