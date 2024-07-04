@@ -21,6 +21,7 @@ class MeritsTaskPopulator
     prohibited_steps
     opponents_application
     vary_order
+    client_relationship_to_proceeding
   ].freeze
 
   def self.call

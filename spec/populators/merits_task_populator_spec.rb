@@ -26,6 +26,7 @@ RSpec.describe MeritsTaskPopulator do
       prohibited_steps
       opponents_application
       vary_order
+      client_relationship_to_proceeding
     ]
   end
 
@@ -45,7 +46,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "seeds all merits tasks" do
-        expect { call }.to change(MeritsTask, :count).from(0).to(18)
+        expect { call }.to change(MeritsTask, :count).from(0).to(19)
         expect(MeritsTask.pluck(:name)).to match_array(merits_tasks)
       end
     end
@@ -74,7 +75,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "removes the merits tasks that are no longer seeded" do
-        expect { call }.to change(MeritsTask, :count).from(18).to(2)
+        expect { call }.to change(MeritsTask, :count).from(19).to(2)
       end
     end
   end
