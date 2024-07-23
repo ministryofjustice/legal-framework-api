@@ -22,7 +22,6 @@ TaskDependencyPopulator.call
 ScopeLimitationsPopulator.call
 ServiceLevelsPopulator.call
 ProceedingTypeServiceLevelsPopulator.call
-ClientInvolvementTypesPopulator.call
 ThresholdWaiverPopulator.call
 OrganisationTypesPopulator.call
 OrganisationsPopulator.call

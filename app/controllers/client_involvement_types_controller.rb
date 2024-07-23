@@ -1,6 +1,6 @@
 class ClientInvolvementTypesController < ApplicationController
   def index
-    result = ClientInvolvementType.order(:ordering).map(&:api_json)
+    result = ClientInvolvementTypeService.call(nil)
     render json: result, status: :ok
   end
 

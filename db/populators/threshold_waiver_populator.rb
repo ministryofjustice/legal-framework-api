@@ -22,7 +22,7 @@ private
 
   def find_or_create_threshold_waiver(seed_row)
     matter_type = MatterType.find_by(name: seed_row[:matter_type])
-    client_involvement_type = ClientInvolvementType.find_by(ccms_code: seed_row[:client_involvement_type])
+    client_involvement_type = ClientInvolvementTypeService.call(nil).find_by(ccms_code: seed_row[:client_involvement_type])
     ThresholdWaiver.find_or_create_by!(matter_type:, client_involvement_type:)
   end
 

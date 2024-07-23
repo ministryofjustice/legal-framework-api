@@ -1,6 +1,4 @@
 class ClientInvolvementTypeService
-  class ClientInvolvementTypeServiceError < StandardError; end
-
   def self.call(proceeding_type)
     new(proceeding_type).call
   end
@@ -11,20 +9,18 @@ class ClientInvolvementTypeService
   end
 
   def call
-    raise ClientInvolvementTypeServiceError, "Must specify a client involvement type" if @proceeding_type.nil?
+    return default_response if @proceeding_type.nil?
 
     proceeding = ProceedingType.find_by!(ccms_code: @proceeding_type)
 
-    @response[:client_involvement_type] = if proceeding.sca_core
+    @response[:client_involvement_type] = if proceeding.sca_core?
                                             sca_core_response
-                                          elsif proceeding.sca_related
+                                          elsif proceeding.sca_related?
                                             sca_related_response
                                           else
                                             default_response
                                           end
     @response
-  rescue StandardError => e
-    @response = error_response_for(e)
   end
 
 private
@@ -67,7 +63,28 @@ private
   end
 
   def default_response
-    ClientInvolvementType.order(:ordering).map(&:api_json)
+    [
+      {
+        ccms_code: "A",
+        description: "Applicant/claimant/petitioner",
+      },
+      {
+        ccms_code: "D",
+        description: "Defendant/respondent",
+      },
+      {
+        ccms_code: "W",
+        description: "Subject of proceedings (child)",
+      },
+      {
+        ccms_code: "I",
+        description: "Intervenor",
+      },
+      {
+        ccms_code: "Z",
+        description: "Joined party",
+      },
+    ]
   end
 
   def error_response_for(err)

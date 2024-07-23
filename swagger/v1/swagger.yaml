@@ -167,6 +167,7 @@ paths:
           in: path
           example: DA001
           description: Proceeding_type_ccms_code, e.g. DA001
+          required: true
           schema:
             type: string
       description: 
