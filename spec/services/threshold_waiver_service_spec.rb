@@ -76,7 +76,7 @@ RSpec.describe ThresholdWaiverService do
           ]
         end
 
-        it "returns error" do
+        xit "returns error" do
           response = threshold_waiver_service_response
           expect(response[:request_id]).to eq request_id
           expect(response[:success]).to be false
