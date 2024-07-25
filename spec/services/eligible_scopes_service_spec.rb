@@ -27,7 +27,7 @@ RSpec.describe EligibleScopesService do
   describe ".eligible_scopes and .default_scope methods" do
     describe "section 8 base" do
       let(:pt_ccms_code) { s8_base_pt_codes.sample }
-      let(:client_involvement_type) { ClientInvolvementType::VALID_CLIENT_INVOLVEMENT_TYPES.sample }
+      let(:client_involvement_type) { %w[A D I W Z].sample }
       let(:client_involvement_type_not_a) { %w[D I W Z].sample }
 
       context "with service level 1 substantive" do
@@ -123,7 +123,7 @@ RSpec.describe EligibleScopesService do
 
     describe "section 8 appeals" do
       let(:pt_ccms_code) { s8_appeals_pt_codes.sample }
-      let(:client_involvement_type) { ClientInvolvementType::VALID_CLIENT_INVOLVEMENT_TYPES.sample }
+      let(:client_involvement_type) { %w[A D I W Z].sample }
       let(:client_involvement_type_not_a) { %w[D I W Z].sample }
 
       context "with service level 3 substantive" do
@@ -174,7 +174,7 @@ RSpec.describe EligibleScopesService do
 
     describe "section 8 enforcements" do
       let(:pt_ccms_code) { s8_enforcements_pt_codes.sample }
-      let(:client_involvement_type) { ClientInvolvementType::VALID_CLIENT_INVOLVEMENT_TYPES.sample }
+      let(:client_involvement_type) { %w[A D I W Z].sample }
       let(:client_involvement_type_not_a) { %w[D I W Z].sample }
       let(:expected_scopes) { %w[CV027 CV118 EF012 EF022 EF025 EF026 EF027 FM019 FM049 MC029] }
 
@@ -224,7 +224,7 @@ RSpec.describe EligibleScopesService do
 
     describe "domestic abuse" do
       let(:pt_ccms_code) { domestic_abuse_pt_codes.sample }
-      let(:client_involvement_type) { ClientInvolvementType::VALID_CLIENT_INVOLVEMENT_TYPES.sample }
+      let(:client_involvement_type) { %w[A D I W Z].sample }
       let(:client_involvement_type_not_a) { %w[D I W Z].sample }
 
       context "with service level 3 substantive" do
