@@ -55,7 +55,7 @@ private
   end
 
   def innermost_config
-    raise "Invalid Client Involvement Type '#{@client_involvement_type}" unless ClientInvolvementType::VALID_CLIENT_INVOLVEMENT_TYPES.include?(@client_involvement_type)
+    raise "Invalid Client Involvement Type '#{@client_involvement_type}" unless %w[A D I W Z].freeze.include?(@client_involvement_type)
 
     service_level_config[df_state_key]
   end
