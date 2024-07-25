@@ -17,13 +17,13 @@ private
       gross_income_upper: seed_row[:gross_income_upper],
       disposable_income_upper: seed_row[:disposable_income_upper],
       capital_upper: seed_row[:capital_upper],
+      client_involvement_type: seed_row[:client_involvement_type],
     )
   end
 
   def find_or_create_threshold_waiver(seed_row)
     matter_type = MatterType.find_by(name: seed_row[:matter_type])
-    client_involvement_type = ClientInvolvementTypeService.call(nil).find_by(ccms_code: seed_row[:client_involvement_type])
-    ThresholdWaiver.find_or_create_by!(matter_type:, client_involvement_type:)
+    ThresholdWaiver.find_or_create_by!(matter_type:)
   end
 
   def seed_data
