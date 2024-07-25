@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_25_104450) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_25_134711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
-
-  create_table "client_involvement_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "ccms_code", null: false
-    t.string "description", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "ordering"
-  end
 
   create_table "countries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "code", null: false
