@@ -97,7 +97,7 @@ GEM
     database_cleaner-core (2.0.1)
     date (3.3.4)
     diff-lcs (1.5.1)
-    docile (1.4.0)
+    docile (1.4.1)
     drb (2.2.1)
     erubi (1.13.0)
     factory_bot (6.4.6)
