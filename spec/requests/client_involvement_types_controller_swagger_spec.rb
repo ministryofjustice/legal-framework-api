@@ -25,8 +25,8 @@ RSpec.describe "client_involvement_types" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 5
-          expect(JSON.parse(response.body)).to eq expected_result
+          expect(JSON.parse(response.body)["client_involvement_type"].count).to eq 5
+          expect(JSON.parse(response.body)["client_involvement_type"]).to eq expected_result
         end
       end
     end
