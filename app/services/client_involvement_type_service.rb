@@ -1,4 +1,6 @@
 class ClientInvolvementTypeService
+  class ClientInvolvementTypeServiceError < StandardError; end
+
   def self.call(proceeding_type)
     new(proceeding_type).call
   end
@@ -9,18 +11,18 @@ class ClientInvolvementTypeService
   end
 
   def call
-    return default_response if @proceeding_type.nil?
+    proceeding = ProceedingType.find_by!(ccms_code: @proceeding_type) unless @proceeding_type.nil?
 
-    proceeding = ProceedingType.find_by!(ccms_code: @proceeding_type)
-
-    @response[:client_involvement_type] = if proceeding.sca_core?
+    @response[:client_involvement_type] = if proceeding&.sca_core?
                                             sca_core_response
-                                          elsif proceeding.sca_related?
+                                          elsif proceeding&.sca_related?
                                             sca_related_response
                                           else
                                             default_response
                                           end
     @response
+  rescue StandardError => e
+    @response = error_response_for(e)
   end
 
 private
@@ -89,7 +91,6 @@ private
 
   def error_response_for(err)
     {
-      request_id: @request_id,
       success: false,
       message: message_for(err),
     }
