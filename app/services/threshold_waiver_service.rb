@@ -47,6 +47,9 @@ private
   def add_proceeding_types_to_response(values)
     proceeding_type = ProceedingType.find_by!(ccms_code: values["ccms_code"])
     client_involvement_type = values["client_involvement_type"]
+
+    raise ThresholdWaiverServiceError, "Couldn't find ClientInvolvementType" unless client_involvement_types.pluck(:ccms_code).include?(values["client_involvement_type"])
+
     waivers = get_threshold_waivers(proceeding_type, client_involvement_type)
 
     add_threshold_waivers(proceeding_type, client_involvement_type, waivers)
@@ -85,5 +88,30 @@ private
       error_class: err.class.to_s,
       message: err.message,
     }
+  end
+
+  def client_involvement_types
+    [
+      {
+        ccms_code: "A",
+        description: "Applicant/claimant/petitioner",
+      },
+      {
+        ccms_code: "D",
+        description: "Defendant/respondent",
+      },
+      {
+        ccms_code: "W",
+        description: "Subject of proceedings (child)",
+      },
+      {
+        ccms_code: "I",
+        description: "Intervenor",
+      },
+      {
+        ccms_code: "Z",
+        description: "Joined party",
+      },
+    ]
   end
 end
