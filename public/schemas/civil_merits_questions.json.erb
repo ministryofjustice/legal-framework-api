@@ -30,7 +30,7 @@
             "type": "boolean"
           },
           "client_involvement_type": {
-            "enum": <%= ClientInvolvementType.pluck(:ccms_code).as_json %>
+            "enum": <%= %w[A D W Z I].as_json %>
           }
         }
       }

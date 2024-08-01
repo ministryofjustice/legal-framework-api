@@ -80,7 +80,7 @@ RSpec.describe ThresholdWaiverService do
           response = threshold_waiver_service_response
           expect(response[:request_id]).to eq request_id
           expect(response[:success]).to be false
-          expect(response[:error_class]).to eq "ActiveRecord::RecordNotFound"
+          expect(response[:error_class]).to eq "ThresholdWaiverService::ThresholdWaiverServiceError"
           expect(response[:message]).to match "Couldn't find ClientInvolvementType"
         end
       end

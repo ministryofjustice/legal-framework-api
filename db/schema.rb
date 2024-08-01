@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_22_124545) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_25_134711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
-
-  create_table "client_involvement_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "ccms_code", null: false
-    t.string "description", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "ordering"
-  end
 
   create_table "countries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "code", null: false
@@ -174,15 +166,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_124545) do
   end
 
   create_table "threshold_waivers", force: :cascade do |t|
-    t.uuid "client_involvement_type_id", null: false
     t.uuid "matter_type_id", null: false
     t.boolean "gross_income_upper"
     t.boolean "disposable_income_upper"
     t.boolean "capital_upper"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_involvement_type_id", "matter_type_id"], name: "index_threshold_waivers_on_client_involvement_and_matter_types", unique: true
-    t.index ["client_involvement_type_id"], name: "index_threshold_waivers_on_client_involvement_type_id"
+    t.string "client_involvement_type"
     t.index ["matter_type_id"], name: "index_threshold_waivers_on_matter_type_id"
   end
 
@@ -190,6 +180,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_22_124545) do
   add_foreign_key "organisations", "organisation_types", on_delete: :cascade
   add_foreign_key "proceeding_type_service_levels", "proceeding_types"
   add_foreign_key "proceeding_type_service_levels", "service_levels"
-  add_foreign_key "threshold_waivers", "client_involvement_types"
   add_foreign_key "threshold_waivers", "matter_types"
 end

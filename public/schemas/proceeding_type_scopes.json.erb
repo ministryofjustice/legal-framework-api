@@ -12,7 +12,7 @@
       "type": "boolean"
     },
     "client_involvement_type": {
-      "enum": <%= ClientInvolvementType.pluck(:ccms_code).as_json %>
+      "enum": <%= %w[A D W Z I].as_json %>
     },
     "level_of_service_code": {
       "enum": <%= ServiceLevel.pluck(:level).as_json %>

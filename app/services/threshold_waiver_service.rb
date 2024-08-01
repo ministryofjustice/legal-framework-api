@@ -46,7 +46,10 @@ private
 
   def add_proceeding_types_to_response(values)
     proceeding_type = ProceedingType.find_by!(ccms_code: values["ccms_code"])
-    client_involvement_type = ClientInvolvementType.find_by!(ccms_code: values["client_involvement_type"])
+    client_involvement_type = values["client_involvement_type"]
+
+    raise ThresholdWaiverServiceError, "Couldn't find ClientInvolvementType" unless %w[A D I W Z].freeze.include?(values["client_involvement_type"])
+
     waivers = get_threshold_waivers(proceeding_type, client_involvement_type)
 
     add_threshold_waivers(proceeding_type, client_involvement_type, waivers)
@@ -69,7 +72,7 @@ private
       sca_related: proceeding_type.sca_related,
       matter_type: proceeding_type.matter_type.name,
     }.merge(waivers)
-    tw_hash[:client_involvement_type] = client_involvement_type.ccms_code unless @converted
+    tw_hash[:client_involvement_type] = client_involvement_type unless @converted
 
     if @converted
       @response[:proceeding_types] << tw_hash
