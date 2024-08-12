@@ -77,6 +77,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_core: false,
                     sca_related: false,
                     ccms_category_law: "Family",
+                    ccms_category_law_code: "MAT",
                     ccms_matter: "Domestic abuse",
                   },
                 ],
@@ -136,6 +137,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_core: false,
                     sca_related: false,
                     ccms_category_law: "Family",
+                    ccms_category_law_code: "MAT",
                     ccms_matter: "Domestic abuse",
                   },
                   {
@@ -146,6 +148,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_core: false,
                     sca_related: false,
                     ccms_category_law: "Family",
+                    ccms_category_law_code: "MAT",
                     ccms_matter: "Domestic abuse",
                   },
                   {
@@ -156,6 +159,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_core: false,
                     sca_related: false,
                     ccms_category_law: "Family",
+                    ccms_category_law_code: "MAT",
                     ccms_matter: "Domestic abuse",
                   },
                 ],

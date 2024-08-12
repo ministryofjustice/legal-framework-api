@@ -5979,6 +5979,72 @@ paths:
               - delegated_functions_used
               - client_involvement_type
               - service_level
+  "/proceeding_types/filter":
+    post:
+      summary: Get available proceeding types dependant on current proceedings, contractual
+        data and search terms
+      description: |-
+        Returns an array of proceeding types with summary data.
+                           Call <code>/proceeding_types/XX999</code> where <code>XX999</code> is the ccms_code for more
+                           detailed data on a specific proceeding type.
+      tags:
+      - Proceeding types
+      parameters: []
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    success: true
+                    data:
+                    - meaning: Occupation order
+                      ccms_code: DA005
+                      description: to be represented on an application for an occupation
+                        order.
+                      full_s8_only: false
+                      sca_core: false
+                      sca_related: false
+                      ccms_category_law: Family
+                      ccms_matter: Domestic abuse
+                    - continued: "..."
+                  summary: Single success
+                  description: When a user requests a single match it is returned
+                no_matches_found:
+                  value:
+                    success: false
+                    data: []
+                  summary: When only result excluded
+                  description: |
+                    If a user requests a category that is not yet supported the system has not
+                    errored so returns a successful status (200) but an empty array and a success false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_proceedings:
+                  type: array
+                  example:
+                  - DA001
+                  - DA007
+                  - SE013
+                  description: comma separated array of ccms codes to exclude from
+                    search results and provide filter options
+                allowed_categories:
+                  type: array
+                  example:
+                  - MAT
+                  description: comma separated array of category of law codes that
+                    the current user is contractually entitled to
+                search_term:
+                  type: string
+                  example: Occupation
+                  description: search term that should be included in the proceeding
+                    description
   "/proceeding_types/all":
     get:
       summary: Get summary of all proceeding types
@@ -6726,6 +6792,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                   summary: Single success
                   description: When a user requests a single match it is returned
@@ -6750,6 +6817,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                     - meaning: Harassment - injunction
                       ccms_code: DA003
@@ -6759,6 +6827,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                     - meaning: Non-molestation order
                       ccms_code: DA004
@@ -6768,6 +6837,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                   summary: Multiple results
                   description: When searching for a description that matches multiple
