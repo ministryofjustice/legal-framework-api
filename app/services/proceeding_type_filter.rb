@@ -3,7 +3,7 @@ class ProceedingTypeFilter
     @current_proceedings = current_proceedings
     @allowed_categories = allowed_categories
     @search_term = search_term
-    @results = ProceedingType.all.map(&:api_json)
+    @results = @search_term.present? ? ProceedingTypeFullTextSearch.call(search_term) : ProceedingType.all.map(&:api_json)
   end
 
   def self.call(current_proceedings = [], allowed_categories = [], search_term = "")
