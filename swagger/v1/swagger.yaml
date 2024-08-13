@@ -6792,6 +6792,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                   summary: Single success
                   description: When a user requests a single match it is returned
@@ -6816,6 +6817,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                     - meaning: Harassment - injunction
                       ccms_code: DA003
@@ -6825,6 +6827,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                     - meaning: Non-molestation order
                       ccms_code: DA004
@@ -6834,6 +6837,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                   summary: Multiple results
                   description: When searching for a description that matches multiple
