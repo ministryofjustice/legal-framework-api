@@ -1,7 +1,12 @@
 module ProceedingTypes
   class FilterController < ApplicationController
     def index
-      result = ProceedingTypeFilter.call(proceeding_param, category_param, search_term_param)
+      results = ProceedingTypeFilter.call(proceeding_param, category_param, search_term_param)
+      result = if results.empty?
+                 { success: false, data: [] }
+               else
+                 results
+               end
       render json: result.to_json, status: :ok
     end
 
