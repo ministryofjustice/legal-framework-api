@@ -1,7 +1,7 @@
 class DefaultCostLimitation < ApplicationRecord
   belongs_to :proceeding_type
 
-  enum cost_type: {
+  enum :cost_type, {
     delegated_functions: "delegated_functions".freeze,
     substantive: "substantive".freeze,
   }
