@@ -53,6 +53,7 @@ class ProceedingType < ApplicationRecord
       sca_core:,
       sca_related:,
       ccms_category_law:,
+      ccms_category_law_code:,
       ccms_matter_code:,
       ccms_matter:,
     }.as_json
@@ -60,6 +61,10 @@ class ProceedingType < ApplicationRecord
 
   def ccms_category_law
     matter_type.category_of_law
+  end
+
+  def ccms_category_law_code
+    matter_type.category_of_law_code
   end
 
   def ccms_matter_code

@@ -21,6 +21,7 @@ RSpec.describe ProceedingType do
           "sca_core" => proceeding_type.sca_core,
           "sca_related" => proceeding_type.sca_related,
           "ccms_category_law" => proceeding_type.matter_type.category_of_law,
+          "ccms_category_law_code" => proceeding_type.matter_type.category_of_law_code,
           "ccms_matter_code" => proceeding_type.matter_type.code,
           "ccms_matter" => proceeding_type.matter_type.name,
         },

@@ -163,16 +163,15 @@ paths:
     get:
       summary: Show client involvement type for specific proceeding type
       parameters:
-        - name: proceeding_type_ccms_code
-          in: path
-          example: DA001
-          description: Proceeding_type_ccms_code, e.g. DA001
-          required: true
-          schema:
-            type: string
-      description: 
-        Returns an array of client involvement types with summary data for the specified
-        proceeding type.
+      - name: proceeding_type_ccms_code
+        in: path
+        example: DA001
+        description: Proceeding_type_ccms_code, e.g. DA001
+        required: true
+        schema:
+          type: string
+      description: Returns an array of client involvement types with summary data
+        for the specified proceeding type.
       tags:
       - Client involvement types
       responses:
@@ -196,8 +195,8 @@ paths:
                     - ccms_code: Z
                       description: Joined party
                   summary: Successful request
-                  description: Returns an array of all client involvement types with
-                    summary data.
+                  description: Returns an array of client involvement types with summary
+                    data for the specified proceeding type.
   "/countries/all":
     get:
       summary: Get all countries
@@ -5980,6 +5979,72 @@ paths:
               - delegated_functions_used
               - client_involvement_type
               - service_level
+  "/proceeding_types/filter":
+    post:
+      summary: Get available proceeding types dependant on current proceedings, contractual
+        data and search terms
+      description: |-
+        Returns an array of proceeding types with summary data.
+                           Call <code>/proceeding_types/XX999</code> where <code>XX999</code> is the ccms_code for more
+                           detailed data on a specific proceeding type.
+      tags:
+      - Proceeding types
+      parameters: []
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                    success: true
+                    data:
+                    - meaning: Occupation order
+                      ccms_code: DA005
+                      description: to be represented on an application for an occupation
+                        order.
+                      full_s8_only: false
+                      sca_core: false
+                      sca_related: false
+                      ccms_category_law: Family
+                      ccms_matter: Domestic abuse
+                    - continued: "..."
+                  summary: Single success
+                  description: When a user requests a single match it is returned
+                no_matches_found:
+                  value:
+                    success: false
+                    data: []
+                  summary: When only result excluded
+                  description: |
+                    If a user requests a category that is not yet supported the system has not
+                    errored so returns a successful status (200) but an empty array and a success false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_proceedings:
+                  type: array
+                  example:
+                  - DA001
+                  - DA007
+                  - SE013
+                  description: comma separated array of ccms codes to exclude from
+                    search results and provide filter options
+                allowed_categories:
+                  type: array
+                  example:
+                  - MAT
+                  description: comma separated array of category of law codes that
+                    the current user is contractually entitled to
+                search_term:
+                  type: string
+                  example: Occupation
+                  description: search term that should be included in the proceeding
+                    description
   "/proceeding_types/all":
     get:
       summary: Get summary of all proceeding types
@@ -6006,6 +6071,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA002
@@ -6019,6 +6085,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA003
@@ -6029,6 +6096,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA004
@@ -6039,6 +6107,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA005
@@ -6049,6 +6118,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA006
@@ -6059,6 +6129,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA007
@@ -6069,6 +6140,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: DA020
@@ -6080,6 +6152,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: Domestic abuse
                   - ccms_code: SE003
@@ -6090,6 +6163,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE003A
@@ -6100,6 +6174,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE003E
@@ -6110,6 +6185,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE004
@@ -6120,6 +6196,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE004A
@@ -6130,6 +6207,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE004E
@@ -6140,6 +6218,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE007
@@ -6150,6 +6229,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE007A
@@ -6160,6 +6240,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE007E
@@ -6170,6 +6251,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE008
@@ -6180,6 +6262,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE008A
@@ -6190,6 +6273,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE008E
@@ -6200,6 +6284,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE013
@@ -6210,6 +6295,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE013A
@@ -6220,6 +6306,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE013E
@@ -6230,6 +6317,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE014
@@ -6240,6 +6328,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE014A
@@ -6250,6 +6339,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE014E
@@ -6260,6 +6350,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE015
@@ -6270,6 +6361,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE015A
@@ -6281,6 +6373,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE015E
@@ -6292,6 +6385,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE016
@@ -6302,6 +6396,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE016A
@@ -6313,6 +6408,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE016E
@@ -6324,6 +6420,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE095
@@ -6334,6 +6431,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE095A
@@ -6344,6 +6442,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE096E
@@ -6355,6 +6454,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE097
@@ -6366,6 +6466,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE097A
@@ -6377,6 +6478,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE099E
@@ -6389,6 +6491,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE100E
@@ -6401,6 +6504,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE101A
@@ -6412,6 +6516,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: SE101E
@@ -6423,6 +6528,7 @@ paths:
                     sca_core: false
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: Children - section 8
                   - ccms_code: PB003
@@ -6433,6 +6539,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB004
@@ -6443,6 +6550,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB005
@@ -6453,6 +6561,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB006
@@ -6463,6 +6572,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB026
@@ -6473,6 +6583,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB057
@@ -6482,6 +6593,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB059
@@ -6492,6 +6604,7 @@ paths:
                     sca_core: true
                     sca_related: false
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB007
@@ -6502,6 +6615,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB012
@@ -6512,6 +6626,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB014
@@ -6522,6 +6637,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB019
@@ -6532,6 +6648,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB020
@@ -6542,6 +6659,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB021
@@ -6552,6 +6670,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB022
@@ -6562,6 +6681,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB023
@@ -6572,6 +6692,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB024
@@ -6582,6 +6703,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB027
@@ -6592,6 +6714,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB029
@@ -6602,6 +6725,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB030
@@ -6612,6 +6736,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB051
@@ -6622,6 +6747,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   - ccms_code: PB052
@@ -6632,6 +6758,7 @@ paths:
                     sca_core: false
                     sca_related: true
                     ccms_category_law: Family
+                    ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: Special Children Act
                   summary: Successful request
@@ -6665,6 +6792,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                   summary: Single success
                   description: When a user requests a single match it is returned
@@ -6689,6 +6817,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                     - meaning: Harassment - injunction
                       ccms_code: DA003
@@ -6698,6 +6827,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                     - meaning: Non-molestation order
                       ccms_code: DA004
@@ -6707,6 +6837,7 @@ paths:
                       sca_core: false
                       sca_related: false
                       ccms_category_law: Family
+                      ccms_category_law_code: MAT
                       ccms_matter: Domestic abuse
                   summary: Multiple results
                   description: When searching for a description that matches multiple
