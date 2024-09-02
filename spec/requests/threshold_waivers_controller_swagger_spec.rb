@@ -73,7 +73,7 @@ RSpec.describe "threshold_waivers" do
                 gross_income_upper: true,
                 disposable_income_upper: true,
                 capital_upper: true,
-                matter_type: "Domestic abuse",
+                matter_type: "domestic abuse (DA)",
               },
               {
                 ccms_code: "SE004",
@@ -84,7 +84,7 @@ RSpec.describe "threshold_waivers" do
                 gross_income_upper: false,
                 disposable_income_upper: false,
                 capital_upper: false,
-                matter_type: "Children - section 8",
+                matter_type: "section 8 children (S8)",
               },
             ],
           }

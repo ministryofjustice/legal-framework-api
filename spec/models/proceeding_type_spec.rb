@@ -52,7 +52,7 @@ RSpec.describe ProceedingType do
     describe "#matter_type" do
       it "returns the correct matter type record" do
         rec = described_class.find_by(ccms_code: "DA006")
-        expect(rec.matter_type).to eq MatterType.find_by(name: "Domestic abuse")
+        expect(rec.matter_type).to eq MatterType.find_by(name: "domestic abuse (DA)")
       end
     end
 
