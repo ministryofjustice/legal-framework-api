@@ -51,8 +51,8 @@ RSpec.describe "proceeding_types/filter_controller" do
                           full_s8_only: false,
                           sca_core: false,
                           sca_related: false,
-                          ccms_category_law: "Family",
-                          ccms_matter: "Domestic abuse",
+                          ccms_category_law: "family",
+                          ccms_matter: "domestic abuse (DA)",
                         },
                         {
                           continued: "...",
