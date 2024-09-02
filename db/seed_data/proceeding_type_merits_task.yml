@@ -145,9 +145,7 @@
   - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - prohibited_steps
   - why_matter_opposed
@@ -155,6 +153,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE003A"
   questions:
   - opponent_name
@@ -163,9 +164,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - prohibited_steps
   - why_matter_opposed
@@ -173,6 +172,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE003E"
   questions:
   - opponent_name
@@ -181,9 +183,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - prohibited_steps
   - why_matter_opposed
@@ -191,15 +191,16 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE004"
   questions:
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - specific_issue
   - why_matter_opposed
@@ -207,6 +208,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE004A"
   questions:
   - opponent_name
@@ -215,9 +219,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - specific_issue
   - why_matter_opposed
@@ -225,6 +227,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE004E"
   questions:
   - opponent_name
@@ -233,9 +238,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - specific_issue
   - why_matter_opposed
@@ -243,15 +246,16 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE007"
   questions:
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - prohibited_steps
   - why_matter_opposed
@@ -260,6 +264,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE007A"
   questions:
   - opponent_name
@@ -268,9 +275,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - prohibited_steps
   - why_matter_opposed
@@ -279,6 +284,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE007E"
   questions:
   - opponent_name
@@ -287,9 +295,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - prohibited_steps
   - why_matter_opposed
@@ -298,6 +304,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE008"
   questions:
   - opponent_name
@@ -306,9 +315,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - specific_issue
   - why_matter_opposed
@@ -317,6 +324,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE008A"
   questions:
   - opponent_name
@@ -325,9 +335,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - specific_issue
   - why_matter_opposed
@@ -336,6 +344,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE008E"
   questions:
   - opponent_name
@@ -344,9 +355,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - specific_issue
   - why_matter_opposed
@@ -355,21 +364,25 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE013"
   questions:
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: SE013A
   questions:
   - opponent_name
@@ -378,15 +391,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: SE013E
   questions:
   - opponent_name
@@ -395,30 +409,32 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE014"
   questions:
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE014A"
   questions:
   - opponent_name
@@ -427,15 +443,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE014E"
   questions:
   - opponent_name
@@ -444,15 +461,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE015"
   questions:
   - opponent_name
@@ -461,9 +479,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - vary_order
@@ -471,6 +487,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE015A"
   questions:
   - opponent_name
@@ -479,9 +498,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - vary_order
@@ -489,6 +506,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE015E"
   questions:
   - opponent_name
@@ -497,9 +517,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - vary_order
@@ -507,6 +525,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE016"
   questions:
   - opponent_name
@@ -515,9 +536,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - vary_order
@@ -525,6 +544,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE016A"
   questions:
   - opponent_name
@@ -533,9 +555,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - vary_order
@@ -543,6 +563,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE016E"
   questions:
   - opponent_name
@@ -551,9 +574,7 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - vary_order
@@ -561,6 +582,9 @@
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE095"
   questions:
   - opponent_name
@@ -569,15 +593,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE095A"
   questions:
   - opponent_name
@@ -586,15 +611,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE096E"
   questions:
   - opponent_name
@@ -603,15 +629,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE097"
   questions:
   - opponent_name
@@ -620,15 +647,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE097A"
   questions:
   - opponent_name
@@ -637,15 +665,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE099E"
   questions:
   - opponent_name
@@ -654,15 +683,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE100E"
   questions:
   - opponent_name
@@ -671,15 +701,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE101A"
   questions:
   - opponent_name
@@ -688,15 +719,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "SE101E"
   questions:
   - opponent_name
@@ -705,15 +737,16 @@
     - domestic_abuse_summary
   - statement_of_case
   - chances_of_success
-  - children_application
   - laspo
-  - children_proceeding
   - attempts_to_settle
   - why_matter_opposed
   - delegated_functions_on_any_proceeding:
       - nature_of_urgency
   - defendant_on_this_proceeding:
       - opponents_application
+  - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
 - ccms_code: "PB003"
   questions:
     - opponent_name
