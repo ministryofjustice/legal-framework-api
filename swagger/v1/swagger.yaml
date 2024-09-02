@@ -6054,7 +6054,7 @@ paths:
                         full_s8_only: false
                         sca_core: false
                         sca_related: false
-                        ccms_category_law: Family
+                        ccms_category_law: family
                         ccms_matter: domestic abuse (DA)
                       - continued: "..."
                   summary: Single success
@@ -6113,7 +6113,7 @@ paths:
                 success:
                   value:
                     - ccms_code: DA001
-                      meaning: Inherent jurisdiction high court injunction
+                      meaning: Inherent jurisdiction - high court injunction
                       description:
                         to be represented on an application for an injunction,
                         order or declaration under the inherent jurisdiction of the
@@ -6121,7 +6121,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6137,7 +6137,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6149,7 +6149,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6161,7 +6161,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6173,7 +6173,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6185,7 +6185,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6197,7 +6197,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6210,7 +6210,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: MINJN
                       ccms_matter: domestic abuse (DA)
@@ -6222,10 +6222,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE003A
                       meaning: Prohibited Steps Order-Appeal-S8
                       description:
@@ -6234,10 +6234,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE003E
                       meaning: Prohibited Steps Order-Enforcement-S8
                       description:
@@ -6246,10 +6246,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE004
                       meaning: Specific Issue Order
                       description:
@@ -6258,10 +6258,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE004A
                       meaning: Specific Issue Order-Appeal-S8
                       description:
@@ -6270,10 +6270,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE004E
                       meaning: Specific Issue Order-Enforcement-S8
                       description:
@@ -6282,10 +6282,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE007
                       meaning: Vary/Discharge Prohib Steps Order-S8
                       description:
@@ -6294,10 +6294,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE007A
                       meaning: Vary/Discharge Prohib Steps Order-Appeal-S8
                       description:
@@ -6306,10 +6306,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE007E
                       meaning: Vary/Discharge Prohib Steps Order-Enforcement-S8
                       description:
@@ -6318,10 +6318,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE008
                       meaning: Vary/Discharge Specific Issues Ord-S8
                       description:
@@ -6330,10 +6330,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE008A
                       meaning: Vary/Discharge Specific Issues Ord-Appeal-S8
                       description:
@@ -6342,10 +6342,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE008E
                       meaning: Vary/Discharge Specific Issues Ord-Enforcement-S8
                       description:
@@ -6354,10 +6354,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE013
                       meaning: Child arrangements order (contact)
                       description:
@@ -6366,10 +6366,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE013A
                       meaning: CAO contact-Appeal
                       description:
@@ -6378,10 +6378,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE013E
                       meaning: CAO contact-Enforcement
                       description:
@@ -6390,10 +6390,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE014
                       meaning: Child arrangements order (residence)
                       description:
@@ -6402,10 +6402,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE014A
                       meaning: CAO residence-Appeal
                       description:
@@ -6414,10 +6414,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE014E
                       meaning: CAO residence-Enforcement
                       description:
@@ -6426,10 +6426,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE015
                       meaning: Vary CAO contact
                       description:
@@ -6438,10 +6438,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE015A
                       meaning: Vary CAO contact-Appeal
                       description:
@@ -6451,10 +6451,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE015E
                       meaning: Vary CAO contact-Enforcement
                       description:
@@ -6464,10 +6464,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE016
                       meaning: Vary CAO residence
                       description:
@@ -6476,10 +6476,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE016A
                       meaning: Vary CAO residence-Appeal
                       description:
@@ -6489,10 +6489,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE016E
                       meaning: Vary CAO residence-Enforcement
                       description:
@@ -6502,10 +6502,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE095
                       meaning: Enforcement order 11J-S8
                       description:
@@ -6514,10 +6514,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE095A
                       meaning: Enforcement order-Appeal-S8
                       description:
@@ -6526,10 +6526,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE096E
                       meaning: Enforcement order+c’tal-S8
                       description:
@@ -6539,10 +6539,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE097
                       meaning: Revocation enforcement-S8
                       description:
@@ -6552,10 +6552,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE097A
                       meaning: Revocation enforcement-Appeal-S8
                       description:
@@ -6565,10 +6565,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE099E
                       meaning: Amd enforcement-breach-S8
                       description:
@@ -6579,10 +6579,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE100E
                       meaning: Breach enforcement-S8
                       description:
@@ -6593,10 +6593,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE101A
                       meaning: Compensation-Appeal-S8
                       description:
@@ -6606,10 +6606,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: SE101E
                       meaning: Compensation-Enforcement-S8
                       description:
@@ -6619,10 +6619,10 @@ paths:
                       full_s8_only: true
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KSEC8
-                      ccms_matter: Children - section 8
+                      ccms_matter: section 8 children (S8)
                     - ccms_code: PB003
                       meaning: Child assessment order
                       description:
@@ -6631,10 +6631,10 @@ paths:
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB004
                       meaning: Emergency protection order - extend
                       description:
@@ -6643,10 +6643,10 @@ paths:
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB005
                       meaning: Emergency protection order - discharge
                       description:
@@ -6655,10 +6655,10 @@ paths:
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB006
                       meaning: Secure accommodation order
                       description:
@@ -6667,10 +6667,10 @@ paths:
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB026
                       meaning: Emergency protection order
                       description:
@@ -6679,20 +6679,20 @@ paths:
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB057
                       meaning: Care order
                       description: to be represented on an application for a care order
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB059
                       meaning: Supervision order
                       description:
@@ -6701,10 +6701,10 @@ paths:
                       full_s8_only: false
                       sca_core: true
                       sca_related: false
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB007
                       meaning: Contact with a child in care
                       description:
@@ -6713,10 +6713,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB012
                       meaning: Recovery of children order
                       description:
@@ -6725,10 +6725,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB014
                       meaning: End contact with a child in care
                       description:
@@ -6737,10 +6737,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB019
                       meaning: Prohibited steps order
                       description:
@@ -6749,10 +6749,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB020
                       meaning: Specific issue order
                       description:
@@ -6761,10 +6761,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB021
                       meaning: Contact order - vary or discharge
                       description:
@@ -6773,10 +6773,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB022
                       meaning: Residence - vary or discharge
                       description:
@@ -6785,10 +6785,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB023
                       meaning: Prohibited steps order - vary or discharge
                       description:
@@ -6797,10 +6797,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB024
                       meaning: Specific issue order - vary or discharge
                       description:
@@ -6809,10 +6809,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB027
                       meaning: Parental responsibility
                       description:
@@ -6821,10 +6821,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB029
                       meaning: Child arrangements order - contact
                       description:
@@ -6833,10 +6833,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB030
                       meaning: Child arrangements order - residence
                       description:
@@ -6845,10 +6845,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB051
                       meaning: Placement order
                       description:
@@ -6857,10 +6857,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                     - ccms_code: PB052
                       meaning: Special guardianship order
                       description:
@@ -6869,10 +6869,10 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: true
-                      ccms_category_law: Family
+                      ccms_category_law: family
                       ccms_category_law_code: MAT
                       ccms_matter_code: KPBLW
-                      ccms_matter: Special Children Act
+                      ccms_matter: special children act (SCA)
                   summary: Successful request
                   description:
                     Returns an array of all proceeding types with summary
@@ -6906,7 +6906,7 @@ paths:
                         full_s8_only: false
                         sca_core: false
                         sca_related: false
-                        ccms_category_law: Family
+                        ccms_category_law: family
                         ccms_category_law_code: MAT
                         ccms_matter: domestic abuse (DA)
                   summary: Single success
@@ -6923,7 +6923,7 @@ paths:
                   value:
                     success: true
                     data:
-                      - meaning: Inherent jurisdiction high court injunction
+                      - meaning: Inherent jurisdiction - high court injunction
                         ccms_code: DA001
                         description:
                           to be represented on an application for an injunction,
@@ -6932,7 +6932,7 @@ paths:
                         full_s8_only: false
                         sca_core: false
                         sca_related: false
-                        ccms_category_law: Family
+                        ccms_category_law: family
                         ccms_category_law_code: MAT
                         ccms_matter: domestic abuse (DA)
                       - meaning: Harassment - injunction
@@ -6943,7 +6943,7 @@ paths:
                         full_s8_only: false
                         sca_core: false
                         sca_related: false
-                        ccms_category_law: Family
+                        ccms_category_law: family
                         ccms_category_law_code: MAT
                         ccms_matter: domestic abuse (DA)
                       - meaning: Non-molestation order
@@ -6954,7 +6954,7 @@ paths:
                         full_s8_only: false
                         sca_core: false
                         sca_related: false
-                        ccms_category_law: Family
+                        ccms_category_law: family
                         ccms_category_law_code: MAT
                         ccms_matter: domestic abuse (DA)
                   summary: Multiple results
@@ -7040,7 +7040,7 @@ paths:
                         gross_income_upper: false
                         disposable_income_upper: false
                         capital_upper: false
-                        matter_type: Children - section 8
+                        matter_type: section 8 children (S8)
                       - ccms_code: SE013
                         full_s8_only: false
                         sca_core: false
@@ -7048,7 +7048,7 @@ paths:
                         gross_income_upper: false
                         disposable_income_upper: false
                         capital_upper: false
-                        matter_type: Children - section 8
+                        matter_type: section 8 children (S8)
                   summary: Successful request
                   description:
                     Returns the details of threshold waivers for specified
@@ -7128,8 +7128,8 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: Family
-                    ccms_matter: Children - section 8
+                    ccms_category_law: family
+                    ccms_matter: section 8 children (S8)
                     cost_limitations:
                       substantive:
                         start_date: "1970-01-01"
@@ -7222,7 +7222,7 @@ paths:
                         gross_income_upper: false
                         disposable_income_upper: false
                         capital_upper: false
-                        matter_type: Children - section 8
+                        matter_type: section 8 children (S8)
                   summary: Successful request
                   description:
                     Return details of threshold waivers for specified proceeding
