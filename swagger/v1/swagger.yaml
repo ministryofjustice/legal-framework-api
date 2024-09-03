@@ -5832,7 +5832,7 @@ paths:
                       SE004A, SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E,
                       SE013, SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A,
                       SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097,
-                      SE097A, SE099E, SE100E, SE101A, SE101E, PB003, PB004, PB005,
+                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005,
                       PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020,
                       PB021, PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052
                       in schema file://#'
@@ -5968,7 +5968,7 @@ paths:
                       SE004A, SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E,
                       SE013, SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A,
                       SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097,
-                      SE097A, SE099E, SE100E, SE101A, SE101E, PB003, PB004, PB005,
+                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005,
                       PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020,
                       PB021, PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052
                       in schema file://#'
@@ -6494,19 +6494,6 @@ paths:
                     description: to be represented on an application for the revocation
                       of an enforcement order under section 11J and Schedule A1 Children
                       Act 1989.  Appeals only.
-                    full_s8_only: true
-                    sca_core: false
-                    sca_related: false
-                    ccms_category_law: family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE099E
-                    meaning: Amd enforcement-breach-S8
-                    description: to be represented on an application, following breach,
-                      for an amendment to an enforcement order or for a further enforcement
-                      order under section 11J and Schedule A1 Children Act 1989.  Enforcement
-                      only.
                     full_s8_only: true
                     sca_core: false
                     sca_related: false

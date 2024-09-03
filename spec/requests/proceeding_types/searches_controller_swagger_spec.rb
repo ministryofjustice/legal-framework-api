@@ -28,7 +28,7 @@ RSpec.describe "proceeding_types/searches_controller" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 62
+          expect(JSON.parse(response.body).count).to eq 61
         end
       end
     end
