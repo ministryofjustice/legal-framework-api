@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe EligibleScopesService do
   let(:s8_base_pt_codes) { %w[SE003 SE004 SE007 SE008 SE013 SE014 SE015 SE016 SE095 SE097] }
   let(:s8_appeals_pt_codes) { %w[SE003A SE004A SE007A SE008A SE013A SE014A SE015A SE016A SE095A SE097A SE101A] }
-  let(:s8_enforcements_pt_codes) { %w[SE003E SE004E SE007E SE008E SE013E SE014E SE015E SE016E SE096E SE099E SE100E SE101E] }
+  let(:s8_enforcements_pt_codes) { %w[SE003E SE004E SE007E SE008E SE013E SE014E SE015E SE016E SE096E SE100E SE101E] }
   let(:domestic_abuse_pt_codes) { %w[DA001 DA002 DA003 DA004 DA005 DA006 DA007 DA020] }
 
   describe ".default_service_level" do

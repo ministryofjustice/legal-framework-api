@@ -341,15 +341,6 @@
   full_s8_only: true
   sca_core: false
   sca_related: false
-- ccms_code: SE099E
-  meaning: Amd enforcement-breach-S8
-  name: amd_enforcement_breach
-  description: to be represented on an application, following breach, for an amendment to an enforcement order or for a further enforcement order under section 11J and Schedule A1 Children Act 1989.  Enforcement only.
-  matter_type_code: KSEC8
-  additional_search_terms:
-  full_s8_only: true
-  sca_core: false
-  sca_related: false
 - ccms_code: SE100E
   meaning: Enforcement order 11J - amendment following breach
   name: breach_enforcement_s8
