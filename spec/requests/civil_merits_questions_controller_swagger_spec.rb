@@ -148,6 +148,51 @@ RSpec.describe "civil_merits_questions" do
             expect(parsed_response).to eq expected_response
           end
         end
+
+        context "when requesting a family proceeding for a child-subject" do
+          let(:example_data) do
+            {
+              ccms_code: "SE003",
+              delegated_functions_used: true,
+              client_involvement_type: "W",
+            }
+          end
+
+          expected_response =
+            {
+              request_id: "7d47425b-800a-41ef-a917-934acc09b50d",
+              success: true,
+              application: {
+                tasks: {
+                  laspo: [],
+                  nature_of_urgency: [],
+                  opponent_name: [],
+                  opponent_mental_capacity: [],
+                  statement_of_case: [],
+                  why_matter_opposed: [],
+                },
+              },
+              proceedings: [
+                {
+                  ccms_code: "SE003",
+                  tasks: {
+                    attempts_to_settle: [],
+                    chances_of_success: [],
+                    prohibited_steps: [],
+                  },
+                },
+              ],
+            }
+          example "application/json",
+                  :success_child_subject,
+                  expected_response,
+                  "Successful request without involved children questions",
+                  "Request a single proceeding, SE003, for a child subject"
+          run_test! do |response|
+            expect(response).to have_http_status(:success)
+            expect(parsed_response).to eq expected_response
+          end
+        end
       end
 
       response(400, "Bad request") do
