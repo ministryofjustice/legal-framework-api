@@ -100,6 +100,22 @@ RSpec.describe QuestionsService do
       end
     end
 
+    context "when there is a Child Section 8 as Child Subject" do
+      let(:proceedings) do
+        [
+          {
+            ccms_code: "SE013",
+            delegated_functions_used: true,
+            client_involvement_type: "W",
+          },
+        ]
+      end
+
+      it "returns valid response without domestic abuse/non applicant questions" do
+        expect(question_service).to eq expected_se013_child_subject_response
+      end
+    end
+
     describe "Special Children Act questions" do
       context "when there is a sole SCA core proceeding" do
         let(:proceedings) do
@@ -339,6 +355,32 @@ RSpec.describe QuestionsService do
           ccms_code: "DA005",
           tasks: {
             "chances_of_success" => [],
+          },
+        },
+      ],
+    }
+  end
+
+  def expected_se013_child_subject_response
+    {
+      request_id:,
+      success: true,
+      application: {
+        tasks: {
+          "laspo" => [],
+          "nature_of_urgency" => [],
+          "opponent_mental_capacity" => [],
+          "opponent_name" => [],
+          "statement_of_case" => [],
+          "why_matter_opposed" => [],
+        },
+      },
+      proceedings: [
+        {
+          ccms_code: "SE013",
+          tasks: {
+            "chances_of_success" => [],
+            "attempts_to_settle" => [],
           },
         },
       ],
