@@ -192,7 +192,7 @@
   description: to be represented on an application for a child arrangements order-who
     the child(ren) spend time with.
   matter_type_code: KSEC8
-  additional_search_terms: cao
+  additional_search_terms:
   full_s8_only: false
   sca_core: false
   sca_related: false
@@ -220,7 +220,7 @@
   description: to be represented on an application for a child arrangements order
     –where the child(ren) will live
   matter_type_code: KSEC8
-  additional_search_terms: cao
+  additional_search_terms:
   full_s8_only: false
   sca_core: false
   sca_related: false
