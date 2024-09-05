@@ -6027,7 +6027,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: family
+                      ccms_category_law: Family
                       ccms_matter: domestic abuse (DA)
                     - continued: "..."
                   summary: Single success
@@ -6090,7 +6090,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6104,7 +6104,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6115,7 +6115,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6126,7 +6126,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6137,7 +6137,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6148,7 +6148,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6159,7 +6159,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6171,7 +6171,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
@@ -6182,7 +6182,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6193,7 +6193,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6204,7 +6204,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6215,7 +6215,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6226,7 +6226,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6237,7 +6237,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6248,7 +6248,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6259,7 +6259,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6270,7 +6270,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6281,7 +6281,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6292,7 +6292,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6303,7 +6303,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6314,7 +6314,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6325,7 +6325,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6336,7 +6336,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6347,7 +6347,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6358,7 +6358,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6369,7 +6369,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6380,7 +6380,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6392,7 +6392,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6404,7 +6404,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6415,7 +6415,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6427,7 +6427,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6439,7 +6439,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6450,7 +6450,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6461,7 +6461,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6473,7 +6473,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6485,7 +6485,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6497,7 +6497,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6510,7 +6510,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6522,7 +6522,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6534,7 +6534,7 @@ paths:
                     full_s8_only: true
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
@@ -6545,7 +6545,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6556,7 +6556,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6567,7 +6567,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6578,7 +6578,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6589,7 +6589,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6599,7 +6599,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6610,7 +6610,7 @@ paths:
                     full_s8_only: false
                     sca_core: true
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6621,7 +6621,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6632,7 +6632,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6643,7 +6643,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6654,7 +6654,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6665,7 +6665,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6676,7 +6676,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6687,7 +6687,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6698,7 +6698,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6709,7 +6709,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6720,7 +6720,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6731,7 +6731,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6742,7 +6742,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6753,7 +6753,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6764,7 +6764,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: true
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
@@ -6798,7 +6798,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: family
+                      ccms_category_law: Family
                       ccms_category_law_code: MAT
                       ccms_matter: domestic abuse (DA)
                   summary: Single success
@@ -6823,7 +6823,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: family
+                      ccms_category_law: Family
                       ccms_category_law_code: MAT
                       ccms_matter: domestic abuse (DA)
                     - meaning: Harassment - injunction
@@ -6833,7 +6833,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: family
+                      ccms_category_law: Family
                       ccms_category_law_code: MAT
                       ccms_matter: domestic abuse (DA)
                     - meaning: Non-molestation order
@@ -6843,7 +6843,7 @@ paths:
                       full_s8_only: false
                       sca_core: false
                       sca_related: false
-                      ccms_category_law: family
+                      ccms_category_law: Family
                       ccms_category_law_code: MAT
                       ccms_matter: domestic abuse (DA)
                   summary: Multiple results
@@ -7009,7 +7009,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    ccms_category_law: family
+                    ccms_category_law: Family
                     ccms_matter: section 8 children (S8)
                     cost_limitations:
                       substantive:

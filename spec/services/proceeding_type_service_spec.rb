@@ -64,7 +64,7 @@ RSpec.describe ProceedingTypeService do
       full_s8_only: false,
       sca_core: false,
       sca_related: false,
-      ccms_category_law: "family",
+      ccms_category_law: "Family",
       ccms_matter: "domestic abuse (DA)",
       cost_limitations: {
         substantive: {
@@ -118,7 +118,7 @@ RSpec.describe ProceedingTypeService do
       full_s8_only: false,
       sca_core: false,
       sca_related: false,
-      ccms_category_law: "family",
+      ccms_category_law: "Family",
       ccms_matter: "section 8 children (S8)",
       cost_limitations: {
         substantive: {
@@ -173,7 +173,7 @@ RSpec.describe ProceedingTypeService do
       full_s8_only: true,
       sca_core: false,
       sca_related: false,
-      ccms_category_law: "family",
+      ccms_category_law: "Family",
       ccms_matter: "section 8 children (S8)",
       cost_limitations: {
         substantive: {
