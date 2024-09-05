@@ -76,6 +76,26 @@ paths:
                   summary: Successful request with extra questions
                   description: Request a single proceeding, DA001, triggering additional,
                     domestic abuse, questions
+                success_child_subject:
+                  value:
+                    request_id: 7d47425b-800a-41ef-a917-934acc09b50d
+                    success: true
+                    application:
+                      tasks:
+                        laspo: []
+                        nature_of_urgency: []
+                        opponent_name: []
+                        opponent_mental_capacity: []
+                        statement_of_case: []
+                        why_matter_opposed: []
+                    proceedings:
+                    - ccms_code: SE003
+                      tasks:
+                        attempts_to_settle: []
+                        chances_of_success: []
+                        prohibited_steps: []
+                  summary: Successful request without involved children questions
+                  description: Request a single proceeding, SE003, for a child subject
         '400':
           description: Bad request
           content:
