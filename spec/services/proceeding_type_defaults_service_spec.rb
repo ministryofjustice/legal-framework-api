@@ -60,7 +60,7 @@ RSpec.describe ProceedingTypeDefaultsService do
 
     let(:section_8_base) { %w[SE003 SE004 SE007 SE008 SE013 SE014 SE015 SE016 SE095 SE097].sample }
     let(:section_8_appeals) { %w[SE003A SE004A SE007A SE008A SE013A SE014A SE015A SE016A SE095A SE097A SE101A].sample }
-    let(:section_8_enforcements) { %w[SE003E SE004E SE007E SE008E SE013E SE014E SE015E SE016E SE096E SE099E SE100E SE101E].sample }
+    let(:section_8_enforcements) { %w[SE003E SE004E SE007E SE008E SE013E SE014E SE015E SE016E SE096E SE100E SE101E].sample }
     let(:domestic_abuse) { %w[DA001 DA002 DA003 DA004 DA005 DA006 DA007 DA020].sample  }
     let(:cit_a) { "A" }
     let(:cit_not_a) { %w[D I W Z].sample }

@@ -65,7 +65,7 @@ RSpec.describe ProceedingTypeService do
       sca_core: false,
       sca_related: false,
       ccms_category_law: "Family",
-      ccms_matter: "Domestic abuse",
+      ccms_matter: "domestic abuse (DA)",
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",
@@ -119,7 +119,7 @@ RSpec.describe ProceedingTypeService do
       sca_core: false,
       sca_related: false,
       ccms_category_law: "Family",
-      ccms_matter: "Children - section 8",
+      ccms_matter: "section 8 children (S8)",
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",
@@ -165,7 +165,7 @@ RSpec.describe ProceedingTypeService do
     {
       success: true,
       ccms_code: "SE003A",
-      meaning: "Prohibited Steps Order-Appeal-S8",
+      meaning: "Prohibited steps order - appeal",
       ccms_category_law_code: "MAT",
       ccms_matter_code: "KSEC8",
       name: "prohibited_steps_order_appeal_s8",
@@ -174,7 +174,7 @@ RSpec.describe ProceedingTypeService do
       sca_core: false,
       sca_related: false,
       ccms_category_law: "Family",
-      ccms_matter: "Children - section 8",
+      ccms_matter: "section 8 children (S8)",
       cost_limitations: {
         substantive: {
           start_date: "1970-01-01",

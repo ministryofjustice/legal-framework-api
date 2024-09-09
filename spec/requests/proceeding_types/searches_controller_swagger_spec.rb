@@ -28,7 +28,7 @@ RSpec.describe "proceeding_types/searches_controller" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 62
+          expect(JSON.parse(response.body).count).to eq 61
         end
       end
     end
@@ -78,7 +78,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_related: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "domestic abuse (DA)",
                   },
                 ],
             }
@@ -130,7 +130,7 @@ RSpec.describe "proceeding_types/searches_controller" do
               data:
                 [
                   {
-                    meaning: "Inherent jurisdiction high court injunction",
+                    meaning: "Inherent jurisdiction - high court injunction",
                     ccms_code: "DA001",
                     description: "to be represented on an application for an injunction, order or declaration under the inherent jurisdiction of the court.",
                     full_s8_only: false,
@@ -138,7 +138,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_related: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "domestic abuse (DA)",
                   },
                   {
                     meaning: "Harassment - injunction",
@@ -149,7 +149,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_related: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "domestic abuse (DA)",
                   },
                   {
                     meaning: "Non-molestation order",
@@ -160,7 +160,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     sca_related: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
-                    ccms_matter: "Domestic abuse",
+                    ccms_matter: "domestic abuse (DA)",
                   },
                 ],
             }
