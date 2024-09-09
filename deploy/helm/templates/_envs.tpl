@@ -8,12 +8,12 @@ env:
   - name: POSTGRES_USER
     valueFrom:
       secretKeyRef:
-        name: {{ template "app.fullname" . }}
+        name: lfa-secrets
         key: postgresqlUsername
   - name: POSTGRES_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: {{ template "app.fullname" . }}
+        name: lfa-secrets
         key: postgresqlPassword
   - name: POSTGRES_HOST
     value: {{ printf "%s-%s" .Release.Name "postgresql" | trunc 63 | trimSuffix "-" }}
@@ -47,12 +47,12 @@ env:
   - name: SECRET_KEY_BASE
     valueFrom:
       secretKeyRef:
-        name: {{ template "app.fullname" . }}
+        name: lfa-secrets
         key: secretKeyBase
   - name: SENTRY_DSN
     valueFrom:
       secretKeyRef:
-        name: {{ template "app.fullname" . }}
+        name: lfa-secrets
         key: sentryDsn
   - name: RAILS_ENV
     value: production
