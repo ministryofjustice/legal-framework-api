@@ -12,7 +12,7 @@ class MatterTypePopulator
 private
 
   def populate(seed_hash)
-    matter_type(seed_hash["name"]).update!(
+    matter_type(seed_hash["code"]).update!(
       name: seed_hash["name"],
       code: seed_hash["code"],
       category_of_law: seed_hash["category_of_law"],
@@ -20,8 +20,8 @@ private
     )
   end
 
-  def matter_type(name)
-    MatterType.find_by(name:) || MatterType.new
+  def matter_type(code)
+    MatterType.find_by(code:) || MatterType.new
   end
 
   def seed_data
