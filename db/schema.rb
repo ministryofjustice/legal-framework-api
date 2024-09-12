@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_10_072925) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_12_082030) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_10_072925) do
     t.string "category_of_law"
     t.string "code"
     t.string "category_of_law_code"
+    t.index ["code"], name: "index_matter_types_on_code", unique: true
   end
 
   create_table "merits_tasks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
