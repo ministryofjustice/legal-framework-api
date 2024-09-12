@@ -2,6 +2,7 @@
   "seed_data": [
     {
       "matter_type": "domestic abuse (DA)",
+      "ccms_code": "MINJN",
       "client_involvement_type": "A",
       "gross_income_upper": true,
       "disposable_income_upper": true,
