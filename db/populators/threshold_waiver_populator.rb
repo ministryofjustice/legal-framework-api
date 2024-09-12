@@ -22,7 +22,7 @@ private
   end
 
   def find_or_create_threshold_waiver(seed_row)
-    matter_type = MatterType.find_by(name: seed_row[:matter_type])
+    matter_type = MatterType.find_by(code: seed_row[:ccms_code])
     ThresholdWaiver.find_or_create_by!(matter_type:)
   end
 
