@@ -1,1 +1,2 @@
-deploy/helm/values-*.yaml filter=git-crypt diff=git-crypt
+deploy/helm/values-staging.yaml filter=git-crypt diff=git-crypt
+deploy/helm/values-production.yaml filter=git-crypt diff=git-crypt
