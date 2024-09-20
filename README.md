@@ -49,10 +49,6 @@ The deployment is triggered on all builds in [CircleCI](https://circleci.com/gh/
 
 A build is only triggered by Circle CI when a pull request is opened in GitHub, this also applies to `Draft` pull requests.
 
-**NOTE:** **git-crypt** is required to store secrets required for **uat**, **staging** and **production** environments.
-To be able to modify those secrets, **git-crypt** needs to be set up according to the following
-[guide](https://user-guide.cloud-platform.service.justice.gov.uk/tasks.html#git-crypt).
-
 * For more information on howto setup **Helm** in your local environment refer to the following [guide](https://ministryofjustice.github.io/cloud-platform-user-docs/02-deploying-an-app/002-app-deploy-helm/#installing-and-configuring-helm-and-tiller).
 
 ### UAT Deployments
