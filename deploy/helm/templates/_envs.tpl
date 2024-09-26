@@ -18,10 +18,7 @@ env:
   - name: POSTGRES_HOST
     value: {{ printf "%s-%s" .Release.Name "postgresql" | trunc 63 | trimSuffix "-" }}
   - name: POSTGRES_DATABASE
-    valueFrom:
-      secretKeyRef:
-        name: {{ template "app.fullname" . }}
-        key: postgresqlDatabase
+    value: {{ .Values.postgresql.auth.database | quote }}
   {{ else }}
   - name: POSTGRES_USER
     valueFrom:
