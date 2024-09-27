@@ -56,8 +56,5 @@ env:
   - name: RAILS_LOG_TO_STDOUT
     value: 'true'
   - name: HOST
-    valueFrom:
-      secretKeyRef:
-        name: {{ template "app.fullname" . }}
-        key: deployHost
+    value: {{ .Values.deploy.host | quote }}
 {{- end }}
