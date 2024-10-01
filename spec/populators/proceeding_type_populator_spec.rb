@@ -12,7 +12,7 @@ RSpec.describe ProceedingTypePopulator do
     let(:seed_file) { Rails.root.join("db/seed_data/proceeding_types.yml").freeze }
 
     it "create instances from the seed file" do
-      expect { described_class.call }.to change(ProceedingType, :count).by(61)
+      expect { described_class.call }.to change(ProceedingType, :count).by(159)
     end
 
     context "when run twice" do
@@ -20,7 +20,7 @@ RSpec.describe ProceedingTypePopulator do
         expect {
           described_class.call
           described_class.call
-        }.to change(ProceedingType, :count).by(61)
+        }.to change(ProceedingType, :count).by(159)
       end
     end
   end

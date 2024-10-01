@@ -28,7 +28,7 @@ RSpec.describe "proceeding_types/searches_controller" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 61
+          expect(JSON.parse(response.body).count).to eq 159
         end
       end
     end
@@ -150,6 +150,17 @@ RSpec.describe "proceeding_types/searches_controller" do
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
                     ccms_matter: "domestic abuse (DA)",
+                  },
+                  {
+                    meaning: "Injunction under Human rights act 1998",
+                    ccms_code: "PBM44",
+                    description: "to be represented on an appeal to the Judge against a decision of the District Judge or Master in an action between the client and the opponent(s).",
+                    full_s8_only: false,
+                    sca_core: false,
+                    sca_related: false,
+                    ccms_category_law: "Family",
+                    ccms_category_law_code: "MAT",
+                    ccms_matter: "public law family (PLF)",
                   },
                   {
                     meaning: "Non-molestation order",

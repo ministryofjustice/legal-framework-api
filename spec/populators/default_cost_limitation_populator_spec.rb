@@ -20,7 +20,7 @@ RSpec.describe DefaultCostLimitationPopulator do
       # proceeding type should have a single, substantive, DCL and two emergency DCLs
       # This will change if new proceedings are added or additional date changes are added to emergency or substantive grants
       call
-      expect(DefaultCostLimitation.count).to eq 183
+      expect(DefaultCostLimitation.count).to eq 477
     end
 
     context "when a non-default value is set" do

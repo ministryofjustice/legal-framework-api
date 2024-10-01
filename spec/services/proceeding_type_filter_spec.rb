@@ -9,7 +9,7 @@ RSpec.describe ProceedingTypeFilter do
 
   context "when created with blank parameters" do
     it "returns all proceedings excluding sca_related" do
-      expect(proceeding_type_filter.count).to eq 47
+      expect(proceeding_type_filter.count).to eq 145
     end
   end
 
@@ -18,7 +18,7 @@ RSpec.describe ProceedingTypeFilter do
       let(:current_proceedings) { %w[DA001] }
 
       it "returns all proceedings minus the current one and sca_related proceedings" do
-        expect(proceeding_type_filter.count).to eq 39
+        expect(proceeding_type_filter.count).to eq 137
       end
     end
 
@@ -36,7 +36,7 @@ RSpec.describe ProceedingTypeFilter do
       let(:allowed_categories) { %w[MAT] }
 
       it "returns all proceedings excluding sca_related" do
-        expect(proceeding_type_filter.count).to eq 47
+        expect(proceeding_type_filter.count).to eq 145
       end
     end
 
