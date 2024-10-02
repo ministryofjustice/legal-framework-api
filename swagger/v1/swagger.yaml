@@ -75,7 +75,7 @@ paths:
                         opponents_application: []
                   summary: Successful request with extra questions
                   description: Request a single proceeding, DA001, triggering additional,
-                    domestic abuse (DA), questions
+                    domestic abuse, questions
                 success_child_subject:
                   value:
                     request_id: 7d47425b-800a-41ef-a917-934acc09b50d
@@ -5832,10 +5832,21 @@ paths:
                       SE004A, SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E,
                       SE013, SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A,
                       SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097,
-                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005,
-                      PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020,
-                      PB021, PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052
-                      in schema file://#'
+                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005, PB006,
+                      PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020, PB021,
+                      PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052, PBM01,
+                      PBM01A, PBM02, PBM02A, PBM02E, PBM04, PBM04A, PBM04E, PBM05,
+                      PBM05A, PBM05E, PBM06, PBM06A, PBM06E, PBM07, PBM07A, PBM07E,
+                      PBM08, PBM08A, PBM08E, PBM09, PBM09A, PBM09E, PBM10, PBM10A,
+                      PBM11, PBM11A, PBM11E, PBM13, PBM13A, PBM16, PBM16A, PBM16E,
+                      PBM17, PBM17A, PBM17E, PBM18, PBM18A, PBM18E, PBM19, PBM19A,
+                      PBM19E, PBM20, PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22,
+                      PBM22A, PBM23, PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26,
+                      PBM26A, PBM26E, PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29,
+                      PBM29A, PBM29E, PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E,
+                      PBM33, PBM33A, PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A,
+                      PBM36E, PBM37, PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39,
+                      PBM39A, PBM39E, PBM40, PBM40E, PBM45, PBM45E in schema file://#'
                   summary: Unsuccessful request
                   description: When invalid proceeding types are submitted an error
                     will be raised and returned to the users
@@ -5968,10 +5979,21 @@ paths:
                       SE004A, SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E,
                       SE013, SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A,
                       SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097,
-                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005,
-                      PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020,
-                      PB021, PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052
-                      in schema file://#'
+                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005, PB006,
+                      PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020, PB021,
+                      PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052, PBM01,
+                      PBM01A, PBM02, PBM02A, PBM02E, PBM04, PBM04A, PBM04E, PBM05,
+                      PBM05A, PBM05E, PBM06, PBM06A, PBM06E, PBM07, PBM07A, PBM07E,
+                      PBM08, PBM08A, PBM08E, PBM09, PBM09A, PBM09E, PBM10, PBM10A,
+                      PBM11, PBM11A, PBM11E, PBM13, PBM13A, PBM16, PBM16A, PBM16E,
+                      PBM17, PBM17A, PBM17E, PBM18, PBM18A, PBM18E, PBM19, PBM19A,
+                      PBM19E, PBM20, PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22,
+                      PBM22A, PBM23, PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26,
+                      PBM26A, PBM26E, PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29,
+                      PBM29A, PBM29E, PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E,
+                      PBM33, PBM33A, PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A,
+                      PBM36E, PBM37, PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39,
+                      PBM39A, PBM39E, PBM40, PBM40E, PBM45, PBM45E in schema file://#'
                   summary: Bad request
                   description: When a non-existent ccms_code is sent, an error is
                     generated from the json schema and returned
@@ -6083,7 +6105,7 @@ paths:
                 success:
                   value:
                   - ccms_code: DA001
-                    meaning: Inherent jurisdiction high court injunction
+                    meaning: Inherent jurisdiction - high court injunction
                     description: to be represented on an application for an injunction,
                       order or declaration under the inherent jurisdiction of the
                       court.
@@ -6095,8 +6117,8 @@ paths:
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
                   - ccms_code: DA002
-                    meaning: Variation or discharge under section 5 protection from
-                      harassment act 1997
+                    meaning: Protection from harassment act 1997 under section 5 -
+                      vary or discharge
                     description: to be represented on an application to vary or discharge
                       an order under section 5 Protection from Harassment Act 1997
                       where the parties are associated persons (as defined by Part
@@ -6142,7 +6164,7 @@ paths:
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
                   - ccms_code: DA006
-                    meaning: Extend, variation or discharge - Part IV
+                    meaning: Part IV - extend, vary or discharge
                     description: to be represented on an application to extend, vary
                       or discharge an order under Part IV Family Law Act 1996
                     full_s8_only: false
@@ -6164,7 +6186,7 @@ paths:
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
                   - ccms_code: DA020
-                    meaning: FGM Protection Order
+                    meaning: Female genital mutilation (FGM) protection order
                     description: To be represented on an application for a Female
                       Genital Mutilation Protection Order under the Female Genital
                       Mutilation Act.
@@ -6187,7 +6209,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE003A
-                    meaning: Prohibited Steps Order-Appeal-S8
+                    meaning: Prohibited steps order - appeal
                     description: to be represented on an application for a prohibited
                       steps order.  Appeals only.
                     full_s8_only: true
@@ -6198,7 +6220,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE003E
-                    meaning: Prohibited Steps Order-Enforcement-S8
+                    meaning: Prohibited steps order - enforcement
                     description: to be represented on an application for a prohibited
                       steps order.  Enforcement only.
                     full_s8_only: true
@@ -6209,7 +6231,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE004
-                    meaning: Specific Issue Order
+                    meaning: Specific issue order
                     description: to be represented on an application for a specific
                       issue order.
                     full_s8_only: false
@@ -6220,7 +6242,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE004A
-                    meaning: Specific Issue Order-Appeal-S8
+                    meaning: Specific issue order - appeal
                     description: to be represented on an application for a specific
                       issue order.  Appeals only.
                     full_s8_only: true
@@ -6231,7 +6253,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE004E
-                    meaning: Specific Issue Order-Enforcement-S8
+                    meaning: Specific issue order - enforcement
                     description: to be represented on an application for a specific
                       issue order.  Enforcement only.
                     full_s8_only: true
@@ -6242,7 +6264,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE007
-                    meaning: Vary/Discharge Prohib Steps Order-S8
+                    meaning: Prohibited steps order - vary or discharge
                     description: to be represented on an application to vary or discharge
                       a prohibited steps order.
                     full_s8_only: true
@@ -6253,7 +6275,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE007A
-                    meaning: Vary/Discharge Prohib Steps Order-Appeal-S8
+                    meaning: Prohibited steps order - appeal - vary or discharge
                     description: to be represented on an application to vary or discharge
                       a prohibited steps order.  Appeals only.
                     full_s8_only: true
@@ -6264,7 +6286,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE007E
-                    meaning: Vary/Discharge Prohib Steps Order-Enforcement-S8
+                    meaning: Prohibited steps order - enforcement - vary or discharge
                     description: to be represented on an application to vary or discharge
                       a prohibited steps order.  Enforcement only.
                     full_s8_only: true
@@ -6275,7 +6297,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE008
-                    meaning: Vary/Discharge Specific Issues Ord-S8
+                    meaning: Specific issue order - vary or discharge
                     description: to be represented on an application to vary or discharge
                       a specific issue order.
                     full_s8_only: true
@@ -6286,7 +6308,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE008A
-                    meaning: Vary/Discharge Specific Issues Ord-Appeal-S8
+                    meaning: Specific issue order - appeal - vary or discharge
                     description: to be represented on an application to vary or discharge
                       a specific issue order.  Appeals only.
                     full_s8_only: true
@@ -6297,7 +6319,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE008E
-                    meaning: Vary/Discharge Specific Issues Ord-Enforcement-S8
+                    meaning: Specific issue order - enforcement - vary or discharge
                     description: to be represented on an application to vary or discharge
                       a specific issue order.  Enforcement only.
                     full_s8_only: true
@@ -6308,7 +6330,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE013
-                    meaning: Child arrangements order (contact)
+                    meaning: Child arrangements order (CAO) - contact
                     description: to be represented on an application for a child arrangements
                       order-who the child(ren) spend time with.
                     full_s8_only: false
@@ -6319,7 +6341,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE013A
-                    meaning: CAO contact-Appeal
+                    meaning: Child arrangements order (CAO) - contact - appeal
                     description: to be represented on an application for a child arrangements
                       order-who the child(ren) spend time with. Appeals only.
                     full_s8_only: true
@@ -6330,7 +6352,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE013E
-                    meaning: CAO contact-Enforcement
+                    meaning: Child arrangements order (CAO) - contact - enforcement
                     description: to be represented on an application for a child arrangements
                       order-who the child(ren) spend time with. Enforcement only.
                     full_s8_only: true
@@ -6341,7 +6363,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE014
-                    meaning: Child arrangements order (residence)
+                    meaning: Child arrangements order (CAO) - residence
                     description: to be represented on an application for a child arrangements
                       order –where the child(ren) will live
                     full_s8_only: false
@@ -6352,7 +6374,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE014A
-                    meaning: CAO residence-Appeal
+                    meaning: Child arrangements order (CAO) - residence - appeal
                     description: to be represented on an application for a child arrangements
                       order –where the child(ren) will live. Appeals only.
                     full_s8_only: true
@@ -6363,7 +6385,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE014E
-                    meaning: CAO residence-Enforcement
+                    meaning: Child arrangements order (CAO) - residence - enforcement
                     description: to be represented on an application for a child arrangements
                       order –where the child(ren) will live. Enforcement only.
                     full_s8_only: true
@@ -6374,7 +6396,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE015
-                    meaning: Vary CAO contact
+                    meaning: Child arrangements order (CAO) - contact - vary
                     description: to be represented on an application to vary/discharge
                       a child arrangements order-who the child(ren) spend time with.
                     full_s8_only: true
@@ -6385,7 +6407,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE015A
-                    meaning: Vary CAO contact-Appeal
+                    meaning: Child arrangements order (CAO) - contact - appeal - vary
                     description: to be represented on an application to vary/discharge
                       a child arrangements order-who the child(ren) spend time with.
                       Appeals only.
@@ -6397,7 +6419,8 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE015E
-                    meaning: Vary CAO contact-Enforcement
+                    meaning: Child arrangements order (CAO) - contact - enforcement
+                      - vary
                     description: to be represented on an application to vary/discharge
                       a child arrangements order-who the child(ren) spend time with.
                       Enforcement only.
@@ -6409,7 +6432,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE016
-                    meaning: Vary CAO residence
+                    meaning: Child arrangements order (CAO) - residence - vary
                     description: to be represented on an application to vary or discharge
                       a child arrangements order –where the child(ren) will live.
                     full_s8_only: true
@@ -6420,7 +6443,8 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE016A
-                    meaning: Vary CAO residence-Appeal
+                    meaning: Child arrangements order (CAO) - residence - appeal -
+                      vary
                     description: to be represented on an application to vary or discharge
                       a child arrangements order –where the child(ren) will live.
                       Appeals only.
@@ -6432,7 +6456,8 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE016E
-                    meaning: Vary CAO residence-Enforcement
+                    meaning: Child arrangements order (CAO) - residence - enforcement
+                      - vary
                     description: to be represented on an application to vary or discharge
                       a child arrangements order –where the child(ren) will live.
                       Enforcement only.
@@ -6444,7 +6469,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE095
-                    meaning: Enforcement order 11J-S8
+                    meaning: Enforcement order 11J
                     description: to be represented on an application for an enforcement
                       order under section 11J Children Act 1989.  Enforcement only.
                     full_s8_only: true
@@ -6455,7 +6480,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE095A
-                    meaning: Enforcement order-Appeal-S8
+                    meaning: Enforcement order 11J - appeal
                     description: to be represented on an application for an enforcement
                       order under section 11J Children Act 1989.  Appeals only.
                     full_s8_only: true
@@ -6466,7 +6491,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE096E
-                    meaning: Enforcement order+c’tal-S8
+                    meaning: Enforcement order 11J and committal
                     description: to be represented on an application for committal
                       and for an enforcement order under section 11J Children Act
                       1989. Enforcement only.
@@ -6478,7 +6503,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE097
-                    meaning: Revocation enforcement-S8
+                    meaning: Enforcement order 11J - revocation
                     description: to be represented on an application for the revocation
                       of an enforcement order under section 11J and Schedule A1 Children
                       Act 1989.
@@ -6490,7 +6515,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE097A
-                    meaning: Revocation enforcement-Appeal-S8
+                    meaning: Enforcement order 11J - revocation - appeal
                     description: to be represented on an application for the revocation
                       of an enforcement order under section 11J and Schedule A1 Children
                       Act 1989.  Appeals only.
@@ -6502,7 +6527,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE100E
-                    meaning: Breach enforcement-S8
+                    meaning: Enforcement order 11J - amendment following breach
                     description: to be represented on an application, following breach,
                       for an amendment to an enforcement order or for a further enforcement
                       order under section 11J and Schedule A1 Children Act 1989.  Enforcement
@@ -6515,7 +6540,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE101A
-                    meaning: Compensation-Appeal-S8
+                    meaning: Compensation - appeal
                     description: to be represented on an application for compensation
                       for financial loss under section 11O Children Act 1989.  Appeals
                       only.
@@ -6527,7 +6552,7 @@ paths:
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
                   - ccms_code: SE101E
-                    meaning: Compensation-Enforcement-S8
+                    meaning: Compensation - enforcement
                     description: to be represented on an application for compensation
                       for financial loss under section 11O Children Act 1989.  Enforcement
                       only.
@@ -6725,7 +6750,7 @@ paths:
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
                   - ccms_code: PB029
-                    meaning: Child arrangements order - contact
+                    meaning: Child arrangements order (CAO) - contact
                     description: to be represented on an application for a child arrangements
                       order-who the child(ren) spend time with
                     full_s8_only: false
@@ -6736,7 +6761,7 @@ paths:
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
                   - ccms_code: PB030
-                    meaning: Child arrangements order - residence
+                    meaning: Child arrangements order (CAO) - residence
                     description: to be represented on an application for a child arrangements
                       order-where the child(ren) will live
                     full_s8_only: false
@@ -6768,6 +6793,1058 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
+                  - ccms_code: PBM01
+                    meaning: Declaration for overseas adoption
+                    description: to be represented on an application for a declaration
+                      as to an overseas adoption.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM01A
+                    meaning: Declaration for overseas adoption - appeal
+                    description: to be represented on an application for a declaration
+                      as to an overseas adoption.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM02
+                    meaning: Adoption - not being held in family proceedings court
+                    description: to be represented on an application for an adoption
+                      order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM02A
+                    meaning: Adoption order - appeal
+                    description: to be represented on an application for an adoption
+                      order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM02E
+                    meaning: Adoption order - enforcement
+                    description: to be represented on an application for an adoption
+                      order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM04
+                    meaning: Secure accommodation order
+                    description: to be represented on an application for a secure
+                      accommodation order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM04A
+                    meaning: Secure accommodation order - appeal
+                    description: to be represented on an application for a secure
+                      accommodation order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM04E
+                    meaning: Secure accommodation order - enforcement
+                    description: to be represented on an application for a secure
+                      accommodation order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM05
+                    meaning: Contact with a child in care
+                    description: to be represented on an application for contact with
+                      a child in care.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM05A
+                    meaning: Contact with a child in care - appeal
+                    description: to be represented on an application for contact with
+                      a child in care.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM05E
+                    meaning: Contact with a child in care - enforcement
+                    description: to be represented on an application for contact with
+                      a child in care.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM06
+                    meaning: Supervision order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a supervision order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM06A
+                    meaning: Supervision order - appeal - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a supervision order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM06E
+                    meaning: Supervision order - enforcement - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a supervision order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM07
+                    meaning: Care order - discharge
+                    description: to be represented on an application to discharge
+                      a care order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM07A
+                    meaning: Care order - appeal - discharge
+                    description: to be represented on an application to discharge
+                      a care order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM07E
+                    meaning: Care order - enforcement - discharge
+                    description: to be represented on an application to discharge
+                      a care order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM08
+                    meaning: Education supervision order
+                    description: to be represented on an application for an education
+                      supervision order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM08A
+                    meaning: Education supervision order - appeal
+                    description: to be represented on an application for an education
+                      supervision order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM08E
+                    meaning: Education supervision order - enforcement
+                    description: to be represented on an application for an education
+                      supervision order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM09
+                    meaning: Recovery of children order
+                    description: to be represented on an application for the recovery
+                      of a child/children.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM09A
+                    meaning: Recovery of children order - appeal
+                    description: to be represented on an application for the recovery
+                      of a child/children.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM09E
+                    meaning: Recovery of children order - enforcement
+                    description: to be represented on an application for the recovery
+                      of a child/children.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM10
+                    meaning: Child assessment order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a child assessment order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM10A
+                    meaning: Child assessment order - appeal - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a child assessment order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM11
+                    meaning: End contact with a child in care
+                    description: to be represented on an application to terminate
+                      contact with a child/children in care.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM11A
+                    meaning: End contact with a child in care - appeal
+                    description: to be represented on an application to terminate
+                      contact with a child/children in care.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM11E
+                    meaning: End contact with a child in care - enforcement
+                    description: to be represented on an application to terminate
+                      contact with a child/children in care.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM13
+                    meaning: Substitute supervision with care
+                    description: to be represented on an application to substitute
+                      a supervision order with care order under section 39 (4) Children
+                      Act 1989.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM13A
+                    meaning: Substitute supervision with care - appeal
+                    description: to be represented on an application to substitute
+                      a supervision order with care order under section 39 (4) Children
+                      Act 1989. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM16
+                    meaning: Prohibited steps order
+                    description: to be represented on an application for a prohibited
+                      steps order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM16A
+                    meaning: Prohibited steps order - appeal
+                    description: to be represented on an application for a prohibited
+                      steps order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM16E
+                    meaning: Prohibited steps order - enforcement
+                    description: to be represented on an application for a prohibited
+                      steps order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM17
+                    meaning: Specific issue order
+                    description: to be represented on an application for a specific
+                      issue order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM17A
+                    meaning: Specific issue order - appeal
+                    description: to be represented on an application for a specific
+                      issue order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM17E
+                    meaning: Specific issue order - enforcement
+                    description: to be represented on an application for a specific
+                      issue order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM18
+                    meaning: Child arrangements order (CAO) - contact - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a contact order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM18A
+                    meaning: Child arrangements order (CAO) - contact - appeal - vary
+                      or discharge
+                    description: to be represented on an application to vary or discharge
+                      a contact order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM18E
+                    meaning: Child arrangements order (CAO) - contact - enforcement
+                      - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a contact order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM19
+                    meaning: Child arrangements order (CAO) - residence - vary or
+                      discharge
+                    description: to be represented on an application to vary or discharge
+                      a residence order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM19A
+                    meaning: Child arrangements order (CAO) - residence - appeal -
+                      vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a residence order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM19E
+                    meaning: Child arrangements order (CAO) - residence - enforcement
+                      - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a residence order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM20
+                    meaning: Prohibited steps order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM20A
+                    meaning: Prohibited steps order - appeal - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM20E
+                    meaning: Prohibited steps order - enforcement - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM21
+                    meaning: Specific issue order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM21A
+                    meaning: Specific issue order - appeal - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM21E
+                    meaning: Specific issue order - enforcement - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM22
+                    meaning: Parental responsibility
+                    description: to be represented on an application for parental
+                      responsibility.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM22A
+                    meaning: Parental responsibility - appeal
+                    description: to be represented on an application for parental
+                      responsibility.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM23
+                    meaning: Care order
+                    description: to be represented on an application for a care order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM23A
+                    meaning: Care order - appeal
+                    description: to be represented on an application for a care order.
+                      Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM23E
+                    meaning: Care order - enforcement
+                    description: to be represented on an application for a care order.
+                      Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM24
+                    meaning: Supervision order
+                    description: to be represented on an application for a supervision
+                      order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM24A
+                    meaning: Supervision order - appeal
+                    description: to be represented on an application for a supervision
+                      order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM24E
+                    meaning: Supervision order - enforcement
+                    description: to be represented on an application for a supervision
+                      order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM26
+                    meaning: Child assessment order
+                    description: to be represented on an application for a child assessment
+                      order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM26A
+                    meaning: Child assessment order - appeal
+                    description: to be represented on an application for a child assessment
+                      order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM26E
+                    meaning: Child assessment order - enforcement
+                    description: to be represented on an application for a child assessment
+                      order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM27
+                    meaning: Emergency protection order
+                    description: to be represented on an application for or to extend
+                      an emergency protection order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM27A
+                    meaning: Emergency protection order - appeal
+                    description: to be represented on an application for or to extend
+                      an emergency protection order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM27E
+                    meaning: Emergency protection order - enforcement
+                    description: to be represented on an application for or to extend
+                      an emergency protection order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM28
+                    meaning: Emergency protection order - discharge
+                    description: to be represented on an application to discharge
+                      an emergency protection order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM28A
+                    meaning: Emergency protection order - appeal - discharge
+                    description: to be represented on an application to discharge
+                      an emergency protection order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM29
+                    meaning: Exclusion requirement
+                    description: to be represented on an application to vary/discharge
+                      an exclusion requirement.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM29A
+                    meaning: Exclusion requirement - appeal
+                    description: to be represented on an application to vary/discharge
+                      an exclusion requirement.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM29E
+                    meaning: Exclusion requirement - enforcement
+                    description: to be represented on an application to vary/discharge
+                      an exclusion requirement.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM30
+                    meaning: Placement order
+                    description: to be represented on an application for a placement
+                      order
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM30A
+                    meaning: Placement order - appeal
+                    description: to be represented on an application for a placement
+                      order. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM30E
+                    meaning: Placement order - enforcement
+                    description: to be represented on an application for a placement
+                      order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM32
+                    meaning: Special guardianship order
+                    description: to be represented on an application for a Special
+                      Guardianship Order
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM32A
+                    meaning: Special guardianship order - appeal
+                    description: to be represented on an application for a Special
+                      Guardianship Order . Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM32E
+                    meaning: Special guardianship order - enforcement
+                    description: to be represented on an application for a Special
+                      Guardianship Order . Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM33
+                    meaning: Revocation placement order
+                    description: to be represented on an application for revocation
+                      of a placement order
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM33A
+                    meaning: Revocation placement order - appeal
+                    description: to be represented on an application for revocation
+                      of a placement order  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM33E
+                    meaning: Revocation placement order - enforcement
+                    description: to be represented on an application for revocation
+                      of a placement order  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM35
+                    meaning: Special guardianship order - vary or discharge
+                    description: To be represented on an application for variation/discharge
+                      of a special guardianship order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM35A
+                    meaning: Special guardianship order - appeal - vary or discharge
+                    description: To be represented on an application for variation/discharge
+                      of a special guardianship order.  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM35E
+                    meaning: Special guardianship order - enforcement - vary or discharge
+                    description: To be represented on an application for variation/discharge
+                      of a special guardianship order.  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM36
+                    meaning: Care order - joined party
+                    description: to be represented on an application for a care order
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM36A
+                    meaning: Care order - joined party - appeal
+                    description: to be represented on an application for a care order
+                      Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM36E
+                    meaning: Care order - joined party - enforcement
+                    description: to be represented on an application for a care order
+                      Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM37
+                    meaning: Supervision order - joined party
+                    description: to be represented on an application for a supervision
+                      order
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM37A
+                    meaning: Supervision order - joined party - appeal
+                    description: to be represented on an application for a supervision
+                      order  Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM37E
+                    meaning: Supervision order - joined party - enforcement
+                    description: to be represented on an application for a supervision
+                      order  Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM38
+                    meaning: Child arrangements order (CAO) - contact
+                    description: to be represented on an application for a child arrangements
+                      order - who the child(ren) spend time with
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM38A
+                    meaning: Child arrangements order (CAO) - contact - appeal
+                    description: to be represented on an application for a child arrangements
+                      order - who the child(ren) spend time with. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM38E
+                    meaning: Child arrangements order (CAO) - contact - enforcement
+                    description: to be represented on an application for a child arrangements
+                      order - who the child(ren) spend time with. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM39
+                    meaning: Child arrangements order (CAO) - residence
+                    description: to be represented on an application for a child arrangements
+                      order - where the child(ren) will live.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM39A
+                    meaning: Child arrangements order (CAO) - residence - appeal
+                    description: to be represented on an application for a child arrangements
+                      order - where the child(ren) will live. Appeals only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM39E
+                    meaning: Child arrangements order (CAO) - residence - enforcement
+                    description: to be represented on an application for a child arrangements
+                      order - where the child(ren) will live. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM40
+                    meaning: Placement order - parent or parental responsibility
+                    description: To represent a parent or person with parental responsibility
+                      on an application for a placement order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM40E
+                    meaning: Injunction under Human rights act 1998
+                    description: to be represented on an appeal to the Judge against
+                      a decision of the District Judge or Master in an action between
+                      the client and the opponent(s).
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM45
+                    meaning: Declaration of parentage
+                    description: To represent a parent or person with parental responsibility
+                      on an application for an adoption order.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
+                  - ccms_code: PBM45E
+                    meaning: Adoption order - parent or parental responsibility -
+                      enforcement
+                    description: To represent a parent or person with parental responsibility
+                      on an application for a placement order. Enforcement only.
+                    full_s8_only: false
+                    sca_core: false
+                    sca_related: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
                   summary: Successful request
                   description: Returns an array of all proceeding types with summary
                     data
@@ -6815,7 +7892,7 @@ paths:
                   value:
                     success: true
                     data:
-                    - meaning: Inherent jurisdiction high court injunction
+                    - meaning: Inherent jurisdiction - high court injunction
                       ccms_code: DA001
                       description: to be represented on an application for an injunction,
                         order or declaration under the inherent jurisdiction of the
@@ -6836,6 +7913,17 @@ paths:
                       ccms_category_law: Family
                       ccms_category_law_code: MAT
                       ccms_matter: domestic abuse (DA)
+                    - meaning: Injunction under Human rights act 1998
+                      ccms_code: PBM40E
+                      description: to be represented on an appeal to the Judge against
+                        a decision of the District Judge or Master in an action between
+                        the client and the opponent(s).
+                      full_s8_only: false
+                      sca_core: false
+                      sca_related: false
+                      ccms_category_law: Family
+                      ccms_category_law_code: MAT
+                      ccms_matter: public law family (PLF)
                     - meaning: Non-molestation order
                       ccms_code: DA004
                       description: to be represented on an application for a non-molestation
