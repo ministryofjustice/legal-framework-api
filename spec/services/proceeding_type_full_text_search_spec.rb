@@ -50,24 +50,24 @@ RSpec.describe ProceedingTypeFullTextSearch do
     context "when the search term exists in additional_search_terms" do
       let(:search_term) { "injunction" }
 
-      it "returns all three records" do
+      it "returns all four records" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:ccms_code).sort).to eq %w[DA001 DA003 DA004]
+        expect(result_set.map(&:ccms_code).sort).to eq %w[DA001 DA003 DA004 PBM40E]
       end
     end
 
     context "when searching for a term which occurs in more than one proceeding" do
       let(:search_term) { "injunction" }
 
-      it "returns three results" do
+      it "returns four results" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.size).to eq 3
+        expect(result_set.size).to eq 4
       end
 
       it "returns the ones in which the search term appears first; and additional terms matches are last" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:meaning)).to contain_exactly("Harassment - injunction", "Inherent jurisdiction - high court injunction", "Non-molestation order")
-        expect(result_set.map(&:meaning)[2]).to eq "Non-molestation order"
+        expect(result_set.map(&:meaning)).to contain_exactly("Harassment - injunction", "Injunction under Human rights act 1998", "Inherent jurisdiction - high court injunction", "Non-molestation order")
+        expect(result_set.map(&:meaning)[3]).to eq "Non-molestation order"
       end
 
       context "when you send one of the codes as an excluded_term" do
@@ -77,12 +77,12 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
         it "returns two results" do
           result_set = proceeding_type_full_text_search_results
-          expect(result_set.size).to eq 2
+          expect(result_set.size).to eq 3
         end
 
         it "returns the one with the search term in meaning first and excludes the second result" do
           result_set = proceeding_type_full_text_search_results
-          expect(result_set.map(&:meaning)).to eq ["Harassment - injunction", "Non-molestation order"]
+          expect(result_set.map(&:meaning)).to eq ["Harassment - injunction", "Injunction under Human rights act 1998", "Non-molestation order"]
         end
       end
     end
@@ -97,7 +97,12 @@ RSpec.describe ProceedingTypeFullTextSearch do
                                                              "Protection from harassment act 1997 under section 5 - vary or discharge",
                                                              "Emergency protection order",
                                                              "Emergency protection order - discharge",
-                                                             "Emergency protection order - extend")
+                                                             "Emergency protection order - extend",
+                                                             "Emergency protection order",
+                                                             "Emergency protection order - appeal",
+                                                             "Emergency protection order - discharge",
+                                                             "Emergency protection order - appeal - discharge",
+                                                             "Emergency protection order - enforcement")
       end
     end
   end
