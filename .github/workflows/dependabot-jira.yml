@@ -2,13 +2,15 @@ name: Create Jira Ticket
 
 on:
   pull_request:
-    types:
-      - opened
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - test-gajira
 
 jobs:
   create_jira_ticket:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == "dependabot[bot]"
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'dependencies') }}
 
     steps:
       - name: Login
@@ -17,6 +19,12 @@ jobs:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
+      - name: Log PR Author
+        run: echo "PR Author ${{ github.event.pull_request.user.login }}"
+
+      - name: Log PR Label
+        run: echo "PR Label ${{ github.event.pull_request.labels.*.name }}"
 
       - name: Create Jira Ticket
         id: create
