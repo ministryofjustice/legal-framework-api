@@ -10,7 +10,7 @@ on:
 jobs:
   create_jira_ticket:
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'dependencies') }}
+    if: ${{ contains(github.event.pull_request.user.login, 'dependabot') }}
 
     steps:
       - name: Login
