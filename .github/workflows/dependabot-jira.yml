@@ -8,7 +8,7 @@ on:
 jobs:
   create_jira_ticket:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == "dependabot[bot]"
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'dependencies') }}
 
     steps:
       - name: Login
