@@ -8,7 +8,7 @@ on:
 jobs:
   create_jira_ticket:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == "dependabot[bot]"
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'dependencies') }}
 
     steps:
       - name: Login
@@ -24,5 +24,9 @@ jobs:
         with:
           project: AP
           issuetype: Maintenance
-          summary: "Dependabot PR in ${{ github.repository }}: ${{ github.event.pull_request.title }}"
-          description: ${{ github.event.pull_request.body }}
+          summary: "LFA Dependabot PR: ${{ github.event.pull_request.title }}"
+          description: |
+            Please view the PR for further information.
+            PR link: https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}
+
+            In addition, please resolve other issues, if any.
