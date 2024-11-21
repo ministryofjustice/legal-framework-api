@@ -1403,7 +1403,7 @@
   sca_core: false
   sca_related: false
 - ccms_code: PBM45
-  meaning: Declaration of parentage
+  meaning: Adoption order - parent or parental responsibility
   name: declaration_of_parentage
   description: To represent a parent or person with parental responsibility on an application for an adoption order.
   matter_type_code: KPBLB
