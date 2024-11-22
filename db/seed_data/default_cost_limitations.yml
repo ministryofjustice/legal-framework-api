@@ -5,36 +5,17 @@ default:
   delegated_functions:
     '1970-01-01': 1_350
     '2021-09-13': 2_250
-SE003A:
+appeal_default: &appeal_default
   substantive:
     '1970-01-01': 5_000
-SE004A:
-  substantive:
-    '1970-01-01': 5_000
-SE007A:
-  substantive:
-    '1970-01-01': 5_000
-SE008A:
-  substantive:
-    '1970-01-01': 5_000
-SE013A:
-  substantive:
-    '1970-01-01': 5_000
-SE014A:
-  substantive:
-    '1970-01-01': 5_000
-SE015A:
-  substantive:
-    '1970-01-01': 5_000
-SE016A:
-  substantive:
-    '1970-01-01': 5_000
-SE095A:
-  substantive:
-    '1970-01-01': 5_000
-SE097A:
-  substantive:
-    '1970-01-01': 5_000
-SE101A:
-  substantive:
-    '1970-01-01': 5_000
+SE003A: *appeal_default
+SE004A: *appeal_default
+SE007A: *appeal_default
+SE008A: *appeal_default
+SE013A: *appeal_default
+SE014A: *appeal_default
+SE015A: *appeal_default
+SE016A: *appeal_default
+SE095A: *appeal_default
+SE097A: *appeal_default
+SE101A: *appeal_default
