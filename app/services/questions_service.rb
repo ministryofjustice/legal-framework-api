@@ -73,20 +73,36 @@ private
   end
 
   def delegated_functions_on_any_proceeding(_proceeding)
-    @proceedings.any? { |proceeding| proceeding[:delegated_functions_used].to_s == "true" }
+    @proceedings.any? { |p| p[:delegated_functions_used].to_s == "true" }
   end
 
   def delegated_functions_and_domestic_abuse_with_non_applicant(_proceeding)
     @proceedings.any? { |p| p[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) && p[:client_involvement_type] != "A" && p[:delegated_functions_used].to_s == "true" }
   end
 
+  def applicant_or_joined_party_on_this_proceeding(proceeding)
+    applicant_or_joined_party = %w[A Z]
+    match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && applicant_or_joined_party.include?(p[:client_involvement_type]) }
+    match.present?
+  end
+
+  def applicant_on_this_proceeding(proceeding)
+    match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && p[:client_involvement_type] == "A" }
+    match.present?
+  end
+
+  def joined_party_on_this_proceeding(proceeding)
+    match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && p[:client_involvement_type] == "Z" }
+    match.present?
+  end
+
   def defendant_on_this_proceeding(proceeding)
-    match = @proceedings.find { |e| e[:ccms_code] == proceeding.ccms_code && e[:client_involvement_type] == "D" }
+    match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && p[:client_involvement_type] == "D" }
     match.present?
   end
 
   def not_child_subject_for_this_proceeding(proceeding)
-    match = @proceedings.find { |e| e[:ccms_code] == proceeding.ccms_code && e[:client_involvement_type] != "W" }
+    match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && p[:client_involvement_type] != "W" }
     match.present?
   end
 
