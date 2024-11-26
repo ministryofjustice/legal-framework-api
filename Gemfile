@@ -10,7 +10,7 @@ gem "rails", "~> 7.2.2"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.5"
 # Use Puma as the app server
-gem "puma", "~> 6.4"
+gem "puma", "~> 6.5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -24,7 +24,7 @@ gem "puma", "~> 6.4"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
-gem "json-schema", "~> 5.0.1"
+gem "json-schema", "~> 5.1.0"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
