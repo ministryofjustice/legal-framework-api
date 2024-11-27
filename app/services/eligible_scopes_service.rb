@@ -30,7 +30,7 @@ class EligibleScopesService
   end
 
   def default_scope
-    innermost_config[:defaults][cit_key]
+    cit_specific_key || innermost_config.dig(:defaults, :default)
   end
 
   def default_service_level
@@ -55,7 +55,7 @@ private
   end
 
   def innermost_config
-    raise "Invalid Client Involvement Type '#{@client_involvement_type}" unless %w[A D I W Z].freeze.include?(@client_involvement_type)
+    raise "Invalid Client Involvement Type '#{@client_involvement_type}'" unless %w[A D I W Z].freeze.include?(@client_involvement_type)
 
     service_level_config[df_state_key]
   end
@@ -68,7 +68,18 @@ private
     @df_state_key ||= @df_used ? :delegated_functions : :substantive
   end
 
-  def cit_key
-    @cit_key ||= @client_involvement_type == "A" ? :cit_a : :non_cit_a
+  def cit_specific_key
+    innermost_config[:defaults][client_involvement_type_specific]
+  end
+
+  def client_involvement_type_specific
+    case @client_involvement_type
+    when "A"
+      :cit_a
+    when "W"
+      :cit_w
+    else
+      :default
+    end
   end
 end
