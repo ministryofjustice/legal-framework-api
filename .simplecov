@@ -18,8 +18,9 @@ unless ENV["NOCOVERAGE"]
     add_group "Services", "app/services/"
     add_group "Validators", "app/validators/"
 
-    minimum_coverage 100
     enable_coverage :branch
+    primary_coverage :line
+    minimum_coverage branch: 90, line: 100
     refuse_coverage_drop :line, :branch
 
     at_exit do

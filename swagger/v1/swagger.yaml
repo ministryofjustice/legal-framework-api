@@ -217,6 +217,17 @@ paths:
                   summary: Successful request
                   description: Returns an array of client involvement types with summary
                     data for the specified proceeding type.
+        '400':
+          description: bad request
+          content:
+            application/json:
+              examples:
+                bad_request:
+                  value:
+                    success: false
+                    message: 'No such client involvement type: ''foobar'''
+                  summary: Bad request
+                  description: Returns success false and error message
   "/countries/all":
     get:
       summary: Get all countries
