@@ -52,22 +52,22 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
       it "returns all four records" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:ccms_code).sort).to eq %w[DA001 DA003 DA004 PBM40E]
+        expect(result_set.map(&:ccms_code).sort).to eq %w[DA001 DA003 DA004]
       end
     end
 
     context "when searching for a term which occurs in more than one proceeding" do
       let(:search_term) { "injunction" }
 
-      it "returns four results" do
+      it "returns expected results" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.size).to eq 4
+        expect(result_set.size).to eq 3
       end
 
       it "returns the ones in which the search term appears first; and additional terms matches are last" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.map(&:meaning)).to contain_exactly("Harassment - injunction", "Injunction under Human rights act 1998", "Inherent jurisdiction - high court injunction", "Non-molestation order")
-        expect(result_set.map(&:meaning)[3]).to eq "Non-molestation order"
+        expect(result_set.map(&:meaning)).to contain_exactly("Harassment - injunction", "Inherent jurisdiction - high court injunction", "Non-molestation order")
+        expect(result_set.map(&:meaning)[2]).to eq "Non-molestation order"
       end
 
       context "when you send one of the codes as an excluded_term" do
@@ -75,14 +75,14 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
         let(:excluded_codes) { "DA001" }
 
-        it "returns two results" do
+        it "returns expected results" do
           result_set = proceeding_type_full_text_search_results
-          expect(result_set.size).to eq 3
+          expect(result_set.size).to eq 2
         end
 
         it "returns the one with the search term in meaning first and excludes the second result" do
           result_set = proceeding_type_full_text_search_results
-          expect(result_set.map(&:meaning)).to eq ["Harassment - injunction", "Injunction under Human rights act 1998", "Non-molestation order"]
+          expect(result_set.map(&:meaning)).to eq ["Harassment - injunction", "Non-molestation order"]
         end
       end
     end
