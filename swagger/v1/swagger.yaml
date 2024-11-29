@@ -7834,7 +7834,7 @@ paths:
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
                   - ccms_code: PBM45
-                    meaning: Declaration of parentage
+                    meaning: Adoption order - parent or parental responsibility
                     description: To represent a parent or person with parental responsibility
                       on an application for an adoption order.
                     full_s8_only: false
