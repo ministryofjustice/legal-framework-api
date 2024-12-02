@@ -5,36 +5,49 @@ default:
   delegated_functions:
     '1970-01-01': 1_350
     '2021-09-13': 2_250
-SE003A:
+appeal_default: &appeal_default
   substantive:
     '1970-01-01': 5_000
-SE004A:
-  substantive:
-    '1970-01-01': 5_000
-SE007A:
-  substantive:
-    '1970-01-01': 5_000
-SE008A:
-  substantive:
-    '1970-01-01': 5_000
-SE013A:
-  substantive:
-    '1970-01-01': 5_000
-SE014A:
-  substantive:
-    '1970-01-01': 5_000
-SE015A:
-  substantive:
-    '1970-01-01': 5_000
-SE016A:
-  substantive:
-    '1970-01-01': 5_000
-SE095A:
-  substantive:
-    '1970-01-01': 5_000
-SE097A:
-  substantive:
-    '1970-01-01': 5_000
-SE101A:
-  substantive:
-    '1970-01-01': 5_000
+SE003A: *appeal_default
+SE004A: *appeal_default
+SE007A: *appeal_default
+SE008A: *appeal_default
+SE013A: *appeal_default
+SE014A: *appeal_default
+SE015A: *appeal_default
+SE016A: *appeal_default
+SE095A: *appeal_default
+SE097A: *appeal_default
+SE101A: *appeal_default
+PBM01A: *appeal_default
+PBM02A: *appeal_default
+PBM04A: *appeal_default
+PBM05A: *appeal_default
+PBM06A: *appeal_default
+PBM07A: *appeal_default
+PBM08A: *appeal_default
+PBM09A: *appeal_default
+PBM10A: *appeal_default
+PBM11A: *appeal_default
+PBM13A: *appeal_default
+PBM16A: *appeal_default
+PBM17A: *appeal_default
+PBM18A: *appeal_default
+PBM19A: *appeal_default
+PBM20A: *appeal_default
+PBM21A: *appeal_default
+PBM22A: *appeal_default
+PBM23A: *appeal_default
+PBM24A: *appeal_default
+PBM26A: *appeal_default
+PBM27A: *appeal_default
+PBM28A: *appeal_default
+PBM29A: *appeal_default
+PBM30A: *appeal_default
+PBM32A: *appeal_default
+PBM33A: *appeal_default
+PBM35A: *appeal_default
+PBM36A: *appeal_default
+PBM37A: *appeal_default
+PBM38A: *appeal_default
+PBM39A: *appeal_default

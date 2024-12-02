@@ -18,7 +18,7 @@ If changes are made to files in this directory, regenerate the swagger documenta
 
 ### Further reading
 * Developer looking to use the API? - [Click here](docs/development.md)
-
+* Looking to add a new matter type? - [Click here](docs/matter_types.md)
 
 ### Usage
 `/merits_tasks`

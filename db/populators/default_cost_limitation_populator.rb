@@ -13,7 +13,7 @@ class DefaultCostLimitationPopulator
 private
 
   def seed_data
-    @seed_data ||= YAML.load_file(DATA_FILE)
+    @seed_data ||= YAML.load_file(DATA_FILE, aliases: true)
   end
 
   def populate_default_cost_limitations
