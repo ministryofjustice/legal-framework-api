@@ -1394,14 +1394,6 @@
   full_s8_only: false
   sca_core: false
   sca_related: false
-  meaning: Injunction under Human rights act 1998
-  name: injunction_under_humanrights_act
-  description: to be represented on an appeal to the Judge against a decision of the District Judge or Master in an action between the client and the opponent(s).
-  matter_type_code: KPBLB
-  additional_search_terms:
-  full_s8_only: false
-  sca_core: false
-  sca_related: false
 - ccms_code: PBM45
   meaning: Adoption order - parent or parental responsibility
   name: declaration_of_parentage
