@@ -11,6 +11,9 @@ class MeritsTaskPopulator
     nature_of_urgency
     why_matter_opposed
     laspo
+    court_order_copy
+    second_appeal
+    matter_opposed
   ].freeze
 
   PROCEEDING_TYPE_MERITS_TASKS = %w[
@@ -22,6 +25,9 @@ class MeritsTaskPopulator
     opponents_application
     vary_order
     client_relationship_to_proceeding
+    plf_specific_issue
+    plf_vary_order
+    client_child_care_assessment
   ].freeze
 
   def self.call

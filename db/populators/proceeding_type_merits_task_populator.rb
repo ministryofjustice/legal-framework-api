@@ -1,5 +1,9 @@
 class ProceedingTypeMeritsTaskPopulator
-  DATA_FILE = Rails.root.join("db/seed_data/proceeding_type_merits_task.yml").freeze
+  # TODO: AP-5549 - split proceeeding merits tasks to be one per matter type in the
+  # proceeding_type_merits_task directory. This constant can then be the glob
+  # of that directory
+  DATA_FILES = Rails.root.glob("db/seed_data/proceeding_type_merits_task/*.yml")
+                .prepend(Rails.root.join("db/seed_data/proceeding_type_merits_task.yml")).freeze
 
   def self.call
     new.call
@@ -34,6 +38,9 @@ private
   end
 
   def proceeding_type_keys
-    @proceeding_type_keys ||= YAML.load_file(DATA_FILE)
+    @proceeding_type_keys ||=
+      DATA_FILES.each_with_object([]) { |file, arr|
+        arr.append(YAML.load_file(file))
+      }.flatten
   end
 end

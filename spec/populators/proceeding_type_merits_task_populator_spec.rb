@@ -7,7 +7,12 @@ RSpec.describe ProceedingTypeMeritsTaskPopulator do
   describe ".call" do
     subject(:call) { described_class.call }
 
-    let(:proceeding_type_keys) { YAML.load_file(Rails.root.join("db/seed_data/proceeding_type_merits_task.yml")) }
+    let(:proceeding_type_keys) do
+      described_class::DATA_FILES.each_with_object([]) { |file, arr|
+        arr.append(YAML.load_file(file))
+      }.flatten
+    end
+
     let(:seed_count) { proceeding_type_keys.sum { |p| p["questions"].sum { |q| q.is_a?(Hash) ? q.values.flatten.count : 1 } } }
 
     it "deletes all existing records" do

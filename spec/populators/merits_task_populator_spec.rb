@@ -14,6 +14,9 @@ RSpec.describe MeritsTaskPopulator do
       nature_of_urgency
       why_matter_opposed
       laspo
+      court_order_copy
+      second_appeal
+      matter_opposed
     ]
   end
 
@@ -27,6 +30,9 @@ RSpec.describe MeritsTaskPopulator do
       opponents_application
       vary_order
       client_relationship_to_proceeding
+      plf_specific_issue
+      plf_vary_order
+      client_child_care_assessment
     ]
   end
 
@@ -46,7 +52,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "seeds all merits tasks" do
-        expect { call }.to change(MeritsTask, :count).from(0).to(19)
+        expect { call }.to change(MeritsTask, :count).from(0).to(25)
         expect(MeritsTask.pluck(:name)).to match_array(merits_tasks)
       end
     end
@@ -63,7 +69,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "adds the merits tasks to the relevant subclass" do
-        expect { call }.to change(ApplicationTask, :count).from(11).to(12)
+        expect { call }.to change(ApplicationTask, :count).by(1)
         expect(ApplicationTask.pluck(:name)).to include("my_new_task")
       end
     end
@@ -75,7 +81,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "removes the merits tasks that are no longer seeded" do
-        expect { call }.to change(MeritsTask, :count).from(19).to(2)
+        expect { call }.to change(MeritsTask, :count).from(25).to(2)
       end
     end
   end

@@ -9,18 +9,23 @@ RSpec.describe QuestionsService do
       proceedings:,
     }.to_json
   end
+
   let(:request_id) { SecureRandom.uuid }
+
   let(:proceedings) do
     [
       {
         ccms_code:,
-        delegated_functions_used: true,
+        delegated_functions_used:,
         client_involvement_type:,
       },
     ]
   end
+
   let(:ccms_code) { "DA005" }
   let(:client_involvement_type) { "A" }
+  let(:delegated_functions_used) { true }
+  let(:proceeding_tasks_for_ccms_code) { question_service[:proceedings].find { |p| p[:ccms_code] == ccms_code }[:tasks] }
 
   context "when the request succeeds" do
     context "when there is a DA proceeding with CIT of applicant" do
@@ -116,7 +121,7 @@ RSpec.describe QuestionsService do
       end
     end
 
-    describe "Special Children Act questions" do
+    context "with Special Children Act questions" do
       context "when there is a sole SCA core proceeding" do
         let(:proceedings) do
           [
@@ -276,6 +281,235 @@ RSpec.describe QuestionsService do
 
           it "returns the expected questions" do
             expect(question_service).to eq expected_response
+          end
+        end
+      end
+    end
+
+    context "with Public Law Family questions" do
+      context "when base questions only required with Child Subject of proceedings" do
+        let(:ccms_code) { "PBM01" }
+        let(:delegated_functions_used) { false }
+        let(:client_involvement_type) { "W" }
+
+        let(:minimum_expected_response) do
+          {
+            request_id:,
+            success: true,
+            application: {
+              tasks: {
+                "opponent_name" => [],
+                "statement_of_case" => [],
+              },
+            },
+            proceedings: [
+              {
+                ccms_code: "PBM01",
+                tasks: {},
+              },
+            ],
+          }
+        end
+
+        it "has expected public law family base questions" do
+          expect(question_service).to eq(minimum_expected_response)
+        end
+      end
+
+      context "when the client_involvement_type is NOT child subject of the proceedings" do
+        let(:ccms_code) { "PBM01" }
+        let(:delegated_functions_used) { false }
+        let(:client_involvement_type) { "A" }
+
+        it "adds children_application to ApplicationTask" do
+          expect(question_service.dig(:application, :tasks)).to include({ "children_application" => [] })
+        end
+
+        it "adds children_proceeding to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "children_proceeding" => %w[children_application] })
+        end
+      end
+
+      context "when delegated funtions used (i.e. emergency application)" do
+        let(:ccms_code) { "PBM01" }
+        let(:delegated_functions_used) { true }
+
+        it "adds nature_of_urgency to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "nature_of_urgency" => [] })
+        end
+      end
+
+      context "when client involvement type is defendant/respondent" do
+        let(:ccms_code) { "PBM01" }
+        let(:client_involvement_type) { "D" }
+
+        it "adds court_order_copy to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "court_order_copy" => [] })
+        end
+
+        it "adds opponents_application to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "opponents_application" => [] })
+        end
+      end
+
+      context "when proceeding type code is one of the appeal types (suffix of A)" do
+        let(:ccms_code) { "PBM01A" }
+
+        it "adds second_appeal to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "second_appeal" => [] })
+        end
+
+        context "and client involvement type is defendant/respondent" do
+          let(:client_involvement_type) { "D" }
+
+          it "adds court_order_copy to ApplicationTasks" do
+            expect(question_service.dig(:application, :tasks)).to include({ "court_order_copy" => [] })
+          end
+        end
+
+        context "and client involvement type is NOT defendant/respondent" do
+          let(:client_involvement_type) { "A" }
+
+          it "does NOT add court_order_copy to ApplicationTasks" do
+            expect(question_service.dig(:application, :tasks)).not_to include({ "court_order_copy" => [] })
+          end
+        end
+      end
+
+      context "when proceeding type code relates to an Adoption order" do
+        let(:ccms_code) { "PBM45" }
+
+        it "adds matter_opposed to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "matter_opposed" => [] })
+        end
+      end
+
+      context "when proceeding type code relates to an Adoption order - enforcement" do
+        let(:ccms_code) { "PBM45E" }
+
+        it "adds matter_opposed to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "matter_opposed" => [] })
+        end
+      end
+
+      context "when proceeding type code relates to a Placement order" do
+        let(:ccms_code) { "PBM40" }
+
+        it "adds matter_opposed to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "matter_opposed" => [] })
+        end
+      end
+
+      context "when proceeding type code relates to a Placement order - enforcement" do
+        let(:ccms_code) { "PBM40E" }
+
+        it "adds matter_opposed to ApplicationTasks" do
+          expect(question_service.dig(:application, :tasks)).to include({ "matter_opposed" => [] })
+        end
+      end
+
+      context "when client involvement type is applicant" do
+        let(:ccms_code) { "PBM01" }
+        let(:client_involvement_type) { "A" }
+
+        it "adds chances_of_success to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "chances_of_success" => [] })
+        end
+      end
+
+      context "when client involvement type is joined party" do
+        let(:ccms_code) { "PBM01" }
+        let(:client_involvement_type) { "Z" }
+
+        it "adds chances_of_success to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "chances_of_success" => [] })
+        end
+      end
+
+      context "when proceeding type relates to a Specific issue order" do
+        let(:ccms_code) { "PBM17" }
+
+        it "adds plf_specific_issue to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "plf_specific_issue" => [] })
+        end
+      end
+
+      context "when proceeding type relates to a Contact with a child in care" do
+        let(:ccms_code) { "PBM05" }
+
+        it "adds plf_vary_order to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "plf_vary_order" => [] })
+        end
+      end
+
+      context "when proceeding type relates to a Care order - discharge" do
+        let(:ccms_code) { "PBM07" }
+
+        it "adds plf_vary_order to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "plf_vary_order" => [] })
+        end
+
+        context "and client involvement type is Applicant" do
+          let(:client_involvement_type) { "A" }
+
+          it "adds client_child_care_assessment to ProceedingTask" do
+            expect(proceeding_tasks_for_ccms_code).to include({ "client_child_care_assessment" => [] })
+          end
+        end
+
+        context "and client involvement type is NOT Applicant" do
+          let(:client_involvement_type) { "Z" }
+
+          it "does not add client_child_care_assessment to ProceedingTask" do
+            expect(proceeding_tasks_for_ccms_code).not_to include({ "client_child_care_assessment" => [] })
+          end
+        end
+      end
+
+      context "when proceeding type relates to a Revocation placement order" do
+        let(:ccms_code) { "PBM33" }
+
+        it "adds plf_vary_order to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "plf_vary_order" => [] })
+        end
+      end
+
+      context "when proceeding type relates to a Care order" do
+        let(:ccms_code) { "PBM23" }
+
+        context "and client involvement type is Joined party" do
+          let(:client_involvement_type) { "Z" }
+
+          it "adds client_child_care_assessment to ProceedingTask" do
+            expect(proceeding_tasks_for_ccms_code).to include({ "client_child_care_assessment" => [] })
+          end
+        end
+
+        context "and client involvement type is NOT Joined party" do
+          let(:client_involvement_type) { "A" }
+
+          it "does not add client_child_care_assessment to ProceedingTask" do
+            expect(proceeding_tasks_for_ccms_code).not_to include({ "client_child_care_assessment" => [] })
+          end
+        end
+      end
+
+      context "when proceeding type relates to a Special guardianship order" do
+        let(:ccms_code) { "PBM32" }
+
+        context "and client involvement type is Applicant" do
+          let(:client_involvement_type) { "A" }
+
+          it "adds client_child_care_assessment to ProceedingTask" do
+            expect(proceeding_tasks_for_ccms_code).to include({ "client_child_care_assessment" => [] })
+          end
+        end
+
+        context "and client involvement type is NOT Applicant" do
+          let(:client_involvement_type) { "Z" }
+
+          it "does not add client_child_care_assessment to ProceedingTask" do
+            expect(proceeding_tasks_for_ccms_code).not_to include({ "client_child_care_assessment" => [] })
           end
         end
       end
