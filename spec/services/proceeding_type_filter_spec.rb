@@ -29,6 +29,15 @@ RSpec.describe ProceedingTypeFilter do
         expect(proceeding_type_filter.count).to eq 20
       end
     end
+
+    context "and it has a PLF proceeding" do
+      let(:current_proceedings) { %w[PBM04] }
+
+      it "returns only PLF proceedings minus the current one" do
+        expect(proceeding_type_filter.pluck("ccms_matter_code").uniq).to eq %w[KPBLB]
+        expect(proceeding_type_filter.count).to eq 94
+      end
+    end
   end
 
   context "when created with allowed_categories parameter" do
