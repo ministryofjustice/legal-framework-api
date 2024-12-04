@@ -12,6 +12,7 @@ class ProceedingTypeFilter
 
   def call
     configure_sca_proceedings!
+    configure_plf_proceedings!
     reject_current_proceedings!
     reject_categories! unless @allowed_categories.empty?
     @results
@@ -35,6 +36,14 @@ private
     end
   end
 
+  def configure_plf_proceedings!
+    return unless current_proceedings_have_plf
+
+    @results.delete_if do |proceeding|
+      proceeding["ccms_code"] !~ /^PBM/ # if already has an PLF proceeding, exclude all non-PLF proceedings
+    end
+  end
+
   def reject_categories!
     @results.delete_if { |result| !result["ccms_category_law_code"].in?(@allowed_categories) }
   end
@@ -42,6 +51,12 @@ private
   def current_proceedings_have_sca
     @current_proceedings_have_sca ||= ProceedingType.where(ccms_code: @current_proceedings).any? do |proceeding|
       proceeding["sca_core"] || proceeding["sca_related"]
+    end
+  end
+
+  def current_proceedings_have_plf
+    @current_proceedings_have_plf ||= ProceedingType.where(ccms_code: @current_proceedings).any? do |proceeding|
+      proceeding["ccms_code"].match?("^PBM")
     end
   end
 end
