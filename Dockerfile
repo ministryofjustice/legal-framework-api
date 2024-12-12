@@ -1,4 +1,4 @@
-FROM ruby:3.3.5-alpine3.20
+FROM ruby:3.3.6-alpine3.21
 MAINTAINER apply for legal aid team
 
 ENV RAILS_ENV production
