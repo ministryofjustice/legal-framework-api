@@ -187,7 +187,7 @@
     - defendant_on_this_proceeding:
       - opponents_application
       - court_order_copy
-    - plf_specific_issue
+    - specific_issue
 - ccms_code: "PBM18"
   questions:
     - opponent_name

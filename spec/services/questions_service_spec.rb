@@ -429,8 +429,8 @@ RSpec.describe QuestionsService do
       context "when proceeding type relates to a Specific issue order" do
         let(:ccms_code) { "PBM17" }
 
-        it "adds plf_specific_issue to ProceedingTask" do
-          expect(proceeding_tasks_for_ccms_code).to include({ "plf_specific_issue" => [] })
+        it "adds specific_issue to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "specific_issue" => [] })
         end
       end
 
