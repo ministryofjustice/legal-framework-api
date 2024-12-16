@@ -1,0 +1,136 @@
+---
+# special children act matter type proceeding to merits question mappings
+#
+- ccms_code: "PB003"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
+- ccms_code: "PB004"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
+- ccms_code: "PB005"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
+- ccms_code: "PB006"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
+- ccms_code: "PB007"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB012"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB014"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB019"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB020"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB021"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB022"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB023"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB024"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB026"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
+- ccms_code: "PB027"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB029"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB030"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB051"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB052"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+- ccms_code: "PB057"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
+- ccms_code: "PB059"
+  questions:
+    - opponent_name
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+        - client_relationship_to_proceeding
