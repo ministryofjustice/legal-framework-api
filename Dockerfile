@@ -1,5 +1,10 @@
 FROM ruby:3.4.1-alpine3.21
-MAINTAINER apply for legal aid team
+
+LABEL org.opencontainers.image.vendor="Ministry of Justice" \
+      org.opencontainers.image.authors="Apply for civil legal aid team (apply-for-civil-legal-aid@digital.justice.gov.uk)" \
+      org.opencontainers.image.title="Legal Framework API" \
+      org.opencontainers.image.description="API for checking the required information for legal aid applications" \
+      org.opencontainers.image.url="https://github.com/ministryofjustice/legal-framework-api"
 
 ENV RAILS_ENV production
 
