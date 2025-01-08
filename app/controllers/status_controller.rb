@@ -18,8 +18,6 @@ class StatusController < ApplicationController
 private
 
   def database_alive?
-    ActiveRecord::Base.connection.active?
-  rescue PG::ConnectionBad
-    false
+    ActiveRecord::Base.connection.database_exists?
   end
 end
