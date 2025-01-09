@@ -1385,6 +1385,7 @@
   full_s8_only: false
   sca_core: false
   sca_related: false
+  non_means_tested_plf: true
 - ccms_code: PBM40E
   meaning: Placement order - parent or parental responsibility - enforcement
   name: placement_order_parent_or_parental_responsibility_plf_enforcement
@@ -1394,6 +1395,7 @@
   full_s8_only: false
   sca_core: false
   sca_related: false
+  non_means_tested_plf: true
 - ccms_code: PBM45
   meaning: Adoption order - parent or parental responsibility
   name: declaration_of_parentage
@@ -1403,6 +1405,7 @@
   full_s8_only: false
   sca_core: false
   sca_related: false
+  non_means_tested_plf: true
 - ccms_code: PBM45E
   meaning: Adoption order - parent or parental responsibility - enforcement
   name: declaration_of_parentage_enforcement
@@ -1412,3 +1415,4 @@
   full_s8_only: false
   sca_core: false
   sca_related: false
+  non_means_tested_plf: true
