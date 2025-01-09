@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_12_082030) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_09_132817) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -105,6 +105,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_12_082030) do
     t.boolean "full_s8_only", default: false, null: false
     t.boolean "sca_core"
     t.boolean "sca_related"
+    t.boolean "non_means_tested_plf", default: false, null: false
     t.index ["textsearchable"], name: "textsearch_idx", using: :gin
   end
 
