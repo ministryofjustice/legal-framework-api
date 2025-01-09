@@ -42,6 +42,12 @@ private
     @results.delete_if do |proceeding|
       proceeding["ccms_code"] !~ /^PBM/ # if already has an PLF proceeding, exclude all non-PLF proceedings
     end
+
+    return unless current_proceedings_have_non_means_tested_plf
+
+    @results.delete_if do |proceeding|
+      proceeding["non_means_tested_plf"] == false
+    end
   end
 
   def reject_categories!
@@ -58,5 +64,9 @@ private
     @current_proceedings_have_plf ||= ProceedingType.where(ccms_code: @current_proceedings).any? do |proceeding|
       proceeding["ccms_code"].match?("^PBM")
     end
+  end
+
+  def current_proceedings_have_non_means_tested_plf
+    @current_proceedings_have_non_means_tested_plf ||= ProceedingType.where(ccms_code: @current_proceedings, non_means_tested_plf: true).any?
   end
 end
