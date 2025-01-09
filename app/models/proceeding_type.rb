@@ -52,6 +52,7 @@ class ProceedingType < ApplicationRecord
       full_s8_only:,
       sca_core:,
       sca_related:,
+      non_means_tested_plf:,
       ccms_category_law:,
       ccms_category_law_code:,
       ccms_matter_code:,
