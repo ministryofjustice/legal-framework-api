@@ -40,13 +40,10 @@ private
     return unless current_proceedings_have_plf
 
     @results.delete_if do |proceeding|
-      proceeding["ccms_code"] !~ /^PBM/ # if already has an PLF proceeding, exclude all non-PLF proceedings
-    end
-
-    return unless current_proceedings_have_non_means_tested_plf
-
-    @results.delete_if do |proceeding|
-      proceeding["non_means_tested_plf"] == false
+      [
+        proceeding["ccms_code"].match?("^(?!PBM)"), # if already has an PLF proceeding, exclude all non-PLF proceedings
+        remove_means_tested_plf?(proceeding),
+      ].any?
     end
   end
 
@@ -58,6 +55,12 @@ private
     @current_proceedings_have_sca ||= ProceedingType.where(ccms_code: @current_proceedings).any? do |proceeding|
       proceeding["sca_core"] || proceeding["sca_related"]
     end
+  end
+
+  def remove_means_tested_plf?(proceeding)
+    return false unless current_proceedings_have_non_means_tested_plf
+
+    proceeding["non_means_tested_plf"] == false
   end
 
   def current_proceedings_have_plf
