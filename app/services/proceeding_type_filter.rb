@@ -41,8 +41,8 @@ private
 
     @results.delete_if do |proceeding|
       [
-        proceeding["ccms_code"].match?("^(?!PBM)"), # if already has an PLF proceeding, exclude all non-PLF proceedings
-        remove_plf_for_means_tested(proceeding),
+        proceeding_is_not_plf?(proceeding), # if already has an PLF proceeding, exclude all non-PLF proceedings
+        has_means_test_plf_mismatch?(proceeding),
       ].any?
     end
   end
@@ -57,7 +57,11 @@ private
     end
   end
 
-  def remove_plf_for_means_tested(proceeding)
+  def proceeding_is_not_plf?(proceeding)
+    proceeding["ccms_code"].match?("^(?!PBM)")
+  end
+
+  def has_means_test_plf_mismatch?(proceeding)
     proceeding["non_means_tested_plf"] != current_proceedings_have_non_means_tested_plf
   end
 
