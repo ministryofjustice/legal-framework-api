@@ -6,12 +6,13 @@ LABEL org.opencontainers.image.vendor="Ministry of Justice" \
       org.opencontainers.image.description="API for checking the required information for legal aid applications" \
       org.opencontainers.image.url="https://github.com/ministryofjustice/legal-framework-api"
 
-ENV RAILS_ENV production
+ENV RAILS_ENV=production
 
 RUN set -ex
 
 RUN apk --no-cache add --virtual build-dependencies \
                     build-base \
+                    yaml-dev \
                     postgresql-dev \
 && apk --no-cache add postgresql-client
 
@@ -46,7 +47,7 @@ ENV BUILD_DATE=${BUILD_DATE}
 ENV BUILD_TAG=${BUILD_TAG}
 ENV APP_BRANCH=${APP_BRANCH}
 # allow public files to be served
-ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_SERVE_STATIC_FILES=true
 
 USER 1001
 
