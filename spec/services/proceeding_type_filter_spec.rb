@@ -30,12 +30,22 @@ RSpec.describe ProceedingTypeFilter do
       end
     end
 
-    context "and it has a PLF proceeding" do
+    context "and it has a means tested PLF proceeding" do
       let(:current_proceedings) { %w[PBM04] }
 
       it "returns only PLF proceedings minus the current one" do
         expect(proceeding_type_filter.pluck("ccms_matter_code").uniq).to eq %w[KPBLB]
-        expect(proceeding_type_filter.count).to eq 94
+        expect(proceeding_type_filter.count).to eq 90
+      end
+    end
+
+    context "and it has a non means tested PLF proceeding" do
+      let(:current_proceedings) { %w[PBM40] }
+
+      it "returns only the other non means tested PLF proceedings" do
+        expect(proceeding_type_filter.pluck("ccms_matter_code").uniq).to eq %w[KPBLB]
+        expect(proceeding_type_filter.pluck("ccms_code").uniq).to match_array %w[PBM45 PBM40E PBM45E]
+        expect(proceeding_type_filter.count).to eq 3
       end
     end
   end
