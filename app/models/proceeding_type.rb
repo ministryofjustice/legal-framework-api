@@ -16,10 +16,8 @@ class ProceedingType < ApplicationRecord
            class_name: "ProceedingTask"
 
   has_many :default_cost_limitations, dependent: :destroy
-  has_many :proceeding_type_scope_limitations, dependent: :destroy
-  has_many :eligible_scope_limitations, through: :proceeding_type_scope_limitations, source: :scope_limitation
-
   has_many :proceeding_type_service_levels, dependent: :destroy
+
   has_many :service_levels, -> { select("service_levels.*, proceeding_type_service_levels.proceeding_default as proceeding_default") },
            through: :proceeding_type_service_levels,
            source: :service_level
