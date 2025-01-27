@@ -300,6 +300,7 @@ RSpec.describe QuestionsService do
               tasks: {
                 "opponent_name" => [],
                 "statement_of_case" => [],
+                "court_order_copy" => [],
               },
             },
             proceedings: [
@@ -370,8 +371,8 @@ RSpec.describe QuestionsService do
         context "and client involvement type is NOT defendant/respondent" do
           let(:client_involvement_type) { "A" }
 
-          it "does NOT add court_order_copy to ApplicationTasks" do
-            expect(question_service.dig(:application, :tasks)).not_to include({ "court_order_copy" => [] })
+          it "adds court_order_copy to ApplicationTasks" do
+            expect(question_service.dig(:application, :tasks)).to include({ "court_order_copy" => [] })
           end
         end
       end
