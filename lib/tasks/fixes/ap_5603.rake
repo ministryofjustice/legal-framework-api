@@ -1,5 +1,5 @@
 namespace :fixes do
-  desc "Remove an proceeding type"
+  desc "Remove a proceeding type"
   task :remove_proceeding_type, [:ccms_code] => :environment do |_task, args|
     proceeding_type = ProceedingType.find_by(ccms_code: args[:ccms_code])
     puts "----------------------------------------------------------"
@@ -32,7 +32,7 @@ namespace :fixes do
     puts "----------------------------------------------------------"
   end
 
-  desc "AP-55603: remove unused proceeding type SE099E"
+  desc "AP-5603: remove unused proceeding type SE099E"
   task remove_proceeding_type_SE099E: :environment do
     Rake::Task["fixes:remove_proceeding_type"].execute(ccms_code: "SE099E")
   end
