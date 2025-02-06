@@ -37,13 +37,17 @@ private
   end
 
   def configure_plf_proceedings!
-    return unless current_proceedings_have_plf
+    if current_proceedings_have_plf
+      @results.delete_if do |proceeding|
+        [
+          proceeding_is_not_plf?(proceeding), # if already has an PLF proceeding, exclude all non-PLF proceedings
+          has_means_test_plf_mismatch?(proceeding),
+        ].any?
+      end
+    else
+      return if @current_proceedings.empty?
 
-    @results.delete_if do |proceeding|
-      [
-        proceeding_is_not_plf?(proceeding), # if already has an PLF proceeding, exclude all non-PLF proceedings
-        has_means_test_plf_mismatch?(proceeding),
-      ].any?
+      @results.delete_if { |proceeding| proceeding["ccms_code"].match?("^PBM") }
     end
   end
 
