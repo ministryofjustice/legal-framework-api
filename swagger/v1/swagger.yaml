@@ -7994,7 +7994,7 @@ paths:
                     full_s8_only: false
                     sca_core: false
                     sca_related: false
-                    non_means_tested_plf: false
+                    non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB

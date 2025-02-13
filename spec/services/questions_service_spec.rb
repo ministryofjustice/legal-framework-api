@@ -143,6 +143,7 @@ RSpec.describe QuestionsService do
                 tasks: {
                   "opponent_name" => [],
                   "children_application" => [],
+                  "client_relationship_to_children" => [],
                 },
               },
               proceedings: [
@@ -150,7 +151,6 @@ RSpec.describe QuestionsService do
                   ccms_code: "PB003",
                   tasks: {
                     "children_proceeding" => %w[children_application],
-                    "client_relationship_to_proceeding" => [],
                   },
                 },
               ],
@@ -214,6 +214,7 @@ RSpec.describe QuestionsService do
                 tasks: {
                   "opponent_name" => [],
                   "children_application" => [],
+                  "client_relationship_to_children" => [],
                 },
               },
               proceedings: [
@@ -221,7 +222,6 @@ RSpec.describe QuestionsService do
                   ccms_code: "PB003",
                   tasks: {
                     "children_proceeding" => %w[children_application],
-                    "client_relationship_to_proceeding" => [],
                   },
                 },
                 {
