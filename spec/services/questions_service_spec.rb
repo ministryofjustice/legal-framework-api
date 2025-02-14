@@ -438,16 +438,16 @@ RSpec.describe QuestionsService do
       context "when proceeding type relates to a Contact with a child in care" do
         let(:ccms_code) { "PBM05" }
 
-        it "adds plf_vary_order to ProceedingTask" do
-          expect(proceeding_tasks_for_ccms_code).to include({ "plf_vary_order" => [] })
+        it "adds vary_order to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "vary_order" => [] })
         end
       end
 
       context "when proceeding type relates to a Care order - discharge" do
         let(:ccms_code) { "PBM07" }
 
-        it "adds plf_vary_order to ProceedingTask" do
-          expect(proceeding_tasks_for_ccms_code).to include({ "plf_vary_order" => [] })
+        it "adds vary_order to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "vary_order" => [] })
         end
 
         context "and client involvement type is Applicant" do
@@ -470,8 +470,8 @@ RSpec.describe QuestionsService do
       context "when proceeding type relates to a Revocation placement order" do
         let(:ccms_code) { "PBM33" }
 
-        it "adds plf_vary_order to ProceedingTask" do
-          expect(proceeding_tasks_for_ccms_code).to include({ "plf_vary_order" => [] })
+        it "adds vary_order to ProceedingTask" do
+          expect(proceeding_tasks_for_ccms_code).to include({ "vary_order" => [] })
         end
       end
 
