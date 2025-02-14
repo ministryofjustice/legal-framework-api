@@ -57,7 +57,7 @@
     - defendant_on_this_proceeding:
       - opponents_application
     - court_order_copy
-    - plf_vary_order
+    - vary_order
 - ccms_code: "PBM06"
   questions:
     - opponent_name
@@ -86,7 +86,7 @@
     - defendant_on_this_proceeding:
       - opponents_application
     - court_order_copy
-    - plf_vary_order
+    - vary_order
     - applicant_on_this_proceeding:
       - client_child_care_assessment
 - ccms_code: "PBM08"
@@ -388,7 +388,7 @@
     - defendant_on_this_proceeding:
       - opponents_application
     - court_order_copy
-    - plf_vary_order
+    - vary_order
 - ccms_code: "PBM35"
   questions:
     - opponent_name
