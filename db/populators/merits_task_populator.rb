@@ -25,7 +25,6 @@ class MeritsTaskPopulator
     opponents_application
     vary_order
     client_relationship_to_proceeding
-    plf_vary_order
     client_child_care_assessment
   ].freeze
 
