@@ -11,8 +11,9 @@ describe "fixes", type: :task do
     before do
       Rails.application.load_tasks if Rake::Task.tasks.empty?
 
-      # prevent output in test suite
+      # spy on output and prevent output in test suite
       allow($stdout).to receive(:puts)
+      allow($stdout).to receive(:write)
 
       # say yes to any prompted output
       allow($stdin).to receive(:gets).and_return "yes"
@@ -49,6 +50,21 @@ describe "fixes", type: :task do
       it "outputs success message" do
         run
         expect($stdout).to have_received(:puts).with("Deleted proceeding_type SE099E with meaning \"Amd enforcement-breach-S8\"")
+      end
+    end
+
+    context "when cancelled" do
+      before { allow($stdin).to receive(:gets).and_return "foobar" }
+
+      let(:ccms_code) { "SE100E" }
+
+      it "does not delete any proceedings" do
+        expect { run }.not_to change(ProceedingType, :count)
+      end
+
+      it "outputs cancel message" do
+        run
+        expect($stdout).to have_received(:puts).with("Cancelled!")
       end
     end
   end

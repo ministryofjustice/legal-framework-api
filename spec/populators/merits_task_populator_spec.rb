@@ -30,7 +30,6 @@ RSpec.describe MeritsTaskPopulator do
       opponents_application
       vary_order
       client_relationship_to_proceeding
-      plf_specific_issue
       plf_vary_order
       client_child_care_assessment
     ]
@@ -52,7 +51,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "seeds all merits tasks" do
-        expect { call }.to change(MeritsTask, :count).from(0).to(25)
+        expect { call }.to change(MeritsTask, :count).from(0).to(24)
         expect(MeritsTask.pluck(:name)).to match_array(merits_tasks)
       end
     end
@@ -81,7 +80,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "removes the merits tasks that are no longer seeded" do
-        expect { call }.to change(MeritsTask, :count).from(25).to(2)
+        expect { call }.to change(MeritsTask, :count).from(24).to(2)
       end
     end
   end
