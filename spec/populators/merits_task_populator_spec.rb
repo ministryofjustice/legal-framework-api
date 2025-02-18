@@ -14,6 +14,7 @@ RSpec.describe MeritsTaskPopulator do
       nature_of_urgency
       why_matter_opposed
       laspo
+      client_relationship_to_children
       court_order_copy
       second_appeal
       matter_opposed
@@ -29,7 +30,6 @@ RSpec.describe MeritsTaskPopulator do
       prohibited_steps
       opponents_application
       vary_order
-      client_relationship_to_proceeding
       client_child_care_assessment
     ]
   end
