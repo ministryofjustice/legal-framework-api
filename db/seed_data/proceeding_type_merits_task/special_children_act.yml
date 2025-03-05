@@ -7,28 +7,28 @@
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
 - ccms_code: "PB004"
   questions:
     - opponent_name
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
 - ccms_code: "PB005"
   questions:
     - opponent_name
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
 - ccms_code: "PB006"
   questions:
     - opponent_name
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
 - ccms_code: "PB007"
   questions:
     - opponent_name
@@ -89,7 +89,7 @@
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
 - ccms_code: "PB027"
   questions:
     - opponent_name
@@ -126,11 +126,11 @@
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
 - ccms_code: "PB059"
   questions:
     - opponent_name
     - not_child_subject_for_this_proceeding:
         - children_application
         - children_proceeding
-        - client_relationship_to_proceeding
+        - client_relationship_to_children
