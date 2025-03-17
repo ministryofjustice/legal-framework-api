@@ -92,7 +92,6 @@ paths:
                     - ccms_code: SE003
                       tasks:
                         attempts_to_settle: []
-                        chances_of_success: []
                         prohibited_steps: []
                   summary: Successful request without involved children questions
                   description: Request a single proceeding, SE003, for a child subject
@@ -150,8 +149,14 @@ paths:
                         type: string
                         description: A code uniquely identifying the client_involvement_type
                         example: A
+                      substantive_level_of_service:
+                        type: string
+                        description: A code uniquely identifying the substantive level
+                          of service, currently only supports 1 or 3
+                        example: 1
+                        required: false
                     description: Array of CCMS codes, df_used and client involvement
-                      type of proceeding types to  be queried
+                      type of proceeding types to be queried
   "/client_involvement_types":
     get:
       summary: Get all client involvement types
