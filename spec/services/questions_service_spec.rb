@@ -121,6 +121,22 @@ RSpec.describe QuestionsService do
       end
     end
 
+    context "when there is a Child Section 8 proceeding with the client involvement type is Applicant" do
+      let(:proceedings) do
+        [
+          {
+            ccms_code: "SE013",
+            delegated_functions_used: true,
+            client_involvement_type: "A",
+          },
+        ]
+      end
+
+      it "returns valid response without domestic abuse/non applicant questions" do
+        expect(question_service).to eq expected_se013_applicant_response
+      end
+    end
+
     context "with Special Children Act questions" do
       context "when there is a sole SCA core proceeding" do
         let(:proceedings) do
@@ -515,6 +531,23 @@ RSpec.describe QuestionsService do
         end
       end
     end
+
+    context "when there is a S8 proceeding with Applicant and level of service of Family Help Higher" do
+      let(:proceedings) do
+        [
+          {
+            ccms_code: "SE013",
+            delegated_functions_used: true,
+            client_involvement_type: "A",
+            substantive_level_of_service: 1,
+          },
+        ]
+      end
+
+      it "returns valid response without chances of success" do
+        expect(question_service).to eq expected_se013_applicant_with_fhh_response
+      end
+    end
   end
 
   context "when the request fails" do
@@ -596,6 +629,34 @@ RSpec.describe QuestionsService do
     }
   end
 
+  def expected_se013_applicant_response
+    {
+      request_id:,
+      success: true,
+      application: {
+        tasks: {
+          "laspo" => [],
+          "nature_of_urgency" => [],
+          "opponent_mental_capacity" => [],
+          "opponent_name" => [],
+          "statement_of_case" => [],
+          "children_application" => [],
+          "why_matter_opposed" => [],
+        },
+      },
+      proceedings: [
+        {
+          ccms_code: "SE013",
+          tasks: {
+            "chances_of_success" => [],
+            "children_proceeding" => %w[children_application],
+            "attempts_to_settle" => [],
+          },
+        },
+      ],
+    }
+  end
+
   def expected_se013_child_subject_response
     {
       request_id:,
@@ -614,7 +675,33 @@ RSpec.describe QuestionsService do
         {
           ccms_code: "SE013",
           tasks: {
-            "chances_of_success" => [],
+            "attempts_to_settle" => [],
+          },
+        },
+      ],
+    }
+  end
+
+  def expected_se013_applicant_with_fhh_response
+    {
+      request_id:,
+      success: true,
+      application: {
+        tasks: {
+          "laspo" => [],
+          "nature_of_urgency" => [],
+          "opponent_mental_capacity" => [],
+          "opponent_name" => [],
+          "statement_of_case" => [],
+          "children_application" => [],
+          "why_matter_opposed" => [],
+        },
+      },
+      proceedings: [
+        {
+          ccms_code: "SE013",
+          tasks: {
+            "children_proceeding" => %w[children_application],
             "attempts_to_settle" => [],
           },
         },

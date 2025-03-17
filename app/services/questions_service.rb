@@ -86,6 +86,11 @@ private
     match.present?
   end
 
+  def unless_family_help_higher_and_or_child_subject_on_this_proceeding(proceeding)
+    match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && (p[:client_involvement_type] == "W" || p[:substantive_level_of_service] == 1) }
+    match.nil?
+  end
+
   def applicant_on_this_proceeding(proceeding)
     match = @proceedings.find { |p| p[:ccms_code] == proceeding.ccms_code && p[:client_involvement_type] == "A" }
     match.present?
