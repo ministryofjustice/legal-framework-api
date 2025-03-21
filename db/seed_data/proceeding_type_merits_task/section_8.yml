@@ -6,7 +6,8 @@
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - prohibited_steps
@@ -25,7 +26,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - prohibited_steps
@@ -44,7 +46,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - prohibited_steps
@@ -61,7 +64,8 @@
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - specific_issue
@@ -80,7 +84,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - specific_issue
@@ -99,7 +104,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - specific_issue
@@ -116,7 +122,8 @@
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - prohibited_steps
@@ -136,7 +143,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - prohibited_steps
@@ -156,7 +164,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - prohibited_steps
@@ -176,7 +185,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - specific_issue
@@ -196,7 +206,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - specific_issue
@@ -216,7 +227,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - specific_issue
@@ -234,7 +246,8 @@
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -252,7 +265,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -270,7 +284,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -286,7 +301,8 @@
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -304,7 +320,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -322,7 +339,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -340,7 +358,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -359,7 +378,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -378,7 +398,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -397,7 +418,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -416,7 +438,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -435,7 +458,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -454,7 +478,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -472,7 +497,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -490,7 +516,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -508,7 +535,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -526,7 +554,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -544,7 +573,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -562,7 +592,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
@@ -580,7 +611,8 @@
   - at_least_one_domestic_abuse_with_applicant:
     - domestic_abuse_summary
   - statement_of_case
-  - chances_of_success
+  - unless_family_help_higher_and_or_child_subject_on_this_proceeding:
+      - chances_of_success
   - laspo
   - attempts_to_settle
   - why_matter_opposed
