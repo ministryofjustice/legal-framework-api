@@ -13,6 +13,7 @@ resources:
     memory: 125Mi
 
 ingress:
+  className: default-non-prod
   hosts:
     - legal-framework-api-staging.cloud-platform.service.justice.gov.uk
   annotations:
