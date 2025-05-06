@@ -25,3 +25,6 @@ deploy:
 
 postgresql:
   enabled: false
+
+scheduledDowntime:
+  enabled: true
