@@ -14,5 +14,3 @@ updates:
         patterns:
           - "*"
     open-pull-requests-limit: 10
-    reviewers:
-      - "ministryofjustice/laa-apply-for-legal-aid"
