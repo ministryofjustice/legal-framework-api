@@ -56,7 +56,7 @@ references:
     run:
       name: Install ruby gems
       command: |
-        gem install bundler -v 2.2.24
+        gem install bundler -v 2.6.9
         bundle config set --local path 'vendor/bundle'
         bundle config set --local without 'development'
         bundle install --jobs=4 && bundle clean
