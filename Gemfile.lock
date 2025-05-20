@@ -401,7 +401,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.4.2p28
+   ruby 3.4.3p32
 
 BUNDLED WITH
-   2.6.6
+   2.6.9
