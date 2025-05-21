@@ -15,13 +15,13 @@ executors:
           GITHUB_TEAM_NAME_SLUG: laa-apply-for-legal-aid
   linting-executor:
     docker:
-      - image: cimg/ruby:3.4.3-node
+      - image: cimg/ruby:3.4.4-node
         environment:
           RAILS_ENV: test
           TZ: "Europe/London"
   test-executor:
     docker:
-      - image: cimg/ruby:3.4.3-node
+      - image: cimg/ruby:3.4.4-node
         environment:
           RAILS_ENV: test
           PGHOST: localhost
@@ -33,7 +33,7 @@ executors:
           POSTGRES_DB: legal_framework_api_test
   notification-executor:
     docker:
-      - image: 'cibuilds/base:latest'
+      - image: "cibuilds/base:latest"
         environment:
           TERM: dumb
     resource_class: small
@@ -51,7 +51,7 @@ references:
   restore_gems_cache: &restore_gems_cache
     restore_cache:
       keys:
-        - legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.4.3
+        - legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.4.4
   install_gems: &install_gems
     run:
       name: Install ruby gems
@@ -62,7 +62,7 @@ references:
         bundle install --jobs=4 && bundle clean
   save_gems_cache: &save_gems_cache
     save_cache:
-      key: legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.4.3
+      key: legal-framework-api-{{ checksum "Gemfile.lock" }}-v3.4.4
       paths:
         - vendor/bundle
   install_packages_for_testing: &install_packages_for_testing
@@ -115,7 +115,7 @@ jobs:
       - *save_gems_cache
       - run:
           name: Run Rubocop
-          command:  bundle exec rubocop
+          command: bundle exec rubocop
   unit_tests:
     executor: test-executor
     steps:
