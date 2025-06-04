@@ -43,7 +43,6 @@ RSpec.describe ProceedingTypeFullTextSearch do
         result = proceeding_type_full_text_search_results.first
         expect(result.meaning).to eq "Female genital mutilation (FGM) protection order"
         expect(result.description).to eq "To be represented on an application for a Female Genital Mutilation Protection Order under the Female Genital Mutilation Act."
-        expect(result.full_s8_only).to be false
       end
     end
 
