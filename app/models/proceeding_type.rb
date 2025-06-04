@@ -47,7 +47,6 @@ class ProceedingType < ApplicationRecord
       ccms_code:,
       meaning:,
       description:,
-      full_s8_only:,
       sca_core:,
       sca_related:,
       non_means_tested_plf:,
