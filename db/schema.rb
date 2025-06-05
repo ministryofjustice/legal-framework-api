@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_09_132817) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_04_130310) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
-  enable_extension "plpgsql"
 
   create_table "countries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "code", null: false
@@ -102,7 +102,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_09_132817) do
     t.string "additional_search_terms"
     t.tsvector "textsearchable"
     t.string "name", default: "default_name", null: false
-    t.boolean "full_s8_only", default: false, null: false
     t.boolean "sca_core"
     t.boolean "sca_related"
     t.boolean "non_means_tested_plf", default: false, null: false

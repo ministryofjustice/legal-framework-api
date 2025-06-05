@@ -6,7 +6,6 @@
     under the inherent jurisdiction of the court.
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA002
@@ -17,7 +16,6 @@
     persons (as defined by Part IV Family Law Act 1996).
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA003
@@ -27,7 +25,6 @@
     from Harassment Act 1997.
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA004
@@ -36,7 +33,6 @@
   description: to be represented on an application for a non-molestation order.
   matter_type_code: MINJN
   additional_search_terms: harassment,injunction
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA005
@@ -45,7 +41,6 @@
   description: to be represented on an application for an occupation order.
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA006
@@ -55,7 +50,6 @@
     order under Part IV Family Law Act 1996
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA007
@@ -65,7 +59,6 @@
     order
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: DA020
@@ -75,7 +68,6 @@
     Protection Order under the Female Genital Mutilation Act.
   matter_type_code: MINJN
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: SE003
@@ -84,7 +76,6 @@
   description: to be represented on an application for a prohibited steps order.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: SE003A
@@ -93,7 +84,6 @@
   description: to be represented on an application for a prohibited steps order.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE003E
@@ -102,7 +92,6 @@
   description: to be represented on an application for a prohibited steps order.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE004
@@ -111,7 +100,6 @@
   description: to be represented on an application for a specific issue order.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: SE004A
@@ -120,7 +108,6 @@
   description: to be represented on an application for a specific issue order.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE004E
@@ -129,7 +116,6 @@
   description: to be represented on an application for a specific issue order.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE007
@@ -138,7 +124,6 @@
   description: to be represented on an application to vary or discharge a prohibited steps order.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE007A
@@ -147,7 +132,6 @@
   description: to be represented on an application to vary or discharge a prohibited steps order.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE007E
@@ -156,7 +140,6 @@
   description: to be represented on an application to vary or discharge a prohibited steps order.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE008
@@ -165,7 +148,6 @@
   description: to be represented on an application to vary or discharge a specific issue order.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE008A
@@ -174,7 +156,6 @@
   description: to be represented on an application to vary or discharge a specific issue order.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE008E
@@ -183,7 +164,6 @@
   description: to be represented on an application to vary or discharge a specific issue order.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE013
@@ -193,7 +173,6 @@
     the child(ren) spend time with.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: SE013A
@@ -202,7 +181,6 @@
   description: to be represented on an application for a child arrangements order-who the child(ren) spend time with. Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE013E
@@ -211,7 +189,6 @@
   description: to be represented on an application for a child arrangements order-who the child(ren) spend time with. Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE014
@@ -221,7 +198,6 @@
     –where the child(ren) will live
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: SE014A
@@ -230,7 +206,6 @@
   description: to be represented on an application for a child arrangements order –where the child(ren) will live. Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE014E
@@ -239,7 +214,6 @@
   description: to be represented on an application for a child arrangements order –where the child(ren) will live. Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE015
@@ -248,7 +222,6 @@
   description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE015A
@@ -257,7 +230,6 @@
   description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with. Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE015E
@@ -266,7 +238,6 @@
   description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with. Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE016
@@ -275,7 +246,6 @@
   description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE016A
@@ -284,7 +254,6 @@
   description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live. Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE016E
@@ -293,7 +262,6 @@
   description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live. Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE095
@@ -302,7 +270,6 @@
   description: to be represented on an application for an enforcement order under section 11J Children Act 1989.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE095A
@@ -311,7 +278,6 @@
   description: to be represented on an application for an enforcement order under section 11J Children Act 1989.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE096E
@@ -320,7 +286,6 @@
   description: to be represented on an application for committal and for an enforcement order under section 11J Children Act 1989. Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE097
@@ -329,7 +294,6 @@
   description: to be represented on an application for the revocation of an enforcement order under section 11J and Schedule A1 Children Act 1989.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE097A
@@ -338,7 +302,6 @@
   description: to be represented on an application for the revocation of an enforcement order under section 11J and Schedule A1 Children Act 1989.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE100E
@@ -347,7 +310,6 @@
   description: to be represented on an application, following breach, for an amendment to an enforcement order or for a further enforcement order under section 11J and Schedule A1 Children Act 1989.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE101A
@@ -356,7 +318,6 @@
   description: to be represented on an application for compensation for financial loss under section 11O Children Act 1989.  Appeals only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: SE101E
@@ -365,7 +326,6 @@
   description: to be represented on an application for compensation for financial loss under section 11O Children Act 1989.  Enforcement only.
   matter_type_code: KSEC8
   additional_search_terms:
-  full_s8_only: true
   sca_core: false
   sca_related: false
 - ccms_code: PB003
@@ -374,7 +334,6 @@
   description: to be represented on an application for a child assessment order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB004
@@ -383,7 +342,6 @@
   description: to be represented on an application for or to extend an emergency protection order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB005
@@ -392,7 +350,6 @@
   description: to be represented on an application to discharge an emergency protection order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB006
@@ -401,7 +358,6 @@
   description: to be represented on an application for a secure accommodation order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB026
@@ -410,7 +366,6 @@
   description: to be represented on an application for an emergency protection order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB057
@@ -419,7 +374,6 @@
   description: to be represented on an application for a care order
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB059
@@ -428,7 +382,6 @@
   description: to be represented on an application for a supervision order
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: true
   sca_related: false
 - ccms_code: PB007
@@ -437,7 +390,6 @@
   description: to be represented on an application for contact with a child in care.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB012
@@ -446,7 +398,6 @@
   description: to be represented on an application for the recovery of a child(ren).
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB014
@@ -455,7 +406,6 @@
   description: to be represented on an application to terminate contact with a child/children in care.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB019
@@ -464,7 +414,6 @@
   description: to be represented on an application for a prohibited steps order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB020
@@ -473,7 +422,6 @@
   description: to be represented on an application for a specific issue order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB021
@@ -482,7 +430,6 @@
   description: to be represented on an application to vary or discharge a contact order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB022
@@ -491,7 +438,6 @@
   description: to be represented on an application to vary or discharge a residence order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB023
@@ -500,7 +446,6 @@
   description: to be represented on an application to vary or discharge a prohibitive steps order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB024
@@ -509,7 +454,6 @@
   description: to be represented on an application to vary or discharge a specific issues order.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB027
@@ -518,7 +462,6 @@
   description: to be represented on an application for parental responsibility.
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB029
@@ -527,7 +470,6 @@
   description: to be represented on an application for a child arrangements order-who the child(ren) spend time with
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB030
@@ -536,7 +478,6 @@
   description: to be represented on an application for a child arrangements order-where the child(ren) will live
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB051
@@ -545,7 +486,6 @@
   description: to be represented on an application for a placement order .
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PB052
@@ -554,7 +494,6 @@
   description: to be represented on an application for a Special Guardianship Order .
   matter_type_code: KPBLW
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: true
 - ccms_code: PBM01
@@ -563,7 +502,6 @@
   description: to be represented on an application for a declaration as to an overseas adoption.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM01A
@@ -572,7 +510,6 @@
   description: to be represented on an application for a declaration as to an overseas adoption.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM02
@@ -581,7 +518,6 @@
   description: to be represented on an application for an adoption order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM02A
@@ -590,7 +526,6 @@
   description: to be represented on an application for an adoption order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM02E
@@ -599,7 +534,6 @@
   description: to be represented on an application for an adoption order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM04
@@ -608,7 +542,6 @@
   description: to be represented on an application for a secure accommodation order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM04A
@@ -617,7 +550,6 @@
   description: to be represented on an application for a secure accommodation order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM04E
@@ -626,7 +558,6 @@
   description: to be represented on an application for a secure accommodation order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM05
@@ -635,7 +566,6 @@
   description: to be represented on an application for contact with a child in care.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM05A
@@ -644,7 +574,6 @@
   description: to be represented on an application for contact with a child in care.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM05E
@@ -653,7 +582,6 @@
   description: to be represented on an application for contact with a child in care.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM06
@@ -662,7 +590,6 @@
   description: to be represented on an application to vary or discharge a supervision order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM06A
@@ -671,7 +598,6 @@
   description: to be represented on an application to vary or discharge a supervision order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM06E
@@ -680,7 +606,6 @@
   description: to be represented on an application to vary or discharge a supervision order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM07
@@ -689,7 +614,6 @@
   description: to be represented on an application to discharge a care order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM07A
@@ -698,7 +622,6 @@
   description: to be represented on an application to discharge a care order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM07E
@@ -707,7 +630,6 @@
   description: to be represented on an application to discharge a care order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM08
@@ -716,7 +638,6 @@
   description: to be represented on an application for an education supervision order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM08A
@@ -725,7 +646,6 @@
   description: to be represented on an application for an education supervision order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM08E
@@ -734,7 +654,6 @@
   description: to be represented on an application for an education supervision order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM09
@@ -743,7 +662,6 @@
   description: to be represented on an application for the recovery of a child/children.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM09A
@@ -752,7 +670,6 @@
   description: to be represented on an application for the recovery of a child/children.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM09E
@@ -761,7 +678,6 @@
   description: to be represented on an application for the recovery of a child/children.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM10
@@ -770,7 +686,6 @@
   description: to be represented on an application to vary or discharge a child assessment order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM10A
@@ -779,7 +694,6 @@
   description: to be represented on an application to vary or discharge a child assessment order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM11
@@ -788,7 +702,6 @@
   description: to be represented on an application to terminate contact with a child/children in care.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM11A
@@ -797,7 +710,6 @@
   description: to be represented on an application to terminate contact with a child/children in care.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM11E
@@ -806,7 +718,6 @@
   description: to be represented on an application to terminate contact with a child/children in care.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM13
@@ -815,7 +726,6 @@
   description: to be represented on an application to substitute a supervision order with care order under section 39 (4) Children Act 1989.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM13A
@@ -824,7 +734,6 @@
   description: to be represented on an application to substitute a supervision order with care order under section 39 (4) Children Act 1989. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM16
@@ -833,7 +742,6 @@
   description: to be represented on an application for a prohibited steps order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM16A
@@ -842,7 +750,6 @@
   description: to be represented on an application for a prohibited steps order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM16E
@@ -851,7 +758,6 @@
   description: to be represented on an application for a prohibited steps order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM17
@@ -860,7 +766,6 @@
   description: to be represented on an application for a specific issue order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM17A
@@ -869,7 +774,6 @@
   description: to be represented on an application for a specific issue order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM17E
@@ -878,7 +782,6 @@
   description: to be represented on an application for a specific issue order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM18
@@ -887,7 +790,6 @@
   description: to be represented on an application to vary or discharge a contact order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM18A
@@ -896,7 +798,6 @@
   description: to be represented on an application to vary or discharge a contact order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM18E
@@ -905,7 +806,6 @@
   description: to be represented on an application to vary or discharge a contact order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM19
@@ -914,7 +814,6 @@
   description: to be represented on an application to vary or discharge a residence order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM19A
@@ -923,7 +822,6 @@
   description: to be represented on an application to vary or discharge a residence order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM19E
@@ -932,7 +830,6 @@
   description: to be represented on an application to vary or discharge a residence order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM20
@@ -941,7 +838,6 @@
   description: to be represented on an application to vary or discharge a prohibited steps order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM20A
@@ -950,7 +846,6 @@
   description: to be represented on an application to vary or discharge a prohibited steps order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM20E
@@ -959,7 +854,6 @@
   description: to be represented on an application to vary or discharge a prohibited steps order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM21
@@ -968,7 +862,6 @@
   description: to be represented on an application to vary or discharge a specific issue order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM21A
@@ -977,7 +870,6 @@
   description: to be represented on an application to vary or discharge a specific issue order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM21E
@@ -986,7 +878,6 @@
   description: to be represented on an application to vary or discharge a specific issue order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM22
@@ -995,7 +886,6 @@
   description: to be represented on an application for parental responsibility.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM22A
@@ -1004,7 +894,6 @@
   description: to be represented on an application for parental responsibility.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM23
@@ -1013,7 +902,6 @@
   description: to be represented on an application for a care order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM23A
@@ -1022,7 +910,6 @@
   description: to be represented on an application for a care order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM23E
@@ -1031,7 +918,6 @@
   description: to be represented on an application for a care order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM24
@@ -1040,7 +926,6 @@
   description: to be represented on an application for a supervision order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM24A
@@ -1049,7 +934,6 @@
   description: to be represented on an application for a supervision order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM24E
@@ -1058,7 +942,6 @@
   description: to be represented on an application for a supervision order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM26
@@ -1067,7 +950,6 @@
   description: to be represented on an application for a child assessment order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM26A
@@ -1076,7 +958,6 @@
   description: to be represented on an application for a child assessment order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM26E
@@ -1085,7 +966,6 @@
   description: to be represented on an application for a child assessment order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM27
@@ -1094,7 +974,6 @@
   description: to be represented on an application for or to extend an emergency protection order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM27A
@@ -1103,7 +982,6 @@
   description: to be represented on an application for or to extend an emergency protection order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM27E
@@ -1112,7 +990,6 @@
   description: to be represented on an application for or to extend an emergency protection order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM28
@@ -1121,7 +998,6 @@
   description: to be represented on an application to discharge an emergency protection order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM28A
@@ -1130,7 +1006,6 @@
   description: to be represented on an application to discharge an emergency protection order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM29
@@ -1139,7 +1014,6 @@
   description: to be represented on an application to vary/discharge an exclusion requirement.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM29A
@@ -1148,7 +1022,6 @@
   description: to be represented on an application to vary/discharge an exclusion requirement.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM29E
@@ -1157,7 +1030,6 @@
   description: to be represented on an application to vary/discharge an exclusion requirement.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM30
@@ -1166,7 +1038,6 @@
   description: to be represented on an application for a placement order
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM30A
@@ -1175,7 +1046,6 @@
   description: to be represented on an application for a placement order. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM30E
@@ -1184,7 +1054,6 @@
   description: to be represented on an application for a placement order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM32
@@ -1193,7 +1062,6 @@
   description: to be represented on an application for a Special Guardianship Order
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM32A
@@ -1202,7 +1070,6 @@
   description: to be represented on an application for a Special Guardianship Order . Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM32E
@@ -1211,7 +1078,6 @@
   description: to be represented on an application for a Special Guardianship Order . Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM33
@@ -1220,7 +1086,6 @@
   description: to be represented on an application for revocation of a placement order
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM33A
@@ -1229,7 +1094,6 @@
   description: to be represented on an application for revocation of a placement order  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM33E
@@ -1238,7 +1102,6 @@
   description: to be represented on an application for revocation of a placement order  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM35
@@ -1247,7 +1110,6 @@
   description: To be represented on an application for variation/discharge of a special guardianship order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM35A
@@ -1256,7 +1118,6 @@
   description: To be represented on an application for variation/discharge of a special guardianship order.  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM35E
@@ -1265,7 +1126,6 @@
   description: To be represented on an application for variation/discharge of a special guardianship order.  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM36
@@ -1274,7 +1134,6 @@
   description: to be represented on an application for a care order
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM36A
@@ -1283,7 +1142,6 @@
   description: to be represented on an application for a care order Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM36E
@@ -1292,7 +1150,6 @@
   description: to be represented on an application for a care order Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM37
@@ -1301,7 +1158,6 @@
   description: to be represented on an application for a supervision order
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM37A
@@ -1310,7 +1166,6 @@
   description: to be represented on an application for a supervision order  Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM37E
@@ -1319,7 +1174,6 @@
   description: to be represented on an application for a supervision order  Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM38
@@ -1328,7 +1182,6 @@
   description: to be represented on an application for a child arrangements order - who the child(ren) spend time with
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM38A
@@ -1337,7 +1190,6 @@
   description: to be represented on an application for a child arrangements order - who the child(ren) spend time with. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM38E
@@ -1346,7 +1198,6 @@
   description: to be represented on an application for a child arrangements order - who the child(ren) spend time with. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM39
@@ -1355,7 +1206,6 @@
   description: to be represented on an application for a child arrangements order - where the child(ren) will live.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM39A
@@ -1364,7 +1214,6 @@
   description: to be represented on an application for a child arrangements order - where the child(ren) will live. Appeals only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM39E
@@ -1373,7 +1222,6 @@
   description: to be represented on an application for a child arrangements order - where the child(ren) will live. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
 - ccms_code: PBM40
@@ -1382,7 +1230,6 @@
   description: To represent a parent or person with parental responsibility on an application for a placement order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
   non_means_tested_plf: true
@@ -1392,7 +1239,6 @@
   description: To represent a parent or person with parental responsibility on an application for a placement order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
   non_means_tested_plf: true
@@ -1402,7 +1248,6 @@
   description: To represent a parent or person with parental responsibility on an application for an adoption order.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
   non_means_tested_plf: true
@@ -1412,7 +1257,6 @@
   description: To represent a parent or person with parental responsibility on an application for a placement order. Enforcement only.
   matter_type_code: KPBLB
   additional_search_terms:
-  full_s8_only: false
   sca_core: false
   sca_related: false
   non_means_tested_plf: true

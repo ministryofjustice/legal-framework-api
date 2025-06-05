@@ -66,7 +66,6 @@ RSpec.describe "threshold_waivers" do
             proceedings: [
               {
                 ccms_code: "DA005",
-                full_s8_only: false,
                 sca_core: false,
                 sca_related: false,
                 client_involvement_type: "A",
@@ -77,7 +76,6 @@ RSpec.describe "threshold_waivers" do
               },
               {
                 ccms_code: "SE004",
-                full_s8_only: false,
                 sca_core: false,
                 sca_related: false,
                 client_involvement_type: "D",

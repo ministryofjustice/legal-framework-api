@@ -17,7 +17,6 @@ RSpec.describe ProceedingType do
           "ccms_code" => proceeding_type.ccms_code,
           "meaning" => proceeding_type.meaning,
           "description" => proceeding_type.description,
-          "full_s8_only" => proceeding_type.full_s8_only,
           "sca_core" => proceeding_type.sca_core,
           "sca_related" => proceeding_type.sca_related,
           "non_means_tested_plf" => proceeding_type.non_means_tested_plf,

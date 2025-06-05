@@ -8,7 +8,7 @@
 # method.
 #
 class ProceedingTypeFullTextSearch
-  Result = Struct.new(:meaning, :ccms_code, :description, :full_s8_only, :sca_core, :sca_related, :non_means_tested_plf, :ccms_category_law, :ccms_category_law_code, :ccms_matter)
+  Result = Struct.new(:meaning, :ccms_code, :description, :sca_core, :sca_related, :non_means_tested_plf, :ccms_category_law, :ccms_category_law_code, :ccms_matter)
 
   def self.call(search_terms, excluded_codes = [])
     new(search_terms, excluded_codes).call
@@ -42,7 +42,6 @@ private
     Result.new(row["meaning"].strip,
                row["ccms_code"],
                row["description"].strip,
-               row["full_s8_only"],
                row["sca_core"],
                row["sca_related"],
                row["non_means_tested_plf"],
@@ -67,7 +66,6 @@ private
         meaning,
         ccms_code,
         description,
-        full_s8_only,
         sca_core,
         sca_related,
         non_means_tested_plf,
