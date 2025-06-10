@@ -42,7 +42,6 @@ RSpec.describe "proceeding_types/threshold_waivers" do
             proceeding_types: [
               {
                 ccms_code: "DA005",
-                full_s8_only: false,
                 sca_core: false,
                 sca_related: false,
                 gross_income_upper: true,
@@ -52,7 +51,6 @@ RSpec.describe "proceeding_types/threshold_waivers" do
               },
               {
                 ccms_code: "SE004",
-                full_s8_only: false,
                 sca_core: false,
                 sca_related: false,
                 gross_income_upper: false,
@@ -62,7 +60,6 @@ RSpec.describe "proceeding_types/threshold_waivers" do
               },
               {
                 ccms_code: "SE013",
-                full_s8_only: false,
                 sca_core: false,
                 sca_related: false,
                 gross_income_upper: false,

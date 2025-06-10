@@ -42,7 +42,6 @@ private
     @response[:meaning] = proceeding_type.meaning
     @response[:name] = proceeding_type.name
     @response[:description] = proceeding_type.description
-    @response[:full_s8_only] = proceeding_type.full_s8_only
     @response[:sca_core] = proceeding_type.sca_core
     @response[:sca_related] = proceeding_type.sca_related
   end
@@ -101,7 +100,6 @@ private
       ccms_matter_code: "",
       name: "",
       description: "",
-      full_s8_only: "",
       sca_core: "",
       sca_related: "",
       ccms_category_law: "",
