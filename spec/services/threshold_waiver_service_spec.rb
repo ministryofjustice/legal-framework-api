@@ -105,7 +105,6 @@ RSpec.describe ThresholdWaiverService do
         proceedings: [
           {
             ccms_code: "DA005",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             client_involvement_type: "A",
@@ -125,7 +124,6 @@ RSpec.describe ThresholdWaiverService do
         proceedings: [
           {
             ccms_code: "DA005",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             client_involvement_type: "A",
@@ -136,7 +134,6 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE003",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             client_involvement_type: "A",
@@ -147,7 +144,6 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE013",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             client_involvement_type: "D",
@@ -215,7 +211,6 @@ RSpec.describe ThresholdWaiverService do
         proceeding_types: [
           {
             ccms_code: "DA005",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             capital_upper: true,
@@ -234,7 +229,6 @@ RSpec.describe ThresholdWaiverService do
         proceeding_types: [
           {
             ccms_code: "DA005",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             capital_upper: true,
@@ -244,7 +238,6 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE003",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             capital_upper: false,
@@ -254,7 +247,6 @@ RSpec.describe ThresholdWaiverService do
           },
           {
             ccms_code: "SE013",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             capital_upper: false,

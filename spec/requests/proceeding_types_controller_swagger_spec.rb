@@ -25,7 +25,6 @@ RSpec.describe "proceeding_types" do
             ccms_matter_code: "KSEC8",
             name: "prohibited_steps_order_s8",
             description: "to be represented on an application for a prohibited steps order.",
-            full_s8_only: false,
             sca_core: false,
             sca_related: false,
             ccms_category_law: "Family",
