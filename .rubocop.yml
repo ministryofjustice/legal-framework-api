@@ -25,6 +25,14 @@ Rails/I18nLocaleTexts:
     - 'app/models/client_involvement_type.rb'
     - 'app/models/scope_user_input.rb'
 
+Naming/PredicateMethod:
+  Exclude:
+    - 'app/services/questions_service.rb'
+    # excluding the question service as the cop is currently (Jul 2025) flagging some
+    # predicate questions, but not all.  As the methods are all called the same way and
+    # not called by anything other than the yaml blocks, this seems a bit OTT to have to
+    # rebuild all the yaml and DB interactions for a cop
+
 # Swagger exclusions
 # ==================
 # because swagger does not use the standard RSpec layout, e.g.
