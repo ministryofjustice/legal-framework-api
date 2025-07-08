@@ -11,7 +11,7 @@ class OrganisationSearchesController < ApplicationController
 private
 
   def success
-    @success ||= status.eql?(200) && results.symbolize_keys[:data].count.positive?
+    @success ||= status.eql?(200) && results.symbolize_keys[:data].any?
   end
 
   def status
