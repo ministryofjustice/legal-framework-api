@@ -8,7 +8,7 @@ ruby file: ".ruby-version"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem "rails", "~> 8.0.2"
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.5"
+gem "pg", "~> 1.6"
 # Use Puma as the app server
 gem "puma", "~> 6.6"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
