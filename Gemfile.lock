@@ -108,7 +108,8 @@ GEM
       i18n (>= 1.8.11, < 2)
     ffi (1.17.2)
     ffi (1.17.2-x86_64-darwin)
-    formatador (1.1.1)
+    formatador (1.2.0)
+      reline
     globalid (1.2.1)
       activesupport (>= 6.1)
     guard (2.19.1)
@@ -251,7 +252,7 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    regexp_parser (2.11.0)
+    regexp_parser (2.11.1)
     reline (0.6.2)
       io-console (~> 0.5)
     rspec-core (3.13.5)
@@ -343,7 +344,7 @@ GEM
     simplecov-rcov (0.3.7)
       simplecov (>= 0.4.1)
     simplecov_json_formatter (0.1.4)
-    spring (4.3.0)
+    spring (4.4.0)
     stringio (3.1.7)
     thor (1.4.0)
     timeout (0.4.3)
