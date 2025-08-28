@@ -14,7 +14,7 @@ deploy() {
                 --namespace=${K8S_NAMESPACE} \
                 --values ./deploy/helm/values-uat.yaml \
                 --set postgresql.image.repository=bitnamilegacy/postgresql \
-                --set postgresql.global.security.allowInsecureImages=true \
+                --set global.security.allowInsecureImages=true \
                 --set deploy.host="$RELEASE_HOST" \
                 --set image.repository="$IMG_REPO" \
                 --set image.tag="$CIRCLE_SHA1" \
