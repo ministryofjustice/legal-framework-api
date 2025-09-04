@@ -3,6 +3,7 @@
 #
 - ccms_code: "PBM01"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -17,6 +18,7 @@
     - court_order_copy
 - ccms_code: "PBM02"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -31,6 +33,7 @@
     - court_order_copy
 - ccms_code: "PBM04"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -45,6 +48,7 @@
     - court_order_copy
 - ccms_code: "PBM05"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -60,6 +64,7 @@
     - vary_order
 - ccms_code: "PBM06"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -74,6 +79,7 @@
     - court_order_copy
 - ccms_code: "PBM07"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -91,6 +97,7 @@
       - client_child_care_assessment
 - ccms_code: "PBM08"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -105,6 +112,7 @@
     - court_order_copy
 - ccms_code: "PBM09"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -119,6 +127,7 @@
     - court_order_copy
 - ccms_code: "PBM10"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -133,6 +142,7 @@
     - court_order_copy
 - ccms_code: "PBM11"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -147,6 +157,7 @@
     - court_order_copy
 - ccms_code: "PBM13"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -161,6 +172,7 @@
     - court_order_copy
 - ccms_code: "PBM16"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -175,6 +187,7 @@
     - court_order_copy
 - ccms_code: "PBM17"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -190,6 +203,7 @@
     - specific_issue
 - ccms_code: "PBM18"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -204,6 +218,7 @@
     - court_order_copy
 - ccms_code: "PBM19"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -218,6 +233,7 @@
     - court_order_copy
 - ccms_code: "PBM20"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -232,6 +248,7 @@
     - court_order_copy
 - ccms_code: "PBM21"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -246,6 +263,7 @@
     - court_order_copy
 - ccms_code: "PBM22"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -260,6 +278,7 @@
     - court_order_copy
 - ccms_code: "PBM23"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -276,6 +295,7 @@
       - client_child_care_assessment
 - ccms_code: "PBM24"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -290,6 +310,7 @@
     - court_order_copy
 - ccms_code: "PBM26"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -304,6 +325,7 @@
     - court_order_copy
 - ccms_code: "PBM27"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -318,6 +340,7 @@
     - court_order_copy
 - ccms_code: "PBM28"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -332,6 +355,7 @@
     - court_order_copy
 - ccms_code: "PBM29"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -346,6 +370,7 @@
     - court_order_copy
 - ccms_code: "PBM30"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -360,6 +385,7 @@
     - court_order_copy
 - ccms_code: "PBM32"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -376,6 +402,7 @@
       - client_child_care_assessment
 - ccms_code: "PBM33"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -391,6 +418,7 @@
     - vary_order
 - ccms_code: "PBM35"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -405,6 +433,7 @@
     - court_order_copy
 - ccms_code: "PBM36"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -419,6 +448,7 @@
     - court_order_copy
 - ccms_code: "PBM37"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -433,6 +463,7 @@
     - court_order_copy
 - ccms_code: "PBM38"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -447,6 +478,7 @@
     - court_order_copy
 - ccms_code: "PBM39"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -461,6 +493,7 @@
     - court_order_copy
 - ccms_code: "PBM45"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -476,6 +509,7 @@
     - matter_opposed
 - ccms_code: "PBM40"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -491,6 +525,7 @@
     - matter_opposed
 - ccms_code: "PBM01A"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -506,6 +541,7 @@
     - second_appeal
 - ccms_code: "PBM02A"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -521,6 +557,7 @@
     - second_appeal
 - ccms_code: "PBM04A"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -536,6 +573,7 @@
     - second_appeal
 - ccms_code: "PBM05A"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -551,6 +589,7 @@
     - second_appeal
 - ccms_code: "PBM06A"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
@@ -566,6 +605,7 @@
     - second_appeal
 - ccms_code: "PBM07A"
   questions:
+    - when_contact_was_made
     - opponent_name
     - delegated_functions_on_any_proceeding:
       - nature_of_urgency
