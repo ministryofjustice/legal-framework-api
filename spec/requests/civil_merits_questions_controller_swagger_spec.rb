@@ -79,6 +79,7 @@ RSpec.describe "civil_merits_questions" do
               application: {
                 tasks: {
                   opponent_name: [],
+                  when_contact_was_made: [],
                   opponent_mental_capacity: [],
                   statement_of_case: [],
                   children_application: [],
@@ -173,6 +174,7 @@ RSpec.describe "civil_merits_questions" do
                   opponent_name: [],
                   opponent_mental_capacity: [],
                   statement_of_case: [],
+                  when_contact_was_made: [],
                   why_matter_opposed: [],
                 },
               },
