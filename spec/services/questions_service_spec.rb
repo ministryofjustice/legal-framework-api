@@ -315,6 +315,7 @@ RSpec.describe QuestionsService do
             application: {
               tasks: {
                 "opponent_name" => [],
+                "when_contact_was_made" => [],
                 "statement_of_case" => [],
                 "court_order_copy" => [],
               },
@@ -641,6 +642,7 @@ RSpec.describe QuestionsService do
           "opponent_name" => [],
           "statement_of_case" => [],
           "children_application" => [],
+          "when_contact_was_made" => [],
           "why_matter_opposed" => [],
         },
       },
@@ -668,6 +670,7 @@ RSpec.describe QuestionsService do
           "opponent_mental_capacity" => [],
           "opponent_name" => [],
           "statement_of_case" => [],
+          "when_contact_was_made" => [],
           "why_matter_opposed" => [],
         },
       },
@@ -694,6 +697,7 @@ RSpec.describe QuestionsService do
           "opponent_name" => [],
           "statement_of_case" => [],
           "children_application" => [],
+          "when_contact_was_made" => [],
           "why_matter_opposed" => [],
         },
       },
