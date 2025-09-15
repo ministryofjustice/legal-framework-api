@@ -3,7 +3,8 @@
 #
 - ccms_code: "SE003"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
@@ -22,7 +23,8 @@
       - children_proceeding
 - ccms_code: "SE003A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -43,7 +45,8 @@
       - children_proceeding
 - ccms_code: "SE003E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -64,7 +67,8 @@
       - children_proceeding
 - ccms_code: "SE004"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
@@ -83,7 +87,8 @@
       - children_proceeding
 - ccms_code: "SE004A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -104,7 +109,8 @@
       - children_proceeding
 - ccms_code: "SE004E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -125,7 +131,8 @@
       - children_proceeding
 - ccms_code: "SE007"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
@@ -145,7 +152,8 @@
       - children_proceeding
 - ccms_code: "SE007A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -167,7 +175,8 @@
       - children_proceeding
 - ccms_code: "SE007E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -189,7 +198,8 @@
       - children_proceeding
 - ccms_code: "SE008"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -211,7 +221,8 @@
       - children_proceeding
 - ccms_code: "SE008A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -233,7 +244,8 @@
       - children_proceeding
 - ccms_code: "SE008E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -255,7 +267,8 @@
       - children_proceeding
 - ccms_code: "SE013"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
@@ -273,7 +286,8 @@
       - children_proceeding
 - ccms_code: SE013A
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -293,7 +307,8 @@
       - children_proceeding
 - ccms_code: SE013E
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -313,7 +328,8 @@
       - children_proceeding
 - ccms_code: "SE014"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - statement_of_case
@@ -331,7 +347,8 @@
       - children_proceeding
 - ccms_code: "SE014A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -351,7 +368,8 @@
       - children_proceeding
 - ccms_code: "SE014E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -371,7 +389,8 @@
       - children_proceeding
 - ccms_code: "SE015"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -392,7 +411,8 @@
       - children_proceeding
 - ccms_code: "SE015A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -413,7 +433,8 @@
       - children_proceeding
 - ccms_code: "SE015E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -434,7 +455,8 @@
       - children_proceeding
 - ccms_code: "SE016"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -455,7 +477,8 @@
       - children_proceeding
 - ccms_code: "SE016A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -476,7 +499,8 @@
       - children_proceeding
 - ccms_code: "SE016E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -497,7 +521,8 @@
       - children_proceeding
 - ccms_code: "SE095"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -517,7 +542,8 @@
       - children_proceeding
 - ccms_code: "SE095A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -537,7 +563,8 @@
       - children_proceeding
 - ccms_code: "SE096E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -557,7 +584,8 @@
       - children_proceeding
 - ccms_code: "SE097"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -577,7 +605,8 @@
       - children_proceeding
 - ccms_code: "SE097A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -597,7 +626,8 @@
       - children_proceeding
 - ccms_code: "SE100E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -617,7 +647,8 @@
       - children_proceeding
 - ccms_code: "SE101A"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:
@@ -637,7 +668,8 @@
       - children_proceeding
 - ccms_code: "SE101E"
   questions:
-  - when_contact_was_made
+  - no_domestic_abuse_proceeding:
+    - when_contact_was_made
   - opponent_name
   - opponent_mental_capacity
   - at_least_one_domestic_abuse_with_applicant:

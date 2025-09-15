@@ -111,6 +111,10 @@ private
     match.present?
   end
 
+  def no_domestic_abuse_proceeding(_proceeding)
+    @proceedings.none? { |h| h[:ccms_code].match(DOMESTIC_ABUSE_CODE_REGEXP) }
+  end
+
   def error_response
     {
       request_id: @request_id,
