@@ -4,6 +4,7 @@ RSpec.describe MeritsTaskPopulator do
   let(:application_merits_tasks) do
     %w[
       latest_incident_details
+      when_contact_was_made
       opponent_name
       opponent_mental_capacity
       domestic_abuse_summary
@@ -50,7 +51,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "seeds all merits tasks" do
-        expect { call }.to change(MeritsTask, :count).from(0).to(23)
+        expect { call }.to change(MeritsTask, :count).from(0).to(24)
         expect(MeritsTask.pluck(:name)).to match_array(merits_tasks)
       end
     end
@@ -79,7 +80,7 @@ RSpec.describe MeritsTaskPopulator do
       end
 
       it "removes the merits tasks that are no longer seeded" do
-        expect { call }.to change(MeritsTask, :count).from(23).to(2)
+        expect { call }.to change(MeritsTask, :count).from(24).to(2)
       end
     end
   end
