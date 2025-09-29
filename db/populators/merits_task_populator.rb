@@ -1,6 +1,7 @@
 class MeritsTaskPopulator
   APPLICATION_MERITS_TASKS = %w[
     latest_incident_details
+    when_contact_was_made
     opponent_name
     opponent_mental_capacity
     domestic_abuse_summary
