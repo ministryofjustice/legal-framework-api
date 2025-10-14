@@ -107,6 +107,7 @@ GEM
     faker (3.5.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.2)
+    ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-darwin)
     formatador (1.2.1)
       reline
@@ -175,6 +176,8 @@ GEM
     nokogiri (1.18.10)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.18.10-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.18.10-x86_64-darwin)
       racc (~> 1.4)
     notiffany (0.1.3)
@@ -186,6 +189,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.6.2)
+    pg (1.6.2-arm64-darwin)
     pg (1.6.2-x86_64-darwin)
     pp (0.6.3)
       prettyprint
@@ -367,8 +371,9 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
-  ruby
+  arm64-darwin-24
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   awesome_print
@@ -385,7 +390,7 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
-  pg (~> 1.6)
+  pg
   pry-byebug
   puma (~> 7.0)
   rack-cors
@@ -406,7 +411,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.4.5p51
+   ruby 3.4.7p58
 
 BUNDLED WITH
-   2.7.1
+   2.7.2
