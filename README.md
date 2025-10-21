@@ -1,6 +1,6 @@
 ## README
 [![CircleCI](https://circleci.com/gh/ministryofjustice/legal-framework-api.svg?style=shield)](https://circleci.com/gh/ministryofjustice/legal-framework-api/tree/main)
-
+[![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/legal-framework-api/badge)](https://github-community.service.justice.gov.uk/repository-standards/legal-framework-api)
 # Ministry of Justice
 
 ## Legal Aid Legal Framework API
