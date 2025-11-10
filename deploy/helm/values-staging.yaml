@@ -23,8 +23,9 @@ ingress:
 deploy:
   host: legal-framework-api-staging.cloud-platform.service.justice.gov.uk
 
-postgresql:
+branch_builder:
   enabled: false
+  database_name: null
 
 scheduledDowntime:
   enabled: true
