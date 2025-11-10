@@ -8,7 +8,6 @@ deploy() {
 
   echo "Deploying CIRCLE_SHA1: $CIRCLE_SHA1 under release name: '$RELEASE_NAME'..."
 
-  # Temporary solution:  amend postgres chart's to use bitnamilegacy for its image repository. See https://github.com/bitnami/charts/issues/35164 for details
   helm upgrade $RELEASE_NAME ./deploy/helm/. \
                 --install --wait \
                 --namespace=${K8S_NAMESPACE} \
