@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby file: ".ruby-version"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem "rails", "~> 8.0.4"
+gem "rails", "~> 8.1.1"
 # Use postgresql as the database for Active Record
 gem "pg"
 # Use Puma as the app server
@@ -24,7 +24,7 @@ gem "puma", "~> 7.1"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
-gem "json-schema", "~> 5.2.2"
+gem "json-schema", "~> 6.0.0"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
