@@ -4,22 +4,6 @@ Environment variables for web and worker containers
 */}}
 {{- define "app.envs" }}
 env:
-  {{ if .Values.postgresql.enabled }}
-  - name: POSTGRES_USER
-    valueFrom:
-      secretKeyRef:
-        name: lfa-secrets
-        key: postgresqlUsername
-  - name: POSTGRES_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: lfa-secrets
-        key: postgresqlPassword
-  - name: POSTGRES_HOST
-    value: {{ printf "%s-%s" .Release.Name "postgresql" | trunc 63 | trimSuffix "-" }}
-  - name: POSTGRES_DATABASE
-    value: {{ .Values.postgresql.auth.database | quote }}
-  {{ else }}
   - name: POSTGRES_USER
     valueFrom:
       secretKeyRef:
@@ -35,6 +19,10 @@ env:
       secretKeyRef:
         name: rds-instance-output
         key: rds_instance_address
+  {{ if .Values.branch_builder.enabled }}
+  - name: POSTGRES_DATABASE
+    value: {{ .Values.branch_builder.database_name | quote }}
+  {{ else }}
   - name: POSTGRES_DATABASE
     valueFrom:
       secretKeyRef:

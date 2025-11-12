@@ -17,28 +17,7 @@ ingress:
   annotations:
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 
-postgresql:
+# database_name and redirect_uri value must be set by `helm --set` command when enabled
+branch_builder:
   enabled: true
-  resources:
-    limits:
-      cpu: 250m
-      memory: 256Mi
-    requests:
-      cpu: 250m
-      memory: 256Mi
-  auth:
-    database: legal_framework_api
-    enablePostgresUser: true
-    existingSecret: lfa-secrets
-    secretKeys:
-      adminPasswordKey: postgresqlPassword
-  persistence:
-    enabled: false
-  primary:
-    containerSecurityContext:
-      runAsNonRoot: true
-      allowPrivilegeEscalation: false
-      seccompProfile:
-        type: RuntimeDefault
-      capabilities:
-        drop: [ "ALL" ]
+  database_name: null
