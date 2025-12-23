@@ -24,7 +24,7 @@ gem "puma", "~> 7.1"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
-gem "json-schema", "~> 6.0.0"
+gem "json-schema", "~> 6.1.0"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
