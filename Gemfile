@@ -48,7 +48,7 @@ group :development, :test do
   gem "rspec_junit_formatter"
   gem "rspec-rails", "~> 8.0"
   gem "rswag-specs"
-  gem "rubocop-govuk", require: false
+  gem "rubocop-govuk", "~> 5.2", require: false
   gem "rubocop-performance"
 end
 
