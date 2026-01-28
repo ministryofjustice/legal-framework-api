@@ -30,6 +30,7 @@ gem "json-schema", "~> 6.1.0"
 gem "rack-cors"
 
 # Generate documentation
+gem "ostruct" # needed until rswag merge PR#872
 gem "rswag-api"
 gem "rswag-ui"
 
