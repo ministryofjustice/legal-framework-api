@@ -395,6 +395,7 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
+  ostruct
   pg
   pry-byebug
   puma (~> 7.2)
