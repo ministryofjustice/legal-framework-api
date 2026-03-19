@@ -42,11 +42,16 @@ description = "GUID in code"
 regex = '''(?:\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\}{0,1})'''
 entropy = 3.0
 
+  [[rules.allowlists]]
+  paths = [
+    ".git/*",
+  ]
+  stopwords = [
+    "7d47425b-800a-41ef-a917-934acc09b50d",
+    "2a614e1a-a3d5-49ca-949a-c3248483d274",
+    "f40eb41d-e865-4d81-9daf-3fa9c1f2fdca",
+    "ff9679d7-ca3e-40b8-a47e-5006895d9026",
+  ]
+
 [allowlist]
 paths = ["node_modules/*"]
-stopwords = [
-  "7d47425b-800a-41ef-a917-934acc09b50d",
-  "2a614e1a-a3d5-49ca-949a-c3248483d274",
-  "f40eb41d-e865-4d81-9daf-3fa9c1f2fdca",
-  "ff9679d7-ca3e-40b8-a47e-5006895d9026",
-]
