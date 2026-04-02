@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/ministryofjustice/devsecops-hooks
+    rev: v1.6.0 # re-run prek install after changing this
+    hooks:
+      - id: baseline
+  - repo: local
+    hooks:
+      - id: rubocop
+        name: Rubocop
+        language: system
+        entry: bundle exec rubocop --force-exclusion
+      - id: db_anonymizer
+        name: DBAnonymizer
+        language: script
+        entry: ./scripts/migration_hook.rb
+        files: "db\/migrate\/.*rb$"
