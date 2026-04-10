@@ -1,0 +1,19 @@
+name: Static Application Security Testing
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+
+permissions: {}
+
+jobs:
+  static-application-security-testing:
+    uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/sast.yml@main
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+    with:
+      tag: "legal-framework-application"
+    secrets:
+      SNYK_CLIENT_ID: ${{ secrets.SNYK_CLIENT_ID }}
+      SNYK_CLIENT_SECRET: ${{ secrets.SNYK_CLIENT_SECRET }}
