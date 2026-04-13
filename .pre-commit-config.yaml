@@ -9,8 +9,3 @@ repos:
         name: Rubocop
         language: system
         entry: bundle exec rubocop --force-exclusion
-      - id: db_anonymizer
-        name: DBAnonymizer
-        language: script
-        entry: ./scripts/migration_hook.rb
-        files: "db\/migrate\/.*rb$"
