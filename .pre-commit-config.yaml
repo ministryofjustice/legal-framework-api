@@ -1,0 +1,13 @@
+repos:
+  - repo: https://github.com/ministryofjustice/devsecops-hooks
+    rev: v1.6.0 # re-run prek install after changing this
+    hooks:
+      - id: baseline
+        env:
+          STAGE_MODE: 'true' # This is the default, which is to check only the files that have been staged.
+  - repo: local
+    hooks:
+      - id: rubocop
+        name: Rubocop
+        language: system
+        entry: bundle exec rubocop --force-exclusion
