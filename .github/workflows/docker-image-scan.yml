@@ -7,7 +7,7 @@ permissions: {}
 
 jobs:
   scan-docker-image:
-    uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/snyk.yml@main
+    uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/snyk.yml@7c81d37978aef9418f7185d9ecf70e3cd1c63c02 # main on 15/04/2026
     permissions:
       contents: read # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
