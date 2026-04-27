@@ -1,0 +1,72 @@
+---
+- ccms_code: DA001
+  meaning: Inherent jurisdiction - high court injunction
+  name: inherent_jurisdiction_high_court_injunction
+  description: to be represented on an application for an injunction, order or declaration
+    under the inherent jurisdiction of the court.
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: DA002
+  meaning: Protection from harassment act 1997 under section 5 - vary or discharge
+  name: variation_or_discharge_under_section_protection_from_harassment_act
+  description: to be represented on an application to vary or discharge an order under
+    section 5 Protection from Harassment Act 1997 where the parties are associated
+    persons (as defined by Part IV Family Law Act 1996).
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: DA003
+  meaning: Harassment - injunction
+  name: harassment_injunction
+  description: to be represented in an action for an injunction under section 3 Protection
+    from Harassment Act 1997.
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: DA004
+  meaning: Non-molestation order
+  name: nonmolestation_order
+  description: to be represented on an application for a non-molestation order.
+  matter_type_code: MINJN
+  additional_search_terms: harassment,injunction
+  sca_core: false
+  sca_related: false
+- ccms_code: DA005
+  meaning: Occupation order
+  name: occupation_order
+  description: to be represented on an application for an occupation order.
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: DA006
+  meaning: Part IV - extend, vary or discharge
+  name: extend_variation_or_discharge_part_iv
+  description: to be represented on an application to extend, vary or discharge an
+    order under Part IV Family Law Act 1996
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: DA007
+  meaning: Forced marriage protection order
+  name: forced_marriage_protection_order
+  description: to be represented on an application for a forced marriage protection
+    order
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: DA020
+  meaning: Female genital mutilation (FGM) protection order
+  name: fgm_protection_order
+  description: To be represented on an application for a Female Genital Mutilation
+    Protection Order under the Female Genital Mutilation Act.
+  matter_type_code: MINJN
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
