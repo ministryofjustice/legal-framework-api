@@ -1,5 +1,5 @@
 class ProceedingTypePopulator
-  DATA_FILE = Rails.root.join("db/seed_data/proceeding_types.yml").freeze
+  DATA_FILES = Rails.root.glob("db/seed_data/proceeding_types/*.yml").freeze
 
   def self.call
     new.call
@@ -19,6 +19,9 @@ private
   end
 
   def seed_data
-    @seed_data ||= YAML.load_file(DATA_FILE)
+    @seed_data ||=
+      DATA_FILES.each_with_object([]) { |file, arr|
+        arr.append(YAML.load_file(file))
+      }.flatten
   end
 end

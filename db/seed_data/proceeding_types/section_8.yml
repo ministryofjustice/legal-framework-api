@@ -1,0 +1,259 @@
+---
+- ccms_code: SE003
+  meaning: Prohibited steps order
+  name: prohibited_steps_order_s8
+  description: to be represented on an application for a prohibited steps order.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE003A
+  meaning: Prohibited steps order - appeal
+  name: prohibited_steps_order_appeal_s8
+  description: to be represented on an application for a prohibited steps order.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE003E
+  meaning: Prohibited steps order - enforcement
+  name: prohibited_steps_order_enforcement_s8
+  description: to be represented on an application for a prohibited steps order.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE004
+  meaning: Specific issue order
+  name: specified_issue_order_s8
+  description: to be represented on an application for a specific issue order.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE004A
+  meaning: Specific issue order - appeal
+  name: speciied_issue_order_s8_appeal
+  description: to be represented on an application for a specific issue order.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE004E
+  meaning: Specific issue order - enforcement
+  name: speciied_issue_order_s8_enforcement
+  description: to be represented on an application for a specific issue order.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE007
+  meaning: Prohibited steps order - vary or discharge
+  name: vary_discharge_prohib_steps_s8
+  description: to be represented on an application to vary or discharge a prohibited steps order.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE007A
+  meaning: Prohibited steps order - appeal - vary or discharge
+  name: vary_discharge_prohib_steps_s8_appeal
+  description: to be represented on an application to vary or discharge a prohibited steps order.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE007E
+  meaning: Prohibited steps order - enforcement - vary or discharge
+  name: vary_discharge_prohib_steps_s8_enforcement
+  description: to be represented on an application to vary or discharge a prohibited steps order.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE008
+  meaning: Specific issue order - vary or discharge
+  name: vary_discharge_specific_issues_s8
+  description: to be represented on an application to vary or discharge a specific issue order.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE008A
+  meaning: Specific issue order - appeal - vary or discharge
+  name: vary_discharge_specific_issues_s8_appeal
+  description: to be represented on an application to vary or discharge a specific issue order.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE008E
+  meaning: Specific issue order - enforcement - vary or discharge
+  name: vary_discharge_specific_issues_s8_enforcement
+  description: to be represented on an application to vary or discharge a specific issue order.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE013
+  meaning: Child arrangements order (CAO) - contact
+  name: child_arrangements_order_contact
+  description: to be represented on an application for a child arrangements order-who
+    the child(ren) spend time with.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE013A
+  meaning: Child arrangements order (CAO) - contact - appeal
+  name: cao_contact_appeal
+  description: to be represented on an application for a child arrangements order-who the child(ren) spend time with. Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE013E
+  meaning: Child arrangements order (CAO) - contact - enforcement
+  name: cao_contact_appeal
+  description: to be represented on an application for a child arrangements order-who the child(ren) spend time with. Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE014
+  meaning: Child arrangements order (CAO) - residence
+  name: child_arrangements_order_residence
+  description: to be represented on an application for a child arrangements order
+    –where the child(ren) will live
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE014A
+  meaning: Child arrangements order (CAO) - residence - appeal
+  name: cao_residence_appeal
+  description: to be represented on an application for a child arrangements order –where the child(ren) will live. Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE014E
+  meaning: Child arrangements order (CAO) - residence - enforcement
+  name: cao_residence_enforcement
+  description: to be represented on an application for a child arrangements order –where the child(ren) will live. Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE015
+  meaning: Child arrangements order (CAO) - contact - vary
+  name: vary_cao_contact
+  description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE015A
+  meaning: Child arrangements order (CAO) - contact - appeal - vary
+  name: vary_cao_contact_appeal
+  description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with. Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE015E
+  meaning: Child arrangements order (CAO) - contact - enforcement - vary
+  name: vary_cao_contact_enforcement
+  description: to be represented on an application to vary/discharge a child arrangements order-who the child(ren) spend time with. Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE016
+  meaning: Child arrangements order (CAO) - residence - vary
+  name: vary_cao_residence
+  description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE016A
+  meaning: Child arrangements order (CAO) - residence - appeal - vary
+  name: vary_cao_redidence_appeal
+  description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live. Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE016E
+  meaning: Child arrangements order (CAO) - residence - enforcement - vary
+  name: vary_cao_residence_enforcement
+  description: to be represented on an application to vary or discharge a child arrangements order –where the child(ren) will live. Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE095
+  meaning: Enforcement order 11J
+  name: enforcement_order_11j_s8
+  description: to be represented on an application for an enforcement order under section 11J Children Act 1989.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE095A
+  meaning: Enforcement order 11J - appeal
+  name: enforcement_order_11j_s8_appeal
+  description: to be represented on an application for an enforcement order under section 11J Children Act 1989.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE096E
+  meaning: Enforcement order 11J and committal
+  name: enforcement_committal_order
+  description: to be represented on an application for committal and for an enforcement order under section 11J Children Act 1989. Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE097
+  meaning: Enforcement order 11J - revocation
+  name: revocation_enforcement_s8
+  description: to be represented on an application for the revocation of an enforcement order under section 11J and Schedule A1 Children Act 1989.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE097A
+  meaning: Enforcement order 11J - revocation - appeal
+  name: revocation_enforcement_appeal_s8
+  description: to be represented on an application for the revocation of an enforcement order under section 11J and Schedule A1 Children Act 1989.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE100E
+  meaning: Enforcement order 11J - amendment following breach
+  name: breach_enforcement_s8
+  description: to be represented on an application, following breach, for an amendment to an enforcement order or for a further enforcement order under section 11J and Schedule A1 Children Act 1989.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE101A
+  meaning: Compensation - appeal
+  name: compensation_appeal_s8
+  description: to be represented on an application for compensation for financial loss under section 11O Children Act 1989.  Appeals only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
+- ccms_code: SE101E
+  meaning: Compensation - enforcement
+  name: compensation_enforcement_s8
+  description: to be represented on an application for compensation for financial loss under section 11O Children Act 1989.  Enforcement only.
+  matter_type_code: KSEC8
+  additional_search_terms:
+  sca_core: false
+  sca_related: false
