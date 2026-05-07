@@ -26,3 +26,4 @@ ThresholdWaiverPopulator.call
 OrganisationTypesPopulator.call
 OrganisationsPopulator.call
 Country.populate
+ExpertTypesPopulator.call
