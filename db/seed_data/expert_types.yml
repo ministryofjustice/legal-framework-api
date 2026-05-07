@@ -1,0 +1,230 @@
+---
+# List of expert types
+# - code (string)
+# - description (string)
+- code: A&ECO
+  description: A & E Consultant
+- code: ABORI
+  description: Arboriculturist
+- code: ACCT
+  description: Accountant
+- code: ACCTM
+  description: Accountant Manager
+- code: ACCTP
+  description: Accountant Partner
+- code: ACCTS
+  description: Accountant Staff
+- code: ACREC
+  description: Accident Reconstruction
+- code: ACTRY
+  description: Actuary
+- code: AGRIC
+  description: Agricultural Expert
+- code: ANAE
+  description: Anaesthetist
+- code: ARBIT
+  description: Arbitrator's fees
+- code: ARCHT
+  description: Architect
+- code: BENCO
+  description: Benefits Expert
+- code: CARDI
+  description: Cardiologist
+- code: CELLT
+  description: Cell telephone site analysis
+- code: CHIL1
+  description: Child Psychiatrist
+- code: CHIL2
+  description: Child Psychologist
+- code: COMP
+  description: Computer expert
+- code: CONEN
+  description: Consultant engineer
+- code: CONS
+  description: Computer Consultant
+- code: CONT
+  description: Assessment of supervised contact.
+- code: CONVE
+  description: Conveyancing expert
+- code: COSTS
+  description: Costs Draughtsman Fees
+- code: CTPRO
+  description: Court of protection expert
+- code: DENT
+  description: Dentist
+- code: DERMA
+  description: Dermatologist
+- code: DISCO
+  description: Disability consultant
+- code: DIVIN
+  description: Diving Expert
+- code: DNAR
+  description: DNA (per person) – preparation of report
+- code: DNAT
+  description: DNA (per person) – testing of sample
+- code: DOC
+  description: Doctor (General Practitioner)
+- code: EMPCO
+  description: Employment consultant
+- code: ENGIN
+  description: Consultant Engineer
+- code: ENQAT
+  description: Enquiry agent
+- code: ENTS
+  description: Ear Nose and Throat Surgeon
+- code: ENTSU
+  description: ENT surgeon
+- code: ENVIN
+  description: Independent Environmental Health Officer
+- code: EQUIN
+  description: Equine Expert
+- code: ERGO
+  description: Ergonomist
+- code: EXPOT
+  description: Expert - Other
+- code: FINAD
+  description: Financial Adviser
+- code: FIRE
+  description: Fire assessor/explosives expert
+- code: FOREN
+  description: Forensic expert
+- code: GENET
+  description: Geneticist
+- code: GENSU
+  description: General surgeon
+- code: GPREC
+  description: GP (records report)
+- code: GYMNA
+  description: Gymnastics Expert
+- code: GYNAE
+  description: Gynaecologist
+- code: H&S
+  description: Health and Safety Officer
+- code: HAEMO
+  description: Haematologist
+- code: HANEX
+  description: Handwriting expert
+- code: INTER
+  description: Interpreter
+- code: INTLA
+  description: International Lawyer
+- code: LIPRD
+  description: Lip reader / Signer
+- code: MEDCO
+  description: Medical consultant
+- code: MEDIA
+  description: Mediators Fees
+- code: MEDIC
+  description: Medical records
+- code: METEO
+  description: Meteorlogist
+- code: MICRO
+  description: Medical Microbiologist
+- code: MIDWI
+  description: Midwife
+- code: MINE
+  description: Mining Consultant
+- code: MUSIC
+  description: Musicologist
+- code: NEOCN
+  description: Neonatologist (clin neg cerebral palsy)
+- code: NEONA
+  description: Neonatologist
+- code: NEONC
+  description: Neonatologist (non-clin neg cerebral palsy)
+- code: NERCN
+  description: Neuroradiologist (clin neg cerebral palsy)
+- code: NERNC
+  description: Neuroradiologist (non-clin neg cerebral palsy)
+- code: NEUCN
+  description: Neurologist (clin neg cerebral palsy)
+- code: NEUNC
+  description: Neurologist (non-clin neg cerebral palsy)
+- code: NEURA
+  description: Neuroradiologist
+- code: NEURG
+  description: Neurologist
+- code: NEURO
+  description: Neuropsychiatrist
+- code: NEURS
+  description: Neurosurgeon
+- code: NURSE
+  description: Nursing Expert
+- code: OBSTE
+  description: Obstetrician
+- code: OCCUP
+  description: Occupational Therapist
+- code: ONCOL
+  description: Oncologist
+- code: OPHTH
+  description: Ophthalmologist
+- code: ORTHO
+  description: Orthopaedic Surgeon
+- code: OSTEO
+  description: Osteopath
+- code: PAED
+  description: Paediatrician
+- code: PAREN
+  description: Parental Assessment
+- code: PATHO
+  description: Pathologist
+- code: PE
+  description: Physical Education Expert
+- code: PHAR
+  description: Pharmacologist
+- code: PHOTO
+  description: Photographer
+- code: PHYSI
+  description: Physiotherapist
+- code: PLAST
+  description: Plastic Surgeon
+- code: PRCSV
+  description: Process server
+- code: PSYC1
+  description: Psychiatrist
+- code: PSYC2
+  description: Psychotherapist
+- code: PSYCO
+  description: Psychologist
+- code: RADIO
+  description: Radiologist
+- code: RHEUM
+  description: Rheumatologist
+- code: RISKA
+  description: Risk assessment expert
+- code: SECU1
+  description: Independent social worker
+- code: SHRAA
+  description: Sol(Higher Rights)Advoc for another firm
+- code: SHROA
+  description: Sol(Higher Rights) Advocacy for own firm
+- code: SHROP
+  description: Solicitor (Higher Rights) Opinion
+- code: SITEV
+  description: Site visit by an expert
+- code: SPEEC
+  description: Speech Therapist
+- code: SURG
+  description: Surgeon
+- code: SURHD
+  description: Surveyor (Housing Disrepair)
+- code: SURNH
+  description: Surveyor (Non-Housing Disrepair)
+- code: SURVR
+  description: Surveyor
+- code: TELCO
+  description: Telecommunications Expert
+- code: TOXI
+  description: Toxicologist
+- code: TRAN
+  description: Translator
+- code: TRICH
+  description: Trichologist
+- code: UROLO
+  description: Urologist
+- code: VALUR
+  description: Valuer
+- code: VET
+  description: Vet
+- code: VOICE
+  description: Voice recognition expert
