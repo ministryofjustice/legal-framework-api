@@ -27,4 +27,24 @@ RSpec.describe ExpertType do
       })
     end
   end
+
+  describe "#by_matter_type" do
+    let(:matter_type) { create(:matter_type, code: "TEST1") }
+    let(:other_matter_type) { create(:matter_type, code: "TEST2") }
+    let(:matched) { create(:expert_type, code: "MATCH", description: "Matched expert") }
+    let(:unmatched) { create(:expert_type, code: "OTHER", description: "Unmatched expert") }
+
+    before do
+      create(:expert_type_matter_type, expert_type: matched, matter_type: matter_type)
+      create(:expert_type_matter_type, expert_type: unmatched, matter_type: other_matter_type)
+    end
+
+    it "returns expert types associated with the given matter type code" do
+      expect(described_class.for_matter_type("TEST1")).to contain_exactly(matched)
+    end
+
+    it "returns no expert types when no mapping exists for the matter type code" do
+      expect(described_class.for_matter_type("UNKNOWN")).to be_empty
+    end
+  end
 end

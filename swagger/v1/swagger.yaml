@@ -835,6 +835,41 @@ paths:
                     description: Vet
                   summary: Successful request
                   description: Returns an array of all expert types with codes.
+  "/expert_types/{matter_type}":
+    get:
+      summary: Get expert types for a matter type
+      description: Returns an array of the expert types associated with the given
+        matter type code. Returns an empty array when the matter type code has no
+        associated expert types.
+      tags:
+      - Expert types
+      parameters:
+      - name: matter_type
+        in: path
+        example: KPBLW
+        description: Matter type code, e.g. KPBLW
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful with no results
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - code: CHIL2
+                    description: Child Psychologist
+                  - code: PSYCO
+                    description: Psychologist
+                  summary: Successful request
+                  description: Returns an array of expert types associated with the
+                    matter type code.
+                empty:
+                  summary: Empty result
+                  description: Returns an empty array when the matter type code has
+                    no associated expert types.
   "/organisation_types/all":
     get:
       summary: Get all organisation types

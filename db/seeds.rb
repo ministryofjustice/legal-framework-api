@@ -27,3 +27,4 @@ OrganisationTypesPopulator.call
 OrganisationsPopulator.call
 Country.populate
 ExpertTypesPopulator.call
+ExpertTypeMatterTypesPopulator.call

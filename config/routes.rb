@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   post "organisation_searches", to: "organisation_searches#create"
 
   get "expert_types", to: "expert_types#index"
+  get "expert_types/:matter_type", to: "expert_types#by_matter_type"
 
   resources :organisation_types, param: :ccms_code, only: %i[show]
   resources :threshold_waivers, only: %i[create]
