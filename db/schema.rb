@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_06_120000) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_08_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -32,6 +32,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_06_120000) do
     t.datetime "updated_at", null: false
     t.decimal "value", null: false
     t.index ["proceeding_type_id"], name: "index_default_cost_limitations_on_proceeding_type_id"
+  end
+
+  create_table "expert_type_matter_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.uuid "expert_type_id", null: false
+    t.uuid "matter_type_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expert_type_id", "matter_type_id"], name: "index_expert_type_matter_types_uniqueness", unique: true
+    t.index ["expert_type_id"], name: "index_expert_type_matter_types_on_expert_type_id"
+    t.index ["matter_type_id"], name: "index_expert_type_matter_types_on_matter_type_id"
   end
 
   create_table "expert_types", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -185,6 +195,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_06_120000) do
   end
 
   add_foreign_key "default_cost_limitations", "proceeding_types"
+  add_foreign_key "expert_type_matter_types", "expert_types"
+  add_foreign_key "expert_type_matter_types", "matter_types"
   add_foreign_key "organisations", "organisation_types", on_delete: :cascade
   add_foreign_key "proceeding_type_service_levels", "proceeding_types"
   add_foreign_key "proceeding_type_service_levels", "service_levels"
