@@ -1,0 +1,161 @@
+name: Perform Static Application Security Testing
+description: A reusable workflow to perform SaST on a given repo. See docs/README-sast.md for more info.
+
+on:
+  workflow_call:
+    inputs:
+      image_uri:
+        description: "URI of image to scan. The workflow intentionally doesn't perform any image building."
+        required: false
+        type: string
+      dockerfile_path:
+        description: "Path to Dockerfile that will be used by Snyk to scan"
+        required: false
+        default: "Dockerfile"
+        type: string
+      iac_path:
+        description: "Path to repo's helm deployment files. Leave unset to not run the checks"
+        required: false
+        default: ""
+        type: string
+      minimum_threshold:
+        description: "The minimum threshold to report vulnerabilities. Must be one of low|medium|high|critical"
+        required: false
+        default: "high"
+        type: string
+      ecr_session_name:
+        description: "The name of the session to use in ECR. Used for auditing purposes, set to what makes sense."
+        required: false
+        default: "laa-reusable-snyk"
+        type: string
+    # These secrets MUST be set to authenticate
+    # You can alternatively also pass a static token in to authenticate
+    secrets:
+      SNYK_TOKEN:
+        required: false
+      SNYK_CLIENT_ID:
+        required: false
+      SNYK_CLIENT_SECRET:
+        required: false
+      ECR_ROLE_TO_ASSUME:
+        required: false
+
+jobs:
+  sast:
+    name: Scan IaC & Container with Snyk
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      security-events: write
+      actions: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      # Secrets can't be used in if-checks so we have to define a global flag to verify
+      - name: Check if we have tokens defined
+        run: |
+          echo "has_token=${{ secrets.SNYK_TOKEN != '' }}" >> $GITHUB_ENV
+          echo "has_oauth=${{ secrets.SNYK_CLIENT_ID != '' && secrets.SNYK_CLIENT_SECRET != ''}}" >> $GITHUB_ENV
+          echo "has_ecr_role=${{ secrets.ECR_ROLE_TO_ASSUME != '' }}" >> $GITHUB_ENV
+
+          if [[ "$has_token" == 'false' && "$has_oauth" == 'false' ]]; then
+            echo "::error::Either SNYK_TOKEN or both SNYK_CLIENT_ID and SNYK_CLIENT_SECRET must be set"
+            exit 1
+          fi
+
+      # Early exit if there's no container setup to scan
+      - name: Check Dockerfile exists
+        env:
+          INPUTS_DOCKERFILE_PATH: ${{ inputs.dockerfile_path }}
+        run: |
+          if [ ! -f "${INPUTS_DOCKERFILE_PATH}" ]; then
+            echo "::error::Dockerfile not found at ${INPUTS_DOCKERFILE_PATH}, seems there isn't a container to scan"
+            exit 1
+          fi
+
+      - name: Configure AWS credentials for ECR access
+        if: ${{ env.has_ecr_role == 'true' }}
+        uses: ministryofjustice/laa-reusable-github-actions/.github/actions/ecr-auth@e5500aa20b13a1406fe8a62b8788181a2ca18926
+        with:
+          ecr_role: ${{ secrets.ECR_ROLE_TO_ASSUME }}
+          ecr_region: "eu-west-2"
+          role-session-name: ${{ inputs.ecr_session_name }}
+
+      - name: Obtain Short-lived token
+        id: auth
+        uses: ministryofjustice/laa-reusable-github-actions/.github/actions/snyk-auth@6db001458db30ae747d9eb8eb25707ce52b359bc
+        if: ${{ env.has_token == 'false' }}
+        with:
+          client_id: ${{ secrets.SNYK_CLIENT_ID }}
+          client_secret: ${{ secrets.SNYK_CLIENT_SECRET }}
+
+      - name: Install Snyk CLI
+        uses: snyk/actions/setup@9adf32b1121593767fc3c057af55b55db032dc04
+
+      - name: Scan dependencies using container runtime
+        if: ${{ env.INPUTS_IMAGE_URI != '' }}
+        env:
+          SNYK_OAUTH_TOKEN: ${{ steps.auth.outputs.token }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          MINIMUM_THRESHOLD: ${{ inputs.minimum_threshold }}
+          INPUTS_IMAGE_URI: ${{ inputs.image_uri }}
+          INPUTS_DOCKERFILE_PATH: ${{ inputs.dockerfile_path }}
+        run: |
+          mkdir -p sarif
+          snyk container test ${INPUTS_IMAGE_URI} \
+            --severity-threshold=${MINIMUM_THRESHOLD} \
+            --sarif-file-output=sarif/snyk.sarif \
+            --file=${INPUTS_DOCKERFILE_PATH}
+
+      - name: Monitor current dependencies
+        if: ${{ env.INPUTS_IMAGE_URI != '' }}
+        env:
+          SNYK_OAUTH_TOKEN: ${{ steps.auth.outputs.token }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          INPUTS_IMAGE_URI: ${{ inputs.image_uri }}
+          INPUTS_DOCKERFILE_PATH: ${{ inputs.dockerfile_path }}
+        run: |
+          snyk container monitor ${INPUTS_IMAGE_URI} \
+            --file=${INPUTS_DOCKERFILE_PATH}
+
+      - name: Scan Infrastructure as Code files
+        if: hashFiles(inputs.iac_path)
+        env:
+          SNYK_OAUTH_TOKEN: ${{ steps.auth.outputs.token }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          MINIMUM_THRESHOLD: ${{ inputs.minimum_threshold }}
+          INPUTS_IAC_PATH: ${{ inputs.iac_path }}
+        run: |
+          snyk iac test ${INPUTS_IAC_PATH} \
+            --severity-threshold=${MINIMUM_THRESHOLD} \
+            --sarif-file-output=sarif/snyk-iac.sarif
+
+      - name: Scan codebase
+        env:
+          SNYK_OAUTH_TOKEN: ${{ steps.auth.outputs.token }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          MINIMUM_THRESHOLD: ${{ inputs.minimum_threshold }}
+        run: |
+          snyk code test \
+            --severity-threshold=${MINIMUM_THRESHOLD} \
+            --sarif-file-output=sarif/snyk-code.sarif
+
+      - name: Sanitise SARIF files
+        if: always()
+        run: |
+          for sarif in sarif/*.sarif; do
+            if [ -f "$sarif" ]; then
+              sed -i 's/"security-severity": "null"/"security-severity": "0"/g' "$sarif"
+              sed -i 's/"security-severity": "undefined"/"security-severity": "0"/g' "$sarif"
+            fi
+          done
+
+      - name: Upload SARIF files
+        if: always() && hashFiles('sarif/*.sarif') != ''
+        uses: github/codeql-action/upload-sarif@68bde559dea0fdcac2102bfdf6230c5f70eb485e # v4.35.4
+        with:
+          sarif_file: "sarif"
