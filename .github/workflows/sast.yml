@@ -1,5 +1,7 @@
 name: Static Application Security Testing
+
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 5 * * *'
@@ -7,13 +9,20 @@ on:
 permissions: {}
 
 jobs:
-  static-application-security-testing:
-    uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/sast.yml@main
-    permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-    with:
-      tag: "legal-framework-application"
-    secrets:
-      SNYK_CLIENT_ID: ${{ secrets.SNYK_CLIENT_ID }}
-      SNYK_CLIENT_SECRET: ${{ secrets.SNYK_CLIENT_SECRET }}
+  build-and-scan-docker-image:
+    name: Build and scan docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #--v6.0.2
+
+      - name: Build docker image
+        run: |
+          docker build \
+            --tag legal-framework-application:scan \
+            --file Dockerfile .
+          
+      - name: Run SaST tooling
+        uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/sast.yml@main # main on 15/04/2026
+        secrets:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
