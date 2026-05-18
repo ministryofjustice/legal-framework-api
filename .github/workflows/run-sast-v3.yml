@@ -1,0 +1,23 @@
+name: Run SaST tooling
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+
+permissions: {}
+
+jobs:
+  scan-docker-image:
+    # uses: ./.github/workflows/sast-reusable.yml
+    uses: ministryofjustice/laa-reusable-github-actions/.github/workflows/sast.yml@main
+    permissions:
+      id-token: write
+      contents: read
+      security-events: write
+      actions: read
+    with:
+      image_uri: ${ECR_REGISTRY_URL}
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      ECR_ROLE_TO_ASSUME: ${ECR_ROLE_TO_ASSUME}
