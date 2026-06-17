@@ -5,7 +5,7 @@ class ClientInvolvementTypesController < ApplicationController
   end
 
   def show
-    response = ClientInvolvementTypeService.call(params[:proceeding_type_ccms_code])
+    response = ClientInvolvementTypeService.call(params[:proceeding_type_ccms_code], params[:age])
     status = response[:success] ? 200 : 400
     render json: response, status:
   end

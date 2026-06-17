@@ -34,13 +34,18 @@ RSpec.describe "client_involvement_types" do
     end
   end
 
-  path "/client_involvement_types/{proceeding_type_ccms_code}" do
+  path "/client_involvement_types/{proceeding_type_ccms_code}/{age}" do
     get("Show client involvement type for specific proceeding type") do
       parameter name: "proceeding_type_ccms_code",
                 in: :path,
                 type: :string,
                 example: "DA001",
                 description: "Proceeding_type_ccms_code, e.g. DA001"
+      parameter name: "age",
+                in: :path,
+                type: :integer,
+                example: 18,
+                description: "The age of the client, e.g. 18. Optional parameter."
 
       description "Returns an array of client involvement types with summary data for the specified proceeding type."
 
@@ -49,35 +54,65 @@ RSpec.describe "client_involvement_types" do
       produces "application/json"
 
       response(200, "successful") do
-        let(:proceeding_type_ccms_code) { "DA001" }
+        context "without age parameter" do
+          let(:proceeding_type_ccms_code) { "DA001" }
+          let(:age) { nil }
 
-        expected_result = {
-          success: true,
-          client_involvement_type: [
-            { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
-            { "ccms_code" => "D", "description" => "Defendant/respondent" },
-            { "ccms_code" => "W", "description" => "Subject of proceedings (child)" },
-            { "ccms_code" => "I", "description" => "Intervenor" },
-            { "ccms_code" => "Z", "description" => "Joined party" },
-          ],
-        }
+          expected_result = {
+            success: true,
+            client_involvement_type: [
+              { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
+              { "ccms_code" => "D", "description" => "Defendant/respondent" },
+              { "ccms_code" => "W", "description" => "Subject of proceedings (child)" },
+              { "ccms_code" => "I", "description" => "Intervenor" },
+              { "ccms_code" => "Z", "description" => "Joined party" },
+            ],
+          }
+          example "application/json",
+                  :success,
+                  expected_result,
+                  "Successful request",
+                  "Returns an array of client involvement types with summary data for the specified proceeding type."
 
-        example "application/json",
-                :success,
-                expected_result,
-                "Successful request",
-                "Returns an array of client involvement types with summary data for the specified proceeding type."
+          run_test! do |response|
+            expect(response).to have_http_status(:ok)
+            expect(response.media_type).to eql("application/json")
+            expect(JSON.parse(response.body)["client_involvement_type"].count).to eq 5
+            expect(JSON.parse(response.body)).to match_json_expression(expected_result)
+          end
+        end
 
-        run_test! do |response|
-          expect(response).to have_http_status(:ok)
-          expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body)["client_involvement_type"].count).to eq 5
-          expect(JSON.parse(response.body)).to match_json_expression(expected_result)
+        context "with age parameter" do
+          let(:proceeding_type_ccms_code) { "DA001" }
+          let(:age) { 18 }
+
+          expected_result = {
+            success: true,
+            client_involvement_type: [
+              { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
+              { "ccms_code" => "D", "description" => "Defendant/respondent" },
+              { "ccms_code" => "I", "description" => "Intervenor" },
+              { "ccms_code" => "Z", "description" => "Joined party" },
+            ],
+          }
+          example "application/json",
+                  :success,
+                  expected_result,
+                  "Successful request",
+                  "Returns an array of client involvement types with summary data for the specified proceeding type."
+
+          run_test! do |response|
+            expect(response).to have_http_status(:ok)
+            expect(response.media_type).to eql("application/json")
+            expect(JSON.parse(response.body)["client_involvement_type"].count).to eq 4
+            expect(JSON.parse(response.body)).to match_json_expression(expected_result)
+          end
         end
       end
 
       response(400, "bad request") do
         let(:proceeding_type_ccms_code) { "foobar" }
+        let(:age) { nil }
 
         expected_result = {
           success: false,
@@ -103,6 +138,7 @@ RSpec.describe "client_involvement_types" do
         end
 
         let(:proceeding_type_ccms_code) { "foobar" }
+        let(:age) { nil }
 
         expected_result = {
           success: false,
