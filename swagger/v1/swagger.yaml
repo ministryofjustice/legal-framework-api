@@ -813,6 +813,63 @@ paths:
                   description: search term
               required:
               - search_term
+  "/expert_types":
+    get:
+      summary: Get all expert types
+      description: Returns an array of all expert types with codes.
+      tags:
+      - Expert types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - code: ACCT
+                    description: Accountant
+                  - code: ARCHT
+                    description: Architect
+                  - code: VET
+                    description: Vet
+                  summary: Successful request
+                  description: Returns an array of all expert types with codes.
+  "/expert_types/{matter_type}":
+    get:
+      summary: Get expert types for a matter type
+      description: Returns an array of the expert types associated with the given
+        matter type code. Returns an empty array when the matter type code has no
+        associated expert types.
+      tags:
+      - Expert types
+      parameters:
+      - name: matter_type
+        in: path
+        example: KPBLW
+        description: Matter type code, e.g. KPBLW
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful with no results
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - code: CHIL2
+                    description: Child Psychologist
+                  - code: PSYCO
+                    description: Psychologist
+                  summary: Successful request
+                  description: Returns an array of expert types associated with the
+                    matter type code.
+                empty:
+                  summary: Empty result
+                  description: Returns an empty array when the matter type code has
+                    no associated expert types.
   "/organisation_types/all":
     get:
       summary: Get all organisation types
@@ -981,14 +1038,14 @@ paths:
                     ccms_opponent_id: '280367'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Ashford Borough Council
-                    ccms_opponent_id: '280368'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Ashford and St Peter’s Hospitals NHS Foundation Trust
                     ccms_opponent_id: '380761'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Ashford Borough Council
+                    ccms_opponent_id: '280368'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Ashton, Leigh and Wigan PCT
                     ccms_opponent_id: '380762'
                     ccms_type_text: National Health Service
@@ -1041,12 +1098,12 @@ paths:
                     ccms_opponent_id: '280373'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Barking Havering & Redbridge Hospitals NHS Trust
-                    ccms_opponent_id: '380775'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Barking and Dagenham PCT
                     ccms_opponent_id: '380774'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Barking Havering & Redbridge Hospitals NHS Trust
+                    ccms_opponent_id: '380775'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Barnet & Chase Farm Hospitals NHS Trust
@@ -1085,14 +1142,14 @@ paths:
                     ccms_opponent_id: '380794'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Basildon Borough Council
-                    ccms_opponent_id: '280376'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Basildon and Thurrock University Hospitals NHS Trust
                     ccms_opponent_id: '380795'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Basildon Borough Council
+                    ccms_opponent_id: '280376'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Basingstoke and Deane Borough Council
                     ccms_opponent_id: '280377'
                     ccms_type_text: Local Authority
@@ -1153,6 +1210,10 @@ paths:
                     ccms_opponent_id: '381463'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Birmingham and Solihull Mental Health NHS Foundation Trust
+                    ccms_opponent_id: '380803'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Birmingham Children's Hospital NHS Foundation Trust
                     ccms_opponent_id: '380804'
                     ccms_type_text: National Health Service
@@ -1177,10 +1238,6 @@ paths:
                     ccms_opponent_id: '380808'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Birmingham and Solihull Mental Health NHS Foundation Trust
-                    ccms_opponent_id: '380803'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Blaby District Council
                     ccms_opponent_id: '280383'
                     ccms_type_text: Local Authority
@@ -1189,14 +1246,14 @@ paths:
                     ccms_opponent_id: '380809'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Blackburn With Darwen Teaching Care Trust Plus
-                    ccms_opponent_id: '380810'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Blackburn with Darwen Borough Council
                     ccms_opponent_id: '280384'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Blackburn With Darwen Teaching Care Trust Plus
+                    ccms_opponent_id: '380810'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Blackpool Council
                     ccms_opponent_id: '280385'
                     ccms_type_text: Local Authority
@@ -1249,14 +1306,14 @@ paths:
                     ccms_opponent_id: '280390'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Bournemouth Borough Council
-                    ccms_opponent_id: '280391'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Bournemouth and Poole Teaching PCT
                     ccms_opponent_id: '380815'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Bournemouth Borough Council
+                    ccms_opponent_id: '280391'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Bracknell Forest Borough Council
                     ccms_opponent_id: '280392'
                     ccms_type_text: Local Authority
@@ -1265,16 +1322,16 @@ paths:
                     ccms_opponent_id: '380816'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Bradford and Airedale Teaching PCT
+                    ccms_opponent_id: '380817'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Bradford District Care Trust
                     ccms_opponent_id: '380818'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Bradford Teaching Hospitals NHS Foundation Trust
                     ccms_opponent_id: '380819'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Bradford and Airedale Teaching PCT
-                    ccms_opponent_id: '380817'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Braintree District Council
@@ -1457,6 +1514,10 @@ paths:
                     ccms_opponent_id: '380835'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Cambridgeshire and Peterborough NHS Foundation Trust
+                    ccms_opponent_id: '380836'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Cambridgeshire Community Services NHS Trust
                     ccms_opponent_id: '380837'
                     ccms_type_text: National Health Service
@@ -1473,10 +1534,6 @@ paths:
                     ccms_opponent_id: '381466'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Cambridgeshire and Peterborough NHS Foundation Trust
-                    ccms_opponent_id: '380836'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Camden PCT
                     ccms_opponent_id: '380839'
                     ccms_type_text: National Health Service
@@ -1533,6 +1590,10 @@ paths:
                     ccms_opponent_id: '380841'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Central and North West London NHS Foundation Trust
+                    ccms_opponent_id: '380843'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Central Bedfordshire Council
                     ccms_opponent_id: '282438'
                     ccms_type_text: Local Authority
@@ -1557,10 +1618,6 @@ paths:
                     ccms_opponent_id: '381467'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Central and North West London NHS Foundation Trust
-                    ccms_opponent_id: '380843'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Centre for Environment, Fisheries and Aquaculture Science
                     ccms_opponent_id: '378766'
                     ccms_type_text: Government Department
@@ -1597,6 +1654,10 @@ paths:
                     ccms_opponent_id: '282342'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Cheshire and Wirral Partnership NHS Foundation Trust
+                    ccms_opponent_id: '380848'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Cheshire East Council
                     ccms_opponent_id: '283351'
                     ccms_type_text: Local Authority
@@ -1609,10 +1670,6 @@ paths:
                     ccms_opponent_id: '281370'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Cheshire and Wirral Partnership NHS Foundation Trust
-                    ccms_opponent_id: '380848'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Chesterfield Borough Council
                     ccms_opponent_id: '281371'
                     ccms_type_text: Local Authority
@@ -1641,16 +1698,16 @@ paths:
                     ccms_opponent_id: '282440'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: City Hospitals Sunderland NHS Foundation Trust
-                    ccms_opponent_id: '380851'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: City and County of Swansea
                     ccms_opponent_id: '282439'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: City and Hackney Teaching PCT
                     ccms_opponent_id: '380850'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: City Hospitals Sunderland NHS Foundation Trust
+                    ccms_opponent_id: '380851'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: City of Bradford Metropolitan District Council
@@ -1733,16 +1790,16 @@ paths:
                     ccms_opponent_id: '282353'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Cornwall and Isles of Scilly PCT
+                    ccms_opponent_id: '380853'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Cornwall Council
                     ccms_opponent_id: '282354'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: Cornwall Partnership NHS Foundation Trust
                     ccms_opponent_id: '380854'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Cornwall and Isles of Scilly PCT
-                    ccms_opponent_id: '380853'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Cotswold District Council
@@ -1761,16 +1818,16 @@ paths:
                     ccms_opponent_id: '380856'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Coventry and Warwickshire Partnership NHS Trust
+                    ccms_opponent_id: '380858'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Coventry City Council
                     ccms_opponent_id: '282357'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: Coventry PCT
                     ccms_opponent_id: '380859'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Coventry and Warwickshire Partnership NHS Trust
-                    ccms_opponent_id: '380858'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Craigavon Borough Council
@@ -1833,14 +1890,14 @@ paths:
                     ccms_opponent_id: '380865'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Dartford Borough Council
-                    ccms_opponent_id: '282364'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Dartford and Gravesham NHS Hospital Trust
                     ccms_opponent_id: '380866'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Dartford Borough Council
+                    ccms_opponent_id: '282364'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Dartmoor
                     ccms_opponent_id: '378978'
                     ccms_type_text: HM Prison or Young Offender Institute
@@ -1957,12 +2014,12 @@ paths:
                     ccms_opponent_id: '281376'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Devon PCT
-                    ccms_opponent_id: '380885'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Devon Partnership NHS Trust
                     ccms_opponent_id: '380884'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Devon PCT
+                    ccms_opponent_id: '380885'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Diana Princess of Wales Hospital
@@ -2033,16 +2090,16 @@ paths:
                     ccms_opponent_id: '378787'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
+                  - name: Dudley and Walsall Mental Health Partnership NHS Trust
+                    ccms_opponent_id: '380892'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Dudley Metropolitan Borough Council
                     ccms_opponent_id: '281380'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: Dudley PCT
                     ccms_opponent_id: '380893'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Dudley and Walsall Mental Health Partnership NHS Trust
-                    ccms_opponent_id: '380892'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Dumfries & Galloway Police HQ
@@ -2162,6 +2219,18 @@ paths:
                     ccms_opponent_id: '281397'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: East of England Ambulance Service NHS Trust
+                    ccms_opponent_id: '380907'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: East of England Government Office Region
+                    ccms_opponent_id: '378793'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: East of England Strategic Health Authority
+                    ccms_opponent_id: '380908'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: East Renfrewshire Council
                     ccms_opponent_id: '281399'
                     ccms_type_text: Local Authority
@@ -2186,18 +2255,6 @@ paths:
                     ccms_opponent_id: '378982'
                     ccms_type_text: HM Prison or Young Offender Institute
                     ccms_type_code: HMO
-                  - name: East of England Ambulance Service NHS Trust
-                    ccms_opponent_id: '380907'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: East of England Government Office Region
-                    ccms_opponent_id: '378793'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: East of England Strategic Health Authority
-                    ccms_opponent_id: '380908'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Eastbourne Borough Council
                     ccms_opponent_id: '281403'
                     ccms_type_text: Local Authority
@@ -2270,10 +2327,6 @@ paths:
                     ccms_opponent_id: '281413'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: FCO Services
-                    ccms_opponent_id: '378797'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
                   - name: Fairfield NHS
                     ccms_opponent_id: '380921'
                     ccms_type_text: National Health Service
@@ -2290,6 +2343,10 @@ paths:
                     ccms_opponent_id: '281417'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: FCO Services
+                    ccms_opponent_id: '378797'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
                   - name: Featherstone
                     ccms_opponent_id: '378988'
                     ccms_type_text: HM Prison or Young Offender Institute
@@ -2346,14 +2403,14 @@ paths:
                     ccms_opponent_id: '281423'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Forest Research
-                    ccms_opponent_id: '378812'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
                   - name: Forest of Dean District Council
                     ccms_opponent_id: '281424'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Forest Research
+                    ccms_opponent_id: '378812'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
                   - name: Forestry Commission
                     ccms_opponent_id: '378813'
                     ccms_type_text: Government Department
@@ -2530,26 +2587,6 @@ paths:
                     ccms_opponent_id: '280404'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: HM Courts Service
-                    ccms_opponent_id: '378820'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: HM Land Registry
-                    ccms_opponent_id: '378821'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: HM Revenue and Customs
-                    ccms_opponent_id: '378822'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: HM Treasury
-                    ccms_opponent_id: '378823'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: HM Treasury Correspondence & Enquiry Unit
-                    ccms_opponent_id: '378824'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
                   - name: Halton & St Helens PCT Widnes Health Care Resource Centre
                     ccms_opponent_id: '380938'
                     ccms_type_text: National Health Service
@@ -2562,12 +2599,12 @@ paths:
                     ccms_opponent_id: '280406'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Hammersmith Hospital NHS Trust
-                    ccms_opponent_id: '380949'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Hammersmith and Fulham PCT
                     ccms_opponent_id: '380948'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Hammersmith Hospital NHS Trust
+                    ccms_opponent_id: '380949'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Hampshire Constabulary
@@ -2634,14 +2671,14 @@ paths:
                     ccms_opponent_id: '380750'
                     ccms_type_text: Immigration Removal Centre
                     ccms_type_code: IRC
-                  - name: Hastings Borough Council
-                    ccms_opponent_id: '281342'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Hastings and Rother PCT
                     ccms_opponent_id: '380957'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Hastings Borough Council
+                    ccms_opponent_id: '281342'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Havant Borough Council
                     ccms_opponent_id: '281345'
                     ccms_type_text: Local Authority
@@ -2694,12 +2731,12 @@ paths:
                     ccms_opponent_id: '281347'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Hertfordshire PCT
-                    ccms_opponent_id: '380968'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Hertfordshire Partnership NHS Foundation Trust
                     ccms_opponent_id: '380967'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Hertfordshire PCT
+                    ccms_opponent_id: '380968'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Hertfordshire Police HQ
@@ -2754,6 +2791,26 @@ paths:
                     ccms_opponent_id: '379022'
                     ccms_type_text: HM Prison or Young Offender Institute
                     ccms_type_code: HMO
+                  - name: HM Courts Service
+                    ccms_opponent_id: '378820'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: HM Land Registry
+                    ccms_opponent_id: '378821'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: HM Revenue and Customs
+                    ccms_opponent_id: '378822'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: HM Treasury
+                    ccms_opponent_id: '378823'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: HM Treasury Correspondence & Enquiry Unit
+                    ccms_opponent_id: '378824'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
                   - name: Hollesley Bay
                     ccms_opponent_id: '379023'
                     ccms_type_text: HM Prison or Young Offender Institute
@@ -2774,24 +2831,24 @@ paths:
                     ccms_opponent_id: '281352'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Hounslow PCT
-                    ccms_opponent_id: '380974'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Hounslow and Richmond Community Healthcare NHS Trust
                     ccms_opponent_id: '380973'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Hounslow PCT
+                    ccms_opponent_id: '380974'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Housing Hartlepool
                     ccms_opponent_id: '380738'
                     ccms_type_text: Housing Association
                     ccms_type_code: HOA
-                  - name: Hull Teaching PCT
-                    ccms_opponent_id: '380995'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Hull and East Yorkshire Hospitals NHS Trust
                     ccms_opponent_id: '380994'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Hull Teaching PCT
+                    ccms_opponent_id: '380995'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Humber NHS Trust
@@ -2870,10 +2927,6 @@ paths:
                     ccms_opponent_id: '378828'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
-                  - name: Kensington Housing Trust
-                    ccms_opponent_id: '380739'
-                    ccms_type_text: Housing Association
-                    ccms_type_code: HOA
                   - name: Kensington and Chelsea PCT
                     ccms_opponent_id: '381004'
                     ccms_type_text: National Health Service
@@ -2882,6 +2935,14 @@ paths:
                     ccms_opponent_id: '378829'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
+                  - name: Kensington Housing Trust
+                    ccms_opponent_id: '380739'
+                    ccms_type_text: Housing Association
+                    ccms_type_code: HOA
+                  - name: Kent and Medway NHS and Social Care Partnership Trust
+                    ccms_opponent_id: '381005'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Kent Community Health NHS Trust
                     ccms_opponent_id: '381006'
                     ccms_type_text: National Health Service
@@ -2894,10 +2955,6 @@ paths:
                     ccms_opponent_id: '381497'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Kent and Medway NHS and Social Care Partnership Trust
-                    ccms_opponent_id: '381005'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Kettering Borough Council
                     ccms_opponent_id: '281360'
                     ccms_type_text: Local Authority
@@ -3002,6 +3059,10 @@ paths:
                     ccms_opponent_id: '379029'
                     ccms_type_text: Charity
                     ccms_type_code: CHAR
+                  - name: Leeds and York Partnership NHS Foundation Trust
+                    ccms_opponent_id: '381019'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Leeds City County Council
                     ccms_opponent_id: '281368'
                     ccms_type_text: Local Authority
@@ -3022,10 +3083,6 @@ paths:
                     ccms_opponent_id: '381024'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Leeds and York Partnership NHS Foundation Trust
-                    ccms_opponent_id: '381019'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Leicester City PCT
                     ccms_opponent_id: '381025'
                     ccms_type_text: National Health Service
@@ -3038,14 +3095,14 @@ paths:
                     ccms_opponent_id: '381499'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Leicestershire County Council
-                    ccms_opponent_id: '281422'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Leicestershire County and Rutland PCT
                     ccms_opponent_id: '381027'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Leicestershire County Council
+                    ccms_opponent_id: '281422'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Leicestershire Partnership NHS Trust
                     ccms_opponent_id: '381028'
                     ccms_type_text: National Health Service
@@ -3130,6 +3187,10 @@ paths:
                     ccms_opponent_id: '381039'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: London and Quadrant Housing Association
+                    ccms_opponent_id: '380740'
+                    ccms_type_text: Housing Association
+                    ccms_type_code: HOA
                   - name: London Borough of Barking and Dagenham Council
                     ccms_opponent_id: '281394'
                     ccms_type_text: Local Authority
@@ -3246,10 +3307,6 @@ paths:
                     ccms_opponent_id: '381040'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: London and Quadrant Housing Association
-                    ccms_opponent_id: '380740'
-                    ccms_type_text: Housing Association
-                    ccms_type_code: HOA
                   - name: Long Lartin
                     ccms_opponent_id: '379033'
                     ccms_type_text: HM Prison or Young Offender Institute
@@ -3278,14 +3335,6 @@ paths:
                     ccms_opponent_id: '381042'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: MI5 (director General of Security)
-                    ccms_opponent_id: '378836'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: MI6 (secret Intelligence Service)
-                    ccms_opponent_id: '378837'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
                   - name: Magherafelt District Council
                     ccms_opponent_id: '281465'
                     ccms_type_text: Local Authority
@@ -3379,6 +3428,14 @@ paths:
                     ccms_opponent_id: '381517'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
+                  - name: MI5 (director General of Security)
+                    ccms_opponent_id: '378836'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: MI6 (secret Intelligence Service)
+                    ccms_opponent_id: '378837'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
                   - name: Mid Cheshire NHS Trust
                     ccms_opponent_id: '381093'
                     ccms_type_text: National Health Service
@@ -3488,14 +3545,6 @@ paths:
                     ccms_opponent_id: '281497'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: NHS Blood 7 Transport
-                    ccms_opponent_id: '378847'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: NHS Direct NHS Trust
-                    ccms_opponent_id: '381106'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: National Archives
                     ccms_opponent_id: '378841'
                     ccms_type_text: Government Department
@@ -3512,16 +3561,16 @@ paths:
                     ccms_opponent_id: '378844'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
+                  - name: National offender Management Service (noms)
+                    ccms_opponent_id: '378845'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
                   - name: National Policing Improvement Agency
                     ccms_opponent_id: '381518'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
                   - name: National School of Government
                     ccms_opponent_id: '378846'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
-                  - name: National offender Management Service (noms)
-                    ccms_opponent_id: '378845'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
                   - name: Neath Port Talbot County Borough Council
@@ -3552,10 +3601,6 @@ paths:
                     ccms_opponent_id: '381102'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Newcastle Upon Tyne Hospitals NHS Foundation Trust
-                    ccms_opponent_id: '381103'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Newcastle under Lyme Borough Council
                     ccms_opponent_id: '281505'
                     ccms_type_text: Local Authority
@@ -3564,6 +3609,10 @@ paths:
                     ccms_opponent_id: '281507'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Newcastle Upon Tyne Hospitals NHS Foundation Trust
+                    ccms_opponent_id: '381103'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Newham PCT
                     ccms_opponent_id: '381104'
                     ccms_type_text: National Health Service
@@ -3584,8 +3633,20 @@ paths:
                     ccms_opponent_id: '281512'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: NHS Blood 7 Transport
+                    ccms_opponent_id: '378847'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: NHS Direct NHS Trust
+                    ccms_opponent_id: '381106'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Norfolk & Norwich NHS Trust
                     ccms_opponent_id: '381107'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: Norfolk and Suffolk NHS Foundation Trust
+                    ccms_opponent_id: '381108'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Norfolk Community Health and Care NHS Trust
@@ -3602,10 +3663,6 @@ paths:
                     ccms_type_code: POLICE
                   - name: Norfolk Primary Care Trust
                     ccms_opponent_id: '381110'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Norfolk and Suffolk NHS Foundation Trust
-                    ccms_opponent_id: '381108'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: North Ayrshire Council
@@ -4328,10 +4385,6 @@ paths:
                     ccms_opponent_id: '281527'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: SOCA
-                    ccms_opponent_id: '381552'
-                    ccms_type_text: Police Authority
-                    ccms_type_code: POLICE
                   - name: Salford City Council
                     ccms_opponent_id: '281529'
                     ccms_type_text: Local Authority
@@ -4352,16 +4405,16 @@ paths:
                     ccms_opponent_id: '381220'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Sandwell and West Birmingham Hospitals NHS Trust
+                    ccms_opponent_id: '381221'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Sandwell Metropolitan Borough Council
                     ccms_opponent_id: '281532'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: Sandwell PCT
                     ccms_opponent_id: '381222'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Sandwell and West Birmingham Hospitals NHS Trust
-                    ccms_opponent_id: '381221'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Scarborough & North East Yorkshire NHS Trust
@@ -4384,10 +4437,6 @@ paths:
                     ccms_opponent_id: '381551'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Secretary of State Home Department
-                    ccms_opponent_id: '378875'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
                   - name: Secretary of State for Defence War Office
                     ccms_opponent_id: '378873'
                     ccms_type_text: Government Department
@@ -4396,6 +4445,10 @@ paths:
                     ccms_opponent_id: '378874'
                     ccms_type_text: Charity
                     ccms_type_code: CHAR
+                  - name: Secretary of State Home Department
+                    ccms_opponent_id: '378875'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
                   - name: Sedgemoor District Council
                     ccms_opponent_id: '281538'
                     ccms_type_text: Local Authority
@@ -4493,6 +4546,10 @@ paths:
                     ccms_opponent_id: '281555'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: SOCA
+                    ccms_opponent_id: '381552'
+                    ccms_type_text: Police Authority
+                    ccms_type_code: POLICE
                   - name: Solent NHS Trust
                     ccms_opponent_id: '381238'
                     ccms_type_text: National Health Service
@@ -4637,17 +4694,17 @@ paths:
                     ccms_opponent_id: '281593'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: South Staffordshire and Shropshire Healthcare NHS Foundation
+                      Trust
+                    ccms_opponent_id: '381255'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: South Staffordshire Council
                     ccms_opponent_id: '281594'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: South Staffordshire PCT
                     ccms_opponent_id: '381256'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: South Staffordshire and Shropshire Healthcare NHS Foundation
-                      Trust
-                    ccms_opponent_id: '381255'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: South Tees NHS Trust
@@ -4714,14 +4771,14 @@ paths:
                     ccms_opponent_id: '381267'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: Southend University Hospital NHS Trust
-                    ccms_opponent_id: '381268'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Southend on Sea Borough Council
                     ccms_opponent_id: '281596'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Southend University Hospital NHS Trust
+                    ccms_opponent_id: '381268'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Southern Health NHS Foundation Trust
                     ccms_opponent_id: '381269'
                     ccms_type_text: National Health Service
@@ -4766,18 +4823,22 @@ paths:
                     ccms_opponent_id: '381274'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: St Helens Metropolitan Borough Council
-                    ccms_opponent_id: '281600'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: St Helens and Knowsley Hospitals NHS Trust
                     ccms_opponent_id: '381275'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: St Helens Metropolitan Borough Council
+                    ccms_opponent_id: '281600'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Stafford Borough Council
                     ccms_opponent_id: '281601'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Staffordshire and Stoke On Trent Partnership NHS Trust
+                    ccms_opponent_id: '381277'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Staffordshire County Council
                     ccms_opponent_id: '281602'
                     ccms_type_text: Local Authority
@@ -4790,10 +4851,6 @@ paths:
                     ccms_opponent_id: '381556'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Staffordshire and Stoke On Trent Partnership NHS Trust
-                    ccms_opponent_id: '381277'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Standford Hill
                     ccms_opponent_id: '380690'
                     ccms_type_text: HM Prison or Young Offender Institute
@@ -4838,14 +4895,14 @@ paths:
                     ccms_opponent_id: '380719'
                     ccms_type_text: HM Prison or Young Offender Institute
                     ccms_type_code: HMO
-                  - name: Stoke On Trent PCT
-                    ccms_opponent_id: '381282'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Stoke on Trent City Council
                     ccms_opponent_id: '281608'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
+                  - name: Stoke On Trent PCT
+                    ccms_opponent_id: '381282'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Strabane District Council
                     ccms_opponent_id: '281609'
                     ccms_type_text: Local Authority
@@ -4898,6 +4955,10 @@ paths:
                     ccms_opponent_id: '381286'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Surrey and Borders Partnership NHS Foundation Trust
+                    ccms_opponent_id: '381287'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Surrey County Council
                     ccms_opponent_id: '281615'
                     ccms_type_text: Local Authority
@@ -4914,10 +4975,6 @@ paths:
                     ccms_opponent_id: '381559'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Surrey and Borders Partnership NHS Foundation Trust
-                    ccms_opponent_id: '381287'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Sussex Community NHS Trust
                     ccms_opponent_id: '381289'
                     ccms_type_text: National Health Service
@@ -4958,6 +5015,10 @@ paths:
                     ccms_opponent_id: '380722'
                     ccms_type_text: HM Prison or Young Offender Institute
                     ccms_type_code: HMO
+                  - name: Tameside and Glossop PCT
+                    ccms_opponent_id: '381294'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Tameside Hospital NHS Foundation Trust
                     ccms_opponent_id: '381295'
                     ccms_type_text: National Health Service
@@ -4966,10 +5027,6 @@ paths:
                     ccms_opponent_id: '281621'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Tameside and Glossop PCT
-                    ccms_opponent_id: '381294'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: Tamworth Borough Council
                     ccms_opponent_id: '281622'
                     ccms_type_text: Local Authority
@@ -4978,14 +5035,14 @@ paths:
                     ccms_opponent_id: '281623'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Taunton Deane Borough Council
-                    ccms_opponent_id: '281624'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Taunton and Somerset NHS Foundation Trust
                     ccms_opponent_id: '381296'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Taunton Deane Borough Council
+                    ccms_opponent_id: '281624'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Tavistock and Portman NHS Foundation Trust
                     ccms_opponent_id: '381317'
                     ccms_type_text: National Health Service
@@ -5132,14 +5189,14 @@ paths:
                     ccms_opponent_id: '281640'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
-                  - name: Torbay Council
-                    ccms_opponent_id: '281642'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Torbay and Southern Devon Health and Care NHS Trust
                     ccms_opponent_id: '381373'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Torbay Council
+                    ccms_opponent_id: '281642'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Torfaen County Borough Council
                     ccms_opponent_id: '281644'
                     ccms_type_text: Local Authority
@@ -5220,16 +5277,16 @@ paths:
                     ccms_opponent_id: '381383'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
-                  - name: University Hospital Southampton NHS Foundation Trust
-                    ccms_opponent_id: '381386'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
                   - name: University Hospital of North Staffordshire NHS Trust
                     ccms_opponent_id: '381384'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: University Hospital of South Manchester
                     ccms_opponent_id: '381385'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
+                  - name: University Hospital Southampton NHS Foundation Trust
+                    ccms_opponent_id: '381386'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: University Hospitals Birmingham NHS Foundation Trust
@@ -5272,12 +5329,12 @@ paths:
                     ccms_opponent_id: '378911'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
-                  - name: Vehicle Certification Agency
-                    ccms_opponent_id: '378913'
-                    ccms_type_text: Government Department
-                    ccms_type_code: GOVT
                   - name: Vehicle and Operator Services Agency
                     ccms_opponent_id: '378912'
+                    ccms_type_text: Government Department
+                    ccms_type_code: GOVT
+                  - name: Vehicle Certification Agency
+                    ccms_opponent_id: '378913'
                     ccms_type_text: Government Department
                     ccms_type_code: GOVT
                   - name: Velindre NHS Trust
@@ -5332,16 +5389,16 @@ paths:
                     ccms_opponent_id: '381408'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Warrington and Halton Hospitals NHS Foundation Trust
+                    ccms_opponent_id: '381409'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: Warrington Borough Council
                     ccms_opponent_id: '281562'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: Warrington PCT
                     ccms_opponent_id: '381416'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: Warrington and Halton Hospitals NHS Foundation Trust
-                    ccms_opponent_id: '381409'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: Warwick District Council
@@ -5456,6 +5513,10 @@ paths:
                     ccms_opponent_id: '381435'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: West Midlands and East NHS Trust
+                    ccms_opponent_id: '381436'
+                    ccms_type_text: National Health Service
+                    ccms_type_code: NHS
                   - name: West Midlands Government Office Region
                     ccms_opponent_id: '378919'
                     ccms_type_text: Government Department
@@ -5466,10 +5527,6 @@ paths:
                     ccms_type_code: POLICE
                   - name: West Midlands Strategic Health Authority
                     ccms_opponent_id: '381437'
-                    ccms_type_text: National Health Service
-                    ccms_type_code: NHS
-                  - name: West Midlands and East NHS Trust
-                    ccms_opponent_id: '381436'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: West Oxfordshire District Council
@@ -5560,14 +5617,14 @@ paths:
                     ccms_opponent_id: '381575'
                     ccms_type_text: Police Authority
                     ccms_type_code: POLICE
-                  - name: Winchester City Council
-                    ccms_opponent_id: '281637'
-                    ccms_type_text: Local Authority
-                    ccms_type_code: LA
                   - name: Winchester and Eastleigh Healthcare NHS Trust
                     ccms_opponent_id: '381447'
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
+                  - name: Winchester City Council
+                    ccms_opponent_id: '281637'
+                    ccms_type_text: Local Authority
+                    ccms_type_code: LA
                   - name: Windsor and Maidenhead Royal Borough Council
                     ccms_opponent_id: '281639'
                     ccms_type_text: Local Authority
@@ -5846,25 +5903,25 @@ paths:
                     errors:
                     - 'The property ''#/proceeding_type_ccms_code'' value "XX123"
                       did not match one of the following values: DA001, DA002, DA003,
-                      DA004, DA005, DA006, DA007, DA020, SE003, SE003A, SE003E, SE004,
-                      SE004A, SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E,
-                      SE013, SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A,
-                      SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097,
-                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005, PB006,
-                      PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020, PB021,
-                      PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052, PBM01,
-                      PBM01A, PBM02, PBM02A, PBM02E, PBM04, PBM04A, PBM04E, PBM05,
-                      PBM05A, PBM05E, PBM06, PBM06A, PBM06E, PBM07, PBM07A, PBM07E,
-                      PBM08, PBM08A, PBM08E, PBM09, PBM09A, PBM09E, PBM10, PBM10A,
-                      PBM11, PBM11A, PBM11E, PBM13, PBM13A, PBM16, PBM16A, PBM16E,
-                      PBM17, PBM17A, PBM17E, PBM18, PBM18A, PBM18E, PBM19, PBM19A,
-                      PBM19E, PBM20, PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22,
-                      PBM22A, PBM23, PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26,
-                      PBM26A, PBM26E, PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29,
-                      PBM29A, PBM29E, PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E,
-                      PBM33, PBM33A, PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A,
-                      PBM36E, PBM37, PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39,
-                      PBM39A, PBM39E, PBM40, PBM40E, PBM45, PBM45E in schema file://#'
+                      DA004, DA005, DA006, DA007, DA020, PBM01, PBM01A, PBM02, PBM02A,
+                      PBM02E, PBM04, PBM04A, PBM04E, PBM05, PBM05A, PBM05E, PBM06,
+                      PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A, PBM08E,
+                      PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A, PBM11E,
+                      PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
+                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM36, PBM20,
+                      PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23,
+                      PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E,
+                      PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
+                      PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
+                      PBM33E, PBM35, PBM35A, PBM35E, PBM36A, PBM36E, PBM37, PBM37A,
+                      PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E, PBM40,
+                      PBM40E, PBM45, PBM45E, SE003, SE003A, SE003E, SE004, SE004A,
+                      SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E, SE013,
+                      SE013A, SE013E, SE014, SE014A, SE014E, PB051, PB029, SE015,
+                      SE015A, SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E,
+                      SE097, SE097A, SE100E, SE101A, PB052, SE101E, PB003, PB004,
+                      PB005, PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019,
+                      PB020, PB021, PB022, PB023, PB024, PB027, PB030 in schema file://#'
                   summary: Unsuccessful request
                   description: When invalid proceeding types are submitted an error
                     will be raised and returned to the users
@@ -5993,25 +6050,25 @@ paths:
                     errors:
                     - 'The property ''#/proceeding_type_ccms_code'' value "XX123"
                       did not match one of the following values: DA001, DA002, DA003,
-                      DA004, DA005, DA006, DA007, DA020, SE003, SE003A, SE003E, SE004,
-                      SE004A, SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E,
-                      SE013, SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A,
-                      SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097,
-                      SE097A, SE100E, SE101A, SE101E, PB003, PB004, PB005, PB006,
-                      PB026, PB057, PB059, PB007, PB012, PB014, PB019, PB020, PB021,
-                      PB022, PB023, PB024, PB027, PB029, PB030, PB051, PB052, PBM01,
-                      PBM01A, PBM02, PBM02A, PBM02E, PBM04, PBM04A, PBM04E, PBM05,
-                      PBM05A, PBM05E, PBM06, PBM06A, PBM06E, PBM07, PBM07A, PBM07E,
-                      PBM08, PBM08A, PBM08E, PBM09, PBM09A, PBM09E, PBM10, PBM10A,
-                      PBM11, PBM11A, PBM11E, PBM13, PBM13A, PBM16, PBM16A, PBM16E,
-                      PBM17, PBM17A, PBM17E, PBM18, PBM18A, PBM18E, PBM19, PBM19A,
-                      PBM19E, PBM20, PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22,
-                      PBM22A, PBM23, PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26,
-                      PBM26A, PBM26E, PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29,
-                      PBM29A, PBM29E, PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E,
-                      PBM33, PBM33A, PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A,
-                      PBM36E, PBM37, PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39,
-                      PBM39A, PBM39E, PBM40, PBM40E, PBM45, PBM45E in schema file://#'
+                      DA004, DA005, DA006, DA007, DA020, PBM01, PBM01A, PBM02, PBM02A,
+                      PBM02E, PBM04, PBM04A, PBM04E, PBM05, PBM05A, PBM05E, PBM06,
+                      PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A, PBM08E,
+                      PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A, PBM11E,
+                      PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
+                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM36, PBM20,
+                      PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23,
+                      PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E,
+                      PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
+                      PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
+                      PBM33E, PBM35, PBM35A, PBM35E, PBM36A, PBM36E, PBM37, PBM37A,
+                      PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E, PBM40,
+                      PBM40E, PBM45, PBM45E, SE003, SE003A, SE003E, SE004, SE004A,
+                      SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E, SE013,
+                      SE013A, SE013E, SE014, SE014A, SE014E, PB051, PB029, SE015,
+                      SE015A, SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E,
+                      SE097, SE097A, SE100E, SE101A, PB052, SE101E, PB003, PB004,
+                      PB005, PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019,
+                      PB020, PB021, PB022, PB023, PB024, PB027, PB030 in schema file://#'
                   summary: Bad request
                   description: When a non-existent ccms_code is sent, an error is
                     generated from the json schema and returned
@@ -6214,602 +6271,6 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
-                  - ccms_code: SE003
-                    meaning: Prohibited steps order
-                    description: to be represented on an application for a prohibited
-                      steps order.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE003A
-                    meaning: Prohibited steps order - appeal
-                    description: to be represented on an application for a prohibited
-                      steps order.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE003E
-                    meaning: Prohibited steps order - enforcement
-                    description: to be represented on an application for a prohibited
-                      steps order.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE004
-                    meaning: Specific issue order
-                    description: to be represented on an application for a specific
-                      issue order.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE004A
-                    meaning: Specific issue order - appeal
-                    description: to be represented on an application for a specific
-                      issue order.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE004E
-                    meaning: Specific issue order - enforcement
-                    description: to be represented on an application for a specific
-                      issue order.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE007
-                    meaning: Prohibited steps order - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a prohibited steps order.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE007A
-                    meaning: Prohibited steps order - appeal - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a prohibited steps order.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE007E
-                    meaning: Prohibited steps order - enforcement - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a prohibited steps order.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE008
-                    meaning: Specific issue order - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a specific issue order.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE008A
-                    meaning: Specific issue order - appeal - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a specific issue order.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE008E
-                    meaning: Specific issue order - enforcement - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a specific issue order.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE013
-                    meaning: Child arrangements order (CAO) - contact
-                    description: to be represented on an application for a child arrangements
-                      order-who the child(ren) spend time with.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE013A
-                    meaning: Child arrangements order (CAO) - contact - appeal
-                    description: to be represented on an application for a child arrangements
-                      order-who the child(ren) spend time with. Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE013E
-                    meaning: Child arrangements order (CAO) - contact - enforcement
-                    description: to be represented on an application for a child arrangements
-                      order-who the child(ren) spend time with. Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE014
-                    meaning: Child arrangements order (CAO) - residence
-                    description: to be represented on an application for a child arrangements
-                      order –where the child(ren) will live
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE014A
-                    meaning: Child arrangements order (CAO) - residence - appeal
-                    description: to be represented on an application for a child arrangements
-                      order –where the child(ren) will live. Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE014E
-                    meaning: Child arrangements order (CAO) - residence - enforcement
-                    description: to be represented on an application for a child arrangements
-                      order –where the child(ren) will live. Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE015
-                    meaning: Child arrangements order (CAO) - contact - vary
-                    description: to be represented on an application to vary/discharge
-                      a child arrangements order-who the child(ren) spend time with.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE015A
-                    meaning: Child arrangements order (CAO) - contact - appeal - vary
-                    description: to be represented on an application to vary/discharge
-                      a child arrangements order-who the child(ren) spend time with.
-                      Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE015E
-                    meaning: Child arrangements order (CAO) - contact - enforcement
-                      - vary
-                    description: to be represented on an application to vary/discharge
-                      a child arrangements order-who the child(ren) spend time with.
-                      Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE016
-                    meaning: Child arrangements order (CAO) - residence - vary
-                    description: to be represented on an application to vary or discharge
-                      a child arrangements order –where the child(ren) will live.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE016A
-                    meaning: Child arrangements order (CAO) - residence - appeal -
-                      vary
-                    description: to be represented on an application to vary or discharge
-                      a child arrangements order –where the child(ren) will live.
-                      Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE016E
-                    meaning: Child arrangements order (CAO) - residence - enforcement
-                      - vary
-                    description: to be represented on an application to vary or discharge
-                      a child arrangements order –where the child(ren) will live.
-                      Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE095
-                    meaning: Enforcement order 11J
-                    description: to be represented on an application for an enforcement
-                      order under section 11J Children Act 1989.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE095A
-                    meaning: Enforcement order 11J - appeal
-                    description: to be represented on an application for an enforcement
-                      order under section 11J Children Act 1989.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE096E
-                    meaning: Enforcement order 11J and committal
-                    description: to be represented on an application for committal
-                      and for an enforcement order under section 11J Children Act
-                      1989. Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE097
-                    meaning: Enforcement order 11J - revocation
-                    description: to be represented on an application for the revocation
-                      of an enforcement order under section 11J and Schedule A1 Children
-                      Act 1989.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE097A
-                    meaning: Enforcement order 11J - revocation - appeal
-                    description: to be represented on an application for the revocation
-                      of an enforcement order under section 11J and Schedule A1 Children
-                      Act 1989.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE100E
-                    meaning: Enforcement order 11J - amendment following breach
-                    description: to be represented on an application, following breach,
-                      for an amendment to an enforcement order or for a further enforcement
-                      order under section 11J and Schedule A1 Children Act 1989.  Enforcement
-                      only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE101A
-                    meaning: Compensation - appeal
-                    description: to be represented on an application for compensation
-                      for financial loss under section 11O Children Act 1989.  Appeals
-                      only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: SE101E
-                    meaning: Compensation - enforcement
-                    description: to be represented on an application for compensation
-                      for financial loss under section 11O Children Act 1989.  Enforcement
-                      only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KSEC8
-                    ccms_matter: section 8 children (S8)
-                  - ccms_code: PB003
-                    meaning: Child assessment order
-                    description: to be represented on an application for a child assessment
-                      order.
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB004
-                    meaning: Emergency protection order - extend
-                    description: to be represented on an application for or to extend
-                      an emergency protection order.
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB005
-                    meaning: Emergency protection order - discharge
-                    description: to be represented on an application to discharge
-                      an emergency protection order.
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB006
-                    meaning: Secure accommodation order
-                    description: to be represented on an application for a secure
-                      accommodation order.
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB026
-                    meaning: Emergency protection order
-                    description: to be represented on an application for an emergency
-                      protection order.
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB057
-                    meaning: Care order
-                    description: to be represented on an application for a care order
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB059
-                    meaning: Supervision order
-                    description: to be represented on an application for a supervision
-                      order
-                    sca_core: true
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB007
-                    meaning: Contact with a child in care
-                    description: to be represented on an application for contact with
-                      a child in care.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB012
-                    meaning: Recovery of children order
-                    description: to be represented on an application for the recovery
-                      of a child(ren).
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB014
-                    meaning: End contact with a child in care
-                    description: to be represented on an application to terminate
-                      contact with a child/children in care.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB019
-                    meaning: Prohibited steps order
-                    description: to be represented on an application for a prohibited
-                      steps order.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB020
-                    meaning: Specific issue order
-                    description: to be represented on an application for a specific
-                      issue order.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB021
-                    meaning: Contact order - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a contact order.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB022
-                    meaning: Residence - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a residence order.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB023
-                    meaning: Prohibited steps order - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a prohibitive steps order.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB024
-                    meaning: Specific issue order - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a specific issues order.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB027
-                    meaning: Parental responsibility
-                    description: to be represented on an application for parental
-                      responsibility.
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB029
-                    meaning: Child arrangements order (CAO) - contact
-                    description: to be represented on an application for a child arrangements
-                      order-who the child(ren) spend time with
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB030
-                    meaning: Child arrangements order (CAO) - residence
-                    description: to be represented on an application for a child arrangements
-                      order-where the child(ren) will live
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB051
-                    meaning: Placement order
-                    description: to be represented on an application for a placement
-                      order .
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB052
-                    meaning: Special guardianship order
-                    description: to be represented on an application for a Special
-                      Guardianship Order .
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
                   - ccms_code: PBM01
                     meaning: Declaration for overseas adoption
                     description: to be represented on an application for a declaration
@@ -7279,6 +6740,16 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
+                  - ccms_code: PBM36
+                    meaning: Care order - joined party
+                    description: to be represented on an application for a care order
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
                   - ccms_code: PBM20
                     meaning: Prohibited steps order - vary or discharge
                     description: to be represented on an application to vary or discharge
@@ -7685,16 +7156,6 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
-                  - ccms_code: PBM36
-                    meaning: Care order - joined party
-                    description: to be represented on an application for a care order
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
                   - ccms_code: PBM36A
                     meaning: Care order - joined party - appeal
                     description: to be represented on an application for a care order
@@ -7862,6 +7323,602 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
+                  - ccms_code: SE003
+                    meaning: Prohibited steps order
+                    description: to be represented on an application for a prohibited
+                      steps order.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE003A
+                    meaning: Prohibited steps order - appeal
+                    description: to be represented on an application for a prohibited
+                      steps order.  Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE003E
+                    meaning: Prohibited steps order - enforcement
+                    description: to be represented on an application for a prohibited
+                      steps order.  Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE004
+                    meaning: Specific issue order
+                    description: to be represented on an application for a specific
+                      issue order.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE004A
+                    meaning: Specific issue order - appeal
+                    description: to be represented on an application for a specific
+                      issue order.  Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE004E
+                    meaning: Specific issue order - enforcement
+                    description: to be represented on an application for a specific
+                      issue order.  Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE007
+                    meaning: Prohibited steps order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE007A
+                    meaning: Prohibited steps order - appeal - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.  Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE007E
+                    meaning: Prohibited steps order - enforcement - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibited steps order.  Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE008
+                    meaning: Specific issue order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE008A
+                    meaning: Specific issue order - appeal - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.  Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE008E
+                    meaning: Specific issue order - enforcement - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issue order.  Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE013
+                    meaning: Child arrangements order (CAO) - contact
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE013A
+                    meaning: Child arrangements order (CAO) - contact - appeal
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with. Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE013E
+                    meaning: Child arrangements order (CAO) - contact - enforcement
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with. Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE014
+                    meaning: Child arrangements order (CAO) - residence
+                    description: to be represented on an application for a child arrangements
+                      order –where the child(ren) will live
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE014A
+                    meaning: Child arrangements order (CAO) - residence - appeal
+                    description: to be represented on an application for a child arrangements
+                      order –where the child(ren) will live. Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE014E
+                    meaning: Child arrangements order (CAO) - residence - enforcement
+                    description: to be represented on an application for a child arrangements
+                      order –where the child(ren) will live. Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: PB051
+                    meaning: Placement order
+                    description: to be represented on an application for a placement
+                      order .
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB029
+                    meaning: Child arrangements order (CAO) - contact
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: SE015
+                    meaning: Child arrangements order (CAO) - contact - vary
+                    description: to be represented on an application to vary/discharge
+                      a child arrangements order-who the child(ren) spend time with.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE015A
+                    meaning: Child arrangements order (CAO) - contact - appeal - vary
+                    description: to be represented on an application to vary/discharge
+                      a child arrangements order-who the child(ren) spend time with.
+                      Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE015E
+                    meaning: Child arrangements order (CAO) - contact - enforcement
+                      - vary
+                    description: to be represented on an application to vary/discharge
+                      a child arrangements order-who the child(ren) spend time with.
+                      Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE016
+                    meaning: Child arrangements order (CAO) - residence - vary
+                    description: to be represented on an application to vary or discharge
+                      a child arrangements order –where the child(ren) will live.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE016A
+                    meaning: Child arrangements order (CAO) - residence - appeal -
+                      vary
+                    description: to be represented on an application to vary or discharge
+                      a child arrangements order –where the child(ren) will live.
+                      Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE016E
+                    meaning: Child arrangements order (CAO) - residence - enforcement
+                      - vary
+                    description: to be represented on an application to vary or discharge
+                      a child arrangements order –where the child(ren) will live.
+                      Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE095
+                    meaning: Enforcement order 11J
+                    description: to be represented on an application for an enforcement
+                      order under section 11J Children Act 1989.  Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE095A
+                    meaning: Enforcement order 11J - appeal
+                    description: to be represented on an application for an enforcement
+                      order under section 11J Children Act 1989.  Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE096E
+                    meaning: Enforcement order 11J and committal
+                    description: to be represented on an application for committal
+                      and for an enforcement order under section 11J Children Act
+                      1989. Enforcement only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE097
+                    meaning: Enforcement order 11J - revocation
+                    description: to be represented on an application for the revocation
+                      of an enforcement order under section 11J and Schedule A1 Children
+                      Act 1989.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE097A
+                    meaning: Enforcement order 11J - revocation - appeal
+                    description: to be represented on an application for the revocation
+                      of an enforcement order under section 11J and Schedule A1 Children
+                      Act 1989.  Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE100E
+                    meaning: Enforcement order 11J - amendment following breach
+                    description: to be represented on an application, following breach,
+                      for an amendment to an enforcement order or for a further enforcement
+                      order under section 11J and Schedule A1 Children Act 1989.  Enforcement
+                      only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: SE101A
+                    meaning: Compensation - appeal
+                    description: to be represented on an application for compensation
+                      for financial loss under section 11O Children Act 1989.  Appeals
+                      only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: PB052
+                    meaning: Special guardianship order
+                    description: to be represented on an application for a Special
+                      Guardianship Order .
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: SE101E
+                    meaning: Compensation - enforcement
+                    description: to be represented on an application for compensation
+                      for financial loss under section 11O Children Act 1989.  Enforcement
+                      only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KSEC8
+                    ccms_matter: section 8 children (S8)
+                  - ccms_code: PB003
+                    meaning: Child assessment order
+                    description: to be represented on an application for a child assessment
+                      order.
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB004
+                    meaning: Emergency protection order - extend
+                    description: to be represented on an application for or to extend
+                      an emergency protection order.
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB005
+                    meaning: Emergency protection order - discharge
+                    description: to be represented on an application to discharge
+                      an emergency protection order.
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB006
+                    meaning: Secure accommodation order
+                    description: to be represented on an application for a secure
+                      accommodation order.
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB026
+                    meaning: Emergency protection order
+                    description: to be represented on an application for an emergency
+                      protection order.
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB057
+                    meaning: Care order
+                    description: to be represented on an application for a care order
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB059
+                    meaning: Supervision order
+                    description: to be represented on an application for a supervision
+                      order
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB007
+                    meaning: Contact with a child in care
+                    description: to be represented on an application for contact with
+                      a child in care.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB012
+                    meaning: Recovery of children order
+                    description: to be represented on an application for the recovery
+                      of a child(ren).
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB014
+                    meaning: End contact with a child in care
+                    description: to be represented on an application to terminate
+                      contact with a child/children in care.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB019
+                    meaning: Prohibited steps order
+                    description: to be represented on an application for a prohibited
+                      steps order.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB020
+                    meaning: Specific issue order
+                    description: to be represented on an application for a specific
+                      issue order.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB021
+                    meaning: Contact order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a contact order.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB022
+                    meaning: Residence - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a residence order.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB023
+                    meaning: Prohibited steps order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a prohibitive steps order.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB024
+                    meaning: Specific issue order - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a specific issues order.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB027
+                    meaning: Parental responsibility
+                    description: to be represented on an application for parental
+                      responsibility.
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB030
+                    meaning: Child arrangements order (CAO) - residence
+                    description: to be represented on an application for a child arrangements
+                      order-where the child(ren) will live
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
                   summary: Successful request
                   description: Returns an array of all proceeding types with summary
                     data

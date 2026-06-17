@@ -1,0 +1,25 @@
+---
+# Mapping of matter type to the expert types that are valid for it.
+# Matter type codes that do not appear here will return no expert types.
+# - matter_type_code (string) matter-type-unique-code
+# - expert_type_codes (string[]) expert-type-unique-codes
+
+- matter_type_code: KPBLW
+  expert_type_codes:
+  - PSYCO
+  - CHIL2
+  - PSYC1
+  - INTER
+  - SECU1
+  - PAED
+  - RADIO
+  - NEURA
+  - HAEMO
+  - OPHTH
+  - NEURS
+  - GENET
+  - RISKA
+  - INTLA
+  - TOXI
+  - NEURG
+  - TRAN
