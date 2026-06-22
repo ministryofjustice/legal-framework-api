@@ -14,6 +14,28 @@ RSpec.describe ClientInvolvementTypeService do
           expect(response[:success]).to be true
           expect(response[:client_involvement_type]).to match_json_expression(expected_sca_core_response)
         end
+
+        context "with age parameter" do
+          subject(:client_involvement_type_service_response) { described_class.call(proceeding_type_ccms_code, age) }
+
+          context "when age is < 18" do
+            let(:age) { 17 }
+
+            it "returns valid response with expected tasks" do
+              expect(response[:success]).to be true
+              expect(response[:client_involvement_type]).to match_json_expression(expected_sca_core_response)
+            end
+          end
+
+          context "when age is >= 18" do
+            let(:age) { 18 }
+
+            it "returns valid response with expected tasks" do
+              expect(response[:success]).to be true
+              expect(response[:client_involvement_type]).to match_json_expression(expected_sca_core_response_over_18)
+            end
+          end
+        end
       end
 
       context "and is an sca_related proceeding" do
@@ -23,6 +45,26 @@ RSpec.describe ClientInvolvementTypeService do
           expect(response[:success]).to be true
           expect(response[:client_involvement_type]).to match_json_expression(expected_sca_related_response)
         end
+
+        context "with age parameter" do
+          context "when age is < 18" do
+            let(:age) { 17 }
+
+            it "returns valid response with expected tasks" do
+              expect(response[:success]).to be true
+              expect(response[:client_involvement_type]).to match_json_expression(expected_sca_related_response)
+            end
+          end
+
+          context "when age is >= 18" do
+            let(:age) { 18 }
+
+            it "returns valid response with expected tasks" do
+              expect(response[:success]).to be true
+              expect(response[:client_involvement_type]).to match_json_expression(expected_sca_related_response)
+            end
+          end
+        end
       end
 
       context "and is not an sca proceeding" do
@@ -31,6 +73,28 @@ RSpec.describe ClientInvolvementTypeService do
         it "returns valid response with expected tasks" do
           expect(response[:success]).to be true
           expect(response[:client_involvement_type]).to match_json_expression(expected_default_response)
+        end
+
+        context "with age parameter" do
+          subject(:client_involvement_type_service_response) { described_class.call(proceeding_type_ccms_code, age) }
+
+          context "when age is < 18" do
+            let(:age) { 17 }
+
+            it "returns valid response with expected tasks" do
+              expect(response[:success]).to be true
+              expect(response[:client_involvement_type]).to match_json_expression(expected_default_response)
+            end
+          end
+
+          context "when age is >= 18" do
+            let(:age) { 18 }
+
+            it "returns valid response with expected tasks" do
+              expect(response[:success]).to be true
+              expect(response[:client_involvement_type]).to match_json_expression(expected_default_response_over_18)
+            end
+          end
         end
       end
     end
@@ -61,6 +125,12 @@ RSpec.describe ClientInvolvementTypeService do
     ]
   end
 
+  def expected_sca_core_response_over_18
+    [
+      { "ccms_code" => "D", "description" => "Respondent" },
+    ]
+  end
+
   def expected_sca_related_response
     [
       { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
@@ -69,11 +139,27 @@ RSpec.describe ClientInvolvementTypeService do
     ]
   end
 
+  def expected_sca_related_response_over_18
+    [
+      { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
+      { "ccms_code" => "D", "description" => "Respondent" },
+    ]
+  end
+
   def expected_default_response
     [
       { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
       { "ccms_code" => "D", "description" => "Defendant/respondent" },
       { "ccms_code" => "W", "description" => "Subject of proceedings (child)" },
+      { "ccms_code" => "I", "description" => "Intervenor" },
+      { "ccms_code" => "Z", "description" => "Joined party" },
+    ]
+  end
+
+  def expected_default_response_over_18
+    [
+      { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
+      { "ccms_code" => "D", "description" => "Defendant/respondent" },
       { "ccms_code" => "I", "description" => "Intervenor" },
       { "ccms_code" => "Z", "description" => "Joined party" },
     ]
