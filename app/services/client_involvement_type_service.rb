@@ -1,12 +1,13 @@
 class ClientInvolvementTypeService
   class ClientInvolvementTypeServiceError < StandardError; end
 
-  def self.call(proceeding_type)
-    new(proceeding_type).call
+  def self.call(proceeding_type, age = nil)
+    new(proceeding_type, age).call
   end
 
-  def initialize(proceeding_type)
+  def initialize(proceeding_type, age)
     @proceeding_type = proceeding_type
+    @age = age
     @response = skeleton_response
   end
 
@@ -20,6 +21,7 @@ class ClientInvolvementTypeService
                                           else
                                             default_response
                                           end
+    @response[:client_involvement_type].reject! { |cit| cit[:ccms_code] == "W" && @age.to_i >= 18 } if @age.present?
     @response
   rescue StandardError => e
     @response = error_response_for(e)
