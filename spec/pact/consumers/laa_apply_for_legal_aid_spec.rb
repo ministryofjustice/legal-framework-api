@@ -14,13 +14,22 @@ RSpec.describe "laa-apply-for-legal-aid pact",
 
     # Set the logger and  log level, default is :info, and cannot be changed unless you specify a logger
     logger: Rails.logger,
-    log_level: :warn,
+    log_level: :info,
 
     fail_if_no_pacts_found: true,
 
-    # pact_uri: "#{ENV.fetch("PACT_BROKER_BASE_URL", "https://not-a-real-pact-broker.service.gov.uk")}/pacts/providers/legal-framework-api/consumers/laa-apply-for-legal-aid/latest",
-    pact_uri: "spec/pacts/laa-apply-for-legal-aid-legal-framework-api.json", # for local testing, use a local pact file instead of downloading from the broker
-    broker_token: ENV.fetch("PACT_BROKER_TOKEN", 'some-token')
+    # for local testing, use a local pact file copied from a consumer to the `spec/pacts` directory, instead of downloading from
+    # the broker, and uncomment the pact_uri and pact_dir lines, and comment out the broker_url config below.
+    #
+    # pact_uri: "spec/pacts/laa-apply-for-legal-aid-legal-framework-api.json",
+    # pact_dir: "spec/pacts",
+
+    # Use this when you want the verifier to query a Pact Broker and discover pacts automatically.
+    broker_url: ENV.fetch("PACT_BROKER_BASE_URL", nil),
+    broker_username: ENV.fetch("PACT_BROKER_USERNAME", nil),
+    broker_password: ENV.fetch("PACT_BROKER_PASSWORD", nil),
+    publish_verification_results: true,
+    provider_version: ENV.fetch("PROVIDER_VERSION", "local")
   }
 
   # NOTE: rails_helper seeds all data, so state setup not needed,
