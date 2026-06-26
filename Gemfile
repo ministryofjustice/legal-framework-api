@@ -59,6 +59,10 @@ group :development, :test do
   gem "rubocop-performance"
 end
 
+group :development, :test do
+  gem "dotenv"
+end
+
 group :development do
   gem "guard-rubocop"
   gem "listen", "~> 3.10"
