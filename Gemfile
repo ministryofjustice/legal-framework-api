@@ -46,13 +46,14 @@ group :development, :test do
   gem "awesome_print"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug"
+  gem "dotenv"
   gem "factory_bot_rails", ">= 6.2.0"
   gem "faker", ">=1.9.1"
   gem "json_expressions"
   gem "pact", ">= 2.0.1"
   gem "pry-byebug"
-  gem "rspec_junit_formatter"
   gem "rspec" # explicit call require for `pact/rspec` to avoid load errors
+  gem "rspec_junit_formatter"
   gem "rspec-rails", "~> 8.0"
   gem "rswag-specs"
   gem "rubocop-govuk", require: false
