@@ -14,7 +14,7 @@ RSpec.describe "laa-apply-for-legal-aid pact",
 
     # Set the logger and  log level, default is :info, and cannot be changed unless you specify a logger
     logger: Rails.logger,
-    log_level: :info,
+    log_level: :debug,
 
     fail_if_no_pacts_found: true,
 
