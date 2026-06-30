@@ -13,10 +13,11 @@ on:
   push:
     branches: [ main ]
 
+permissions: {}
+
 jobs:
   pact_verify:
     runs-on: ubuntu-latest
-
     env:
       RACK_ENV: test
       RAILS_ENV: test
