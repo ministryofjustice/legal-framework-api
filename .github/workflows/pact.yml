@@ -2,6 +2,13 @@ name: Pact Provider Verification (Broker Driven)
 
 on:
   workflow_dispatch:
+   inputs:
+      consumer:
+        required: false
+        description: "Consumer name (passed by the broker webhook)"
+      consumerBranch:
+        required: false
+        description: "Consumer branch (passed by the broker webhook)"
   pull_request:
   push:
     branches: [ main ]
@@ -45,5 +52,7 @@ jobs:
           PACT_BROKER_USERNAME: ${{ secrets.PACT_BROKER_USERNAME }}
           PACT_BROKER_PASSWORD: ${{ secrets.PACT_BROKER_PASSWORD }}
           PROVIDER_VERSION: ${{ github.sha }}
+          PACT_CONSUMER: ${{ github.event.inputs.consumer }}
+          PACT_CONSUMER_BRANCH: ${{ github.event.inputs.consumerBranch }}
         run: |
           PACT_DO_NOT_TRACK=true bundle exec rails pact:verify
