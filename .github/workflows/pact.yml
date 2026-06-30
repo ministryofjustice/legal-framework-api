@@ -1,6 +1,7 @@
 name: Pact Provider Verification (Broker Driven)
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches: [ main ]
