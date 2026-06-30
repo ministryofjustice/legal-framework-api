@@ -1,12 +1,12 @@
 # Pact - consumer driven testing
 
 ## References
-[Pact version 2 readme](https://docs.pact.io/implementation_guides/ruby/readme_v2)
-[Pact specification versions](https://docs.pact.io/implementation_guides/pact_specification#specification-documentation)
-[Pact specification repo](https://github.com/pact-foundation/pact-specification)
-
-[Pact broker repo](https://github.com/ministryofjustice/laa-data-pact-broker)
-[Pact brocker host](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/)
+- [Pact version 2 readme](https://docs.pact.io/implementation_guides/ruby/readme_v2)
+- [Pact specification versions](https://docs.pact.io/implementation_guides/pact_specification#specification-documentation)
+- [Pact specification repo](https://github.com/pact-foundation/pact-specification)
+- [Pact broker repo](https://github.com/ministryofjustice/laa-data-pact-broker)
+- [Pact brocker host](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/)
+- [Pact webhook service verification](https://github.com/apps/laa-java-service-deployer/installations/44250102)
 
 ## What is pact
 Pact provides a standard convention base specification for writing and using contract tests. We use consumer
@@ -33,7 +33,10 @@ PACT_BROKER_PASSWORD
 
 #### Triggering provider verification from pipeline of consumer
 
-TODO
+The providers github action is configured to be triggered by the pact broker via a web hook in the brokers repo. For example this is [legal-frameowork-apis webhook configuration](https://github.com/ministryofjustice/laa-data-pact-broker/blob/main/seed/webhook-legal-framework-api.json).
+
+There is also a "Github App" that must also be granted read and write access to this provider repo - click this [laa-java-service-deployer](https://github.com/apps/laa-java-service-deployer/installations/44250102) and select the repo you wish to grant it access to. This allows the selected repos GHAs to be be triggered by another repo.
+
 
 ## Local testing
 
