@@ -1,0 +1,48 @@
+name: Pact Provider Verification (Broker Driven)
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  pact_verify:
+    runs-on: ubuntu-latest
+
+    env:
+      RACK_ENV: test
+      RAILS_ENV: test
+      DATABASE_URL: "postgresql://postgres:postgres@127.0.0.1/legal_framework_api_test"
+
+    services:
+      postgres:
+        image: postgres:18.1-alpine
+        env:
+          POSTGRES_DB: legal_framework_api_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 #--v7.0.0
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@12fd324f1d0b43274fdc8130f6980590a667c455 #--v1.312.0
+        with:
+          bundler-cache: true
+
+      - name: Prepare DB
+        run: bin/rails db:prepare
+
+      # This is configured to use the pacts from the broker to verify
+      - name: Verify pacts from broker
+        env:
+          PACT_BROKER_BASE_URL: ${{ secrets.PACT_BROKER_BASE_URL }}
+          PACT_BROKER_USERNAME: ${{ secrets.PACT_BROKER_USERNAME }}
+          PACT_BROKER_PASSWORD: ${{ secrets.PACT_BROKER_PASSWORD }}
+          PROVIDER_VERSION: ${{ github.sha }}
+        run: |
+          PACT_DO_NOT_TRACK=true bundle exec rails pact:verify
