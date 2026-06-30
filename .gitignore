@@ -48,3 +48,6 @@
 node_modules/
 /public/packs
 /public/packs-test
+
+# ignore Pact, contract testing, artifacts that should be pulled from the pact broker on CI and verified
+spec/pacts/*

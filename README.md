@@ -19,6 +19,7 @@ If changes are made to files in this directory, regenerate the swagger documenta
 ### Further reading
 * Developer looking to use the API? - [Click here](docs/development.md)
 * Looking to add a new matter type? - [Click here](docs/matter_types.md)
+* Understanding pact testing and verifying your contract [Click here](docs/pact.md)
 
 ### Usage
 `/merits_tasks`
@@ -33,7 +34,6 @@ A client will create a payload which will include an array of proceeding types, 
 
 ## Generation of API documentation
 If changes are made to files in this directory, regenerate the swagger documentation by executing `rake rswag`.
-
 
 ## Running tests
 
