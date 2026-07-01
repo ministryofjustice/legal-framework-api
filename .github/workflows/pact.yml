@@ -51,7 +51,8 @@ jobs:
           PACT_BROKER_BASE_URL: ${{ secrets.PACT_BROKER_BASE_URL }}
           PACT_BROKER_USERNAME: ${{ secrets.PACT_BROKER_USERNAME }}
           PACT_BROKER_PASSWORD: ${{ secrets.PACT_BROKER_PASSWORD }}
-          PROVIDER_VERSION: ${{ github.sha }}
+          PACT_PROVIDER_BRANCH: ${{ github.head_ref || github.ref_name }}
+          PROVIDER_VERSION: ${{ github.event.pull_request.head.sha || github.sha }}
           PACT_CONSUMER: ${{ github.event.inputs.consumer }}
           PACT_CONSUMER_BRANCH: ${{ github.event.inputs.consumerBranch }}
         run: |
