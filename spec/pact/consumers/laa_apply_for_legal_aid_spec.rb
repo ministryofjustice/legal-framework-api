@@ -29,7 +29,7 @@ RSpec.describe "laa-apply-for-legal-aid pact",
     broker_username: ENV.fetch("PACT_BROKER_USERNAME", nil),
     broker_password: ENV.fetch("PACT_BROKER_PASSWORD", nil),
     publish_verification_results: true,
-    provider_version: ENV.fetch("PROVIDER_VERSION", "latest"),
+    provider_version: ENV.fetch("PACT_PROVIDER_VERSION", "latest"),
     provider_version_branch: ENV.fetch("PACT_PROVIDER_BRANCH", `git rev-parse --abbrev-ref HEAD`.strip),
   }
 
