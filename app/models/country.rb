@@ -17,7 +17,7 @@ class Country < ApplicationRecord
     update_query = <<~UPDATESQL.freeze
       UPDATE countries
       SET searchable =
-        setweight(to_tsvector(coalesce(description, '')), 'A');
+        setweight(to_tsvector('simple', coalesce(description, '')), 'A');
     UPDATESQL
     connection.execute(update_query)
   end
