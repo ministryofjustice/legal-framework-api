@@ -60,7 +60,7 @@ RSpec.describe "civil_merits_questions" do
                           client_involvement_type: { type: :string,
                                                      description: "A code uniquely identifying the client_involvement_type",
                                                      example: "A" },
-                          substantive_level_of_service: { type: :string,
+                          substantive_level_of_service: { type: :integer,
                                                           description: "A code uniquely identifying the substantive level of service, currently only supports 1 or 3",
                                                           example: 1,
                                                           required: false },
