@@ -1,0 +1,58 @@
+# TODO: ideally this should be occurring as part of deployment in the CD pipeline, but
+# since we are looking to migrate to GHA for deployment doing it in circle seems like a
+# waste of time and effort and would require secrets being shared with another 3rd party.
+#
+# So we will do it here for now, in the GHA CI pipeline on push to main (i.e. merge)
+# to ensure that the pact broker consumers can verify against main.
+#
+# Consumer pact verification should specify `--to-environment test` (or whatever environment it is
+# being tagged as below) so they are being verified against the main branch of the provider, rather
+#  than whatever branch is the latest commit on the provider branch.
+#
+name: Pact record deployment
+
+# wait for the pact verification workflow to complete before recording the deployment
+on:
+  workflow_run:
+    workflows:
+      - "Pact provider verification and publication"
+    types:
+      - completed
+
+permissions: {}
+
+jobs:
+  record_deployment:
+    # Only run if:
+    # - the verification workflow succeeded
+    # - it was triggered by a push
+    # - the push was to main
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 #--v7.0.0
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 #--v1.314.0
+        with:
+          bundler-cache: true
+
+      - name: Record deployment in Pact Broker
+        env:
+          PACT_BROKER_BASE_URL: ${{ secrets.PACT_BROKER_BASE_URL }}
+          PACT_BROKER_USERNAME: ${{ secrets.PACT_BROKER_USERNAME }}
+          PACT_BROKER_PASSWORD: ${{ secrets.PACT_BROKER_PASSWORD }}
+          PROVIDER_VERSION: ${{ github.sha }}
+        run: |
+          bundle exec pact-broker record-deployment \
+            --pacticipant legal-framework-api \
+            --version "$PROVIDER_VERSION" \
+            --environment test \
+            --broker-base-url "$PACT_BROKER_BASE_URL" \
+            --broker-username "$PACT_BROKER_USERNAME" \
+            --broker-password "$PACT_BROKER_PASSWORD"
