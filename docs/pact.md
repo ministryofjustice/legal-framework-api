@@ -15,7 +15,7 @@ Pact provides a standard convention base specification for writing and using con
 driven contract testing where the provider, legal-framework-api, must verify it can meet or continue to meet
 the behaviour expected of it by the consumer.
 
-The high-level flow pact base flow
+The high-level pact base flow
 
 - The consumer generates a contract or contracts
 - The consumer publishes the contract(s) to a broker/middleman
