@@ -1,4 +1,4 @@
-name: Pact Provider Verification (Broker Driven)
+name: Pact provider verification and publication
 
 on:
   workflow_dispatch:
@@ -47,7 +47,7 @@ jobs:
         run: bin/rails db:prepare
 
       # This is configured to use the pacts from the broker to verify
-      - name: Verify pacts from broker
+      - name: Verify pacts from broker and publish results
         env:
           PACT_BROKER_BASE_URL: ${{ secrets.PACT_BROKER_BASE_URL }}
           PACT_BROKER_USERNAME: ${{ secrets.PACT_BROKER_USERNAME }}
