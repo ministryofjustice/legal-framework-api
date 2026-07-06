@@ -51,6 +51,7 @@ group :development, :test do
   gem "faker", ">=1.9.1"
   gem "json_expressions"
   gem "pact", ">= 2.0.1"
+  gem "pact_broker-client"
   gem "pry-byebug"
   gem "rspec" # explicit call require for `pact/rspec` to avoid load errors
   gem "rspec_junit_formatter"
