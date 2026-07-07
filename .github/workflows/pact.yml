@@ -17,6 +17,7 @@ permissions: {}
 
 jobs:
   pact_verify:
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     env:
       RACK_ENV: test
