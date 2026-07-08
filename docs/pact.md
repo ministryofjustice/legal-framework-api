@@ -1,14 +1,13 @@
 # Pact - consumer driven testing
 
-## References
-- [Pact version 2 readme](https://docs.pact.io/implementation_guides/ruby/readme_v2)
-- [Pact specification versions](https://docs.pact.io/implementation_guides/pact_specification#specification-documentation)
-- [Pact specification repo](https://github.com/pact-foundation/pact-specification)
-- [Pact broker repo](https://github.com/ministryofjustice/laa-data-pact-broker)
-- [Pact brocker host](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/)
-- [Pact broker webhooks](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/hal-browser/browser.html#https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/webhooks)
-- [Pact webhook service verification](https://github.com/apps/laa-java-service-deployer/installations/44250102)
-
+## Contents
+- [**What is pact**](#what-is-pact)
+- [**Pipeline integration**](#pipeline-integration)
+- [**Local testing**](#local-testing)
+  - [**Local testing without a broker**](#local-testing-without-a-broker)
+  - [**Local testing with a broker**](#local-testing-with-a-broker)
+- [**Versioning**](#versioning)
+- [**References**](#references)
 
 ## What is pact
 Pact provides a standard convention base specification for writing and using contract tests. We use consumer
@@ -23,7 +22,8 @@ The high-level pact base flow
 - The provider(s) verify the contract(s)
 
 ### Pipeline integration
-When the provider has a PR opened against it on github the `pact.yml` github action will verify that it meets the latest contract(s) published by all consumers on [the pact brocker](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/). It will will specify the "provider version" using the github sha of the last commit.
+
+**On pull request opening:** When the provider has a PR opened against it on github the `pact.yml` github action will verify that it meets the latest contract(s) published by all consumers on [the pact brocker](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/). It will will specify the "provider version" using the github sha of the last commit.
 
 To access the consumer contract from the pact broker the github action has been provided with 3 secrets. These are set in Github > Settings > Secrets and variables > Actions. The secrets values are available from the teams password manager.
 
@@ -33,12 +33,33 @@ PACT_BROKER_USERNAME
 PACT_BROKER_PASSWORD
 ```
 
+**On pull request merging**: When any PR is merged on github it will run the `pact.yml`, as above, followed by  `pact-record-deployment.yml`. The latter will "tag" the latest commit on the main branch as being the environment `test`*, in the broker. Any PRs opened on the consumer, or merged to `main`, will use can-i-deploy to verify whether there newly ppublished pacts are verfified against the tagged version of the provider, i.e. the `test` "deployment environment".
+
+*eventually this should be set on deployment to the name of the environment being deployed to.
+
+
 #### Triggering provider verification from pipeline of consumer
+Consumers can trigger provider pact related functionality when they publish related pacts:
+
+```sh
+Consumer publishes pact
+        │
+        ▼
+Pact broker webhook triggered
+        │
+        ▼
+Webhook calls provider workflow
+        │
+        ▼
+Provider verifies pacts
+        │
+        ▼
+Provider publishes verification results
+```
 
 The providers github action is configured to be triggered by the pact broker via a web hook in the brokers repo. For example this is [legal-frameowork-apis webhook configuration](https://github.com/ministryofjustice/laa-data-pact-broker/blob/main/seed/webhook-legal-framework-api.json).
 
-There is also a "Github App" that must also be granted read and write access to this provider repo - click this [laa-java-service-deployer](https://github.com/apps/laa-java-service-deployer/installations/44250102) and select the repo you wish to grant it access to. This allows the selected repos GHAs to be be triggered by another repo.
-
+There is a "Github App" that must also be granted read and write access to this provider repo - click this [laa-java-service-deployer](https://github.com/apps/laa-java-service-deployer/installations/44250102) and select the repo you wish to grant it access to. This allows the selected repos GHAs to be triggered by another repo.
 
 ## Local testing
 
@@ -90,3 +111,28 @@ You can run individual pact verification specs using the tag `pact`
 ```sh
 bundle exec rspec -t pact spec/pact/consumers/laa_apply_for_legal_aid_spec.rb
 ```
+
+## Versioning
+
+When a provider branch is merged it will/must:
+- run the verification against existing pacts,
+- publish its verification [or failed verification] for those pacts
+- record the "deployment" "environment" against which it has verified the pacts* - e.g. `test`
+
+When a consumer branch has a pull request opened or merged to main it will:
+- Generate new pacts [which may be identical to old ones]
+- Publish the pacts [which may be identical to old ones]
+- Check that they have been verified against the providers "deployment" "environment" - e.g. `test`
+
+*This is similar to tagging conceptually but is supposed to be done on deployment to each environment.
+
+
+## References
+- [Pact version 2 readme](https://docs.pact.io/implementation_guides/ruby/readme_v2)
+- [Pact specification versions](https://docs.pact.io/implementation_guides/pact_specification#specification-documentation)
+- [Pact specification repo](https://github.com/pact-foundation/pact-specification)
+- [Pact broker repo](https://github.com/ministryofjustice/laa-data-pact-broker)
+- [Pact brocker host](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/)
+- [Pact broker webhooks](https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/hal-browser/browser.html#https://laa-data-pact-broker.apps.live.cloud-platform.service.justice.gov.uk/webhooks)
+- [Pact webhook service verification](https://github.com/apps/laa-java-service-deployer/installations/44250102)
+
