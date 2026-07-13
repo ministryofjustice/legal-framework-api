@@ -1,8 +1,14 @@
 require "rails_helper"
 require "pact/rspec"
 
+# This verifies all pacts on the broker that are for the provider "legal-framework-api"
+# The pact broker verifier will discover all existing pacts for the provider and verify them.
+#
+# Note that the pact.yml includes a PACT_CONSUMER and PACT_CONSUMER_BRANCH variable that the
+# broker webhook will provide the values.
+#
 # rubocop:disable RSpec/EmptyExampleGroup
-RSpec.describe "laa-apply-for-legal-aid pact",
+RSpec.describe "Verify all pacts",
                :pact,
                pact_entity: :provider do
   http_pact_provider "legal-framework-api", opts: {
@@ -18,8 +24,9 @@ RSpec.describe "laa-apply-for-legal-aid pact",
 
     fail_if_no_pacts_found: true,
 
-    # for local testing, use a local pact file copied from a consumer to the `spec/pacts` directory, instead of downloading from
-    # the broker, and uncomment the pact_uri and pact_dir lines, and comment out the broker_url config below.
+    # for local testing, use a local pact file, or files, copied from a consumer to the `spec/pacts` directory, instead of downloading from
+    # the broker, and uncomment the pact_uri and pact_dir lines, and comment out the broker_url config below. For multiple consumer pact files,
+    # you add them to the same directory.
     #
     # pact_uri: "spec/pacts/laa-apply-for-legal-aid-legal-framework-api.json",
     # pact_dir: "spec/pacts",
