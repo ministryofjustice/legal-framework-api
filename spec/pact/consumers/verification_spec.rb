@@ -5,7 +5,7 @@ require "pact/rspec"
 # The pact broker verifier will discover all existing pacts for the provider and verify them.
 #
 # Note that the pact.yml includes a PACT_CONSUMER and PACT_CONSUMER_BRANCH variable that the
-# broker webhook will provide the values.
+# broker webhook will provide the values for.
 #
 # rubocop:disable RSpec/EmptyExampleGroup
 RSpec.describe "Verify all pacts",
