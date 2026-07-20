@@ -117,12 +117,12 @@ bundle exec rspec -t pact spec/pact/consumers/laa_apply_for_legal_aid_spec.rb
 When a provider branch is merged it will/must:
 - run the verification against existing pacts,
 - publish its verification [or failed verification] for those pacts
-- record the "deployment" "environment" against which it has verified the pacts* - e.g. `test`
+- record the "deployment" "environment" against which it has verified the pacts* - e.g. `main`
 
 When a consumer branch has a pull request opened or merged to main it will:
 - Generate new pacts [which may be identical to old ones]
 - Publish the pacts [which may be identical to old ones]
-- Check that they have been verified against the providers "deployment" "environment" - e.g. `test`
+- Check that they have been verified against the providers "deployment" "environment" - e.g. `main`
 
 *This is similar to tagging conceptually but is supposed to be done on deployment to each environment.
 

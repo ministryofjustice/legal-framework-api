@@ -5,9 +5,12 @@
 # So we will do it here for now, in the GHA CI pipeline on push to main (i.e. merge)
 # to ensure that the pact broker consumers can verify against main.
 #
-# Consumer pact verification should specify `--to-environment test` (or whatever environment it is
+# Consumer pact verification should specify `--to-environment main` (or whatever environment it is
 # being tagged as below) so they are being verified against the main branch of the provider, rather
-#  than whatever branch is the latest commit on the provider branch.
+# than whatever branch is the latest commit on the provider branch.
+#
+# Note that the tag `main` is not the same as the branch `main`. It just a meaningful label value to
+# specify a version to run pact tests against.
 #
 name: Pact record deployment
 
