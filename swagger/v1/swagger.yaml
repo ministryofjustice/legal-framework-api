@@ -223,7 +223,7 @@ paths:
                 bad_request:
                   value:
                     success: false
-                    message: 'No such client involvement type: ''foobar'''
+                    message: 'No such client involvement type: '''''
                   summary: Bad request
                   description: Returns success false and error message
       requestBody:
