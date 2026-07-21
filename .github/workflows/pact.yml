@@ -58,4 +58,4 @@ jobs:
           PACT_CONSUMER: ${{ github.event.inputs.consumer }}
           PACT_CONSUMER_BRANCH: ${{ github.event.inputs.consumerBranch }}
         run: |
-          PACT_DO_NOT_TRACK=true bundle exec rails pact:verify
+          NOCOVERAGE=true PACT_DO_NOT_TRACK=true bundle exec rails pact:verify
