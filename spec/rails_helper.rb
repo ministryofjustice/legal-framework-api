@@ -93,3 +93,12 @@ end
 def parsed_response
   JSON.parse(response.body, symbolize_names: true)
 end
+
+unless ENV["NOCOVERAGE"]
+  SimpleCov.start do
+    at_exit do
+      say("<%= color(\"Code coverage is below 100% (#{result.coverage_statistics[:line].percent.round(2)}%)\", RED) %>") if result.coverage_statistics[:line].percent < 100
+      result.format!
+    end
+  end
+end
