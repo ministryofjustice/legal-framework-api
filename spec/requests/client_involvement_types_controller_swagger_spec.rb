@@ -232,24 +232,48 @@ RSpec.describe "client_involvement_types" do
       end
 
       response(400, "bad request") do
-        let(:proceeding_type_ccms_code) { "foobar" }
-        let(:age) { nil }
+        context "when proceeding_type_ccms_code is not acceptable" do
+          let(:proceeding_type_ccms_code) { "foobar" }
+          let(:age) { nil }
 
-        expected_result = {
-          success: false,
-          message: "No such client involvement type: 'foobar'",
-        }
+          expected_result = {
+            success: false,
+            message: "No such client involvement type: 'foobar'",
+          }
 
-        example "application/json",
-                :bad_request,
-                expected_result,
-                "Bad request",
-                "Returns success false and error message"
+          example "application/json",
+                  :bad_request,
+                  expected_result,
+                  "Bad request",
+                  "Returns success false and error message"
 
-        run_test! do |response|
-          expect(response).to have_http_status(:bad_request)
-          expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body)).to match_json_expression(expected_result)
+          run_test! do |response|
+            expect(response).to have_http_status(:bad_request)
+            expect(response.media_type).to eql("application/json")
+            expect(JSON.parse(response.body)).to match_json_expression(expected_result)
+          end
+        end
+
+        context "when proceeding_type_ccms_code is nil" do
+          let(:proceeding_type_ccms_code) { nil }
+          let(:age) { 21 }
+
+          expected_result = {
+            success: false,
+            message: "No such client involvement type: ''",
+          }
+
+          example "application/json",
+                  :bad_request,
+                  expected_result,
+                  "Bad request",
+                  "Returns success false and error message"
+
+          run_test! do |response|
+            expect(response).to have_http_status(:bad_request)
+            expect(response.media_type).to eql("application/json")
+            expect(JSON.parse(response.body)).to match_json_expression(expected_result)
+          end
         end
       end
     end
