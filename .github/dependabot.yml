@@ -24,3 +24,7 @@ updates:
       interval: "weekly"
       day: friday
       time: "05:00"
+    groups:
+      actions:
+        patterns:
+          - "*"
