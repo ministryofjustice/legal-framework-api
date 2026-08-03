@@ -25,11 +25,13 @@ private
   end
 
   def matter_type_id(code)
-    matter_types.find { |mt| mt.code == code }.id
+    matter_types.find { |mt| mt.code == code }&.id ||
+      raise("MatterType with code '#{code}' not found")
   end
 
   def expert_type_id(code)
-    expert_types.find { |et| et.code == code }.id
+    expert_types.find { |et| et.code == code }&.id ||
+      raise("ExpertType with code '#{code}' not found")
   end
 
   def matter_types

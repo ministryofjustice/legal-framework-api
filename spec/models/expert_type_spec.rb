@@ -28,7 +28,7 @@ RSpec.describe ExpertType do
     end
   end
 
-  describe "#by_matter_type" do
+  describe ".for_matter_type" do
     let(:matter_type) { create(:matter_type, code: "TEST1") }
     let(:other_matter_type) { create(:matter_type, code: "TEST2") }
     let(:matched) { create(:expert_type, code: "MATCH", description: "Matched expert") }
