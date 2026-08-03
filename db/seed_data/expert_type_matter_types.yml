@@ -6,20 +6,18 @@
 
 - matter_type_code: KPBLW
   expert_type_codes:
-  - PSYCO
-  - CHIL2
-  - PSYC1
-  - INTER
-  - SECU1
-  - PAED
-  - RADIO
-  - NEURA
-  - HAEMO
-  - OPHTH
-  - NEURS
-  - GENET
-  - RISKA
-  - INTLA
-  - TOXI
-  - NEURG
-  - TRAN
+    - psychologist
+    - child_psychologist
+    - psychiatrist
+    - interpreter
+    - independent_social_worker
+    - paediatrician
+    - radiologist
+    - neuroradiologist
+    - haematologist
+    - ophthalmologist
+    - neurosurgeon
+    - geneticist
+    - risk_assessor
+    - toxicologist
+    - neurologist

@@ -3,29 +3,27 @@ require "swagger_helper"
 RSpec.describe "expert_types" do
   path "/expert_types" do
     get("Get all expert types") do
-      description "Returns an array of all expert types with codes."
-
+      description "Returns an array of all expert types."
       tags "Expert types"
-
       produces "application/json"
 
       response(200, "successful") do
         expected_example = [
-          { "code" => "ACCT", "description" => "Accountant" },
-          { "code" => "ARCHT", "description" => "Architect" },
-          { "code" => "VET", "description" => "Vet" },
+          { "code" => "child_psychologist", "description" => "Child Psychologist" },
+          { "code" => "independent_social_worker", "description" => "Independent Social Worker" },
+          { "code" => "psychologist", "description" => "Psychologist" },
         ]
 
         example "application/json",
                 :success,
                 expected_example,
                 "Successful request",
-                "Returns an array of all expert types with codes."
+                "Returns an array of all expert types."
 
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 113
+          expect(JSON.parse(response.body).count).to eq 26
         end
       end
     end
@@ -33,9 +31,8 @@ RSpec.describe "expert_types" do
 
   path "/expert_types/{matter_type}" do
     get("Get expert types for a matter type") do
-      description "Returns an array of the expert types associated with the given matter type code. " \
+      description "Returns an array of expert types filtered by the given matter type code. " \
                   "Returns an empty array when the matter type code has no associated expert types."
-
       tags "Expert types"
 
       parameter name: "matter_type",
@@ -50,8 +47,8 @@ RSpec.describe "expert_types" do
         let(:matter_type) { "KPBLW" }
 
         expected_example = [
-          { "code" => "CHIL2", "description" => "Child Psychologist" },
-          { "code" => "PSYCO", "description" => "Psychologist" },
+          { "code" => "child_psychologist", "description" => "Child Psychologist" },
+          { "code" => "psychologist", "description" => "Psychologist" },
         ]
 
         example "application/json",
@@ -63,7 +60,7 @@ RSpec.describe "expert_types" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 17
+          expect(JSON.parse(response.body).first["code"]).to eq("child_psychologist")
         end
       end
 
