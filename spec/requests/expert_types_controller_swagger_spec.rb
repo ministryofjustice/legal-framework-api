@@ -60,7 +60,8 @@ RSpec.describe "expert_types" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).first["code"]).to eq("child_psychologist")
+          expect(JSON.parse(response.body).count).to eq 26
+          expect(JSON.parse(response.body).first["code"]).to eq("cell_phone_analysis")
         end
       end
 

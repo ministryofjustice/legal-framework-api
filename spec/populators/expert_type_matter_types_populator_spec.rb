@@ -13,7 +13,7 @@ RSpec.describe ExpertTypeMatterTypesPopulator do
     end
 
     it "creates join records between matter types and expert types" do
-      expect { call }.to change(ExpertTypeMatterType, :count).from(0).to(15)
+      expect { call }.to change(ExpertTypeMatterType, :count).from(0).to(26)
     end
 
     it "runs idempotently without creating duplicates" do
