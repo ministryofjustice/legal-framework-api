@@ -1,0 +1,34 @@
+---
+# Mapping of matter type to the expert types that are valid for it.
+# Matter type codes that do not appear here will return no expert types.
+# - matter_type_code (string) matter-type-unique-code
+# - expert_type_codes (string[]) expert-type-unique-codes
+
+- matter_type_code: KPBLW
+  expert_type_codes:
+    - psychologist
+    - child_psychologist
+    - psychiatrist
+    - deaf_intermediary
+    - lay_advocate
+    - lip_reader
+    - standard_intermediary
+    - interpreter
+    - independent_social_worker
+    - paediatrician
+    - radiologist
+    - neuroradiologist
+    - haematologist
+    - endocrinologist
+    - ophthalmologist
+    - neurosurgeon
+    - geneticist
+    - risk_assessor
+    - legal_expert
+    - neurologist
+    - toxicologist
+    - paediatric_ophthalmologist
+    - cell_phone_analysis
+    - computer_expert
+    - foreign_law_expert
+    - gastroenterologist

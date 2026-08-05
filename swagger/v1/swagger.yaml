@@ -869,6 +869,63 @@ paths:
                   description: search term
               required:
               - search_term
+  "/expert_types":
+    get:
+      summary: Get all expert types
+      description: Returns an array of all expert types.
+      tags:
+      - Expert types
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - code: child_psychologist
+                    description: Child Psychologist
+                  - code: independent_social_worker
+                    description: Independent Social Worker
+                  - code: psychologist
+                    description: Psychologist
+                  summary: Successful request
+                  description: Returns an array of all expert types.
+  "/expert_types/{matter_type}":
+    get:
+      summary: Get expert types for a matter type
+      description: Returns an array of expert types filtered by the given matter type
+        code. Returns an empty array when the matter type code has no associated expert
+        types.
+      tags:
+      - Expert types
+      parameters:
+      - name: matter_type
+        in: path
+        example: KPBLW
+        description: Matter type code, e.g. KPBLW
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful with no results
+          content:
+            application/json:
+              examples:
+                success:
+                  value:
+                  - code: child_psychologist
+                    description: Child Psychologist
+                  - code: psychologist
+                    description: Psychologist
+                  summary: Successful request
+                  description: Returns an array of expert types associated with the
+                    matter type code.
+                empty:
+                  summary: Empty result
+                  description: Returns an empty array when the matter type code has
+                    no associated expert types.
   "/organisation_types/all":
     get:
       summary: Get all organisation types
@@ -5541,11 +5598,11 @@ paths:
                     ccms_type_text: National Health Service
                     ccms_type_code: NHS
                   - name: West Sussex County Council
-                    ccms_opponent_id: '281628'
+                    ccms_opponent_id: '281402'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: West Sussex County Council
-                    ccms_opponent_id: '281402'
+                    ccms_opponent_id: '281628'
                     ccms_type_text: Local Authority
                     ccms_type_code: LA
                   - name: West Sussex NHS Trust
@@ -5907,20 +5964,20 @@ paths:
                       PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A, PBM08E,
                       PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A, PBM11E,
                       PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
-                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM27A, PBM19E, PBM20,
+                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM36, PBM20,
                       PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23,
                       PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E,
-                      PBM27, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E, PBM30,
-                      PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A, PBM33E,
-                      PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37, PBM37A,
+                      PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
+                      PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
+                      PBM33E, PBM35, PBM35A, PBM35E, PBM36A, PBM36E, PBM37, PBM37A,
                       PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E, PBM40,
                       PBM40E, PBM45, PBM45E, SE003, SE003A, SE003E, SE004, SE004A,
                       SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E, SE013,
-                      SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A, SE015E,
-                      SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097, SE097A,
-                      SE100E, SE101A, SE101E, PB003, PB004, PB005, PB006, PB026, PB057,
-                      PB059, PB007, PB012, PB014, PB019, PB020, PB021, PB022, PB023,
-                      PB024, PB027, PB029, PB030, PB051, PB052 in schema file://#'
+                      SE013A, SE013E, SE014, SE014A, SE014E, PB051, PB029, SE015,
+                      SE015A, SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E,
+                      SE097, SE097A, SE100E, SE101A, PB052, SE101E, PB003, PB004,
+                      PB005, PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019,
+                      PB020, PB021, PB022, PB023, PB024, PB027, PB030 in schema file://#'
                   summary: Unsuccessful request
                   description: When invalid proceeding types are submitted an error
                     will be raised and returned to the users
@@ -6054,20 +6111,20 @@ paths:
                       PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A, PBM08E,
                       PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A, PBM11E,
                       PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
-                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM27A, PBM19E, PBM20,
+                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM36, PBM20,
                       PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23,
                       PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E,
-                      PBM27, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E, PBM30,
-                      PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A, PBM33E,
-                      PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37, PBM37A,
+                      PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
+                      PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
+                      PBM33E, PBM35, PBM35A, PBM35E, PBM36A, PBM36E, PBM37, PBM37A,
                       PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E, PBM40,
                       PBM40E, PBM45, PBM45E, SE003, SE003A, SE003E, SE004, SE004A,
                       SE004E, SE007, SE007A, SE007E, SE008, SE008A, SE008E, SE013,
-                      SE013A, SE013E, SE014, SE014A, SE014E, SE015, SE015A, SE015E,
-                      SE016, SE016A, SE016E, SE095, SE095A, SE096E, SE097, SE097A,
-                      SE100E, SE101A, SE101E, PB003, PB004, PB005, PB006, PB026, PB057,
-                      PB059, PB007, PB012, PB014, PB019, PB020, PB021, PB022, PB023,
-                      PB024, PB027, PB029, PB030, PB051, PB052 in schema file://#'
+                      SE013A, SE013E, SE014, SE014A, SE014E, PB051, PB029, SE015,
+                      SE015A, SE015E, SE016, SE016A, SE016E, SE095, SE095A, SE096E,
+                      SE097, SE097A, SE100E, SE101A, PB052, SE101E, PB003, PB004,
+                      PB005, PB006, PB026, PB057, PB059, PB007, PB012, PB014, PB019,
+                      PB020, PB021, PB022, PB023, PB024, PB027, PB030 in schema file://#'
                   summary: Bad request
                   description: When a non-existent ccms_code is sent, an error is
                     generated from the json schema and returned
@@ -6727,10 +6784,11 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
-                  - ccms_code: PBM27A
-                    meaning: Emergency protection order - appeal
-                    description: to be represented on an application for or to extend
-                      an emergency protection order. Appeals only.
+                  - ccms_code: PBM19E
+                    meaning: Child arrangements order (CAO) - residence - enforcement
+                      - vary or discharge
+                    description: to be represented on an application to vary or discharge
+                      a residence order. Enforcement only.
                     sca_core: false
                     sca_related: false
                     non_means_tested_plf: false
@@ -6738,11 +6796,9 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
-                  - ccms_code: PBM19E
-                    meaning: Child arrangements order (CAO) - residence - enforcement
-                      - vary or discharge
-                    description: to be represented on an application to vary or discharge
-                      a residence order. Enforcement only.
+                  - ccms_code: PBM36
+                    meaning: Care order - joined party
+                    description: to be represented on an application for a care order
                     sca_core: false
                     sca_related: false
                     non_means_tested_plf: false
@@ -6947,6 +7003,17 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
+                  - ccms_code: PBM27A
+                    meaning: Emergency protection order - appeal
+                    description: to be represented on an application for or to extend
+                      an emergency protection order. Appeals only.
+                    sca_core: false
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLB
+                    ccms_matter: public law family (PLF)
                   - ccms_code: PBM27E
                     meaning: Emergency protection order - enforcement
                     description: to be represented on an application for or to extend
@@ -7138,16 +7205,6 @@ paths:
                     meaning: Special guardianship order - enforcement - vary or discharge
                     description: To be represented on an application for variation/discharge
                       of a special guardianship order.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
-                  - ccms_code: PBM36
-                    meaning: Care order - joined party
-                    description: to be represented on an application for a care order
                     sca_core: false
                     sca_related: false
                     non_means_tested_plf: false
@@ -7520,6 +7577,28 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
+                  - ccms_code: PB051
+                    meaning: Placement order
+                    description: to be represented on an application for a placement
+                      order .
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB029
+                    meaning: Child arrangements order (CAO) - contact
+                    description: to be represented on an application for a child arrangements
+                      order-who the child(ren) spend time with
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
                   - ccms_code: SE015
                     meaning: Child arrangements order (CAO) - contact - vary
                     description: to be represented on an application to vary/discharge
@@ -7676,6 +7755,17 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
+                  - ccms_code: PB052
+                    meaning: Special guardianship order
+                    description: to be represented on an application for a Special
+                      Guardianship Order .
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
                   - ccms_code: SE101E
                     meaning: Compensation - enforcement
                     description: to be represented on an application for compensation
@@ -7874,43 +7964,10 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLW
                     ccms_matter: special children act (SCA)
-                  - ccms_code: PB029
-                    meaning: Child arrangements order (CAO) - contact
-                    description: to be represented on an application for a child arrangements
-                      order-who the child(ren) spend time with
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
                   - ccms_code: PB030
                     meaning: Child arrangements order (CAO) - residence
                     description: to be represented on an application for a child arrangements
                       order-where the child(ren) will live
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB051
-                    meaning: Placement order
-                    description: to be represented on an application for a placement
-                      order .
-                    sca_core: false
-                    sca_related: true
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB052
-                    meaning: Special guardianship order
-                    description: to be represented on an application for a Special
-                      Guardianship Order .
                     sca_core: false
                     sca_related: true
                     non_means_tested_plf: false

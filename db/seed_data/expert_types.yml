@@ -1,0 +1,56 @@
+---
+# List of expert types
+# - code (string)
+# - description (string)
+- code: psychologist
+  description: Psychologist
+- code: child_psychologist
+  description: Child Psychologist
+- code: psychiatrist
+  description: Psychiatrist
+- code: deaf_intermediary
+  description: Deaf Intermediary
+- code: lay_advocate
+  description: Lay Advocate
+- code: lip_reader
+  description: Lip Reader
+- code: standard_intermediary
+  description: Standard Intermediary
+- code: interpreter
+  description: Interpreter
+- code: independent_social_worker
+  description: Independent Social Worker
+- code: paediatrician
+  description: Paediatrician
+- code: radiologist
+  description: Radiologist
+- code: neuroradiologist
+  description: Neuroradiologist (non-clinical negligence cerebral palsy)
+- code: haematologist
+  description: Haematologist
+- code: endocrinologist
+  description: Endocrinologist
+- code: ophthalmologist
+  description: Ophthalmology
+- code: neurosurgeon
+  description: Neurosurgeon
+- code: geneticist
+  description: Geneticist
+- code: risk_assessor
+  description: Risk Assessor
+- code: legal_expert
+  description: Legal Expert
+- code: neurologist
+  description: Neurologist (non-clinical negligence cerebral palsy)
+- code: toxicologist
+  description: Toxicologist
+- code: paediatric_ophthalmologist
+  description: Paediatric ophthalmologist
+- code: cell_phone_analysis
+  description: Cell telephone site analysis
+- code: computer_expert
+  description: Computer expert
+- code: foreign_law_expert
+  description: Foreign Law Expert
+- code: gastroenterologist
+  description: Gastroenterologist
