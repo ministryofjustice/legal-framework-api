@@ -27,6 +27,7 @@ RSpec.describe "proceeding_types" do
             description: "to be represented on an application for a prohibited steps order.",
             sca_core: false,
             sca_related: false,
+            post_sgo_update: nil,
             ccms_category_law: "Family",
             ccms_matter: "section 8 children (S8)",
             cost_limitations: {
