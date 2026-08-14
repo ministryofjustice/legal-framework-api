@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_08_120000) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_13_104214) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -119,6 +119,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_08_120000) do
     t.string "meaning", null: false
     t.string "name", default: "default_name", null: false
     t.boolean "non_means_tested_plf", default: false, null: false
+    t.string "post_sgo_update"
     t.boolean "sca_core"
     t.boolean "sca_related"
     t.tsvector "textsearchable"
