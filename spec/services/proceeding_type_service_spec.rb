@@ -63,6 +63,7 @@ RSpec.describe ProceedingTypeService do
                    "section 3 Protection from Harassment Act 1997.",
       sca_core: false,
       sca_related: false,
+      post_sgo_update: nil,
       ccms_category_law: "Family",
       ccms_matter: "domestic abuse (DA)",
       cost_limitations: {
@@ -116,6 +117,7 @@ RSpec.describe ProceedingTypeService do
       description: "to be represented on an application for a prohibited steps order.",
       sca_core: false,
       sca_related: false,
+      post_sgo_update: nil,
       ccms_category_law: "Family",
       ccms_matter: "section 8 children (S8)",
       cost_limitations: {
@@ -170,6 +172,7 @@ RSpec.describe ProceedingTypeService do
       description: "to be represented on an application for a prohibited steps order.  Appeals only.",
       sca_core: false,
       sca_related: false,
+      post_sgo_update: nil,
       ccms_category_law: "Family",
       ccms_matter: "section 8 children (S8)",
       cost_limitations: {
