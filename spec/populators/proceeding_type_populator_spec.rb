@@ -10,7 +10,7 @@ RSpec.describe ProceedingTypePopulator do
 
   describe "#call" do
     it "create instances from the seed files" do
-      expect { described_class.call }.to change(ProceedingType, :count).by(156)
+      expect { described_class.call }.to change(ProceedingType, :count).by(160)
     end
 
     context "when run twice" do
@@ -18,7 +18,7 @@ RSpec.describe ProceedingTypePopulator do
         expect {
           described_class.call
           described_class.call
-        }.to change(ProceedingType, :count).by(156)
+        }.to change(ProceedingType, :count).by(160)
       end
     end
   end
