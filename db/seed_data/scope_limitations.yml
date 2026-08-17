@@ -237,6 +237,11 @@ scope_limitations:
       available.
     substantive: true
     delegated_functions: true
+  - code: CV081
+    meaning: Further Evidence and Counsel's Opinion
+    description: Limited to obtaining further evidence and thereafter external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights.
+    substantive: true
+    delegated_functions: true
   - code: CV117
     meaning: Interim order inc. return date
     description: Limited to all steps necessary to apply for an interim order; where
@@ -245,8 +250,12 @@ scope_limitations:
     delegated_functions: true
   - code: CV118
     meaning: Hearing
-    description: Limited to all steps up to and including the hearing on [see additional
-      limitation notes]
+    description: Limited to all steps up to and including the hearing on [see additional limitation notes]
+    substantive: true
+    delegated_functions: true
+  - code: CV119
+    meaning: General report
+    description: Limited to obtaining a report from [see additional limitation notes]
     substantive: true
     delegated_functions: true
   - code: CV128
