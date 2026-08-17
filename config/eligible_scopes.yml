@@ -96,6 +96,8 @@
   PBM39: :public_law_family_child_applicant_option
   PBM45: :public_law_family_child_applicant_option
   PBM40: :public_law_family_placement_order
+  PBM46: :public_law_family_guardianship
+  PBM47: :public_law_family_guardianship
   PBM01A: :public_law_family_appeals
   PBM02A: :public_law_family_appeals
   PBM04A: :public_law_family_appeals
@@ -122,6 +124,7 @@
   PBM29A: :public_law_family_appeals
   PBM30A: :public_law_family_appeals
   PBM32A: :public_law_family_appeals
+  PBM32A_SGO: :public_law_family_sgo_appeal
   PBM33A: :public_law_family_appeals
   PBM35A: :public_law_family_appeals
   PBM36A: :public_law_family_appeals
@@ -157,6 +160,8 @@
   PBM39E: :public_law_family_enforcement_base
   PBM40E: :public_law_family_enforcement_orders
   PBM45E: :public_law_family_enforcement_orders
+  PBM46E: :public_law_family_guardianship_enforcement
+  PBM47E: :public_law_family_guardianship_enforcement
 
 # schemes
 :schemes:
@@ -465,6 +470,67 @@
           - CV027
         :defaults:
           :default: CV118
+  :public_law_family_sgo_appeal:
+    :default_service_level: 3
+    :service_level_3:
+      :substantive:
+        :scopes:
+          - APL07
+          - APL15
+          - APL16
+          - APL18
+          - APL20
+          - APL22
+          - APL27
+          - APL29
+          - APL31
+          - APL51
+          - APL52
+          - APL53
+          - APL54
+          - APL55
+          - APL56
+          - APL57
+          - APL65
+          - APL66
+          - APL67
+          - APL68
+          - APL69
+          - APL70
+          - CV079
+          - CV118
+          - CV129
+        :defaults:
+          :default: CV079
+      :delegated_functions:
+        :scopes:
+          - APL07
+          - APL15
+          - APL16
+          - APL18
+          - APL20
+          - APL22
+          - APL27
+          - APL29
+          - APL31
+          - APL51
+          - APL52
+          - APL53
+          - APL54
+          - APL55
+          - APL56
+          - APL57
+          - APL65
+          - APL66
+          - APL67
+          - APL68
+          - APL69
+          - APL70
+          - CV079
+          - CV118
+          - CV129
+        :defaults:
+          :default: CV079
   :public_law_family_enforcement_base:
     :default_service_level: 3
     :service_level_3:
@@ -511,3 +577,59 @@
           - FM019
         :defaults:
           :default: FM062
+  :public_law_family_guardianship:
+    :default_service_level: 3
+    :service_level_3:
+      :substantive:
+        :scopes:
+          - CV079
+          - CV081
+          - CV118
+          - CV119
+          - CV128
+          - CV129
+          - FM004
+          - FM007
+          - FM015
+          - FM019
+          - FM062
+        :defaults:
+          :default: FM019
+      :delegated_functions:
+        :scopes:
+          - CV079
+          - CV081
+          - CV118
+          - CV119
+          - CV128
+          - CV129
+          - FM004
+          - FM007
+          - FM015
+          - FM019
+          - FM062
+        :defaults:
+          :default: CV118
+  :public_law_family_guardianship_enforcement:
+    :default_service_level: 3
+    :service_level_3:
+      :substantive:
+        :scopes:
+          - CV118
+          - EF025
+          - EF022
+          - CV027
+          - FM049
+          - FM019
+        :defaults:
+          :default: FM019
+      :delegated_functions:
+        :scopes:
+          - CV118
+          - EF025
+          - EF022
+          - CV027
+          - FM049
+          - FM019
+        :defaults:
+          :default: CV118
