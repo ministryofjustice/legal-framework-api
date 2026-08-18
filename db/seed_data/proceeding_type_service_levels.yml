@@ -105,6 +105,8 @@
   - PBM39
   - PBM45
   - PBM40
+  - PBM46
+  - PBM47
   - PBM01A
   - PBM02A
   - PBM04A
@@ -166,6 +168,8 @@
   - PBM39E
   - PBM40E
   - PBM45E
+  - PBM46E
+  - PBM47E
 
 # Full Representation, section 8 proceeding, not-default
 - service_level_id: 3
