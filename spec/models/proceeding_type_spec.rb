@@ -19,6 +19,7 @@ RSpec.describe ProceedingType do
           "description" => proceeding_type.description,
           "sca_core" => proceeding_type.sca_core,
           "sca_related" => proceeding_type.sca_related,
+          "post_sgo_update" => proceeding_type.post_sgo_update,
           "non_means_tested_plf" => proceeding_type.non_means_tested_plf,
           "ccms_category_law" => proceeding_type.matter_type.category_of_law,
           "ccms_category_law_code" => proceeding_type.matter_type.category_of_law_code,

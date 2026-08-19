@@ -28,7 +28,7 @@ RSpec.describe "proceeding_types/searches_controller" do
         run_test! do |response|
           expect(response).to have_http_status(:ok)
           expect(response.media_type).to eql("application/json")
-          expect(JSON.parse(response.body).count).to eq 156
+          expect(JSON.parse(response.body).count).to eq 160
         end
       end
     end
@@ -75,6 +75,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     description: "to be represented on an application for an occupation order.",
                     sca_core: false,
                     sca_related: false,
+                    post_sgo_update: nil,
                     non_means_tested_plf: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
@@ -135,6 +136,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     description: "to be represented on an application for an injunction, order or declaration under the inherent jurisdiction of the court.",
                     sca_core: false,
                     sca_related: false,
+                    post_sgo_update: nil,
                     non_means_tested_plf: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
@@ -146,6 +148,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     description: "to be represented in an action for an injunction under section 3 Protection from Harassment Act 1997.",
                     sca_core: false,
                     sca_related: false,
+                    post_sgo_update: nil,
                     non_means_tested_plf: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
@@ -157,6 +160,7 @@ RSpec.describe "proceeding_types/searches_controller" do
                     description: "to be represented on an application for a non-molestation order.",
                     sca_core: false,
                     sca_related: false,
+                    post_sgo_update: nil,
                     non_means_tested_plf: false,
                     ccms_category_law: "Family",
                     ccms_category_law_code: "MAT",
