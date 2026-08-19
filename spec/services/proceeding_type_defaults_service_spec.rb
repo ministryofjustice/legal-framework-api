@@ -33,6 +33,81 @@ RSpec.describe ProceedingTypeDefaultsService do
     end
   end
 
+  describe "sgo updates" do
+    context "when the params include an sgo value" do
+      let(:proceeding_type_defaults_params) do
+        {
+          proceeding_type_ccms_code: "PBM32A",
+          delegated_functions_used: true,
+          client_involvement_type: "A",
+          sgo_update:,
+        }.to_json
+      end
+
+      context "and it's set to false" do
+        let(:sgo_update) { false }
+
+        it "returns the old values" do
+          expected_result = {
+            success: true,
+            requested_params: {
+              proceeding_type_ccms_code: "PBM32A",
+              delegated_functions_used: true,
+              client_involvement_type: "A",
+            },
+            default_level_of_service: {
+              level: 3,
+              name: "Full Representation",
+              stage: 8,
+            },
+            default_scope: {
+              code: "CV118",
+              meaning: "Hearing",
+              description: "Limited to all steps up to and including the hearing on [see additional limitation notes]",
+              additional_params: [
+                {
+                  name: "hearing_date",
+                  type: "date",
+                  mandatory: true,
+                },
+              ],
+            },
+          }
+
+          expect(proceeding_type_default_response).to eq expected_result
+        end
+      end
+
+      context "and it's set to true" do
+        let(:sgo_update) { true }
+
+        it "returns the new values" do
+          expected_result = {
+            success: true,
+            requested_params: {
+              proceeding_type_ccms_code: "PBM32A",
+              delegated_functions_used: true,
+              client_involvement_type: "A",
+            },
+            default_level_of_service: {
+              level: 3,
+              name: "Full Representation",
+              stage: 8,
+            },
+            default_scope: {
+              code: "CV079",
+              meaning: "Counsel's Opinion",
+              description: "Limited to obtaining external Counsel's Opinion or the opinion of an external solicitor with higher court advocacy rights on the information already available.",
+              additional_params: [],
+            },
+          }
+
+          expect(proceeding_type_default_response).to eq expected_result
+        end
+      end
+    end
+  end
+
   describe "data integrity" do
     let(:scenarios) do
       [

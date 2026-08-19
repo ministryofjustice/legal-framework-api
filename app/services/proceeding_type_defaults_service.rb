@@ -48,7 +48,14 @@ private
   end
 
   def add_default_scope_to_response
-    ds = ScopeLimitation.default_for(@proceeding_type_ccms_code, @client_involvement_type, @level_of_service_code, @delegated_functions_used)
+    # TODO: Delete the following hash setter and if branch and restore the commented setter when the sgo feature flag is removed
+    # ds = ScopeLimitation.default_for(@proceeding_type_ccms_code, @client_involvement_type, @level_of_service_code, @delegated_functions_used)
+    hash = JSON.parse(@proceeding_type_defaults_params, symbolize_names: true)
+    ds = if hash[:proceeding_type_ccms_code] == "PBM32A" && hash[:sgo_update] == true
+           ScopeLimitation.default_for("PBM32A_SGO", @client_involvement_type, @level_of_service_code, @delegated_functions_used)
+         else
+           ScopeLimitation.default_for(@proceeding_type_ccms_code, @client_involvement_type, @level_of_service_code, @delegated_functions_used)
+         end
     @response[:default_scope] = ds.as_json
   end
 
