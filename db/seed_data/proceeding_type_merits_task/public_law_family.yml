@@ -523,6 +523,38 @@
       - opponents_application
     - court_order_copy
     - matter_opposed
+- ccms_code: "PBM46"
+  questions:
+    - when_contact_was_made
+    - opponent_name
+    - delegated_functions_on_any_proceeding:
+        - nature_of_urgency
+    - statement_of_case
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+    - applicant_or_joined_party_on_this_proceeding:
+        - chances_of_success
+    - defendant_on_this_proceeding:
+        - opponents_application
+    - court_order_copy
+- ccms_code: "PBM47"
+  questions:
+    - when_contact_was_made
+    - opponent_name
+    - delegated_functions_on_any_proceeding:
+        - nature_of_urgency
+    - statement_of_case
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+    - applicant_or_joined_party_on_this_proceeding:
+        - chances_of_success
+    - defendant_on_this_proceeding:
+        - opponents_application
+    - court_order_copy
+    - applicant_on_this_proceeding:
+        - client_child_care_assessment
 - ccms_code: "PBM01A"
   questions:
     - when_contact_was_made
@@ -1472,3 +1504,33 @@
       - opponents_application
     - court_order_copy
     - matter_opposed
+- ccms_code: "PBM46E"
+  questions:
+    - when_contact_was_made
+    - opponent_name
+    - delegated_functions_on_any_proceeding:
+        - nature_of_urgency
+    - statement_of_case
+    - not_child_subject_for_this_proceeding:
+        - children_application
+        - children_proceeding
+    - applicant_or_joined_party_on_this_proceeding:
+        - chances_of_success
+    - defendant_on_this_proceeding:
+        - opponents_application
+    - court_order_copy
+- ccms_code: "PBM47E"
+  questions:
+    - when_contact_was_made
+    - opponent_name
+    - delegated_functions_on_any_proceeding:
+      - nature_of_urgency
+      - statement_of_case
+    - not_child_subject_for_this_proceeding:
+      - children_application
+      - children_proceeding
+    - applicant_or_joined_party_on_this_proceeding:
+      - chances_of_success
+    - defendant_on_this_proceeding:
+        - opponents_application
+        - court_order_copy
