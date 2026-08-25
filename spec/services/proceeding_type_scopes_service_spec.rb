@@ -22,6 +22,58 @@ RSpec.describe ProceedingTypeScopesService do
     end
   end
 
+  context "when the request is for PBM32A" do
+    # This whole context can be removed when the SGO changes are removed
+    let(:proceeding_type_ccms_code) { "PBM32A" }
+    let(:level_of_service_code) { 3 }
+    let(:legacy_scope_limitation) { proceeding_type_scopes_response[:level_of_service][:scope_limitations].find { |x| x[:code] == "APL09" } }
+    let(:new_scope_limitation) { proceeding_type_scopes_response[:level_of_service][:scope_limitations].find { |x| x[:code] == "CV129" } }
+
+    context "and no sgo_update parameter is sent in the payload" do
+      it "returns the legacy set of scope limitations" do
+        expect(proceeding_type_scopes_response[:level_of_service][:scope_limitations].count).to eq 24
+        expect(legacy_scope_limitation.count).to eq 4
+        expect(new_scope_limitation).to be_nil
+      end
+    end
+
+    context "and an sgo_update parameter is sent as false in the payload" do
+      let(:proceeding_type_scopes_params) do
+        {
+          proceeding_type_ccms_code:,
+          delegated_functions_used:,
+          client_involvement_type:,
+          level_of_service_code:,
+          sgo_update: false,
+        }.to_json
+      end
+
+      it "returns the legacy set of scope limitations" do
+        expect(proceeding_type_scopes_response[:level_of_service][:scope_limitations].count).to eq 24
+        expect(legacy_scope_limitation.count).to eq 4 # keys in the object hash
+        expect(new_scope_limitation).to be_nil
+      end
+    end
+
+    context "and an sgo_update parameter is sent as true in the payload" do
+      let(:proceeding_type_scopes_params) do
+        {
+          proceeding_type_ccms_code:,
+          delegated_functions_used:,
+          client_involvement_type:,
+          level_of_service_code:,
+          sgo_update: true,
+        }.to_json
+      end
+
+      it "returns the legacy set of scope limitations" do
+        expect(proceeding_type_scopes_response[:level_of_service][:scope_limitations].count).to eq 25
+        expect(legacy_scope_limitation).to be_nil
+        expect(new_scope_limitation.count).to eq 4
+      end
+    end
+  end
+
   context "when the request is unsuccessful" do
     context "with a non_existent client_involvement_type" do
       let(:level_of_service_code) { 7 }

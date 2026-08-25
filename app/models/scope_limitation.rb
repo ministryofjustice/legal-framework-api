@@ -1,4 +1,5 @@
 class ScopeLimitation < ApplicationRecord
+  class NotFound < StandardError; end
   has_many :proceeding_types, through: :proceeding_type_scope_limitations
   has_many :scope_limitation_user_inputs
   has_many :user_inputs,
@@ -9,7 +10,7 @@ class ScopeLimitation < ApplicationRecord
   def self.eligible_for(pt_ccms_code, client_involvement_type, service_level, df_used)
     codes = EligibleScopesService.eligible_scopes(pt_ccms_code, client_involvement_type, service_level, df_used)
     recs = where(code: codes)
-    raise "Scope Limitation record(s) not found for #{codes.join(', ')}" if recs.size != codes.size
+    raise NotFound, "Scope Limitation record(s) not found for #{(codes - recs.pluck(:code)).join(', ')}" if recs.size != codes.size
 
     recs
   end

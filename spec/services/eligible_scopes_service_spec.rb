@@ -511,6 +511,60 @@ RSpec.describe EligibleScopesService do
           end
         end
       end
+
+      context "when the proceeding is in the guardianship enforcement orders group" do
+        let(:pt_ccms_code) { "PBM46E" }
+        let(:client_involvement_type) { "A" }
+        let(:expected_scopes) { %w[CV118 EF025 EF022 CV027 FM049 FM019] }
+
+        context "and has not used delegated functions" do
+          let(:df_used) { false }
+
+          it "returns the expected scopes" do
+            scope = described_class.eligible_scopes(pt_ccms_code, client_involvement_type, service_level, df_used)
+            expect(scope).to match_array(expected_scopes)
+          end
+
+          it "returns the expected default scope" do
+            scope = described_class.default_scope(pt_ccms_code, client_involvement_type, service_level, df_used)
+            expect(scope).to eq "FM019"
+          end
+        end
+
+        context "and has used delegated functions" do
+          let(:df_used) { true }
+
+          it "returns the expected scopes" do
+            scope = described_class.eligible_scopes(pt_ccms_code, client_involvement_type, service_level, df_used)
+            expect(scope).to match_array(expected_scopes)
+          end
+
+          it "returns the expected default scope" do
+            scope = described_class.default_scope(pt_ccms_code, client_involvement_type, service_level, df_used)
+            expect(scope).to eq "CV118"
+          end
+        end
+      end
+
+      context "when the proceeding is the SGO appeal" do
+        let(:pt_ccms_code) { "PBM32A_SGO" } # this can be reverted to PBM32A when the flag is removed
+        let(:client_involvement_type) { "A" }
+        let(:expected_scopes) { %w[APL07 APL15 APL16 APL18 APL20 APL22 APL27 APL29 APL31 APL51 APL52 APL53 APL54 APL55 APL56 APL57 APL65 APL66 APL67 APL68 APL69 APL70 CV079 CV118 CV129] }
+
+        context "and has not used delegated functions" do
+          let(:df_used) { false }
+
+          it "returns the expected scopes" do
+            scope = described_class.eligible_scopes(pt_ccms_code, client_involvement_type, service_level, df_used)
+            expect(scope).to match_array(expected_scopes)
+          end
+
+          it "returns the expected default scope" do
+            scope = described_class.default_scope(pt_ccms_code, client_involvement_type, service_level, df_used)
+            expect(scope).to eq "CV079"
+          end
+        end
+      end
     end
   end
 end
