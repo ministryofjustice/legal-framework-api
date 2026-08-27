@@ -549,6 +549,23 @@ RSpec.describe QuestionsService do
         expect(question_service).to eq expected_se013_applicant_with_fhh_response
       end
     end
+
+    context "when there is a S8 proceeding with Applicant and level of service of Family Help Higher is submitted as a string" do
+      let(:proceedings) do
+        [
+          {
+            ccms_code: "SE013",
+            delegated_functions_used: true,
+            client_involvement_type: "A",
+            substantive_level_of_service: "1",
+          },
+        ]
+      end
+
+      it "returns valid response without chances of success" do
+        expect(question_service).to eq expected_se013_applicant_with_fhh_response
+      end
+    end
   end
 
   context "when the request fails" do
