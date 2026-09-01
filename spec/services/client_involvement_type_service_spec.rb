@@ -67,6 +67,24 @@ RSpec.describe ClientInvolvementTypeService do
         end
       end
 
+      context "and is an SGO proceeding" do
+        let(:proceeding_type_ccms_code) { "PBM46" }
+
+        it "returns valid response with expected tasks" do
+          expect(response[:success]).to be true
+          expect(response[:client_involvement_type]).to match_json_expression(expected_sgo_response)
+        end
+
+        context "and it is an enforcement proceeding" do
+          let(:proceeding_type_ccms_code) { "PBM46E" }
+
+          it "returns valid response with expected tasks" do
+            expect(response[:success]).to be true
+            expect(response[:client_involvement_type]).to match_json_expression(expected_sgo_enforcement_response)
+          end
+        end
+      end
+
       context "and is not an sca proceeding" do
         let(:proceeding_type_ccms_code) { "DA001" }
 
@@ -140,6 +158,19 @@ RSpec.describe ClientInvolvementTypeService do
   end
 
   def expected_sca_related_response_over_18
+    [
+      { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
+      { "ccms_code" => "D", "description" => "Respondent" },
+    ]
+  end
+
+  def expected_sgo_response
+    [
+      { "ccms_code" => "D", "description" => "Respondent" },
+    ]
+  end
+
+  def expected_sgo_enforcement_response
     [
       { "ccms_code" => "A", "description" => "Applicant/claimant/petitioner" },
       { "ccms_code" => "D", "description" => "Respondent" },

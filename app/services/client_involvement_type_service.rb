@@ -18,6 +18,10 @@ class ClientInvolvementTypeService
                                             sca_core_response
                                           elsif proceeding&.sca_related?
                                             sca_related_response
+                                          elsif proceeding&.ccms_code == "PBM46"
+                                            pbm46_response
+                                          elsif proceeding&.ccms_code == "PBM46E"
+                                            pbm46e_response
                                           else
                                             default_response
                                           end
@@ -62,6 +66,28 @@ private
       {
         ccms_code: "W",
         description: "Subject of proceedings (child)",
+      },
+    ]
+  end
+
+  def pbm46_response
+    [
+      {
+        ccms_code: "D",
+        description: "Respondent",
+      },
+    ]
+  end
+
+  def pbm46e_response
+    [
+      {
+        ccms_code: "A",
+        description: "Applicant/claimant/petitioner",
+      },
+      {
+        ccms_code: "D",
+        description: "Respondent",
       },
     ]
   end
