@@ -24,11 +24,43 @@ RSpec.describe ProceedingTypeFilter do
       end
     end
 
-    context "and it has an SCA proceeding" do
+    context "and it has an SCA care proceeding as the first CORE proceeding" do
+      let(:current_proceedings) { %w[PB057] }
+
+      it "returns only the supervision sca_core and sca_related proceedings minus the current one" do
+        resulting_codes = proceeding_type_filter.pluck("ccms_code")
+        expect(resulting_codes).to include("PB059") # supervision order
+        expect(resulting_codes).not_to include("PB057") # care order
+        expect(resulting_codes).not_to include("PB003") # child assessment order
+        expect(resulting_codes).to include("PB014") # Recovery of children order
+        expect(proceeding_type_filter.count).to eq 15 #  14 sca_related proceedings + the Supervision order core proceeding
+      end
+    end
+
+    context "and it has an SCA supervision proceeding as the first CORE proceeding" do
+      let(:current_proceedings) { %w[PB059] }
+
+      it "returns only the care order sca_core and sca_related proceedings minus the current one" do
+        resulting_codes = proceeding_type_filter.pluck("ccms_code")
+        expect(resulting_codes).to include("PB057") # care order
+        expect(resulting_codes).not_to include("PB059") # supervision order
+        expect(resulting_codes).not_to include("PB003") # child assessment order
+        expect(resulting_codes).to include("PB014") # Recovery of children order
+        expect(proceeding_type_filter.count).to eq 15 # 14 sca_related proceedings + the Care order core proceeding
+      end
+    end
+
+    context "and it has a generic SCA core proceeding as the first CORE proceeding" do
       let(:current_proceedings) { %w[PB003] }
 
-      it "returns only sca_core and sca_related proceedings minus the current one" do
-        expect(proceeding_type_filter.count).to eq 20
+      it "returns no sca_core proceedings and all sca_related proceedings" do
+        resulting_codes = proceeding_type_filter.pluck("ccms_code")
+        expect(resulting_codes).not_to include("PB057") # care order
+        expect(resulting_codes).not_to include("PB059") # supervision order
+        expect(resulting_codes).not_to include("PB003") # child assessment order
+        expect(resulting_codes).to include("PB014") # Recovery of children order - related
+        expect(proceeding_type_filter.pluck("sca_core").uniq).to eq [false]
+        expect(proceeding_type_filter.count).to eq 14 # No core, all sca_related proceedings
       end
     end
 
