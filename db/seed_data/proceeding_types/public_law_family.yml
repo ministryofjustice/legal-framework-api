@@ -770,8 +770,8 @@
   non_means_tested_plf: true
 - ccms_code: PBM46
   meaning: Special guardianship order - parental guardianship
-  name: To be represented on an application for a special guardianship order, where the client is the parent of, or has parental responsibility for the subject child and opposes the special guardianship order being made.
-  description: special_guardianship_order_plf_parental
+  name: special_guardianship_order_plf_parental
+  description: To be represented on an application for a special guardianship order, where the client is the parent of, or has parental responsibility for the subject child and opposes the special guardianship order being made.
   matter_type_code: KPBLB
   additional_search_terms:
   sca_core: false
@@ -779,7 +779,7 @@
   non_means_tested_plf: true
   post_sgo_update: show
 - ccms_code: PBM46E
-  meaning: Special guardianship order - parental guardianship
+  meaning: Special guardianship order - parental guardianship - enforcement
   name: special_guardianship_order_plf_parental_enforcement
   description: To be represented on an application for a special guardianship order, where the client is the parent of, or has parental responsibility for the subject child and opposes the special guardianship order being made.
   matter_type_code: KPBLB
