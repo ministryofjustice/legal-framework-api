@@ -1,4 +1,6 @@
 class ProceedingTypeFilter
+  SCA_LIMITED_PROCEEDING_CODES = %w[PB057 PB059].freeze
+
   def initialize(current_proceedings = [], allowed_categories = [], search_term = "")
     @current_proceedings = current_proceedings
     @allowed_categories = allowed_categories
@@ -28,8 +30,16 @@ private
     @results.delete_if do |result|
       if @current_proceedings.empty? # if current_proceedings is empty, only show SCA core
         result["sca_related"] && result["ccms_matter_code"].eql?("KPBLW")
-      elsif current_proceedings_have_sca # if already has an SCA proceeding, exclude all non-SCA proceedings
-        result["sca_related"].eql?(false) && result["sca_core"].eql?(false)
+      elsif current_proceedings_have_limited_sca_core # if already has a supervision or care order core SCA proceeding, exclude all non-SCA related proceedings
+        [
+          result["sca_related"].eql?(false) && result["sca_core"].eql?(false),
+          result["sca_core"].eql?(true) && !result["ccms_code"].in?(SCA_LIMITED_PROCEEDING_CODES),
+        ].any?
+      elsif current_proceedings_have_sca # if already has an SCA proceeding, exclude all non-SCA proceedings and the remaining core proceedings
+        [
+          result["sca_related"].eql?(false) && result["sca_core"].eql?(false),
+          result["sca_core"].eql?(true),
+        ].any?
       else
         result["sca_related"] || result["sca_core"]
       end
@@ -58,6 +68,12 @@ private
   def current_proceedings_have_sca
     @current_proceedings_have_sca ||= ProceedingType.where(ccms_code: @current_proceedings).any? do |proceeding|
       proceeding["sca_core"] || proceeding["sca_related"]
+    end
+  end
+
+  def current_proceedings_have_limited_sca_core
+    @current_proceedings_have_limited_sca_core ||= ProceedingType.where(ccms_code: @current_proceedings).any? do |proceeding|
+      proceeding["ccms_code"].in?(SCA_LIMITED_PROCEEDING_CODES)
     end
   end
 
