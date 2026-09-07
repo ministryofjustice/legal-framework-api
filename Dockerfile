@@ -41,8 +41,6 @@ EXPOSE 3000
 
 RUN chown -R apply:apply /myapp
 
-RUN chmod +x ./bin/uat_deploy
-
 # set ping environment variables for status controller
 ARG APP_BUILD_DATE
 ENV APP_BUILD_DATE=${APP_BUILD_DATE}
