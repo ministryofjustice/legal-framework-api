@@ -4,14 +4,26 @@ on:
   pull_request:
     types:
       - closed
+  workflow_call:
+    secrets:
+      KUBE_UAT_CLUSTER:
+        required: true
+      KUBE_UAT_CERT:
+        required: true
+      KUBE_UAT_NAMESPACE:
+        required: true
+      KUBE_UAT_TOKEN:
+        required: true
 
 permissions: {}
 
 jobs:
   delete_uat_job:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #--v7.0.1
+
       - name: Delete UAT release action
         id: delete_uat
         uses: ministryofjustice/laa-civil-apply-delete-uat-release@23e404138cfb4442ec62d8a13dfccc5355231b17 # v1.1.0

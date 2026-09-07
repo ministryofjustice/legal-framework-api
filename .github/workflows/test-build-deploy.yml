@@ -95,6 +95,8 @@ jobs:
     environment: uat
     permissions:
       id-token: write
+    outputs:
+      release-name: ${{ needs.build.outputs.release-name }}
 
     steps:
       - *checkout-code
@@ -119,9 +121,15 @@ jobs:
           slack-access-token: ${{ secrets.SLACK_ACCESS_TOKEN }}
           slack-channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
 
-# TODO: delete deployment of UAT if dependabot?
-  # delete_dependabot_uat_deployment:
-    # if: github.actor == 'dependabot[bot]'
+  delete_dependabot_deployment:
+    if: github.actor == 'dependabot[bot]'
+    needs: deploy-uat
+    uses: ./.github/workflows/delete-uat-release.yml
+    secrets:
+      KUBE_UAT_CLUSTER: ${{ secrets.KUBE_UAT_CLUSTER }}
+      KUBE_UAT_CERT: ${{ secrets.KUBE_UAT_CERT }}
+      KUBE_UAT_NAMESPACE: ${{ secrets.KUBE_UAT_NAMESPACE }}
+      KUBE_UAT_TOKEN: ${{ secrets.KUBE_UAT_TOKEN }}
 
   deploy-staging:
     if: github.ref == 'refs/heads/main'
