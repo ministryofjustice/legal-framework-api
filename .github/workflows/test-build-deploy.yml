@@ -107,10 +107,10 @@ jobs:
           ecr-role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
           ecr-registry: ${{ vars.ECR_REGISTRY }}
           ecr-repository: ${{ vars.ECR_REPOSITORY }}
-          kube-cert: ${{ secrets.K8S_GHA_UAT_CLUSTER_CERT }}
-          kube-token: ${{ secrets.K8S_GHA_UAT_TOKEN }}
-          kube-cluster: ${{ secrets.K8S_GHA_UAT_CLUSTER_NAME }}
-          kube-namespace: ${{ secrets.K8S_GHA_UAT_NAMESPACE }}
+          kube-cert: ${{ secrets.KUBE_UAT_CERT }}
+          kube-token: ${{ secrets.KUBE_UAT_TOKEN }}
+          kube-cluster: ${{ secrets.KUBE_UAT_CLUSTER }}
+          kube-namespace: ${{ secrets.KUBE_UAT_NAMESPACE }}
           branch-name: ${{ needs.build.outputs.branch-name }}
           release-name: ${{ needs.build.outputs.release-name }}
           script-path: ./bin/deploy

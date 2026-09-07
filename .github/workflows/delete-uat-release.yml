@@ -16,10 +16,10 @@ jobs:
         id: delete_uat
         uses: ministryofjustice/laa-civil-apply-delete-uat-release@23e404138cfb4442ec62d8a13dfccc5355231b17 # v1.1.0
         with:
-          k8s_cluster: ${{ secrets.K8S_GHA_UAT_CLUSTER_NAME }}
-          k8s_cluster_cert: ${{ secrets.K8S_GHA_UAT_CLUSTER_CERT }}
-          k8s_namespace: ${{ secrets.K8S_GHA_UAT_NAMESPACE }}
-          k8s_token: ${{ secrets.K8S_GHA_UAT_TOKEN }}
+          k8s_cluster: ${{ secrets.KUBE_UAT_CLUSTER }}
+          k8s_cluster_cert: ${{ secrets.KUBE_UAT_CERT }}
+          k8s_namespace: ${{ secrets.KUBE_UAT_NAMESPACE }}
+          k8s_token: ${{ secrets.KUBE_UAT_TOKEN }}
           delete_all_pvc: true
 
       - name: Delete UAT RDS database
