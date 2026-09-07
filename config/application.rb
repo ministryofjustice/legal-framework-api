@@ -41,8 +41,10 @@ module LegalFrameworkApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.x.status.build_date = ENV["BUILD_DATE"] || "Not Available"
-    config.x.status.build_tag = ENV["BUILD_TAG"] || "Not Available"
-    config.x.status.app_branch = ENV["APP_BRANCH"] || "Not Available"
+    fallback_text = "Not Available"
+    config.x.status.build_date = ENV.fetch("APP_BUILD_DATE", fallback_text)
+    config.x.status.build_tag = ENV.fetch("APP_BUILD_TAG", fallback_text)
+    config.x.status.app_git_commit = ENV.fetch("APP_GIT_COMMIT", fallback_text)
+    config.x.status.app_branch = ENV.fetch("APP_BRANCH", fallback_text)
   end
 end

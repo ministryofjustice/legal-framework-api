@@ -11,6 +11,7 @@ class StatusController < ApplicationController
     render json: {
       "build_date" => Rails.configuration.x.status.build_date,
       "build_tag" => Rails.configuration.x.status.build_tag,
+      "app_git_commit" => Rails.configuration.x.status.app_git_commit,
       "app_branch" => Rails.configuration.x.status.app_branch,
     }
   end
