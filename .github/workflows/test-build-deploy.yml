@@ -1,0 +1,210 @@
+name: CI and CD
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - &checkout-code
+        name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #--v7.0.1
+
+      - &setup-ruby
+        name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b #--v1.321.0
+        with:
+          bundler-cache: true
+
+      - name: Run rubocop
+        run: |
+          bundle exec rubocop
+
+  rspec:
+    runs-on: ubuntu-latest
+    env: &test-env
+      RACK_ENV: test
+      RAILS_ENV: test
+      DATABASE_URL: "postgresql://postgres:postgres@127.0.0.1/legal_framework_api_test"
+      SECRET_KEY_BASE: not-a-real-secret-key-base
+
+    services:
+      postgres: &postgres-service
+        image: postgres:18.3-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: legal_framework_api_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d legal_framework_api_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+
+    steps:
+      - *checkout-code
+      - *setup-ruby
+      - name: Setup test database
+        run: bin/rails db:prepare
+
+      - name: Run RSpec
+        run: |
+          bundle exec rspec --format progress
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: coverage-report
+          path: coverage
+          retention-days: 7
+
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+
+    outputs:
+      image: ${{ steps.build_and_push.outputs.image }}
+      branch-name: ${{ steps.build_and_push.outputs.branch-name }}
+      release-name: ${{ steps.build_and_push.outputs.release-name }}
+
+    steps:
+      - *checkout-code
+
+      - name: Build and push
+        id: build_and_push
+        uses:  ministryofjustice/laa-civil-apply-build-and-push@8a157dbc3ec3b1d2366d6a676272cc26a57e9439 # main as at 21/08/2026
+        with:
+          ecr-region: ${{ vars.ECR_REGION }}
+          ecr-role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
+          ecr-repository: ${{ vars.ECR_REPOSITORY }}
+
+  deploy-uat:
+    needs: [rubocop, rspec, build]
+    runs-on: ubuntu-latest
+    environment: uat
+    permissions:
+      id-token: write
+
+    steps:
+      - *checkout-code
+
+      - name: Deploy UAT branch
+        id: deploy_uat_branch
+        uses: ministryofjustice/laa-civil-apply-deploy@c473117aec381567948e19dc6a80059aed9c2d6b # main as at 07/09/2026
+        with:
+          ecr-region: ${{ vars.ECR_REGION }}
+          ecr-role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
+          ecr-registry: ${{ vars.ECR_REGISTRY }}
+          ecr-repository: ${{ vars.ECR_REPOSITORY }}
+          kube-cert: ${{ secrets.K8S_GHA_UAT_CLUSTER_CERT }}
+          kube-token: ${{ secrets.K8S_GHA_UAT_TOKEN }}
+          kube-cluster: ${{ secrets.K8S_GHA_UAT_CLUSTER_NAME }}
+          kube-namespace: ${{ secrets.K8S_GHA_UAT_NAMESPACE }}
+          branch-name: ${{ needs.build.outputs.branch-name }}
+          release-name: ${{ needs.build.outputs.release-name }}
+          script-path: ./bin/deploy
+          app-environment: uat
+          slack-notification-on-failure: 'true'
+          slack-access-token: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          slack-channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+
+# TODO: delete deployment of UAT if dependabot?
+  # delete_dependabot_uat_deployment:
+    # if: github.actor == 'dependabot[bot]'
+
+  deploy-staging:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
+    environment: staging
+    permissions:
+      id-token: write
+
+    steps:
+      - *checkout-code
+
+      - name: Deploy Staging branch
+        id: deploy_staging_branch
+        uses: ministryofjustice/laa-civil-apply-deploy@c473117aec381567948e19dc6a80059aed9c2d6b # main as at 07/09/2026
+        with:
+          ecr-region: ${{ vars.ECR_REGION }}
+          ecr-role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
+          ecr-registry: ${{ vars.ECR_REGISTRY }}
+          ecr-repository: ${{ vars.ECR_REPOSITORY }}
+          kube-cert: ${{ secrets.KUBE_STAGING_CERT }}
+          kube-token: ${{ secrets.KUBE_STAGING_TOKEN }}
+          kube-cluster: ${{ secrets.KUBE_STAGING_CLUSTER }}
+          kube-namespace: ${{ secrets.KUBE_STAGING_NAMESPACE }}
+          script-path: ./bin/deploy
+          app-environment: staging
+          slack-notification-on-failure: 'true'
+          slack-access-token: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          slack-channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+
+  notify-production-approval:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Notify Slack waiting on production deployment approval
+        uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # V4.0.0
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          payload: |
+            channel: ${{ secrets.SLACK_CHANNEL_ID }}
+            text: |
+              :github-green: ${{ github.actor }} has a pending production approval for ${{ github.ref_name }}
+
+              *Triggered by:* ${{ github.actor }}
+              *Repository:* `${{ github.repository }}`
+              *Branch:* ${{ github.ref_name }}
+              *Review and approve:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - notify-production-approval
+
+    environment: production
+
+    permissions:
+      id-token: write
+
+    steps:
+      - *checkout-code
+
+      - name: Deploy Production branch
+        id: deploy_production_branch
+        uses: ministryofjustice/laa-civil-apply-deploy@c473117aec381567948e19dc6a80059aed9c2d6b # main as at 07/09/2026
+        with:
+          ecr-region: ${{ vars.ECR_REGION }}
+          ecr-role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
+          ecr-registry: ${{ vars.ECR_REGISTRY }}
+          ecr-repository: ${{ vars.ECR_REPOSITORY }}
+          kube-cert: ${{ secrets.KUBE_PRODUCTION_CERT }}
+          kube-token: ${{ secrets.KUBE_PRODUCTION_TOKEN }}
+          kube-cluster: ${{ secrets.KUBE_PRODUCTION_CLUSTER }}
+          kube-namespace: ${{ secrets.KUBE_PRODUCTION_NAMESPACE }}
+          script-path: ./bin/deploy
+          app-environment: production
+          slack-notification-on-failure: 'true'
+          slack-access-token: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          slack-channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
