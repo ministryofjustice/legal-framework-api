@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+deploy_branch() {
+  RELEASE_HOST="$RELEASE_NAME-legal-framework-uat.cloud-platform.service.justice.gov.uk"
+  IDENTIFIER="$RELEASE_NAME-legal-framework-api-legal-framework-api-uat-green"
+
+  echo "Deploying GIT_SHA: $GIT_SHA under release name: '$RELEASE_NAME'..."
+
+  helm upgrade "$RELEASE_NAME" ./deploy/helm/. \
+                --install --wait \
+                --namespace "$KUBE_NAMESPACE" \
+                --values "./deploy/helm/values-$ENVIRONMENT.yaml" \
+                --set "image.repository=$ECR_REGISTRY/$ECR_REPOSITORY" \
+                --set image.tag="$GIT_SHA" \
+                --set deploy.host="$RELEASE_HOST" \
+                --set branch_builder.database_name="$RELEASE_NAME" \
+                --set ingress.hosts="{$RELEASE_HOST}" \
+                --set ingress.annotations."external-dns\.alpha\.kubernetes\.io/set-identifier"="$IDENTIFIER"
+}
+
+deploy_main() {
+  echo "Deploying GIT_SHA: $GIT_SHA for ENVIRONMENT: '$ENVIRONMENT'..."
+
+  helm upgrade legal-framework-api ./deploy/helm \
+              --install --wait \
+              --namespace "${KUBE_NAMESPACE}" \
+              --values "./deploy/helm/values-$ENVIRONMENT.yaml" \
+              --set image.repository="${ECR_REGISTRY}/${ECR_REPOSITORY}" \
+              --set image.tag="${GIT_SHA}"
+}
+
+if [[ "$ENVIRONMENT" == "uat" ]]; then
+  if deploy_branch; then
+    echo "Deploy succeeded"
+  else
+    # If a previous `helm upgrade` was cancelled this could have got the release stuck in
+    # a "pending-upgrade" state (c.f. https://stackoverflow.com/a/65135726). If so, this
+    # can generally be fixed with a `helm rollback`, so we try that here.
+    echo "Deploy failed. Attempting rollback"
+
+    if helm rollback "$RELEASE_NAME"; then
+      echo "Rollback succeeded. Retrying deploy"
+      deploy_branch
+    else
+      echo "Rollback failed. Consider manually running 'helm delete $RELEASE_NAME'"
+      exit 1
+    fi
+  fi
+else
+  deploy_main
+fi
+

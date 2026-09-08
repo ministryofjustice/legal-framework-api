@@ -26,18 +26,21 @@ RSpec.describe "StatusController" do
 
   describe "GET /ping" do
     let(:build_date) { Time.zone.now }
-    let(:build_tag) { "app-43ca8c7bfbee8f5fcb96b76baa420c3a45d8a675" }
-    let(:app_branch) { "my-branch" }
+    let(:build_tag) { "refs/heads/feature/my-branch" }
+    let(:app_branch) { "feature/my-branch" }
+    let(:app_git_commit) { "43ca8c7bfbee8f5fcb96b76baa420c3a45d8a675" }
+
     let(:expected_response) do
       {
         build_date:,
         build_tag:,
+        app_git_commit:,
         app_branch:,
       }
     end
 
     before do
-      allow(Rails.configuration.x.status).to receive_messages(build_date:, build_tag:, app_branch:)
+      allow(Rails.configuration.x.status).to receive_messages(build_date:, build_tag:, app_git_commit:, app_branch:)
     end
 
     it "returns build stats as a JSON body" do
