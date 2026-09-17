@@ -72,6 +72,7 @@ jobs:
 
     permissions:
       id-token: write
+      contents: read  # This is required for actions/checkout
 
     outputs:
       image: ${{ steps.build_and_push.outputs.image }}
