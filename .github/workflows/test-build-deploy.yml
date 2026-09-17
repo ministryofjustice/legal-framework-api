@@ -83,7 +83,7 @@ jobs:
 
       - name: Build and push
         id: build_and_push
-        uses:  ministryofjustice/laa-civil-apply-build-and-push@65b3fbf7dcd495deae754c28fc138fef00dcaf3c # main as at 08/09/2026
+        uses:  ministryofjustice/laa-civil-apply-build-and-push@ed69ff1a7bf38856d023d6d0ad145fd8af434bea # v1.1.0
         with:
           ecr-region: ${{ vars.ECR_REGION }}
           ecr-role-to-assume: ${{ secrets.ECR_ROLE_TO_ASSUME }}
