@@ -123,8 +123,7 @@
   PBM28A: :public_law_family_appeals
   PBM29A: :public_law_family_appeals
   PBM30A: :public_law_family_appeals
-  PBM32A: :public_law_family_appeals
-  PBM32A_SGO: :public_law_family_sgo_appeal
+  PBM32A: :public_law_family_sgo_appeal
   PBM33A: :public_law_family_appeals
   PBM35A: :public_law_family_appeals
   PBM36A: :public_law_family_appeals
