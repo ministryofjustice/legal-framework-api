@@ -547,7 +547,7 @@ RSpec.describe EligibleScopesService do
       end
 
       context "when the proceeding is the SGO appeal" do
-        let(:pt_ccms_code) { "PBM32A_SGO" } # this can be reverted to PBM32A when the flag is removed
+        let(:pt_ccms_code) { "PBM32A" }
         let(:client_involvement_type) { "A" }
         let(:expected_scopes) { %w[APL07 APL15 APL16 APL18 APL20 APL22 APL27 APL29 APL31 APL51 APL52 APL53 APL54 APL55 APL56 APL57 APL65 APL66 APL67 APL68 APL69 APL70 CV079 CV118 CV129] }
 
