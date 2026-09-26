@@ -49,7 +49,6 @@ class ProceedingType < ApplicationRecord
       description:,
       sca_core:,
       sca_related:,
-      post_sgo_update:,
       non_means_tested_plf:,
       ccms_category_law:,
       ccms_category_law_code:,
