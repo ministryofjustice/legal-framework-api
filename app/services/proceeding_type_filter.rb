@@ -5,7 +5,7 @@ class ProceedingTypeFilter
     @current_proceedings = current_proceedings
     @allowed_categories = allowed_categories
     @search_term = search_term
-    @results = @search_term.present? ? ProceedingTypeFullTextSearch.call(search_term) : ProceedingType.all.map(&:api_json)
+    @results = @search_term.present? ? ProceedingTypeFullTextSearch.call(search_term) : ProceedingType.where.not(legacy: true).map(&:api_json)
   end
 
   def self.call(current_proceedings = [], allowed_categories = [], search_term = "")
@@ -17,6 +17,7 @@ class ProceedingTypeFilter
     configure_plf_proceedings!
     reject_current_proceedings!
     reject_categories! unless @allowed_categories.empty?
+    reject_legacy_proceedings!
     @results
   end
 
@@ -63,6 +64,10 @@ private
 
   def reject_categories!
     @results.delete_if { |result| !result["ccms_category_law_code"].in?(@allowed_categories) }
+  end
+
+  def reject_legacy_proceedings!
+    @results.delete_if { |result| result["legacy"].eql?(true) }
   end
 
   def current_proceedings_have_sca
