@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/rswag/rswag.git
+  revision: 4a2885f180dc18689a898395b1aa550c0c22591a
+  ref: 4a2885f180dc18689a898395b1aa550c0c22591a
+  specs:
+    rswag-api (0.0.0)
+      activesupport (>= 5.2, < 8.2)
+      railties (>= 5.2, < 8.2)
+    rswag-specs (0.0.0)
+      activesupport (>= 5.2, < 8.2)
+      json-schema (>= 2.2, < 7.0)
+      railties (>= 5.2, < 8.2)
+      rspec-core (>= 3.12)
+    rswag-ui (0.0.0)
+      actionpack (>= 5.2, < 8.2)
+      railties (>= 5.2, < 8.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -332,17 +349,6 @@ GEM
     rspec-support (3.13.7)
     rspec_junit_formatter (0.6.0)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rswag-api (2.17.0)
-      activesupport (>= 5.2, < 8.2)
-      railties (>= 5.2, < 8.2)
-    rswag-specs (2.17.0)
-      activesupport (>= 5.2, < 8.2)
-      json-schema (>= 2.2, < 7.0)
-      railties (>= 5.2, < 8.2)
-      rspec-core (>= 2.14)
-    rswag-ui (2.17.0)
-      actionpack (>= 5.2, < 8.2)
-      railties (>= 5.2, < 8.2)
     rubocop (1.86.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -462,9 +468,9 @@ DEPENDENCIES
   rspec
   rspec-rails (~> 8.0)
   rspec_junit_formatter
-  rswag-api
-  rswag-specs
-  rswag-ui
+  rswag-api!
+  rswag-specs!
+  rswag-ui!
   rubocop-govuk
   rubocop-performance
   sentry-rails
@@ -604,9 +610,9 @@ CHECKSUMS
   rspec-rails (8.0.4) sha256=06235692fc0892683d3d34977e081db867434b3a24ae0dd0c6f3516bad4e22df
   rspec-support (3.13.7) sha256=0640e5570872aafefd79867901deeeeb40b0c9875a36b983d85f54fb7381c47c
   rspec_junit_formatter (0.6.0) sha256=40dde674e6ae4e6cc0ff560da25497677e34fefd2338cc467a8972f602b62b15
-  rswag-api (2.17.0) sha256=728b336b65168ab8ab6024b0e5d267b485c22ccdeb9dfbfb6ec3bac423545a13
-  rswag-specs (2.17.0) sha256=a3b2bdf6df89f8741fe4a4ee47ceb1e77dc13e1c96bbe07352117d6e61afa9e3
-  rswag-ui (2.17.0) sha256=5f707b9b5e8171ddf9f519f6e401e79e419bd1d07387508603e76124f2443212
+  rswag-api (0.0.0)
+  rswag-specs (0.0.0)
+  rswag-ui (0.0.0)
   rubocop (1.86.0) sha256=4ff1186fe16ebe9baff5e7aad66bb0ad4cabf5cdcd419f773146dbba2565d186
   rubocop-ast (1.49.1) sha256=4412f3ee70f6fe4546cc489548e0f6fcf76cafcfa80fa03af67098ffed755035
   rubocop-capybara (2.22.1) sha256=ced88caef23efea53f46e098ff352f8fc1068c649606ca75cb74650970f51c0c

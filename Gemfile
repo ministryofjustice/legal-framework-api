@@ -30,8 +30,11 @@ gem "json-schema", "~> 6.2.0"
 gem "rack-cors"
 
 # Generate documentation
-gem "rswag-api"
-gem "rswag-ui"
+# Can use latest once version 3.0 or any tagged release that includes the commit below are release
+# https://github.com/rswag/rswag/pull/872/changes/f0ec881b92122d0cc80760072a56c4d0d3e9506e
+#
+gem "rswag-api", github: "rswag/rswag", ref: "4a2885f180dc18689a898395b1aa550c0c22591a" # master as at 20 July 2026
+gem "rswag-ui", github: "rswag/rswag", ref: "4a2885f180dc18689a898395b1aa550c0c22591a" # master as at 20 July 2026
 
 # Sentry for error tracking
 gem "sentry-rails"
@@ -55,7 +58,8 @@ group :development, :test do
   gem "rspec" # explicit call require for `pact/rspec` to avoid load errors
   gem "rspec_junit_formatter"
   gem "rspec-rails", "~> 8.0"
-  gem "rswag-specs"
+  gem "rswag-specs", github: "rswag/rswag", ref: "4a2885f180dc18689a898395b1aa550c0c22591a" # master as at 20 July 2026
+
   gem "rubocop-govuk", require: false
   gem "rubocop-performance"
 end
