@@ -452,7 +452,6 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
-  ostruct
   pact (>= 2.0.1)
   pact_broker-client
   pg
