@@ -68,6 +68,7 @@ jobs:
           retention-days: 7
 
   build:
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     permissions:
