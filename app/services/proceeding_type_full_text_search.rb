@@ -75,6 +75,8 @@ private
         ts_rank(textsearchable, query) AS rank
       FROM proceeding_types pt LEFT OUTER JOIN matter_types mt ON pt.matter_type_id = mt.id, to_tsquery($1) AS query
       WHERE query @@ textsearchable
+      AND pt.start_date <= CURRENT_DATE
+      AND pt.end_date >= CURRENT_DATE
       ORDER BY rank DESC;
     END_OF_QUERY
   end

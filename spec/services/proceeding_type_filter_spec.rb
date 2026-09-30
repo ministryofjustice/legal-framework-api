@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe ProceedingTypeFilter do
+  include ActiveSupport::Testing::TimeHelpers
+
   subject(:proceeding_type_filter) { described_class.call(current_proceedings, allowed_categories, search_term) }
 
   let(:current_proceedings) { [] }
@@ -9,7 +11,7 @@ RSpec.describe ProceedingTypeFilter do
 
   context "when created with blank parameters" do
     it "returns all proceedings excluding sca_related" do
-      expect(proceeding_type_filter.count).to eq 146
+      expect(proceeding_type_filter.count).to eq 141
     end
   end
 
@@ -70,7 +72,7 @@ RSpec.describe ProceedingTypeFilter do
       it "returns only PLF proceedings minus the current one and the non_means_tested ones" do
         expect(proceeding_type_filter.pluck("ccms_matter_code").uniq).to eq %w[KPBLB]
         expect(proceeding_type_filter.pluck("non_means_tested_plf").uniq).to eq [false]
-        expect(proceeding_type_filter.count).to eq 92
+        expect(proceeding_type_filter.count).to eq 87
       end
     end
 
@@ -91,7 +93,7 @@ RSpec.describe ProceedingTypeFilter do
       let(:allowed_categories) { %w[MAT] }
 
       it "returns all proceedings excluding sca_related" do
-        expect(proceeding_type_filter.count).to eq 146
+        expect(proceeding_type_filter.count).to eq 141
       end
     end
 
@@ -101,6 +103,34 @@ RSpec.describe ProceedingTypeFilter do
       it "returns no proceedings" do
         expect(proceeding_type_filter.count).to eq 0
       end
+    end
+  end
+
+  context "when the proceeding start date is in the future" do
+    let(:run_date) { Date.parse("2026-09-21") }
+
+    around do |example|
+      travel_to run_date
+      example.run
+      travel_back
+    end
+
+    it "does not return proceedings with a start date in the future" do
+      expect(proceeding_type_filter.count).to eq 142
+    end
+  end
+
+  context "when the proceeding end date is in the future" do
+    let(:run_date) { Date.parse("2026-09-22") }
+
+    around do |example|
+      travel_to run_date
+      example.run
+      travel_back
+    end
+
+    it "does not return proceedings with an end date in the future" do
+      expect(proceeding_type_filter.count).to eq 141
     end
   end
 end
