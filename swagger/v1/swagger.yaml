@@ -5966,17 +5966,17 @@ paths:
                       PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
                       PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM20, PBM20A,
                       PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23, PBM23A,
-                      PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E, PBM27,
-                      PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E, PBM30,
-                      PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A, PBM33E,
-                      PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37, PBM37A,
-                      PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E, PBM40,
-                      PBM40E, PBM45, PBM45E, PBM46, PBM46E, PBM47, PBM47E, SE003,
-                      SE003A, SE003E, SE004, SE004A, SE004E, SE007, SE007A, SE007E,
-                      SE008, SE008A, SE008E, SE013, SE013A, SE013E, SE014, SE014A,
-                      SE014E, SE015, SE015A, SE015E, SE016, SE016A, SE016E, SE095,
-                      SE095A, SE096E, SE097, SE097A, SE100E, SE101A, SE101E, PB003,
-                      PB004, PB005, PB006, PB026, PB057, PB059, PB007, PB012, PB014,
+                      PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PB012, PBM26E,
+                      PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
+                      PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
+                      PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37,
+                      PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E,
+                      PBM40, PBM40E, PBM45, PBM45E, PBM46, PBM46E, PBM47, PBM47E,
+                      SE003, SE003A, SE003E, SE004, SE004A, SE004E, SE007, SE007A,
+                      SE007E, SE008, SE008A, SE008E, PB014, SE013, SE013A, SE013E,
+                      SE014, SE014A, SE014E, SE015, SE015A, SE015E, SE016, SE016A,
+                      SE016E, SE095, SE095A, SE096E, SE097, SE097A, SE100E, SE101A,
+                      SE101E, PB003, PB004, PB005, PB006, PB026, PB057, PB059, PB007,
                       PB019, PB020, PB021, PB022, PB023, PB024, PB027, PB029, PB030,
                       PB051, PB052 in schema file://#'
                   summary: Unsuccessful request
@@ -6114,17 +6114,17 @@ paths:
                       PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
                       PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM20, PBM20A,
                       PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23, PBM23A,
-                      PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E, PBM27,
-                      PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E, PBM30,
-                      PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A, PBM33E,
-                      PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37, PBM37A,
-                      PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E, PBM40,
-                      PBM40E, PBM45, PBM45E, PBM46, PBM46E, PBM47, PBM47E, SE003,
-                      SE003A, SE003E, SE004, SE004A, SE004E, SE007, SE007A, SE007E,
-                      SE008, SE008A, SE008E, SE013, SE013A, SE013E, SE014, SE014A,
-                      SE014E, SE015, SE015A, SE015E, SE016, SE016A, SE016E, SE095,
-                      SE095A, SE096E, SE097, SE097A, SE100E, SE101A, SE101E, PB003,
-                      PB004, PB005, PB006, PB026, PB057, PB059, PB007, PB012, PB014,
+                      PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PB012, PBM26E,
+                      PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
+                      PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
+                      PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37,
+                      PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E,
+                      PBM40, PBM40E, PBM45, PBM45E, PBM46, PBM46E, PBM47, PBM47E,
+                      SE003, SE003A, SE003E, SE004, SE004A, SE004E, SE007, SE007A,
+                      SE007E, SE008, SE008A, SE008E, PB014, SE013, SE013A, SE013E,
+                      SE014, SE014A, SE014E, SE015, SE015A, SE015E, SE016, SE016A,
+                      SE016E, SE095, SE095A, SE096E, SE097, SE097A, SE100E, SE101A,
+                      SE101E, PB003, PB004, PB005, PB006, PB026, PB057, PB059, PB007,
                       PB019, PB020, PB021, PB022, PB023, PB024, PB027, PB029, PB030,
                       PB051, PB052 in schema file://#'
                   summary: Bad request
@@ -7039,6 +7039,18 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
+                  - ccms_code: PB012
+                    meaning: Recovery of children order
+                    description: to be represented on an application for the recovery
+                      of a child(ren).
+                    sca_core: false
+                    sca_related: true
+                    post_sgo_update:
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
                   - ccms_code: PBM26E
                     meaning: Child assessment order - enforcement
                     description: to be represented on an application for a child assessment
@@ -7486,7 +7498,10 @@ paths:
                     ccms_matter: public law family (PLF)
                   - ccms_code: PBM46
                     meaning: Special guardianship order - parental guardianship
-                    description: special_guardianship_order_plf_parental
+                    description: To be represented on an application for a special
+                      guardianship order, where the client is the parent of, or has
+                      parental responsibility for the subject child and opposes the
+                      special guardianship order being made.
                     sca_core: false
                     sca_related: false
                     post_sgo_update: show
@@ -7496,7 +7511,8 @@ paths:
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
                   - ccms_code: PBM46E
-                    meaning: Special guardianship order - parental guardianship
+                    meaning: Special guardianship order - parental guardianship -
+                      enforcement
                     description: To be represented on an application for a special
                       guardianship order, where the client is the parent of, or has
                       parental responsibility for the subject child and opposes the
@@ -7682,6 +7698,18 @@ paths:
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
+                  - ccms_code: PB014
+                    meaning: End contact with a child in care
+                    description: to be represented on an application to terminate
+                      contact with a child/children in care.
+                    sca_core: false
+                    sca_related: true
+                    post_sgo_update:
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
                   - ccms_code: SE013
                     meaning: Child arrangements order (CAO) - contact
                     description: to be represented on an application for a child arrangements
@@ -8023,30 +8051,6 @@ paths:
                     meaning: Contact with a child in care
                     description: to be represented on an application for contact with
                       a child in care.
-                    sca_core: false
-                    sca_related: true
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB012
-                    meaning: Recovery of children order
-                    description: to be represented on an application for the recovery
-                      of a child(ren).
-                    sca_core: false
-                    sca_related: true
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB014
-                    meaning: End contact with a child in care
-                    description: to be represented on an application to terminate
-                      contact with a child/children in care.
                     sca_core: false
                     sca_related: true
                     post_sgo_update:
