@@ -7,6 +7,16 @@ RSpec.describe "proceeding_types/filter_controller" do
                    Call <code>/proceeding_types/XX999</code> where <code>XX999</code> is the ccms_code for more
                    detailed data on a specific proceeding type."
 
+      tags "Proceeding types"
+      consumes "application/json"
+      produces "application/json"
+
+      let(:request_params) do
+        {
+          "parameters" => parameters,
+        }
+      end
+
       let(:parameters) do
         {
           current_proceedings:,
@@ -14,13 +24,11 @@ RSpec.describe "proceeding_types/filter_controller" do
           search_term:,
         }
       end
+
       let(:current_proceedings) { [] }
       let(:allowed_categories) { [] }
       let(:search_term) { "" }
 
-      tags "Proceeding types"
-      consumes "application/json"
-      produces "application/json"
       parameter name: :parameters, in: :body, schema: {
         type: :object,
         properties: {

@@ -36,8 +36,6 @@ RSpec.describe "organisations" do
     post("Search organisations matching one or more, partial or complete, search terms/words") do
       description "<code>POST</code> a JSON payload containing search terms to
                   receive a response containing an array of organisation names and related data."
-      let(:filters) { { search_term: } }
-      let(:search_term) { "Babergh" }
 
       tags "Organisations"
       consumes "application/json"
@@ -54,6 +52,8 @@ RSpec.describe "organisations" do
 
       response(200, "success") do
         context "when the search is successful" do
+          let(:request_params) { { "filters" => { search_term: "Babergh" } } }
+
           expected_response =
             {
               success: true,
@@ -83,7 +83,7 @@ RSpec.describe "organisations" do
         end
 
         context "when no matches found" do
-          let(:search_term) { "nonexistant" }
+          let(:request_params) { { "filters" => { search_term: "nonexistant" } } }
 
           expected_response =
             {
@@ -107,9 +107,7 @@ RSpec.describe "organisations" do
         end
 
         context "when multiple matches are found" do
-          let(:filters) do
-            { search_term: "pub lim comp" }
-          end
+          let(:request_params) { { "filters" => { search_term: "pub lim comp" } } }
 
           expected_response =
             {
@@ -160,6 +158,8 @@ RSpec.describe "organisations" do
         before do
           allow(OrganisationFullTextSearch).to receive(:call).and_raise(StandardError.new("Unexpected error in full text search"))
         end
+
+        let(:request_params) { { "filters" => { search_term: "notimportant" } } }
 
         expected_response =
           {

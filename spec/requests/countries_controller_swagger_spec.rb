@@ -36,8 +36,14 @@ RSpec.describe "countries" do
     post("Search countries matching one or more, partial or complete, search terms/words") do
       description "<code>POST</code> a JSON payload containing search terms to
                   receive a response containing an array of country names and codes."
-      let(:filters) { { search_term: } }
-      let(:search_term) { "antarc" }
+
+      let(:request_params) do
+        {
+          "filters" => {
+            search_term:,
+          },
+        }
+      end
 
       tags "Countries"
       consumes "application/json"
@@ -54,6 +60,8 @@ RSpec.describe "countries" do
 
       response(200, "success") do
         context "when the search is successful" do
+          let(:search_term) { "antarc" }
+
           expected_response =
             {
               success: true,
@@ -104,9 +112,7 @@ RSpec.describe "countries" do
         end
 
         context "when multiple matches are found" do
-          let(:filters) do
-            { search_term: "co isl" }
-          end
+          let(:search_term) { "co isl" }
 
           expected_response =
             {
@@ -144,12 +150,15 @@ RSpec.describe "countries" do
           allow(CountriesFullTextSearch).to receive(:call).and_raise(StandardError.new("Unexpected error in full text search"))
         end
 
+        let(:search_term) { "irrelevant" }
+
         expected_response =
           {
             success: false,
             error: "StandardError",
             message: "Unexpected error in full text search",
           }
+
         example "application/json",
                 :search_failed,
                 expected_response,

@@ -38,13 +38,6 @@ RSpec.describe "proceeding_types/searches_controller" do
     post("Search proceeding types matching a search term, optionally excluding some ccms_codes") do
       description "<code>POST</code> a JSON payload containing search terms and a list of codes to exclude to
                   receive a response containing an array of proceeding types with summary data"
-      let(:filters) do
-        {
-          search_term:,
-          excluded_codes: "DA001,DA007,SE013",
-        }
-      end
-      let(:search_term) { "Occupation" }
 
       tags "Proceeding types"
       consumes "application/json"
@@ -52,18 +45,31 @@ RSpec.describe "proceeding_types/searches_controller" do
       parameter name: :filters, in: :body, schema: {
         type: :object,
         properties: {
-          search_term: { type: :string,
-                         example: "Occupation",
-                         description: "search term" },
-          excluded_codes: { type: :string,
-                            example: "DA001,DA007,SE013",
-                            description: "comma separated list of ccms codes to exclude from search results" },
+          search_term: {
+            type: :string,
+            example: "Occupation",
+            description: "search term",
+          },
+          excluded_codes: {
+            type: :string,
+            example: "DA001,DA007,SE013",
+            description: "comma separated list of ccms codes to exclude from search results",
+          },
         },
         required: %w[search_term],
       }
 
       response(200, "success") do
         context "when the search is successful" do
+          let(:request_params) { { "filters" => filters } }
+
+          let(:filters) do
+            {
+              search_term: "Occupation",
+              excluded_codes: "DA001,DA007,SE013",
+            }
+          end
+
           expected_response =
             {
               success: true,
@@ -97,7 +103,14 @@ RSpec.describe "proceeding_types/searches_controller" do
         end
 
         context "and no matches found" do
-          let(:search_term) { "nonexistant" }
+          let(:request_params) { { "filters" => filters } }
+
+          let(:filters) do
+            {
+              search_term: "nonexistant",
+              excluded_codes: "",
+            }
+          end
 
           expected_response =
             {
@@ -121,8 +134,13 @@ RSpec.describe "proceeding_types/searches_controller" do
         end
 
         context "and multiple matches are found" do
+          let(:request_params) { { "filters" => filters } }
+
           let(:filters) do
-            { search_term: "injunction" }
+            {
+              search_term: "injunction",
+              excluded_codes: "",
+            }
           end
 
           expected_response =
@@ -182,6 +200,8 @@ RSpec.describe "proceeding_types/searches_controller" do
         end
 
         context "when the search term is excluded" do
+          let(:request_params) { { "filters" => filters } }
+
           let(:filters) do
             {
               search_term: "occupation",
@@ -216,12 +236,22 @@ RSpec.describe "proceeding_types/searches_controller" do
           allow(ProceedingTypeFullTextSearch).to receive(:call).and_raise(StandardError.new("Unexpected error in full text search"))
         end
 
+        let(:request_params) { { "filters" => filters } }
+
+        let(:filters) do
+          {
+            search_term: "notimportant",
+            excluded_codes: nil,
+          }
+        end
+
         expected_response =
           {
             success: false,
             error: "StandardError",
             message: "Unexpected error in full text search",
           }
+
         example "application/json",
                 :search_failed,
                 expected_response,

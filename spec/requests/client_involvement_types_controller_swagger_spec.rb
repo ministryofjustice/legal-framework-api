@@ -49,7 +49,7 @@ RSpec.describe "client_involvement_types" do
       produces "application/json"
 
       response(200, "successful") do
-        let(:proceeding_type_ccms_code) { "DA001" }
+        let(:request_params) { { "proceeding_type_ccms_code" => "DA001" } }
 
         expected_result = {
           success: true,
@@ -77,7 +77,7 @@ RSpec.describe "client_involvement_types" do
       end
 
       response(400, "bad request") do
-        let(:proceeding_type_ccms_code) { "foobar" }
+        let(:request_params) { { "proceeding_type_ccms_code" => "foobar" } }
 
         expected_result = {
           success: false,
@@ -102,7 +102,7 @@ RSpec.describe "client_involvement_types" do
           allow(ProceedingType).to receive(:find_by!).and_raise(ActiveRecord::ConnectionNotEstablished.new("could not establish a connection!"))
         end
 
-        let(:proceeding_type_ccms_code) { "foobar" }
+        let(:request_params) { { "proceeding_type_ccms_code" => "foobar" } }
 
         expected_result = {
           success: false,
@@ -121,31 +121,41 @@ RSpec.describe "client_involvement_types" do
   path "/client_involvement_types" do
     post("Return applicable client involvement types dependant on proceeding type and age") do
       description "Returns an array of client involvement types with summary data for the specified proceeding type."
-      let(:parameters) do
-        {
-          proceeding_type_ccms_code:,
-          age:,
-        }
-      end
+
       tags "Client involvement types"
       consumes "application/json"
       produces "application/json"
-      parameter name: :parameters, in: :body, schema: {
-        type: :object,
-        properties: {
-          proceeding_type_ccms_code: { type: :string,
-                                       example: "DA001",
-                                       description: "CCMS code of the proceeding type" },
-          age: { type: :integer,
-                 example: 17,
-                 description: "Age of the client" },
-        },
-        required: %w[proceeding_type_ccms_code],
-      }
+
+      parameter name: :parameters,
+                in: :body,
+                schema: {
+                  type: :object,
+                  properties: {
+                    proceeding_type_ccms_code: {
+                      type: :string,
+                      example: "DA001",
+                      description: "CCMS code of the proceeding type",
+                    },
+                    age: {
+                      type: :integer,
+                      example: 17,
+                      description: "Age of the client",
+                    },
+                  },
+                  required: %w[proceeding_type_ccms_code],
+                }
 
       response(200, "successful") do
+        let(:request_params) do
+          {
+            "parameters" => {
+              proceeding_type_ccms_code: "DA001",
+              age:,
+            },
+          }
+        end
+
         context "when age < 18" do
-          let(:proceeding_type_ccms_code) { "DA001" }
           let(:age) { 17 }
 
           expected_result = {
@@ -174,7 +184,6 @@ RSpec.describe "client_involvement_types" do
         end
 
         context "when age is nil" do
-          let(:proceeding_type_ccms_code) { "DA001" }
           let(:age) { nil }
 
           expected_result = {
@@ -203,7 +212,6 @@ RSpec.describe "client_involvement_types" do
         end
 
         context "when age >= 18" do
-          let(:proceeding_type_ccms_code) { "DA001" }
           let(:age) { 18 }
 
           expected_result = {
@@ -232,9 +240,17 @@ RSpec.describe "client_involvement_types" do
       end
 
       response(400, "bad request") do
+        let(:request_params) do
+          {
+            "parameters" => {
+              proceeding_type_ccms_code:,
+              age: 21,
+            },
+          }
+        end
+
         context "when proceeding_type_ccms_code is not acceptable" do
           let(:proceeding_type_ccms_code) { "foobar" }
-          let(:age) { nil }
 
           expected_result = {
             success: false,
@@ -256,7 +272,6 @@ RSpec.describe "client_involvement_types" do
 
         context "when proceeding_type_ccms_code is nil" do
           let(:proceeding_type_ccms_code) { nil }
-          let(:age) { 21 }
 
           expected_result = {
             success: false,

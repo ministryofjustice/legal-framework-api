@@ -44,7 +44,6 @@ RSpec.describe "organisation_types" do
 
   path "/organisation_types/{ccms_code}" do
     get("Show details for a single organisation type") do
-      let(:ccms_code) { "CHAR" }
       parameter name: "ccms_code",
                 in: :path,
                 type: :string,
@@ -57,6 +56,8 @@ RSpec.describe "organisation_types" do
       produces "application/json"
 
       response(200, "successful") do
+        let(:request_params) { { "ccms_code" => "CHAR" } }
+
         expected_response =
           {
             success: true,
@@ -65,6 +66,7 @@ RSpec.describe "organisation_types" do
               description: "Charity",
             },
           }
+
         example "application/json",
                 :success,
                 expected_response,
@@ -76,8 +78,8 @@ RSpec.describe "organisation_types" do
         end
       end
 
-      response(400, "Bad request") do
-        let(:ccms_code) { "AZ123" }
+      response(400, "bad request") do
+        let(:request_params) { { "ccms_code" => "AZ123" } }
 
         after do |example|
           example.metadata[:response][:content] = {

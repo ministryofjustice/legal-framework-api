@@ -35,6 +35,10 @@ RSpec.describe "expert_types" do
                   "Returns an empty array when the matter type code has no associated expert types."
       tags "Expert types"
 
+      let(:request_params) do
+        { "matter_type" => matter_type }
+      end
+
       parameter name: "matter_type",
                 in: :path,
                 type: :string,

@@ -3,7 +3,12 @@ require "swagger_helper"
 RSpec.describe "proceeding_types" do
   path "/proceeding_types/{ccms_code}" do
     get("Show details for a single proceeding type") do
-      let(:ccms_code) { "SE003" }
+      let(:request_params) do
+        {
+          "ccms_code" => ccms_code,
+        }
+      end
+
       parameter name: "ccms_code",
                 in: :path,
                 type: :string,
@@ -16,6 +21,8 @@ RSpec.describe "proceeding_types" do
       produces "application/json"
 
       response(200, "successful") do
+        let(:ccms_code) { "SE003" }
+
         expected_response =
           {
             success: true,
@@ -80,7 +87,7 @@ RSpec.describe "proceeding_types" do
         end
       end
 
-      response(400, "Bad request") do
+      response(400, "bad request") do
         let(:ccms_code) { "AZ123" }
 
         after do |example|

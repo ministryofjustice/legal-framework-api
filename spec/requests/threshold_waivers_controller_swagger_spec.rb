@@ -10,28 +10,21 @@ RSpec.describe "threshold_waivers" do
                    true meaning that the threshold is waived for this proceeding type and client involvement type (i.e unlimited) or false
                    to indicate that the threshold should be applied.  The matter type to which the proceeding belongs is also returned."
 
+      tags "Threshold waivers"
+      consumes "application/json"
+      produces "application/json"
+
+      let(:request_params) do
+        { "threshold_waiver_query" => threshold_waiver_query }
+      end
+
       let(:threshold_waiver_query) do
         {
           request_id: "ff9679d7-ca3e-40b8-a47e-5006895d9026",
           proceedings:,
         }
       end
-      let(:proceedings) do
-        [
-          {
-            ccms_code: "DA005",
-            client_involvement_type: "A",
-          },
-          {
-            ccms_code: "SE004",
-            client_involvement_type: "D",
-          },
-        ]
-      end
 
-      tags "Threshold waivers"
-      consumes "application/json"
-      produces "application/json"
       parameter name: :threshold_waiver_query,
                 in: :body,
                 schema: {
@@ -58,7 +51,21 @@ RSpec.describe "threshold_waivers" do
                   },
                   required: %w[request_id values],
                 }
+
       response(200, "success") do
+        let(:proceedings) do
+          [
+            {
+              ccms_code: "DA005",
+              client_involvement_type: "A",
+            },
+            {
+              ccms_code: "SE004",
+              client_involvement_type: "D",
+            },
+          ]
+        end
+
         expected_response =
           {
             request_id: "ff9679d7-ca3e-40b8-a47e-5006895d9026",
