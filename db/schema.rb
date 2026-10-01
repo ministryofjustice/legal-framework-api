@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_13_104214) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_28_115624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -115,13 +115,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_13_104214) do
     t.string "ccms_code", null: false
     t.datetime "created_at", null: false
     t.string "description", null: false
+    t.date "end_date", default: "2099-12-31", null: false
     t.uuid "matter_type_id", null: false
     t.string "meaning", null: false
     t.string "name", default: "default_name", null: false
     t.boolean "non_means_tested_plf", default: false, null: false
-    t.string "post_sgo_update"
     t.boolean "sca_core"
     t.boolean "sca_related"
+    t.date "start_date", default: "2021-01-01", null: false
     t.tsvector "textsearchable"
     t.datetime "updated_at", null: false
     t.index ["textsearchable"], name: "textsearch_idx", using: :gin

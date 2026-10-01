@@ -9,7 +9,7 @@ RSpec.describe ProceedingTypeFilter do
 
   context "when created with blank parameters" do
     it "returns all proceedings excluding sca_related" do
-      expect(proceeding_type_filter.count).to eq 146
+      expect(proceeding_type_filter.count).to eq 141
     end
   end
 
@@ -70,7 +70,7 @@ RSpec.describe ProceedingTypeFilter do
       it "returns only PLF proceedings minus the current one and the non_means_tested ones" do
         expect(proceeding_type_filter.pluck("ccms_matter_code").uniq).to eq %w[KPBLB]
         expect(proceeding_type_filter.pluck("non_means_tested_plf").uniq).to eq [false]
-        expect(proceeding_type_filter.count).to eq 92
+        expect(proceeding_type_filter.count).to eq 87
       end
     end
 
@@ -91,7 +91,7 @@ RSpec.describe ProceedingTypeFilter do
       let(:allowed_categories) { %w[MAT] }
 
       it "returns all proceedings excluding sca_related" do
-        expect(proceeding_type_filter.count).to eq 146
+        expect(proceeding_type_filter.count).to eq 141
       end
     end
 
