@@ -12,6 +12,7 @@ RUN set -ex
 
 RUN apk --no-cache add --virtual build-dependencies \
                     build-base \
+                    git \
                     yaml-dev \
                     zlib-dev \
                     postgresql-dev \

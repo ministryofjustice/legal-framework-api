@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "proceeding_type_scopes" do
   path "/proceeding_type_scopes" do
@@ -6,19 +6,18 @@ RSpec.describe "proceeding_type_scopes" do
       description "POST a JSON payload containing a proceeding_type_ccms_code, boolean whether delegated_functions_used, client_involvement_type and level_of_service_code
                   to recieve a payload containing the same request params, and level_of_service and associated scope_limitations."
 
-      let(:proceeding_type_scopes_query) do
+      let(:request_params) do
         {
-          proceeding_type_ccms_code: "SE013",
-          delegated_functions_used: false,
-          client_involvement_type: "A",
-          level_of_service_code: 1,
+          "proceeding_type_scopes_query" => proceeding_type_scopes_query,
         }
       end
 
       tags "Proceeding type service level"
+
       response(200, "successful") do
         consumes "application/json"
         produces "application/json"
+
         parameter name: :proceeding_type_scopes_query,
                   in: :body,
                   schema: {
@@ -33,9 +32,19 @@ RSpec.describe "proceeding_type_scopes" do
                       level_of_service_code: { type: :integer,
                                                description: "A code uniquely identifying the service_level" },
                     },
-                    required: %w[proceeding_type_ccms_code delegated_functions_used client_involvement_type service_level],
+                    required: %w[proceeding_type_ccms_code delegated_functions_used client_involvement_type level_of_service_code],
                   }
+
         response(200, "success") do
+          let(:proceeding_type_scopes_query) do
+            {
+              proceeding_type_ccms_code: "SE013",
+              delegated_functions_used: false,
+              client_involvement_type: "A",
+              level_of_service_code: 1,
+            }
+          end
+
           expected_response =
             {
               success: true,
