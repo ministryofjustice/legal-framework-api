@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "proceeding_type_scopes" do
   path "/proceeding_type_scopes" do

@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "countries" do
   path "/countries/all" do

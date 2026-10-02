@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "organisation_types" do
   path "/organisation_types/all" do

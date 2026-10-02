@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "expert_types" do
   path "/expert_types" do

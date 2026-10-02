@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "client_involvement_types" do
   path "/client_involvement_types" do

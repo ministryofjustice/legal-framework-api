@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "proceeding_types/filter_controller" do
   path "/proceeding_types/filter" do

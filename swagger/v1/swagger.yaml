@@ -98,7 +98,7 @@ paths:
                   summary: Successful request without involved children questions
                   description: Request a single proceeding, SE003, for a child subject
         '400':
-          description: Bad request
+          description: bad request
           content:
             application/json:
               examples:
@@ -1000,7 +1000,7 @@ paths:
                   summary: Successful request
                   description: Return details for specified organisation type
         '400':
-          description: Bad request
+          description: bad request
           content:
             application/json:
               examples:
@@ -6153,7 +6153,7 @@ paths:
               - proceeding_type_ccms_code
               - delegated_functions_used
               - client_involvement_type
-              - service_level
+              - level_of_service_code
   "/proceeding_types/filter":
     post:
       summary: Get available proceeding types dependant on current proceedings, contractual
@@ -8399,7 +8399,7 @@ paths:
                   - SE013
               required:
               - request_id
-              - ccms_codes
+              - proceeding_types
   "/proceeding_types/{ccms_code}":
     get:
       summary: Show details for a single proceeding type
@@ -8468,7 +8468,7 @@ paths:
                   summary: Successful request
                   description: Return all details for specified proceeding type
         '400':
-          description: Bad request
+          description: bad request
           content:
             application/json:
               examples:

@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "civil_merits_questions" do
   path "/civil_merits_questions" do

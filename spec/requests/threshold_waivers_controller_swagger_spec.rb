@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "threshold_waivers" do
   path "/threshold_waivers" do
