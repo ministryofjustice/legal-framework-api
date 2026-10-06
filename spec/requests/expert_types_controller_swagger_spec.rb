@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "expert_types" do
   path "/expert_types" do
@@ -34,6 +34,10 @@ RSpec.describe "expert_types" do
       description "Returns an array of expert types filtered by the given matter type code. " \
                   "Returns an empty array when the matter type code has no associated expert types."
       tags "Expert types"
+
+      let(:request_params) do
+        { "matter_type" => matter_type }
+      end
 
       parameter name: "matter_type",
                 in: :path,
