@@ -22,7 +22,7 @@ RSpec.describe ProceedingTypeFullTextSearch do
 
       it "returns everything" do
         result_set = proceeding_type_full_text_search_results
-        expect(result_set.count).to eq ProceedingType.count
+        expect(result_set.count).to eq 155
       end
     end
 

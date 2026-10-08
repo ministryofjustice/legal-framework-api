@@ -567,7 +567,7 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: hide
+  end_date: '2026-09-21'
 - ccms_code: PBM32A
   meaning: Special guardianship order - appeal
   name: special_guardianship_order_plf_appeal
@@ -584,7 +584,7 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: hide
+  end_date: '2026-09-21'
 - ccms_code: PBM33
   meaning: Revocation placement order
   name: revocation_placement_order_plf
@@ -617,7 +617,7 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: hide
+  end_date: '2026-09-21'
 - ccms_code: PBM35A
   meaning: Special guardianship order - appeal - vary or discharge
   name: special_guardianship_order_vary_or_discharge_plf_appeal
@@ -626,7 +626,7 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: hide
+  end_date: '2026-09-21'
 - ccms_code: PBM35E
   meaning: Special guardianship order - enforcement - vary or discharge
   name: special_guardianship_order_vary_or_discharge_plf_enforcement
@@ -635,7 +635,7 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: hide
+  end_date: '2026-09-21'
 - ccms_code: PBM36
   meaning: Care order - joined party
   name: care_order_joined_party
@@ -777,7 +777,7 @@
   sca_core: false
   sca_related: false
   non_means_tested_plf: true
-  post_sgo_update: show
+  start_date: '2026-09-22'
 - ccms_code: PBM46E
   meaning: Special guardianship order - parental guardianship - enforcement
   name: special_guardianship_order_plf_parental_enforcement
@@ -787,7 +787,7 @@
   sca_core: false
   sca_related: false
   non_means_tested_plf: true
-  post_sgo_update: show
+  start_date: '2026-09-22'
 - ccms_code: PBM47
   meaning: Special guardianship order - non-parental
   name: special_guardianship_order_plf_non_parental
@@ -796,7 +796,7 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: show
+  start_date: '2026-09-22'
 - ccms_code: PBM47E
   meaning: Special guardianship order - non-parental - enforcement
   name: special_guardianship_order_plf_non_parental_enforcement
@@ -805,4 +805,4 @@
   additional_search_terms:
   sca_core: false
   sca_related: false
-  post_sgo_update: show
+  start_date: '2026-09-22'

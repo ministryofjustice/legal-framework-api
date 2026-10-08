@@ -39,11 +39,7 @@ private
   end
 
   def scope_limitations
-    scopes = if proceeding_type_ccms_code == "PBM32A" && JSON.parse(@proceeding_type_scopes_params, symbolize_names: true)[:sgo_update] == true
-               ScopeLimitation.eligible_for("PBM32A_SGO", client_involvement_type, level_of_service_code, delegated_functions_used).order(:meaning)
-             else
-               ScopeLimitation.eligible_for(proceeding_type_ccms_code, client_involvement_type, level_of_service_code, delegated_functions_used).order(:meaning)
-             end
+    scopes = ScopeLimitation.eligible_for(proceeding_type_ccms_code, client_involvement_type, level_of_service_code, delegated_functions_used).order(:meaning)
     scopes.map(&:as_json)
   end
 
