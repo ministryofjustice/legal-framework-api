@@ -44,7 +44,6 @@ private
     @response[:description] = proceeding_type.description
     @response[:sca_core] = proceeding_type.sca_core
     @response[:sca_related] = proceeding_type.sca_related
-    @response[:post_sgo_update] = proceeding_type.post_sgo_update
   end
 
   def add_cost_limitations_to_response
@@ -103,7 +102,6 @@ private
       description: "",
       sca_core: "",
       sca_related: "",
-      post_sgo_update: "",
       ccms_category_law: "",
       ccms_matter: "",
       cost_limitations: {},

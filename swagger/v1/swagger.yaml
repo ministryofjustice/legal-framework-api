@@ -5959,24 +5959,24 @@ paths:
                     errors:
                     - 'The property ''#/proceeding_type_ccms_code'' value "XX123"
                       did not match one of the following values: DA001, DA002, DA003,
-                      DA004, DA005, DA006, DA007, DA020, PBM01, PBM01A, PBM02, PBM02A,
-                      PBM02E, PBM04, PBM04A, PBM04E, PBM05, PBM05A, PBM05E, PBM06,
-                      PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A, PBM08E,
-                      PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A, PBM11E,
-                      PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
-                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM20, PBM20A,
-                      PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23, PBM23A,
-                      PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PB012, PBM26E,
+                      DA004, DA005, DA006, DA007, PB057, DA020, PBM01, PBM01A, PBM02,
+                      PBM02A, PBM02E, PBM04, PBM04A, PBM04E, PBM05, PBM05A, PBM05E,
+                      PBM06, PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A,
+                      PBM08E, PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A,
+                      PBM11E, PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A,
+                      PBM17E, PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM20,
+                      PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23,
+                      PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E,
                       PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
                       PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
                       PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37,
                       PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E,
                       PBM40, PBM40E, PBM45, PBM45E, PBM46, PBM46E, PBM47, PBM47E,
                       SE003, SE003A, SE003E, SE004, SE004A, SE004E, SE007, SE007A,
-                      SE007E, SE008, SE008A, SE008E, PB014, SE013, SE013A, SE013E,
-                      SE014, SE014A, SE014E, SE015, SE015A, SE015E, SE016, SE016A,
-                      SE016E, SE095, SE095A, SE096E, SE097, SE097A, SE100E, SE101A,
-                      SE101E, PB003, PB004, PB005, PB006, PB026, PB057, PB059, PB007,
+                      SE007E, SE008, SE008A, SE008E, SE013, SE013A, SE013E, SE014,
+                      SE014A, SE014E, SE015, SE015A, SE015E, SE016, SE016A, SE016E,
+                      SE095, SE095A, SE096E, SE097, SE097A, SE100E, SE101A, SE101E,
+                      PB003, PB004, PB005, PB006, PB026, PB059, PB007, PB012, PB014,
                       PB019, PB020, PB021, PB022, PB023, PB024, PB027, PB029, PB030,
                       PB051, PB052 in schema file://#'
                   summary: Unsuccessful request
@@ -6107,24 +6107,24 @@ paths:
                     errors:
                     - 'The property ''#/proceeding_type_ccms_code'' value "XX123"
                       did not match one of the following values: DA001, DA002, DA003,
-                      DA004, DA005, DA006, DA007, DA020, PBM01, PBM01A, PBM02, PBM02A,
-                      PBM02E, PBM04, PBM04A, PBM04E, PBM05, PBM05A, PBM05E, PBM06,
-                      PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A, PBM08E,
-                      PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A, PBM11E,
-                      PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A, PBM17E,
-                      PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM20, PBM20A,
-                      PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23, PBM23A,
-                      PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PB012, PBM26E,
+                      DA004, DA005, DA006, DA007, PB057, DA020, PBM01, PBM01A, PBM02,
+                      PBM02A, PBM02E, PBM04, PBM04A, PBM04E, PBM05, PBM05A, PBM05E,
+                      PBM06, PBM06A, PBM06E, PBM07, PBM07A, PBM07E, PBM08, PBM08A,
+                      PBM08E, PBM09, PBM09A, PBM09E, PBM10, PBM10A, PBM11, PBM11A,
+                      PBM11E, PBM13, PBM13A, PBM16, PBM16A, PBM16E, PBM17, PBM17A,
+                      PBM17E, PBM18, PBM18A, PBM18E, PBM19, PBM19A, PBM19E, PBM20,
+                      PBM20A, PBM20E, PBM21, PBM21A, PBM21E, PBM22, PBM22A, PBM23,
+                      PBM23A, PBM23E, PBM24, PBM24A, PBM24E, PBM26, PBM26A, PBM26E,
                       PBM27, PBM27A, PBM27E, PBM28, PBM28A, PBM29, PBM29A, PBM29E,
                       PBM30, PBM30A, PBM30E, PBM32, PBM32A, PBM32E, PBM33, PBM33A,
                       PBM33E, PBM35, PBM35A, PBM35E, PBM36, PBM36A, PBM36E, PBM37,
                       PBM37A, PBM37E, PBM38, PBM38A, PBM38E, PBM39, PBM39A, PBM39E,
                       PBM40, PBM40E, PBM45, PBM45E, PBM46, PBM46E, PBM47, PBM47E,
                       SE003, SE003A, SE003E, SE004, SE004A, SE004E, SE007, SE007A,
-                      SE007E, SE008, SE008A, SE008E, PB014, SE013, SE013A, SE013E,
-                      SE014, SE014A, SE014E, SE015, SE015A, SE015E, SE016, SE016A,
-                      SE016E, SE095, SE095A, SE096E, SE097, SE097A, SE100E, SE101A,
-                      SE101E, PB003, PB004, PB005, PB006, PB026, PB057, PB059, PB007,
+                      SE007E, SE008, SE008A, SE008E, SE013, SE013A, SE013E, SE014,
+                      SE014A, SE014E, SE015, SE015A, SE015E, SE016, SE016A, SE016E,
+                      SE095, SE095A, SE096E, SE097, SE097A, SE100E, SE101A, SE101E,
+                      PB003, PB004, PB005, PB006, PB026, PB059, PB007, PB012, PB014,
                       PB019, PB020, PB021, PB022, PB023, PB024, PB027, PB029, PB030,
                       PB051, PB052 in schema file://#'
                   summary: Bad request
@@ -6243,7 +6243,6 @@ paths:
                       court.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6258,7 +6257,6 @@ paths:
                       IV Family Law Act 1996).
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6270,7 +6268,6 @@ paths:
                       under section 3 Protection from Harassment Act 1997.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6282,7 +6279,6 @@ paths:
                       order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6294,7 +6290,6 @@ paths:
                       order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6306,7 +6301,6 @@ paths:
                       or discharge an order under Part IV Family Law Act 1996
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6318,12 +6312,21 @@ paths:
                       marriage protection order
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: MINJN
                     ccms_matter: domestic abuse (DA)
+                  - ccms_code: PB057
+                    meaning: Care order
+                    description: to be represented on an application for a care order
+                    sca_core: true
+                    sca_related: false
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
                   - ccms_code: DA020
                     meaning: Female genital mutilation (FGM) protection order
                     description: To be represented on an application for a Female
@@ -6331,7 +6334,6 @@ paths:
                       Mutilation Act.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6343,7 +6345,6 @@ paths:
                       as to an overseas adoption.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6355,7 +6356,6 @@ paths:
                       as to an overseas adoption.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6367,7 +6367,6 @@ paths:
                       order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6379,7 +6378,6 @@ paths:
                       order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6391,7 +6389,6 @@ paths:
                       order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6403,7 +6400,6 @@ paths:
                       accommodation order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6415,7 +6411,6 @@ paths:
                       accommodation order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6427,7 +6422,6 @@ paths:
                       accommodation order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6439,7 +6433,6 @@ paths:
                       a child in care.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6451,7 +6444,6 @@ paths:
                       a child in care.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6463,7 +6455,6 @@ paths:
                       a child in care.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6475,7 +6466,6 @@ paths:
                       a supervision order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6487,7 +6477,6 @@ paths:
                       a supervision order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6499,7 +6488,6 @@ paths:
                       a supervision order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6511,7 +6499,6 @@ paths:
                       a care order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6523,7 +6510,6 @@ paths:
                       a care order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6535,7 +6521,6 @@ paths:
                       a care order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6547,7 +6532,6 @@ paths:
                       supervision order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6559,7 +6543,6 @@ paths:
                       supervision order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6571,7 +6554,6 @@ paths:
                       supervision order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6583,7 +6565,6 @@ paths:
                       of a child/children.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6595,7 +6576,6 @@ paths:
                       of a child/children.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6607,7 +6587,6 @@ paths:
                       of a child/children.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6619,7 +6598,6 @@ paths:
                       a child assessment order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6631,7 +6609,6 @@ paths:
                       a child assessment order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6643,7 +6620,6 @@ paths:
                       contact with a child/children in care.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6655,7 +6631,6 @@ paths:
                       contact with a child/children in care.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6667,7 +6642,6 @@ paths:
                       contact with a child/children in care.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6680,7 +6654,6 @@ paths:
                       Act 1989.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6693,7 +6666,6 @@ paths:
                       Act 1989. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6705,7 +6677,6 @@ paths:
                       steps order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6717,7 +6688,6 @@ paths:
                       steps order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6729,7 +6699,6 @@ paths:
                       steps order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6741,7 +6710,6 @@ paths:
                       issue order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6753,7 +6721,6 @@ paths:
                       issue order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6765,7 +6732,6 @@ paths:
                       issue order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6777,7 +6743,6 @@ paths:
                       a contact order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6790,7 +6755,6 @@ paths:
                       a contact order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6803,7 +6767,6 @@ paths:
                       a contact order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6816,7 +6779,6 @@ paths:
                       a residence order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6829,7 +6791,6 @@ paths:
                       a residence order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6842,7 +6803,6 @@ paths:
                       a residence order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6854,7 +6814,6 @@ paths:
                       a prohibited steps order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6866,7 +6825,6 @@ paths:
                       a prohibited steps order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6878,7 +6836,6 @@ paths:
                       a prohibited steps order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6890,7 +6847,6 @@ paths:
                       a specific issue order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6902,7 +6858,6 @@ paths:
                       a specific issue order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6914,7 +6869,6 @@ paths:
                       a specific issue order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6926,7 +6880,6 @@ paths:
                       responsibility.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6938,7 +6891,6 @@ paths:
                       responsibility.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6949,7 +6901,6 @@ paths:
                     description: to be represented on an application for a care order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6961,7 +6912,6 @@ paths:
                       Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6973,7 +6923,6 @@ paths:
                       Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6985,7 +6934,6 @@ paths:
                       order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -6997,7 +6945,6 @@ paths:
                       order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7009,7 +6956,6 @@ paths:
                       order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7021,7 +6967,6 @@ paths:
                       order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7033,31 +6978,17 @@ paths:
                       order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KPBLB
                     ccms_matter: public law family (PLF)
-                  - ccms_code: PB012
-                    meaning: Recovery of children order
-                    description: to be represented on an application for the recovery
-                      of a child(ren).
-                    sca_core: false
-                    sca_related: true
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
                   - ccms_code: PBM26E
                     meaning: Child assessment order - enforcement
                     description: to be represented on an application for a child assessment
                       order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7069,7 +7000,6 @@ paths:
                       an emergency protection order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7081,7 +7011,6 @@ paths:
                       an emergency protection order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7093,7 +7022,6 @@ paths:
                       an emergency protection order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7105,7 +7033,6 @@ paths:
                       an emergency protection order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7117,7 +7044,6 @@ paths:
                       an emergency protection order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7129,7 +7055,6 @@ paths:
                       an exclusion requirement.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7141,7 +7066,6 @@ paths:
                       an exclusion requirement.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7153,7 +7077,6 @@ paths:
                       an exclusion requirement.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7165,7 +7088,6 @@ paths:
                       order
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7177,7 +7099,6 @@ paths:
                       order. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7189,19 +7110,6 @@ paths:
                       order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
-                  - ccms_code: PBM32
-                    meaning: Special guardianship order
-                    description: to be represented on an application for a Special
-                      Guardianship Order
-                    sca_core: false
-                    sca_related: false
-                    post_sgo_update: hide
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7213,19 +7121,6 @@ paths:
                       Guardianship Order . Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
-                  - ccms_code: PBM32E
-                    meaning: Special guardianship order - enforcement
-                    description: to be represented on an application for a Special
-                      Guardianship Order . Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    post_sgo_update: hide
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7237,7 +7132,6 @@ paths:
                       of a placement order
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7249,7 +7143,6 @@ paths:
                       of a placement order  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7261,43 +7154,6 @@ paths:
                       of a placement order  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
-                  - ccms_code: PBM35
-                    meaning: Special guardianship order - vary or discharge
-                    description: To be represented on an application for variation/discharge
-                      of a special guardianship order.
-                    sca_core: false
-                    sca_related: false
-                    post_sgo_update: hide
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
-                  - ccms_code: PBM35A
-                    meaning: Special guardianship order - appeal - vary or discharge
-                    description: To be represented on an application for variation/discharge
-                      of a special guardianship order.  Appeals only.
-                    sca_core: false
-                    sca_related: false
-                    post_sgo_update: hide
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLB
-                    ccms_matter: public law family (PLF)
-                  - ccms_code: PBM35E
-                    meaning: Special guardianship order - enforcement - vary or discharge
-                    description: To be represented on an application for variation/discharge
-                      of a special guardianship order.  Enforcement only.
-                    sca_core: false
-                    sca_related: false
-                    post_sgo_update: hide
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7308,7 +7164,6 @@ paths:
                     description: to be represented on an application for a care order
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7320,7 +7175,6 @@ paths:
                       Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7332,7 +7186,6 @@ paths:
                       Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7344,7 +7197,6 @@ paths:
                       order
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7356,7 +7208,6 @@ paths:
                       order  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7368,7 +7219,6 @@ paths:
                       order  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7380,7 +7230,6 @@ paths:
                       order - who the child(ren) spend time with
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7392,7 +7241,6 @@ paths:
                       order - who the child(ren) spend time with. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7404,7 +7252,6 @@ paths:
                       order - who the child(ren) spend time with. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7416,7 +7263,6 @@ paths:
                       order - where the child(ren) will live.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7428,7 +7274,6 @@ paths:
                       order - where the child(ren) will live. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7440,7 +7285,6 @@ paths:
                       order - where the child(ren) will live. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7452,7 +7296,6 @@ paths:
                       on an application for a placement order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7465,7 +7308,6 @@ paths:
                       on an application for a placement order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7477,7 +7319,6 @@ paths:
                       on an application for an adoption order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7490,7 +7331,6 @@ paths:
                       on an application for a placement order. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7504,7 +7344,6 @@ paths:
                       special guardianship order being made.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update: show
                     non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7519,7 +7358,6 @@ paths:
                       special guardianship order being made.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update: show
                     non_means_tested_plf: true
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7534,7 +7372,6 @@ paths:
                       made.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update: show
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7548,7 +7385,6 @@ paths:
                       who do not oppose the order being made. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update: show
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7560,7 +7396,6 @@ paths:
                       steps order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7572,7 +7407,6 @@ paths:
                       steps order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7584,7 +7418,6 @@ paths:
                       steps order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7596,7 +7429,6 @@ paths:
                       issue order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7608,7 +7440,6 @@ paths:
                       issue order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7620,7 +7451,6 @@ paths:
                       issue order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7632,7 +7462,6 @@ paths:
                       a prohibited steps order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7644,7 +7473,6 @@ paths:
                       a prohibited steps order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7656,7 +7484,6 @@ paths:
                       a prohibited steps order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7668,7 +7495,6 @@ paths:
                       a specific issue order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7680,7 +7506,6 @@ paths:
                       a specific issue order.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7692,31 +7517,17 @@ paths:
                       a specific issue order.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
                     ccms_matter_code: KSEC8
                     ccms_matter: section 8 children (S8)
-                  - ccms_code: PB014
-                    meaning: End contact with a child in care
-                    description: to be represented on an application to terminate
-                      contact with a child/children in care.
-                    sca_core: false
-                    sca_related: true
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
                   - ccms_code: SE013
                     meaning: Child arrangements order (CAO) - contact
                     description: to be represented on an application for a child arrangements
                       order-who the child(ren) spend time with.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7728,7 +7539,6 @@ paths:
                       order-who the child(ren) spend time with. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7740,7 +7550,6 @@ paths:
                       order-who the child(ren) spend time with. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7752,7 +7561,6 @@ paths:
                       order –where the child(ren) will live
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7764,7 +7572,6 @@ paths:
                       order –where the child(ren) will live. Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7776,7 +7583,6 @@ paths:
                       order –where the child(ren) will live. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7788,7 +7594,6 @@ paths:
                       a child arrangements order-who the child(ren) spend time with.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7801,7 +7606,6 @@ paths:
                       Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7815,7 +7619,6 @@ paths:
                       Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7827,7 +7630,6 @@ paths:
                       a child arrangements order –where the child(ren) will live.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7841,7 +7643,6 @@ paths:
                       Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7855,7 +7656,6 @@ paths:
                       Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7867,7 +7667,6 @@ paths:
                       order under section 11J Children Act 1989.  Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7879,7 +7678,6 @@ paths:
                       order under section 11J Children Act 1989.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7892,7 +7690,6 @@ paths:
                       1989. Enforcement only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7905,7 +7702,6 @@ paths:
                       Act 1989.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7918,7 +7714,6 @@ paths:
                       Act 1989.  Appeals only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7932,7 +7727,6 @@ paths:
                       only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7945,7 +7739,6 @@ paths:
                       only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7958,7 +7751,6 @@ paths:
                       only.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7970,7 +7762,6 @@ paths:
                       order.
                     sca_core: true
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7982,7 +7773,6 @@ paths:
                       an emergency protection order.
                     sca_core: true
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -7994,7 +7784,6 @@ paths:
                       an emergency protection order.
                     sca_core: true
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8006,7 +7795,6 @@ paths:
                       accommodation order.
                     sca_core: true
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8018,18 +7806,6 @@ paths:
                       protection order.
                     sca_core: true
                     sca_related: false
-                    post_sgo_update:
-                    non_means_tested_plf: false
-                    ccms_category_law: Family
-                    ccms_category_law_code: MAT
-                    ccms_matter_code: KPBLW
-                    ccms_matter: special children act (SCA)
-                  - ccms_code: PB057
-                    meaning: Care order
-                    description: to be represented on an application for a care order
-                    sca_core: true
-                    sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8041,7 +7817,6 @@ paths:
                       order
                     sca_core: true
                     sca_related: false
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8053,7 +7828,28 @@ paths:
                       a child in care.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB012
+                    meaning: Recovery of children order
+                    description: to be represented on an application for the recovery
+                      of a child(ren).
+                    sca_core: false
+                    sca_related: true
+                    non_means_tested_plf: false
+                    ccms_category_law: Family
+                    ccms_category_law_code: MAT
+                    ccms_matter_code: KPBLW
+                    ccms_matter: special children act (SCA)
+                  - ccms_code: PB014
+                    meaning: End contact with a child in care
+                    description: to be represented on an application to terminate
+                      contact with a child/children in care.
+                    sca_core: false
+                    sca_related: true
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8065,7 +7861,6 @@ paths:
                       steps order.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8077,7 +7872,6 @@ paths:
                       issue order.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8089,7 +7883,6 @@ paths:
                       a contact order.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8101,7 +7894,6 @@ paths:
                       a residence order.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8113,7 +7905,6 @@ paths:
                       a prohibitive steps order.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8125,7 +7916,6 @@ paths:
                       a specific issues order.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8137,7 +7927,6 @@ paths:
                       responsibility.
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8149,7 +7938,6 @@ paths:
                       order-who the child(ren) spend time with
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8161,7 +7949,6 @@ paths:
                       order-where the child(ren) will live
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8173,7 +7960,6 @@ paths:
                       order .
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8185,7 +7971,6 @@ paths:
                       Guardianship Order .
                     sca_core: false
                     sca_related: true
-                    post_sgo_update:
                     non_means_tested_plf: false
                     ccms_category_law: Family
                     ccms_category_law_code: MAT
@@ -8220,7 +8005,6 @@ paths:
                         order.
                       sca_core: false
                       sca_related: false
-                      post_sgo_update:
                       non_means_tested_plf: false
                       ccms_category_law: Family
                       ccms_category_law_code: MAT
@@ -8246,7 +8030,6 @@ paths:
                         court.
                       sca_core: false
                       sca_related: false
-                      post_sgo_update:
                       non_means_tested_plf: false
                       ccms_category_law: Family
                       ccms_category_law_code: MAT
@@ -8257,7 +8040,6 @@ paths:
                         under section 3 Protection from Harassment Act 1997.
                       sca_core: false
                       sca_related: false
-                      post_sgo_update:
                       non_means_tested_plf: false
                       ccms_category_law: Family
                       ccms_category_law_code: MAT
@@ -8268,7 +8050,6 @@ paths:
                         order.
                       sca_core: false
                       sca_related: false
-                      post_sgo_update:
                       non_means_tested_plf: false
                       ccms_category_law: Family
                       ccms_category_law_code: MAT
@@ -8432,7 +8213,6 @@ paths:
                       steps order.
                     sca_core: false
                     sca_related: false
-                    post_sgo_update:
                     ccms_category_law: Family
                     ccms_matter: section 8 children (S8)
                     cost_limitations:

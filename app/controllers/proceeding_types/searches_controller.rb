@@ -1,7 +1,7 @@
 module ProceedingTypes
   class SearchesController < ApplicationController
     def index
-      result = ProceedingType.all.map(&:api_json)
+      result = ProceedingType.where(start_date: ..Date.current, end_date: Date.current..).map(&:api_json)
       render json: result.to_json, status: :ok
     end
 
