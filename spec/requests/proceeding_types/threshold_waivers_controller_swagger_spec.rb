@@ -1,4 +1,4 @@
-require "swagger_helper"
+require "openapi_helper"
 
 RSpec.describe "proceeding_types/threshold_waivers" do
   path "/proceeding_types/threshold_waivers" do
@@ -10,16 +10,16 @@ RSpec.describe "proceeding_types/threshold_waivers" do
                   threshold is waived for this proceeding type (i.e unlimited) or false to indicate that the threshold should be
                   applied.  The matter type to which the proceeding belongs is also returned."
 
-      let(:threshold_waiver_query) do
-        {
-          request_id: "f40eb41d-e865-4d81-9daf-3fa9c1f2fdca",
-          proceeding_types: %w[DA005 SE004 SE013],
-        }
-      end
-
       tags "Threshold waivers"
       consumes "application/json"
       produces "application/json"
+
+      let(:request_params) do
+        {
+          "threshold_waiver_query" => threshold_waiver_query,
+        }
+      end
+
       parameter name: :threshold_waiver_query,
                 in: :body,
                 schema: {
@@ -32,9 +32,17 @@ RSpec.describe "proceeding_types/threshold_waivers" do
                                         items: { type: :string, description: "CCMS-codes of proceedings to be queried" },
                                         example: %w[DA005 SE004 SE013] },
                   },
-                  required: %w[request_id ccms_codes],
+                  required: %w[request_id proceeding_types],
                 }
+
       response(200, "success") do
+        let(:threshold_waiver_query) do
+          {
+            request_id: "f40eb41d-e865-4d81-9daf-3fa9c1f2fdca",
+            proceeding_types: %w[DA005 SE004 SE013],
+          }
+        end
+
         expected_response =
           {
             request_id: "f40eb41d-e865-4d81-9daf-3fa9c1f2fdca",
