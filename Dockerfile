@@ -17,6 +17,10 @@ RUN apk --no-cache add --virtual build-dependencies \
                     postgresql-dev \
 && apk --no-cache add postgresql-client
 
+RUN apk add --no-cache --upgrade \
+    ca-certificates \
+    ca-certificates-bundle
+
 # zlib: upgrade zlib system libraries to address security vulnerability in ruby bundled zlib gem
 # TODO: Can be removed once alpine image contains zlib version 1.3.2-r0+
 RUN apk upgrade --no-cache zlib
